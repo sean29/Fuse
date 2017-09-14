@@ -1,0 +1,40 @@
+{
+  "RootNamespace":"",
+  "Packages": [
+    "Fuse",
+    "FuseJS"
+  ],
+  "Includes": [
+    "*"
+  ],
+  "VersionCode": 1,
+  "Icon": "icon.png",
+  "iOS": {
+    "BundleIdentifier": "com.app.emrals",
+    "Icons": {
+      "iPhone_29_2x": "$(Icon)",
+      "iPhone_29_3x": "$(Icon)",
+      "iPhone_40_2x": "$(Icon)",
+      "iPhone_40_3x": "$(Icon)",
+      "iPhone_60_2x": "$(Icon)",
+      "iPhone_60_3x": "$(Icon)",
+      "iPad_29_1x": "$(Icon)",
+      "iPad_29_2x": "$(Icon)",
+      "iPad_40_1x": "$(Icon)",
+      "iPad_40_2x": "$(Icon)",
+      "iPad_76_1x": "$(Icon)",
+      "iPad_76_2x": "$(Icon)"
+    }
+  },
+  "Android": {
+    "Icons": {
+      "LDPI": "$(Icon)",
+      "MDPI": "$(Icon)",
+      "HDPI": "$(Icon)",
+      "XHDPI": "$(Icon)",
+      "XXHDPI": "$(Icon)",
+      "XXXHDPI": "$(Icon)"
+    }
+  }
+}
+
