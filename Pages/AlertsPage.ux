@@ -3,6 +3,11 @@
 	<Router ux:Dependency="router" />
 	<JavaScript File="AlertsPage.js" />
 		<DockPanel>
+<Circle Color="Green" ZOffset="5.0" Width="20%" Height="20%" Dock="Bottom" Clicked="{goToCamera}">
+
+</Circle>
+</DockPanel>
+		<DockPanel>
 		<StatusBarBackground Dock="Top" />
 		<BottomBarBackground Dock="Bottom" />
 		<ScrollView>
@@ -21,5 +26,8 @@
 			</Grid>
 		</ScrollView>
 	</DockPanel>
+
+
+
 
 </Page>
