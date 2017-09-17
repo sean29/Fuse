@@ -1,42 +1,15 @@
-<App>
-  <Fuse.iOS.StatusBarConfig Style="Light" />
+<App Background="#fff">
 
-  <DockPanel>
+  <iOS.StatusBarConfig Style="Light" />
+  <Android.StatusBarConfig Color="#636364" />
 
-    <Image ux:Class="Logo" MaxHeight="110" Margin="20,60,20,20"/>
-    <Logo File="Assets/emralsv2logo.png" Dock="Top"/>
+  <Router ux:Name="router" />
 
-    <StackPanel Height="0">
-      <Panel Y="90">
-        <Image File="Assets/cameratag.png" Height="40" Margin="0, 0, 140, 0"/>
-        <Text Color="#636364" Alignment="Center" Margin="60, 0, 0, 0"> 
-          Tag Dirt Alerts 
-        </Text>
-        <Rectangle Color="#FFF" Opacity="0.8" Height="48" Width="300" CornerRadius="10" Alignment="Center" Margin="0, 0"/>
-      </Panel>
-
-      <Panel Y="100">
-        <Image File="Assets/buyicon.png" Height="40" Margin="0, 0, 140, 0"/>
-        <Text Color="#636364" Alignment="Center" Margin="40, 0, 0, 0"> 
-          Buy Emrals 
-        </Text>
-        <Rectangle Color="#FFF" Opacity="0.8" Height="48" Width="300" CornerRadius="10" Alignment="Center" Margin="0, 20"/>
-      </Panel>
-
-      <Panel Y="110">
-        <Image File="Assets/v2ecansicon.png" Height="40" Margin="0, 0, 140, 0"/>
-        <Text Color="#636364" Alignment="Center" Margin="40, 0, 0, 0"> 
-         See eCans 
-        </Text>
-        <Rectangle Color="#FFF" Opacity="0.8" Height="48" Width="300" CornerRadius="10" Alignment="Center" Margin="0, 0"/>
-      </Panel>
-    </StackPanel>
-
-    <Text Color="#FFF" FontSize="24" Alignment="BottomCenter"  Margin="0, 400, 0, 0"> 
-      SIGN IN
-    </Text>
-    <Rectangle Color="#8AB847" Height="48" Width="300" CornerRadius="10" Dock="Bottom" Margin="0, 0, 0, 40"/>
-    <Image File="Assets/bgtrash.jpg" Dock="Bottom" Margin="0,0,0,-88" />
-
-  </DockPanel>
+  <ClientPanel>
+    <Navigator DefaultPath="splash">
+      <SplashPage ux:Template="splash" router="router" />
+      <AlertsPage ux:Template="alerts" router="router" />
+      <EcansPage ux:Template="ecans" router="router" />
+    </Navigator>
+  </ClientPanel>
 </App>

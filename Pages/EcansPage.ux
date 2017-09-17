@@ -1,0 +1,6 @@
+<Page ux:Class="EcansPage">
+	<Router ux:Dependency="router" />
+
+	<JavaScript File="EcansPage.js" />
+
+</Page>
