@@ -25,7 +25,7 @@
         <Rectangle Color="#FFF" Opacity="0.8" Height="48" Width="300" CornerRadius="10" Alignment="Center" Margin="0, 20"/>
       </Panel>
 
-      <Panel Y="110">
+      <Panel Y="110" Clicked="{goToEcans}">
         <Image File="../Assets/v2ecansicon.png" Height="40" Margin="0, 0, 140, 0"/>
         <Text Color="#636364" Alignment="Center" Margin="40, 0, 0, 0"> 
          See eCans 

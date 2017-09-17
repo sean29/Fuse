@@ -3,4 +3,28 @@
 
 	<JavaScript File="EcansPage.js" />
 
+
+	<ClientPanel>
+		<ScrollView LayoutMode="PreserveVisual">
+
+			<StackPanel Margin="8" ItemSpacing="8">
+
+<Each Items="{data}">
+	<Panel Height="104">
+        <Rectangle ux:Name="imageHolder" CornerRadius="2" Opacity="1">
+            <AddingAnimation>
+                <Change imageHolder.Opacity="0" Delay="0.16" Duration="0.32" />
+            </AddingAnimation>
+            <ImageFill Url="{image}" StretchMode="UniformToFill" WrapMode="ClampToEdge" MemoryPolicy="UnloadUnused" />
+        </Rectangle>
+    </Panel>
+</Each>
+
+
+			</StackPanel>
+		</ScrollView>
+	</ClientPanel>
+
+
+
 </Page>
