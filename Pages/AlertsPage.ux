@@ -67,11 +67,11 @@
 							<Rectangle Layer="Background" CornerRadius="5" Color="#fff" Opacity="0.80"/>
 							<Text Value="{title}" TextAlignment="Center" FontSize="12" Alignment="Center" />
 						</Panel>
-						<Rectangle Layer="Background" CornerRadius="10" Color="#3399ff">
-                            <ImageFill File="Assets/dirtalert6.jpg" />
+						<Rectangle Layer="Background" CornerRadius="10" Color="#8AB847">
+                            <ImageFill Url="{thumbnail}" />
                             </Rectangle>
-                                                    <Image File="Assets/greene.png" Alignment="Bottom" Height="22" Margin="-30, 0, 0, -25"/>
-                                                    <Text FontSize="14" TextColor="#636364" Alignment="Bottom" Margin="80, 0, 0, -25">100</Text>
+                        <Image File="Assets/greene.png" Alignment="Bottom" Height="22" Margin="-30, 0, 0, -25"/>
+                        <Text FontSize="14" TextColor="#636364" Alignment="Bottom" Margin="80, 0, 0, -25">{emrals}</Text>
 
 					</DockPanel>
 				</Each>
