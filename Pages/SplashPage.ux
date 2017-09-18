@@ -37,7 +37,7 @@
     <Text Color="#FFF" FontSize="24" Alignment="BottomCenter"  Margin="0, 400, 0, 0"> 
       SIGN IN
     </Text>
-    <Rectangle Color="#8AB847" Height="48" Width="300" CornerRadius="10" Dock="Bottom" Margin="0, 0, 0, 40"/>
+    <Rectangle Color="#8AB847" Height="48" Width="300" CornerRadius="10" Dock="Bottom" Margin="0, 0, 0, 40"  Clicked="{goToLogin}" />
     <Image File="../Assets/bgtrash.jpg" Dock="Bottom" Margin="0,0,0,-88" />
 
   </DockPanel>

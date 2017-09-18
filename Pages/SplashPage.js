@@ -1,12 +1,5 @@
-function goToAlerts() {
-	router.goto("alerts");
-}
-
-function goToEcans() {
-	router.goto("ecans");
-}
-
 module.exports = {
-	goToEcans: goToEcans,
-	goToAlerts: goToAlerts
+	goToEcans: function goToEcans() { router.goto("ecans"); },
+	goToAlerts: function goToAlerts() { router.goto("alerts"); },
+	goToLogin: function goToLogin() { router.goto("login"); }
 };

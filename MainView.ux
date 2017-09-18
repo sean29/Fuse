@@ -11,6 +11,8 @@
       <AlertsPage ux:Template="alerts" router="router" />
       <EcansPage ux:Template="ecans" router="router" />
       <CameraPage ux:Template="camera" router="router" />
+      <SignupPage ux:Template="signup" router="router" />
+      <LoginPage ux:Template="login" router="router" />
     </Navigator>
   </ClientPanel>
 </App>
