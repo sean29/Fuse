@@ -4,6 +4,11 @@ var password = Observable("");
 var username = Observable("");
 var error = Observable("");
 
+function goToSignup() {
+    router.goto("signup");
+}
+
+
 function formEncode(obj) {
     var str = [];
     for (var p in obj)
@@ -12,6 +17,7 @@ function formEncode(obj) {
 }
 
 module.exports = {
+    goToSignup: goToSignup,
     password: password,
     username: username,
     error: error,

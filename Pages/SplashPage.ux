@@ -5,7 +5,7 @@
 
   <DockPanel>
 
-    <Image ux:Class="Logo" MaxHeight="110" Margin="20,60,20,20"/>
+    <Image ux:Class="Logo" MaxHeight="110" Margin="0,50,0,0"/>
     <Logo File="../Assets/emralsv2logo.png" Dock="Top"/>
 
     <StackPanel Height="0">
@@ -34,10 +34,12 @@
       </Panel>
     </StackPanel>
 
-    <Text Color="#FFF" FontSize="24" Alignment="BottomCenter"  Margin="0, 400, 0, 0"> 
-      SIGN IN
+    
+    <Rectangle Color="#8AB847" Height="48" Width="300" CornerRadius="10" Dock="Bottom" Margin="0, 0, 0, 40"  Clicked="{goToLogin}">
+      <Text Color="#FFF" FontSize="24" Alignment="Center"> 
+      LOG IN
     </Text>
-    <Rectangle Color="#8AB847" Height="48" Width="300" CornerRadius="10" Dock="Bottom" Margin="0, 0, 0, 40"  Clicked="{goToLogin}" />
+  </Rectangle>
     <Image File="../Assets/bgtrash.jpg" Dock="Bottom" Margin="0,0,0,-88" />
 
   </DockPanel>
