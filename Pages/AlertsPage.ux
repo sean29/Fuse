@@ -62,7 +62,7 @@
 			<Grid ColumnCount="2">
 				
 				<Each Items="{data}">
-					<DockPanel Height="160" Margin="15">
+					<DockPanel Height="160" Margin="15"  Clicked="{goToAlert}">
 						<Panel DockPanel.Dock="Top" Margin="10, 5" Height="20">
 							<Rectangle Layer="Background" CornerRadius="5" Color="#fff" Opacity="0.80"/>
 							<Text Value="{title}" TextAlignment="Center" FontSize="12" Alignment="Center" />

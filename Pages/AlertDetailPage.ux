@@ -1,0 +1,26 @@
+<Page ux:Class="AlertDetailPage">
+	<Router ux:Dependency="router" />
+
+	<JavaScript File="AlertDetailPage.js" />
+
+	<ClientPanel>
+				<Grid ColumnCount="2" Dock="Top">
+			<Button Text="<<<<<" Clicked="{back}" />
+
+		</Grid>
+		<ScrollView>
+			<StackPanel ItemSpacing="10" Padding="10">
+				
+				<StackPanel>
+					<Text>{title}</Text>
+				</StackPanel>
+
+				<StackPanel>
+					<Image Url="{image}" />
+	
+				</StackPanel>
+
+			</StackPanel>
+		</ScrollView>
+	</ClientPanel>
+</Page>

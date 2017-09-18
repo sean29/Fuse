@@ -13,6 +13,7 @@
       <CameraPage ux:Template="camera" router="router" />
       <SignupPage ux:Template="signup" router="router" />
       <LoginPage ux:Template="login" router="router" />
+      <AlertDetailPage ux:Template="alertdetail" router="router" />
     </Navigator>
   </ClientPanel>
 </App>

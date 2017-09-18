@@ -5,6 +5,10 @@ function goToCamera() {
 	router.goto("camera");
 }
 
+function goToAlert(arg) {
+	var alert = arg.data;
+	router.push("alertdetail", alert);
+}
 
 
 var data = Observable();
@@ -18,6 +22,7 @@ fetch(url)
 
 module.exports = {
 	data: data,
-	goToCamera: goToCamera
+	goToCamera: goToCamera,
+	goToAlert: goToAlert
 };
 
