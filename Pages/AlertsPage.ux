@@ -3,13 +3,58 @@
 
 
 	<Router ux:Dependency="router" />
+    <Font File="PTserif.ttc" ux:Global="Header" />
+    <Font File="PTsans.ttc" ux:Global="Type" />
 
+    <Text ux:Class="Header" 
+        Font="Header" 
+        FontSize="20"
+        Color="#636364"/>
+    <Text ux:Class="Type" 
+        Font="Type" 
+        FontSize="18"
+        Color="#636364" />
+	<DockPanel>
+
+  <Panel Background="#FFF" Dock="Top">
+        <Rectangle ux:Class="BurgerPart" Color="Gray" CornerRadius="20" Height="5" Width="40" Margin="0,2.5">
+            <Stroke Width="1" Brush="#999"/>
+        </Rectangle>
+        <Image File="Assets/emralsAllgreen2017logo.png" MaxWidth="120" />
+        <Header Alignment="Center" Margin="0,90,0,0">DIRT ALERTS</Header>
+
+        <Panel Alignment="Center" Margin="10,0,300, 0" HitTestMode="LocalBounds">
+            <Grid RowCount="3">
+                <BurgerPart ux:Name="rect1" />
+                <BurgerPart ux:Name="rect2" />
+                <BurgerPart ux:Name="rect3" />
+            </Grid>
+            <Clicked>
+                <Scale>
+                    <Keyframe Value="0.8,0.8" Time="0.05"/>
+                    <Keyframe Value="1,1" Time="0.1"/>
+                </Scale>
+                <Toggle Target="clickedState" Delay="0.1"/>
+            </Clicked>
+            <WhileTrue ux:Name="clickedState">
+                <Change rect2.Width="10" Duration="0.4" Easing="BounceOut" EasingBack="BounceIn" DelayBack="0.6"/>
+                <Move Target="rect1" Easing="QuadraticInOut" Y="1.5" RelativeTo="Size" Duration="0.3" Delay="0.3"/>
+                <Move Target="rect3" Easing="QuadraticInOut" Y="-1.5" RelativeTo="Size" Duration="0.3" Delay="0.3"/>
+                <Rotate Target="rect1" Easing="QuadraticInOut" Degrees="45" Duration="0.3" Delay="0.45" DelayBack="0"/>
+                <Rotate Target="rect3" Easing="QuadraticInOut" Degrees="-45" Duration="0.3" Delay="0.45" DelayBack="0"/>
+            </WhileTrue>
+        </Panel>
+    </Panel>
+</DockPanel>
 	<JavaScript File="AlertsPage.js" />
 		<DockPanel>
-			<Circle Color="Green" ZOffset="5.0" Width="20%" Height="20%" Dock="Bottom" Clicked="{goToCamera}">
-			</Circle>
-		</DockPanel>
-
+<Circle Color="#FFF" ZOffset="5.0" Width="20%" Height="20%" Dock="Bottom" Clicked="{goToCamera}">
+    <Stroke Width=".25">
+        <SolidColor Color="#FDFDFD" />
+    </Stroke>
+    <Image File= "Assets/cameratag.png" MaxHeight="62" Margin="0,1,0,0"/>
+</Circle>
+</DockPanel>
 		<DockPanel>
 		<StatusBarBackground Dock="Top" />
 		<BottomBarBackground Dock="Bottom" />
@@ -17,14 +62,17 @@
 			<Grid ColumnCount="2">
 				
 				<Each Items="{data}">
-					<DockPanel Height="120" Margin="10">
-						<Panel DockPanel.Dock="Top" Margin="10" Height="30">
-							<Rectangle Layer="Background" CornerRadius="10" Color="#fff"/>
-							<Text Value="{title}" TextAlignment="Center" Alignment="Center" />
-							<Image Url="{thumbnail}" />
+					<DockPanel Height="160" Margin="15">
+						<Panel DockPanel.Dock="Top" Margin="10, 5" Height="20">
+							<Rectangle Layer="Background" CornerRadius="5" Color="#fff" Opacity="0.80"/>
+							<Text Value="{title}" TextAlignment="Center" FontSize="12" Alignment="Center" />
 						</Panel>
+						<Rectangle Layer="Background" CornerRadius="10" Color="#3399ff">
+                            <ImageFill File="Assets/dirtalert6.jpg" />
+                            </Rectangle>
+                                                    <Image File="Assets/greene.png" Alignment="Bottom" Height="22" Margin="-30, 0, 0, -25"/>
+                                                    <Text FontSize="14" TextColor="#636364" Alignment="Bottom" Margin="80, 0, 0, -25">100</Text>
 
-						<Rectangle Layer="Background" CornerRadius="10" Color="#3399ff"/>
 					</DockPanel>
 				</Each>
 			</Grid>
