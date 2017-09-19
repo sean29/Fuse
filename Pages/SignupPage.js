@@ -36,8 +36,8 @@ module.exports = {
         	first_name: first_name.value,
         	last_name: last_name.value 
         };
-        url = 'http://127.0.0.1:8000/api/signup/';
-        //url = 'https://emrals-staging.herokuapp.com/api/login/';
+        //url = 'http://127.0.0.1:8000/api/signup/';
+        url = 'https://emrals-staging.herokuapp.com/api/signup/';
         fetch(url, {
             method: 'POST',
             headers: { "Content-type": "application/x-www-form-urlencoded" },
