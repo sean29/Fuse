@@ -1,38 +1,27 @@
 <Page ux:Class="SignupPage">
-<Router ux:Dependency="router" />
-
-<JavaScript File="SignupPage.js" />
-
-<DockPanel>
-<WhileKeyboardVisible>
-                <Move Target="loginArea2" Y="-10" Duration=".6" Easing="ExponentialInOut"/>
-            </WhileKeyboardVisible>
-    <Image ux:Class="eLogo" MaxHeight="110" Margin="0,50,0,0"/>
-    <eLogo File="../Assets/emralsv2logo.png" Dock="Top"/>
+    <Router ux:Dependency="router" />
+    <JavaScript File="SignupPage.js" />
+    <DockPanel>
+        <Panel HitTestMode="LocalBounds" Margin="0,0, 120, 10" Clicked="{back}" Dock="Top">
+            <Text Value="<<" Color="#636364" FontSize="30" Alignment="Center" />
+        </Panel>
+        <Image File="../Assets/emralsv2logo.png" Dock="Top" MaxHeight="110" Margin="0,50,0,0"/>
     </DockPanel>
-				
-
-    <Grid ux:Name="loginArea2" Row="1" Padding="0, 0" RowCount="5" Columns="auto,*" Height="300" MaxWidth="700">
+    <Grid Row="1" Padding="0, 0" RowCount="5" Columns="auto,*" Height="300" MaxWidth="700">
         <Image Row="0" Column="0" File="../Assets/personicon.png" Width="20" Height="24" Margin="10,-5,30,0" Alignment="Left" />
-
-        <TextInput Row="0" Column="1" PlaceholderColor="#999" TextColor="#6B6C6D" CaretColor="#999" />
+        <TextInput Value="{username}" Row="0" Column="1" PlaceholderText="Username" PlaceholderColor="#999" TextColor="#222" CaretColor="#222" />
         <Rectangle Row="0" Column="1" Alignment="Bottom" ColumnSpan="2" Height="1" Color="#95989A" />
-
         <Image Row="1" Column="0" File="../Assets/personicon.png" Width="20" Height="24" Margin="10,0,30,0" Alignment="Left" />
         <TextInput Row="1" Column="1" PlaceholderText="Last Name" PlaceholderColor="#999" TextColor="#6B6C6D" CaretColor="#999" />
         <Rectangle Row="1" Column="1" Alignment="Bottom" ColumnSpan="2" Height="1" Color="#95989A" />
-
         <Image Row="2" Column="0" File="../Assets/mailicon.png" Width="20" Height="20" Margin="10,0,30,0" Alignment="Left" />
         <TextInput Row="2" Column="1" PlaceholderText="Email" PlaceholderColor="#999" TextColor="#6B6C6D" CaretColor="#999" />
         <Rectangle Row="2" Column="1" Alignment="Bottom" ColumnSpan="2" Height="1" Color="#95989A" />
-
         <Image Row="3" Column="0" File="../Assets/lockicon.png" Width="20" Height="20" Margin="10,0,30,0" Alignment="Left" />
         <TextInput Row="3" Column="1" PlaceholderText="Password" PlaceholderColor="#999" TextColor="#6B6C6D" CaretColor="#999" IsPassword="true" />
         <Rectangle Row="3" Column="1" Alignment="Bottom" ColumnSpan="2" Height="1" Color="#95989A" />
-
         <Image Row="4" Column="0" File="../Assets/phoneicon.png" Width="20" Height="20" Margin="10,0,30,0" Alignment="Left" />
         <TextInput Row="4" Column="1" PlaceholderText="Phone" PlaceholderColor="#999" TextColor="#6B6C6D" CaretColor="#999" />
         <Rectangle Row="4" Column="1" Alignment="Bottom" ColumnSpan="2" Height="1" Color="#95989A" />
-
     </Grid>
 </Page>

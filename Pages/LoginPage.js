@@ -5,7 +5,9 @@ var username = Observable("");
 var error = Observable("");
 
 function goToSignup() {
-    router.goto("signup");
+    console.log('signup');
+    //router.goto("signup");
+    router.push("signup");
 }
 
 

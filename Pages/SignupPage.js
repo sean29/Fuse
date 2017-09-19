@@ -1,6 +1,6 @@
 function back() {
-	login.value = login.value;
 	router.goBack();
+	console.log('back');
 }
 
 module.exports = {

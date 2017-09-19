@@ -1,71 +1,49 @@
 <Page ux:Class="AlertDetailPage">
 	<Router ux:Dependency="router" />
-
 	<JavaScript File="AlertDetailPage.js" />
-
 	<Font File="PTserif.ttc" ux:Global="Head" />
-    <Font File="PTsans.ttc" ux:Global="Body" />
-
-	<Text ux:Class="Head" 
-		Font="Head"
-        FontSize="20"
-        Color="#636364" />
-
-    <Text ux:Class="Body" 
-    	Font="Body"
-        FontSize="18"
-        Color="#636364" />
-
+	<Font File="PTsans.ttc" ux:Global="Body" />
+	<Text ux:Class="Head" Font="Head" FontSize="20" Color="#636364" />
+	<Text ux:Class="Body" Font="Body" FontSize="18" Color="#636364" />
 	<DockPanel>
-  		<Panel Background="#FFF" Dock="Top">
-  		<Grid ColumnCount="2" Dock="Top">
-			<Panel ux:Class="MyButton" HitTestMode="LocalBounds" Margin="0,0, 120, 10" Clicked="{back}">
-    <string ux:Property="Text" />
-    <Text Value="{ReadProperty Text}" Color="#636364" FontSize="30" Alignment="Center" />
-
-</Panel>
-
-<MyButton Text="<<" />
-				</Grid>  
-        <Image File="Assets/emralsAllgreen2017logo.png" MaxWidth="120" />
-        <Head Alignment="Center" Margin="0,54,0,0">DIRT ALERT 234</Head>  
-    	</Panel>
-    	<Grid ColumnCount="2" RowCount="3" Height="100" Width="180" Alignment="Bottom" Margin="0,0,150,68" >
-				<Head Row="0" Column="0" >views</Head>
-				<Text Row="0" Column="1" FontSize="18">22</Text>
-				<Head Row="1" Column="0" >poster</Head>
-				<Text Row="1" Column="1" >bklynluv</Text>
-				<Head Row="2" Column="0" >time</Head>
-				<Text Row="2" Column="1" >2 days ago</Text>	
+		<Panel Background="#FFF" Dock="Top">
+			<Grid ColumnCount="2" Dock="Top">
+				<Panel ux:Class="MyButton" HitTestMode="LocalBounds" Margin="0,0, 120, 10" Clicked="{back}">
+					<Text Value="<<" Color="#636364" FontSize="30" Alignment="Center" />
+				</Panel>
 			</Grid>
-			<Image File="Assets/mapdummy.png" Alignment="BottomRight" Margin="0,0,0,65"/>
-			<Rectangle Width="300" Height="43" CornerRadius="5" Color="#8AB847" Alignment="Bottom" Margin="0,0,0, 20">
-				<Text Color="#FFF" FontSize="24" Alignment="Center">POST CLEAN PIC</Text>
-			</Rectangle>
-</DockPanel>
-
+			<Image File="Assets/emralsAllgreen2017logo.png" MaxWidth="120" />
+			<Head Alignment="Center" Margin="0,54,0,0">DIRT ALERT 234</Head>
+		</Panel>
+		<Grid ColumnCount="2" RowCount="3" Height="100" Width="180" Alignment="Bottom" Margin="0,0,150,68" >
+			<Head Row="0" Column="0" >views</Head>
+			<Text Row="0" Column="1" FontSize="18">22</Text>
+			<Head Row="1" Column="0" >poster</Head>
+			<Text Row="1" Column="1" >bklynluv</Text>
+			<Head Row="2" Column="0" >time</Head>
+			<Text Row="2" Column="1" >2 days ago</Text>
+		</Grid>
+		<Image File="Assets/mapdummy.png" Alignment="BottomRight" Margin="0,0,0,65"/>
+		<Rectangle Width="300" Height="43" CornerRadius="5" Color="#8AB847" Alignment="Bottom" Margin="0,0,0, 20">
+			<Text Color="#FFF" FontSize="24" Alignment="Center">POST CLEAN PIC</Text>
+		</Rectangle>
+	</DockPanel>
 	<ClientPanel>
-			
 		<ScrollView Y="80">
 			<Panel Padding="0">
-				
 				<StackPanel>
 					<Rectangle CornerRadius="5" Height="42" Width="330" Margin="0,5" Color="#fff" Opacity="0.80">
-					<Text Alignment="Center" >{title}</Text>
-				</Rectangle>
+						<Text Alignment="Center" >{title}</Text>
+					</Rectangle>
 				</StackPanel>
-
 				<StackPanel>
 					<Rectangle MaxHeight="375">
-					<Image Url="{image}" />
-				</Rectangle>
-				<Image File="Assets/greene.png" Height="30" Margin="0, 8, 200, 0" Alignment="Bottom"/>
+						<Image Url="{image}" />
+					</Rectangle>
+					<Image File="Assets/greene.png" Height="30" Margin="0, 8, 200, 0" Alignment="Bottom"/>
 				</StackPanel>
-								<Head Value="100" FontSize="30" Margin="20, 0, 0, -5" Alignment="Bottom"  />
-
-
+				<Head Value="100" FontSize="30" Margin="20, 0, 0, -5" Alignment="Bottom"  />
 			</Panel>
-
 		</ScrollView>
 	</ClientPanel>
 </Page>

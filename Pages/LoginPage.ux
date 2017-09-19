@@ -1,43 +1,28 @@
 <Page ux:Class="LoginPage">
-<Router ux:Dependency="router" />
-
-<JavaScript File="LoginPage.js" />
-<DockPanel>
-<WhileKeyboardVisible>
-                <Move Target="loginArea" Y="-10" Duration=".6" Easing="ExponentialInOut"/>
-            </WhileKeyboardVisible>
-    <Image ux:Class="BigLogo" MaxHeight="110" Margin="0,50,0,0"/>
-    <BigLogo File="../Assets/emralsv2logo.png" Dock="Top" Clicked="{goToSignup}"/>
+    <Router ux:Dependency="router" />
+    <JavaScript File="LoginPage.js" />
+    <DockPanel>
+        <WhileKeyboardVisible>
+            <Move Target="loginArea" Y="-10" Duration=".6" Easing="ExponentialInOut"/>
+        </WhileKeyboardVisible>
+        <Image ux:Class="BigLogo" MaxHeight="110" Margin="0,50,0,0"/>
+        <BigLogo File="../Assets/emralsv2logo.png" Dock="Top" />
     </DockPanel>
-
-<Grid ux:Name="loggedOutView" Rows="1*,auto,1*" Padding="40,0">
-    
-            
-            <Grid ux:Name="loginArea" Row="1" Padding="0,20" RowCount="2" Columns="auto, 1*" Height="220" MaxWidth="400">
-                <Image     Row="0" Column="0" File="../Assets/personicon.png" Width="20" Height="20" Margin="10,0,30,0" Alignment="Left"/>
-                <TextInput Value="{username}" Row="0" Column="1" PlaceholderText="Username" PlaceholderColor="#999" TextColor="#222" CaretColor="#222" />
-                <Rectangle Row="0" Column="1" Alignment="Bottom" ColumnSpan="1" Height="1" Color="#95989A"/>
-
-                <Image     Row="1" Column="0" File="../Assets/lockicon.png" Width="20" Height="20" Margin="10,0,30,0" Alignment="Left"/>
-                <TextInput Value="{password}" Row="1" Column="1" PlaceholderText="Password" PlaceholderColor="#999" TextColor="#222" CaretColor="#222" IsPassword="true"/>
-                <Rectangle Row="1" Column="1" Alignment="Bottom" ColumnSpan="1" Height="1" Color="#95989A"/>
-                <Text FontSize="12" Row="2" Column="1" Margin="50,10,0,0">Don't have an Account?</Text>
-                <Text Column="1" Row="2" Margin="190,10,0,0" FontSize="12" Color="#F05959" >Sign up.</Text>
-            </Grid>
-
-            
-
+    <Grid ux:Name="loggedOutView" Rows="1*,auto,1*" Padding="40,0">
+        <Grid ux:Name="loginArea" Row="1" Padding="0,20" RowCount="2" Columns="auto, 1*" Height="220" MaxWidth="400">
+            <Image     Row="0" Column="0" File="../Assets/personicon.png" Width="20" Height="20" Margin="10,0,30,0" Alignment="Left"/>
+            <TextInput Value="{username}" Row="0" Column="1" PlaceholderText="Username" PlaceholderColor="#999" TextColor="#222" CaretColor="#222" />
+            <Rectangle Row="0" Column="1" Alignment="Bottom" ColumnSpan="1" Height="1" Color="#95989A"/>
+            <Image     Row="1" Column="0" File="../Assets/lockicon.png" Width="20" Height="20" Margin="10,0,30,0" Alignment="Left"/>
+            <TextInput Value="{password}" Row="1" Column="1" PlaceholderText="Password" PlaceholderColor="#999" TextColor="#222" CaretColor="#222" IsPassword="true"/>
+            <Rectangle Row="1" Column="1" Alignment="Bottom" ColumnSpan="1" Height="1" Color="#95989A" />
+            <Text FontSize="12" Row="2" Column="0" ColumnSpan="2" Margin="50,10,0,0" Clicked="{goToSignup}">Don't have an Account? Sign up!.</Text>
         </Grid>
-
-
-        <DockPanel>
-       <Text 
-        Font="Medium" 
-        FontSize="42"
-        TextAlignment="Center"
-        Color="#f00" >{error}</Text>
-    <Rectangle Color="#8AB847" Height="48" Width="300" CornerRadius="10" Dock="Bottom" Margin="0, 0, 0, 40" Clicked="{doLogin}">
-        <Text Color="#fff" FontSize="24" Alignment="BottomCenter"  Margin="0, 0, 0, 10">  LOG IN </Text>
-    </Rectangle>
-</DockPanel>
+    </Grid>
+    <DockPanel>
+        <Text Font="Medium" FontSize="42" TextAlignment="Center" Color="#f00" >{error}</Text>
+        <Rectangle Color="#8AB847" Height="48" Width="300" CornerRadius="10" Dock="Bottom" Margin="0, 0, 0, 40" Clicked="{doLogin}">
+            <Text Color="#fff" FontSize="24" Alignment="BottomCenter" Margin="0, 0, 0, 10">LOG IN</Text>
+        </Rectangle>
+    </DockPanel>
 </Page>
