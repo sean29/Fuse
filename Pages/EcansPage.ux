@@ -3,21 +3,79 @@
 
 	<JavaScript File="EcansPage.js" />
 
-	<ClientPanel>
-		<ScrollView LayoutMode="PreserveVisual">
+	<Font File="PTserif.ttc" ux:Global="Serif" />
+	<Font File="PTsans.ttc" ux:Global="Sans" />
+	<Text ux:Class="Serif" Font="Serif" FontSize="20" Color="#636364" />
+	<Text ux:Class="Sans" Font="Sans" FontSize="18" Color="#636364" />
 
-			<StackPanel Margin="8" ItemSpacing="8">
-				<Each Items="{data}">
-					<Panel Height="104">
-				        <Rectangle ux:Name="imageHolder" CornerRadius="2" Opacity="1">
-				            <AddingAnimation>
-				                <Change imageHolder.Opacity="0" Delay="0.16" Duration="0.32" />
-				            </AddingAnimation>
-				            <ImageFill Url="{image}" StretchMode="UniformToFill" WrapMode="ClampToEdge" MemoryPolicy="UnloadUnused" />
-				        </Rectangle>
-				    </Panel>
-				</Each>
+	<DockPanel Background="#FFF" MaxHeight="80" Y="0" Dock="Top">
+			<Image File="Assets/hamburgicon.png" Alignment="TopLeft" Margin="10,10"/>	
+			<Image File="Assets/emralsAllgreen2017logo.png" MaxWidth="120" />
+			<Serif Alignment="Center" Margin="0,54,0,0">ECANS</Serif>
+		
+	</DockPanel>
+
+	<ClientPanel>
+		<Rectangle Color="#8AB847" Height="48" Width="300" CornerRadius="10" Dock="Bottom" Margin="0, 0, 0, 40" >
+            <Text Color="#fff" FontSize="24" Alignment="BottomCenter" Margin="0, 0, 0, 10">BUY ECAN</Text>
+        </Rectangle>
+		<ScrollView Y="85" MaxHeight="490" LayoutMode="PreserveVisual">
+
+			<StackPanel Margin="20,0,0,0" ItemSpacing="20">
+				<Panel>
+					<Image MaxHeight="92" Alignment="TopLeft" File="Assets/ecan1.jpg" />
+					<Rectangle Height="18" Color="#8AB847" Width="245" Margin="72,0,0, 0" Alignment="Top">
+					<Text FontSize="14" Color="#FFF" Margin="5,0" >The eCan at PS 333</Text>
+				</Rectangle>
+				<Rectangle Height="90" Color="#FFF" Width="315" Alignment="Bottom">
+				<Text FontSize="12" TextWrapping="Wrap" Color="#636364" Margin="75,22,0, 0">This classroom loves recyling! The eCan helps keep track of items by showing data about what they toss. Its barcode scanner and interactive touchscreen are fun, too.
+				</Text>
+			</Rectangle>
+				</Panel>
+				<Panel>
+					<Image MaxHeight="92" Alignment="TopLeft" File="Assets/ecan2.jpg" />
+					<Rectangle Height="18" Color="#8AB847" Width="245" Margin="72,0,0, 0" Alignment="Top">
+					<Text FontSize="14" Color="#FFF" Margin="5,0" >Downtown Brooklyn Solar eCan</Text>
+				</Rectangle>
+				<Rectangle Height="90" Color="#FFF" Width="315" Alignment="Bottom">
+				<Text FontSize="12" TextWrapping="Wrap" Color="#636364" Margin="75,22,0, 0">Our first steel eCan designed for outdoor use on city trash cans is solar powered and awaiting installation in Downtown Brooklyn.
+				</Text>
+			</Rectangle>
+				</Panel>
+				<Panel>
+					<Image MaxHeight="92" Alignment="TopLeft" File="Assets/ecan3.jpg" />
+					<Rectangle Height="18" Color="#8AB847" Width="245" Margin="72,0,0, 0" Alignment="Top">
+					<Text FontSize="14" Color="#FFF" Margin="5,0" >Buildinglink Commercial Space eCan
+</Text>
+				</Rectangle>
+				<Rectangle Height="90" Color="#FFF" Width="315" Alignment="Bottom">
+				<Text FontSize="12" TextWrapping="Wrap" Color="#636364" Margin="75,22,0, 0">One of our first sales to a forward thinking company, the Buildinglink eCan is currently being updated to the newer model with barcode scanning capabilities.
+				</Text>
+			</Rectangle>
+				</Panel>
+				<Panel>
+					<Image MaxHeight="92" Alignment="TopLeft" File="Assets/ecan4.jpg" />
+					<Rectangle Height="18" Color="#8AB847" Width="245" Margin="72,0,0, 0" Alignment="Top">
+					<Text FontSize="14" Color="#FFF" Margin="5,0" >eCan at Pop Up Shop</Text>
+				</Rectangle>
+				<Rectangle Height="90" Color="#FFF" Width="315" Alignment="Bottom">
+				<Text FontSize="12" TextWrapping="Wrap" Color="#636364" Margin="75,22,0, 0">Our multicultural eCan thanked people at this holiday pop up in Soho in seven different languages. Nothing says thank you like “thank you, merci, gracias, etc!”
+				</Text>
+			</Rectangle>
+				</Panel>
+				<Panel>
+					<Image MaxHeight="92" Alignment="TopLeft" File="Assets/ecan5.jpg" />
+					<Rectangle Height="18" Color="#8AB847" Width="245" Margin="72,0,0, 0" Alignment="Top">
+					<Text FontSize="14" Color="#FFF" Margin="5,0" >eCan at Automotive HS</Text>
+				</Rectangle>
+				<Rectangle Height="90" Color="#FFF" Width="315" Alignment="Bottom">
+				<Text FontSize="12" TextWrapping="Wrap" Color="#636364" Margin="75,22,0, 0">As part of our Shuttleworth Foundation Grant, the Automotive HS will be receiving the second donated eCan.
+				</Text>
+			</Rectangle>
+				</Panel>
 			</StackPanel>
 		</ScrollView>
+<Rectangle Color="#F4F4F4" Height="570"/>
+		
 	</ClientPanel>
 </Page>
