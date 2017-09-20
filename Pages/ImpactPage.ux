@@ -1,0 +1,72 @@
+<Page ux:Class="ImpactPage">
+	
+<JavaScript File="ImpactPage.js" />
+
+	<Router ux:Dependency="router" />
+    <Font File="PTserif.ttc" ux:Global="Curl" />
+
+    <Text ux:Class="Curl" 
+        Font="Curl" 
+        FontSize="20"
+        Color="#636364"/>
+    
+<DockPanel>
+  <Panel Background="#FFF" Dock="Top">  
+        <Image File="Assets/emralsAllgreen2017logo.png" MaxWidth="120" />
+        <Curl Alignment="Center" Margin="0,60,0,0">IMPACT ZONES</Curl>
+    </Panel>
+            </DockPanel>
+
+		<DockPanel>
+
+</DockPanel>
+		<DockPanel>
+		<StatusBarBackground Dock="Top" />
+		<BottomBarBackground Dock="Bottom" />
+		<StackPanel Y="85" Background="#FFF">
+            <Panel>
+                <Rectangle Color="#FFF" Opacity="0.8" Height="90" Alignment="Bottom">
+                                                <Curl FontSize="16" Color="#2B2B2B" Margin="20,0,0,0" TextWrapping="Wrap">Impact zones allow you to focus your cleanup reward power. Select a zone in an area that matters to you, your subscription automatically funds the cleanup in those locations.</Curl></Rectangle>
+                                            <Image File="Assets/city.jpeg" Height="300"/>
+                                            
+                                            </Panel>
+
+
+
+            <Rectangle Color="#F5F5F5" Height="160" Width="350" CornerRadius="20" Margin="0,10,0,0">
+
+            <StackPanel Padding="0,20">
+                <Grid RowCount="1" ColumnCount="2">
+                    <Text FontSize="16" Margin="20,5,0,0">Enter Zipcode</Text>
+                    <Rectangle Color="#FFF" Margin="0,-5,60,0" Height="38" Width="190"/>
+                        </Grid>
+                        <Grid RowCount="1" Columns="auto,1*,1*,1*,1*,1*,1*">
+                    <Text FontSize="16" Margin="20,15,0,0" >Add Emrals</Text>
+                    <Rectangle Color="#FFF" Margin="10,13,0,0" Height="20" Width="20" />
+                    <Text FontSize="16" Margin="0,15,0,0">$10</Text>
+                    <Rectangle Color="#FFF" Margin="25,13,40,0" Height="20" Width="20" />
+                    <Text FontSize="16" Margin="0,15,0,0">$25</Text>
+                    <Rectangle Color="#FFF" Margin="25,13,40,0" Height="20" Width="20"/>
+                    <Text FontSize="16" Margin="0, 15,10,0">$50</Text>
+                         </Grid>
+                          <Grid RowCount="1" Columns="auto,1*,1*">
+                    <Text FontSize="16" Margin="20,30,0,0">Fund Cleanup of </Text>
+                    <Rectangle Color="#FFF" Margin="0,20, 0,0" Height="38" Width="80">
+                    <Text FontSize="20" Color="#F05959" Margin="20,5,0,0">534</Text></Rectangle>
+                    <Text FontSize="16" Margin="0,30,0,0">Dirt Alerts</Text>
+                        </Grid>
+                    </StackPanel>
+                </Rectangle>
+            
+
+		</StackPanel>
+         <Rectangle Color="#8AB847" Height="48" Width="300" CornerRadius="10" Dock="Bottom" Margin="0, 0, 0, 40">
+            <Text Color="#fff" FontSize="24" Alignment="BottomCenter" Margin="0, 0, 0, 10">SUMBIT IMPACT</Text>
+        </Rectangle>
+    
+	</DockPanel>
+
+
+
+
+</Page>

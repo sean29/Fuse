@@ -17,12 +17,12 @@
         <Rectangle Color="#FFF" Opacity="0.8" Height="48" Width="300" CornerRadius="10" Alignment="Center" Margin="0, 0"  />
       </Panel>
 
-      <Panel Y="100">
+      <Panel Y="100" Clicked="{goToImpact}">
         <Image File="../Assets/buyicon.png" Height="40" Margin="0, 0, 140, 0"/>
         <Text Color="#636364" Alignment="Center" Margin="40, 0, 0, 0"> 
           Buy Emrals 
         </Text>
-        <Rectangle Color="#FFF" Opacity="0.8" Height="48" Width="300" CornerRadius="10" Alignment="Center" Margin="0, 20"/>
+        <Rectangle Color="#FFF" Opacity="0.8" Height="48" Width="300" CornerRadius="10" Alignment="Center" Margin="0, 20" />
       </Panel>
 
       <Panel Y="110" Clicked="{goToEcans}">

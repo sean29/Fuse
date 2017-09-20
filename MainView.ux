@@ -14,6 +14,7 @@
       <SignupPage ux:Template="signup" router="router" />
       <LoginPage ux:Template="login" router="router" />
       <AlertDetailPage ux:Template="alertdetail" router="router" />
+      <ImpactPage ux:Template="impact" router="router" />
     </Navigator>
   </ClientPanel>
 </App>
