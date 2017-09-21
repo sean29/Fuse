@@ -58,13 +58,23 @@
                     </StackPanel>
                 </Rectangle>
             
+                <Button Text="RR" Clicked="{refreshReceipt}" />
+                <Button Text="GRT" Clicked="{getReceiptTransactions}" />
+                <Button Text="RP" Clicked="{requestProducts}" />
+                <Button Text="AP" Clicked="{addPayment}" />
+                <Button Text="RT" Clicked="{restoreTransactions}"  />
+                <Button Text="GER" Clicked="{getEncryptedReceiptAsBase64}"  />
+
 
 		</StackPanel>
          <Rectangle Color="#8AB847" Height="48" Width="300" CornerRadius="10" Dock="Bottom" Margin="0, 0, 0, 40">
             <Text Color="#fff" FontSize="24" Alignment="BottomCenter" Margin="0, 0, 0, 10">SUMBIT IMPACT</Text>
         </Rectangle>
-    
+  
+  
+
 	</DockPanel>
+
 
 
 

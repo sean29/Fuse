@@ -1,11 +1,15 @@
 {
+  "Projects": [
+      "src/Fuse.RMStore.unoproj",
+  ],
   "RootNamespace":"",
   "Packages": [
     "Fuse",
     "FuseJS",
     "Fuse.Camera",
     "Fuse.CameraRoll",
-    "Fuse.ImageTools"
+    "Fuse.ImageTools",
+    "Fuse.Scripting"
   ],
   "Includes": [
     "*"

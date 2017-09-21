@@ -50,7 +50,7 @@
 </DockPanel>
 	<JavaScript File="AlertsPage.js" />
 		<DockPanel>
-<Circle Color="#FFF" ZOffset="5.0" Width="20%" Height="20%" Dock="Bottom" Clicked="{goToCamera}">
+<Circle Color="#FFF" ZOffset="5.0" Width="20%" Height="20%" Dock="Bottom" Clicked="{takePicture}">
     <Stroke Width=".25">
         <SolidColor Color="#FDFDFD" />
     </Stroke>
