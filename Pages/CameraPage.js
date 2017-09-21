@@ -26,7 +26,7 @@ var displayImage = function(image)
     }
   );
 }
-
+imagePath.value ="/Assets/dirtalert6.jpg";
 /*
     1. Take an unscaled "raw" picture
     2. Pass the picture into ImageTools.resize to scale and then crop it to 320x320

@@ -7,11 +7,6 @@
 	<Text ux:Class="Body" Font="Body" FontSize="18" Color="#636364" />
 	<DockPanel>
 		<Panel Background="#FFF" Dock="Top">
-			<Grid ColumnCount="2" Dock="Top">
-				<Panel ux:Class="MyButton" HitTestMode="LocalBounds" Margin="0,0, 120, 10" Clicked="{back}">
-					<Text Value="<<" Color="#636364" FontSize="30" Alignment="Center" />
-				</Panel>
-			</Grid>
 			<Image File="Assets/emralsAllgreen2017logo.png" MaxWidth="120" />
 			<Head Alignment="Center" Margin="0,54,0,0">DIRT ALERT 234</Head>
 		</Panel>

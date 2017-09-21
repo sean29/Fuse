@@ -4,30 +4,72 @@
 
 	<JavaScript File="CameraPage.js"/>
 
+	<Font File="PTserif.ttc" ux:Global="PTSerif" />
+	<Font File="PTF75F.ttf" ux:Global="PTBold" />
+
+	<Text ux:Class="PTSerif" Font="PTSerif" FontSize="20" Color="#636364" />
+	<Text ux:Class="PTBold" Font="PTBold" FontSize="22" Color="#393939" />
+
+	<DockPanel>
+		<Panel Background="#FFF" Dock="Top">
+			<Image File="Assets/emralsAllgreen2017logo.png" MaxWidth="120" />
+			<PTSerif Alignment="Center" Margin="0,54,0,0">PREVIEW DIRT ALERT 123</PTSerif>
+		</Panel>
+		<StackPanel Dock="Bottom">
+
+			<Rectangle Color="#393939" Height="375" Width="375" />
+			<Rectangle Color="#F5F5F5" Height="140" Width="375" Margin="0,0,0,10">
+				<StackPanel>
+				<Grid RowCount="0" Margin="10" ColumnCount="6">
+			<PTBold Column="0" Margin="5,15,0,0" >tag</PTBold>
+
+			<Text Alignment="Bottom" FontSize="12" Margin="-5,0,0,-20">trash</Text>
+			<Rectangle Column="1" Margin="2,0,40,0" Color="#FFF" CornerRadius="10" Height="55" Width="55">
+				<Image File="Assets/trashbin.jpg" MaxHeight="48" />
+
+			</Rectangle>
+
+			<Text Alignment="Bottom" FontSize="12" Margin="0,0,0,-20">poop</Text>
+			<Rectangle Color="#FFF" Column="2" Margin="0,0,30,0" CornerRadius="10" Height="55" Width="55">
+				<Image File="Assets/poopbag.jpg" MaxHeight="49"/>
+			</Rectangle>
+
+			<Text Alignment="Bottom" FontSize="12" Margin="5,0,0,-20">bike</Text>
+			<Rectangle Column="3" Margin="0,0,20,0" Color="#FFF" CornerRadius="10" Height="55" Width="55">
+			<Image File="Assets/bike.png" MaxWidth="49" />
+			</Rectangle>
+
+			<Text Alignment="Bottom" FontSize="12" Margin="10,0,0,-20">drain</Text>
+			<Rectangle Column="4" Margin="0,0,10,0" Color="#FFF" CornerRadius="10" Height="55" Width="55">
+			<Image File="Assets/drain.jpg" MaxWidth="49" />
+		</Rectangle>
+
+			<Text Alignment="Bottom" FontSize="12" Margin="18,0,0,-20">tree</Text>
+			<Rectangle Column="5" Color="#FFF" CornerRadius="10" Height="55" Width="55">
+			<Image File="Assets/tree.jpg" MaxHeight="49"/>
+		</Rectangle>
+ 
+		</Grid>
+		<Grid Columns="100, 100, 24" Width="355">
+			<PTBold Column="0" Color="#393939" Margin="10,20,0,0">emrals</PTBold>
+			<Rectangle Column="1" Color="#FFF" Height="38" Width="100" Margin="0,15,10,0">
+				<Text Color="#999" FontSize="18" Alignment="Center">0001</Text>
+			</Rectangle>
+			<Image Column="2" File="Assets/plus.png" Margin="0,10,0,0" />
+		</Grid>
+	</StackPanel>
+		</Rectangle>
+
+		<Rectangle Width="300" Height="43" CornerRadius="5" Color="#8AB847" Alignment="Bottom" Margin="0,0,0, 20">
+			<Text Color="#FFF" FontSize="24" Alignment="Center">POST DIRT ALERT</Text>
+		</Rectangle>
+	</StackPanel>
+	</DockPanel>
+
 	<Panel ux:Class="FatButton" Background="#FFFFFF" Margin="0,5,0,5" Text="">
 		<string ux:Property="Text" />
 		<Button Text="{ReadProperty this.Text}" Padding="5,5,5,5" />
 	</Panel>
-	<ClientPanel>
-		<WhileEmpty Items="{imagePath}">
-				<Image File="../Assets/cam_icon.png" StretchMode="PixelPrecise"/>
-		</WhileEmpty>
-		<WhileNotEmpty Items="{imagePath}">
-			<DockPanel Dock="Fill">
-				<Text Value="{imageName}" Dock="Top" Alignment="Center"/>
-				<Image File="{imagePath}" StretchMode="Uniform" />
-				<Text Value="{imageSize}" Dock="Bottom" Alignment="Center"/>
-			</DockPanel>
-		</WhileNotEmpty>
-		<StackPanel Dock="Bottom">
-			<Text FontSize="12" Margin="5,5,5,5">Click buttons to perform tests</Text>
-			<FatButton Text="Push 320x320 square picture to cameraroll" Clicked="{takePicture}"/>
-			<FatButton Text="Take aspect corrected 100x100 picture via buffer" Clicked="{takeSmallPicture}"/>
-			<FatButton Text="Take cropped 320x320 picture" Clicked="{takeCroppedPicture}"/>
-			<FatButton Text="Get picture from cameraroll" Clicked="{selectImage}"/>
-			<WhileNotEmpty Items="{imagePath}">
-				<FatButton Text="Reload last picture via base64" Clicked="{b64Test}"/>
-			</WhileNotEmpty>
-		</StackPanel>
-	</ClientPanel>
+	
+
 </Page>
