@@ -6,7 +6,13 @@
 	<Text ux:Class="Head" Font="Head" FontSize="20" Color="#636364" />
 	<Text ux:Class="Body" Font="Body" FontSize="18" Color="#636364" />
 	<DockPanel>
+	
+</DockPanel>
+	<DockPanel>
 		<Panel Background="#FFF" Dock="Top">
+        <Panel  Margin="10,0, 120, 10" Clicked="{back}" Dock="Top">
+            <Text Value="<<" Color="#636364" FontSize="30" Alignment="Left" />
+        </Panel>
 			<Image File="Assets/emralsAllgreen2017logo.png" MaxWidth="120" />
 			<Head Alignment="Center" Margin="0,54,0,0">DIRT ALERT 234</Head>
 		</Panel>

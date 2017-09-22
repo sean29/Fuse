@@ -2,6 +2,7 @@
 
   <iOS.StatusBarConfig Style="Light" />
   <Android.StatusBarConfig Color="#636364" />
+  <JavaScript File="MainView.js" />
 
   <Router ux:Name="router" />
 
@@ -15,6 +16,7 @@
       <LoginPage ux:Template="login" router="router" />
       <AlertDetailPage ux:Template="alertdetail" router="router" />
       <ImpactPage ux:Template="impact" router="router" />
+      <PaymentPage ux:Template="payment" router="router" />
       
     </Navigator>
   </ClientPanel>

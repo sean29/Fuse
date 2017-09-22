@@ -12,6 +12,17 @@ var first_name = Observable("");
 var last_name = Observable("");
 var error = Observable("");
 
+function back() {
+  router.goBack();
+}
+
+
+
+module.exports = {
+
+	back: back
+};
+
 
 function formEncode(obj) {
     var str = [];

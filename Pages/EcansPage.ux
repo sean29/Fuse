@@ -8,18 +8,21 @@
 	<Text ux:Class="Serif" Font="Serif" FontSize="20" Color="#636364" />
 	<Text ux:Class="Sans" Font="Sans" FontSize="18" Color="#636364" />
 
-	<DockPanel Background="#FFF" MaxHeight="80" Y="0" Dock="Top">
-			<Image File="Assets/hamburgicon.png" Alignment="TopLeft" Margin="10,10"/>	
-			<Image File="Assets/emralsAllgreen2017logo.png" MaxWidth="120" />
-			<Serif Alignment="Center" Margin="0,54,0,0">ECANS</Serif>
-		
-	</DockPanel>
+<DockPanel>
+  <Panel Background="#FFF" Dock="Top">  
+        <Panel HitTestMode="LocalBounds" Margin="10,0, 0, 0" Clicked="{back}" Dock="Top">
+            <Text Value="<<" Color="#636364" FontSize="30" Alignment="Left" />
+        </Panel>
+        <Image File="Assets/emralsAllgreen2017logo.png" MaxWidth="120" />
+        <Curl Alignment="Center" Margin="0,60,0,0">ECANS</Curl>
+    </Panel>
+            </DockPanel>
 
 	<ClientPanel>
-		<Rectangle Color="#8AB847" Height="48" Width="300" CornerRadius="10" Dock="Bottom" Margin="0, 0, 0, 40" >
+		<Rectangle Color="#8AB847" Height="48" Width="300" CornerRadius="10" Dock="Bottom" Margin="0, 0, 0, 30" >
             <Text Color="#fff" FontSize="24" Alignment="BottomCenter" Margin="0, 0, 0, 10">BUY ECAN</Text>
         </Rectangle>
-		<ScrollView Y="85" MaxHeight="490" LayoutMode="PreserveVisual">
+		<ScrollView Y="110" MaxHeight="460" LayoutMode="PreserveVisual">
 
 			<StackPanel Margin="20,0,0,0" ItemSpacing="20">
 				<Panel>

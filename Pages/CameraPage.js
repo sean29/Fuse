@@ -7,6 +7,16 @@ var exports = module.exports;
 
 //  These observables will be used to display an image and its information
 
+function back() {
+  router.goto("alerts");
+}
+
+
+
+module.exports = {
+  back: back
+};
+
 var imagePath = exports.imagePath = Observable();
 var imageName = exports.imageName = Observable();
 var imageSize = exports.imageSize = Observable();
@@ -26,7 +36,7 @@ var displayImage = function(image)
     }
   );
 }
-imagePath.value ="/Assets/dirtalert6.jpg";
+
 /*
     1. Take an unscaled "raw" picture
     2. Pass the picture into ImageTools.resize to scale and then crop it to 320x320

@@ -1,0 +1,9 @@
+<Page ux:Class="PaymentPage">
+	
+<JavaScript File="PaymentPage.js" />
+
+	<Router ux:Dependency="router" />
+  
+
+
+</Page>

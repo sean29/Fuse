@@ -9,6 +9,11 @@ function goToSignup() {
     //router.goto("signup");
     router.push("signup");
 }
+function back() {
+  router.goBack();
+}
+
+
 
 
 function formEncode(obj) {
@@ -23,6 +28,7 @@ module.exports = {
     password: password,
     username: username,
     error: error,
+    back: back,
     doLogin: function doLogin(e) {
         var requestObject = { username: username.value, password: password.value };
         //url = 'http://127.0.0.1:8000/api/login/';

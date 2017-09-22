@@ -12,12 +12,19 @@
 
 	<DockPanel>
 		<Panel Background="#FFF" Dock="Top">
+			        <Panel Margin="10,0, 0, 0" Clicked="{back}" Dock="Top">
+            <Text Value="<<" Color="#636364" FontSize="30" Alignment="Left" />
+        </Panel>
 			<Image File="Assets/emralsAllgreen2017logo.png" MaxWidth="120" />
-			<PTSerif Alignment="Center" Margin="0,54,0,0">PREVIEW DIRT ALERT 123</PTSerif>
+			<PTSerif Alignment="Center" Margin="0,54,0,0">PREVIEW DIRT ALERT</PTSerif>
 		</Panel>
 		<StackPanel Dock="Bottom">
 
-			<Rectangle Color="#393939" Height="375" Width="375" />
+<DockPanel Dock="Fill">		
+	
+			<Image File="{imagePath}" StretchMode="Uniform" />		
+	
+		</DockPanel>
 			<Rectangle Color="#F5F5F5" Height="140" Width="375" Margin="0,0,0,10">
 				<StackPanel>
 				<Grid RowCount="0" Margin="10" ColumnCount="6">

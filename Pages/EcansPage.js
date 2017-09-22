@@ -1,5 +1,10 @@
 var Observable = require("FuseJS/Observable");
 
+function back() {
+  router.goBack();
+}
+
+
 
 var data = Observable();
 //var url = 'http://www.emrals.com/api/alerts/?format=json';
@@ -10,6 +15,7 @@ fetch(url)
 	.then(function(responseObject) { data.replaceAll(responseObject); });
 
 module.exports = {
-	data: data
+	data: data,
+	back: back
 };
 

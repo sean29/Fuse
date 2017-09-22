@@ -1,6 +1,11 @@
 <Page ux:Class="LoginPage">
     <Router ux:Dependency="router" />
     <JavaScript File="LoginPage.js" />
+
+        <Panel  Margin="10,0, 0, 0" Clicked="{back}" Dock="Top">
+            <Text Value="<<" Color="#636364" FontSize="30" Alignment="Left" />
+        </Panel>
+
     <DockPanel>
         <WhileKeyboardVisible>
             <Move Target="loginArea" Y="-10" Duration=".6" Easing="ExponentialInOut"/>
