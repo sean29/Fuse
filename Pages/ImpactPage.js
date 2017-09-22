@@ -5,8 +5,13 @@ function back() {
   router.goBack();
 }
 
+function goToPayment() {
+  router.goto("payment");
+}
+
 module.exports = {
-  back: back
+  back: back,
+  goToPayment: goToPayment
 };
 
 module.exports.requestProducts = function() {

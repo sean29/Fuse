@@ -1,6 +1,7 @@
 {
   "Projects": [
       "src/Fuse.RMStore.unoproj",
+      "src/Fuse.Stripe/Stripe.unoproj"
   ],
   "RootNamespace":"",
   "Packages": [
@@ -9,11 +10,15 @@
     "Fuse.Camera",
     "Fuse.CameraRoll",
     "Fuse.ImageTools",
-    "Fuse.Scripting"
+    "Fuse.Scripting",
+    "Fuse.BasicTheme"
   ],
   "Includes": [
     "*"
   ],
+  "Stripe": {
+    "PublishableKey": "pk_test_0kesA4KSuJhT6daCJ5FemD0K"
+  },
   "VersionCode": 1,
   "Icon": "icon.png",
   "iOS": {
