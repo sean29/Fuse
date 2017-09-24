@@ -1,4 +1,5 @@
 {
+  "Title": "Emrals",
   "Projects": [
       "src/Fuse.Stripe/Stripe.unoproj"
   ],
@@ -18,10 +19,11 @@
   "Stripe": {
     "PublishableKey": "pk_test"
   },
-  "VersionCode": 1,
+  "Version": "0.0.0",
+  "VersionCode": "2",
   "Icon": "icon.png",
   "iOS": {
-    "BundleIdentifier": "com.app.emrals",
+    "BundleIdentifier": "com.apps.emrals",
     "Icons": {
       "iPhone_29_2x": "$(Icon)",
       "iPhone_29_3x": "$(Icon)",
