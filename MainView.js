@@ -4,12 +4,11 @@ var CameraRoll = require("FuseJS/CameraRoll");
 var ImageTools = require("FuseJS/ImageTools");
 
 var exports = module.exports;
-//  These observables will be used to display an image and its information
 
 var imagePath = exports.imagePath = Observable();
 var imageName = exports.imageName = Observable();
 var imageSize = exports.imageSize = Observable();
-var Subscripition = exports.Subscripition = Observable();
+
 
 exports.takePicture = function()
 {
@@ -22,7 +21,7 @@ exports.takePicture = function()
 
           CameraRoll.publishImage(image);
           router.goto("camera"); 
-          displayImage(image);
+          //displayImage(image);
         }
       ).catch(
         function(reason) {
@@ -38,7 +37,7 @@ exports.takePicture = function()
 };
 
 var lastImage = "";
-//  When we receive an image object we want to display, we call this
+
 var displayImage = function(image)
 {
   console.log('displayImage')
