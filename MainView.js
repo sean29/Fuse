@@ -52,6 +52,21 @@ var displayImage = function(image)
   );
 }
 
+exports.selectImage = function()
+{
+  CameraRoll.getImage().then(
+    function(image)
+    {
+      console.log("received image: "+image.path+", "+image.width+"/"+image.height);
+      displayImage(image);
+    }
+  ).catch(
+    function(reason){
+      console.log("Couldn't get image: "+reason);
+    }
+  );
+};
+
 var Environment = require('FuseJS/Environment');
 
 if(Environment.ios){

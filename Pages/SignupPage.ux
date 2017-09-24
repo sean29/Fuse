@@ -2,25 +2,30 @@
     <Router ux:Dependency="router" />
     <JavaScript File="SignupPage.js" />
     <DockPanel>
-        <Panel HitTestMode="LocalBounds" Margin="0,0, 120, 10" Clicked="{back}" Dock="Top">
-            <Text Value="<<" Color="#636364" FontSize="30" Alignment="Center" />
-        </Panel>
-        <Image File="../Assets/emralsv2logo.png" Dock="Top" MaxHeight="110" Margin="0,50,0,0"/>
+    <Panel Margin="10,0, 0, 0" Clicked="{back}" Dock="Top">
+        <Text Value="<<" Color="#636364" FontSize="30" Alignment="Left" />
+    </Panel>
+                <WhileKeyboardVisible>
+            <Move Target="loginArea2" Y="-10" Duration=".6" Easing="ExponentialInOut"/>
+            <Move Target="LogoFile2"  Y="-100" Duration=".6" Easing="ExponentialInOut"/>
+            <Scale Target="LogoFile2"  Factor=".6"  Duration=".6"/>
+        </WhileKeyboardVisible>
+        <Image ux:Name="LogoFile2"  File="Assets/emralsv2logo.png" Dock="Top" MaxHeight="110" Margin="0,50,0,0"/>
     </DockPanel>
-    <Grid Row="1" Padding="0,20" RowCount="2" Columns="auto, 1*" Height="220" MaxWidth="400">
-        <Image Row="0" Column="0" File="../Assets/personicon.png" Width="20" Height="24" Margin="10,-5,30,0" Alignment="Left" />
+    <Grid ux:Name="loginArea2" Row="1" Padding="0,20" RowCount="2" Columns="auto, 1*" Height="220" MaxWidth="400">
+        <Image Row="0" Column="0" File="Assets/personicon.png" Width="20" Height="24" Margin="10,-5,30,0" Alignment="Left" />
         <TextInput Value="{username}" Row="0" Column="1" PlaceholderText="Username" PlaceholderColor="#999" TextColor="#6B6C6D" CaretColor="#999" />
         <Rectangle Row="0" Column="1" Alignment="Bottom" ColumnSpan="2" Height="1" Color="#95989A" />
-        <Image Row="1" Column="0" File="../Assets/personicon.png" Width="20" Height="24" Margin="10,0,30,0" Alignment="Left" />
+        <Image Row="1" Column="0" File="Assets/personicon.png" Width="20" Height="24" Margin="10,0,30,0" Alignment="Left" />
         <TextInput Value="{first_name}" Row="1" Column="1" PlaceholderText="First Name" PlaceholderColor="#999" TextColor="#6B6C6D" CaretColor="#999" />
         <Rectangle Row="1" Column="1" Alignment="Bottom" ColumnSpan="2" Height="1" Color="#95989A" />
-        <Image Row="2" Column="0" File="../Assets/personicon.png" Width="20" Height="24" Margin="10,0,30,0" Alignment="Left" />
+        <Image Row="2" Column="0" File="Assets/personicon.png" Width="20" Height="24" Margin="10,0,30,0" Alignment="Left" />
         <TextInput Value="{last_name}" Row="2" Column="1" PlaceholderText="Last Name" PlaceholderColor="#999" TextColor="#6B6C6D" CaretColor="#999" />
         <Rectangle Row="2" Column="1" Alignment="Bottom" ColumnSpan="2" Height="1" Color="#95989A" />
-        <Image Row="3" Column="0" File="../Assets/mailicon.png" Width="20" Height="24" Margin="10,0,30,0" Alignment="Left" />
+        <Image Row="3" Column="0" File="Assets/mailicon.png" Width="20" Height="24" Margin="10,0,30,0" Alignment="Left" />
         <TextInput Value="{email}" Row="3" Column="1" PlaceholderText="Email" PlaceholderColor="#999" TextColor="#6B6C6D" CaretColor="#999" />
         <Rectangle Row="3" Column="1" Alignment="Bottom" ColumnSpan="2" Height="1" Color="#95989A" />
-        <Image Row="4" Column="0" File="../Assets/lockicon.png" Width="20" Height="24" Margin="10,0,30,0" Alignment="Left" />
+        <Image Row="4" Column="0" File="Assets/lockicon.png" Width="20" Height="24" Margin="10,0,30,0" Alignment="Left" />
         <TextInput Value="{password}" Row="4" Column="1" PlaceholderText="Password" PlaceholderColor="#999" TextColor="#6B6C6D" CaretColor="#999" IsPassword="true" />
         <Rectangle Row="4" Column="1" Alignment="Bottom" ColumnSpan="2" Height="1" Color="#95989A" />
     </Grid>

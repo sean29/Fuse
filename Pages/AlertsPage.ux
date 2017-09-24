@@ -22,13 +22,13 @@
         </WhileFalse>
     </Panel>
 
-    <Panel Clicked="{startLoading}">
+
         <Busy ux:Name="isBusy" IsActive="false" />
         <WhileBusy>
             <Change loadingPanel.Opacity="1" Duration=".4" />
         </WhileBusy>
         <MyLoadingIndicator ux:Name="loadingPanel" Opacity="0" ThemeColor="#8AB847" />
-    </Panel>
+
 
     <Font File="PTserif.ttc" ux:Global="Header" />
     <Font File="PTsans.ttc" ux:Global="Type" />
