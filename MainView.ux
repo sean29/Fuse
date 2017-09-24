@@ -4,6 +4,7 @@
   <Android.StatusBarConfig Color="#636364" />
   <JavaScript File="MainView.js" />
 
+
   <Router ux:Name="router" />
 
   <ClientPanel>
@@ -17,7 +18,7 @@
       <AlertDetailPage ux:Template="alertdetail" router="router" />
       <ImpactPage ux:Template="impact" router="router" />
       <PaymentPage ux:Template="payment" router="router" />
-      
+      <BuyEcanPage ux:Template="buyecan" router="router" />
     </Navigator>
   </ClientPanel>
 </App>

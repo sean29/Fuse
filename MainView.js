@@ -9,6 +9,7 @@ var exports = module.exports;
 var imagePath = exports.imagePath = Observable();
 var imageName = exports.imageName = Observable();
 var imageSize = exports.imageSize = Observable();
+var Subscripition = exports.Subscripition = Observable();
 
 exports.takePicture = function()
 {
@@ -51,3 +52,41 @@ var displayImage = function(image)
     }
   );
 }
+
+exports.selectImage = function()
+{
+  CameraRoll.getImage().then(
+    function(image)
+    {
+      console.log("received image: "+image.path+", "+image.width+"/"+image.height);
+      displayImage(image);
+    }
+  ).catch(
+    function(reason){
+      console.log("Couldn't get image: "+reason);
+    }
+  );
+};
+
+var Environment = require('FuseJS/Environment');
+
+if(Environment.ios){
+
+    api_url = "https://emrals.herokuapp.com/api/"
+}        
+
+if(Environment.android){
+
+    api_url = "https://emrals.herokuapp.com/api/"
+}
+
+// if(Environment.preview)    console.log("Running in preview mode");
+// if(Environment.mobile)     console.log("Running on iOS or Android");
+
+if(Environment.desktop)if(Environment.android){
+
+    api_url = "https://emrals-staging.herokuapp.com/api/"
+}
+
+
+

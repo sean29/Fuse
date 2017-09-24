@@ -1,7 +1,17 @@
 <Page ux:Class="PaymentPage">
     <JavaScript File="PaymentPage.js" />
     <Router ux:Dependency="router" />
+        <DockPanel>
+        <Panel Background="#FFF" Dock="Top">
+            <Panel Margin="10,0, 0, 0" Clicked="{back}" Dock="Top">
+                <Text Value="<<" Color="#636364" FontSize="30" Alignment="Left" />
+            </Panel>
+            <Image File="Assets/emralsAllgreen2017logo.png" MaxWidth="120" />
+            <Header Alignment="Center" Margin="0,60,0,0">FUND IMPACT {subscription}</Header>
+        </Panel>
+    </DockPanel>
     <DockPanel>
+<<<<<<< HEAD
         <JavaScript File="PaymentPage.js"/>
          <Font File="PTserif.ttc" ux:Global="Cat" />
          <Font File="PTS55F.ttf" ux:Global="Dog" />
@@ -65,6 +75,23 @@
               </StackPanel>
             <Basic.Button Text="Validate Card Details Locally" Clicked="{validateCardParams}" />
             <Basic.Button Text="Create Token" Clicked="{testPay}" />
+=======
+        <StackPanel Dock="Top" Background="#2586EC">
+            <StatusBarBackground/>
+            <Fuse.iOS.StatusBarConfig Style="Light"/>
+        </StackPanel>
+        <BottomBarBackground Dock="Bottom" />
+        <StackPanel Width="90%" Height="70%" Padding="20">
+            <Rectangle Layer="Background" CornerRadius="10" Color="#fff"/>
+           <Basic.TextInput Width="100%" Value="{cardNumber}" Alignment="Center" PlaceholderText="Email Address" PlaceholderColor="#bbb" />
+            <StackPanel Orientation="Horizontal">
+                <Basic.TextInput Width="100%" Value="{expiryMonth}" Alignment="Center" PlaceholderText="Email Month (MM)" PlaceholderColor="#bbb" />
+                <Basic.TextInput Width="100%" Value="{expiryYear}" Alignment="Center" PlaceholderText="Expiry Year (YY)" PlaceholderColor="#bbb" />
+            </StackPanel>
+            <Basic.TextInput Width="100%" Value="{cvc}" Alignment="Center" PlaceholderText="CVC" PlaceholderColor="#bbb" />
+
+            <Basic.Button Text="Fund Impact Zone" Clicked="{testPay}" />
+>>>>>>> origin/master
             <TextView Value="{info}" Height="200" TextWrapping="Wrap"/>
         </StackPanel>
 

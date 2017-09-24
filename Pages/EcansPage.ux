@@ -16,7 +16,7 @@
 	</DockPanel>
 	<ClientPanel>
 		<Rectangle Color="#8AB847" Height="48" Width="300" CornerRadius="10" Dock="Bottom" Margin="0, 0, 0, 30" >
-			<Text Color="#fff" FontSize="24" Alignment="BottomCenter" Margin="0, 0, 0, 10">BUY ECAN</Text>
+			<Text Color="#fff" FontSize="24" Alignment="BottomCenter" Margin="0, 0, 0, 10" Clicked="{goToBuyEcan}">BUY ECAN</Text>
 		</Rectangle>
 		<ScrollView Y="110" MaxHeight="460" LayoutMode="PreserveVisual">
 			<StackPanel Margin="20,0,0,0" ItemSpacing="20">
