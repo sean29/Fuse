@@ -5,26 +5,24 @@
 	<Font File="PTsans.ttc" ux:Global="Body" />
 	<Text ux:Class="Head" Font="Head" FontSize="20" Color="#636364" />
 	<Text ux:Class="Body" Font="Body" FontSize="18" Color="#636364" />
-	<DockPanel>
-	
-</DockPanel>
+	<DockPanel></DockPanel>
 	<DockPanel>
 		<Panel Background="#FFF" Dock="Top">
-        <Panel  Margin="10,0, 120, 10" Clicked="{back}" Dock="Top">
-            <Text Value="<<" Color="#636364" FontSize="30" Alignment="Left" />
-        </Panel>
+			<Panel Margin="10,0, 120, 10" Clicked="{back}" Dock="Top">
+				<Text Value="<<" Color="#636364" FontSize="30" Alignment="Left" />
+			</Panel>
 			<Image File="Assets/emralsAllgreen2017logo.png" MaxWidth="120" />
-			<Head Alignment="Center" Margin="0,54,0,0">DIRT ALERT 234</Head>
+			<Head Alignment="Center" Margin="0,54,0,0">DIRT ALERT {id}</Head>
 		</Panel>
 		<Grid ColumnCount="2" RowCount="3" Height="100" Width="180" Alignment="Bottom" Margin="0,0,150,68" >
 			<Head Row="0" Column="0" >views</Head>
-			<Text Row="0" Column="1" FontSize="18">22</Text>
+			<Text Row="0" Column="1" FontSize="18">{views}</Text>
 			<Head Row="1" Column="0" >poster</Head>
-			<Text Row="1" Column="1" >bklynluv</Text>
+			<Text Row="1" Column="1" >{poster_username}</Text>
 			<Head Row="2" Column="0" >time</Head>
-			<Text Row="2" Column="1" >2 days ago</Text>
+			<Text Row="2" Column="1" >{created_naturaltime}</Text>
 		</Grid>
-		<Image File="Assets/mapdummy.png" Alignment="BottomRight" Margin="0,0,0,65"/>
+		<Image Url="" Alignment="BottomRight" Margin="0,0,0,65"/>
 		<Rectangle Width="300" Height="43" CornerRadius="5" Color="#8AB847" Alignment="Bottom" Margin="0,0,0, 20">
 			<Text Color="#FFF" FontSize="24" Alignment="Center">POST CLEAN PIC</Text>
 		</Rectangle>
@@ -43,7 +41,7 @@
 					</Rectangle>
 					<Image File="Assets/greene.png" Height="30" Margin="0, 8, 200, 0" Alignment="Bottom"/>
 				</StackPanel>
-				<Head Value="100" FontSize="30" Margin="20, 0, 0, -5" Alignment="Bottom"  />
+				<Head Value="{emrals}" FontSize="30" Margin="20, 0, 0, -5" Alignment="Bottom"  />
 			</Panel>
 		</ScrollView>
 	</ClientPanel>

@@ -28,7 +28,6 @@ function back() {
 }
 
 
-
 module.exports = {
 	data: data,
 	goToCamera: goToCamera,

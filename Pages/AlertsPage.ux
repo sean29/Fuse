@@ -1,13 +1,7 @@
 <Page ux:Class="AlertsPage">
-	
-
-
-	<Router ux:Dependency="router" />
+    <Router ux:Dependency="router" />
     <Font File="PTserif.ttc" ux:Global="Header" />
     <Font File="PTsans.ttc" ux:Global="Type" />
-
-
-
     <Text ux:Class="Header" 
         Font="Header" 
         FontSize="20"
@@ -16,51 +10,43 @@
         Font="Type" 
         FontSize="18"
         Color="#636364" />
-	<DockPanel>
-
-  <Panel Background="#FFF" Dock="Top">
-        <Panel Margin="10,0, 0, 0" Clicked="{back}" Dock="Top">
-            <Text Value="<<" Color="#636364" FontSize="30" Alignment="Left" />
+    <DockPanel>
+        <Panel Background="#FFF" Dock="Top">
+            <Panel Margin="10,0, 0, 0" Clicked="{back}" Dock="Top">
+                <Text Value="<<" Color="#636364" FontSize="30" Alignment="Left" />
+            </Panel>
+            <Image File="Assets/emralsAllgreen2017logo.png" MaxWidth="120" />
+            <Header Alignment="Center" Margin="0,60,0,0">DIRT ALERTS</Header>
         </Panel>
-        <Image File="Assets/emralsAllgreen2017logo.png" MaxWidth="120" />
-        <Header Alignment="Center" Margin="0,60,0,0">DIRT ALERTS</Header>
-
-    </Panel>
-</DockPanel>
-	<JavaScript File="AlertsPage.js" />
-		<DockPanel>
-<Circle Color="#FFF" ZOffset="5.0" Width="20%" Height="20%" Dock="Bottom" Clicked="{takePicture}">
-    <Stroke Width=".25">
-        <SolidColor Color="#FDFDFD" />
-    </Stroke>
-    <Image File= "Assets/cameratag.png" MaxHeight="62" Margin="0,1,0,0"/>
-</Circle>
-</DockPanel>
-		<DockPanel>
-		<StatusBarBackground Dock="Top" />
-		<BottomBarBackground Dock="Bottom" />
-		<ScrollView Background="#F4F4F4">
-			<Grid ColumnCount="2" Y="80">
-				
-				<Each Items="{data}">
-					<DockPanel Height="147" Margin="20"  Clicked="{goToAlert}">
-						<Panel DockPanel.Dock="Top" Margin="10, 5" Height="20">
-							<Rectangle Layer="Background" CornerRadius="5" Color="#fff" Opacity="0.80"/>
-							<Text Value="{title}" TextAlignment="Center" FontSize="12" Alignment="Center" />
-						</Panel>
-						<Rectangle Layer="Background" CornerRadius="10" Color="#8AB847">
+    </DockPanel>
+    <JavaScript File="AlertsPage.js" />
+    <DockPanel>
+        <Circle Color="#FFF" ZOffset="5.0" Width="20%" Height="20%" Dock="Bottom" Clicked="{takePicture}">
+            <Stroke Width=".25">
+                <SolidColor Color="#FDFDFD" />
+            </Stroke>
+            <Image File= "Assets/cameratag.png" MaxHeight="62" Margin="0,1,0,0"/>
+        </Circle>
+    </DockPanel>
+    <DockPanel>
+        <StatusBarBackground Dock="Top" />
+        <BottomBarBackground Dock="Bottom" />
+        <ScrollView Background="#F4F4F4">
+            <Grid ColumnCount="2" Y="80">
+                <Each Items="{data}">
+                    <DockPanel Height="147" Margin="20" Clicked="{goToAlert}">
+                        <Panel DockPanel.Dock="Top" Margin="10, 5" Height="20">
+                            <Rectangle Layer="Background" CornerRadius="5" Color="#fff" Opacity="0.80"/>
+                            <Text Value="{title}" TextAlignment="Center" FontSize="12" Alignment="Center" />
+                        </Panel>
+                        <Rectangle Layer="Background" CornerRadius="10" Color="#8AB847">
                             <ImageFill Url="{thumbnail}" />
-                            </Rectangle>
+                        </Rectangle>
                         <Image File="Assets/greene.png" Alignment="Bottom" Height="22" Margin="-30, 0, 0, -24"/>
                         <Header FontSize="18" TextColor="#636364" Alignment="Bottom" Margin="74, 0, 0, -24">{emrals}</Header>
-
-					</DockPanel>
-				</Each>
-			</Grid>
-		</ScrollView>
-	</DockPanel>
-
-
-
-
+                    </DockPanel>
+                </Each>
+            </Grid>
+        </ScrollView>
+    </DockPanel>
 </Page>
