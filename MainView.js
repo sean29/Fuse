@@ -51,3 +51,26 @@ var displayImage = function(image)
     }
   );
 }
+
+var Environment = require('FuseJS/Environment');
+
+if(Environment.ios){
+
+    api_url = "https://emrals.herokuapp.com/api/"
+}        
+
+if(Environment.android){
+
+    api_url = "https://emrals.herokuapp.com/api/"
+}
+
+// if(Environment.preview)    console.log("Running in preview mode");
+// if(Environment.mobile)     console.log("Running on iOS or Android");
+
+if(Environment.desktop)if(Environment.android){
+
+    api_url = "https://emrals-staging.herokuapp.com/api/"
+}
+
+
+
