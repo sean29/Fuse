@@ -9,6 +9,7 @@ var exports = module.exports;
 var imagePath = exports.imagePath = Observable();
 var imageName = exports.imageName = Observable();
 var imageSize = exports.imageSize = Observable();
+var Subscripition = exports.Subscripition = Observable();
 
 exports.takePicture = function()
 {

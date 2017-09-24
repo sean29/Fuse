@@ -1,17 +1,28 @@
 var Observable = require("FuseJS/Observable");
 var RMStore = require("RMStore");
 
+
 function back() {
   router.goBack();
 }
 
-function goToPayment() {
-  router.goto("payment");
+function goToPayment10() {
+  router.push("payment", { subscripition: "10" });
+}
+
+function goToPayment25() {
+  router.push("payment", { subscripition: "25" });
+}
+
+function goToPayment50() {
+  router.push("payment", { subscripition: "50" });
 }
 
 module.exports = {
   back: back,
-  goToPayment: goToPayment
+  goToPayment10: goToPayment10,
+  goToPayment25: goToPayment25,
+  goToPayment50: goToPayment50, 
 };
 
 module.exports.requestProducts = function() {
