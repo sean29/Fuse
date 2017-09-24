@@ -6,10 +6,7 @@ function back() {
   router.goBack();
 }
 
-<<<<<<< HEAD
-function goToPayment() {
-  router.push("payment");
-=======
+
 function goToPayment10() {
   router.push("payment", { subscripition: "10" });
 }
@@ -20,7 +17,6 @@ function goToPayment25() {
 
 function goToPayment50() {
   router.push("payment", { subscripition: "50" });
->>>>>>> origin/master
 }
 
 module.exports = {

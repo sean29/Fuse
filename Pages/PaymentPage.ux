@@ -1,103 +1,50 @@
 <Page ux:Class="PaymentPage">
     <JavaScript File="PaymentPage.js" />
     <Router ux:Dependency="router" />
-        <DockPanel>
-        <Panel Background="#FFF" Dock="Top">
-            <Panel Margin="10,0, 0, 0" Clicked="{back}" Dock="Top">
-                <Text Value="<<" Color="#636364" FontSize="30" Alignment="Left" />
-            </Panel>
-            <Image File="Assets/emralsAllgreen2017logo.png" MaxWidth="120" />
-            <Header Alignment="Center" Margin="0,60,0,0">FUND IMPACT {subscription}</Header>
-        </Panel>
-    </DockPanel>
     <DockPanel>
-<<<<<<< HEAD
         <JavaScript File="PaymentPage.js"/>
-         <Font File="PTserif.ttc" ux:Global="Cat" />
-         <Font File="PTS55F.ttf" ux:Global="Dog" />
-         <Font File="PTS75F.ttf" ux:Global="Horse" />
-         <Font File="PTF75F.ttf" ux:Global="Mouse" />
-
-    <Text ux:Class="Cat" 
-        Font="Cat" 
-        FontSize="20"
-        Color="#636364"/>
-     <Text ux:Class="Dog" 
-        Font="Dog" 
-        FontSize="20"
-        Color="#636364"/>
-    <Text ux:Class="Horse" 
-        Font="Horse" 
-        FontSize="20"
-        Color="#FFF"/>
-        <Text ux:Class="Mouse" 
-        Font="Mouse" 
-        FontSize="18"
-        Color="#FFF"/>
-
-
-    <DockPanel>
-        <Panel Background="#FFF" Dock="Top">
-            <Panel HitTestMode="LocalBounds" Margin="10,0, 0, 0" Clicked="{back}" Dock="Top">
-                <Dog Value="<<" Color="#636364" FontSize="30" Alignment="Left" />
+        <Font File="PTserif.ttc" ux:Global="Cat" />
+        <Font File="PTS55F.ttf" ux:Global="Dog" />
+        <Font File="PTS75F.ttf" ux:Global="Horse" />
+        <Font File="PTF75F.ttf" ux:Global="Mouse" />
+        <Text ux:Class="Cat" Font="Cat"  FontSize="20" Color="#636364"/>
+        <Text ux:Class="Dog" Font="Dog" FontSize="20" Color="#636364"/>
+        <Text ux:Class="Horse" Font="Horse" FontSize="20" Color="#FFF"/>
+        <Text ux:Class="Mouse" Font="Mouse" FontSize="18" Color="#FFF"/>
+        <DockPanel>
+            <Panel Background="#FFF" Dock="Top">
+                <Panel Margin="10,0, 0, 0" Clicked="{back}" Dock="Top">
+                    <Text Value="<<" Color="#636364" FontSize="30" Alignment="Left" />
+                </Panel>
+                <Image File="Assets/emralsAllgreen2017logo.png" MaxWidth="120" />
+                <Header Alignment="Center" Margin="0,60,0,0">FUND IMPACT {subscription}</Header>
             </Panel>
-            <Image File="Assets/emralsAllgreen2017logo.png" MaxWidth="120" />
-            <Cat Alignment="Center" Margin="0,60,0,0">SUBSCRIPTION</Cat>
-        </Panel>
-    </DockPanel>
-        
+        </DockPanel>
         <Panel>
             <StackPanel>
-            <Rectangle Layer="Background" Color="#8AB847" Height="500"/>
-            <Mouse Value="Selected Impact Zone" Color="#FFF" Margin="40,100,0,0"/>
-            <Rectangle Color="#FFF" Height="38" Width="300" Alignment="Left" Margin="40,5" />
-            <Mouse Value="Monthly Impact" Color="#FFF" Margin="40,20,0,0"/>
-            <Rectangle Color="#FFF" Height="38" Width="300" Alignment="Left" Margin="40,5" />
-            <Mouse Value="Payment Info" Alignment="Left" Margin="40,40,0,0" TextColor="#FFF"/>
-                        
-
-            <Rectangle Color="#FFF" Height="38" Width="300" Alignment="Left" Margin="40,5,0,0" />
-        
-
-
-
-            <Rectangle Color="#FFF" Height="38" Width="300" Margin="0,20,0,0"> <Basic.TextInput Width="290" Value="{cardNumber}" Alignment="Left" Margin="5,5,0,0" PlaceholderText="card number" PlaceholderColor="#FFF" />
-        </Rectangle>
-            <StackPanel Orientation="Horizontal">
-                <Rectangle Color="#FFF" Height="38" Width="120" Alignment="Left" Margin="40,15,0,0">
-                <Basic.TextInput Width="20" Value="{expiryMonth}" Alignment="Left" Margin="33, 5,0,0" PlaceholderText="Month (MM)" PlaceholderColor="#95989A" />
-                <Basic.TextInput Width="20" Value="{expiryYear}" Alignment="Left" Margin="70,5,0,0" PlaceholderText="Year (YY)" PlaceholderColor="#95989A" />
+                <Rectangle Layer="Background" Color="#8AB847" Height="500"/>
+                <Mouse Value="Selected Impact Zone" Color="#FFF" Margin="40,100,0,0"/>
+                <Rectangle Color="#FFF" Height="38" Width="300" Alignment="Left" Margin="40,5" />
+                <Mouse Value="Monthly Impact" Color="#FFF" Margin="40,20,0,0"/>
+                <Rectangle Color="#FFF" Height="38" Width="300" Alignment="Left" Margin="40,5" />
+                <Mouse Value="Payment Info" Alignment="Left" Margin="40,40,0,0" TextColor="#FFF"/>
+                <Rectangle Color="#FFF" Height="38" Width="300" Alignment="Left" Margin="40,5,0,0" />
+                <Rectangle Color="#FFF" Height="38" Width="300" Margin="0,20,0,0">
+                    <Basic.TextInput Width="290" Value="{cardNumber}" Alignment="Left" Margin="5,5,0,0" PlaceholderText="card number" PlaceholderColor="#FFF" />
                 </Rectangle>
-
-                <Rectangle Color="#FFF" Height="38" Width="120" Margin="60,15,0,0">
-                <Basic.TextInput Width="40" Value="{cvc}" Margin="10,5,0,0" PlaceholderText="CVC" PlaceholderColor="#95989A" />
-            </Rectangle>
-              </StackPanel>
-            <Basic.Button Text="Validate Card Details Locally" Clicked="{validateCardParams}" />
-            <Basic.Button Text="Create Token" Clicked="{testPay}" />
-=======
-        <StackPanel Dock="Top" Background="#2586EC">
-            <StatusBarBackground/>
-            <Fuse.iOS.StatusBarConfig Style="Light"/>
-        </StackPanel>
-        <BottomBarBackground Dock="Bottom" />
-        <StackPanel Width="90%" Height="70%" Padding="20">
-            <Rectangle Layer="Background" CornerRadius="10" Color="#fff"/>
-           <Basic.TextInput Width="100%" Value="{cardNumber}" Alignment="Center" PlaceholderText="Email Address" PlaceholderColor="#bbb" />
-            <StackPanel Orientation="Horizontal">
-                <Basic.TextInput Width="100%" Value="{expiryMonth}" Alignment="Center" PlaceholderText="Email Month (MM)" PlaceholderColor="#bbb" />
-                <Basic.TextInput Width="100%" Value="{expiryYear}" Alignment="Center" PlaceholderText="Expiry Year (YY)" PlaceholderColor="#bbb" />
+                <StackPanel Orientation="Horizontal">
+                    <Rectangle Color="#FFF" Height="38" Width="120" Alignment="Left" Margin="40,15,0,0">
+                        <Basic.TextInput Width="20" Value="{expiryMonth}" Alignment="Left" Margin="33, 5,0,0" PlaceholderText="Month (MM)" PlaceholderColor="#95989A" />
+                        <Basic.TextInput Width="20" Value="{expiryYear}" Alignment="Left" Margin="70,5,0,0" PlaceholderText="Year (YY)" PlaceholderColor="#95989A" />
+                    </Rectangle>
+                    <Rectangle Color="#FFF" Height="38" Width="120" Margin="60,15,0,0">
+                        <Basic.TextInput Width="40" Value="{cvc}" Margin="10,5,0,0" PlaceholderText="CVC" PlaceholderColor="#95989A" />
+                    </Rectangle>
+                </StackPanel>
             </StackPanel>
-            <Basic.TextInput Width="100%" Value="{cvc}" Alignment="Center" PlaceholderText="CVC" PlaceholderColor="#bbb" />
-
-            <Basic.Button Text="Fund Impact Zone" Clicked="{testPay}" />
->>>>>>> origin/master
-            <TextView Value="{info}" Height="200" TextWrapping="Wrap"/>
-        </StackPanel>
-
-        </Panel>
-        <Rectangle Height="44" Width="300" Color="#F05959" CornerRadius="10" Dock="Bottom" Margin="0,0,0,30">
-            <Horse Alignment="Center">CONFIRM</Horse>
-        </Rectangle>
-    </DockPanel>
-</Page>
+            </Panel>
+            <Rectangle Height="44" Width="300" Color="#F05959" CornerRadius="10" Dock="Bottom" Margin="0,0,0,30" Clicked="{testPay}">
+                <Horse Alignment="Center">CONFIRM</Horse>
+            </Rectangle>
+        </DockPanel>
+    </Page>
