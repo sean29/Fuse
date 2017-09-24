@@ -1,7 +1,12 @@
 var Observable = require("FuseJS/Observable");
 
+
 function back() {
   router.goBack();
+}
+
+function goToBuyEcan() {
+	router.push('buyecan');
 }
 
 
@@ -16,6 +21,7 @@ fetch(url)
 
 module.exports = {
 	data: data,
-	back: back
+	back: back,
+	goToBuyEcan: goToBuyEcan
 };
 

@@ -2,7 +2,6 @@
     <JavaScript File="PaymentPage.js" />
     <Router ux:Dependency="router" />
     <DockPanel>
-        <JavaScript File="PaymentPage.js"/>
         <StackPanel Dock="Top" Background="#2586EC">
             <StatusBarBackground/>
             <Fuse.iOS.StatusBarConfig Style="Light"/>

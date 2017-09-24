@@ -1,10 +1,6 @@
 <Page ux:Class="AlertsPage">
     <Router ux:Dependency="router" />
-
-<iOS.StatusBarConfig Style="Light" />
-
-
-
+    <iOS.StatusBarConfig Style="Light" />
     <Panel ux:Class="MyLoadingIndicator" ThemeColor="#8AB847">
         <float4 ux:Property="ThemeColor" />
         <Circle ux:Name="rotatingStroke" Width="50" Height="50" StartAngleDegrees="-45" EndAngleDegrees="45">
@@ -21,15 +17,11 @@
             <Spin Target="rotatingStroke" Frequency="1" />
         </WhileFalse>
     </Panel>
-
-
-        <Busy ux:Name="isBusy" IsActive="false" />
-        <WhileBusy>
-            <Change loadingPanel.Opacity="1" Duration=".4" />
-        </WhileBusy>
-        <MyLoadingIndicator ux:Name="loadingPanel" Opacity="0" ThemeColor="#8AB847" />
-
-
+    <Busy ux:Name="isBusy" IsActive="false" />
+    <WhileBusy>
+        <Change loadingPanel.Opacity="1" Duration=".4" />
+    </WhileBusy>
+    <MyLoadingIndicator ux:Name="loadingPanel" Opacity="0" ThemeColor="#8AB847" />
     <Font File="PTserif.ttc" ux:Global="Header" />
     <Font File="PTsans.ttc" ux:Global="Type" />
     <Text ux:Class="Header" 
@@ -61,30 +53,26 @@
     <DockPanel>
         <StatusBarBackground Dock="Top" />
         <BottomBarBackground Dock="Bottom" />
-        <CogWheelReload Dock="Top" />
+
         <ScrollView Background="#F4F4F4" SnapMinTransform="false">
-
-                <DockPanel>
-                    <CogWheelReload Dock="Top" />
-
-
-            <Grid ColumnCount="2" Y="80">
-
-                <Each Items="{data}">
-                    <DockPanel Height="147" Margin="20" Clicked="{goToAlert}">
-                        <Panel DockPanel.Dock="Top" Margin="10, 5" Height="20">
-                            <Rectangle Layer="Background" CornerRadius="5" Color="#fff" Opacity="0.80"/>
-                            <Text Value="{title}" TextAlignment="Center" FontSize="12" Alignment="Center" />
-                        </Panel>
-                        <Rectangle Layer="Background" CornerRadius="10" Color="#8AB847">
-                            <ImageFill Url="{thumbnail}" />
-                        </Rectangle>
-                        <Image File="Assets/greene.png" Alignment="Bottom" Height="22" Margin="-30, 0, 0, -24"/>
-                        <Header FontSize="18" TextColor="#636364" Alignment="Bottom" Margin="74, 0, 0, -24">{emrals}</Header>
-                    </DockPanel>
-                </Each>
-            </Grid>
-        </DockPanel>
+            <DockPanel>
+                <CogWheelReload Dock="Top" Y="60" />
+                <Grid ColumnCount="2" Y="70">
+                    <Each Items="{data}">
+                        <DockPanel Height="147" Margin="20" Clicked="{goToAlert}">
+                            <Panel DockPanel.Dock="Top" Margin="10, 5" Height="20">
+                                <Rectangle Layer="Background" CornerRadius="5" Color="#fff" Opacity="0.80"/>
+                                <Text Value="{title}" TextAlignment="Center" FontSize="12" Alignment="Center" />
+                            </Panel>
+                            <Rectangle Layer="Background" CornerRadius="10" Color="#8AB847">
+                                <ImageFill Url="{thumbnail}" />
+                            </Rectangle>
+                            <Image File="Assets/greene.png" Alignment="Bottom" Height="22" Margin="-30, 0, 0, -24"/>
+                            <Header FontSize="18" TextColor="#636364" Alignment="Bottom" Margin="74, 0, 0, -24">{emrals}</Header>
+                        </DockPanel>
+                    </Each>
+                </Grid>
+            </DockPanel>
         </ScrollView>
     </DockPanel>
 </Page>

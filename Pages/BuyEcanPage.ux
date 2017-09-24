@@ -1,0 +1,30 @@
+<Page ux:Class="BuyEcanPage">
+    <Router ux:Dependency="router" />
+    <JavaScript File="BuyEcanPage.js"/>
+    <DockPanel>
+            <WhileKeyboardVisible>
+            <Move Target="CCArea" Y="120" Duration=".6" Easing="ExponentialInOut"/>
+
+        </WhileKeyboardVisible>
+
+        <StackPanel Dock="Top" Background="#2586EC">
+            <StatusBarBackground/>
+            <Fuse.iOS.StatusBarConfig Style="Light"/>
+        </StackPanel>
+        <BottomBarBackground Dock="Bottom" />
+        <StackPanel ux:Name="CCArea" Width="90%" Height="90%" Padding="20">
+            <Rectangle Layer="Background" CornerRadius="10" Color="#fff"/>
+            <Text Value="Buy Ecan" Alignment="Center" FontSize="35" TextColor="#2586EC"/>
+            <Basic.TextInput Width="100%" Value="{cardNumber}" Alignment="Center" PlaceholderText="Card Number" PlaceholderColor="#bbb" />
+            <StackPanel Orientation="Horizontal">
+                <Basic.TextInput Width="100%" Value="{expiryMonth}" Alignment="Center" PlaceholderText="Expiry Month (MM)" PlaceholderColor="#bbb" />
+                <Basic.TextInput Width="100%" Value="{expiryYear}" Alignment="Center" PlaceholderText="Expiry Year (YY)" PlaceholderColor="#bbb" />
+            </StackPanel>
+            <Basic.TextInput Width="100%" Value="{cvc}" Alignment="Center" PlaceholderText="CVC" PlaceholderColor="#bbb" />
+            <!-- <Basic.Button Text="Validate Card Details Locally" Clicked="{validateCardParams}" /> -->
+            <Basic.Button Text="Create Token" Clicked="{testPay}" />
+            <TextView Value="{info}" Height="200" Width="200" TextWrapping="Wrap" Visibility="Hidden"/>
+            <TextView Value="{message}" Height="200" Width="200" TextWrapping="Wrap"/>
+        </StackPanel>
+    </DockPanel>
+</Page>
