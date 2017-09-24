@@ -107,6 +107,10 @@ var validateCardParams = function() {
 
 };
 
+function back() {
+  router.goBack();
+}
+
 module.exports = {
 	validateCardParams: validateCardParams,
 	testPay: testPay,
@@ -114,5 +118,6 @@ module.exports = {
 	cardNumber: cardNumber,
 	expiryMonth: expiryMonth,
 	expiryYear: expiryYear,
-	cvc: cvc
+	cvc: cvc,
+	back: back
 };
