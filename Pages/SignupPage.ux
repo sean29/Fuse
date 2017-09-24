@@ -6,9 +6,10 @@
         <Text Value="<<" Color="#636364" FontSize="30" Alignment="Left" />
     </Panel>
                 <WhileKeyboardVisible>
-            <Move Target="loginArea2" Y="-10" Duration=".6" Easing="ExponentialInOut"/>
             <Move Target="LogoFile2"  Y="-100" Duration=".6" Easing="ExponentialInOut"/>
             <Scale Target="LogoFile2"  Factor=".6"  Duration=".6"/>
+            <Move Target="loginArea2" Y="-10" Duration=".6" Easing="ExponentialInOut"/>
+
         </WhileKeyboardVisible>
         <Image ux:Name="LogoFile2"  File="Assets/emralsv2logo.png" Dock="Top" MaxHeight="110" Margin="0,50,0,0"/>
     </DockPanel>
