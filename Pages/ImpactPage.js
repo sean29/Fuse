@@ -6,7 +6,7 @@ function back() {
 }
 
 function goToPayment() {
-  router.goto("payment");
+  router.push("payment");
 }
 
 module.exports = {
