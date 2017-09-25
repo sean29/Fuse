@@ -11,7 +11,7 @@ function back() {
   router.goto("alerts");
 }
 
-}
+
 
 module.exports = {
   back: back
@@ -23,7 +23,7 @@ module.exports = {
 // var imageSize = exports.imageSize = Observable();
 
 // //  This is used to keep the last image displayed as a base64 string in memory
-// var lastImage = "";
+var lastImage = "";
 // //  When we receive an image object we want to display, we call this
 // var displayImage = function(image)
 // {
