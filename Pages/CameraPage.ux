@@ -65,7 +65,7 @@
 					</Grid>
 				</StackPanel>
 			</Rectangle>
-			<Rectangle Width="300" Height="43" CornerRadius="5" Color="#8AB847" Alignment="Bottom" Margin="0,0,0, 20">
+			<Rectangle Width="300" Height="43" CornerRadius="5" Color="#8AB847" Alignment="Bottom" Margin="0,0,0, 20" Clicked="{uploadAlert}">
 				<Text Color="#FFF" FontSize="24" Alignment="Center">POST DIRT ALERT</Text>
 			</Rectangle>
 		</StackPanel>

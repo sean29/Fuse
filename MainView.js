@@ -67,6 +67,47 @@ exports.selectImage = function()
   );
 };
 
+function formEncode(obj) {
+    var str = [];
+    for (var p in obj)
+        str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
+    return str.join("&");
+}
+
+exports.uploadAlert =  function uploadAlert(e) {
+        var requestObject = { 
+          username: "https://emrals-staging.herokuapp.com/api/users/271/", 
+          type: "https://emrals-staging.herokuapp.com/api/types/1/",
+          image: imagePath,
+          title: "test upload", 
+          slug: "trash-upload"};
+         // get gps
+
+        //url = 'http://127.0.0.1:8000/api/login/';
+        url = 'https://emrals-staging.herokuapp.com/api/alerts/';
+        fetch(url, {
+            method: 'POST',
+            headers: { "Content-type": "application/x-www-form-urlencoded" },
+            body: formEncode(requestObject)
+        }).then(function(response) {
+            status = response.status;
+            response_ok = response.ok;
+            return response.json();
+        }).then(function(responseObject) {
+
+          console.log(JSON.stringify(responseObject));
+
+
+
+        }).catch(function(err) {
+
+            console.log("Fetch error: " + err);
+        });
+
+    };
+
+
+
 var Environment = require('FuseJS/Environment');
 
 if(Environment.ios){
