@@ -22,28 +22,39 @@
 					<Grid RowCount="0" Margin="10" ColumnCount="6">
 						<PTBold Column="0" Margin="5,15,0,0" >tag</PTBold>
 						<Text Alignment="Bottom" FontSize="12" Margin="-5,0,0,-20">trash</Text>
-						<Rectangle Column="1" Margin="2,0,40,0" Color="#FFF" CornerRadius="10" Height="55" Width="55">
-							<Stroke Width="2">
-                			<SolidColor Color="#F05959" />
-            				</Stroke>
+						<Rectangle ux:Class="SelectableRectangle" Width="35" Height="35" CornerRadius="2" >
+							<Stroke ux:Name="rectStroke" Width="2" Alignment="Center">
+								<SolidColor ux:Name="rectStrokeColor" Color="#fff"/>
+							</Stroke>
+							<string ux:Property="ID" />
+							<Selectable Value="{ReadProperty ID}"/>
+							<WhileSelected>
+								<Change DurationBack="0" rectStrokeColor.Color="#F05959" Duration="0.3" />
+							</WhileSelected>
+							<Clicked>
+								<ToggleSelection />
+							</Clicked>
+						</Rectangle>
+						<Selection MaxCount="1" MinCount="1"/>
+						<SelectableRectangle ID="1" Column="1" Margin="2,0,40,0" Color="#FFF" CornerRadius="10" Height="55" Width="55">
 							<Image File="Assets/trashbin.jpg" MaxHeight="46" />
-						</Rectangle>
+						</SelectableRectangle>
 						<Text Alignment="Bottom" FontSize="12" Margin="0,0,0,-20">poop</Text>
-						<Rectangle Color="#FFF" Column="2" Margin="0,0,30,0" CornerRadius="10" Height="55" Width="55">
+						<SelectableRectangle ID="2" Color="#FFF" Column="2" Margin="0,0,30,0" CornerRadius="10" Height="55" Width="55">
 							<Image File="Assets/poopbag.jpg" MaxHeight="49"/>
-						</Rectangle>
+						</SelectableRectangle>
 						<Text Alignment="Bottom" FontSize="12" Margin="5,0,0,-20">bike</Text>
-						<Rectangle Column="3" Margin="0,0,20,0" Color="#FFF" CornerRadius="10" Height="55" Width="55">
+						<SelectableRectangle ID="3" Column="3" Margin="0,0,20,0" Color="#FFF" CornerRadius="10" Height="55" Width="55">
 							<Image File="Assets/bike.png" MaxWidth="49" />
-						</Rectangle>
+						</SelectableRectangle>
 						<Text Alignment="Bottom" FontSize="12" Margin="10,0,0,-20">drain</Text>
-						<Rectangle Column="4" Margin="0,0,10,0" Color="#FFF" CornerRadius="10" Height="55" Width="55">
+						<SelectableRectangle ID="4" Column="4" Margin="0,0,10,0" Color="#FFF" CornerRadius="10" Height="55" Width="55">
 							<Image File="Assets/drain.jpg" MaxWidth="49" />
-						</Rectangle>
+						</SelectableRectangle>
 						<Text Alignment="Bottom" FontSize="12" Margin="18,0,0,-20">tree</Text>
-						<Rectangle Column="5" Color="#FFF" CornerRadius="10" Height="55" Width="55">
+						<SelectableRectangle ID="5" Column="5" Color="#FFF" CornerRadius="10" Height="55" Width="55">
 							<Image File="Assets/tree.jpg" MaxHeight="49"/>
-						</Rectangle>
+						</SelectableRectangle>
 					</Grid>
 					<Grid Columns="100, 100, 24" Width="355">
 						<PTBold Column="0" Color="#393939" Margin="10,20,0,0">emrals</PTBold>
