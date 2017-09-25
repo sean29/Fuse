@@ -36,7 +36,7 @@
                 <Text Value="<<" Color="#636364" FontSize="30" Alignment="Left" />
             </Panel>
             <Image File="Assets/emralsAllgreen2017logo.png" MaxWidth="120" />
-            <Header Alignment="Center" Margin="0,60,0,0">DIRT ALERTS</Header>
+            <Header Alignment="Center" Margin="0,54,0,0">DIRT ALERTS</Header>
         </Panel>
     </DockPanel>
     <JavaScript File="AlertsPage.js" />
