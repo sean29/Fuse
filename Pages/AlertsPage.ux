@@ -23,15 +23,13 @@
     </WhileBusy>
     <MyLoadingIndicator ux:Name="loadingPanel" Opacity="0" ThemeColor="#8AB847" />
     <Font File="PTserif.ttc" ux:Global="Header" />
-    <Font File="PTsans.ttc" ux:Global="Type" />
+
     <Text ux:Class="Header" 
         Font="Header" 
         FontSize="20"
         Color="#636364"/>
-    <Text ux:Class="Type" 
-        Font="Type" 
-        FontSize="18"
-        Color="#636364" />
+    
+
     <DockPanel>
         <Panel Background="#FFF" Dock="Top">
             <Panel Margin="10,0, 0, 0" Clicked="{back}" Dock="Top">
@@ -43,11 +41,13 @@
     </DockPanel>
     <JavaScript File="AlertsPage.js" />
     <DockPanel>
-        <Circle Color="#FFF" ZOffset="5.0" Width="20%" Height="20%" Dock="Bottom" Clicked="{takePicture}">
-            <Stroke Width=".25">
-                <SolidColor Color="#FDFDFD" />
+        <Circle Color="#FFF" ZOffset="5.0" Width="21%" Height="21%" Dock="Bottom" Clicked="{takePicture}">
+            <Stroke Width="2">
+                <SolidColor Color="#F05959" />
             </Stroke>
-            <Image File= "Assets/cameratag.png" MaxHeight="62" Margin="0,1,0,0"/>
+                        <Horse Color="#F05959" FontSize="14" Margin="24,88,0,0">POST</Horse>
+
+            <Image File= "Assets/cameratag.png" MaxHeight="53" Margin="0,0,0,12"/>
         </Circle>
     </DockPanel>
     <DockPanel>
