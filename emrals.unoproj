@@ -26,6 +26,9 @@
     "BundleIdentifier": "com.apps.emrals",
     "Icons": {
       "iPhone_29_2x": "$(Icon)",
+      
+      "iPhone_29_2x": "$(Icon)",
+      "App-Store-Icon_200x200": "$(Icon)",
       "iPhone_29_3x": "$(Icon)",
       "iPhone_40_2x": "$(Icon)",
       "iPhone_40_3x": "$(Icon)",
