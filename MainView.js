@@ -8,6 +8,7 @@ var exports = module.exports;
 var imagePath = exports.imagePath = Observable();
 var imageName = exports.imageName = Observable();
 var imageSize = exports.imageSize = Observable();
+var imageFile = exports.imageFile = Observable();
 
 
 exports.takePicture = function()
@@ -48,6 +49,7 @@ var displayImage = function(image)
     function(b64)
     {
       lastImage = b64;
+      imageFile.value = b64
     }
   );
 }
@@ -75,12 +77,17 @@ function formEncode(obj) {
 }
 
 exports.uploadAlert =  function uploadAlert(e) {
+
+        //var imageData = Uno.IO.File.ReadAllBytes(imagePath);
+        console.log(imageFile)
+
         var requestObject = { 
-          username: "https://emrals-staging.herokuapp.com/api/users/271/", 
+          creator: "https://emrals-staging.herokuapp.com/api/users/271/", 
           type: "https://emrals-staging.herokuapp.com/api/types/1/",
-          image: imagePath,
+          image: ImageTools.getImageFromBase64(lastImage),
           title: "test upload", 
-          slug: "trash-upload"};
+          slug: "trash-upload",
+          views: "1" };
          // get gps
 
         //url = 'http://127.0.0.1:8000/api/login/';
