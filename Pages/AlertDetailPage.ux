@@ -2,47 +2,45 @@
 	<Router ux:Dependency="router" />
 	<JavaScript File="AlertDetailPage.js" />
 	<Font File="PTserif.ttc" ux:Global="Head" />
-	<Font File="PTsans.ttc" ux:Global="Body" />
 	<Text ux:Class="Head" Font="Head" FontSize="20" Color="#636364" />
-	<Text ux:Class="Body" Font="Body" FontSize="18" Color="#636364" />
-	<DockPanel></DockPanel>
-	<DockPanel>
-		<Panel Background="#FFF" Dock="Top">
-			<Panel Margin="10,0, 120, 10" Clicked="{back}" Dock="Top">
-				<Text Value="<<" Color="#636364" FontSize="30" Alignment="Left" />
+	
+		<StackPanel Background="#FFF" Y="0">
+			<Text Value="<<" Color="#636364" FontSize="24" Alignment="Left" Margin="10,0,0,0" Clicked="{back}"/>
+			<Image File="Assets/emralsAllgreen2017logo.png" Width="120" Margin="0,-20,0,0" />
+			<Head Alignment="Center" >DIRT ALERT {id}</Head>
+		</StackPanel>
+		<StackPanel>
+			<Panel>
+				<Rectangle CornerRadius="5" Height="42" Width="330" Margin="0,0,0,180" Color="#fff" Opacity="0.80">
+			<Text Alignment="Center" >{title}</Text>
+				</Rectangle>
+			<Rectangle MaxHeight="400">
+			<Image Url="{thumbnail}" />
+				</Rectangle>
 			</Panel>
-			<Image File="Assets/emralsAllgreen2017logo.png" MaxWidth="120" />
-			<Head Alignment="Center" Margin="0,54,0,0">DIRT ALERT {id}</Head>
-		</Panel>
-		<Grid ColumnCount="2" RowCount="3" Height="100" Width="210" Columns="1*,2*" Alignment="Bottom" Margin="0,0,140,68" >
-			<Text Row="0" Column="0" >views</Text>
-			<Text Row="0" Column="1" FontSize="18">{views}</Text>
-			<Text Row="1" Column="0" >poster</Text>
-			<Text Row="1" Column="1" >{poster_username}</Text>
-			<Text Row="2" Column="0" >time</Text>
-			<Text Row="2" Column="1" FontSize="12">{created_naturaltime}</Text>
+			<Rectangle Height="30" Color="#FFF">
+				<Head Value="{emrals}" FontSize="28" Alignment="Center" Margin="30,-2,0,0" />
+				<Image File="Assets/greene.png" Height="27" Margin="0,5,30,0" />
+			</Rectangle>
+				</StackPanel>
+				
+		<Panel>
+			
+		<Grid ColumnCount="2" RowCount="3" Height="145" Width="230" Columns="1*,2*" Alignment="Bottom" Background="#F5F5F5" Margin="0,0,146,100" >
+			<Mouse Row="0" Column="0" Color="#636364" FontSize="16" Margin="10,10,0,0">views</Mouse>
+			<Dog Row="0" Column="1" Color="#636364" FontSize="14" Margin="0,12,0,0">{views}</Dog>
+			<Mouse Row="1" Column="0" Color="#636364" FontSize="16" Margin="10,10,0,0">poster</Mouse>
+			<Dog Row="1" Column="1" Margin="0,12,0,0" FontSize="14">{poster_username}</Dog>
+			<Mouse Row="2" Column="0" Color="#636364" FontSize="16" Margin="10,10,0,0">time</Mouse>
+			<Dog Row="2" Column="1" Margin="0,12,0,0" FontSize="14" >{created_naturaltime}</Dog>
 		</Grid>
-		<Image Url="{google_url}" Alignment="BottomRight" Margin="0,0,0,65"/>
-		<Rectangle Width="300" Height="43" CornerRadius="5" Color="#8AB847" Alignment="Bottom" Margin="0,0,0, 20">
+
+
+		<Image Url="{google_url}" Alignment="BottomRight" Margin="0,0,0,100"/>
+
+		<Rectangle Width="300" Height="43" CornerRadius="5" Color="#8AB847" Alignment="Bottom" Margin="0,0,0, 30">
 			<Text Color="#FFF" FontSize="24" Alignment="Center">POST CLEAN PIC</Text>
-		</Rectangle>
-	</DockPanel>
-	<ClientPanel>
-		<ScrollView Y="80">
-			<Panel Padding="0">
-				<StackPanel>
-					<Rectangle CornerRadius="5" Height="42" Width="330" Margin="0,5" Color="#fff" Opacity="0.80">
-						<Text Alignment="Center" >{title}</Text>
-					</Rectangle>
-				</StackPanel>
-				<StackPanel>
-					<Rectangle MaxHeight="375">
-						<Image Url="{thumbnail}" />
-					</Rectangle>
-					<Image File="Assets/greene.png" Height="30" Margin="0, 8, 200, 0" Alignment="Bottom"/>
-				</StackPanel>
-				<Head Value="{emrals}" FontSize="30" Margin="20, 0, 0, -5" Alignment="Bottom"  />
-			</Panel>
-		</ScrollView>
-	</ClientPanel>
+			</Rectangle>
+	</Panel>
+			
 </Page>
