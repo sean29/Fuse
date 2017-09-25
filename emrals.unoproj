@@ -20,6 +20,7 @@
     "PublishableKey": "pk_test"
   },
   "Version": "0.0.0",
+  "DevelopmentTeam": "HRA3AUNUHS",
   "VersionCode": "2",
   "Icon": "Assets/icon.png",
   "iOS": {

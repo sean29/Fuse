@@ -23,7 +23,10 @@
 						<PTBold Column="0" Margin="5,15,0,0" >tag</PTBold>
 						<Text Alignment="Bottom" FontSize="12" Margin="-5,0,0,-20">trash</Text>
 						<Rectangle Column="1" Margin="2,0,40,0" Color="#FFF" CornerRadius="10" Height="55" Width="55">
-							<Image File="Assets/trashbin.jpg" MaxHeight="48" />
+							<Stroke Width="2">
+                			<SolidColor Color="#F05959" />
+            				</Stroke>
+							<Image File="Assets/trashbin.jpg" MaxHeight="46" />
 						</Rectangle>
 						<Text Alignment="Bottom" FontSize="12" Margin="0,0,0,-20">poop</Text>
 						<Rectangle Color="#FFF" Column="2" Margin="0,0,30,0" CornerRadius="10" Height="55" Width="55">
