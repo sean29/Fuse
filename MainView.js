@@ -21,7 +21,7 @@ exports.takePicture = function()
 
           CameraRoll.publishImage(image);
           router.goto("camera"); 
-          //displayImage(image);
+          displayImage(image);
         }
       ).catch(
         function(reason) {
