@@ -11,7 +11,8 @@
     "Fuse.CameraRoll",
     "Fuse.ImageTools",
     "Fuse.Scripting",
-    "Fuse.BasicTheme"
+    "Fuse.BasicTheme",
+    "Fuse.GeoLocation",
   ],
   "Includes": [
     "*"

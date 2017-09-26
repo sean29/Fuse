@@ -17,7 +17,7 @@ function goToAlert(arg) {
 
 var data = Observable();
 //var url = 'http://www.emrals.com/api/alerts/?format=json';
-var url = 'http://emrals-staging.herokuapp.com/api/alerts/?format=json';
+var url = 'https://emrals-staging.herokuapp.com/api/alerts/?format=json';
 //var url = 'http://127.0.0.1:8000/api/alerts/?format=json';
 
 fetch(url)
