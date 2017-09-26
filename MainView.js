@@ -2,6 +2,7 @@ var Observable = require("FuseJS/Observable");
 var Camera = require("FuseJS/Camera");
 var CameraRoll = require("FuseJS/CameraRoll");
 var ImageTools = require("FuseJS/ImageTools");
+var Uploader = require("Uploader");
 
 var exports = module.exports;
 
@@ -9,7 +10,7 @@ var imagePath = exports.imagePath = Observable();
 var imageName = exports.imageName = Observable();
 var imageSize = exports.imageSize = Observable();
 var imageFile = exports.imageFile = Observable();
-
+var tempImage = "";
 
 exports.takePicture = function()
 {
@@ -19,9 +20,10 @@ exports.takePicture = function()
       ImageTools.resize(image, args).then(
         function(image) {
           console.log('takePicture')
-
-          CameraRoll.publishImage(image);
           router.goto("camera"); 
+          CameraRoll.publishImage(image);
+          imageFile.value = image;
+          tempImage = image;
           displayImage(image);
         }
       ).catch(
@@ -78,38 +80,48 @@ function formEncode(obj) {
 
 exports.uploadAlert =  function uploadAlert(e) {
 
-        //var imageData = Uno.IO.File.ReadAllBytes(imagePath);
-        console.log(imageFile)
 
-        var requestObject = { 
-          creator: "https://emrals-staging.herokuapp.com/api/users/271/", 
-          type: "https://emrals-staging.herokuapp.com/api/types/1/",
-          image: ImageTools.getImageFromBase64(lastImage),
-          title: "test upload", 
-          slug: "trash-upload",
-          views: "1" };
-         // get gps
+        return Uploader.send(tempImage.path, 'https://emrals-staging.herokuapp.com/upload_image/').then(function(response) {
+            console.log("upload complete.");
+            console.log(JSON.stringify(response));
+
+        });
+
+        console.log("uploaded");
+        console.log(JSON.stringify(testing));
+        //console.log(tempImage);
+
+
+        // var requestObject = { 
+        //   creator: "https://emrals-staging.herokuapp.com/api/users/271/", 
+        //   type: "https://emrals-staging.herokuapp.com/api/types/1/",
+        //   image: tempImage.path,
+        //   title: "test upload", 
+        //   slug: "trash-upload",
+        //   views: "1" };
+        //  // get gps
+        //  console.log(JSON.stringify(requestObject))
 
         //url = 'http://127.0.0.1:8000/api/login/';
-        url = 'https://emrals-staging.herokuapp.com/api/alerts/';
-        fetch(url, {
-            method: 'POST',
-            headers: { "Content-type": "application/x-www-form-urlencoded" },
-            body: formEncode(requestObject)
-        }).then(function(response) {
-            status = response.status;
-            response_ok = response.ok;
-            return response.json();
-        }).then(function(responseObject) {
+        // url = 'https://emrals-staging.herokuapp.com/api/alerts/';
+        // fetch(url, {
+        //     method: 'POST',
+        //     headers: { "Content-type": "multipart/form-data" },
+        //     body: formEncode(requestObject)
+        // }).then(function(response) {
+        //     status = response.status;
+        //     response_ok = response.ok;
+        //     return response.json();
+        // }).then(function(responseObject) {
 
-          console.log(JSON.stringify(responseObject));
+        //   console.log(JSON.stringify(responseObject));
 
 
 
-        }).catch(function(err) {
+        // }).catch(function(err) {
 
-            console.log("Fetch error: " + err);
-        });
+        //     console.log("Fetch error: " + err);
+        // });
 
     };
 
