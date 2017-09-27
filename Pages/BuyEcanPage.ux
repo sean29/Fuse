@@ -2,6 +2,9 @@
     <Router ux:Dependency="router" />
     <JavaScript File="BuyEcanPage.js"/>
 
+        <Font File="PTM55FT.ttf" ux:Global="PTMono" />
+        <Text ux:Class="PTMono" Font="PTMono"  FontSize="18" Color="#F05959"/>
+
     
             <WhileKeyboardVisible>
             <Move Target="CCArea" Y="120" Duration=".6" Easing="ExponentialInOut"/>
@@ -14,6 +17,14 @@
   
             <StackPanel Y="80">
             <ScrollView Background="#8AB847" Height="500">
+                <Panel>
+                    <Rectangle Color="#DEDFDF" Opacity=".9" CornerRadius="5" Height="150" Width="250" Alignment="Center">
+                        <Panel>
+                        <PTMono Alignment="TopRight" Opacity="1" Margin="0,4,4,0" FontSize="16" Color="#000">X</PTMono>
+                        <PTMono TextWrapping="Wrap" Alignment="Center">ERROR: payment is invalid. Zipcode does not match card info. Please try again.</PTMono>
+                    </Panel>
+                    </Rectangle>
+
                 <StackPanel>
                     <StackPanel>
                         <Panel>
@@ -56,6 +67,7 @@
                             </Rectangle>
 
                             <Horse Value="PAYMENT INFO" Color="#FFF" FontSize="14" Margin="40,30,0,0"/>
+
                             
 
         <StackPanel ux:Name="CCArea">
@@ -76,6 +88,7 @@
                             </StackPanel>
                     </StackPanel>
                 </StackPanel>
+            </Panel>
             </ScrollView>
       
 
