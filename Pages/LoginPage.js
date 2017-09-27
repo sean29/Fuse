@@ -1,19 +1,17 @@
 var Observable = require("FuseJS/Observable");
+var FileSystem = require("FuseJS/FileSystem");
 
 var password = Observable("");
 var username = Observable("");
 var error = Observable("");
 
 function goToSignup() {
-    console.log('signup');
-    //router.goto("signup");
     router.push("signup");
 }
+
 function back() {
-  router.goBack();
+    router.goBack();
 }
-
-
 
 
 function formEncode(obj) {
@@ -30,22 +28,33 @@ module.exports = {
     error: error,
     back: back,
     doLogin: function doLogin(e) {
-        var requestObject = { username: username.value, password: password.value };
-        //url = 'http://127.0.0.1:8000/api/login/';
-        url = 'https://emrals-staging.herokuapp.com/api/login/';
-        fetch(url, {
+        var requestObject = {
+            username: username.value,
+            password: password.value
+        };
+
+        fetch(api_url + 'login/', {
             method: 'POST',
-            headers: { "Content-type": "application/x-www-form-urlencoded" },
+            headers: {
+                "Content-type": "application/x-www-form-urlencoded"
+            },
             body: formEncode(requestObject)
         }).then(function(response) {
-            status = response.status;
-            response_ok = response.ok;
             return response.json();
         }).then(function(responseObject) {
+            console.log(JSON.stringify(responseObject))
 
             if (responseObject) {
                 if (responseObject.token) {
-                    console.log(responseObject.token);
+
+                    FileSystem.writeTextToFileSync(path, JSON.stringify(responseObject));
+
+                    user_info_object = JSON.parse(FileSystem.readTextFromFileSync(path));
+                    user_avatar.value = user_info_object.picture;
+                    user_emrals.value = user_info_object.emrals;
+                    user_name.value = user_info_object.username;
+                    user_id.value = user_info_object.id;
+                    widget_visible.value = "Visible";
                     router.goto("splash");
 
                 } else {

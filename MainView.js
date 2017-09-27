@@ -13,35 +13,63 @@ var Longitude = Observable(GeoLocation.location.longitude);
 
 var exports = module.exports;
 
+widget_visible = exports.widget_visible = Observable();
+login_visible = exports.login_visible = Observable();
+
 var imagePath = exports.imagePath = Observable();
 var imageName = exports.imageName = Observable();
 var imageSize = exports.imageSize = Observable();
 var imageFile = exports.imageFile = Observable();
 
+user_avatar = exports.user_avatar = Observable();
+user_emrals = exports.user_emrals = Observable();
+user_username = exports.user_username = Observable();
+user_id = exports.user_id = Observable();
+user_name = exports.user_name = Observable();
+
 var current = exports.current = Observable();
 var sel = exports.sel = Observable("1");
 var total_emrals = exports.total_emrals = Observable("0001");
 
+// var Environment = require('FuseJS/Environment');
+
+// if (Environment.ios) { api_url = "https://emrals.herokuapp.com/api/" }
+// if (Environment.android) { api_url = "https://emrals.herokuapp.com/api/" }
+// if (Environment.desktop) { api_url = "https://emrals-staging.herokuapp.com/api/" }
+
+api_url = "https://emrals-staging.herokuapp.com/api/"
+  // if(Environment.preview)    console.log("Running in preview mode");
+  // if(Environment.mobile)     console.log("Running on iOS or Android");
 
 
 var tempImage = "";
-var user_info = Observable();
-
+user_info = Observable();
 
 
 sel.onValueChanged(module, function() {
   current.value = "Selected: " + sel.toArray().join(", ");
-  console.log("Selected: " + sel.toArray().join(", "));
 });
 
-var path = FileSystem.dataDirectory + "/" + "user_info.json";
+path = FileSystem.dataDirectory + "/" + "user_info.json";
 
 
 file_exists = FileSystem.exists(path)
   .then(function(x) {
     if (x) {
+      console.log('file exists');
+      user_info_object = JSON.parse(FileSystem.readTextFromFileSync(path));
+      user_avatar.value = user_info_object.picture;
+      user_emrals.value = user_info_object.emrals;
+      user_name.value = user_info_object.username;
+      user_id.value = user_info_object.id;
+      console.log(user_avatar)
       user_info.replaceAll(JSON.parse(FileSystem.readTextFromFileSync(path)));
+      widget_visible.value = "Visible";
+      login_visible.value = "Collapsed";
     } else {
+      widget_visible.value = "Collapsed";
+      login_visible.value = "Visible";
+      console.log('file not exists');
       // FileSystem.writeTextToFileSync(path, JSON.stringify(responseObject));
       // user_info.replaceAll(JSON.parse(FileSystem.readTextFromFileSync(path)));
     }
@@ -114,75 +142,111 @@ function formEncode(obj) {
   return str.join("&");
 }
 
+function slugify(text) {
+  const a = 'àáäâèéëêìíïîòóöôùúüûñçßÿœæŕśńṕẃǵǹḿǘẍźḧ·/_,:;'
+  const b = 'aaaaeeeeiiiioooouuuuncsyoarsnpwgnmuxzh------'
+  const p = new RegExp(a.split('').join('|'), 'g')
+
+  return text.toString().toLowerCase()
+    .replace(/\s+/g, '-') // Replace spaces with -
+    .replace(p, c =>
+      b.charAt(a.indexOf(c))) // Replace special chars
+    .replace(/&/g, '-and-') // Replace & with 'and'
+    .replace(/[^\w\-]+/g, '') // Remove all non-word chars
+    .replace(/\-\-+/g, '-') // Replace multiple - with single -
+    .replace(/^-+/, '') // Trim - from start of text
+    .replace(/-+$/, '') // Trim - from end of text
+}
+
 exports.uploadAlert = function uploadAlert(e) {
 
 
   if (tempImage) {
     Uploader.send(tempImage.path, 'https://emrals-staging.herokuapp.com/upload_image/').then(function(response) {
-      console.log("upload complete.");
-      console.log(JSON.stringify(response));
-      console.log(Longitude.value);
+
       GeoLocation.getLocation(2000).then(function(location) {
-          //timeoutLocation.value = JSON.stringify(location);
 
 
-          var requestObject = {
-            creator: "https://emrals-staging.herokuapp.com/api/users/271/",
-            type: "https://emrals-staging.herokuapp.com/api/types/" + sel.value.toString() + "/",
-            title: "replace-title-5",
-            slug: "replace-slug-5",
-            longitude: parseFloat(location.longitude),
-            latitude: parseFloat(location.latitude),
-            filename: tempImage.name,
-            emrals: total_emrals.value,
-            views: "1"
-          };
+        var latlng = location.latitude + "," + location.longitude;
+        var url = "http://maps.googleapis.com/maps/api/geocode/json?latlng=" + latlng;
+        console.log(url);
+        address = "";
+        alert_type = "";
+
+        switch (parseInt(sel.value)) {
+          case 1:
+            alert_type = "Trash";
+            break;
+          case 2:
+            alert_type = "Poop";
+            break;
+          case 3:
+            alert_type = "Derelict Bike";
+            break;
+          case 4:
+            alert_type = "Dirty drain";
+            break;
+          case 5:
+            alert_type = "Dirty tree";
+        }
 
 
-          url = 'https://emrals-staging.herokuapp.com/api/alerts/';
-          fetch(url, {
-            method: 'POST',
-            headers: {
-              "Content-type": "application/x-www-form-urlencoded"
-            },
-            body: formEncode(requestObject)
-          }).then(function(response) {
-            status = response.status;
-            response_ok = response.ok;
-            return response;
+
+        fetch(url)
+          .then(function(response) {
+            return response.json();
           }).then(function(responseObject) {
-            console.log(JSON.stringify(responseObject));
+
+            console.log(responseObject.results[0].formatted_address);
+            address = responseObject.results[0].formatted_address.toString();
+            user_info_object = JSON.parse(FileSystem.readTextFromFileSync(path));
+            console.log(user_id.value);
+
+            var requestObject = {
+              creator: api_url + "users/" + user_info_object.id.toString() + "/",
+              type: api_url + "types/" + sel.value.toString() + "/",
+              title: alert_type + " near " + address,
+              slug: slugify(alert_type + " near " + address).substring(0, 49),
+              longitude: parseFloat(location.longitude),
+              latitude: parseFloat(location.latitude),
+              filename: tempImage.name,
+              emrals: total_emrals.value,
+              views: "1"
+            };
+            console.log(JSON.stringify(requestObject));
+
+
+            url = 'https://emrals-staging.herokuapp.com/api/alerts/';
+            fetch(url, {
+              method: 'POST',
+              headers: {
+                "Content-type": "application/x-www-form-urlencoded"
+              },
+              body: formEncode(requestObject)
+            }).then(function(response) {
+              return response;
+            }).then(function(responseObject) {
+              console.log(JSON.stringify(responseObject));
+              if (responseObject.status == 201) {
+                router.goto("alerts");
+              }
+
+            }).catch(function(err) {
+              console.log("Fetch error: " + err);
+            });
+
+
+
           }).catch(function(err) {
             console.log("Fetch error: " + err);
           });
 
+
+
       }).catch(function(fail) {
-          console.log("getLocation fail " + fail);
+        console.log("getLocation fail " + fail);
       });
 
     });
   }
 };
-
-
-
-var Environment = require('FuseJS/Environment');
-
-if (Environment.ios) {
-
-  api_url = "https://emrals.herokuapp.com/api/"
-}
-
-if (Environment.android) {
-
-  api_url = "https://emrals.herokuapp.com/api/"
-}
-
-// if(Environment.preview)    console.log("Running in preview mode");
-// if(Environment.mobile)     console.log("Running on iOS or Android");
-
-if (Environment.desktop)
-  if (Environment.android) {
-
-    api_url = "https://emrals-staging.herokuapp.com/api/"
-  }

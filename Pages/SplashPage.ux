@@ -2,11 +2,7 @@
   <Router ux:Dependency="router" />
   <JavaScript File="SplashPage.js" />
   <DockPanel>
-                <StackPanel Dock="Top" Orientation="Horizontal" Alignment="TopRight" Padding="5"><Image File="Assets/greene.png" Dock="Top" Height="16" />
-                <PTSerif FontSize="14" Margin="4,0,4,0">987</PTSerif>
-                <Image File="Assets/seanblucircleportrait.png" MaxHeight="16" />
-                <!--Image File="Assets/tinytriangle.png" MaxWidth="11" Margin="4,0,0,0"/>-->
-              </StackPanel>
+
 
     <Image File="Assets/emralsv2logo.png" Dock="Top" MaxHeight="110" Margin="0,45,0,0"/>
 
@@ -30,7 +26,7 @@
       <Text Margin="5,280,0,0" FontSize="11" Color="#636364" >Version 0.0.0 Build 789</Text>
     </Panel>
     </StackPanel>
-    <Rectangle Color="#8AB847" Height="48" Width="300" CornerRadius="10" Dock="Bottom" Margin="0, 0, 0, 40" Clicked="{goToLogin}">
+    <Rectangle Color="#8AB847" Height="48" Width="300" CornerRadius="10" Dock="Bottom" Margin="0, 0, 0, 40" Clicked="{goToLogin}" Visibility="{login_visible}">
       <Text Color="#FFF" FontSize="24" Alignment="Center">LOG IN</Text>
     </Rectangle>
 

@@ -4,6 +4,7 @@ function back() {
 }
 
 var Observable = require("FuseJS/Observable");
+var FileSystem = require("FuseJS/FileSystem");
 
 var password = Observable("");
 var username = Observable("");
@@ -61,7 +62,15 @@ module.exports = {
 
             if (responseObject) {
                 if (responseObject.token) {
-                    console.log(responseObject.token);
+
+                    FileSystem.writeTextToFileSync(path, JSON.stringify(responseObject));
+
+                    user_info_object = JSON.parse(FileSystem.readTextFromFileSync(path));
+                    user_avatar.value = user_info_object.picture;
+                    user_emrals.value = user_info_object.emrals;
+                    user_name.value = user_info_object.username;
+                    user_id.value = user_info_object.id;
+                    widget_visible.value = "Visible";
                     router.goto("splash");
 
                 } else {
