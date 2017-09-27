@@ -9,7 +9,7 @@
     <DockPanel>
         <Panel Background="#FFF" Dock="Top">
             <Panel HitTestMode="LocalBounds" Margin="10,0, 0, 0" Clicked="{back}" Dock="Top">
-                <Text Value="<<" Color="#636364" FontSize="30" Alignment="Left" />
+                <Text Value="<<" Color="#636364" FontSize="24" Alignment="Left" />
             </Panel>
             <Image File="Assets/emralsAllgreen2017logo.png" MaxWidth="120" />
             <Curl Alignment="Center" Margin="0,60,0,0">IMPACT ZONES</Curl>
