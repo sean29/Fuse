@@ -1,5 +1,4 @@
 var Observable = require("FuseJS/Observable");
-var Stripe = require("Stripe");
 
 var cardNumber = Observable("4242424242424242");
 var expiryMonth = Observable("12");

@@ -1,8 +1,5 @@
 {
   "Title": "Emrals",
-  "Projects": [
-      "src/Fuse.Stripe/Stripe.unoproj"
-  ],
   "RootNamespace":"",
   "Packages": [
     "Fuse",
@@ -17,9 +14,6 @@
   "Includes": [
     "*"
   ],
-  "Stripe": {
-    "PublishableKey": "pk_test"
-  },
   "Version": "0.0.0",
   "DevelopmentTeam": "HRA3AUNUHS",
   "VersionCode": "2",
