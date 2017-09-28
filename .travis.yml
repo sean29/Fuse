@@ -8,4 +8,4 @@ before_script:
     sudo installer -pkg fuse-installer.pkg -target /
 
 script:
-  - uno build -tios Fuse/emrals.unoproj
+  - uno build -tios 

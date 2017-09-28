@@ -19,6 +19,18 @@
   "VersionCode": "2",
   "Icon": "Assets/icon.png",
   "iOS": {
+    "SystemCapabilities": {
+      "DataProtection": false,
+      "GameCenter": false,
+      "HealthKit": false,
+      "HomeKit": false,
+      "InAppPurchase": false,
+      "InterAppAudio": false,
+      "Push": false,
+      "PersonalVPN": false,
+      "WirelessAccessoryConfiguration": false
+    },
+
     "BundleIdentifier": "com.apps.emrals",
     "Icons": {
       "iPhone_29_2x": "$(Icon)",
