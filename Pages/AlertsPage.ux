@@ -23,21 +23,25 @@
     </WhileBusy>
     <MyLoadingIndicator ux:Name="loadingPanel" Opacity="0" ThemeColor="#8AB847" />
     <Font File="PTserif.ttc" ux:Global="Header" />
+    <Font File="PTF55F.ttf" ux:Global="PTreal" />
 
     <Text ux:Class="Header" 
         Font="Header" 
         FontSize="20"
         Color="#636364"/>
+
+         <Text ux:Class="PTreal" 
+        Font="PTreal" 
+        FontSize="20"
+        Color="#636364"/>
     
 
     <DockPanel>
-        <Panel Background="#FFF" Dock="Top">
-            <Panel Margin="10,0, 0, 0" Clicked="{back}" Dock="Top">
-                <Text Value="<<" Color="#636364" FontSize="30" Alignment="Left" />
-            </Panel>
-            <Image File="Assets/emralsAllgreen2017logo.png" MaxWidth="120" />
-            <Header Alignment="Center" Margin="0,54,0,0">DIRT ALERTS</Header>
-        </Panel>
+       <StackPanel Background="#FFF" Y="0">
+            <Image File="Assets/emralsAllgreen2017logo.png" Width="120" Margin="0, 2,0,0" />
+             <Text Value="<<" Color="#636364" FontSize="24" Alignment="Left" Margin="10, -30,0,0" Clicked="{back}"/>
+            <PTreal Alignment="Center" Margin="0,0,0,0">DIRT ALERTS</PTreal>
+        </StackPanel>
     </DockPanel>
     <JavaScript File="AlertsPage.js" />
     <DockPanel >
@@ -51,7 +55,7 @@
             <Stroke Width="2">
                 <SolidColor Color="#F05959" />
             </Stroke>
-                        <Horse Color="#F05959" FontSize="14" Margin="24,88,0,0">POST</Horse>
+                        <Horse Color="#F05959" FontSize="14" Margin="24,82,0,0">POST</Horse>
 
             <Image File= "Assets/cameratag.png" MaxHeight="53" Margin="0,0,0,12"/>
         </Circle>
@@ -63,12 +67,13 @@
         <ScrollView Background="#F4F4F4" SnapMinTransform="false">
             <DockPanel>
                 <CogWheelReload Dock="Top" Y="60" />
-                <Grid ColumnCount="2" Y="70">
+                <Grid ColumnCount="2" Y="60">
                     <Each Items="{data}">
                         <DockPanel Height="147" Margin="20" Clicked="{goToAlert}">
-                            <Panel DockPanel.Dock="Top" Margin="10, 5" Height="20">
-                                <Rectangle Layer="Background" CornerRadius="5" Color="#fff" Opacity="0.80"/>
-                                <Text Value="{title}" TextAlignment="Center" FontSize="12" Alignment="Center" />
+                            <Panel DockPanel.Dock="Top" Margin="0, 5,0,0" Height="20">
+                                <Rectangle Width="130" Height="18" CornerRadius="5" Color="#fff" Opacity="0.80">
+                                <Horse Value="{title}" Color="#000" Alignment="Center" Margin="4,0,0,0" FontSize="12" />
+                            </Rectangle>
                             </Panel>
                             <Rectangle Layer="Background" CornerRadius="10" Color="#8AB847">
                                 <ImageFill Url="{thumbnail}" />

@@ -1,42 +1,38 @@
 <Page ux:Class="ImpactPage">
     <JavaScript File="ImpactPage.js" />
     <Router ux:Dependency="router" />
-    <Font File="PTserif.ttc" ux:Global="Curl" />
+    <Font File="PTF55F.ttf" ux:Global="Curl" />
     <Text ux:Class="Curl" 
         Font="Curl" 
         FontSize="20"
         Color="#636364"/>
-    <DockPanel>
-        <Panel Background="#FFF" Dock="Top">
-            <Panel HitTestMode="LocalBounds" Margin="10,0, 0, 0" Clicked="{back}" Dock="Top">
-                <Text Value="<<" Color="#636364" FontSize="24" Alignment="Left" />
-            </Panel>
-            <Image File="Assets/emralsAllgreen2017logo.png" MaxWidth="120" />
-            <Curl Alignment="Center" Margin="0,60,0,0">IMPACT ZONES</Curl>
-        </Panel>
-    </DockPanel>
-    <DockPanel></DockPanel>
-    <DockPanel>
-        <StatusBarBackground Dock="Top" />
-        <BottomBarBackground Dock="Bottom" />
-        <StackPanel Y="100" Background="#FFF">
+    
+        <StackPanel Background="#FFF" Y="0">
+            <Image File="Assets/emralsAllgreen2017logo.png" Width="120" Margin="0, 2,0,0" />
+             <Text Value="<<" Color="#636364" FontSize="24" Alignment="Left" Margin="10, -30,0,0" Clicked="{back}"/>
+            <PTreal Alignment="Center" Margin="0,0,0,0">IMPACT ZONES</PTreal>
+        </StackPanel>
+
+        <StackPanel Y="60" Background="#FFF">
             <Panel>
                 <Rectangle Color="#FFF" Opacity="0.8" Height="90" Alignment="Bottom">
                     <Curl FontSize="16" Color="#2B2B2B" Margin="20,0,0,0" TextWrapping="Wrap">Impact zones allow you to focus your cleanup reward power. Select a zone in an area that matters to you. Your subscription automatically funds the cleanup in those locations.</Curl>
                 </Rectangle>
-                <Image File="Assets/city.jpeg" />
+                <Image File="Assets/city.jpeg" Width="100%"/>
             </Panel>
-            <Rectangle Color="#F5F5F5" Height="120" Width="350" CornerRadius="20" Margin="0,30,0,30">
-                <StackPanel Padding="0,10">
+            <Rectangle Color="#F5F5F5" Height="120" Width="320" CornerRadius="10" Margin="0,20,0,20">
+                <StackPanel Margin="0,15,0,0">
                     <Grid RowCount="1" ColumnCount="2" Margin="0,0,10,0">
                         <Text FontSize="16" Margin="20,5,0,0">Enter Zipcode</Text>
-                        <TextInput  Value="{zipcode}" Row="0" Column="1" PlaceholderText="zipcode" PlaceholderColor="#999" TextColor="#222" CaretColor="#222" />
+                        <Rectangle Color="#FFF" Margin="0,0,100,0" Height="38" Width="80">
+                        <TextInput  Value="{zipcode}" Row="0" Column="1" PlaceholderText="zipcode" PlaceholderColor="#999" TextColor="#222" CaretColor="#222" TextAlignment="Center" />
+                    </Rectangle>
                     </Grid>
 
                     <Grid RowCount="1" Columns="auto,1*,1*" >
                         <Text FontSize="16" Margin="20,30,0,0">Fund Cleanup of</Text>
                         <Rectangle Color="#FFF" Margin="0,20, 0,0" Height="38" Width="80">
-                            <Text FontSize="20" Color="#F05959" Margin="20,5,0,0">89</Text>
+                            <Text FontSize="20" Color="#F05959" Margin="0,7,0,0" TextAlignment="Center">89</Text>
                         </Rectangle>
                         <Text FontSize="16" Margin="0,30,0,0">Dirt Alerts</Text>
                     </Grid>
@@ -60,5 +56,5 @@
 
 
 
-    </DockPanel>
+    
 </Page>
