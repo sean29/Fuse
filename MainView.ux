@@ -21,6 +21,7 @@
       <ImpactPage ux:Template="impact" router="router" />
       <PaymentPage ux:Template="payment" router="router" />
       <BuyEcanPage ux:Template="buyecan" router="router" />
+      <EcanThankYouPage ux:Template="ecanthanks" router="router" />
     </Navigator>
   </ClientPanel>
 </App>
