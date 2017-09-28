@@ -8,4 +8,6 @@ before_script:
     sudo installer -pkg fuse-installer.pkg -target /
 
 script:
-  - uno build -tios 
+  - uno build -tios --set:Project.iOS.DevelopmentTeam="HRA3AUNUHS"
+  - cd build/iOS/Debug 
+  - xcodebuild -project emrals.xcodeproj CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO

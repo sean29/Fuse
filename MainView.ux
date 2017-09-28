@@ -1,19 +1,15 @@
 <App Background="#fff">
-
   <iOS.StatusBarConfig Style="Light" />
   <Android.StatusBarConfig Color="#636364" />
   <JavaScript File="MainView.js" />
-
-
   <Router ux:Name="router" />
-
   <ClientPanel>
-                    <StackPanel Dock="Top" Orientation="Horizontal" Alignment="TopRight" Padding="5" Visibility="{widget_visible}">
-                  <Image File="Assets/greene.png" Dock="Top" Height="16" />
-                <PTSerif FontSize="14" Margin="4,0,4,0">{user_emrals}</PTSerif>
-                <Image Url="{user_avatar}" MaxHeight="16" />
-                <!--Image File="Assets/tinytriangle.png" MaxWidth="11" Margin="4,0,0,0"/>-->
-              </StackPanel>
+    <StackPanel Dock="Top" Orientation="Horizontal" Alignment="TopRight" Padding="5" Visibility="{widget_visible}">
+      <Image File="Assets/greene.png" Dock="Top" Height="16" />
+      <PTSerif FontSize="14" Margin="4,0,4,0">{user_emrals}</PTSerif>
+      <Image Url="{user_avatar}" MaxHeight="16" />
+      <!--Image File="Assets/tinytriangle.png" MaxWidth="11" Margin="4,0,0,0"/>-->
+    </StackPanel>
     <Navigator DefaultPath="splash">
       <SplashPage ux:Template="splash" router="router" />
       <AlertsPage ux:Template="alerts" router="router" />
