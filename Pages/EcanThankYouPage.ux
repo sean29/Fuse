@@ -10,12 +10,12 @@
 		<Rectangle Color="#636364" Height="460" Width="100%">
 			
 			 <Rectangle Color="#FFF" Opacity=".8" Width="320" Height="200" CornerRadius="10" Alignment="Center" Margin="0,60,0,0" StrokeWidth="2" StrokeColor="#8AB847">
-			 <Cat Color="#000" FontSize="18" Alignment="Center" TextAlignment="Center" TextWrapping="Wrap">Thank you for your order! 
+			 <PTreal Color="#000" FontSize="18" Alignment="Center" TextAlignment="Center" TextWrapping="Wrap">Thank you for your order! 
 Your eCan will
 ship in 2-5 weeks
 
 An email confirmation has been 
-sent to mareiska@alphaonelabs.com </Cat>
+sent to mareiska@alphaonelabs.com </PTreal>
 			</Rectangle>
 		<Image File="Assets/ECANnotes.png" Alignment="Top"  />
 	</Rectangle>

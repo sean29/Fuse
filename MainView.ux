@@ -10,7 +10,7 @@
       <Image Url="{user_avatar}" MaxHeight="16" />
       <!--Image File="Assets/tinytriangle.png" MaxWidth="11" Margin="4,0,0,0"/>-->
     </StackPanel>
-    <Navigator DefaultPath="splash">
+    <Navigator DefaultPath="impactthanks">
       <SplashPage ux:Template="splash" router="router" />
       <AlertsPage ux:Template="alerts" router="router" />
       <EcansPage ux:Template="ecans" router="router" />
@@ -22,6 +22,8 @@
       <PaymentPage ux:Template="payment" router="router" />
       <BuyEcanPage ux:Template="buyecan" router="router" />
       <EcanThankYouPage ux:Template="ecanthanks" router="router" />
+      <ImpactThankYouPage ux:Template="impactthanks" router="router" />
+
     </Navigator>
   </ClientPanel>
 </App>

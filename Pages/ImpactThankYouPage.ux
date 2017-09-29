@@ -1,4 +1,45 @@
 <Page ux:Class="ImpactThankYouPage">
     <Router ux:Dependency="router" />
+        <JavaScript File="ImpactThankYouPage.js" />
+
+
+  <StackPanel Background="#FFF" Y="0">
+            <Image File="Assets/emralsAllgreen2017logo.png" Width="120" Margin="0, 2,0,0" />
+            <PTreal Alignment="Center">SUBSCRIPTION CONFIRMATION</PTreal>
+        </StackPanel>
+
+
+  <StackPanel>
+                <Panel>
+                    <Rectangle Color="#FFF" Opacity=".2" Height="3" Width="100%" Margin="0,60,0,0" />
+                <Rectangle Color="#8AB847" Height="120" Alignment="Top" Margin="0,60,0,0">
+                <Grid  Alignment="Center" Columns="200,100" Rows="50,50" Margin="0,25,0,0">
+                <Horse Row="0" Column="0" Value="Selected Impact Zone" Color="#FFF"/>
+                <Mouse Row="0" Column="1" Value="11222" />
+                <Horse Row="1" Column="0" Value="Monthly Impact" Color="#FFF"/>
+                <Mouse Row="1" Column="1" Value="$10/m" />
+                </Grid>
+            </Rectangle>
+        </Panel>
+        <Panel>
+        
+         <Rectangle Color="#FFF" Opacity=".8" Width="320" Height="200" CornerRadius="10" Alignment="Center" Margin="0,0,0,70" StrokeWidth="2" StrokeColor="#8AB847">
+			 <PTreal Color="#000" FontSize="18" Alignment="Center" TextAlignment="Center" TextWrapping="Wrap">Thank you for your subscription!
+$10/month has been added to 
+the cleaning up of dirt alerts in
+11222.
+
+An email confirmation has been 
+sent to mareiska@alphaonelabs.com </PTreal>
+			</Rectangle>
+			<Image File="Assets/eastriver.jpg" MaxHeight="375"/>
+		</Panel>
+        </StackPanel>
+        <StackPanel Alignment="BottomCenter" Orientation="Horizontal" ItemSpacing="80" Padding="20">
+	<Image File="Assets/cameratag.png" Height="40" Clicked="{goToAlerts}" />
+	<Image File="Assets/buyicon.png" Height="40" Clicked="{goToImpact}"/>
+	<Image File="Assets/v2ecansicon.png" Height="40" Clicked="{goToEcans}" />
+</StackPanel>
+
 
 </Page>
