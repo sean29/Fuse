@@ -23,6 +23,8 @@
       <BuyEcanPage ux:Template="buyecan" router="router" />
       <EcanThankYouPage ux:Template="ecanthanks" router="router" />
       <ImpactThankYouPage ux:Template="impactthanks" router="router" />
+      <SolutionPage ux:Template="solution" router="router" />
+
 
     </Navigator>
   </ClientPanel>
