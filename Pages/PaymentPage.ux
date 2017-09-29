@@ -44,12 +44,12 @@
                         <Basic.TextInput Width="280" Value="{email}" Alignment="Left" Margin="10,5,0,0" PlaceholderText="email" PlaceholderColor="#95989A" />
                     </Rectangle>
                     <Rectangle Color="#FFF" CornerRadius="2" StrokeWidth=".5" StrokeColor="#8AB847" Height="38" Width="300" Alignment="Center" Margin="0,15,0,0">
-                        <Basic.TextInput Width="290" Value="{cardNumber}" Alignment="Left" Margin="5,5,0,0" PlaceholderText="card number" PlaceholderColor="#FFF" />
+                        <Basic.TextInput Width="290" Value="{cardNumber}" Alignment="Left" Margin="5,5,0,0" PlaceholderText="card number" PlaceholderColor="#95989A" />
                     </Rectangle>
                     <StackPanel Orientation="Horizontal">
                         <Rectangle Color="#FFF" CornerRadius="2" StrokeWidth=".5" StrokeColor="#8AB847" Height="38" Width="120" Alignment="Left" Margin="38,15,0,0">
-                            <Basic.TextInput Width="20" Value="{expiryMonth}" Alignment="Left" Margin="33, 5,0,0" PlaceholderText="Month (MM)" PlaceholderColor="#95989A" />
-                            <Basic.TextInput Width="20" Value="{expiryYear}" Alignment="Left" Margin="70,5,0,0" PlaceholderText="Year (YY)" PlaceholderColor="#95989A" />
+                            <Basic.TextInput Width="30" Value="{expiryMonth}" Alignment="Left" Margin="33, 5,0,0" PlaceholderText="MM" PlaceholderColor="#95989A" />
+                            <Basic.TextInput Width="30" Value="{expiryYear}" Alignment="Left" Margin="70,5,0,0" PlaceholderText="YY" PlaceholderColor="#95989A" />
                         </Rectangle>
                         <Rectangle Color="#FFF" CornerRadius="2" StrokeWidth=".5" StrokeColor="#8AB847" Height="38" Width="120" Margin="60,15,0,0">
                             <Basic.TextInput Width="40" Value="{cvc}" Margin="10,5,0,0" PlaceholderText="CVC" PlaceholderColor="#95989A" />
