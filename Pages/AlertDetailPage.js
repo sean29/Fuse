@@ -56,8 +56,8 @@ function load_map(args){
 
 
 module.exports = {
-	longitude_observable: longitude_observable,
-	latitude_observable: latitude_observable,
+	longitude: longitude,
+	latitude: latitude,
 	load_map: load_map,
 	thumbnail: thumbnail,
 	name: name,
