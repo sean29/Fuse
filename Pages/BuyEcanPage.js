@@ -103,8 +103,9 @@ exports.testPay = function testPay() {
 				console.log(JSON.stringify(responseObject));
 
 				if (responseObject.captured == true) {
-					router.goto("ecanthanks");
-
+					router.goto("ecanthanks", {
+						email: email.value
+					});
 				} else {
 					console.log("Error: " + JSON.stringify(responseObject));
 					error.value = "Error: " + JSON.stringify(responseObject);
