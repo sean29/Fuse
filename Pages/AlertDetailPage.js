@@ -24,7 +24,6 @@ var Environment = require('FuseJS/Environment');
 
 
 
-
 longitude_observable = Observable();
 latitude_observable = Observable();
 
@@ -44,11 +43,11 @@ function back() {
 function load_map(args){
 
 	if (Environment.android) { 
-		url = "geo:0,0?q=" + args.data.latitude_observable.toString() +"," + args.data.longitude_observable.toString();
+		url = "geo:0,0?q=" + args.data.latitude.toString() +"," + args.data.longitude.toString();
 		InterApp.launchUri(url);
 	}
 	if (Environment.ios) { 
-		url = "maps://?q=" + args.data.latitude_observable.toString() +"," +args.data.longitude_observable.toString();
+		url = "maps://?q=" + args.data.latitude.toString() +"," +args.data.longitude.toString();
 		InterApp.launchUri(url);
 	}
 
