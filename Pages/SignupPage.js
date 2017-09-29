@@ -1,6 +1,6 @@
 function back() {
-	router.goBack();
-	console.log('back');
+    router.goBack();
+    console.log('back');
 }
 
 var Observable = require("FuseJS/Observable");
@@ -14,14 +14,11 @@ var last_name = Observable("");
 var error = Observable("");
 
 function back() {
-  router.goBack();
+    router.goBack();
 }
 
-
-
 module.exports = {
-
-	back: back
+    back: back
 };
 
 
@@ -41,18 +38,20 @@ module.exports = {
     error: error,
     back: back,
     doSignup: function doSignup(e) {
-        var requestObject = { 
-        	username: username.value, 
-        	password: password.value,
-        	email: email.value,
-        	first_name: first_name.value,
-        	last_name: last_name.value 
+        var requestObject = {
+            username: username.value,
+            password: password.value,
+            email: email.value,
+            first_name: first_name.value,
+            last_name: last_name.value
         };
-        //url = 'http://127.0.0.1:8000/api/signup/';
-        url = 'https://emrals-staging.herokuapp.com/api/signup/';
+
+        url = api_url + 'signup/';
         fetch(url, {
             method: 'POST',
-            headers: { "Content-type": "application/x-www-form-urlencoded" },
+            headers: {
+                "Content-type": "application/x-www-form-urlencoded"
+            },
             body: formEncode(requestObject)
         }).then(function(response) {
             status = response.status;
@@ -79,7 +78,6 @@ module.exports = {
             }
 
         }).catch(function(err) {
-
             console.log("Fetch error: " + err);
         });
 

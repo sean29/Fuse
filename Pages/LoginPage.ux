@@ -9,10 +9,8 @@
             <Move Target="LogoFile"  Y="-60" Duration=".6" Easing="ExponentialInOut"/>
             <Scale Target="LogoFile"  Factor=".6"  Duration=".6"/>
             <Move Target="loginArea" Y="-10" Duration=".6" Easing="ExponentialInOut"/>
-
         </WhileKeyboardVisible>
         <Image ux:Name="LogoFile" File="Assets/emralsv2logo.png" Dock="Top" MaxHeight="110" Margin="0,50,0,0"/>
-
     </DockPanel>
     <Grid ux:Name="loggedOutView" Rows="1*,auto,1*" Padding="40,0">
         <Grid ux:Name="loginArea" Row="1" Padding="0,20" RowCount="2" Columns="auto, 1*" Height="220" MaxWidth="400">

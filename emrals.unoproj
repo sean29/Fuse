@@ -10,6 +10,7 @@
     "Fuse.Scripting",
     "Fuse.BasicTheme",
     "Fuse.GeoLocation",
+    "Fuse.Launcher",
   ],
   "Includes": [
     "*"

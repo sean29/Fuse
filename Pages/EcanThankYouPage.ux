@@ -2,27 +2,28 @@
     <Router ux:Dependency="router" />
     <JavaScript File="EcanThankYouPage.js" />
     <StackPanel Background="#FFF" Y="0">
-            <Image File="Assets/emralsAllgreen2017logo.png" Width="120" Margin="0, 2,0,0" />
-             <Text Value="<<" Color="#636364" FontSize="24" Alignment="Left" Margin="10, -30,0,0" Clicked="{back}"/>
-            <PTreal Alignment="Center" Margin="0,0,0,0">ORDER CONFIRMATION</PTreal>
-        </StackPanel>
-       <StackPanel Y="60">
-		<Rectangle Color="#636364" Height="460" Width="100%">
-			
-			 <Rectangle Color="#FFF" Opacity=".8" Width="320" Height="200" CornerRadius="10" Alignment="Center" Margin="0,60,0,0" StrokeWidth="2" StrokeColor="#8AB847">
-			 <PTreal Color="#000" FontSize="18" Alignment="Center" TextAlignment="Center" TextWrapping="Wrap">Thank you for your order! 
+        <Image File="Assets/emralsAllgreen2017logo.png" Width="120" Margin="0, 2,0,0" />
+        <Text Value="<<" Color="#636364" FontSize="24" Alignment="Left" Margin="10, -30,0,0" Clicked="{back}"/>
+        <PTreal Alignment="Center" Margin="0,0,0,0">ORDER CONFIRMATION</PTreal>
+    </StackPanel>
+    <StackPanel Y="60">
+        <Rectangle Color="#636364" Height="460" Width="100%">
+            <Rectangle Color="#FFF" Opacity=".8" Width="320" Height="200" CornerRadius="10" Alignment="Center" Margin="0,60,0,0" StrokeWidth="2" StrokeColor="#8AB847">
+                <PTreal Color="#000" FontSize="18" Alignment="Center" TextAlignment="Center" TextWrapping="Wrap">Thank you for your order! 
+
 Your eCan will
 ship in 2-5 weeks
 
 An email confirmation has been 
-sent to mareiska@alphaonelabs.com </PTreal>
-			</Rectangle>
-		<Image File="Assets/ECANnotes.png" Alignment="Top"  />
-	</Rectangle>
-</StackPanel>
-<StackPanel Alignment="BottomCenter" Orientation="Horizontal" ItemSpacing="80" Padding="40">
-	<Image File="Assets/cameratag.png" Height="40" Clicked="{goToAlerts}" />
-	<Image File="Assets/buyicon.png" Height="40" Clicked="{goToImpact}"/>
-	<Image File="Assets/v2ecansicon.png" Height="40" Clicked="{goToEcans}" />
-</StackPanel>
+
+sent to mareiska@alphaonelabs.com</PTreal>
+            </Rectangle>
+            <Image File="Assets/ECANnotes.png" Alignment="Top"  />
+        </Rectangle>
+    </StackPanel>
+    <StackPanel Alignment="BottomCenter" Orientation="Horizontal" ItemSpacing="80" Padding="40">
+        <Image File="Assets/cameratag.png" Height="40" Clicked="{goToAlerts}" />
+        <Image File="Assets/buyicon.png" Height="40" Clicked="{goToImpact}"/>
+        <Image File="Assets/v2ecansicon.png" Height="40" Clicked="{goToEcans}" />
+    </StackPanel>
 </Page>

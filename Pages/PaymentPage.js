@@ -4,126 +4,160 @@ var cardNumber = Observable("4242424242424242");
 var expiryMonth = Observable("12");
 var expiryYear = Observable("20");
 var cvc = Observable("123");
-var subscription = Observable("");
-
+var name = Observable("test");
 var email = Observable("test@example.com");
+var error = Observable("");
 
 var param = this.Parameter;
-
-this.onParameterChanged(function(param) { 
-	subscription = JSON.stringify(param);
-	console.log(subscription);
-	
+var zipcode = param.map(function(x) {
+	return x.zipcode;
 });
 
+var subscription = param.map(function(x) {
+	return x.subscription;
+});
 
+var error_visibility = Observable("Hidden");
 
-function back() {
-  router.goBack();
+function formEncode(obj) {
+	var str = [];
+	for (var p in obj)
+		str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
+	return str.join("&");
 }
 
-var info = Observable("");
+function hideError() {
+	error_visibility.value = "Hidden";
+	error.value = "";
+}
 
-var testPay = function() {
-	console.log("createToken");
-
+testPay = function testPay() {
 	var cardParams = {
-		"number": cardNumber.value,
-		"exp_month": expiryMonth.value,
-		"exp_year": expiryYear.value,
-		"cvc": cvc.value
+		"card[number]": cardNumber.value,
+		"card[exp_month]": expiryMonth.value,
+		"card[exp_year]": expiryYear.value,
+		"card[cvc]": cvc.value
 	};
+	console.log(JSON.stringify(cardParams));
 
-	Stripe.createToken(cardParams).then(function(token) {
-		var json_info = JSON.stringify(token);
-		info.value = json_info;
-		console.log("testPay worked!\n" + json_info);
-    console.log(subscription);
-
-
-
-
-
-	var requestObject = {
-		source: stripe_token.value,
-		amount: "100000",
-		currency: "USD",
-		description: "Emrals Ecan"
-	};
-
-	url = 'https://api.stripe.com/v1/charges';
+	url = 'https://api.stripe.com/v1/tokens';
 
 	fetch(url, {
 		method: 'POST',
 		headers: {
 			"Content-type": "application/x-www-form-urlencoded",
-			'Authorization': 'Bearer ' + "sk_test"
-		}, 
-		body: formEncode(requestObject)
+			'Authorization': 'Bearer ' + STRIPE_PRIVATE_KEY
+		},
+		body: formEncode(cardParams)
 	}).then(function(response) {
-		status = response.status;
-		response_ok = response.ok;
 		return response.json();
-
 	}).then(function(responseObject) {
+		console.log(JSON.stringify(responseObject));
+		if (responseObject.object == 'token') {
+			var requestObject = {
+				source: responseObject.id,
+				description: "Customer for " + email.value,
+				email: email.value
+			};
+			console.log(JSON.stringify(requestObject));
 
-		if (responseObject.status == 'succeeded') {
-			message = "Thank you, Payment Sent!"
-			//console.log(JSON.stringify(responseObject));
+			url = 'https://api.stripe.com/v1/customers';
+
+			fetch(url, {
+				method: 'POST',
+				headers: {
+					"Content-type": "application/x-www-form-urlencoded",
+					'Authorization': 'Bearer ' + STRIPE_PRIVATE_KEY
+				},
+				body: formEncode(requestObject)
+			}).then(function(response) {
+				return response.json();
+			}).then(function(responseObject) {
+				console.log(JSON.stringify(responseObject));
+				if (responseObject.created) {
+					var requestObject = {
+						customer: responseObject.id,
+						"items[0][plan]": subscription.value
+					};
+					console.log(JSON.stringify(requestObject));
+
+					url = 'https://api.stripe.com/v1/subscriptions';
+
+					fetch(url, {
+						method: 'POST',
+						headers: {
+							"Content-type": "application/x-www-form-urlencoded",
+							'Authorization': 'Bearer ' + STRIPE_PRIVATE_KEY
+						},
+						body: formEncode(requestObject)
+					}).then(function(response) {
+						return response.json();
+					}).then(function(responseObject) {
+						console.log(JSON.stringify(responseObject));
+
+						if (responseObject.created) {
+							router.push("impactthanks", {
+								subscription: subscription.value,
+								zipcode: zipcode.value,
+								email: email.value
+							});
+						} else {
+							console.log("Error: " + JSON.stringify(responseObject));
+							error.value = "Error: " + JSON.stringify(responseObject);
+							error_visibility.value = "Visible";
+						}
+
+					}).catch(function(err) {
+						console.log("Error: " + err);
+						error.value = "Error: " + err
+						error_visibility.value = "Visible";
+					});
+
+				} else {
+					console.log("Error: " + JSON.stringify(responseObject));
+					error.value = "Error: " + JSON.stringify(responseObject);
+					error_visibility.value = "Visible";
+				}
+
+			}).catch(function(err) {
+				console.log("Error: " + err);
+				error.value = "Error: " + err
+				error_visibility.value = "Visible";
+			});
+
+		}
+
+		if (responseObject.error) {
+			console.log("Error: " + responseObject.error.message);
+			error.value = "Error: " + responseObject.error.message
+			error_visibility.value = "Visible";
 		}
 
 	}).catch(function(err) {
-
-		console.log("Fetch error: " + err);
+		console.log("Error: " + err);
+		error.value = "Error: " + err
+		error_visibility.value = "Visible";
 	});
 
-
-
-
-
-
-
-
-	}).catch(function(e) {
-		console.log("testPay failed:" + e);
-		info.value = "Creating Token Failed:\n" + e;
-	});
-};
-
-var validateCardParams = function() {
-	console.log("validateCardParams");
-
-	var cardParams = {
-		"number": cardNumber.value,
-		"exp_month": expiryMonth.value,
-		"exp_year": expiryYear.value,
-		"cvc": cvc.value
-	};
-
-	Stripe.validateCard(cardParams).then(function(result) {
-		var json_info = JSON.stringify(result);
-		info.value = json_info;
-		console.log("validateCardParams worked!\n" + json_info);
-	}).catch(function(e) {
-		console.log("validateCardParams failed:" + e);
-		info.value = "Validate Failed:\n" + e;
-	});
 };
 
 function back() {
-  router.goBack();
+	router.goBack();
 }
 
 module.exports = {
 	subscription: subscription,
 	back: back,
-	validateCardParams: validateCardParams,
 	testPay: testPay,
-	info: info,
 	cardNumber: cardNumber,
 	expiryMonth: expiryMonth,
 	expiryYear: expiryYear,
 	cvc: cvc,
-	back: back
-
+	back: back,
+	hideError: hideError,
+	zipcode: zipcode,
+	name: name,
+	email: email,
+	error: error,
+	error_visibility: error_visibility
 };

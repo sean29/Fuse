@@ -31,16 +31,9 @@ var current = exports.current = Observable();
 var sel = exports.sel = Observable("1");
 var total_emrals = exports.total_emrals = Observable("0001");
 
-// var Environment = require('FuseJS/Environment');
-
-// if (Environment.ios) { api_url = "https://emrals.herokuapp.com/api/" }
-// if (Environment.android) { api_url = "https://emrals.herokuapp.com/api/" }
-// if (Environment.desktop) { api_url = "https://emrals-staging.herokuapp.com/api/" }
-
-api_url = "https://emrals-staging.herokuapp.com/api/"
-  // if(Environment.preview)    console.log("Running in preview mode");
-  // if(Environment.mobile)     console.log("Running on iOS or Android");
-
+STRIPE_PRIVATE_KEY = "pk_test";
+emrals_url = "https://emrals-staging.herokuapp.com/"
+api_url = emrals_url + "api/"
 
 var tempImage = "";
 user_info = Observable();
@@ -56,22 +49,17 @@ path = FileSystem.dataDirectory + "/" + "user_info.json";
 file_exists = FileSystem.exists(path)
   .then(function(x) {
     if (x) {
-      console.log('file exists');
       user_info_object = JSON.parse(FileSystem.readTextFromFileSync(path));
       user_avatar.value = user_info_object.picture;
       user_emrals.value = user_info_object.emrals;
       user_name.value = user_info_object.username;
       user_id.value = user_info_object.id;
-      console.log(user_avatar)
       user_info.replaceAll(JSON.parse(FileSystem.readTextFromFileSync(path)));
       widget_visible.value = "Visible";
       login_visible.value = "Collapsed";
     } else {
       widget_visible.value = "Collapsed";
       login_visible.value = "Visible";
-      console.log('file not exists');
-      // FileSystem.writeTextToFileSync(path, JSON.stringify(responseObject));
-      // user_info.replaceAll(JSON.parse(FileSystem.readTextFromFileSync(path)));
     }
 
   }, function(error) {});
@@ -87,7 +75,6 @@ exports.takePicture = function() {
       };
       ImageTools.resize(image, args).then(
         function(image) {
-          console.log('takePicture')
           router.goto("camera");
           CameraRoll.publishImage(image);
           imageFile.value = image;
@@ -110,7 +97,6 @@ exports.takePicture = function() {
 var lastImage = "";
 
 var displayImage = function(image) {
-  console.log('displayImage')
   imagePath.value = image.path;
   imageName.value = image.name;
   imageSize.value = image.width + "x" + image.height;
@@ -162,14 +148,10 @@ exports.uploadAlert = function uploadAlert(e) {
 
 
   if (tempImage) {
-    Uploader.send(tempImage.path, 'https://emrals-staging.herokuapp.com/upload_image/').then(function(response) {
-
+    Uploader.send(tempImage.path, emrals_url + 'upload_image/').then(function(response) {
       GeoLocation.getLocation(2000).then(function(location) {
-
-
         var latlng = location.latitude + "," + location.longitude;
         var url = "http://maps.googleapis.com/maps/api/geocode/json?latlng=" + latlng;
-        console.log(url);
         address = "";
         alert_type = "";
 

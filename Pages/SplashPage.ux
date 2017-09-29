@@ -2,10 +2,7 @@
   <Router ux:Dependency="router" />
   <JavaScript File="SplashPage.js" />
   <DockPanel>
-
-
     <Image File="Assets/emralsv2logo.png" Dock="Top" MaxHeight="110" Margin="0,35,0,0"/>
-
     <StackPanel Height="0">
       <Panel Y="90" Clicked="{goToAlerts}">
         <Image File="Assets/cameratag.png" Height="40" Margin="0, 0, 140, 0"/>
@@ -23,13 +20,12 @@
         <Rectangle Color="#FFF" Opacity="0.8" Height="48" Width="300" CornerRadius="10" Alignment="Center" Margin="0, 0"/>
       </Panel>
       <Panel>
-      <Text Margin="5,280,0,0" FontSize="11" Color="#636364" >Version 0.0.0 Build 789</Text>
-    </Panel>
+        <Text Margin="5,280,0,0" FontSize="11" Color="#636364" >Version 0.0.0 Build 789</Text>
+      </Panel>
     </StackPanel>
     <Rectangle Color="#8AB847" Height="48" Width="300" CornerRadius="10" Dock="Bottom" Margin="0, 0, 0, 40" Clicked="{goToLogin}" Visibility="{login_visible}">
       <Text Color="#FFF" FontSize="24" Alignment="Center">LOG IN</Text>
     </Rectangle>
-
     <Image File="Assets/bgtrash.jpg" Dock="Bottom" Margin="0,0,0,-88" />
   </DockPanel>
 </Page>

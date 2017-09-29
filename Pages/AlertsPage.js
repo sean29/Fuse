@@ -16,9 +16,9 @@ function goToAlert(arg) {
 
 
 var data = Observable();
-//var url = 'http://www.emrals.com/api/alerts/?format=json';
-var url = 'https://emrals-staging.herokuapp.com/api/alerts/?format=json';
-//var url = 'http://127.0.0.1:8000/api/alerts/?format=json';
+
+var url = api_url+'alerts/?format=json';
+
 
 fetch(url)
     .then(function(response) {
@@ -41,7 +41,6 @@ function endLoading() {
 
 function reloadHandler() {
     isLoading.value = true;
-    //setTimeout(endLoading, 3000);
     fetch(url)
     .then(function(response) {
         return response.json();
@@ -50,7 +49,6 @@ function reloadHandler() {
         data.replaceAll(responseObject.results);
         endLoading();
     });
-    
 }
 
 var isLoading = Observable(false);

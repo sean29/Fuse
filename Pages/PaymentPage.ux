@@ -11,68 +11,55 @@
         <Text ux:Class="Dog" Font="Dog" FontSize="20" Color="#636364"/>
         <Text ux:Class="Horse" Font="Horse" FontSize="20" Color="#FFF"/>
         <Text ux:Class="Mouse" Font="Mouse" FontSize="18" Color="#FFF"/>
-
         <Panel Background="#FFF" Height="80" Alignment="Top">
             <Text Value="<<" Color="#636364" FontSize="20" Margin="10,0,0,0" Clicked="{back}" Alignment="Left" />
             <Image File="Assets/emralsAllgreen2017logo.png" Margin="0,-10,0,0" MaxWidth="120" />
             <Head Alignment="Center" Margin="0,50,0,0">SUBSCRIPTION</Head>
         </Panel>
-
-     
-            <StackPanel>
-                <Panel>
-                    <Rectangle Color="#FFF" Opacity=".2" Height="3" Width="100%" Margin="0,80,0,0" />
-                <Rectangle Color="#8AB847" Height="120" Alignment="Top" Margin="0,80,0,0">
-                <Grid  Alignment="Center" Columns="200,100" Rows="50,50" Margin="0,25,0,0">
-                <Horse Row="0" Column="0" Value="Selected Impact Zone" Color="#FFF"/>
-                <Mouse Row="0" Column="1" Value="11222" />
-                <Horse Row="1" Column="0" Value="Monthly Impact" Color="#FFF"/>
-                <Mouse Row="1" Column="1" Value="$10/m" />
-                </Grid>
-            </Rectangle>
-        </Panel>
-
-
-    <Rectangle Color="#F7F7F7" Height="333">
-
-        <!--Error Message Panel-->
-        <Panel Visibility="Hidden">
-            <Rectangle Color="#DEDFDF" Opacity=".9" CornerRadius="5" Height="150" Width="250" Alignment="Center">
-                        <Panel>
-                        <PTMono Alignment="TopRight" Opacity="1" Margin="0,4,4,0" FontSize="16" Color="#000">X</PTMono>
-                        <PTMono TextWrapping="Wrap" Alignment="Center">ERROR: payment is invalid. Zipcode does not match card info. Please try again.</PTMono>
-                    </Panel>
-                    </Rectangle>
-                </Panel>
-       
-           
         <StackPanel>
-                <Mouse Value="Payment Info" Color="#636364" Alignment="Left" Margin="40,40,0,0"/>
-                <Rectangle Color="#FFF" CornerRadius="2" StrokeWidth=".5" StrokeColor="#8AB847" Height="38" Width="300" Alignment="Center" Margin="0,10,0,0" >
-                    <Basic.TextInput Width="280" Value="{name}" Alignment="Left" Margin="10,5,0,0" PlaceholderText="name" PlaceholderColor="#95989A" />
+            <Panel>
+                <Rectangle Color="#FFF" Opacity=".2" Height="3" Width="100%" Margin="0,80,0,0" />
+                <Rectangle Color="#8AB847" Height="120" Alignment="Top" Margin="0,80,0,0">
+                    <Grid Alignment="Center" Columns="200,100" Rows="50,50" Margin="0,25,0,0">
+                        <Horse Row="0" Column="0" Value="Selected Impact Zone" Color="#FFF"/>
+                        <Mouse Row="0" Column="1" Value="{zipcode}" />
+                        <Horse Row="1" Column="0" Value="Monthly Impact" Color="#FFF"/>
+                        <Mouse Row="1" Column="1" Value="${subscription}/m" />
+                    </Grid>
                 </Rectangle>
-                <Rectangle Color="#FFF" CornerRadius="2" StrokeWidth=".5" StrokeColor="#8AB847" Height="38" Width="300" Alignment="Center" Margin="0,15,0,0" >
-                    <Basic.TextInput Width="280" Value="{name}" Alignment="Left" Margin="10,5,0,0" PlaceholderText="email" PlaceholderColor="#95989A" />
+            </Panel>
+            <Rectangle Color="#F7F7F7" Height="333">
+                <Rectangle Color="#DEDFDF" Opacity=".9" Padding="5" CornerRadius="5" Width="250" Alignment="Center" Visibility="{error_visibility}" Clicked="{hideError}">
+                    <Panel Clicked="{hideError}">
+                        <PTMono Alignment="TopRight" Opacity="1" Margin="0,4,4,0" FontSize="16" Color="#000" >X</PTMono>
+                        <PTMono TextWrapping="Wrap" Alignment="Center">{error}</PTMono>
+                    </Panel>
                 </Rectangle>
-                <Rectangle Color="#FFF" CornerRadius="2" StrokeWidth=".5" StrokeColor="#8AB847" Height="38" Width="300" Alignment="Center" Margin="0,15,0,0">
-                    <Basic.TextInput Width="290" Value="{cardNumber}" Alignment="Left" Margin="5,5,0,0" PlaceholderText="card number" PlaceholderColor="#FFF" />
-                </Rectangle>
-                <StackPanel Orientation="Horizontal">
-                    <Rectangle Color="#FFF" CornerRadius="2" StrokeWidth=".5" StrokeColor="#8AB847" Height="38" Width="120" Alignment="Left" Margin="38,15,0,0">
-                        <Basic.TextInput Width="20" Value="{expiryMonth}" Alignment="Left" Margin="33, 5,0,0" PlaceholderText="Month (MM)" PlaceholderColor="#95989A" />
-                        <Basic.TextInput Width="20" Value="{expiryYear}" Alignment="Left" Margin="70,5,0,0" PlaceholderText="Year (YY)" PlaceholderColor="#95989A" />
+                <StackPanel>
+                    <Mouse Value="Payment Info" Color="#636364" Alignment="Left" Margin="40,40,0,0"/>
+                    <Rectangle Color="#FFF" CornerRadius="2" StrokeWidth=".5" StrokeColor="#8AB847" Height="38" Width="300" Alignment="Center" Margin="0,10,0,0" >
+                        <Basic.TextInput Width="280" Value="{name}" Alignment="Left" Margin="10,5,0,0" PlaceholderText="name" PlaceholderColor="#95989A" />
                     </Rectangle>
-                    <Rectangle Color="#FFF" CornerRadius="2" StrokeWidth=".5" StrokeColor="#8AB847" Height="38" Width="120" Margin="60,15,0,0">
-                        <Basic.TextInput Width="40" Value="{cvc}" Margin="10,5,0,0" PlaceholderText="CVC" PlaceholderColor="#95989A" />
+                    <Rectangle Color="#FFF" CornerRadius="2" StrokeWidth=".5" StrokeColor="#8AB847" Height="38" Width="300" Alignment="Center" Margin="0,15,0,0" >
+                        <Basic.TextInput Width="280" Value="{email}" Alignment="Left" Margin="10,5,0,0" PlaceholderText="email" PlaceholderColor="#95989A" />
                     </Rectangle>
-                </StackPanel>
+                    <Rectangle Color="#FFF" CornerRadius="2" StrokeWidth=".5" StrokeColor="#8AB847" Height="38" Width="300" Alignment="Center" Margin="0,15,0,0">
+                        <Basic.TextInput Width="290" Value="{cardNumber}" Alignment="Left" Margin="5,5,0,0" PlaceholderText="card number" PlaceholderColor="#FFF" />
+                    </Rectangle>
+                    <StackPanel Orientation="Horizontal">
+                        <Rectangle Color="#FFF" CornerRadius="2" StrokeWidth=".5" StrokeColor="#8AB847" Height="38" Width="120" Alignment="Left" Margin="38,15,0,0">
+                            <Basic.TextInput Width="20" Value="{expiryMonth}" Alignment="Left" Margin="33, 5,0,0" PlaceholderText="Month (MM)" PlaceholderColor="#95989A" />
+                            <Basic.TextInput Width="20" Value="{expiryYear}" Alignment="Left" Margin="70,5,0,0" PlaceholderText="Year (YY)" PlaceholderColor="#95989A" />
+                        </Rectangle>
+                        <Rectangle Color="#FFF" CornerRadius="2" StrokeWidth=".5" StrokeColor="#8AB847" Height="38" Width="120" Margin="60,15,0,0">
+                            <Basic.TextInput Width="40" Value="{cvc}" Margin="10,5,0,0" PlaceholderText="CVC" PlaceholderColor="#95989A" />
+                        </Rectangle>
+                    </StackPanel>
                 </StackPanel>
             </Rectangle>
-            </StackPanel>
-       
-            <Rectangle Height="44" Width="300" Color="#F05959" CornerRadius="10" Dock="Bottom" Margin="0,0,0,40" Clicked="{testPay}">
-                <Horse Alignment="Center">CONFIRM</Horse>
-            </Rectangle>
-        </DockPanel>
-
-    </Page>
+        </StackPanel>
+        <Rectangle Height="44" Width="300" Color="#F05959" CornerRadius="10" Dock="Bottom" Margin="0,0,0,40" Clicked="{testPay}">
+            <Horse Alignment="Center">CONFIRM</Horse>
+        </Rectangle>
+    </DockPanel>
+</Page>

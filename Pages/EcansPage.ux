@@ -1,26 +1,21 @@
 <Page ux:Class="EcansPage">
 	<Router ux:Dependency="router" />
 	<JavaScript File="EcansPage.js" />
-
-
-
 	<Panel Background="#FFF" Height="80" Alignment="Top">
-            <Text Value="<<" Color="#636364" FontSize="20" Margin="10,0,0,0" Clicked="{back}" Alignment="Left" />
-            <Image File="Assets/emralsAllgreen2017logo.png" Margin="0,-10,0,0" MaxWidth="120" />
-            <Head Alignment="Center" Margin="0,50,0,0">ECANS</Head>
-        </Panel>
-
+		<Text Value="<<" Color="#636364" FontSize="20" Margin="10,0,0,0" Clicked="{back}" Alignment="Left" />
+		<Image File="Assets/emralsAllgreen2017logo.png" Margin="0,-10,0,0" MaxWidth="120" />
+		<Head Alignment="Center" Margin="0,50,0,0">ECANS</Head>
+	</Panel>
 	<StackPanel Y="80">
 		<Rectangle Color="#636364" Height="250" Width="100%">
 			<Horse Color="#8AB847" Alignment="Bottom" FontSize="24" Margin="20,0,0,135">Say Hello</Horse>
-			 <Horse Color="#8AB847" Alignment="Bottom" FontSize="24" Margin="20,0,0,110">to eCan</Horse>
-			 <Rectangle Width="120" Height="60" Alignment="Left" Margin="20,90,0,0">
-			 <Cat Color="#FFF" FontSize="14" TextWrapping="Wrap">The smart trash bin that rewards you for cleaning up.</Cat>
+			<Horse Color="#8AB847" Alignment="Bottom" FontSize="24" Margin="20,0,0,110">to eCan</Horse>
+			<Rectangle Width="120" Height="60" Alignment="Left" Margin="20,90,0,0">
+				<Cat Color="#FFF" FontSize="14" TextWrapping="Wrap">The smart trash bin that rewards you for cleaning up.</Cat>
 			</Rectangle>
-		<Image File="Assets/ECANnotes.png" Margin="40,-10,0,0" MaxHeight="250" />
-	</Rectangle>
+			<Image File="Assets/ECANnotes.png" Margin="40,-10,0,0" MaxHeight="250" />
+		</Rectangle>
 		<Head Alignment="Center">eCans Around the World</Head>
-
 		<ScrollView MaxHeight="220" LayoutMode="PreserveVisual" Background="#F5F5F5" Padding="0,10,0,0">
 			<StackPanel Margin="20,0,0,0" ItemSpacing="20">
 				<Panel>
@@ -70,8 +65,8 @@
 				</Panel>
 			</StackPanel>
 		</ScrollView>
-		<Rectangle Color="#F05959" Height="48" Width="300" CornerRadius="10" Dock="Bottom" Margin="0, 10, 0, 0" >
-			<Horse Alignment="BottomCenter" Margin="0, 0, 0, 10" Clicked="{goToBuyEcan}">BUY ECAN</Horse>
+		<Rectangle Color="#F05959" Height="48" Width="300" CornerRadius="10" Dock="Bottom" Margin="0, 10, 0, 0" Clicked="{goToBuyEcan}">
+			<Horse Alignment="BottomCenter" Margin="0, 0, 0, 10">BUY ECAN</Horse>
 		</Rectangle>
 	</StackPanel>
 </Page>

@@ -5,12 +5,6 @@ var ImageTools = require("FuseJS/ImageTools");
 
 var exports = module.exports;
 
-function back() {
+exports.back = function back() {
   router.goto("alerts");
 }
-
-
-module.exports = {
-  back: back
-
-};

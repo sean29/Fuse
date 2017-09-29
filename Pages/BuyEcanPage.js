@@ -58,7 +58,7 @@ exports.testPay = function testPay() {
 		method: 'POST',
 		headers: {
 			"Content-type": "application/x-www-form-urlencoded",
-			'Authorization': 'Bearer ' + "sk_test"
+			'Authorization': 'Bearer ' + STRIPE_PRIVATE_KEY
 		},
 		body: formEncode(cardParams)
 	}).then(function(response) {
@@ -94,7 +94,7 @@ exports.testPay = function testPay() {
 				method: 'POST',
 				headers: {
 					"Content-type": "application/x-www-form-urlencoded",
-					'Authorization': 'Bearer ' + "sk_test"
+					'Authorization': 'Bearer ' + STRIPE_PRIVATE_KEY
 				},
 				body: formEncode(requestObject)
 			}).then(function(response) {

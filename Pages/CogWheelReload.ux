@@ -1,10 +1,7 @@
 <Panel ux:Class="CogWheelReload" ClipToBounds="True">
-	
 	<Image ux:Class="Cog" MaxHeight="200" MaxWidth="200" Alignment="Center" />
 	<Cog ux:Class="SmallCog" Color="#fff" File="Assets/cog1_white.png" Width="60" Height="60" />
 	<Cog ux:Class="BigCog" Color="#fff" File="Assets/cog2_white.png" Width="120" Height="120" />
-
-	<!-- places all cog wheels and move rotates them so they fit together -->
 	<Panel ux:Name="cogPanel" Background="#8AB847" Alignment="Top" Height="0" MinHeight="0">
 		<SmallCog ux:Name="cog1">
 			<Rotation ux:Name="cog1Rotation" />
@@ -29,13 +26,9 @@
 			<Rotation ux:Name="cog5Rotation" />
 		</BigCog>
 	</Panel>
-
-	<!-- set the hight of cogPanel so it stays open while loading -->
 	<WhileTrue ux:Name="retainSpace">
 		<Change cogPanel.MinHeight="75" Duration="0" DurationBack="0.3" Easing="CircularIn" />
 	</WhileTrue>
-
-	<!-- Rotate the wheels as we pull down -->
 	<ScrollingAnimation Range="SnapMin">
 		<Change cogPanel.Height="150" Duration="1" />
 		<Change cog1Rotation.Degrees="200" Duration="1" />
@@ -44,19 +37,14 @@
 		<Change cog4Rotation.Degrees="93" Duration="1" />
 		<Change cog5Rotation.Degrees="93" Duration="1" />
 	</ScrollingAnimation>
-
-	<!-- Move the big wheels when pulled past threshold -->
 	<Timeline ux:Name="moveCogsIntoPlace">
 		<Change cog2Trans.Y="0" Duration="0.6" DurationBack="0.2" Easing="CircularOut" />
 		<Change cog3Trans.Y="0" Duration="0.6" DurationBack="0.2" Easing="CircularOut" />
 		<Change cog4Trans.Y="0" Duration="0.6" DurationBack="0.2" Easing="CircularOut" />
 		<Change cog5Trans.Y="0" Duration="0.6" DurationBack="0.2" Easing="CircularOut" />
 	</Timeline>
-
-
 	<PullToReload IsLoading="{isLoading}" ReloadHandler="{reloadHandler}">
 		<State ux:Binding="Pulling">
-			<!-- animate elements while pulling here -->
 		</State>
 		<State ux:Binding="PulledPastThreshold">
 			<TimelineAction Target="moveCogsIntoPlace" How="PlayTo" Progress="1" />
