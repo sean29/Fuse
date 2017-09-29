@@ -1,11 +1,11 @@
 var Observable = require("FuseJS/Observable");
 
-var cardNumber = Observable("4242424242424242");
-var expiryMonth = Observable("12");
-var expiryYear = Observable("20");
-var cvc = Observable("123");
-var name = Observable("test");
-var email = Observable("test@example.com");
+var cardNumber = Observable("");
+var expiryMonth = Observable("");
+var expiryYear = Observable("");
+var cvc = Observable("");
+var name = Observable("");
+var email = Observable("");
 var error = Observable("");
 
 var param = this.Parameter;
