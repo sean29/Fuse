@@ -4,7 +4,7 @@
   <DockPanel>
 
 
-    <Image File="Assets/emralsv2logo.png" Dock="Top" MaxHeight="110" Margin="0,45,0,0"/>
+    <Image File="Assets/emralsv2logo.png" Dock="Top" MaxHeight="110" Margin="0,35,0,0"/>
 
     <StackPanel Height="0">
       <Panel Y="90" Clicked="{goToAlerts}">
