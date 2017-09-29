@@ -15,6 +15,9 @@
   "Includes": [
     "*"
   ],
+  "Mobile": {
+        "Orientations": "Portrait"
+  },
   "Version": "0.0.0",
   "DevelopmentTeam": "HRA3AUNUHS",
   "VersionCode": "2",
