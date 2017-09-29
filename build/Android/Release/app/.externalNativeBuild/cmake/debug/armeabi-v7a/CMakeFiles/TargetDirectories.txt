@@ -1,3 +1,0 @@
-C:/files/Fuse/build/Android/Release/app/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/emrals.dir
-C:/files/Fuse/build/Android/Release/app/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/edit_cache.dir
-C:/files/Fuse/build/Android/Release/app/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/rebuild_cache.dir

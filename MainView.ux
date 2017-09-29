@@ -1,5 +1,5 @@
 <App Background="#fff">
-  <iOS.StatusBarConfig Style="Light" />
+  <iOS.StatusBarConfig Style="Dark" />
   <Android.StatusBarConfig Color="#636364" />
   <JavaScript File="MainView.js" />
   <Router ux:Name="router" />

@@ -1,7 +1,0 @@
-C:/Users/q/AppData/Local/Android/sdk/ndk-bundle
-9
-armeabi-v7a
--O3 -DNDEBUG
-
- -IC:/Users/q/AppData/Local/Fusetools/Packages/UnoCore/1.2.1/prebuilt/Android/include -IC:/Users/q/AppData/Local/Android/sdk/ndk-bundle/sources/android/support/include -IC:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Scripting.V8/1.2.0
-C:/Users/q/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include
