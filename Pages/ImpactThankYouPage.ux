@@ -1,0 +1,4 @@
+<Page ux:Class="ImpactThankYouPage">
+    <Router ux:Dependency="router" />
+
+</Page>
