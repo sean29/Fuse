@@ -46,6 +46,8 @@ module.exports = {
 
             if (responseObject) {
                 if (responseObject.token) {
+                    widget_visible.value = "Visible";
+                    login_visible.value = "Hidden";
 
                     FileSystem.writeTextToFileSync(path, JSON.stringify(responseObject));
 
@@ -55,7 +57,7 @@ module.exports = {
                     user_name.value = user_info_object.username;
                     user_id.value = user_info_object.id;
                     user_xp.value = user_info_object.xp;
-                    widget_visible.value = "Visible";
+
                     router.goto("splash");
 
                 } else {

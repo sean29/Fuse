@@ -62,6 +62,7 @@ module.exports = {
             if (responseObject) {
                 if (responseObject.token) {
                     widget_visible.value = "Visible";
+                    login_visible.value = "Hidden";
                     FileSystem.writeTextToFileSync(path, JSON.stringify(responseObject));
 
                     user_info_object = JSON.parse(FileSystem.readTextFromFileSync(path));
