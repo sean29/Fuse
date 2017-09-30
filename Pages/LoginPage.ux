@@ -8,7 +8,7 @@
       <!--Image File="Assets/tinytriangle.png" MaxWidth="11" Margin="4,0,0,0"/>-->
     </StackPanel>
     <Panel Margin="10,0, 0, 0" Clicked="{back}" Dock="Top">
-        <Text Value="<<" Color="#636364" FontSize="30" Alignment="Left" />
+        <Text Value="<<" Color="#636364" FontSize="24" Alignment="Left" />
     </Panel>
     <DockPanel>
         <WhileKeyboardVisible>
