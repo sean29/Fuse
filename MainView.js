@@ -26,6 +26,7 @@ user_emrals = exports.user_emrals = Observable();
 user_username = exports.user_username = Observable();
 user_id = exports.user_id = Observable();
 user_name = exports.user_name = Observable();
+user_xp = exports.user_xp = Observable();
 
 var current = exports.current = Observable();
 var sel = exports.sel = Observable("1");
@@ -49,14 +50,18 @@ path = FileSystem.dataDirectory + "/" + "user_info.json";
 file_exists = FileSystem.exists(path)
   .then(function(x) {
     if (x) {
+      widget_visible.value = "Visible";
+      login_visible.value = "Hidden";
       user_info_object = JSON.parse(FileSystem.readTextFromFileSync(path));
       user_avatar.value = user_info_object.picture;
       user_emrals.value = user_info_object.emrals;
       user_name.value = user_info_object.username;
       user_id.value = user_info_object.id;
+      user_xp.value = user_info_object.xp;
+
       user_info.replaceAll(JSON.parse(FileSystem.readTextFromFileSync(path)));
-      widget_visible.value = "Visible";
-      login_visible.value = "Collapsed";
+
+
     } else {
       widget_visible.value = "Collapsed";
       login_visible.value = "Visible";
@@ -92,6 +97,10 @@ exports.takePicture = function() {
       console.log("Couldn't take picture: " + reason);
     }
   );
+};
+
+exports.viewProfile = function() {
+    router.push('profile');
 };
 
 exports.takePictureSolution = function() {

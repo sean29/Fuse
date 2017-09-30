@@ -1,0 +1,37 @@
+<Page ux:Class="ProfilePage">
+    <Router ux:Dependency="router" />
+    <JavaScript File="ProfilePage.js" />
+    <StackPanel Dock="Top" Orientation="Horizontal" Alignment="TopRight" Padding="5" Visibility="{widget_visible}" Clicked="{viewProfile}">
+      <Image File="Assets/greene.png" Dock="Top" Height="16" />
+      <PTSerif FontSize="14" Margin="4,0,4,0">{user_emrals}</PTSerif>
+      <Image Url="{user_avatar}" MaxHeight="16" />
+      <!--Image File="Assets/tinytriangle.png" MaxWidth="11" Margin="4,0,0,0"/>-->
+    </StackPanel>
+    <StackPanel Background="#FFF" Y="0">
+        <Image File="Assets/emralsAllgreen2017logo.png" Width="120" Margin="0, 2,0,0" />
+        <Text Value="<<" Color="#636364" FontSize="24" Alignment="Left" Margin="10, -30,0,0" Clicked="{back}"/>
+        <PTreal Alignment="Center">PROFILE</PTreal>
+    </StackPanel>
+    <StackPanel>
+        <Panel>
+            <Rectangle Color="#FFF" Opacity=".2" Height="3" Width="100%" Margin="0,60,0,0" />
+            <Rectangle Color="#8AB847" Height="120" Alignment="Top" Margin="0,60,0,0">
+                <Grid Alignment="Center" Columns="200,100" Rows="50,50" Margin="0,25,0,0">
+                    <Horse Row="0" Column="0" Value="Emrals" Color="#FFF"/>
+                    <Mouse Row="0" Column="1" Value="{user_emrals}" />
+                    <Horse Row="1" Column="0" Value="XP" Color="#FFF"/>
+                    <Mouse Row="1" Column="1" Value="{user_xp}" />
+                </Grid>
+            </Rectangle>
+        </Panel>
+        <Panel>
+            <Rectangle Color="#FFF" Opacity=".8" Width="320" Height="200" CornerRadius="10" Alignment="Center" Margin="0,0,0,70" StrokeWidth="2" StrokeColor="#8AB847">
+                <Image Url="{user_avatar}" MaxHeight="200" />
+            </Rectangle>
+        </Panel>
+                <Rectangle Color="#8AB847" Height="48" Width="300" CornerRadius="10" Dock="Bottom" Margin="0, 0, 0, 20" Clicked="{doLogout}">
+            <Text Color="#fff" FontSize="24" Alignment="BottomCenter" Margin="0, 0, 0, 10">LOG OUT</Text>
+        </Rectangle>
+    </StackPanel>
+
+</Page>

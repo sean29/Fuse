@@ -18,6 +18,7 @@
       <EcanThankYouPage ux:Template="ecanthanks" router="router" />
       <ImpactThankYouPage ux:Template="impactthanks" router="router" />
       <SolutionPage ux:Template="solution" router="router" />
+      <ProfilePage ux:Template="profile" router="router" />
     </Navigator>
   </ClientPanel>
 </App>

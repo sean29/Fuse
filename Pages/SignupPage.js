@@ -61,7 +61,7 @@ module.exports = {
 
             if (responseObject) {
                 if (responseObject.token) {
-
+                    widget_visible.value = "Visible";
                     FileSystem.writeTextToFileSync(path, JSON.stringify(responseObject));
 
                     user_info_object = JSON.parse(FileSystem.readTextFromFileSync(path));
@@ -69,7 +69,8 @@ module.exports = {
                     user_emrals.value = user_info_object.emrals;
                     user_name.value = user_info_object.username;
                     user_id.value = user_info_object.id;
-                    widget_visible.value = "Visible";
+                    user_xp.value = user_info_object.xp;
+
                     router.goto("splash");
 
                 } else {
