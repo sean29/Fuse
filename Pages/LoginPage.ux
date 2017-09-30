@@ -1,6 +1,12 @@
 <Page ux:Class="LoginPage">
     <Router ux:Dependency="router" />
     <JavaScript File="LoginPage.js" />
+                <StackPanel Dock="Top" Orientation="Horizontal" Alignment="TopRight" Padding="5" Visibility="{widget_visible}">
+      <Image File="Assets/greene.png" Dock="Top" Height="16" />
+      <PTSerif FontSize="14" Margin="4,0,4,0">{user_emrals}</PTSerif>
+      <Image Url="{user_avatar}" MaxHeight="16" />
+      <!--Image File="Assets/tinytriangle.png" MaxWidth="11" Margin="4,0,0,0"/>-->
+    </StackPanel>
     <Panel Margin="10,0, 0, 0" Clicked="{back}" Dock="Top">
         <Text Value="<<" Color="#636364" FontSize="30" Alignment="Left" />
     </Panel>

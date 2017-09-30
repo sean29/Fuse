@@ -1,5 +1,11 @@
 <Page ux:Class="AlertsPage">
     <Router ux:Dependency="router" />
+                <StackPanel Dock="Top" Orientation="Horizontal" Alignment="TopRight" Padding="5" Visibility="{widget_visible}">
+      <Image File="Assets/greene.png" Dock="Top" Height="16" />
+      <PTSerif FontSize="14" Margin="4,0,4,0">{user_emrals}</PTSerif>
+      <Image Url="{user_avatar}" MaxHeight="16" />
+      <!--Image File="Assets/tinytriangle.png" MaxWidth="11" Margin="4,0,0,0"/>-->
+    </StackPanel>
     <Panel ux:Class="MyLoadingIndicator" ThemeColor="#8AB847">
         <float4 ux:Property="ThemeColor" />
         <Circle ux:Name="rotatingStroke" Width="50" Height="50" StartAngleDegrees="-45" EndAngleDegrees="45">
