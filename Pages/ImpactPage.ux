@@ -9,11 +9,14 @@
     </StackPanel>
     <Font File="PTF55F.ttf" ux:Global="Curl" />
     <Text ux:Class="Curl" Font="Curl" FontSize="20" Color="#636364"/>
-    <StackPanel Background="#FFF" Y="0">
+
+   
+     <StackPanel Background="#FFF" Y="0" Height="60">
         <Image File="Assets/emralsAllgreen2017logo.png" Width="120" Margin="0, 2,0,0" />
         <Text Value="<<" Color="#636364" FontSize="24" Alignment="Left" Margin="10, -30,0,0" Clicked="{back}"/>
         <PTreal Alignment="Center">IMPACT ZONES</PTreal>
     </StackPanel>
+
     <StackPanel Y="60" Background="#FFF">
         <Panel>
             <Rectangle Color="#FFF" Opacity="0.8" Alignment="Bottom">

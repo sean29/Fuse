@@ -17,28 +17,28 @@
         <Text ux:Class="Dog" Font="Dog" FontSize="20" Color="#636364"/>
         <Text ux:Class="Horse" Font="Horse" FontSize="20" Color="#FFF"/>
         <Text ux:Class="Mouse" Font="Mouse" FontSize="18" Color="#FFF"/>
-        <StackPanel Background="#FFF" Dock="Top" Height="60">
-            <StackPanel Orientation="Horizontal" Alignment="Center">
-                <Text Value="<<" Color="#636364" FontSize="24" Margin="0,2,100,0" Clicked="{back}"/>
-                <Image File="Assets/emralsAllgreen2017logo.png" Width="120" Margin="0, 5,120,0" />
-            </StackPanel>
-            <PTreal Alignment="Center">SUBSCRIPTION</PTreal>
-        </StackPanel>
-        <ScrollView>
+
+            <StackPanel Background="#FFF" Y="0" Height="60">
+        <Image File="Assets/emralsAllgreen2017logo.png" Width="120" Margin="0, 2,0,0" />
+        <Text Value="<<" Color="#636364" FontSize="24" Alignment="Left" Margin="10, -30,0,0" Clicked="{back}"/>
+        <PTreal Alignment="Center">SUBSCRIPTION</PTreal>
+    </StackPanel>
+
+        <ScrollView Y="40">
             <ClientPanel>
                 <StackPanel>
-                    <Panel >
-                        <Rectangle Color="#FFF" Opacity=".2" Height="3" Width="100%" Margin="0,0,0,0" />
-                        <Rectangle Color="#8AB847" Height="120" Alignment="Top" Margin="0,0,0,0" >
-                            <Grid Alignment="Center" Columns="200,100" Rows="50,50" Margin="0,25,0,0">
-                                <Horse Row="0" Column="0" Value="Selected Impact Zone" Color="#FFF"/>
-                                <Mouse Row="0" Column="1" Value="{zipcode}" />
-                                <Horse Row="1" Column="0" Value="Monthly Impact" Color="#FFF"/>
-                                <Mouse Row="1" Column="1" Value="${subscription}/m" />
+                    <Panel>
+                        <Rectangle Color="#FFF" Opacity=".2" Height="3" Width="100%"  />
+                        <Rectangle Color="#8AB847" Height="120" Alignment="Top"          >
+                            <Grid Alignment="Center" Columns="200,100" Rows="60,60" >
+                                <Horse Row="0" Column="0" Value="Selected Impact Zone" Color="#FFF" Margin="0,15,0,0" />
+                                <Mouse Row="0" Column="1" Value="{zipcode}" Margin="0,15,0,0" />
+                                <Horse Row="1" Column="0" Value="Monthly Impact" Color="#FFF" Margin="0,15,0,0"/>
+                                <Mouse Row="1" Column="1" Value="${subscription}/m" Margin="0,15,0,0" />
                             </Grid>
                         </Rectangle>
                     </Panel>
-                    <Rectangle Color="#F7F7F7" Height="310">
+                    <Rectangle Color="#F7F7F7" Height="320">
                         <Rectangle Color="#DEDFDF" Opacity=".9" Padding="5" CornerRadius="5" Width="250" Alignment="Center" Visibility="{error_visibility}" Clicked="{hideError}">
                             <Panel Clicked="{hideError}">
                                 <PTMono Alignment="TopRight" Opacity="1" Margin="0,4,4,0" FontSize="16" Color="#000" >X</PTMono>
@@ -58,8 +58,8 @@
                             </Rectangle>
                             <StackPanel Orientation="Horizontal" Padding="30,0">
                                 <Rectangle Color="#FFF" CornerRadius="2" StrokeWidth=".5" StrokeColor="#8AB847" Height="38" Width="120" Margin="0,15,0,0">
-                                    <Basic.TextInput Width="30" Value="{expiryMonth}" Alignment="Left" Margin="33, 0,0,0" PlaceholderText="MM" PlaceholderColor="#95989A" />
-                                    <Basic.TextInput Width="30" Value="{expiryYear}" Alignment="Left" Margin="70,0,0,0" PlaceholderText="YY" PlaceholderColor="#95989A" />
+                                    <Basic.TextInput Width="30" Value="{expiryMonth}" Alignment="Left" Margin="33,5,0,0" PlaceholderText="MM" PlaceholderColor="#95989A" />
+                                    <Basic.TextInput Width="30" Value="{expiryYear}" Alignment="Left" Margin="70,5,0,0" PlaceholderText="YY" PlaceholderColor="#95989A" />
                                 </Rectangle>
                                 <Rectangle Color="#FFF" CornerRadius="2" StrokeWidth=".5" StrokeColor="#8AB847" Height="38" Width="120" Margin="60,15,0,0">
                                     <Basic.TextInput Width="40" Value="{cvc}" Margin="0,5,0,0" PlaceholderText="CVC" PlaceholderColor="#95989A" />
