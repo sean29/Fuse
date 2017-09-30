@@ -30,7 +30,7 @@ fetch(url)
     });
 
 function back() {
-    router.goBack();
+    router.goto('splash');
 }
 
 isBusy.activate();
