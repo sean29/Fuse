@@ -37,7 +37,7 @@
     </Grid>
     <DockPanel>
         <Text Font="Medium" FontSize="24" TextAlignment="Center" Color="#f00" >{error}</Text>
-        <Rectangle Color="#8AB847" Height="48" Width="300" CornerRadius="10" Dock="Bottom" Margin="0, 0, 0, 50" Clicked="{doSignup}">
+        <Rectangle Color="#8AB847" Height="48" Width="300" CornerRadius="10" Dock="Bottom" Margin="0, 0, 0, 20" Clicked="{doSignup}">
             <Text Color="#fff" FontSize="24" Alignment="BottomCenter" Margin="0, 0, 0, 10">SIGN UP</Text>
         </Rectangle>
     </DockPanel>
