@@ -1,9 +1,9 @@
 var InterApp = require("FuseJS/InterApp");
 var Observable = require("FuseJS/Observable");
+var Environment = require('FuseJS/Environment');
 
 var alert = this.Parameter;
 
-//console.log(JSON.stringify(alert));
 var image = alert.map(function(x) { return x.image; });
 var thumbnail = alert.map(function(x) { return x.thumbnail; });
 var name = alert.map(function(x) { return x.name; });
@@ -14,26 +14,9 @@ var poster_username = alert.map(function(x) { return x.poster_username; });
 var views = alert.map(function(x) { return x.views; });
 var created_naturaltime = alert.map(function(x) { return x.created_naturaltime; });
 var google_url = alert.map(function(x) { return x.google_url; });
-
 var longitude = alert.map(function(x) {  return x.longitude; });
-
 var latitude = alert.map(function(x) { return x.latitude; });
 
-
-var Environment = require('FuseJS/Environment');
-
-
-
-longitude_observable = Observable();
-latitude_observable = Observable();
-
-latitude.onValueChanged(module, function(x) {
-	latitude_observable = x;
-});
-
-longitude.onValueChanged(module, function(x) {
-	longitude_observable = x;
-});
 
 function back() {
 	alert.value = alert.value;
@@ -41,19 +24,15 @@ function back() {
 }
 
 function load_map(args){
-
 	if (Environment.android) { 
-		url = "geo:0,0?q=" + args.data.latitude.toString() +"," + args.data.longitude.toString();
+		url = "geo:0,0?q=" + args.data.latitude.value.toString() + "," + args.data.longitude.value.toString();
 		InterApp.launchUri(url);
 	}
 	if (Environment.ios) { 
-		url = "maps://?q=" + args.data.latitude.toString() +"," +args.data.longitude.toString();
+		url = "maps://?q=" + args.data.latitude.value.toString() + "," + args.data.longitude.value.toString();
 		InterApp.launchUri(url);
 	}
-
-	
 }
-
 
 module.exports = {
 	longitude: longitude,
