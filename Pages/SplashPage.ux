@@ -3,7 +3,7 @@
   <JavaScript File="SplashPage.js" />
       <StackPanel Dock="Top" Orientation="Horizontal" Alignment="TopRight" Padding="5" Visibility="{widget_visible}" Clicked="{viewProfile}">
       <Image File="Assets/greene.png" Dock="Top" Height="16" />
-      <PTSerif FontSize="14" Margin="4,0,4,0">{user_emrals}</PTSerif>
+      <PTreal FontSize="14" Margin="4,0,4,0">{user_emrals}</PTreal>
       <Image Url="{user_avatar}" MaxHeight="16" />
       <!--Image File="Assets/tinytriangle.png" MaxWidth="11" Margin="4,0,0,0"/>-->
     </StackPanel>
@@ -12,25 +12,25 @@
     <StackPanel Height="0">
       <Panel Y="90" Clicked="{goToAlerts}">
         <Image File="Assets/cameratag.png" Height="40" Margin="0, 0, 140, 0"/>
-        <Text Color="#636364" Alignment="Center" Margin="60, 0, 0, 0">Tag Dirt Alerts</Text>
+        <PTreal Color="#636364" FontSize="18" Alignment="Center" Margin="60, 0, 0, 0">Tag Dirt Alerts</PTreal>
         <Rectangle Color="#FFF" Opacity="0.8" Height="48" Width="300" CornerRadius="10" Alignment="Center" Margin="0, 0"  />
       </Panel>
       <Panel Y="100" Clicked="{goToImpact}">
         <Image File="Assets/buyicon.png" Height="40" Margin="0, 0, 140, 0"/>
-        <Text Color="#636364" Alignment="Center" Margin="40, 0, 0, 0">Fund Impact</Text>
+        <PTreal Color="#636364" FontSize="18" Alignment="Center" Margin="40, 0, 0, 0">Fund Impact</PTreal>
         <Rectangle Color="#FFF" Opacity="0.8" Height="48" Width="300" CornerRadius="10" Alignment="Center" Margin="0, 20" />
       </Panel>
       <Panel Y="110" Clicked="{goToEcans}">
         <Image File="Assets/v2ecansicon.png" Height="40" Margin="0, 0, 140, 0"/>
-        <Text Color="#636364" Alignment="Center" Margin="40, 0, 0, 0">See eCans</Text>
+        <PTreal Color="#636364" FontSize="18" Alignment="Center" Margin="25, 0, 0, 0">See eCans</PTreal>
         <Rectangle Color="#FFF" Opacity="0.8" Height="48" Width="300" CornerRadius="10" Alignment="Center" Margin="0, 0"/>
       </Panel>
       <Panel>
-        <Text Margin="5,280,0,0" FontSize="11" Color="#636364" >Version 0.0.0 Build 789</Text>
+        <Text Margin="5,280,0,0" FontSize="11" Color="#333333" >Version 0.0.0 Build 789</Text>
       </Panel>
     </StackPanel>
     <Rectangle Color="#8AB847" Height="48" Width="300" CornerRadius="10" Dock="Bottom" Margin="0, 0, 0, 40" Clicked="{goToLogin}" Visibility="{login_visible}">
-      <Text Color="#FFF" FontSize="24" Alignment="Center">LOG IN</Text>
+      <Horse Color="#FFF" FontSize="24" Alignment="Center">LOG IN</Horse>
     </Rectangle>
     <Image File="Assets/bgtrash.jpg" Dock="Bottom" Margin="0,0,0,-88" />
   </DockPanel>

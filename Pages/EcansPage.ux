@@ -3,70 +3,70 @@
 	<JavaScript File="EcansPage.js" />
 	            <StackPanel Dock="Top" Orientation="Horizontal" Alignment="TopRight" Padding="5" Visibility="{widget_visible}" Clicked="{viewProfile}">
       <Image File="Assets/greene.png" Dock="Top" Height="16" />
-      <PTSerif FontSize="14" Margin="4,0,4,0">{user_emrals}</PTSerif>
+      <PTreal FontSize="14" Margin="4,0,4,0">{user_emrals}</PTreal>
       <Image Url="{user_avatar}" MaxHeight="16" />
       <!--Image File="Assets/tinytriangle.png" MaxWidth="11" Margin="4,0,0,0"/>-->
     </StackPanel>
-	<Panel Background="#FFF" Height="80" Alignment="Top">
-		<Text Value="<<" Color="#636364" FontSize="20" Margin="10,0,0,0" Clicked="{back}" Alignment="Left" />
-		<Image File="Assets/emralsAllgreen2017logo.png" Margin="0,-10,0,0" MaxWidth="120" />
-		<Head Alignment="Center" Margin="0,50,0,0">ECANS</Head>
-	</Panel>
-	<StackPanel Y="80">
+	 <StackPanel Background="#FFF" Y="0" Height="60">
+        <Image File="Assets/emralsAllgreen2017logo.png" Width="120" Margin="0, 2,0,0" />
+        <Text Value="<<" Color="#636364" FontSize="24" Alignment="Left" Margin="10, -30,0,0" Clicked="{back}"/>
+        <PTreal Alignment="Center">ECANS</PTreal>
+    </StackPanel>
+	<StackPanel Y="60">
 		<Rectangle Color="#636364" Height="250" Width="100%">
 			<Horse Color="#8AB847" Alignment="Bottom" FontSize="24" Margin="20,0,0,135">Say Hello</Horse>
 			<Horse Color="#8AB847" Alignment="Bottom" FontSize="24" Margin="20,0,0,110">to eCan</Horse>
-			<Rectangle Width="120" Height="60" Alignment="Left" Margin="20,90,0,0">
+			<Rectangle Width="130" Height="60" Alignment="Left" Margin="20,90,0,0">
 				<Cat Color="#FFF" FontSize="14" TextWrapping="Wrap">The smart trash bin that rewards you for cleaning up.</Cat>
 			</Rectangle>
 			<Image File="Assets/ECANnotes.png" Margin="40,-10,0,0" MaxHeight="250" />
 		</Rectangle>
-		<Head Alignment="Center">eCans Around the World</Head>
-		<ScrollView MaxHeight="220" LayoutMode="PreserveVisual" Background="#F5F5F5" Padding="0,10,0,0">
+		<PTreal Alignment="Center">eCans Around the World</PTreal>
+		<ScrollView MaxHeight="215" LayoutMode="PreserveVisual" Background="#F5F5F5" Padding="0,5,0,0">
 			<StackPanel Margin="20,0,0,0" ItemSpacing="20">
 				<Panel>
 					<Image MaxHeight="92" Alignment="TopLeft" File="Assets/ecan1.jpg" />
 					<Rectangle Height="18" Color="#8AB847" Width="245" Margin="72,0,0, 0" Alignment="Top">
-						<Text FontSize="14" Color="#FFF" Margin="5,0" >The eCan at PS 333</Text>
+						<Horse FontSize="14" Color="#FFF" Margin="15,0" >The eCan at PS 333</Horse>
 					</Rectangle>
 					<Rectangle Height="90" Color="#FFF" Width="315" Alignment="Bottom">
-						<Text FontSize="12" TextWrapping="Wrap" Color="#636364" Margin="75,22,0, 0">This classroom loves recyling! The eCan helps keep track of items by showing data about what they toss. Its barcode scanner and interactive touchscreen are fun, too.</Text>
+						<Dog FontSize="12" TextWrapping="Wrap" Color="#636364" Margin="85,22,0, 0">This classroom loves recyling! The eCan helps keep track of items by showing data about what they toss. Its barcode scanner and interactive touchscreen are fun, too.</Dog>
 					</Rectangle>
 				</Panel>
 				<Panel>
 					<Image MaxHeight="92" Alignment="TopLeft" File="Assets/ecan2.jpg" />
 					<Rectangle Height="18" Color="#8AB847" Width="245" Margin="72,0,0, 0" Alignment="Top">
-						<Text FontSize="14" Color="#FFF" Margin="5,0" >Downtown Brooklyn Solar eCan</Text>
+						<Horse FontSize="14" Color="#FFF" Margin="15,0" >Downtown Brooklyn Solar eCan</Horse>
 					</Rectangle>
 					<Rectangle Height="90" Color="#FFF" Width="315" Alignment="Bottom">
-						<Text FontSize="12" TextWrapping="Wrap" Color="#636364" Margin="75,22,0, 0">Our first steel eCan designed for outdoor use on city trash cans is solar powered and awaiting installation in Downtown Brooklyn.</Text>
+						<Dog FontSize="12" TextWrapping="Wrap" Color="#636364" Margin="85,22,0, 0">Our first steel eCan designed for outdoor use on city trash cans is solar powered and awaiting installation in Downtown Brooklyn.</Dog>
 					</Rectangle>
 				</Panel>
 				<Panel>
 					<Image MaxHeight="92" Alignment="TopLeft" File="Assets/ecan3.jpg" />
 					<Rectangle Height="18" Color="#8AB847" Width="245" Margin="72,0,0, 0" Alignment="Top">
-						<Text FontSize="14" Color="#FFF" Margin="5,0" >Buildinglink Commercial Space eCan</Text>
+						<Horse FontSize="14" Color="#FFF" Margin="15,0" >Buildinglink Commercial Space eCan</Horse>
 					</Rectangle>
 					<Rectangle Height="90" Color="#FFF" Width="315" Alignment="Bottom">
-						<Text FontSize="12" TextWrapping="Wrap" Color="#636364" Margin="75,22,0, 0">One of our first sales to a forward thinking company, the Buildinglink eCan is currently being updated to the newer model with barcode scanning capabilities.</Text>
+						<Dog FontSize="12" TextWrapping="Wrap" Color="#636364" Margin="85,22,0, 0">One of our first sales to a forward thinking company, the Buildinglink eCan is currently being updated to the newer model with barcode scanning capabilities.</Dog>
 					</Rectangle>
 				</Panel>
 				<Panel>
 					<Image MaxHeight="92" Alignment="TopLeft" File="Assets/ecan4.jpg" />
 					<Rectangle Height="18" Color="#8AB847" Width="245" Margin="72,0,0, 0" Alignment="Top">
-						<Text FontSize="14" Color="#FFF" Margin="5,0" >eCan at Pop Up Shop</Text>
+						<Horse FontSize="14" Color="#FFF" Margin="15,0" >eCan at Pop Up Shop</Horse>
 					</Rectangle>
 					<Rectangle Height="90" Color="#FFF" Width="315" Alignment="Bottom">
-						<Text FontSize="12" TextWrapping="Wrap" Color="#636364" Margin="75,22,0, 0">Our multicultural eCan thanked people at this holiday pop up in Soho in seven different languages. Nothing says thank you like “thank you, merci, gracias, etc!”</Text>
+						<Dog FontSize="12" TextWrapping="Wrap" Color="#636364" Margin="85,22,0, 0">Our multicultural eCan thanked people at this holiday pop up in Soho in seven different languages. Nothing says thank you like “thank you, merci, gracias, etc!”</Dog>
 					</Rectangle>
 				</Panel>
 				<Panel>
 					<Image MaxHeight="92" Alignment="TopLeft" File="Assets/ecan5.jpg" />
 					<Rectangle Height="18" Color="#8AB847" Width="245" Margin="72,0,0, 0" Alignment="Top">
-						<Text FontSize="14" Color="#FFF" Margin="5,0" >eCan at Automotive HS</Text>
+						<Horse FontSize="14" Color="#FFF" Margin="15,0" >eCan at Automotive HS</Horse>
 					</Rectangle>
 					<Rectangle Height="90" Color="#FFF" Width="315" Alignment="Bottom">
-						<Text FontSize="12" TextWrapping="Wrap" Color="#636364" Margin="75,22,0, 0">As part of our Shuttleworth Foundation Grant, the Automotive HS will be receiving the second donated eCan.</Text>
+						<Dog FontSize="12" TextWrapping="Wrap" Color="#636364" Margin="85,22,0, 0">As part of our Shuttleworth Foundation Grant, the Automotive HS will be receiving the second donated eCan.</Dog>
 					</Rectangle>
 				</Panel>
 			</StackPanel>

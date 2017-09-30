@@ -12,7 +12,7 @@
     <StackPanel Background="#FFF" Y="0">
         <Image File="Assets/emralsAllgreen2017logo.png" Width="120" Margin="0, 2,0,0" />
         <Text Value="<<" Color="#636364" FontSize="24" Alignment="Left" Margin="10, -30,0,0" Clicked="{back}"/>
-        <PTreal Alignment="Center" Margin="0,0,0,0">IMPACT ZONES</PTreal>
+        <PTreal Alignment="Center">IMPACT ZONES</PTreal>
     </StackPanel>
     <StackPanel Y="60" Background="#FFF">
         <Panel>
