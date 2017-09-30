@@ -2,10 +2,7 @@
     <JavaScript File="ImpactPage.js" />
     <Router ux:Dependency="router" />
     <Font File="PTF55F.ttf" ux:Global="Curl" />
-    <Text ux:Class="Curl" 
-        Font="Curl" 
-        FontSize="20"
-        Color="#636364"/>
+    <Text ux:Class="Curl" Font="Curl" FontSize="20" Color="#636364"/>
     <StackPanel Background="#FFF" Y="0">
         <Image File="Assets/emralsAllgreen2017logo.png" Width="120" Margin="0, 2,0,0" />
         <Text Value="<<" Color="#636364" FontSize="24" Alignment="Left" Margin="10, -30,0,0" Clicked="{back}"/>
@@ -13,8 +10,8 @@
     </StackPanel>
     <StackPanel Y="60" Background="#FFF">
         <Panel>
-            <Rectangle Color="#FFF" Opacity="0.8" Height="90" Alignment="Bottom">
-                <Curl FontSize="16" Color="#2B2B2B" Margin="20,0,0,0" TextWrapping="Wrap">Impact zones allow you to focus your cleanup reward power. Select a zone in an area that matters to you. Your subscription automatically funds the cleanup in those locations.</Curl>
+            <Rectangle Color="#FFF" Opacity="0.8" Alignment="Bottom">
+                <Curl FontSize="16" Color="#2B2B2B" Margin="20,0,0,0" TextWrapping="Wrap">Impact zones allow you to focus your cleanup reward power. Select a zone in an area that matters to you to be cleaned. Your subscription automatically funds the cleanup in those locations by paying tahe people that clean up.</Curl>
             </Rectangle>
             <Image File="Assets/city.jpeg" Width="100%"/>
         </Panel>

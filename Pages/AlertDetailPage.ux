@@ -32,7 +32,7 @@
 			<Dog Row="2" Column="1" Margin="2,7,0,0" FontSize="14" >{created_naturaltime}</Dog>
 		</Grid>
 		<Image Url="{google_url}" Alignment="BottomRight" Margin="0,0,0,80" Clicked="{load_map}"/>
-		<Rectangle Width="300" Height="43" CornerRadius="5" Color="#8AB847" Alignment="Bottom" Margin="0,0,0,20">
+		<Rectangle Width="300" Height="43" CornerRadius="5" Color="#8AB847" Alignment="Bottom" Margin="0,0,0,20" Clicked="{takePictureSolution}">
 			<Text Color="#FFF" FontSize="24" Alignment="Center">POST CLEAN PIC</Text>
 		</Rectangle>
 	</Panel>

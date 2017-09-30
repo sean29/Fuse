@@ -1,6 +1,5 @@
 <Page ux:Class="AlertsPage">
     <Router ux:Dependency="router" />
-    <iOS.StatusBarConfig Style="Light" />
     <Panel ux:Class="MyLoadingIndicator" ThemeColor="#8AB847">
         <float4 ux:Property="ThemeColor" />
         <Circle ux:Name="rotatingStroke" Width="50" Height="50" StartAngleDegrees="-45" EndAngleDegrees="45">

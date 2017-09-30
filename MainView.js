@@ -94,6 +94,36 @@ exports.takePicture = function() {
   );
 };
 
+exports.takePictureSolution = function() {
+  Camera.takePicture().then(
+    function(image) {
+      var args = {
+        desiredWidth: 320,
+        desiredHeight: 320,
+        mode: ImageTools.SCALE_AND_CROP,
+        performInPlace: true
+      };
+      ImageTools.resize(image, args).then(
+        function(image) {
+          router.goto("solution");
+          CameraRoll.publishImage(image);
+          imageFile.value = image;
+          tempImage = image;
+          displayImage(image);
+        }
+      ).catch(
+        function(reason) {
+          console.log("Couldn't resize image: " + reason);
+        }
+      );
+    }
+  ).catch(
+    function(reason) {
+      console.log("Couldn't take picture: " + reason);
+    }
+  );
+};
+
 var lastImage = "";
 
 var displayImage = function(image) {
@@ -129,7 +159,7 @@ function formEncode(obj) {
 }
 
 function slugify(text) {
-  const a = 'Ã Ã¡Ã¤Ã¢Ã¨Ã©Ã«ÃªÃ¬Ã­Ã¯Ã®Ã²Ã³Ã¶Ã´Ã¹ÃºÃ¼Ã»Ã±Ã§ÃŸÃ¿Å“Ã¦Å•Å›Å„á¹•áºƒÇµÇ¹á¸¿Ç˜áºÅºá¸§Â·/_,:;'
+  const a = 'àáäâèéëêìíïîòóöôùúüûñçßÿœærsn?????u?z?·/_,:;'
   const b = 'aaaaeeeeiiiioooouuuuncsyoarsnpwgnmuxzh------'
   const p = new RegExp(a.split('').join('|'), 'g')
 
