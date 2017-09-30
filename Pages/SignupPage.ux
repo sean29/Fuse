@@ -1,13 +1,15 @@
 <Page ux:Class="SignupPage">
     <Router ux:Dependency="router" />
     <JavaScript File="SignupPage.js" />
-    <DockPanel>
         <StackPanel Dock="Top" Orientation="Horizontal" Alignment="TopRight" Padding="5" Visibility="{widget_visible}">
             <Image File="Assets/greene.png" Dock="Top" Height="16" />
             <PTSerif FontSize="14" Margin="4,0,4,0">{user_emrals}</PTSerif>
             <Image Url="{user_avatar}" MaxHeight="16" />
             <!--Image File="Assets/tinytriangle.png" MaxWidth="11" Margin="4,0,0,0"/>-->
         </StackPanel>
+ 
+    <DockPanel>
+
         <Panel Margin="10,0, 0, 0" Clicked="{back}" Dock="Top">
             <Text Value="<<" Color="#636364" FontSize="24" Alignment="Left" />
         </Panel>
@@ -15,6 +17,7 @@
             <Move Target="LogoFile2"  Y="-100" Duration=".6" Easing="ExponentialInOut"/>
             <Scale Target="LogoFile2"  Factor=".6"  Duration=".6"/>
             <Move Target="loginArea2" Y="-10" Duration=".6" Easing="ExponentialInOut"/>
+            <Move Target="signupbutton" Y="50" Duration=".6" Easing="ExponentialInOut"/>
         </WhileKeyboardVisible>
         <Image ux:Name="LogoFile2"  File="Assets/emralsv2logo.png" Dock="Top" MaxHeight="110" Margin="0,50,0,0"/>
     </DockPanel>
@@ -35,10 +38,12 @@
         <TextInput Value="{password}" Row="4" Column="1" PlaceholderText="password" PlaceholderColor="#C6C6C6" TextColor="#6B6C6D" FontSize="14" CaretColor="#999" IsPassword="true" />
         <Rectangle Row="4" Column="1" Alignment="Bottom" ColumnSpan="2" Height="1" Color="#95989A" />
     </Grid>
-    <DockPanel>
+
+    <DockPanel ux:Name="signupbutton">
         <Text Font="Medium" FontSize="24" TextAlignment="Center" Color="#f00" >{error}</Text>
         <Rectangle Color="#8AB847" Height="48" Width="300" CornerRadius="10" Dock="Bottom" Margin="0, 0, 0, 20" Clicked="{doSignup}">
             <Text Color="#fff" FontSize="24" Alignment="BottomCenter" Margin="0, 0, 0, 10">SIGN UP</Text>
         </Rectangle>
     </DockPanel>
+
 </Page>
