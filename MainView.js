@@ -28,6 +28,7 @@ user_id = exports.user_id = Observable();
 user_name = exports.user_name = Observable();
 user_xp = exports.user_xp = Observable();
 
+var loading_visible = exports.loading_visible = Observable(false); 
 var current = exports.current = Observable();
 var sel = exports.sel = Observable("1");
 var total_emrals = exports.total_emrals = Observable("0001");
@@ -80,6 +81,7 @@ exports.takePicture = function() {
       };
       ImageTools.resize(image, args).then(
         function(image) {
+          loading_visible.value=false;
           router.goto("camera");
           CameraRoll.publishImage(image);
           imageFile.value = image;
@@ -100,7 +102,7 @@ exports.takePicture = function() {
 };
 
 exports.viewProfile = function() {
-    router.push('profile');
+  router.push('profile');
 };
 
 exports.takePictureSolution = function() {
@@ -168,14 +170,9 @@ function formEncode(obj) {
 }
 
 function slugify(text) {
-  const a = '????????????????sn?????u?z??/_,:;'
-  const b = 'aaaaeeeeiiiioooouuuuncsyoarsnpwgnmuxzh------'
-  const p = new RegExp(a.split('').join('|'), 'g')
 
   return text.toString().toLowerCase()
     .replace(/\s+/g, '-') // Replace spaces with -
-    .replace(p, c =>
-      b.charAt(a.indexOf(c))) // Replace special chars
     .replace(/&/g, '-and-') // Replace & with 'and'
     .replace(/[^\w\-]+/g, '') // Remove all non-word chars
     .replace(/\-\-+/g, '-') // Replace multiple - with single -
@@ -183,10 +180,15 @@ function slugify(text) {
     .replace(/-+$/, '') // Trim - from end of text
 }
 
-exports.uploadAlert = function uploadAlert(e) {
+exports.endLoading = function endLoading() {
+  isLoading.value = false;
+}
 
+exports.uploadAlert = function uploadAlert(e) {
+  
 
   if (tempImage) {
+    loading_visible.value=true;
     Uploader.send(tempImage.path, emrals_url + 'upload_image/').then(function(response) {
       GeoLocation.getLocation(2000).then(function(location) {
         var latlng = location.latitude + "," + location.longitude;
@@ -212,19 +214,19 @@ exports.uploadAlert = function uploadAlert(e) {
         }
 
 
-
         fetch(url)
           .then(function(response) {
             return response.json();
           }).then(function(responseObject) {
 
-            console.log(responseObject.results[0].formatted_address);
             address = responseObject.results[0].formatted_address.toString();
-            user_info_object = JSON.parse(FileSystem.readTextFromFileSync(path));
-            console.log(user_id.value);
+            if (!user_id.value) {
+              user_id.value = 1;
+              user_username.value = "Anonymous";
+            }
 
             var requestObject = {
-              creator: api_url + "users/" + user_info_object.id.toString() + "/",
+              creator: api_url + "users/" + user_id.value.toString() + "/",
               type: api_url + "types/" + sel.value.toString() + "/",
               title: alert_type + " near " + address,
               slug: slugify(alert_type + " near " + address).substring(0, 49),
@@ -236,38 +238,61 @@ exports.uploadAlert = function uploadAlert(e) {
             };
             console.log(JSON.stringify(requestObject));
 
-
-            url = 'https://emrals-staging.herokuapp.com/api/alerts/';
-            fetch(url, {
+            fetch(api_url + 'alerts/', {
               method: 'POST',
               headers: {
                 "Content-type": "application/x-www-form-urlencoded"
               },
               body: formEncode(requestObject)
             }).then(function(response) {
-              return response;
+              return response.json();
             }).then(function(responseObject) {
               console.log(JSON.stringify(responseObject));
-              if (responseObject.status == 201) {
-                router.goto("alerts");
+              if (responseObject.id) {
+                router.push("alerts", {poster_username: responseObject.poster_username,id:responseObject.id});
               }
 
             }).catch(function(err) {
               console.log("Fetch error: " + err);
             });
 
-
-
           }).catch(function(err) {
             console.log("Fetch error: " + err);
           });
-
-
 
       }).catch(function(fail) {
         console.log("getLocation fail " + fail);
       });
 
     });
+  }else{
+    Camera.takePicture().then(
+    function(image) {
+      var args = {
+        desiredWidth: 320,
+        desiredHeight: 320,
+        mode: ImageTools.SCALE_AND_CROP,
+        performInPlace: true
+      };
+      ImageTools.resize(image, args).then(
+        function(image) {
+          router.goto("camera");
+
+          CameraRoll.publishImage(image);
+          imageFile.value = image;
+          tempImage = image;
+          displayImage(image);
+        }
+      ).catch(
+        function(reason) {
+          console.log("Couldn't resize image: " + reason);
+        }
+      );
+    }
+  ).catch(
+    function(reason) {
+      console.log("Couldn't take picture: " + reason);
+    }
+  );
   }
 };

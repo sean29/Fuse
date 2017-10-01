@@ -11,6 +11,27 @@
 	<Font File="PTF75F.ttf" ux:Global="PTBold" />
 	<Text ux:Class="PTSerif" Font="PTSerif" FontSize="20" Color="#636364" />
 	<Text ux:Class="PTBold" Font="PTBold" FontSize="22" Color="#393939" />
+    <Panel ux:Class="MyLoadingIndicator2" ThemeColor="#8AB847">
+        <float4 ux:Property="ThemeColor" />
+        <Circle ux:Name="rotatingStroke" Width="50" Height="50" StartAngleDegrees="-45" EndAngleDegrees="45">
+            <Stroke Width="2" Color="{ReadProperty ThemeColor}" />
+        </Circle>
+        <Circle Color="{ReadProperty ThemeColor}" Width="20" Height="20">
+            <Timeline ux:Name="myTimeline">
+                <Scale Factor=".5" Duration=".25" Easing="CircularOut" EasingBack="CircularIn" />
+                <Scale Factor="2" Duration=".25" Delay=".25" Easing="BounceOut" EasingBack="BounceIn" />
+            </Timeline>
+        </Circle>
+        <WhileFalse>
+            <Cycle Target="myTimeline.TargetProgress" Low="0" High="1" Frequency=".5" />
+            <Spin Target="rotatingStroke" Frequency="1" />
+        </WhileFalse>
+    </Panel>
+    <Busy ux:Name="isBusy2" IsActive="{loading_visible}" />
+    <WhileBusy>
+        <Change loadingPanel.Opacity="1" Duration=".4" />
+    </WhileBusy>
+    <MyLoadingIndicator2 ux:Name="loadingPanel" Opacity="0" ThemeColor="#8AB847" />
 	<DockPanel>
 		<Panel Background="#FFF" Dock="Top">
 			<Panel Margin="10,0, 0, 0" Clicked="{back}" Dock="Top">

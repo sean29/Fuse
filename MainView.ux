@@ -4,6 +4,7 @@
   <JavaScript File="MainView.js" />
   <Router ux:Name="router" />
   <ClientPanel>
+
     <Navigator DefaultPath="splash">
       <SplashPage ux:Template="splash" router="router" />
       <AlertsPage ux:Template="alerts" router="router" />
