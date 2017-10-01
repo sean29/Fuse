@@ -34,7 +34,7 @@ var sel = exports.sel = Observable("1");
 var total_emrals = exports.total_emrals = Observable("0001");
 
 STRIPE_PRIVATE_KEY = "pk_test";
-emrals_url = "https://emrals.herokuapp.com/"
+emrals_url = "https://emrals-staging.herokuapp.com/"
 api_url = emrals_url + "api/"
 
 var tempImage = "";
@@ -69,6 +69,11 @@ file_exists = FileSystem.exists(path)
     }
 
   }, function(error) {});
+
+
+exports.goHome = function() {
+  router.goto('splash');
+}
 
 exports.takePicture = function() {
   Camera.takePicture().then(
@@ -105,7 +110,8 @@ exports.viewProfile = function() {
   router.push('profile');
 };
 
-exports.takePictureSolution = function() {
+exports.takePictureSolution = function(inputs) {
+  console.log(JSON.stringify(inputs.data));
   Camera.takePicture().then(
     function(image) {
       var args = {
@@ -116,7 +122,7 @@ exports.takePictureSolution = function() {
       };
       ImageTools.resize(image, args).then(
         function(image) {
-          router.goto("solution");
+          router.goto("solution", {id:inputs.data.id.value, emrals:inputs.data.emrals.value});
           CameraRoll.publishImage(image);
           imageFile.value = image;
           tempImage = image;
@@ -277,6 +283,89 @@ exports.uploadAlert = function uploadAlert(e) {
       ImageTools.resize(image, args).then(
         function(image) {
           router.goto("camera");
+
+          CameraRoll.publishImage(image);
+          imageFile.value = image;
+          tempImage = image;
+          displayImage(image);
+        }
+      ).catch(
+        function(reason) {
+          console.log("Couldn't resize image: " + reason);
+        }
+      );
+    }
+  ).catch(
+    function(reason) {
+      console.log("Couldn't take picture: " + reason);
+    }
+  );
+  }
+};
+
+
+
+exports.uploadSolution = function uploadSolution(e) {
+  
+
+  if (tempImage) {
+    loading_visible.value=true;
+    Uploader.send(tempImage.path, emrals_url + 'upload_image/').then(function(response) {
+      GeoLocation.getLocation(2000).then(function(location) {
+          console.log(JSON.stringify(e.data));
+          console.log(JSON.stringify(e.data.id.value));
+
+            if (!user_id.value) {
+              user_id.value = 1;
+              user_username.value = "Anonymous";
+            }
+
+            var requestObject = {
+              user: api_url + "users/" + user_id.value.toString() + "/",
+              alert: api_url + "alerts/" + e.data.id.value.toString() + "/",
+              longitude: parseFloat(location.longitude),
+              latitude: parseFloat(location.latitude),
+              filename: tempImage.name,
+              comment: "posted solution"
+            };
+            console.log(JSON.stringify(requestObject));
+
+            fetch(api_url + 'solutions/', {
+              method: 'POST',
+              headers: {
+                "Content-type": "application/x-www-form-urlencoded"
+              },
+              body: formEncode(requestObject)
+            }).then(function(response) {
+              return response.json();
+            }).then(function(responseObject) {
+              console.log(JSON.stringify(responseObject));
+              if (responseObject.id) {
+                router.push("alerts");
+              }
+
+            }).catch(function(err) {
+              console.log("Fetch error: " + err);
+            });
+
+          }).catch(function(err) {
+            console.log("Fetch error: " + err);
+          });
+
+
+    });
+  }else{
+    Camera.takePicture().then(
+    function(image) {
+      var args = {
+        desiredWidth: 320,
+        desiredHeight: 320,
+        mode: ImageTools.SCALE_AND_CROP,
+        performInPlace: true
+      };
+      ImageTools.resize(image, args).then(
+        function(image) {
+          router.goto("solution");
 
           CameraRoll.publishImage(image);
           imageFile.value = image;
