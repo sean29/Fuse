@@ -34,7 +34,7 @@ var sel = exports.sel = Observable("1");
 var total_emrals = exports.total_emrals = Observable("0001");
 
 STRIPE_PRIVATE_KEY = "pk_test";
-emrals_url = "https://emrals-staging.herokuapp.com/"
+emrals_url = "https://emrals.herokuapp.com/"
 api_url = emrals_url + "api/"
 
 var tempImage = "";
