@@ -1,6 +1,6 @@
 {
   "Title": "Emrals",
-  "RootNamespace":"",
+  "RootNamespace": "",
   "Packages": [
     "Fuse",
     "FuseJS",
@@ -11,16 +11,17 @@
     "Fuse.Scripting",
     "Fuse.BasicTheme",
     "Fuse.GeoLocation",
-    "Fuse.Launcher",
+    "Fuse.Launcher"
   ],
   "Projects": [
-    "fuse-qreader-master/fuse-qreader.unoproj"
+    "fuse-qreader-master/fuse-qreader.unoproj",
+    "fuse_modules\\bolav\\fuse-cocoapods\\cocoapods_include.unoproj"
   ],
   "Includes": [
     "*"
   ],
   "Mobile": {
-        "Orientations": "Portrait"
+    "Orientations": "Portrait"
   },
   "Version": "0.0.0",
   "DevelopmentTeam": "HRA3AUNUHS",
@@ -41,7 +42,6 @@
     "BundleIdentifier": "com.apps.emrals",
     "Icons": {
       "iPhone_29_2x": "$(Icon)",
-      "iPhone_29_2x": "$(Icon)",
       "iPhone_29_3x": "$(Icon)",
       "iPhone_40_2x": "$(Icon)",
       "iPhone_40_3x": "$(Icon)",
@@ -51,8 +51,8 @@
   },
   "Android": {
     "Geo": {
-          "ApiKey": "GOOGLE_MAPS_API_KEY"
-      },
+      "ApiKey": "GOOGLE_MAPS_API_KEY"
+    },
     "Icons": {
       "LDPI": "$(Icon)",
       "MDPI": "$(Icon)",
@@ -61,6 +61,13 @@
       "XXHDPI": "$(Icon)",
       "XXXHDPI": "$(Icon)"
     }
+  },
+  "Excludes": [
+    "fuse_modules/"
+  ],
+  "FusePM": {
+    "Dependencies": [
+      "https://github.com/bolav/fuse-cocoapods"
+    ]
   }
 }
-

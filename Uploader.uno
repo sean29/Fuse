@@ -13,6 +13,8 @@ using Fuse;
 using Fuse.Scripting;
 
 
+[Require("Cocoapods.Podfile.Target", "pod 'BuddyBuildSDK'")]
+
 [UXGlobalModule]
 public class Uploader : NativeModule
 {

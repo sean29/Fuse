@@ -3,12 +3,14 @@ var Camera = require("FuseJS/Camera");
 var CameraRoll = require("FuseJS/CameraRoll");
 var ImageTools = require("FuseJS/ImageTools");
 var Uploader = require("Uploader");
+
 var GeoLocation = require("FuseJS/GeoLocation");
 var FileSystem = require("FuseJS/FileSystem");
 
 
 
-var immediateLocation = Observable(JSON.stringify(GeoLocation.location));
+//var immediateLocation = Observable(JSON.stringify(GeoLocation.location));
+
 
 var exports = module.exports;
 

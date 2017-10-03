@@ -149,7 +149,6 @@ module.exports = {
 	expiryMonth: expiryMonth,
 	expiryYear: expiryYear,
 	cvc: cvc,
-	back: back,
 	hideError: hideError,
 	zipcode: zipcode,
 	name: name,

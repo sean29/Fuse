@@ -22,14 +22,14 @@
             <Rectangle Color="#FFF" Opacity="0.8" Alignment="Bottom">
                 <Curl FontSize="16" Color="#2B2B2B" Margin="20,0,0,0" TextWrapping="Wrap">Impact zones allow you to focus your cleanup reward power. Select a zone in an area that matters to you to be cleaned. Your subscription automatically funds the cleanup in those locations by paying tahe people that clean up.</Curl>
             </Rectangle>
-            <Image File="Assets/city.jpeg" Width="100%"/>
+            <Image File="Assets/city.jpeg" Width="100%"  Clicked="{extractzip}"/>
         </Panel>
         <Rectangle Color="#F5F5F5" Height="120" Width="320" CornerRadius="10" Margin="0,20,0,20">
             <StackPanel Margin="0,15,0,0">
                 <Grid RowCount="1" ColumnCount="2" Margin="0,0,10,0">
                     <Text FontSize="16" Margin="20,5,0,0">Enter Zipcode</Text>
                     <Rectangle Color="#FFF" Margin="0,0,100,0" Height="38" Width="80">
-                        <TextInput  Value="{zipcode}" Row="0" Column="1" PlaceholderText="zipcode" PlaceholderColor="#999" TextColor="#222" CaretColor="#222" TextAlignment="Center" />
+                        <TextInput  Value="{zipcode}" Row="0" Column="1" PlaceholderText="zipcode" PlaceholderColor="#999" TextColor="#222" CaretColor="#222" TextAlignment="Center"/>
                     </Rectangle>
                 </Grid>
                 <Grid RowCount="1" Columns="auto,1*,1*" >
