@@ -29,7 +29,7 @@
         <PTreal Color="#636364" FontSize="18" Alignment="Center" Margin="25, 0, 0, 0">Dirt Alert Map</PTreal>
         <Rectangle Color="#FFF" Opacity="0.8" Height="48" Width="300" CornerRadius="10" Alignment="Center" Margin="0, 0"/>
       </Panel>
-      <Panel Y="170" Clicked="{goToBarcode}"  >
+      <Panel Y="170" Clicked="{goToBarcode}" Visibility="{widget_visible}" >
         <Image File="Assets/barcode.png" Height="40" Margin="0, 0, 140, 0"/>
         <PTreal Color="#636364" FontSize="18" Alignment="Center" Margin="25, 0, 0, 0">Scan Barcodes</PTreal>
         <Rectangle Color="#FFF" Opacity="0.8" Height="48" Width="300" CornerRadius="10" Alignment="Center" Margin="0, 0"/>
