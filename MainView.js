@@ -7,10 +7,15 @@ var GeoLocation = require("FuseJS/GeoLocation");
 var FileSystem = require("FuseJS/FileSystem");
 
 
-var build_num = Observable("32");
+
 var immediateLocation = Observable(JSON.stringify(GeoLocation.location));
 
 var exports = module.exports;
+
+exports.build_num = Observable("32");
+
+var emrals_popup_visibility = exports.emrals_popup_visibility = Observable("Hidden");
+
 
 widget_visible = exports.widget_visible = Observable();
 login_visible = exports.login_visible = Observable();
@@ -31,6 +36,11 @@ var loading_visible = exports.loading_visible = Observable(false);
 var current = exports.current = Observable();
 var sel = exports.sel = Observable("1");
 var total_emrals = exports.total_emrals = Observable("0001");
+
+exports.add_emrals_1 =  function(args) { total_emrals.value = "101"; emrals_popup_visibility.value="Hidden";}
+exports.add_emrals_5 =  function(args) { total_emrals.value = "501"; emrals_popup_visibility.value="Hidden";}
+exports.add_emrals_10 =  function(args) { total_emrals.value = "1001"; emrals_popup_visibility.value="Hidden";}
+
 
 STRIPE_PRIVATE_KEY = "pk_test";
 emrals_url = "https://emrals.herokuapp.com/"
@@ -69,19 +79,27 @@ file_exists = FileSystem.exists(path)
 
   }, function(error) {});
 
-
+exports.back = function() { router.goBack(); }
 exports.goHome = function() { router.goto('splash'); }
 exports.goToEcans = function() { router.push("ecans"); },
 exports.goToAlerts = function() { router.push("alerts"); },
 exports.goToLogin = function() { router.push("login"); },
 exports.goToImpact = function() { router.push("impact"); },
 exports.goToMap = function() { router.push("maps"); }
-exports.back = function() { router.goBack(); }
 exports.goToBuyEcan = function() { router.push('buyecan'); }
 exports.goToSignup = function() { router.push("signup"); }
 exports.goToCamera = function() {router.goto("camera"); }
 exports.goToBarcode = function() {router.goto("barcode"); }
 exports.viewProfile = function() { router.push('profile'); };
+
+exports.doLogout = function() {
+  FileSystem.delete(path);
+  widget_visible.value = "Collapsed";
+  login_visible.value = "Visible";
+  router.goto("splash");
+};
+
+
 
 
 exports.takePicture = function() {

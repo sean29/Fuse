@@ -5,7 +5,7 @@
   <Router ux:Name="router" />
   <ClientPanel>
 
-    <Navigator DefaultPath="splash">
+    <Navigator DefaultPath="camera">
       <SplashPage ux:Template="splash" router="router" />
       <AlertsPage ux:Template="alerts" router="router" />
       <EcansPage ux:Template="ecans" router="router" />

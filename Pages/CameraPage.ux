@@ -44,17 +44,17 @@
 			<DockPanel Dock="Fill">
 				<Image File="{imagePath}" StretchMode="Uniform" />
 			</DockPanel>
-			<Panel ux:Name="AddEmralsPopUp" Visibility="Hidden">
+			<Panel ux:Name="AddEmralsPopUp" Visibility="{emrals_popup_visibility}">
 				<Horse Color="#444444" Alignment="Center" Opacity="1" Margin="190,10,0,0">ADD EMRALS</Horse>
 				<StackPanel Orientation="Horizontal" >
-					<Rectangle Color="#FFF" StrokeWidth="1" StrokeColor="#8AB847" Width="44" Height="44" CornerRadius="3" Margin="210,0,0,-110">
-						<PTBold FontSize="24" Alignment="Center">$1</PTBold>
+					<Rectangle Color="#FFF" StrokeWidth="1" StrokeColor="#8AB847" Width="44" Height="44" CornerRadius="3" Margin="210,0,0,-110" Clicked="{add_emrals_1}">
+						<PTBold ux:Name="emrals_value1" FontSize="24" Alignment="Center">$1</PTBold>
 					</Rectangle>
-					<Rectangle Color="#FFF" StrokeWidth="1" StrokeColor="#8AB847" Width="44" Height="44" CornerRadius="3" Margin="10,0,0,-110">
-						<PTBold FontSize="24" Alignment="Center">$5</PTBold>
+					<Rectangle Color="#FFF" StrokeWidth="1" StrokeColor="#8AB847" Width="44" Height="44" CornerRadius="3" Margin="10,0,0,-110" Clicked="{add_emrals_5}">
+						<PTBold ux:Name="emrals_value5" FontSize="24" Alignment="Center">$5</PTBold>
 					</Rectangle>
-					<Rectangle Color="#FFF" StrokeWidth="1" StrokeColor="#8AB847" Width="44" Height="44" CornerRadius="3" Margin="10,0,0,-110" >
-						<PTBold FontSize="24" Alignment="Center">$10</PTBold>
+					<Rectangle Color="#FFF" StrokeWidth="1" StrokeColor="#8AB847" Width="44" Height="44" CornerRadius="3" Margin="10,0,0,-110" Clicked="{add_emrals_10}">
+						<PTBold ux:Name="emrals_value10" FontSize="24" Alignment="Center">$10</PTBold>
 					</Rectangle>
 				</StackPanel>
 				<Rectangle Color="#8AB847" Opacity=".7" CornerRadius="5" Width="175" Height="125" Margin="190,0,0,-100"/>

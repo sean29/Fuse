@@ -16,11 +16,9 @@ function formEncode(obj) {
 }
 
 module.exports = {
-    goToSignup: goToSignup,
     password: password,
     username: username,
     error: error,
-    back: back,
     doLogin: function doLogin(e) {
         var requestObject = {
             username: username.value,
