@@ -2,6 +2,8 @@ var Observable = require("FuseJS/Observable");
 var Camera = require("FuseJS/Camera");
 var CameraRoll = require("FuseJS/CameraRoll");
 var ImageTools = require("FuseJS/ImageTools");
+var GeoLocation = require("FuseJS/GeoLocation");
+
 var isLoading = Observable(false);
 var data = Observable();
 var show_message = Observable("Hidden");
@@ -17,7 +19,6 @@ function fademessage() {
     fade_out.value="True";
 }
 
-
 this.onParameterChanged(function(temp_alert) {
     if (temp_alert.poster_username){
         show_message.value = "Visible";
@@ -26,22 +27,17 @@ this.onParameterChanged(function(temp_alert) {
 });
 
 
-function goToCamera() {
-    router.goto("camera");
-}
-
 function goToAlert(arg) {
     var alert = arg.data;
     router.push("alertdetail", alert);
 }
 
-var url = api_url+'alerts/?format=json';
 
 function reloadHandler() {
     if(!isBusy){
     isLoading.value = true;
     }
-    fetch(url)
+    fetch(api_url+'alerts/?format=json')
     .then(function(response) {
         return response.json();
     })
@@ -56,9 +52,7 @@ function reloadHandler() {
 
 reloadHandler();
 
-function back() {
-    router.goto('splash');
-}
+
 
 isBusy.activate();
 
@@ -70,7 +64,6 @@ module.exports = {
     isLoading: isLoading,
     reloadHandler: reloadHandler,
     data: data,
-    goToCamera: goToCamera,
-    goToAlert: goToAlert,
-    back: back
+    goToAlert: goToAlert
+
 };

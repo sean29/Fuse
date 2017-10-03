@@ -20,6 +20,8 @@
       <ImpactThankYouPage ux:Template="impactthanks" router="router" />
       <SolutionPage ux:Template="solution" router="router" />
       <ProfilePage ux:Template="profile" router="router" />
+      <MapsPage ux:Template="maps" router="router" />
+      <BarcodePage ux:Template="barcode" router="router" />
     </Navigator>
   </ClientPanel>
 </App>

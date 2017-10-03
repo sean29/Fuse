@@ -6,10 +6,9 @@ var Uploader = require("Uploader");
 var GeoLocation = require("FuseJS/GeoLocation");
 var FileSystem = require("FuseJS/FileSystem");
 
-var immediateLocation = Observable(JSON.stringify(GeoLocation.location));
 
-var Latitude = Observable(GeoLocation.location.latitude);
-var Longitude = Observable(GeoLocation.location.longitude);
+var build_num = Observable("32");
+var immediateLocation = Observable(JSON.stringify(GeoLocation.location));
 
 var exports = module.exports;
 
@@ -71,9 +70,19 @@ file_exists = FileSystem.exists(path)
   }, function(error) {});
 
 
-exports.goHome = function() {
-  router.goto('splash');
-}
+exports.goHome = function() { router.goto('splash'); }
+exports.goToEcans = function() { router.push("ecans"); },
+exports.goToAlerts = function() { router.push("alerts"); },
+exports.goToLogin = function() { router.push("login"); },
+exports.goToImpact = function() { router.push("impact"); },
+exports.goToMap = function() { router.push("maps"); }
+exports.back = function() { router.goBack(); }
+exports.goToBuyEcan = function() { router.push('buyecan'); }
+exports.goToSignup = function() { router.push("signup"); }
+exports.goToCamera = function() {router.goto("camera"); }
+exports.goToBarcode = function() {router.goto("barcode"); }
+exports.viewProfile = function() { router.push('profile'); };
+
 
 exports.takePicture = function() {
   Camera.takePicture().then(
@@ -104,10 +113,6 @@ exports.takePicture = function() {
       console.log("Couldn't take picture: " + reason);
     }
   );
-};
-
-exports.viewProfile = function() {
-  router.push('profile');
 };
 
 exports.takePictureSolution = function(inputs) {

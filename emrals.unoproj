@@ -5,12 +5,16 @@
     "Fuse",
     "FuseJS",
     "Fuse.Camera",
+    "Fuse.Maps",
     "Fuse.CameraRoll",
     "Fuse.ImageTools",
     "Fuse.Scripting",
     "Fuse.BasicTheme",
     "Fuse.GeoLocation",
     "Fuse.Launcher",
+  ],
+  "Projects": [
+    "fuse-qreader-master/fuse-qreader.unoproj"
   ],
   "Includes": [
     "*"
@@ -34,27 +38,21 @@
       "PersonalVPN": false,
       "WirelessAccessoryConfiguration": false
     },
-
     "BundleIdentifier": "com.apps.emrals",
     "Icons": {
       "iPhone_29_2x": "$(Icon)",
-      
       "iPhone_29_2x": "$(Icon)",
-      "App-Store-Icon_200x200": "$(Icon)",
       "iPhone_29_3x": "$(Icon)",
       "iPhone_40_2x": "$(Icon)",
       "iPhone_40_3x": "$(Icon)",
       "iPhone_60_2x": "$(Icon)",
-      "iPhone_60_3x": "$(Icon)",
-      "iPad_29_1x": "$(Icon)",
-      "iPad_29_2x": "$(Icon)",
-      "iPad_40_1x": "$(Icon)",
-      "iPad_40_2x": "$(Icon)",
-      "iPad_76_1x": "$(Icon)",
-      "iPad_76_2x": "$(Icon)"
+      "iPhone_60_3x": "$(Icon)"
     }
   },
   "Android": {
+    "Geo": {
+          "ApiKey": "GOOGLE_MAPS_API_KEY"
+      },
     "Icons": {
       "LDPI": "$(Icon)",
       "MDPI": "$(Icon)",

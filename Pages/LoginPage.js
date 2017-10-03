@@ -5,13 +5,7 @@ var password = Observable("");
 var username = Observable("");
 var error = Observable("");
 
-function goToSignup() {
-    router.push("signup");
-}
 
-function back() {
-    router.goBack();
-}
 
 
 function formEncode(obj) {

@@ -134,6 +134,3 @@ exports.testPay = function testPay() {
 
 };
 
-exports.back = function back() {
-	router.goBack();
-}

@@ -141,13 +141,9 @@ testPay = function testPay() {
 
 };
 
-function back() {
-	router.goBack();
-}
 
 module.exports = {
 	subscription: subscription,
-	back: back,
 	testPay: testPay,
 	cardNumber: cardNumber,
 	expiryMonth: expiryMonth,

@@ -1,0 +1,32 @@
+<Page ux:Class="MapsPage">
+    
+    <Router ux:Dependency="router" />
+
+    <JavaScript File="AlertsPage.js" />
+    <NativeViewHost >
+              <StackPanel Dock="Top" Orientation="Horizontal" Alignment="TopRight" Padding="5" Visibility="{widget_visible}" Clicked="{viewProfile}">
+      <Image File="Assets/greene.png" Dock="Top" Height="16" />
+      <PTreal FontSize="14" Margin="4,0,4,0">{user_emrals}</PTreal>
+      <Image Url="{user_avatar}" MaxHeight="16" />
+      <!--Image File="Assets/tinytriangle.png" MaxWidth="11" Margin="4,0,0,0"/>-->
+    </StackPanel>
+   <StackPanel Background="#FFF" Y="0" Height="60">
+        <Image File="Assets/emralsAllgreen2017logo.png" Width="120" Margin="0, 2,0,0" />
+        <Text Value="<<" Color="#636364" FontSize="24" Alignment="Left" Margin="10, -30,0,0" Clicked="{back}"/>
+        <PTreal Alignment="Center">DIRT ALERT MAP {Global_Latitude}</PTreal>
+    </StackPanel>
+              <StackPanel Alignment="BottomCenter" Orientation="Horizontal" ItemSpacing="80" Padding="40">
+        <Image File="Assets/cameratag.png" Height="40" Clicked="{goToAlerts}" />
+        <Image File="Assets/buyicon.png" Height="40" Clicked="{goToImpact}"/>
+        <Image File="Assets/v2ecansicon.png" Height="40" Clicked="{goToEcans}" />
+    </StackPanel>
+    <Busy ux:Name="isBusy" IsActive="false" />
+    <MapView Latitude="40.730610" Longitude=" -73.935242" Zoom="11">
+      <Each Items={data}>
+        <MapMarker Latitude="{latitude}" Longitude="{longitude}" Label="{title}"  IconFile="Assets/trashbin.jpg"  Tapped="{goToAlert}"/>
+      </Each>
+      </MapView>
+
+    </NativeViewHost>
+
+</Page>

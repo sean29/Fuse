@@ -1,4 +1,5 @@
 <Page ux:Class="AlertsPage">
+    <JavaScript File="AlertsPage.js" />
     <Router ux:Dependency="router" />
      <StackPanel Dock="Top" Orientation="Horizontal" Alignment="TopRight" Padding="5" Visibility="{widget_visible}" Clicked="{viewProfile}">
       <Image File="Assets/greene.png" Dock="Top" Height="16" />
@@ -34,11 +35,11 @@
     <DockPanel>
         <StackPanel Background="#FFF" Y="0">
             <Image File="Assets/emralsAllgreen2017logo.png" Width="120" Margin="0, 2,0,0" />
-            <Text Value="<<" Color="#636364" FontSize="24" Alignment="Left" Margin="10, -30,0,0" Clicked="{back}"/>
+            <Text Value="<<" Color="#636364" FontSize="24" Alignment="Left" Margin="10, -30,0,0" Clicked="{goHome}"/>
             <PTreal Alignment="Center" Margin="0,0,0,0">DIRT ALERTS</PTreal>
         </StackPanel>
     </DockPanel>
-    <JavaScript File="AlertsPage.js" />
+    
     <DockPanel >
         <Rectangle ux:Name="alert_panel" Color="#FFF" Opacity=".8" CornerRadius="10" Height="130" Width="148" Visibility="{show_message}">
             <Header Margin="0,0,0,80" Alignment="Center" >Thank you,</Header>

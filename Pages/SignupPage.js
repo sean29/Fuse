@@ -1,8 +1,3 @@
-function back() {
-    router.goBack();
-    console.log('back');
-}
-
 var Observable = require("FuseJS/Observable");
 var FileSystem = require("FuseJS/FileSystem");
 
@@ -12,14 +7,6 @@ var email = Observable("");
 var first_name = Observable("");
 var last_name = Observable("");
 var error = Observable("");
-
-function back() {
-    router.goBack();
-}
-
-module.exports = {
-    back: back
-};
 
 
 function formEncode(obj) {

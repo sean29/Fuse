@@ -1,17 +1,2 @@
-var alert = this.Parameter;
-
-var emrals = alert.map(function(x) { return x.emrals; });
-var id = alert.map(function(x) { return x.id; });
-
-function back() {
-    router.goBack();
-}
-
-
-module.exports = {
-	id: id,
-	emrals: emrals,
-    back: back
-};
-
-
+module.exports.emrals = this.Parameter.map(function(x) { return x.emrals; });
+module.exports.id = this.Parameter.map(function(x) { return x.id; });

@@ -1,10 +1,6 @@
 var Observable = require("FuseJS/Observable");
 var zipcode = Observable("");
 
-function back() {
-  router.goBack();
-}
-
 function goToPayment10() {
   router.push("payment", { subscription: "10", zipcode: zipcode.value});
 }
@@ -18,7 +14,6 @@ function goToPayment50() {
 }
 
 module.exports = {
-  back: back,
   goToPayment10: goToPayment10,
   goToPayment25: goToPayment25,
   goToPayment50: goToPayment50, 
