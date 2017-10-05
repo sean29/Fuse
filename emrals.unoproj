@@ -13,10 +13,14 @@
     "Fuse.GeoLocation",
     "Fuse.Launcher"
   ],
+
   "Projects": [
-    "fuse-qreader-master/fuse-qreader.unoproj",
-    "fuse_modules\\bolav\\fuse-cocoapods\\cocoapods_include.unoproj"
+    "fuse-qreader-master/fuse-qreader.unoproj"
   ],
+  "Facebook": {
+    "AppID": "APPID_HERE",
+    "CFBundleURLSchemes": "fbAPPID_HERE"
+  },
   "Includes": [
     "*"
   ],
@@ -53,6 +57,12 @@
     "Geo": {
       "ApiKey": "GOOGLE_MAPS_API_KEY"
     },
+    "Key": {
+      "Alias": "application",
+      "AliasPassword": "<alias password>",
+      "Store": "release.keystore",
+      "StorePassword": "<store password>"
+    },
     "Icons": {
       "LDPI": "$(Icon)",
       "MDPI": "$(Icon)",
@@ -67,7 +77,8 @@
   ],
   "FusePM": {
     "Dependencies": [
-      "https://github.com/bolav/fuse-cocoapods"
+      "https://github.com/bolav/fuse-cocoapods",
+      "https://github.com/bolav/fuse-facebook-login"
     ]
   }
 }
