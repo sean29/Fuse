@@ -15,9 +15,6 @@ using Fuse.Scripting;
 
 [Require("Cocoapods.Podfile.Target", "pod 'BuddyBuildSDK'")]
 
-[Require("Cocoapods.Podfile.Target", "pod 'FacebookCore'")]
-
-
 
 
 [UXGlobalModule]
