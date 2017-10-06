@@ -1,5 +1,4 @@
 <App Background="#fff">
-  <FBiOS ux:Global="_fbios"/>
   <iOS.StatusBarConfig Style="Dark" />
   <Android.StatusBarConfig Color="#636364" />
   <JavaScript File="MainView.js" />

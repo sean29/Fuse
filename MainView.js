@@ -8,19 +8,32 @@ var GeoLocation = require("FuseJS/GeoLocation");
 var FileSystem = require("FuseJS/FileSystem");
 
 
-
 //var immediateLocation = Observable(JSON.stringify(GeoLocation.location));
 
 
 var exports = module.exports;
 
-exports.build_num = Observable("32");
+exports.build_num = Observable("40");
 
 var emrals_popup_visibility = exports.emrals_popup_visibility = Observable("Hidden");
 
 
 widget_visible = exports.widget_visible = Observable();
 login_visible = exports.login_visible = Observable();
+
+var pixel = "https://www.facebook.com/tr?id=1725865750787994&ev=ViewContent&noscript=1&content_name=MainView";
+//var pixel_InitiateCheckout = exports.pixel_url = Observable("https://www.facebook.com/tr?id=1725865750787994%26ev=InitiateCheckout%26noscript=1");
+//var pixel_PageView = exports.pixel_url = Observable("https://www.facebook.com/tr?id=1725865750787994%26ev=PageView%26noscript=1");
+console.log(pixel);
+  fetch(pixel)
+    .then(function(response) {
+      return response;
+    }).then(function(responseObject) {
+      console.log(JSON.stringify(responseObject));
+    }).catch(function(err) {
+      console.log("Fetch error: " + err);
+    });
+
 
 var imagePath = exports.imagePath = Observable();
 var imageName = exports.imageName = Observable();

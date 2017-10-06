@@ -119,7 +119,7 @@ public static class FormUpload
     private static readonly Encoding encoding = Encoding.UTF8;
     public static HttpMessageHandlerRequest MultipartFormDataPost(string postUrl, string postMethod, Dictionary<string,string> headers, Dictionary<string, object> postParameters, out byte[] formData)
     {
-        string formDataBoundary = String.Format("----------{0:N}", DateTime.Now.TickOfDay.ToString());
+        string formDataBoundary = String.Format("----------1111");
         string contentType = "multipart/form-data; boundary=" + formDataBoundary;
         debug_log "about to request multipart data";
         formData = GetMultipartFormData(postParameters, formDataBoundary);
