@@ -8,31 +8,31 @@
       <!--Image File="Assets/tinytriangle.png" MaxWidth="11" Margin="4,0,0,0"/>-->
     </StackPanel>
     <Font File="PTF55F.ttf" ux:Global="Curl" />
-    <Text ux:Class="Curl" Font="Curl" FontSize="20" Color="#636364"/>
+    <Text ux:Class="Curl" Font="Curl" FontSize="20" Color="#636364" />
 
    
-     <StackPanel Background="#FFF" Y="0" Height="60">
+     <StackPanel Background="#FFF" Y="0" Height="60" Alignment="Top">
         <Image File="Assets/emralsAllgreen2017logo.png" Width="120" Margin="0, 2,0,0" />
-        <Text Value="<<" Color="#636364" FontSize="24" Alignment="Left" Margin="10, -30,0,0" Clicked="{back}"/>
+        <Text Value="&lt;&lt;" Color="#636364" FontSize="24" Alignment="Left" Margin="10, -30,0,0" Clicked="{back}" />
         <PTreal Alignment="Center">IMPACT ZONES</PTreal>
     </StackPanel>
 
-    <StackPanel Y="60" Background="#FFF">
-        <Panel>
+    <StackPanel Y="60" Background="#FFF" Alignment="Top">
+        <Panel Alignment="Default" Height="350">
             <Rectangle Color="#FFF" Opacity="0.8" Alignment="Bottom">
                 <Curl FontSize="16" Color="#2B2B2B" Margin="20,0,0,0" TextWrapping="Wrap">Impact zones allow you to focus your cleanup reward power. Select a zone in an area that matters to you to be cleaned. Your subscription automatically funds the cleanup in those locations by paying tahe people that clean up.</Curl>
             </Rectangle>
-            <Image File="Assets/city.jpeg" Width="100%"  Clicked="{extractzip}"/>
+            <Image File="Assets/city.jpeg" Width="100%" Clicked="{extractzip}" StretchMode="UniformToFill" StretchDirection="DownOnly" StretchSizing="Zero" Padding="0, 0, 0, 0" Margin="0, 0, 0, 0" Visibility="Visible" />
         </Panel>
         <Rectangle Color="#F5F5F5" Height="120" Width="320" CornerRadius="10" Margin="0,20,0,20">
             <StackPanel Margin="0,15,0,0">
                 <Grid RowCount="1" ColumnCount="2" Margin="0,0,10,0">
                     <Text FontSize="16" Margin="20,5,0,0">Enter Zipcode</Text>
                     <Rectangle Color="#FFF" Margin="0,0,100,0" Height="38" Width="80">
-                        <TextInput  Value="{zipcode}" Row="0" Column="1" PlaceholderText="zipcode" PlaceholderColor="#999" TextColor="#222" CaretColor="#222" TextAlignment="Center"/>
+                        <TextInput Value="{zipcode}" Row="0" Column="1" PlaceholderText="zipcode" PlaceholderColor="#999" TextColor="#222" CaretColor="#222" TextAlignment="Center" />
                     </Rectangle>
                 </Grid>
-                <Grid RowCount="1" Columns="auto,1*,1*" >
+                <Grid RowCount="1" Columns="auto,1*,1*">
                     <Text FontSize="16" Margin="20,30,0,0">Fund Cleanup of</Text>
                     <Rectangle Color="#FFF" Margin="0,20, 0,0" Height="38" Width="80">
                         <Text FontSize="20" Color="#F05959" Margin="0,7,0,0" TextAlignment="Center">89</Text>
@@ -41,15 +41,15 @@
                 </Grid>
             </StackPanel>
         </Rectangle>
-        <Grid RowCount="1" Columns="auto,1*,1*,1*,1*,1*,1*">
-            <Rectangle Color="#8AB847" Height="48" Width="100" CornerRadius="10" Margin="10, 0, 0, 0">
+        <Grid RowCount="1" Alignment="Center" Columns="1,1,1" Width="80%" Margin="0, 0, 0, 0" CellSpacing="120">
+            <Rectangle Color="#8AB847" Height="48" Width="100" CornerRadius="10" Margin="0, 0, 0, 0" Alignment="Center">
+                <Text Color="#fff" FontSize="24" Alignment="BottomCenter" Margin="0, 0, 0, 10" Clicked="{goToPayment50}">$50/m</Text>
+            </Rectangle>
+            <Rectangle Color="#8AB847" Height="48" Width="100" CornerRadius="10" Margin="0, 0, 0, 0" Alignment="Center">
                 <Text Color="#fff" FontSize="24" Alignment="BottomCenter" Margin="0, 0, 0, 10" Clicked="{goToPayment10}">$10/m</Text>
             </Rectangle>
-            <Rectangle Color="#8AB847" Height="48" Width="100" CornerRadius="10" Margin="75, 0, 0, 0">
-                <Text Color="#fff" FontSize="24" Alignment="BottomCenter" Margin="0, 0, 0, 10" Clicked="{goToPayment25}" >$25/m</Text>
-            </Rectangle>
-            <Rectangle Color="#8AB847" Height="48" Width="100" CornerRadius="10" Margin="150, 0, 100, 0">
-                <Text Color="#fff" FontSize="24" Alignment="BottomCenter" Margin="0, 0, 0, 10" Clicked="{goToPayment50}">$50/m</Text>
+            <Rectangle Color="#8AB847" Height="48" Width="100" CornerRadius="10" Margin="0, 0, 0, 0" Alignment="Center">
+                <Text Color="#fff" FontSize="24" Alignment="BottomCenter" Margin="0, 0, 0, 10" Clicked="{goToPayment25}">$25/m</Text>
             </Rectangle>
         </Grid>
     </StackPanel>

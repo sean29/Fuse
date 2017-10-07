@@ -11,7 +11,7 @@ var FileSystem = require("FuseJS/FileSystem");
 var exports = module.exports;
 
 exports.build_num = Observable("BUDDYBUILD_BUILD_NUMBER");
-exports.version_num = Observable("0.0.1");
+exports.version_num = Observable("APP_VERSION");
 
 var emrals_popup_visibility = exports.emrals_popup_visibility = Observable("Hidden");
 

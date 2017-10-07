@@ -30,34 +30,34 @@
     <MyLoadingIndicator ux:Name="loadingPanel" Opacity="0" ThemeColor="#8AB847" />
     <Font File="PTserif.ttc" ux:Global="Header" />
     <Font File="PTF55F.ttf" ux:Global="PTreal" />
-    <Text ux:Class="Header" Font="Header" FontSize="20" Color="#636364"/>
-    <Text ux:Class="PTreal" Font="PTreal" FontSize="20" Color="#636364"/>
+    <Text ux:Class="Header" Font="Header" FontSize="20" Color="#636364" />
+    <Text ux:Class="PTreal" Font="PTreal" FontSize="20" Color="#636364" />
     <DockPanel>
         <StackPanel Background="#FFF" Y="0">
             <Image File="Assets/emralsAllgreen2017logo.png" Width="120" Margin="0, 2,0,0" />
-            <Text Value="<<" Color="#636364" FontSize="24" Alignment="Left" Margin="10, -30,0,0" Clicked="{goHome}"/>
+            <Text Value="&lt;&lt;" Color="#636364" FontSize="24" Alignment="Left" Margin="10, -30,0,0" Clicked="{goHome}" />
             <PTreal Alignment="Center" Margin="0,0,0,0">DIRT ALERTS</PTreal>
         </StackPanel>
     </DockPanel>
     
-    <DockPanel >
+    <DockPanel>
         <Rectangle ux:Name="alert_panel" Color="#FFF" Opacity=".8" CornerRadius="10" Height="130" Width="148" Visibility="{show_message}">
-            <Header Margin="0,0,0,80" Alignment="Center" >Thank you,</Header>
-            <Header Color="#8AB847" Alignment="Center" Margin="0,0,0,30" >{poster_username}</Header>
+            <Header Margin="0,0,0,80" Alignment="Center">Thank you,</Header>
+            <Header Color="#8AB847" Alignment="Center" Margin="0,0,0,30">{poster_username}</Header>
             <Header Margin="0,20,0,0" Alignment="Center">for posting</Header>
             <Header Margin="0,70,0,0" Alignment="Center">Dirt Alert {id}!</Header>
             
 
         </Rectangle>
         <WhileTrue Value="{fade_out}">
-            <Change alert_panel.Opacity="0" Duration="1"  />
+            <Change alert_panel.Opacity="0" Duration="1" />
         </WhileTrue>
         <Circle Color="#FFF" ZOffset="5.0" Width="21%" Height="21%" Dock="Bottom" Clicked="{takePicture}">
             <Stroke Width="2">
                 <SolidColor Color="#F05959" />
             </Stroke>
-            <Horse Color="#F05959" FontSize="14" Margin="24,82,0,0">POST</Horse>
-            <Image File= "Assets/cameratag.png" MaxHeight="53" Margin="0,0,0,12"/>
+            <Horse Color="#F05959" FontSize="14" Margin="0, 55, 0, 0" Alignment="VerticalCenter" TextAlignment="Center">POST</Horse>
+            <Image File="Assets/cameratag.png" MaxHeight="53" Margin="0,0,0,12" />
         </Circle>
     </DockPanel>
     <DockPanel>
@@ -70,14 +70,14 @@
                     <Each Items="{data}">
                         <DockPanel Height="150" Width="150" Margin="20" Clicked="{goToAlert}">
                             <Panel DockPanel.Dock="Top" Margin="0, 5,0,0">
-                                <Rectangle Width="97%"  CornerRadius="5" Color="#fff" Opacity="0.80">
+                                <Rectangle Width="97%" CornerRadius="5" Color="#fff" Opacity="0.80">
                                     <Horse Value="{title}" Color="#000" Alignment="Center" Margin="4,0,0,0" FontSize="12" TextWrapping="Wrap" />
                                 </Rectangle>
                             </Panel>
                             <Rectangle Layer="Background" CornerRadius="10" Color="#8AB847">
-                                <ImageFill Url="{thumbnail}" StretchMode="UniformToFill" WrapMode="ClampToEdge"/>
+                                <ImageFill Url="{thumbnail}" StretchMode="UniformToFill" WrapMode="ClampToEdge" />
                             </Rectangle>
-                            <Image File="Assets/greene.png" Alignment="Bottom" Height="22" Margin="-30, 0, 0, -24"/>
+                            <Image File="Assets/greene.png" Alignment="Bottom" Height="22" Margin="-30, 0, 0, -24" />
                             <Header FontSize="18" TextColor="#636364" Alignment="Bottom" Margin="74, 0, 0, -24">{emrals}</Header>
                         </DockPanel>
                     </Each>
