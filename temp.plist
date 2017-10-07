@@ -252,12 +252,12 @@
             <dict>
                 <key>CFBundleURLSchemes</key>
                 <array>
-                    <string>fbFacebookAppID</string>
+                    <string>fbFacebookAppIDREPLACE</string>
                 </array>
             </dict>
         </array>
         <key>FacebookAppID</key>
-        <string>FacebookAppID</string>
+        <string>FacebookAppIDREPLACE</string>
         <key>FacebookDisplayName</key>
         <string>Emrals</string>
         <key>LSApplicationQueriesSchemes</key>
