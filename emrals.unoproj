@@ -16,11 +16,7 @@
 
   "Projects": [
     "fuse-qreader-master/fuse-qreader.unoproj"
-  ],
-  "Facebook": {
-    "AppID": "APPID_HERE",
-    "CFBundleURLSchemes": "fbAPPID_HERE"
-  },
+  ]
   "Includes": [
     "*"
   ],
@@ -77,8 +73,8 @@
   ],
   "FusePM": {
     "Dependencies": [
-      "https://github.com/bolav/fuse-cocoapods",
-      "https://github.com/bolav/fuse-facebook-login"
+      "https://github.com/bolav/fuse-cocoapods"
+
     ]
   }
 }
