@@ -8,6 +8,7 @@ fusepm install
 
 fuse build --target=iOS -DCOCOAPODS --configuration=Release || true
 
+find *|grep plist
 
 /usr/libexec/PlistBuddy -x -c "Set :FacebookAppID $FB_APP_ID" build/iOS/Release/src/Targets/iOS/Uno-iOS/emrals-Info.plist
 /usr/libexec/PlistBuddy -x -c "Set :FacebookDisplayName Emrals" build/iOS/Release/src/Targets/iOS/Uno-iOS/emrals-Info.plist
