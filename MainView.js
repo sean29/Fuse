@@ -32,7 +32,8 @@ payload = {
   " systemVersion: " + Device.systemVersion + 
   " SDKVersion: " + Device.SDKVersion + 
   " cores: " + Device.cores + 
-  " isRetina: " + Device.isRetina
+  " isRetina: " + Device.isRetina +
+  " Build: " + "BUDDYBUILD_BUILD_NUMBER"
 }
 
 fetch(slack_webhook, {
