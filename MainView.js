@@ -3,13 +3,10 @@ var Camera = require("FuseJS/Camera");
 var CameraRoll = require("FuseJS/CameraRoll");
 var ImageTools = require("FuseJS/ImageTools");
 var Uploader = require("Uploader");
+var Device = require('Device');
 
 var GeoLocation = require("FuseJS/GeoLocation");
 var FileSystem = require("FuseJS/FileSystem");
-
-
-//var immediateLocation = Observable(JSON.stringify(GeoLocation.location));
-
 
 var exports = module.exports;
 
@@ -21,18 +18,35 @@ var emrals_popup_visibility = exports.emrals_popup_visibility = Observable("Hidd
 widget_visible = exports.widget_visible = Observable();
 login_visible = exports.login_visible = Observable();
 
-var pixel = "https://www.facebook.com/tr?id=1725865750787994&ev=ViewContent&noscript=1&content_name=MainView";
-//var pixel_InitiateCheckout = exports.pixel_url = Observable("https://www.facebook.com/tr?id=1725865750787994%26ev=InitiateCheckout%26noscript=1");
-//var pixel_PageView = exports.pixel_url = Observable("https://www.facebook.com/tr?id=1725865750787994%26ev=PageView%26noscript=1");
-console.log(pixel);
-  fetch(pixel)
-    .then(function(response) {
-      return response;
-    }).then(function(responseObject) {
-      console.log(JSON.stringify(responseObject));
-    }).catch(function(err) {
-      console.log("Fetch error: " + err);
-    });
+
+var slack_webhook = "https://hooks.slack.com/services/slack_key"; 
+
+payload = {
+  "text": 
+  "model: " + Device.model + 
+  " UUID: " + Device.UUID + 
+  " locale: " + Device.locale + 
+  " vendor: " + Device.vendor + 
+  " system: " + Device.system + 
+  " systemVersion: " + Device.systemVersion + 
+  " SDKVersion: " + Device.SDKVersion + 
+  " cores: " + Device.systemVersion + 
+  " isRetina: " + Device.isRetina
+}
+
+fetch(slack_webhook, {
+  method: 'POST',
+  headers: {
+    "Content-type": "application/json",
+  },
+  body: JSON.stringify(payload)
+}).then(function(response) {
+  return response;
+}).then(function(responseObject) {
+  console.log(JSON.stringify(responseObject));
+}).catch(function(err) {
+  console.log("Fetch error: " + err);
+});
 
 
 var imagePath = exports.imagePath = Observable();
@@ -47,14 +61,23 @@ user_id = exports.user_id = Observable();
 user_name = exports.user_name = Observable();
 user_xp = exports.user_xp = Observable();
 
-var loading_visible = exports.loading_visible = Observable(false); 
+var loading_visible = exports.loading_visible = Observable(false);
 var current = exports.current = Observable();
 var sel = exports.sel = Observable("1");
 var total_emrals = exports.total_emrals = Observable("0001");
 
-exports.add_emrals_1 =  function(args) { total_emrals.value = "101"; emrals_popup_visibility.value="Hidden";}
-exports.add_emrals_5 =  function(args) { total_emrals.value = "501"; emrals_popup_visibility.value="Hidden";}
-exports.add_emrals_10 =  function(args) { total_emrals.value = "1001"; emrals_popup_visibility.value="Hidden";}
+exports.add_emrals_1 = function(args) {
+  total_emrals.value = "101";
+  emrals_popup_visibility.value = "Hidden";
+}
+exports.add_emrals_5 = function(args) {
+  total_emrals.value = "501";
+  emrals_popup_visibility.value = "Hidden";
+}
+exports.add_emrals_10 = function(args) {
+  total_emrals.value = "1001";
+  emrals_popup_visibility.value = "Hidden";
+}
 
 
 STRIPE_PRIVATE_KEY = "pk_test";
@@ -94,18 +117,42 @@ file_exists = FileSystem.exists(path)
 
   }, function(error) {});
 
-exports.back = function() { router.goBack(); }
-exports.goHome = function() { router.goto('splash'); }
-exports.goToEcans = function() { router.push("ecans"); },
-exports.goToAlerts = function() { router.push("alerts"); },
-exports.goToLogin = function() { router.push("login"); },
-exports.goToImpact = function() { router.push("impact"); },
-exports.goToMap = function() { router.push("maps"); }
-exports.goToBuyEcan = function() { router.push('buyecan'); }
-exports.goToSignup = function() { router.push("signup"); }
-exports.goToCamera = function() {router.goto("camera"); }
-exports.goToBarcode = function() {router.goto("barcode"); }
-exports.viewProfile = function() { router.push('profile'); };
+exports.back = function() {
+  router.goBack();
+}
+exports.goHome = function() {
+  router.goto('splash');
+}
+exports.goToEcans = function() {
+    router.push("ecans");
+  },
+  exports.goToAlerts = function() {
+    router.push("alerts");
+  },
+  exports.goToLogin = function() {
+    router.push("login");
+  },
+  exports.goToImpact = function() {
+    router.push("impact");
+  },
+  exports.goToMap = function() {
+    router.push("maps");
+  }
+exports.goToBuyEcan = function() {
+  router.push('buyecan');
+}
+exports.goToSignup = function() {
+  router.push("signup");
+}
+exports.goToCamera = function() {
+  router.goto("camera");
+}
+exports.goToBarcode = function() {
+  router.goto("barcode");
+}
+exports.viewProfile = function() {
+  router.push('profile');
+};
 
 exports.doLogout = function() {
   FileSystem.delete(path);
@@ -113,7 +160,6 @@ exports.doLogout = function() {
   login_visible.value = "Visible";
   router.goto("splash");
 };
-
 
 
 
@@ -128,7 +174,7 @@ exports.takePicture = function() {
       };
       ImageTools.resize(image, args).then(
         function(image) {
-          loading_visible.value=false;
+          loading_visible.value = false;
           router.goto("camera");
           CameraRoll.publishImage(image);
           imageFile.value = image;
@@ -160,7 +206,10 @@ exports.takePictureSolution = function(inputs) {
       };
       ImageTools.resize(image, args).then(
         function(image) {
-          router.goto("solution", {id:inputs.data.id.value, emrals:inputs.data.emrals.value});
+          router.goto("solution", {
+            id: inputs.data.id.value,
+            emrals: inputs.data.emrals.value
+          });
           CameraRoll.publishImage(image);
           imageFile.value = image;
           tempImage = image;
@@ -229,10 +278,10 @@ exports.endLoading = function endLoading() {
 }
 
 exports.uploadAlert = function uploadAlert(e) {
-  
+
 
   if (tempImage) {
-    loading_visible.value=true;
+    loading_visible.value = true;
     Uploader.send(tempImage.path, emrals_url + 'upload_image/').then(function(response) {
       GeoLocation.getLocation(2000).then(function(location) {
         var latlng = location.latitude + "," + location.longitude;
@@ -293,7 +342,10 @@ exports.uploadAlert = function uploadAlert(e) {
             }).then(function(responseObject) {
               console.log(JSON.stringify(responseObject));
               if (responseObject.id) {
-                router.push("alerts", {poster_username: responseObject.poster_username,id:responseObject.id});
+                router.push("alerts", {
+                  poster_username: responseObject.poster_username,
+                  id: responseObject.id
+                });
               }
 
             }).catch(function(err) {
@@ -309,117 +361,117 @@ exports.uploadAlert = function uploadAlert(e) {
       });
 
     });
-  }else{
+  } else {
     Camera.takePicture().then(
-    function(image) {
-      var args = {
-        desiredWidth: 320,
-        desiredHeight: 320,
-        mode: ImageTools.SCALE_AND_CROP,
-        performInPlace: true
-      };
-      ImageTools.resize(image, args).then(
-        function(image) {
-          router.goto("camera");
+      function(image) {
+        var args = {
+          desiredWidth: 320,
+          desiredHeight: 320,
+          mode: ImageTools.SCALE_AND_CROP,
+          performInPlace: true
+        };
+        ImageTools.resize(image, args).then(
+          function(image) {
+            router.goto("camera");
 
-          CameraRoll.publishImage(image);
-          imageFile.value = image;
-          tempImage = image;
-          displayImage(image);
-        }
-      ).catch(
-        function(reason) {
-          console.log("Couldn't resize image: " + reason);
-        }
-      );
-    }
-  ).catch(
-    function(reason) {
-      console.log("Couldn't take picture: " + reason);
-    }
-  );
+            CameraRoll.publishImage(image);
+            imageFile.value = image;
+            tempImage = image;
+            displayImage(image);
+          }
+        ).catch(
+          function(reason) {
+            console.log("Couldn't resize image: " + reason);
+          }
+        );
+      }
+    ).catch(
+      function(reason) {
+        console.log("Couldn't take picture: " + reason);
+      }
+    );
   }
 };
 
 
 
 exports.uploadSolution = function uploadSolution(e) {
-  
+
 
   if (tempImage) {
-    loading_visible.value=true;
+    loading_visible.value = true;
     Uploader.send(tempImage.path, emrals_url + 'upload_image/').then(function(response) {
       GeoLocation.getLocation(2000).then(function(location) {
-          console.log(JSON.stringify(e.data));
-          console.log(JSON.stringify(e.data.id.value));
+        console.log(JSON.stringify(e.data));
+        console.log(JSON.stringify(e.data.id.value));
 
-            if (!user_id.value) {
-              user_id.value = 1;
-              user_username.value = "Anonymous";
-            }
+        if (!user_id.value) {
+          user_id.value = 1;
+          user_username.value = "Anonymous";
+        }
 
-            var requestObject = {
-              user: api_url + "users/" + user_id.value.toString() + "/",
-              alert: api_url + "alerts/" + e.data.id.value.toString() + "/",
-              longitude: parseFloat(location.longitude),
-              latitude: parseFloat(location.latitude),
-              filename: tempImage.name,
-              comment: "posted solution"
-            };
-            console.log(JSON.stringify(requestObject));
+        var requestObject = {
+          user: api_url + "users/" + user_id.value.toString() + "/",
+          alert: api_url + "alerts/" + e.data.id.value.toString() + "/",
+          longitude: parseFloat(location.longitude),
+          latitude: parseFloat(location.latitude),
+          filename: tempImage.name,
+          comment: "posted solution"
+        };
+        console.log(JSON.stringify(requestObject));
 
-            fetch(api_url + 'solutions/', {
-              method: 'POST',
-              headers: {
-                "Content-type": "application/x-www-form-urlencoded"
-              },
-              body: formEncode(requestObject)
-            }).then(function(response) {
-              return response.json();
-            }).then(function(responseObject) {
-              console.log(JSON.stringify(responseObject));
-              if (responseObject.id) {
-                router.push("alerts");
-              }
+        fetch(api_url + 'solutions/', {
+          method: 'POST',
+          headers: {
+            "Content-type": "application/x-www-form-urlencoded"
+          },
+          body: formEncode(requestObject)
+        }).then(function(response) {
+          return response.json();
+        }).then(function(responseObject) {
+          console.log(JSON.stringify(responseObject));
+          if (responseObject.id) {
+            router.push("alerts");
+          }
 
-            }).catch(function(err) {
-              console.log("Fetch error: " + err);
-            });
+        }).catch(function(err) {
+          console.log("Fetch error: " + err);
+        });
 
-          }).catch(function(err) {
-            console.log("Fetch error: " + err);
-          });
+      }).catch(function(err) {
+        console.log("Fetch error: " + err);
+      });
 
 
     });
-  }else{
+  } else {
     Camera.takePicture().then(
-    function(image) {
-      var args = {
-        desiredWidth: 320,
-        desiredHeight: 320,
-        mode: ImageTools.SCALE_AND_CROP,
-        performInPlace: true
-      };
-      ImageTools.resize(image, args).then(
-        function(image) {
-          router.goto("solution");
+      function(image) {
+        var args = {
+          desiredWidth: 320,
+          desiredHeight: 320,
+          mode: ImageTools.SCALE_AND_CROP,
+          performInPlace: true
+        };
+        ImageTools.resize(image, args).then(
+          function(image) {
+            router.goto("solution");
 
-          CameraRoll.publishImage(image);
-          imageFile.value = image;
-          tempImage = image;
-          displayImage(image);
-        }
-      ).catch(
-        function(reason) {
-          console.log("Couldn't resize image: " + reason);
-        }
-      );
-    }
-  ).catch(
-    function(reason) {
-      console.log("Couldn't take picture: " + reason);
-    }
-  );
+            CameraRoll.publishImage(image);
+            imageFile.value = image;
+            tempImage = image;
+            displayImage(image);
+          }
+        ).catch(
+          function(reason) {
+            console.log("Couldn't resize image: " + reason);
+          }
+        );
+      }
+    ).catch(
+      function(reason) {
+        console.log("Couldn't take picture: " + reason);
+      }
+    );
   }
 };

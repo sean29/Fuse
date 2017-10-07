@@ -13,7 +13,6 @@
     "Fuse.GeoLocation",
     "Fuse.Launcher"
   ],
-
   "Projects": [
     "fuse-qreader-master/fuse-qreader.unoproj"
   ],
@@ -73,8 +72,8 @@
   ],
   "FusePM": {
     "Dependencies": [
-      "https://github.com/bolav/fuse-cocoapods"
-
+      "https://github.com/bolav/fuse-cocoapods",
+      "https://github.com/MaxGraey/fuse-device"
     ]
   }
 }
