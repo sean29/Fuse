@@ -9,10 +9,12 @@ fusepm install
 fuse build --target=iOS -DCOCOAPODS --configuration=Release || true
 
 find *|grep plist
+cat build/iOS/Release/emrals/emrals-Info.plist
+cat build/iOS/Release/build/info.plist
 
-/usr/libexec/PlistBuddy -x -c "Set :FacebookAppID $FB_APP_ID" build/iOS/Release/src/Targets/iOS/Uno-iOS/emrals-Info.plist
-/usr/libexec/PlistBuddy -x -c "Set :FacebookDisplayName Emrals" build/iOS/Release/src/Targets/iOS/Uno-iOS/emrals-Info.plist
-/usr/libexec/PlistBuddy -x -c "Set :CFBundleURLTypes:0:CFBundleURLSchemes:0 fb$FB_APP_ID" build/iOS/Release/src/Targets/iOS/Uno-iOS/emrals-Info.plist
+/usr/libexec/PlistBuddy -x -c "Set :FacebookAppID $FB_APP_ID" build/iOS/Release/emrals/emrals-Info.plist
+/usr/libexec/PlistBuddy -x -c "Set :FacebookDisplayName Emrals" build/iOS/Release/emrals/emrals-Info.plist
+/usr/libexec/PlistBuddy -x -c "Set :CFBundleURLTypes:0:CFBundleURLSchemes:0 fb$FB_APP_ID" build/iOS/Release/emrals/emrals-Info.plist
 
 # copy the Context.mm file that initalizes buddybuild and facebook
 cp Context.mm build/Release/iOS/src/Targets/iOS/Uno-iOS/
