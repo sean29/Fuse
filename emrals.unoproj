@@ -16,7 +16,7 @@
 
   "Projects": [
     "fuse-qreader-master/fuse-qreader.unoproj"
-  ]
+  ],
   "Includes": [
     "*"
   ],
