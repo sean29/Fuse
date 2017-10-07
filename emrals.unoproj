@@ -14,9 +14,7 @@
     "Fuse.Launcher"
   ],
   "Projects": [
-    "fuse-qreader-master/fuse-qreader.unoproj",
-    "fuse_modules\\bolav\\fuse-cocoapods\\cocoapods_include.unoproj",
-    "fuse_modules\\MaxGraey\\fuse-device\\device_include.unoproj"
+    "fuse-qreader-master/fuse-qreader.unoproj"
   ],
   "Includes": [
     "*"
