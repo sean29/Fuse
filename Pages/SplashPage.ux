@@ -37,7 +37,7 @@
       </Panel>
     -->
       <Panel>
-        <Text Margin="5,280,0,0" FontSize="11" Color="#333333" >Version 0.0.0 Build {build_num}</Text>
+        <Text Margin="5,280,0,0" FontSize="11" Color="#333333" >Version {version_num} Build {build_num}</Text>
       </Panel>
     </StackPanel>
     <Rectangle Color="#8AB847" Height="48" Width="300" CornerRadius="10" Dock="Bottom" Margin="0, 0, 0, 40" Clicked="{goToLogin}" Visibility="{login_visible}">

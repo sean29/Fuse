@@ -2,6 +2,7 @@ curl --remote-name https://fuse-dl.azureedge.net/releaseartifacts/fuse_osx_1_2_1
 echo password | sudo installer -pkg fuse_osx_1_2_1_13974.pkg -target /
 sed -i -e "s/pk_test/${STRIPE_PRIVATE_KEY}/g" MainView.js
 sed -i -e "s/slack_key/${SLACK_KEY_VAR}/g" MainView.js
+sed -i -e "s/BUDDYBUILD_BUILD_NUMBER/${BUDDYBUILD_BUILD_NUMBER}/g" MainView.js
 sed -i -e "s/FacebookAppID/${FB_APP_ID}/g" temp.plist
 
 npm install -g fusepm

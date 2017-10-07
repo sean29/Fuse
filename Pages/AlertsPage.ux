@@ -68,14 +68,14 @@
                 <CogWheelReload Dock="Top" Y="38" />
                 <Grid ColumnCount="2" Y="40">
                     <Each Items="{data}">
-                        <DockPanel Height="147" Margin="20" Clicked="{goToAlert}">
-                            <Panel DockPanel.Dock="Top" Margin="0, 5,0,0" Height="20">
-                                <Rectangle Width="130" Height="18" CornerRadius="5" Color="#fff" Opacity="0.80">
-                                    <Horse Value="{title}" Color="#000" Alignment="Center" Margin="4,0,0,0" FontSize="12" />
+                        <DockPanel Height="150" Width="150" Margin="20" Clicked="{goToAlert}">
+                            <Panel DockPanel.Dock="Top" Margin="0, 5,0,0">
+                                <Rectangle Width="97%"  CornerRadius="5" Color="#fff" Opacity="0.80">
+                                    <Horse Value="{title}" Color="#000" Alignment="Center" Margin="4,0,0,0" FontSize="12" TextWrapping="Wrap" />
                                 </Rectangle>
                             </Panel>
                             <Rectangle Layer="Background" CornerRadius="10" Color="#8AB847">
-                                <ImageFill Url="{thumbnail}" />
+                                <ImageFill Url="{thumbnail}" StretchMode="UniformToFill" WrapMode="ClampToEdge"/>
                             </Rectangle>
                             <Image File="Assets/greene.png" Alignment="Bottom" Height="22" Margin="-30, 0, 0, -24"/>
                             <Header FontSize="18" TextColor="#636364" Alignment="Bottom" Margin="74, 0, 0, -24">{emrals}</Header>

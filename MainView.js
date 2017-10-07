@@ -10,7 +10,8 @@ var FileSystem = require("FuseJS/FileSystem");
 
 var exports = module.exports;
 
-exports.build_num = Observable("40");
+exports.build_num = Observable("BUDDYBUILD_BUILD_NUMBER");
+exports.version_num = Observable("0.0.1");
 
 var emrals_popup_visibility = exports.emrals_popup_visibility = Observable("Hidden");
 
@@ -30,7 +31,7 @@ payload = {
   " system: " + Device.system + 
   " systemVersion: " + Device.systemVersion + 
   " SDKVersion: " + Device.SDKVersion + 
-  " cores: " + Device.systemVersion + 
+  " cores: " + Device.cores + 
   " isRetina: " + Device.isRetina
 }
 
@@ -283,7 +284,7 @@ exports.uploadAlert = function uploadAlert(e) {
   if (tempImage) {
     loading_visible.value = true;
     Uploader.send(tempImage.path, emrals_url + 'upload_image/').then(function(response) {
-      GeoLocation.getLocation(2000).then(function(location) {
+      GeoLocation.getLocation(10000).then(function(location) {
         var latlng = location.latitude + "," + location.longitude;
         var url = "http://maps.googleapis.com/maps/api/geocode/json?latlng=" + latlng;
         address = "";
