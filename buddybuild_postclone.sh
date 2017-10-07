@@ -1,7 +1,7 @@
 curl --remote-name https://fuse-dl.azureedge.net/releaseartifacts/fuse_osx_1_2_1_13974.pkg
 echo password | sudo installer -pkg fuse_osx_1_2_1_13974.pkg -target /
 
-APP_VERSION=0.0.3
+APP_VERSION=0.0.2
 
 
 sed -i -e "s/pk_test/${STRIPE_PRIVATE_KEY}/g" MainView.js
