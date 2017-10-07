@@ -22,7 +22,7 @@
   "Mobile": {
     "Orientations": "Portrait"
   },
-  "Version": "0.0.0",
+  "Version": "0.0.2",
   "DevelopmentTeam": "HRA3AUNUHS",
   "VersionCode": "2",
   "Icon": "Assets/icon.png",
