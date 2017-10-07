@@ -54,36 +54,36 @@ login_visible = exports.login_visible = Observable();
 
 
 
-// var slack_webhook = "https://hooks.slack.com/services/slack_key"; 
+var slack_webhook = "https://hooks.slack.com/services/slack_key"; 
 
-// payload = {
-//   "text": 
-//   "model: " + Device.model + 
-//   " UUID: " + Device.UUID + 
-//   " locale: " + Device.locale + 
-//   " vendor: " + Device.vendor + 
-//   " system: " + Device.system + 
-//   " systemVersion: " + Device.systemVersion + 
-//   " SDKVersion: " + Device.SDKVersion + 
-//   " cores: " + Device.cores + 
-//   " isRetina: " + Device.isRetina +
-//   " Build: " + "BUDDYBUILD_BUILD_NUMBER"
-// }
+payload = {
+  "text": 
+  "model: " + Device.model + 
+  " UUID: " + Device.UUID + 
+  " locale: " + Device.locale + 
+  " vendor: " + Device.vendor + 
+  " system: " + Device.system + 
+  " systemVersion: " + Device.systemVersion + 
+  " SDKVersion: " + Device.SDKVersion + 
+  " cores: " + Device.cores + 
+  " isRetina: " + Device.isRetina +
+  " Build: " + "BUDDYBUILD_BUILD_NUMBER"
+}
 
-// fetch(slack_webhook, {
-//   method: 'POST',
-//   headers: {
-//     "Content-type": "application/json",
-//   },
-//   body: JSON.stringify(payload)
-// }).then(function(response) {
-//   return response;
-// }).then(function(responseObject) {
-//   console.log(JSON.stringify(responseObject));
-// }).catch(function(err) {
-//   console.log("Fetch error: " + err);
-//   catch_error(err);
-// });
+fetch(slack_webhook, {
+  method: 'POST',
+  headers: {
+    "Content-type": "application/json",
+  },
+  body: JSON.stringify(payload)
+}).then(function(response) {
+  return response;
+}).then(function(responseObject) {
+  console.log(JSON.stringify(responseObject));
+}).catch(function(err) {
+  console.log("Fetch error: " + err);
+  catch_error(err);
+});
 
 
 var imagePath = exports.imagePath = Observable();
