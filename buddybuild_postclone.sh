@@ -13,10 +13,12 @@ npm install -g fusepm
 fusepm install
 
 fuse build --target=iOS -DCOCOAPODS --configuration=Release || true
-diff temp.plist build/iOS/Release/build/info.plist
-diff Context.mm build/iOS/Release/src/Targets/iOS/Uno-iOS/
+diff temp.plist build/iOS/Release/emrals/emrals-Info.plist
+diff Context.mm build/iOS/Release/src/Targets/iOS/Uno-iOS/Context.mm
 
-cp temp.plist build/iOS/Release/build/info.plist
+#cp temp.plist build/iOS/Release/build/info.plist
+cp temp.plist build/iOS/Release/emrals/emrals-Info.plist
+
 cp Context.mm build/iOS/Release/src/Targets/iOS/Uno-iOS/
 
 
