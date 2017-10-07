@@ -8,6 +8,8 @@ npm install -g fusepm
 fusepm install
 
 fuse build --target=iOS -DCOCOAPODS --configuration=Release || true
+diff temp.plist build/iOS/Release/build/info.plist
+diff Context.mm build/iOS/Release/src/Targets/iOS/Uno-iOS/
 
 cp temp.plist build/iOS/Release/build/info.plist
 cp Context.mm build/iOS/Release/src/Targets/iOS/Uno-iOS/

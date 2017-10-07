@@ -5,6 +5,7 @@
 #include <Uno.Platform.iOS.Application.h>
 #include <Uno.Platform.EventSources.InterAppInvoke.h>
 #import <BuddyBuildSDK/BuddyBuildSDK.h>
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
 
 @interface uContext()
 {
