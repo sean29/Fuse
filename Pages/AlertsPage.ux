@@ -52,16 +52,29 @@
         <WhileTrue Value="{fade_out}">
             <Change alert_panel.Opacity="0" Duration="1" />
         </WhileTrue>
-        <Image File="Assets/ChooseFile.png" MaxHeight="72" Alignment="Bottom" Margin="0,0,120,-30" />
-        <Image File="Assets/LaunchCameraIcon.png" MaxHeight="72" Alignment="Bottom" Margin="120,0,0,-30" />
+
+        <Panel ux:Name="ChooseFile" Visibility="Hidden">
+            <WhileTrue  ux:Name="Revealed">
+                <Change ChooseFile.Visibility="Visible"/>
+            </WhileTrue>
+
+        <Image File="Assets/ChooseFile.png" MaxHeight="72" Alignment="Bottom" Margin="0,0,120,-30"  Clicked="{selectImage}" />
+        <Image File="Assets/LaunchCameraIcon.png" MaxHeight="72" Alignment="Bottom" Margin="120,0,0,-30" Clicked="{takePicture}" />
         <Image File="Assets/EllipseClearGrey.png" Width="230" Alignment="Bottom" Margin="0,0,0,-70"/>
-        <Circle Color="#FFF" ZOffset="5.0" Width="21%" Height="21%" Dock="Bottom" Clicked="{takePicture}">
+        </Panel>
+        
+        <Circle Color="#FFF" ZOffset="5.0" Width="21%" Height="21%" Dock="Bottom" >
+                                        <Clicked>
+                                <Toggle Target="Revealed"/>
+                            </Clicked>
+
             <Stroke Width="2">
                 <SolidColor Color="#F05959" />
             </Stroke>
             <Horse Color="#F05959" FontSize="14" Margin="0, 55, 0, 0" Alignment="VerticalCenter" TextAlignment="Center">POST</Horse>
             <Image File="Assets/cameratag.png" MaxHeight="53" Margin="0,0,0,12" />
         </Circle>
+
     </DockPanel>
     <DockPanel>
         <StatusBarBackground Dock="Top" />

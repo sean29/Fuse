@@ -265,6 +265,11 @@ exports.takePictureSolution = function(inputs) {
   );
 };
 
+
+
+
+
+
 var lastImage = "";
 
 var displayImage = function(image) {
@@ -282,8 +287,26 @@ var displayImage = function(image) {
 exports.selectImage = function() {
   CameraRoll.getImage().then(
     function(image) {
-      console.log("received image: " + image.path + ", " + image.width + "/" + image.height);
-      displayImage(image);
+      var args = {
+        desiredWidth: 320,
+        desiredHeight: 320,
+        mode: ImageTools.SCALE_AND_CROP,
+        performInPlace: true
+      };
+      ImageTools.resize(image, args).then(
+        function(image) {
+          loading_visible.value = false;
+          router.goto("camera");
+          CameraRoll.publishImage(image);
+          imageFile.value = image;
+          tempImage = image;
+          displayImage(image);
+        }
+      ).catch(
+        function(reason) {
+          console.log("Couldn't resize image: " + reason);
+        }
+      );
     }
   ).catch(
     function(reason) {
@@ -438,7 +461,7 @@ exports.uploadSolution = function uploadSolution(e) {
   if (tempImage) {
     loading_visible.value = true;
     Uploader.send(tempImage.path, emrals_url + 'upload_image/').then(function(response) {
-      GeoLocation.getLocation(2000).then(function(location) {
+      GeoLocation.getLocation(10000).then(function(location) {
         console.log(JSON.stringify(e.data));
         console.log(JSON.stringify(e.data.id.value));
 

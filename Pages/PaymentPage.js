@@ -17,7 +17,7 @@ var subscription = param.map(function(x) {
 	return x.subscription;
 });
 
-var error_visibility = Observable("Hidden");
+
 
 function formEncode(obj) {
 	var str = [];
@@ -25,6 +25,8 @@ function formEncode(obj) {
 		str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
 	return str.join("&");
 }
+
+var error_visibility = Observable("Hidden");
 
 function hideError() {
 	error_visibility.value = "Hidden";
