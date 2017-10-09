@@ -36,9 +36,18 @@
                     <Rectangle Color="#FFF" Opacity="0.8" Height="48" Width="300" CornerRadius="10" Alignment="Center" Margin="0, 0"/>
                   </Panel>
                 -->
-      <Rectangle Color="#8AB847" Y="140" Height="48" Width="300" CornerRadius="10" Dock="Bottom" Margin="0, 0, 0, 40" Clicked="{goToLogin}" Visibility="{login_visible}">
-        <Horse Color="#FFF" FontSize="24" Alignment="Center">LOG IN</Horse>
+      
+        
+        <Rectangle ux:Name="loginrec" Color="#8AB847" Y="140" Height="48" Width="300" CornerRadius="10" Margin="0, 0, 0, 40" Clicked="{goToLogin}" Visibility="{login_visible}">   
+           <Horse Color="#FFF" FontSize="24" Alignment="Center">LOG IN</Horse>
+           <WhilePressed>
+            <Change loginrec.Color="#AFDE69" Duration="0.05" DurationBack=".2" />
+          </WhilePressed>
       </Rectangle>
+      
+  
+  
+       
       <Text FontSize="11" TextColor="#888888" Alignment="Center" Margin="0, 140, 0, 0">Version {version_num} Build {build_num}</Text>
     </StackPanel>
     <Image File="Assets/bgtrash.jpg" Dock="Bottom" Margin="0, 0, 0, 0" StretchMode="Fill" StretchDirection="DownOnly" Alignment="Center" />
