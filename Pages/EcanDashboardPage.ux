@@ -1,0 +1,80 @@
+<Page ux:Class="EcanDashboardPage">
+	<Router ux:Dependency="router" />
+	<StackPanel Dock="Top" Orientation="Horizontal" Alignment="TopRight" Padding="5" Visibility="{widget_visible}" Clicked="{viewProfile}">
+		<Image File="Assets/greene.png" Dock="Top" Height="16" />
+		<PTreal FontSize="14" Margin="4,0,4,0">{user_emrals}</PTreal>
+		<Image Url="{user_avatar}" MaxHeight="16" />
+		<!--Image File="Assets/tinytriangle.png" MaxWidth="11" Margin="4,0,0,0"/>-->
+	</StackPanel>
+	<StackPanel Background="#FFF" Y="0" Height="60">
+		<Text Value="&lt;&lt;" Color="#636364" FontSize="24" Alignment="Left" Margin="10, 0,0,0" Clicked="{back}" />
+		<PTreal Alignment="Center">BUILDINGLINK</PTreal>
+	</StackPanel>
+	<StackPanel Y="60">
+		<Panel>
+			<Image File="Assets/ecan3.jpg" MaxWidth="50%" Alignment="Left"/>
+
+			<Rectangle Color="#8AB847" Height="188" Width="50%" Alignment="Right">
+				<Grid Rows="1*,1*,1*,1*,1*" Margin="0,2">
+					<Panel>
+				<Rectangle Color="#FFF" Opacity=".2" Height="32" />
+				<StackPanel Orientation="Horizontal" Margin="10,7,0,0" ItemSpacing="5">
+					<Dog FontSize="16" Color="#FFF" Opacity="1">Location</Dog><Horse FontSize="16">Lobby East End</Horse></StackPanel>
+					</Panel>
+				<Panel>
+				<Rectangle Color="#FFF" Opacity=".2" Height="32" />
+				<StackPanel Orientation="Horizontal" Margin="10,7,0,0" ItemSpacing="5">
+					<Dog FontSize="16" Color="#FFF" Opacity="1">Last Update</Dog><Horse FontSize="16">2 hours ago</Horse></StackPanel>
+				</Panel>
+				<Panel>
+				<Rectangle Color="#FFF" Opacity=".2" Height="32"  />
+				<StackPanel Orientation="Horizontal" Margin="10,7,0,0" ItemSpacing="5">
+					<Dog FontSize="16" Color="#FFF" Opacity="1">Installed</Dog><Horse FontSize="16">08.21.17</Horse></StackPanel>
+				</Panel>
+				<Panel>
+				<Rectangle Color="#FFF" Opacity=".2" Height="32"  />
+				<StackPanel Orientation="Horizontal" Margin="10,7,0,0" ItemSpacing="5">
+					<Dog FontSize="16" Color="#FFF" Opacity="1">Gross Tosses</Dog><Horse FontSize="16">3,456</Horse></StackPanel>
+				</Panel>
+				<Panel>
+				<Rectangle Color="#FFF" Opacity=".2" Height="32"  />
+				<StackPanel Orientation="Horizontal" Margin="10,7,0,0" ItemSpacing="5">
+					<Dog FontSize="16" Color="#FFF" Opacity="1">Total XP</Dog><Horse FontSize="16">890</Horse></StackPanel>
+				</Panel>
+
+			</Grid>
+
+</Rectangle>
+		</Panel>
+			<Panel Height="188" Background="#F5F5F5" Margin="0,10,0,0">
+				<PTreal Color="#8AB847" FontSize="18" Alignment="TopCenter">234 TOSSES</PTreal>
+				<StackPanel Orientation="Horizontal" ItemSpacing="10" Padding="9" Margin="0,10,0,0">
+					<Rectangle Height="150" Width="174" Color="#FFF" />
+					<Rectangle Height="150" Width="174" Color="#FFF" />
+				</StackPanel>
+			</Panel>
+					<Panel Height="188" Background="#F5F5F5" Margin="0,10,0,0">
+					<PTreal Color="#8AB847" FontSize="18" Alignment="TopCenter">134 SCANS</PTreal>
+
+						<StackPanel Orientation="Horizontal" ItemSpacing="10" Padding="9" Margin="0,10,0,0">
+							<Rectangle Height="150" Width="112" CornerRadius="5" Color="#FFF">
+								<Horse TextColor="#69696A" FontSize="11" Alignment="TopCenter" >Vintage 12 oz</Horse>
+								<Image File="Assets/bottlecircle.png" MaxHeight="100" />
+								<Horse TextColor="#69696A" FontSize="11" Alignment="BottomCenter" >10:13 AM 09.14.17</Horse>
+							</Rectangle>
+							<Rectangle Height="150" Width="112" CornerRadius="5" Color="#FFF" >
+								<Horse TextColor="#69696A" FontSize="11" Alignment="TopCenter" >Vintage 12 oz</Horse>
+								<Image File="Assets/bottlecircle.png" MaxHeight="100" />
+								<Horse TextColor="#69696A" FontSize="11" Alignment="BottomCenter" >10:13 AM 09.14.17</Horse>
+							</Rectangle>
+							<Rectangle Height="150" Width="112" CornerRadius="5" Color="#FFF" >
+								<Horse TextColor="#69696A" FontSize="11" Alignment="TopCenter" >Vintage 12 oz</Horse>
+								<Image File="Assets/bottlecircle.png" MaxHeight="100" />
+								<Horse TextColor="#69696A" FontSize="11" Alignment="BottomCenter" >10:13 AM 09.14.17</Horse>
+							</Rectangle>
+</StackPanel>
+			</Panel>
+
+		
+	</StackPanel>
+</Page>
