@@ -20,7 +20,7 @@
     <StackPanel Y="60" Background="#FFF" Alignment="Top">
         <Panel Alignment="Default" Height="350">
             <Rectangle Color="#FFF" Opacity="0.8" Alignment="Bottom">
-                <Curl FontSize="16" Color="#2B2B2B" Margin="20,0,0,0" TextWrapping="Wrap">Impact zones allow you to focus your cleanup reward power. Select a zone in an area that matters to you to be cleaned. Your subscription automatically funds the cleanup in those locations by paying tahe people that clean up.</Curl>
+                <Curl FontSize="16" Color="#2B2B2B" Margin="20,0,0,0" TextWrapping="Wrap">Impact zones allow you to focus your cleanup reward power. Select a zone in an area that matters to you to be cleaned. Your subscription automatically funds the cleanup in those locations by paying the people that clean up.</Curl>
             </Rectangle>
             <Image File="Assets/city.jpeg" Width="100%" Clicked="{extractzip}" StretchMode="UniformToFill" StretchDirection="DownOnly" StretchSizing="Zero" Padding="0, 0, 0, 0" Margin="0, 0, 0, 0" Visibility="Visible" />
         </Panel>
