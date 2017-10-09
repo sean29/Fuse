@@ -52,6 +52,9 @@
         <WhileTrue Value="{fade_out}">
             <Change alert_panel.Opacity="0" Duration="1" />
         </WhileTrue>
+        <Image File="Assets/ChooseFile.png" MaxHeight="72" Alignment="Bottom" Margin="0,0,120,-30" />
+        <Image File="Assets/LaunchCameraIcon.png" MaxHeight="72" Alignment="Bottom" Margin="120,0,0,-30" />
+        <Image File="Assets/EllipseClearGrey.png" Width="230" Alignment="Bottom" Margin="0,0,0,-70"/>
         <Circle Color="#FFF" ZOffset="5.0" Width="21%" Height="21%" Dock="Bottom" Clicked="{takePicture}">
             <Stroke Width="2">
                 <SolidColor Color="#F05959" />
