@@ -31,8 +31,11 @@
     </Grid>
     <DockPanel>
         <Text Font="Medium" FontSize="42" TextAlignment="Center" Color="#f00" >{error}</Text>
-        <Rectangle Color="#8AB847" Height="48" Width="300" CornerRadius="10" Dock="Bottom" Margin="0, 0, 0, 40" Clicked="{doLogin}">
-            <Text Color="#fff" FontSize="24" Alignment="BottomCenter" Margin="0, 0, 0, 10">LOG IN</Text>
+        <Rectangle ux:Name="loginprect" Color="#8AB847" Height="48" Width="300" CornerRadius="10" Dock="Bottom" Margin="0, 0, 0, 40" Clicked="{doLogin}">
+            <Horse Alignment="BottomCenter" FontSize="24" Margin="0, 0, 0, 10">LOG IN</Horse>
+            <WhilePressed>
+            <Change loginprect.Color="#AFDE69" Duration="0.05" DurationBack=".2" />
+          </WhilePressed>
         </Rectangle>
     </DockPanel>
 </Page>

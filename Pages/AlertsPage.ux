@@ -63,7 +63,7 @@
         <Image File="Assets/EllipseClearGrey.png" Width="230" Alignment="Bottom" Margin="0,0,0,-70"/>
         </Panel>
         
-        <Circle Color="#FFF" ZOffset="5.0" Width="21%" Height="21%" Dock="Bottom" >
+        <Circle ux:Name="postcircle" Color="#FFF" ZOffset="5.0" Width="21%" Height="21%" Dock="Bottom" >
                                         <Clicked>
                                 <Toggle Target="Revealed"/>
                             </Clicked>
@@ -73,6 +73,9 @@
             </Stroke>
             <Horse Color="#F05959" FontSize="14" Margin="0, 55, 0, 0" Alignment="VerticalCenter" TextAlignment="Center">POST</Horse>
             <Image File="Assets/cameratag.png" MaxHeight="53" Margin="0,0,0,12" />
+            <WhilePressed>
+              <Change postcircle.Color="#EFEFEF" Duration="0.05" DurationBack=".2" />
+          </WhilePressed>
         </Circle>
 
     </DockPanel>

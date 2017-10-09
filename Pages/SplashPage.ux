@@ -12,17 +12,30 @@
       <Panel Y="90" Clicked="{goToAlerts}">
         <Image File="Assets/cameratag.png" Height="40" Margin="0, 0, 140, 0" />
         <PTreal Color="#636364" FontSize="18" Alignment="Center" Margin="60, 0, 0, 0">Tag Dirt Alerts</PTreal>
-        <Rectangle Color="#FFF" Opacity="0.8" Height="48" Width="300" CornerRadius="10" Alignment="Center" Margin="0, 0" />
+        <Rectangle ux:Name="tagrec" Color="#FFF" Opacity="0.8" Height="48" Width="300" CornerRadius="10" Alignment="Center">
+          <WhilePressed>
+            <Change tagrec.Opacity="1" Duration="0.05" DurationBack=".2" />
+          </WhilePressed>
+        </Rectangle>
+
       </Panel>
       <Panel Y="100" Clicked="{goToImpact}">
         <Image File="Assets/buyicon.png" Height="40" Margin="0, 0, 140, 0" />
         <PTreal Color="#636364" FontSize="18" Alignment="Center" Margin="40, 0, 0, 0">Fund Impact</PTreal>
-        <Rectangle Color="#FFF" Opacity="0.8" Height="48" Width="300" CornerRadius="10" Alignment="Center" Margin="0, 20" />
+        <Rectangle ux:Name="impactrec" Color="#FFF" Opacity="0.8" Height="48" Width="300" CornerRadius="10" Alignment="Center" Margin="0, 20">
+          <WhilePressed>
+            <Change impactrec.Opacity="1" Duration="0.05" DurationBack=".2" />
+          </WhilePressed>
+        </Rectangle>
       </Panel>
       <Panel Y="110" Clicked="{goToEcans}">
         <Image File="Assets/v2ecansicon.png" Height="40" Margin="0, 0, 140, 0" />
         <PTreal Color="#636364" FontSize="18" Alignment="Center" Margin="25, 0, 0, 0">See eCans</PTreal>
-        <Rectangle Color="#FFF" Opacity="0.8" Height="48" Width="300" CornerRadius="10" Alignment="Center" Margin="0, 0" />
+        <Rectangle ux:Name="ecanrec" Color="#FFF" Opacity="0.8" Height="48" Width="300" CornerRadius="10" Alignment="Center" Margin="0, 0">
+          <WhilePressed>
+            <Change ecanrec.Opacity="1" Duration="0.05" DurationBack=".2" />
+          </WhilePressed>
+        </Rectangle>
       </Panel>
       <!--
                   <Panel Y="140" Clicked="{goToMap}" Visibility="{widget_visible}" >
@@ -39,7 +52,7 @@
       
         
         <Rectangle ux:Name="loginrec" Color="#8AB847" Y="140" Height="48" Width="300" CornerRadius="10" Margin="0, 0, 0, 40" Clicked="{goToLogin}" Visibility="{login_visible}">   
-           <Horse Color="#FFF" FontSize="24" Alignment="Center">LOG IN</Horse>
+           <Horse FontSize="24" Alignment="Center">LOG IN</Horse>
            <WhilePressed>
             <Change loginrec.Color="#AFDE69" Duration="0.05" DurationBack=".2" />
           </WhilePressed>
@@ -50,6 +63,6 @@
        
       <Text FontSize="11" TextColor="#888888" Alignment="Center" Margin="0, 140, 0, 0">Version {version_num} Build {build_num}</Text>
     </StackPanel>
-    <Image File="Assets/bgtrash.jpg" Dock="Bottom" Margin="0, 0, 0, 0" StretchMode="Fill" StretchDirection="DownOnly" Alignment="Center" />
+    <Image File="Assets/bgtrash.jpg" Dock="Bottom" StretchMode="Fill" StretchDirection="DownOnly" Alignment="Center" />
   </DockPanel>
 </Page>

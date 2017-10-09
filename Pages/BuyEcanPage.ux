@@ -84,8 +84,11 @@
             </ClientPanel>
         </ScrollView>
         <DockPanel Dock="Bottom">
-            <Rectangle Height="44" Width="300" Color="#F05959" CornerRadius="10" Dock="Bottom" Margin="0,10,0,0" Clicked="{testPay}">
+            <Rectangle ux:Name="buyecanrec" Height="44" Width="300" Color="#F05959" CornerRadius="10" Dock="Bottom" Margin="0,10,0,0" Clicked="{testPay}">
                 <Horse Alignment="Center">CONFIRM</Horse>
+                <WhilePressed>
+                <Change buyecanrec.Color="#F42D2D" Duration="0.05" DurationBack=".2" />
+          </WhilePressed>
             </Rectangle>
         </DockPanel>
     </StackPanel>
