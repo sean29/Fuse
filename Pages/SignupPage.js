@@ -23,7 +23,6 @@ module.exports = {
     last_name: last_name,
     first_name: first_name,
     error: error,
-    back: back,
     doSignup: function doSignup(e) {
         var requestObject = {
             username: username.value,

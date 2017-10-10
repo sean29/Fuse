@@ -177,24 +177,27 @@ file_exists = FileSystem.exists(path)
 
   }, function(error) {});
 
+var currentPage = exports.currentPage = Observable("alerts");
+
 exports.back = function() {
   router.goBack();
 }
 exports.goHome = function() {
-  router.goto('splash');
+  router.push('splash');
 }
 exports.goToEcans = function() {
     router.push("ecans");
-  },
-  exports.goToAlerts = function() {
+  }
+  exports.goToAlerts = function(args) {
     router.push("alerts");
-  },
+  }
   exports.goToLogin = function() {
     router.push("login");
-  },
+  }
   exports.goToImpact = function() {
+    //currentPage = "impact";
     router.push("impact");
-  },
+  }
   exports.goToMap = function() {
     router.push("maps");
   }
@@ -205,10 +208,10 @@ exports.goToSignup = function() {
   router.push("signup");
 }
 exports.goToCamera = function() {
-  router.goto("camera");
+  router.push("camera");
 }
 exports.goToBarcode = function() {
-  router.goto("barcode");
+  router.push("barcode");
 }
 exports.viewProfile = function() {
   router.push('profile');

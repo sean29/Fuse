@@ -1,4 +1,4 @@
-<StackPanel ux:Class="Sidebar" Background="#212831">
+<StackPanel ux:Class="Sidebar" Background="#212831" >
 	<WhileInactive Threshold="0.4">
 		<Move Target="user" X="-180" Duration="0.2" Delay="0.3" Easing="CircularIn" />
 		<Move Target="stats" X="-180" Duration="0.2" Delay="0.2" Easing="CircularIn" />
@@ -44,16 +44,28 @@
 
 	<StackPanel>
 		<StackPanel ux:Name="browser">
+		<Clicked>
+			<NavigateToggle  />
+			<Callback Handler="{goToAlerts}" />
+		</Clicked>
 			<SidebarIcon File="Assets/2017greenE.png" />
-			<MenuLabel>NEWS</MenuLabel>
+			<MenuLabel>ALERTS</MenuLabel>
 		</StackPanel>
-		<StackPanel ux:Name="feed">
+		<StackPanel ux:Name="feed"  >
+		<Clicked>
+			<NavigateToggle />
+			<Callback Handler="{goToImpact}" />
+		</Clicked>
 			<SidebarIcon File="Assets/2017greenE.png" />
-			<MenuLabel>FEED</MenuLabel>
+			<MenuLabel>IMPACT ZONES</MenuLabel>
 		</StackPanel>
 		<StackPanel ux:Name="chat">
+			<Clicked>
+			<NavigateToggle  />
+			<Callback Handler="{goToEcans}" />
+		</Clicked>
 			<SidebarIcon File="Assets/2017greenE.png" />
-			<MenuLabel>CHAT</MenuLabel>
+			<MenuLabel>ECANS</MenuLabel>
 		</StackPanel>
 	</StackPanel>
 </StackPanel>
