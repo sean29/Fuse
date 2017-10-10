@@ -1,4 +1,18 @@
-<StackPanel ux:Class="NewsItem" Margin="0,14,0,10">
+<Page ux:Class="NewsItem">
+	   <JavaScript File="Pages/AlertsPage.js" />
+  <Router ux:Dependency="router" />
+
+
+
+  <ScrollView>
+		<StackPanel Alignment="Top">
+			<Panel Height="7" />
+			<Each Items="{data}">
+				
+
+
+
+	<StackPanel Margin="0,14,0,10">
 	<Panel ux:Class="VerticalBar" Margin="8,0,8,2" Alignment="VerticalCenter">
 		<Rectangle Height="12" Width="2" Color="#dcdee3" />
 	</Panel>
@@ -21,12 +35,12 @@
 	<!-- The header -->
 	<DockPanel Margin="10,0,0,15">
 		<Circle Dock="Left" Width="45" Height="45">
-			<ImageFill Url="{portrait}" WrapMode="ClampToEdge"/>
+			<ImageFill Url="{portrait}" WrapMode="ClampToEdge" />
 		</Circle>
 
 		<DockPanel Margin="10,4,10,0">
 			<StackPanel Dock="Top" Orientation="Horizontal">
-				<Name Value="{author}" />
+				<Name Value="{poster_username}" />
 			</StackPanel>
 			<StackPanel Dock="Bottom" Orientation="Horizontal">
 				<SubText Value="{postAge}" />
@@ -40,12 +54,12 @@
 	</DockPanel>
 	
 	<!-- Main article body -->
-	<Image Url="{imageUrl}" />
-	<Header2 Value="{headline}" />
+	<Image Url="{thumbnail}" ContentAlignment="VerticalCenter" Margin="0, 0, 0, 0" Height="275" StretchMode="UniformToFill" />
+	<Header2 Value="{title}" />
 	<Article Value="{body}" />
 
 	<Image ux:Class="ActionIcon" Height="22" Width="22" Alignment="VerticalCenter" Color="#c4d2e1" />
-	<Text ux:Class="Stat" Alignment="VerticalCenter"  Margin="5,0,17,0" FontSize="15" Color="#7a96b2">
+	<Text ux:Class="Stat" Alignment="VerticalCenter" Margin="5,0,17,0" FontSize="15" Color="#7a96b2">
 		<Font File="assets/fonts/Lato-Bold.ttf" />
 	</Text>
 
@@ -59,3 +73,12 @@
 
 	<HorizontalBar />
 </StackPanel>
+
+
+			</Each>
+		</StackPanel>
+	</ScrollView>
+
+
+
+</Page>

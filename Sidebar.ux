@@ -6,18 +6,11 @@
 		<Move Target="feed" X="-180" Duration="0.2" Delay="0.1" Easing="CircularIn" />
 		<Move Target="chat" X="-180" Duration="0.2" Delay="0.05" Easing="CircularIn" />
 	</WhileInactive>
-
-	<Text ux:Class="Username" TextAlignment="Center" FontSize="18" Color="#fff" Margin="0,8,0,0">
-		
-	</Text>
+	<Text ux:Class="Username" TextAlignment="Center" FontSize="18" Color="#fff" Margin="0,8,0,0"></Text>
 	<Text ux:Class="Stats" TextAlignment="Center" FontSize="16" Color="#fed166" />
 	<Text ux:Class="Relations" TextAlignment="Center" FontSize="11" Color="#414f5e" />
-	<Text ux:Class="MenuLabel" TextAlignment="Center" FontSize="18" Color="#414f5e" Margin="0,0,0,0">
-
-	</Text>
-
+	<Text ux:Class="MenuLabel" TextAlignment="Center" FontSize="18" Color="#414f5e" Margin="0,0,0,0"></Text>
 	<StatusBarBackground Background="#909498" />
-
 	<StackPanel ux:Name="user">
 		<Panel Height="90" />
 		<Circle Width="85" Height="85">
@@ -25,7 +18,6 @@
 		</Circle>
 		<Username>EDWARD PRICE</Username>
 	</StackPanel>
-
 	<Grid ux:Name="stats" Alignment="HorizontalCenter" ColumnCount="3" Margin="0,10,0,15">
 		<StackPanel Width="70">
 			<Stats>2,342</Stats>
@@ -39,33 +31,39 @@
 			<Relations>Following</Relations>
 		</StackPanel>
 	</Grid>
-
 	<Image ux:Class="SidebarIcon" Height="22" Width="22" Margin="0,24,0,9" Color="#7a96b2" />
-
 	<StackPanel>
 		<StackPanel ux:Name="browser">
-		<Clicked>
-			<NavigateToggle  />
-			<Callback Handler="{goToAlerts}" />
-		</Clicked>
+			<Clicked>
+				<NavigateToggle  />
+				<Callback Handler="{goToAlerts}" />
+			</Clicked>
 			<SidebarIcon File="Assets/2017greenE.png" />
 			<MenuLabel>ALERTS</MenuLabel>
 		</StackPanel>
-		<StackPanel ux:Name="feed"  >
-		<Clicked>
-			<NavigateToggle />
-			<Callback Handler="{goToImpact}" />
-		</Clicked>
+		<StackPanel ux:Name="feed" >
+			<Clicked>
+				<NavigateToggle />
+				<Callback Handler="{goToImpact}" />
+			</Clicked>
 			<SidebarIcon File="Assets/2017greenE.png" />
 			<MenuLabel>IMPACT ZONES</MenuLabel>
 		</StackPanel>
 		<StackPanel ux:Name="chat">
 			<Clicked>
-			<NavigateToggle  />
-			<Callback Handler="{goToEcans}" />
-		</Clicked>
+				<NavigateToggle  />
+				<Callback Handler="{goToEcans}" />
+			</Clicked>
 			<SidebarIcon File="Assets/2017greenE.png" />
 			<MenuLabel>ECANS</MenuLabel>
+		</StackPanel>
+				<StackPanel ux:Name="chat2">
+			<Clicked>
+				<NavigateToggle  />
+				<Callback Handler="{goToNewsItems}" />
+			</Clicked>
+			<SidebarIcon File="Assets/2017greenE.png" />
+			<MenuLabel>NEWS ITEMS</MenuLabel>
 		</StackPanel>
 	</StackPanel>
 </StackPanel>

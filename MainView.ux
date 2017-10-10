@@ -72,6 +72,7 @@
         <ProfilePage ux:Template="profile" router="router" />
         <MapsPage ux:Template="maps" router="router" />
         <BarcodePage ux:Template="barcode" router="router" />
+        <NewsItem ux:Template="newsitems" router="router" />
       </Navigator>
     </ClientPanel>
   </EdgeNavigator>

@@ -34,9 +34,16 @@ function goToAlert(arg) {
 
 
 function reloadHandler() {
+
+    try{
+
     if(!isBusy){
     isLoading.value = true;
     }
+
+    }catch(err) {
+
+}
     fetch(api_url+'alerts/?format=json')
     .then(function(response) {
         return response.json();
@@ -53,8 +60,12 @@ function reloadHandler() {
 reloadHandler();
 
 
-
+try{
 isBusy.activate();
+}catch(err) {
+
+}
+
 
 module.exports = {
     fade_out: fade_out, 

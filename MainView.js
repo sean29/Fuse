@@ -204,6 +204,9 @@ exports.goToEcans = function() {
 exports.goToBuyEcan = function() {
   router.push('buyecan');
 }
+exports.goToNewsItems = function() {
+  router.push('newsitems');
+}
 exports.goToSignup = function() {
   router.push("signup");
 }
