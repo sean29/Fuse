@@ -16,13 +16,12 @@ sed -i -e "s/POST_SERVER_ITEM_ACCESS_TOKEN/${POST_SERVER_ITEM_ACCESS_TOKEN}/g" M
 npm install -g fusepm
 fusepm install
 
-fuse build --target=iOS -DCOCOAPODS --configuration=Release || true
-diff temp.plist build/iOS/Release/emrals/emrals-Info.plist
-diff Context.mm build/iOS/Release/src/Targets/iOS/Uno-iOS/Context.mm
-
-#cp temp.plist build/iOS/Release/build/info.plist
-cp temp.plist build/iOS/Release/emrals/emrals-Info.plist
-
-cp Context.mm build/iOS/Release/src/Targets/iOS/Uno-iOS/
-
-
+if [ -n "${FB_APP_ID}" ]; then             
+  fuse build --target=iOS -DCOCOAPODS --configuration=Release || true
+  cp temp.plist build/iOS/Release/emrals/emrals-Info.plist 
+  cp Context.mm build/iOS/Release/src/Targets/iOS/Uno-iOS/
+else
+  rm -rf emrals.xcodeproj
+  fuse install android
+  fuse build --target=Android --configuration=Release || true
+fi

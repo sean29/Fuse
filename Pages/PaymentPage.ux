@@ -70,8 +70,11 @@
                 </StackPanel>
             </ClientPanel>
         </ScrollView>
-        <Rectangle Height="44" Width="300" Color="#F05959" CornerRadius="10" Dock="Bottom" Margin="0, 0, 0, 60" Clicked="{testPay}" Alignment="Top">
+        <Rectangle ux:Name="confirmrec" Height="44" Width="300" Color="#F05959" CornerRadius="10" Dock="Bottom" Margin="0, 0, 0, 60" Clicked="{testPay}" Alignment="Top">
             <Horse Alignment="Center">CONFIRM</Horse>
+            <WhilePressed>
+                <Change confirmrec.Color="#F42D2D" Duration="0.05" DurationBack=".2" />
+          </WhilePressed>
         </Rectangle>
     </DockPanel>
 </Page>

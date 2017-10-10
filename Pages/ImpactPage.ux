@@ -42,14 +42,23 @@
             </StackPanel>
         </Rectangle>
         <Grid RowCount="1" Alignment="Center" Columns="1,1,1" Width="80%" Margin="0, 0, 0, 0" CellSpacing="120">
-            <Rectangle Color="#8AB847" Height="48" Width="100" CornerRadius="10" Margin="0, 0, 0, 0" Alignment="Center">
-                <Text Color="#fff" FontSize="24" Alignment="BottomCenter" Margin="0, 0, 0, 10" Clicked="{goToPayment50}">$50/m</Text>
+            <Rectangle ux:Name="fiverec" Color="#8AB847" Height="48" Width="100" CornerRadius="10" Margin="0, 0, 0, 0" Alignment="Center">
+                <Horse FontSize="24" Alignment="Center" Clicked="{goToPayment50}">$5/m</Horse>
+                <WhilePressed>
+            <Change fiverec.Color="#AFDE69" Duration="0.05" DurationBack=".2" />
+          </WhilePressed>
             </Rectangle>
-            <Rectangle Color="#8AB847" Height="48" Width="100" CornerRadius="10" Margin="0, 0, 0, 0" Alignment="Center">
-                <Text Color="#fff" FontSize="24" Alignment="BottomCenter" Margin="0, 0, 0, 10" Clicked="{goToPayment10}">$10/m</Text>
+            <Rectangle ux:Name="tenrec" Color="#8AB847" Height="48" Width="100" CornerRadius="10" Margin="0, 0, 0, 0" Alignment="Center">
+                <Horse FontSize="24" Alignment="Center" Clicked="{goToPayment10}">$10/m</Horse>
+                <WhilePressed>
+                <Change tenrec.Color="#AFDE69" Duration="0.05" DurationBack=".2" />
+          </WhilePressed>
             </Rectangle>
-            <Rectangle Color="#8AB847" Height="48" Width="100" CornerRadius="10" Margin="0, 0, 0, 0" Alignment="Center">
-                <Text Color="#fff" FontSize="24" Alignment="BottomCenter" Margin="0, 0, 0, 10" Clicked="{goToPayment25}">$25/m</Text>
+            <Rectangle ux:Name="twentyfiverec" Color="#8AB847" Height="48" Width="100" CornerRadius="10" Margin="0, 0, 0, 0" Alignment="Center">
+                <Horse FontSize="24" Alignment="Center" Clicked="{goToPayment25}">$25/m</Horse>
+                <WhilePressed>
+                <Change twentyfiverec.Color="#AFDE69" Duration="0.05" DurationBack=".2" />
+          </WhilePressed>
             </Rectangle>
         </Grid>
     </StackPanel>
