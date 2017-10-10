@@ -11,10 +11,13 @@
     "Fuse.Scripting",
     "Fuse.BasicTheme",
     "Fuse.GeoLocation",
-    "Fuse.Launcher"
+    "Fuse.Launcher",
+    "Fuse.Designer"
   ],
   "Projects": [
-    "fuse-qreader-master/fuse-qreader.unoproj"
+    "fuse-qreader-master/fuse-qreader.unoproj",
+    "fuse_modules\\bolav\\fuse-cocoapods\\cocoapods_include.unoproj",
+    "fuse_modules\\MaxGraey\\fuse-device\\device_include.unoproj"
   ],
   "Includes": [
     "*"
@@ -74,6 +77,7 @@
     "Dependencies": [
       "https://github.com/bolav/fuse-cocoapods",
       "https://github.com/MaxGraey/fuse-device"
+
     ]
   }
 }

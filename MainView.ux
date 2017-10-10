@@ -3,25 +3,76 @@
   <Android.StatusBarConfig Color="#636364" />
   <JavaScript File="MainView.js" />
   <Router ux:Name="router" />
-  <ClientPanel>
+  <EdgeNavigator ux:Name="EdgeNavigator">
 
-    <Navigator DefaultPath="splash">
-      <SplashPage ux:Template="splash" router="router" />
-      <AlertsPage ux:Template="alerts" router="router" />
-      <EcansPage ux:Template="ecans" router="router" />
-      <CameraPage ux:Template="camera" router="router" />
-      <SignupPage ux:Template="signup" router="router" />
-      <LoginPage ux:Template="login" router="router" />
-      <AlertDetailPage ux:Template="alertdetail" router="router" />
-      <ImpactPage ux:Template="impact" router="router" />
-      <PaymentPage ux:Template="payment" router="router" />
-      <BuyEcanPage ux:Template="buyecan" router="router" />
-      <EcanThankYouPage ux:Template="ecanthanks" router="router" />
-      <ImpactThankYouPage ux:Template="impactthanks" router="router" />
-      <SolutionPage ux:Template="solution" router="router" />
-      <ProfilePage ux:Template="profile" router="router" />
-      <MapsPage ux:Template="maps" router="router" />
-      <BarcodePage ux:Template="barcode" router="router" />
-    </Navigator>
-  </ClientPanel>
+    <Sidebar Width="180" ux:Name="menu" EdgeNavigation.Edge="Left">
+      <ActivatingAnimation>
+        <Change mainAppTranslation.X="180" />
+        <!-- Change to cross out -->
+        <Change topMenuTranslation.Y="0" />
+        <Change bottomMenuTranslation.Y="0" />
+        <Change middleRectangle.Opacity="0" Easing="CircularOut" />
+        <Change topMenuRotation.Degrees="45" Easing="ExponentialIn" />
+        <Change bottomMenuRotation.Degrees="-45" Easing="ExponentialIn" />
+        <Change topRectangle.Width="28" />
+        <Change bottomRectangle.Width="28" />
+      </ActivatingAnimation>
+      <WhileActive>
+        <Callback Handler="{setSidebarOpen}" />
+      </WhileActive>
+      <WhileInactive>
+        <Callback Handler="{setSidebarClosed}" />
+      </WhileInactive>
+    </Sidebar>
+    
+
+
+
+
+
+
+
+    <ClientPanel ux:Name="content">
+                <Panel   Margin="7,5,5,5" Height="32" Width="32" HitTestMode="LocalBounds" Alignment="TopLeft">
+            <WhileTrue Value="{sidebarOpen}">
+              <Clicked>
+                <NavigateTo Target="content" />
+              </Clicked>
+            </WhileTrue>
+            <WhileFalse Value="{sidebarOpen}">
+              <Clicked>
+                <NavigateTo Target="menu" />
+              </Clicked>
+            </WhileFalse>
+            <Rectangle ux:Name="topRectangle" Height="2" Width="26" Color="#000">
+              <Translation Y="-9" ux:Name="topMenuTranslation" />
+              <Rotation ux:Name="topMenuRotation" />
+            </Rectangle>
+            <Rectangle ux:Name="middleRectangle" Height="2" Width="26" Color="#000" />
+            <Rectangle ux:Name="bottomRectangle" Height="2" Width="26" Color="#000">
+              <Translation Y="9" ux:Name="bottomMenuTranslation" />
+              <Rotation ux:Name="bottomMenuRotation" />
+            </Rectangle>
+          </Panel>
+      <Translation ux:Name="mainAppTranslation" />
+      <Navigator DefaultPath="alerts">
+        <SplashPage ux:Template="splash" router="router" />
+        <AlertsPage ux:Template="alerts" router="router" />
+        <EcansPage ux:Template="ecans" router="router" />
+        <CameraPage ux:Template="camera" router="router" />
+        <SignupPage ux:Template="signup" router="router" />
+        <LoginPage ux:Template="login" router="router" />
+        <AlertDetailPage ux:Template="alertdetail" router="router" />
+        <ImpactPage ux:Template="impact" router="router" />
+        <PaymentPage ux:Template="payment" router="router" />
+        <BuyEcanPage ux:Template="buyecan" router="router" />
+        <EcanThankYouPage ux:Template="ecanthanks" router="router" />
+        <ImpactThankYouPage ux:Template="impactthanks" router="router" />
+        <SolutionPage ux:Template="solution" router="router" />
+        <ProfilePage ux:Template="profile" router="router" />
+        <MapsPage ux:Template="maps" router="router" />
+        <BarcodePage ux:Template="barcode" router="router" />
+      </Navigator>
+    </ClientPanel>
+  </EdgeNavigator>
 </App>

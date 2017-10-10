@@ -9,17 +9,17 @@
   <DockPanel>
     <Image File="Assets/emralsv2logo.png" Dock="Top" MaxHeight="110" Margin="0, 35, 0, 0" Background="#fff" Padding="0, 0, 0, 0" />
     <StackPanel Height="0">
-      <Panel Y="90" Clicked="{goToAlerts}">
+      <Panel Y="90" Clicked="{goToAlerts}" HitTestMode="LocalVisualAndChildren">
         <Image File="Assets/cameratag.png" Height="40" Margin="0, 0, 140, 0" />
         <PTreal Color="#636364" FontSize="18" Alignment="Center" Margin="60, 0, 0, 0">Tag Dirt Alerts</PTreal>
         <Rectangle Color="#FFF" Opacity="0.8" Height="48" Width="300" CornerRadius="10" Alignment="Center" Margin="0, 0" />
       </Panel>
-      <Panel Y="100" Clicked="{goToImpact}">
+      <Panel Y="100" Clicked="{goToImpact}" HitTestMode="LocalVisualAndChildren">
         <Image File="Assets/buyicon.png" Height="40" Margin="0, 0, 140, 0" />
         <PTreal Color="#636364" FontSize="18" Alignment="Center" Margin="40, 0, 0, 0">Fund Impact</PTreal>
         <Rectangle Color="#FFF" Opacity="0.8" Height="48" Width="300" CornerRadius="10" Alignment="Center" Margin="0, 20" />
       </Panel>
-      <Panel Y="110" Clicked="{goToEcans}">
+      <Panel Y="110" Clicked="{goToEcans}" HitTestMode="LocalVisualAndChildren">
         <Image File="Assets/v2ecansicon.png" Height="40" Margin="0, 0, 140, 0" />
         <PTreal Color="#636364" FontSize="18" Alignment="Center" Margin="25, 0, 0, 0">See eCans</PTreal>
         <Rectangle Color="#FFF" Opacity="0.8" Height="48" Width="300" CornerRadius="10" Alignment="Center" Margin="0, 0" />
@@ -36,7 +36,7 @@
                     <Rectangle Color="#FFF" Opacity="0.8" Height="48" Width="300" CornerRadius="10" Alignment="Center" Margin="0, 0"/>
                   </Panel>
                 -->
-      <Rectangle Color="#8AB847" Y="140" Height="48" Width="300" CornerRadius="10" Dock="Bottom" Margin="0, 0, 0, 40" Clicked="{goToLogin}" Visibility="{login_visible}">
+      <Rectangle Color="#8AB847" Y="140" Height="48" Width="300" CornerRadius="10" Dock="Bottom" Margin="0, 0, 0, 40" Clicked="{goToLogin}" Visibility="{login_visible}" HitTestMode="LocalVisualAndChildren">
         <Horse Color="#FFF" FontSize="24" Alignment="Center">LOG IN</Horse>
       </Rectangle>
       <Text FontSize="11" TextColor="#888888" Alignment="Center" Margin="0, 140, 0, 0">Version {version_num} Build {build_num}</Text>

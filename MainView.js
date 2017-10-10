@@ -79,11 +79,23 @@ fetch(slack_webhook, {
 }).then(function(response) {
   return response;
 }).then(function(responseObject) {
-  console.log(JSON.stringify(responseObject));
+  
 }).catch(function(err) {
-  console.log("Fetch error: " + err);
+  
   catch_error(err);
 });
+
+
+
+
+var sidebarOpen = exports.sidebarOpen = Observable(false);
+
+exports.setSidebarOpen = function setSidebarOpen() {
+        sidebarOpen.value = true;
+      };
+exports.setSidebarClosed = function setSidebarClosed() {
+        sidebarOpen.value = false;
+      };
 
 
 var imagePath = exports.imagePath = Observable();
@@ -104,16 +116,27 @@ var sel = exports.sel = Observable("1");
 var total_emrals = exports.total_emrals = Observable("0001");
 
 exports.add_emrals_1 = function(args) {
+
   total_emrals.value = "101";
   emrals_popup_visibility.value = "Hidden";
+  if(user_emrals.value < total_emrals.value){
+    router.push("login");
+  }
+
 }
 exports.add_emrals_5 = function(args) {
   total_emrals.value = "501";
   emrals_popup_visibility.value = "Hidden";
+  if(user_emrals.value < total_emrals.value){
+    router.push("login");
+  }
 }
 exports.add_emrals_10 = function(args) {
   total_emrals.value = "1001";
   emrals_popup_visibility.value = "Hidden";
+  if(user_emrals.value < total_emrals.value){
+    router.push("login");
+  }
 }
 
 
