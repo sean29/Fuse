@@ -90,7 +90,7 @@
                             </Rectangle>
                             <Image File="Assets/greene.png" Alignment="Bottom" Height="22" Margin="-30, 0, 0, -24" />
                             <Header FontSize="18" TextColor="#636364" Alignment="Bottom" Margin="74, 0, 0, -24">{emrals}</Header>
-                            <Header FontSize="18" TextColor="#FF0000" Alignment="Bottom" Margin="74, 0, 0, -24">{solution_pending}</Header>
+                            <Header FontSize="18" TextColor="#FF0000" Alignment="BottomRight" Margin="74, 0, 0, -24">{solution_pending}</Header>
                            
                         </DockPanel>
                     </Each>
