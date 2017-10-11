@@ -1,16 +1,9 @@
 <Page ux:Class="EcansPage">
 	<Router ux:Dependency="router" />
-	<StackPanel Dock="Top" Orientation="Horizontal" Alignment="TopRight" Padding="5" Visibility="{widget_visible}" Clicked="{viewProfile}">
-		<Image File="Assets/greene.png" Dock="Top" Height="16" />
-		<PTreal FontSize="14" Margin="4,0,4,0">{user_emrals}</PTreal>
-		<Image Url="{user_avatar}" MaxHeight="16" />
-		<!--Image File="Assets/tinytriangle.png" MaxWidth="11" Margin="4,0,0,0"/>-->
+	<StackPanel Background="#FFF" Y="0" Height="45">
+		<PTreal Alignment="Center" Margin="0,5,0,0">ECANS</PTreal>
 	</StackPanel>
-	<StackPanel Background="#FFF" Y="0" Height="60">
-		<Image File="Assets/emralsAllgreen2017logo.png" Width="120" Margin="0, 2,0,0" />
-		<PTreal Alignment="Center">ECANS</PTreal>
-	</StackPanel>
-	<StackPanel Y="60">
+	<StackPanel Y="45">
 		<Rectangle Color="#636364" Height="250" Width="100%">
 			<Horse Color="#8AB847" Alignment="Bottom" FontSize="24" Margin="20,0,0,135">Say Hello</Horse>
 			<Horse Color="#8AB847" Alignment="Bottom" FontSize="24" Margin="20,0,0,110">to eCan</Horse>

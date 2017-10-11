@@ -1,17 +1,11 @@
 <Page ux:Class="AlertDetailPage">
 	<Router ux:Dependency="router" />
 	<JavaScript File="AlertDetailPage.js" />
-	<StackPanel Dock="Top" Orientation="Horizontal" Alignment="TopRight" Padding="5" Visibility="{widget_visible}" Clicked="{viewProfile}">
-		<Image File="Assets/greene.png" Dock="Top" Height="16" />
-		<PTSerif FontSize="14" Margin="4,0,4,0">{user_emrals}</PTSerif>
-		<Image Url="{user_avatar}" MaxHeight="16" />
-		<!--Image File="Assets/tinytriangle.png" MaxWidth="11" Margin="4,0,0,0"/>-->
-	</StackPanel>
+
 	<Font File="PTserif.ttc" ux:Global="Head" />
 	<Text ux:Class="Head" Font="Head" FontSize="20" Color="#636364" />
-	<StackPanel Background="#FFF" Y="0">
-		<Image File="Assets/emralsAllgreen2017logo.png" Width="120" Margin="0, 2,0,0" />
-		<Text Value="&lt;&lt;" Color="#636364" FontSize="24" Alignment="Left" Margin="10, -30,0,0" Clicked="{back}" />
+	<StackPanel Background="#FFF" Y="0" Height="45">
+		<Text Value="&lt;&lt;" Color="#636364" FontSize="24" Alignment="Right" Margin="10, -20,10,0" Clicked="{back}" />
 		<PTreal Alignment="Center">DIRT ALERT {id}</PTreal>
 	</StackPanel>
 	<StackPanel>

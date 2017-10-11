@@ -1,12 +1,7 @@
 <Page ux:Class="AlertsPage">
     <JavaScript File="AlertsPage.js" />
     <Router ux:Dependency="router" />
-     <StackPanel Dock="Top" Orientation="Horizontal" Alignment="TopRight" Padding="5" Visibility="Visible" Clicked="{viewProfile}">
-      <Image File="Assets/greene.png" Dock="Top" Height="16" />
-      <PTSerif FontSize="14" Margin="4,0,4,0">{user_emrals}</PTSerif>
-      <Image Url="{user_avatar}" MaxHeight="16" />
-      <!--Image File="Assets/tinytriangle.png" MaxWidth="11" Margin="4,0,0,0"/>-->
-    </StackPanel>
+
     <Panel ux:Class="MyLoadingIndicator" ThemeColor="#8AB847">
         <float4 ux:Property="ThemeColor" />
         <Circle ux:Name="rotatingStroke" Width="50" Height="50" StartAngleDegrees="-45" EndAngleDegrees="45">
@@ -62,10 +57,8 @@
         <Image File="Assets/EllipseClearGrey.png" Width="230" Alignment="Bottom" Margin="0,0,0,-70"/>
         </Panel>
         
-        <Circle ux:Name="postcircle" Color="#FFF" ZOffset="5.0" Width="21%" Height="21%" Dock="Bottom" >
-                                        <Clicked>
-                                <Toggle Target="Revealed"/>
-                            </Clicked>
+        <Circle ux:Name="postcircle" Color="#FFF" ZOffset="5.0" Width="21%" Height="21%" Dock="Bottom" Clicked="{takePicture}">
+                          
 
             <Stroke Width="2">
                 <SolidColor Color="#F05959" />
@@ -83,8 +76,8 @@
         <BottomBarBackground Dock="Bottom" />
         <ScrollView Background="#F4F4F4" SnapMinTransform="false">
             <DockPanel>
-                <CogWheelReload Dock="Top" Y="38" />
-                <Grid ColumnCount="2" Y="40">
+                <CogWheelReload Dock="Top" Y="10" />
+                <Grid ColumnCount="2" Y="20">
                     <Each Items="{data}">
                         <DockPanel Height="150" Width="150" Margin="20" Clicked="{goToAlert}">
                             <Panel DockPanel.Dock="Top" Margin="0, 5,0,0">

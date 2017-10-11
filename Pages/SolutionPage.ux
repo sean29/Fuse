@@ -30,12 +30,11 @@
     </WhileBusy>
 	<MyLoadingIndicator3 ux:Name="loadingPanel3" Opacity="0" ThemeColor="#8AB847" />
 	<DockPanel>
-		<Panel Background="#FFF" Dock="Top">
-			<Panel Margin="10,0, 0, 0" Clicked="{back}" Dock="Top">
-				<Text Value="<<" Color="#636364" FontSize="30" Alignment="Left" />
+		<Panel Background="#FFF" Dock="Top" Height="45">
+			<Panel Margin="10,0, 0, 0"  Dock="Top">
+				<Text Value="<<" Color="#636364" FontSize="30" Alignment="Right" Clicked="{back}" Margin="0,0,10,0"/>
 			</Panel>
-			<Image File="Assets/emralsAllgreen2017logo.png" MaxWidth="120" Clicked="{goHome}" />
-			<PTSerif Alignment="Center" Margin="0,54,0,0">PREVIEW SOLUTION</PTSerif>
+			<PTSerif Alignment="Center" Margin="0,10,0,0">PREVIEW SOLUTION</PTSerif>
 		</Panel>
 		<StackPanel Dock="Bottom">
 			<DockPanel Dock="Fill">

@@ -1,16 +1,10 @@
 <Page ux:Class="EcanDashboardPage">
 	<Router ux:Dependency="router" />
-	<StackPanel Dock="Top" Orientation="Horizontal" Alignment="TopRight" Padding="5" Visibility="{widget_visible}" Clicked="{viewProfile}">
-		<Image File="Assets/greene.png" Dock="Top" Height="16" />
-		<PTreal FontSize="14" Margin="4,0,4,0">{user_emrals}</PTreal>
-		<Image Url="{user_avatar}" MaxHeight="16" />
-		<!--Image File="Assets/tinytriangle.png" MaxWidth="11" Margin="4,0,0,0"/>-->
-	</StackPanel>
-	<StackPanel Background="#FFF" Y="0" Height="60">
-		<Text Value="&lt;&lt;" Color="#636364" FontSize="24" Alignment="Left" Margin="10, 0,0,0" Clicked="{back}" />
+	<Panel Background="#FFF" Y="0" Height="45">
+		<Text Value="&lt;&lt;" Color="#636364" FontSize="24" Alignment="Right" Margin="10, 0,0,0" Clicked="{back}" />
 		<PTreal Alignment="Center">BUILDINGLINK</PTreal>
-	</StackPanel>
-	<StackPanel Y="60">
+	</Panel>
+	<StackPanel Y="45">
 		<Panel>
 			<Image File="Assets/ecan3.jpg" MaxWidth="50%" Alignment="Left"/>
 

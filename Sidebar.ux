@@ -12,29 +12,33 @@
 	<Text ux:Class="MenuLabel" TextAlignment="Center" FontSize="18" Color="#FFF" Margin="0,0,0,0"></Text>
 	<StatusBarBackground Background="#909498" />
 	<StackPanel ux:Name="user">
+		<Clicked>
+			<NavigateToggle  />
+			<Callback Handler="{viewProfile}" />
+		</Clicked>
 		<Panel Height="20" />
-		<Circle Width="85" Height="85">
-			<ImageFill Url="{user_image}" WrapMode="ClampToEdge"/>
+		<Circle Width="85" Height="85" StrokeWidth="2" StrokeColor="#8AB847">
+			<ImageFill Url="{user_avatar}" WrapMode="ClampToEdge"/>
 		</Circle>
-		<Username>Sean Auriti</Username>
+		<Username>{user_name}</Username>
 	</StackPanel>
 	<Grid ux:Name="stats" Alignment="HorizontalCenter" ColumnCount="5" Margin="0,10,0,30">
 		<StackPanel Width="50">
-			<Stats>2,342</Stats>
+			<Stats>{user_emrals}</Stats>
 			<Relations>Emrals</Relations>
 		</StackPanel>
 		<Rectangle Height="40" Width="1">
 			<SolidColor Color="#414f5e" />
 		</Rectangle>
 		<StackPanel Width="50">
-			<Stats>3,735</Stats>
+			<Stats>{user_xp}</Stats>
 			<Relations>XP</Relations>
 		</StackPanel>
 		<Rectangle Height="40" Width="1">
 			<SolidColor Color="#414f5e" />
 		</Rectangle>
 		<StackPanel Width="50">
-			<Stats>3,735</Stats>
+			<Stats>0</Stats>
 			<Relations>Zones</Relations>
 		</StackPanel>
 	</Grid>
@@ -45,39 +49,37 @@
 				<NavigateToggle  />
 				<Callback Handler="{goToAlerts}" />
 			</Clicked>
-
 			<Grid ColumnCount="2" RowCount="2" >
 				<Horse Column="0" Row="0" FontSize="16" Margin="18,0,0,2">dirt alerts</Horse>
 				<Horse Column="1" Row="0" FontSize="16" Margin="18,0,0,2">solutions</Horse>
-				<Rectangle Row="1" Column="0" StrokeWidth="1" StrokeColor="#8AB847" MaxWidth="90"><MenuLabel>POST</MenuLabel>
-					</Rectangle>
-				<Rectangle Row="1" Column="1" StrokeWidth="1" StrokeColor="#8AB847" MaxWidth="90"><MenuLabel>UPLOAD</MenuLabel>
-					</Rectangle>
+				<Rectangle Row="1" Column="0" StrokeWidth="1" StrokeColor="#8AB847" MaxWidth="90">
+					<MenuLabel>POST</MenuLabel>
+				</Rectangle>
+				<Rectangle Row="1" Column="1" StrokeWidth="1" StrokeColor="#8AB847" MaxWidth="90" Clicked="{selectImage}">
+					<MenuLabel>UPLOAD</MenuLabel>
+				</Rectangle>
 			</Grid>
-			</StackPanel>
-
+		</StackPanel>
 		<StackPanel ux:Name="feed" >
 			<Clicked>
 				<NavigateToggle />
 				<Callback Handler="{goToImpact}" />
 			</Clicked>
-<Horse FontSize="16" Alignment="Center" Margin="5,40,0,10">impact zones</Horse>
+			<Horse FontSize="16" Alignment="Center" Margin="5,40,0,10">impact zones</Horse>
 			<Grid ColumnCount="2" RowCount="2" Margin="5,10,0,-10">
 				<Circle Column="0" Row="0" Width="90" Height="90" StrokeWidth="1" StrokeColor="#FFF">
-					<ImageFill File="Pages/Assets/mapdummy.png">
-					</ImageFill>
+					<ImageFill File="Pages/Assets/mapdummy.png"></ImageFill>
 				</Circle>
 				<Circle Column="1" Row="0" Width="90" Height="90" StrokeWidth="1" StrokeColor="#FFF">
-					<ImageFill File="Pages/Assets/mapdummy.png">
-					</ImageFill>
+					<ImageFill File="Pages/Assets/mapdummy.png"></ImageFill>
 				</Circle>
-			<Text Color="#FFF" Column="0" Row="1" FontSize="12" Margin="5,20,0,0" >Cooper Impact</Text>
-			<Text Column="1" Row="1" Color="#FFF" FontSize="12" Margin="5,20,0,0" >Cooper Impact</Text>
-				</Grid>
-										<Rectangle StrokeWidth="1" StrokeColor="#8AB847"  Width="140" Margin="0,-10,0,0"><MenuLabel>CREATE IMPACT</MenuLabel></Rectangle>
-
+				<Text Color="#FFF" Column="0" Row="1" FontSize="12" Margin="5,20,0,0" >Cooper Impact</Text>
+				<Text Column="1" Row="1" Color="#FFF" FontSize="12" Margin="5,20,0,0" >Cooper Impact</Text>
+			</Grid>
+			<Rectangle StrokeWidth="1" StrokeColor="#8AB847" Width="140" Margin="0,-10,0,0">
+				<MenuLabel>CREATE IMPACT</MenuLabel>
+			</Rectangle>
 		</StackPanel>
-
 		<StackPanel ux:Name="chat">
 			<Clicked>
 				<NavigateToggle  />
@@ -85,17 +87,17 @@
 			</Clicked>
 			<Horse FontSize="16" Alignment="Center" Margin="0,40,0,0">ecans</Horse>
 			<Image File="Pages/Assets/ecan4.jpg" MaxHeight="90" />
-
-			<Rectangle StrokeWidth="1" StrokeColor="#8AB847"  Width="140" Margin="0,10,0,0"><MenuLabel>BUY ECAN</MenuLabel></Rectangle>
+			<Rectangle StrokeWidth="1" StrokeColor="#8AB847" Width="140" Margin="0,10,0,0">
+				<MenuLabel>BUY ECAN</MenuLabel>
+			</Rectangle>
 		</StackPanel>
-
-				<!--StackPanel ux:Name="chat2">
-			<Clicked>
-				<NavigateToggle  />
-				<Callback Handler="{goToNewsItems}" />
-			</Clicked>
-			<MenuLabel>NEWS ITEMS</MenuLabel>
-		</StackPanel-->
+		<!--StackPanel ux:Name="chat2">
+					<Clicked>
+						<NavigateToggle  />
+						<Callback Handler="{goToNewsItems}" />
+					</Clicked>
+					<MenuLabel>NEWS ITEMS</MenuLabel>
+				</StackPanel-->
 	</StackPanel>
 </StackPanel>
 

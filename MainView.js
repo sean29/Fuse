@@ -171,6 +171,10 @@ file_exists = FileSystem.exists(path)
 
 
     } else {
+      user_avatar.value = emrals_url + "static/images/user_avatar.png";
+      user_emrals.value = 1;
+      user_xp.value = 1;
+      user_name.value = "Login"
       widget_visible.value = "Collapsed";
       login_visible.value = "Visible";
     }
