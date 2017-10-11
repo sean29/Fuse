@@ -5,9 +5,9 @@
   <Router ux:Name="router" />
   <EdgeNavigator ux:Name="EdgeNavigator">
 
-    <Sidebar Width="180" ux:Name="menu" EdgeNavigation.Edge="Left">
+    <Sidebar Width="200" ux:Name="menu" EdgeNavigation.Edge="Left">
       <ActivatingAnimation>
-        <Change mainAppTranslation.X="180" />
+        <Change mainAppTranslation.X="200" />
         <!-- Change to cross out -->
         <Change topMenuTranslation.Y="0" />
         <Change bottomMenuTranslation.Y="0" />
