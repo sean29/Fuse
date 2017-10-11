@@ -53,37 +53,37 @@ widget_visible = exports.widget_visible = Observable();
 login_visible = exports.login_visible = Observable();
 
 
+  GeoLocation.getLocation(10000).then(function(location) {
+    var latlng = location.latitude + "," + location.longitude;
+    var slack_webhook = "https://hooks.slack.com/services/slack_key";
+    payload = {
+      "text": "model: " + Device.model +
+        " UUID: " + Device.getUUID() +
+        " locale: " + Device.locale +
+        " vendor: " + Device.vendor +
+        " system: " + Device.system +
+        " systemVersion: " + Device.systemVersion +
+        " SDKVersion: " + Device.SDKVersion +
+        " cores: " + Device.cores +
+        " isRetina: " + Device.isRetina +
+        " Build: " + "BUDDYBUILD_BUILD_NUMBER" +
+        " latitude: " + location.latitude +
+        " longitude: " + location.longitude
+    }
 
-var slack_webhook = "https://hooks.slack.com/services/slack_key"; 
+    fetch(slack_webhook, {
+      method: 'POST',
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify(payload)
+    }).then(function(response) {
+      return response;
+    }).then(function(responseObject) {
 
-payload = {
-  "text": 
-  "model: " + Device.model + 
-  " UUID: " + Device.UUID + 
-  " locale: " + Device.locale + 
-  " vendor: " + Device.vendor + 
-  " system: " + Device.system + 
-  " systemVersion: " + Device.systemVersion + 
-  " SDKVersion: " + Device.SDKVersion + 
-  " cores: " + Device.cores + 
-  " isRetina: " + Device.isRetina +
-  " Build: " + "BUDDYBUILD_BUILD_NUMBER"
-}
+    });
 
-fetch(slack_webhook, {
-  method: 'POST',
-  headers: {
-    "Content-type": "application/json",
-  },
-  body: JSON.stringify(payload)
-}).then(function(response) {
-  return response;
-}).then(function(responseObject) {
-  
-}).catch(function(err) {
-  
-  catch_error(err);
-});
+  });
 
 
 
@@ -272,6 +272,7 @@ exports.takePictureSolution = function(inputs) {
       };
       ImageTools.resize(image, args).then(
         function(image) {
+          loading_visible.value = false;
           router.goto("solution", {
             id: inputs.data.id.value,
             emrals: inputs.data.emrals.value
@@ -520,7 +521,11 @@ exports.uploadSolution = function uploadSolution(e) {
         }).then(function(responseObject) {
           console.log(JSON.stringify(responseObject));
           if (responseObject.id) {
-            router.push("alerts");
+                router.push("alerts", {
+                  poster_username: responseObject.poster_username,
+                  solution: true,
+                  id: responseObject.id
+                });
           }
 
         }).catch(function(err) {
