@@ -58,7 +58,7 @@ module.exports = {
                     user_id.value = user_info_object.id;
                     user_xp.value = user_info_object.xp;
 
-                    router.goto("splash");
+                    router.goto("alerts");
 
                 } else {
                     error.value = responseObject.error;
