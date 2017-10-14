@@ -1,15 +1,18 @@
-<Page ux:Class="PaymentPage">
-    <JavaScript File="PaymentPage.js" />
+<Page ux:Class="BuyEmralsPage">
+
     <Router ux:Dependency="router" />
+
     <DockPanel>
 
 
-            <Panel Background="#FFF" Y="0" Height="45">
-        <Text Value="&lt;&lt;" Color="#636364" FontSize="24" Alignment="Right" Margin="10, 10,10,10" Clicked="{back}" />
-        <PTreal Alignment="Center">SUBSCRIPTION</PTreal>
-    </Panel>
 
-        <ScrollView Y="45">
+            <StackPanel Background="#FFF" Y="0" Height="60">
+        <Image File="Assets/emralsAllgreen2017logo.png" Width="120" Margin="0, 2,0,0" />
+        <Text Value="&lt;&lt;" Color="#636364" FontSize="24" Alignment="Left" Margin="10, -30,0,0" Clicked="{back}" />
+        <PTreal Alignment="Center">SUBSCRIPTION</PTreal>
+    </StackPanel>
+
+        <ScrollView Y="60">
             <ClientPanel>
                 <StackPanel>
                     <Panel>

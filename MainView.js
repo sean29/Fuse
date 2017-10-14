@@ -116,29 +116,56 @@ var sel = exports.sel = Observable("1");
 var total_emrals = exports.total_emrals = Observable("0001");
 
 exports.add_emrals_1 = function(args) {
-
   total_emrals.value = "101";
   emrals_popup_visibility.value = "Hidden";
-  if(user_emrals.value < total_emrals.value){
-    router.push("login");
-  }
-
 }
+
 exports.add_emrals_5 = function(args) {
   total_emrals.value = "501";
   emrals_popup_visibility.value = "Hidden";
-  if(user_emrals.value < total_emrals.value){
-    router.push("login");
-  }
 }
+
 exports.add_emrals_10 = function(args) {
   total_emrals.value = "1001";
   emrals_popup_visibility.value = "Hidden";
-  if(user_emrals.value < total_emrals.value){
-    router.push("login");
-  }
 }
 
+
+exports.detail_add_emrals_1 = function(args) {
+
+  total_emrals.value = total_emrals.value + "100";
+  emrals_popup_visibility.value = "Hidden";
+  if(user_emrals.value < 100){
+    if(user_name.value){
+      router.push("buyemrals");
+    }else{
+      router.push("login");
+    }
+  }
+
+}
+exports.detail_add_emrals_5 = function(args) {
+  total_emrals.value = total_emrals.value + "500";
+  emrals_popup_visibility.value = "Hidden";
+  if(user_emrals.value < 500){
+    if(user_name.value){
+      router.push("buyemrals");
+    }else{
+      router.push("login");
+    }
+  }
+}
+exports.detail_add_emrals_10 = function(args) {
+  total_emrals.value = total_emrals.value + "1000";
+  emrals_popup_visibility.value = "Hidden";
+  if(user_emrals.value < 1000){
+    if(user_name.value){
+      router.push("buyemrals");
+    }else{
+      router.push("login");
+    }
+  }
+}
 
 STRIPE_PRIVATE_KEY = "pk_test";
 emrals_url = "https://emrals.herokuapp.com/"
@@ -259,6 +286,9 @@ exports.takePicture = function() {
     }
   ).catch(
     function(reason) {
+      if(reason=="Camera unsupported on current platform"){
+        router.goto("camera");
+      }
       console.log("Couldn't take picture: " + reason);
     }
   );

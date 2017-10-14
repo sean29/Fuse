@@ -3,6 +3,17 @@
   <Android.StatusBarConfig Color="#636364" />
   <JavaScript File="MainView.js" />
   <Router ux:Name="router" />
+
+          <Font File="Pages/PTF55F.ttf" ux:Global="Cat" />
+        <Font File="Pages/PTS55F.ttf" ux:Global="Dog" />
+        <Font File="Pages/PTS75F.ttf" ux:Global="Horse" />
+        <Font File="Pages/PTF75F.ttf" ux:Global="Mouse" />
+        <Text ux:Class="Cat" Font="Cat" FontSize="20" Color="#636364" />
+        <Text ux:Class="Dog" Font="Dog" FontSize="20" Color="#636364" />
+        <Text ux:Class="Horse" Font="Horse" FontSize="20" Color="#FFF" />
+        <Text ux:Class="Mouse" Font="Mouse" FontSize="18" Color="#FFF" />
+
+
   <EdgeNavigator ux:Name="EdgeNavigator">
 
     <Sidebar Width="200" ux:Name="menu" EdgeNavigation.Edge="Left">
@@ -73,6 +84,7 @@
         <MapsPage ux:Template="maps" router="router" />
         <BarcodePage ux:Template="barcode" router="router" />
         <NewsItem ux:Template="newsitems" router="router" />
+        <BuyEmralsPage ux:Template="buyemrals" router="router" />
       </Navigator>
     </ClientPanel>
   </EdgeNavigator>

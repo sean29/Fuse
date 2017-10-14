@@ -21,7 +21,7 @@ if [ -n "${FB_APP_ID}" ]; then
   cp temp.plist build/iOS/Release/emrals/emrals-Info.plist 
   cp Context.mm build/iOS/Release/src/Targets/iOS/Uno-iOS/
 else
-  rm -rf emrals.xcodeproj
+  #rm -rf emrals.xcodeproj
   #cp build.temp build.gradle 
   fuse install android
   fuse build --target=Android --configuration=Release || true
