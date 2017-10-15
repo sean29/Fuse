@@ -1,7 +1,6 @@
 <Page ux:Class="AlertDetailPage">
 	<Router ux:Dependency="router" />
 	<JavaScript File="AlertDetailPage.js" />
-
 	<Font File="PTserif.ttc" ux:Global="Head" />
 	<Text ux:Class="Head" Font="Head" FontSize="20" Color="#636364" />
 	<StackPanel Background="#FFF" Y="0" Height="45">
@@ -14,43 +13,39 @@
 				<Text Alignment="Center">{title}</Text>
 			</Rectangle>
 			<Rectangle Width="42" Height="15" Color="#F05959" Opacity=".75" CornerRadius="5" Alignment="BottomRight" Margin="5">
-                                   <Horse FontSize="12" Alignment="Center" Margin="0,-3,0,0">delete</Horse>
-                               </Rectangle>
+				<Horse FontSize="12" Alignment="Center" Margin="0,-3,0,0">delete</Horse>
+			</Rectangle>
 			<Rectangle MaxHeight="375">
 				<Image Url="{thumbnail}" StretchMode="Fill" Alignment="Default" />
-							</Rectangle>
-
+			</Rectangle>
 		</Panel>
-
 		<StackPanel Height="26" Alignment="Center" Orientation="Horizontal">
 			<Image File="Assets/greene.png" Height="24" Margin="0,5,5,0" />
-			<PTreal Value="{emrals}" FontSize="22" />						
-							<Image File="Assets/plus.png" Margin="20, 0, 0, 0">
-							<Clicked>
-								 <Toggle Target="Revealed" />
-							</Clicked>
-						</Image>
-						
-
+			<PTreal Value="{emrals}" FontSize="22" />
+			<Image File="Assets/plus.png" Margin="20, 0, 0, 0">
+				<Clicked>
+					<Toggle Target="Revealed" />
+				</Clicked>
+			</Image>
 		</StackPanel>
-		<Panel ux:Name="AddEmralsPopUp2" Visibility="Collapsed">
+		<Panel ux:Name="AddEmralsPopUp2" Visibility="{emrals_popup_visibility}">
 			<WhileTrue ux:Name="Revealed">
-		       <Change AddEmralsPopUp2.Visibility="Visible" />
-		   </WhileTrue>
-				<Horse Color="#444444" Alignment="Center" Opacity="1" Margin="190,10,0,0">ADD EMRALS</Horse>
-				<StackPanel Orientation="Horizontal">
-					<Rectangle Color="#FFF" StrokeWidth="1" StrokeColor="#8AB847" Width="44" Height="44" CornerRadius="3" Margin="210,0,0,-110" Clicked="{add_emrals_1}">
-						<PTBold ux:Name="emrals_value1" FontSize="24" Alignment="Center">$1</PTBold>
-					</Rectangle>
-					<Rectangle Color="#FFF" StrokeWidth="1" StrokeColor="#8AB847" Width="44" Height="44" CornerRadius="3" Margin="10,0,0,-110" Clicked="{add_emrals_5}">
-						<PTBold ux:Name="emrals_value5" FontSize="24" Alignment="Center">$5</PTBold>
-					</Rectangle>
-					<Rectangle Color="#FFF" StrokeWidth="1" StrokeColor="#8AB847" Width="44" Height="44" CornerRadius="3" Margin="10,0,0,-110" Clicked="{add_emrals_10}">
-						<PTBold ux:Name="emrals_value10" FontSize="24" Alignment="Center">$10</PTBold>
-					</Rectangle>
-				</StackPanel>
-				<Rectangle Color="#8AB847" Opacity=".7" CornerRadius="5" Width="175" Height="125" Margin="190,0,0,-100" />
-			</Panel>
+				<Change AddEmralsPopUp2.Visibility="Visible" />
+			</WhileTrue>
+			<Horse Color="#444444" Alignment="Center" Opacity="1" Margin="190,10,0,0">ADD EMRALS</Horse>
+			<StackPanel Orientation="Horizontal">
+				<Rectangle Color="#FFF" StrokeWidth="1" StrokeColor="#8AB847" Width="44" Height="44" CornerRadius="3" Margin="210,0,0,-110" Clicked="{detail_add_emrals_1}">
+					<PTBold ux:Name="emrals_value1" FontSize="24" Alignment="Center">$1</PTBold>
+				</Rectangle>
+				<Rectangle Color="#FFF" StrokeWidth="1" StrokeColor="#8AB847" Width="44" Height="44" CornerRadius="3" Margin="10,0,0,-110" Clicked="{detail_add_emrals_5}">
+					<PTBold ux:Name="emrals_value5" FontSize="24" Alignment="Center">$5</PTBold>
+				</Rectangle>
+				<Rectangle Color="#FFF" StrokeWidth="1" StrokeColor="#8AB847" Width="44" Height="44" CornerRadius="3" Margin="10,0,0,-110" Clicked="{detail_add_emrals_10}">
+					<PTBold ux:Name="emrals_value10" FontSize="24" Alignment="Center">$10</PTBold>
+				</Rectangle>
+			</StackPanel>
+			<Rectangle Color="#8AB847" Opacity=".7" CornerRadius="5" Width="175" Height="125" Margin="190,0,0,-100" />
+		</Panel>
 	</StackPanel>
 	<Panel>
 		<Grid ColumnCount="2" RowCount="3" Height="145" Width="230" Columns="1*,2*" Alignment="Bottom" Background="#F5F5F5" Margin="0,0,146,80">

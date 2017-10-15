@@ -3,23 +3,18 @@
   <Android.StatusBarConfig Color="#636364" />
   <JavaScript File="MainView.js" />
   <Router ux:Name="router" />
-
-          <Font File="Pages/PTF55F.ttf" ux:Global="Cat" />
-        <Font File="Pages/PTS55F.ttf" ux:Global="Dog" />
-        <Font File="Pages/PTS75F.ttf" ux:Global="Horse" />
-        <Font File="Pages/PTF75F.ttf" ux:Global="Mouse" />
-        <Text ux:Class="Cat" Font="Cat" FontSize="20" Color="#636364" />
-        <Text ux:Class="Dog" Font="Dog" FontSize="20" Color="#636364" />
-        <Text ux:Class="Horse" Font="Horse" FontSize="20" Color="#FFF" />
-        <Text ux:Class="Mouse" Font="Mouse" FontSize="18" Color="#FFF" />
-
-
+  <Font File="Pages/PTF55F.ttf" ux:Global="Cat" />
+  <Font File="Pages/PTS55F.ttf" ux:Global="Dog" />
+  <Font File="Pages/PTS75F.ttf" ux:Global="Horse" />
+  <Font File="Pages/PTF75F.ttf" ux:Global="Mouse" />
+  <Text ux:Class="Cat" Font="Cat" FontSize="20" Color="#636364" />
+  <Text ux:Class="Dog" Font="Dog" FontSize="20" Color="#636364" />
+  <Text ux:Class="Horse" Font="Horse" FontSize="20" Color="#FFF" />
+  <Text ux:Class="Mouse" Font="Mouse" FontSize="18" Color="#FFF" />
   <EdgeNavigator ux:Name="EdgeNavigator">
-
     <Sidebar Width="200" ux:Name="menu" EdgeNavigation.Edge="Left">
       <ActivatingAnimation>
         <Change mainAppTranslation.X="200" />
-        <!-- Change to cross out -->
         <Change topMenuTranslation.Y="0" />
         <Change bottomMenuTranslation.Y="0" />
         <Change middleRectangle.Opacity="0" Easing="CircularOut" />
@@ -35,36 +30,28 @@
         <Callback Handler="{setSidebarClosed}" />
       </WhileInactive>
     </Sidebar>
-    
-
-
-
-
-
-
-
     <ClientPanel ux:Name="content">
-                <Panel   Margin="7,5,5,5" Height="32" Width="32" HitTestMode="LocalBounds" Alignment="TopLeft">
-            <WhileTrue Value="{sidebarOpen}">
-              <Clicked>
-                <NavigateTo Target="content" />
-              </Clicked>
-            </WhileTrue>
-            <WhileFalse Value="{sidebarOpen}">
-              <Clicked>
-                <NavigateTo Target="menu" />
-              </Clicked>
-            </WhileFalse>
-            <Rectangle ux:Name="topRectangle" Height="2" Width="26" Color="#000">
-              <Translation Y="-9" ux:Name="topMenuTranslation" />
-              <Rotation ux:Name="topMenuRotation" />
-            </Rectangle>
-            <Rectangle ux:Name="middleRectangle" Height="2" Width="26" Color="#000" />
-            <Rectangle ux:Name="bottomRectangle" Height="2" Width="26" Color="#000">
-              <Translation Y="9" ux:Name="bottomMenuTranslation" />
-              <Rotation ux:Name="bottomMenuRotation" />
-            </Rectangle>
-          </Panel>
+      <Panel Margin="7,5,5,5" Height="32" Width="32" HitTestMode="LocalBounds" Alignment="TopLeft">
+        <WhileTrue Value="{sidebarOpen}">
+          <Clicked>
+            <NavigateTo Target="content" />
+          </Clicked>
+        </WhileTrue>
+        <WhileFalse Value="{sidebarOpen}">
+          <Clicked>
+            <NavigateTo Target="menu" />
+          </Clicked>
+        </WhileFalse>
+        <Rectangle ux:Name="topRectangle" Height="2" Width="26" Color="#000">
+          <Translation Y="-9" ux:Name="topMenuTranslation" />
+          <Rotation ux:Name="topMenuRotation" />
+        </Rectangle>
+        <Rectangle ux:Name="middleRectangle" Height="2" Width="26" Color="#000" />
+        <Rectangle ux:Name="bottomRectangle" Height="2" Width="26" Color="#000">
+          <Translation Y="9" ux:Name="bottomMenuTranslation" />
+          <Rotation ux:Name="bottomMenuRotation" />
+        </Rectangle>
+      </Panel>
       <Translation ux:Name="mainAppTranslation" />
       <Navigator DefaultPath="alerts">
         <SplashPage ux:Template="splash" router="router" />
@@ -85,6 +72,7 @@
         <BarcodePage ux:Template="barcode" router="router" />
         <NewsItem ux:Template="newsitems" router="router" />
         <BuyEmralsPage ux:Template="buyemrals" router="router" />
+        <EmralsThankYouPage ux:Template="emralsthanks" router="router" />
       </Navigator>
     </ClientPanel>
   </EdgeNavigator>

@@ -1,28 +1,22 @@
 <Page ux:Class="BuyEmralsPage">
-
+    <JavaScript File="BuyEmrals.js"/>
     <Router ux:Dependency="router" />
-
     <DockPanel>
-
-
-
-            <StackPanel Background="#FFF" Y="0" Height="60">
-        <Image File="Assets/emralsAllgreen2017logo.png" Width="120" Margin="0, 2,0,0" />
-        <Text Value="&lt;&lt;" Color="#636364" FontSize="24" Alignment="Left" Margin="10, -30,0,0" Clicked="{back}" />
-        <PTreal Alignment="Center">SUBSCRIPTION</PTreal>
-    </StackPanel>
-
-        <ScrollView Y="60">
+        <Panel Background="#FFF" Y="0" Height="45">
+            <Text Value="&lt;&lt;" Color="#636364" FontSize="24" Alignment="Right" Margin="10, 10,10,0" Clicked="{back}" />
+            <PTreal Alignment="Center">ADD EMRALS</PTreal>
+        </Panel>
+        <ScrollView Y="45">
             <ClientPanel>
                 <StackPanel>
                     <Panel>
                         <Rectangle Color="#FFF" Opacity=".2" Height="3" Width="100%" />
                         <Rectangle Color="#8AB847" Height="120" Alignment="Top">
                             <Grid Alignment="Center" Columns="200,100" Rows="60,60">
-                                <Horse Row="0" Column="0" Value="Selected Impact Zone" Color="#FFF" Margin="0,15,0,0" />
-                                <Mouse Row="0" Column="1" Value="{zipcode}" Margin="0,15,0,0" />
-                                <Horse Row="1" Column="0" Value="Monthly Impact" Color="#FFF" Margin="0,15,0,0" />
-                                <Mouse Row="1" Column="1" Value="${subscription}/m" Margin="0,15,0,0" />
+                                <Horse Row="0" Column="0" Value="Dirt Alert #" Color="#FFF" Margin="0,15,0,0" />
+                                <Mouse Row="0" Column="1" Value="{id}" Margin="0,15,0,0" />
+                                <Horse Row="1" Column="0" Value="Emrals" Color="#FFF" Margin="0,15,0,0" />
+                                <Mouse Row="1" Column="1" Value="{emrals}  (${dollar_value})" Margin="0,15,0,0" />
                             </Grid>
                         </Rectangle>
                     </Panel>
@@ -36,7 +30,7 @@
                         <StackPanel>
                             <Mouse Value="Payment Info" Color="#636364" Alignment="Center" Margin="0, 30, 0, 0" TextAlignment="Center" />
                             <Rectangle Color="#FFF" CornerRadius="2" StrokeWidth=".5" StrokeColor="#8AB847" Height="38" Width="300" Alignment="Center" Margin="0,10,0,0">
-                                <Basic.TextInput Width="280" Value="{name}" Alignment="Left" Margin="10,0,0,0" PlaceholderText="name" PlaceholderColor="#95989A" />
+                                <Basic.TextInput Width="280" Value="{username}" Alignment="Left" Margin="10,0,0,0" PlaceholderText="username" PlaceholderColor="#95989A" />
                             </Rectangle>
                             <Rectangle Color="#FFF" CornerRadius="2" StrokeWidth=".5" StrokeColor="#8AB847" Height="38" Width="300" Alignment="Center" Margin="0,15,0,0">
                                 <Basic.TextInput Width="280" Value="{email}" Alignment="Left" Margin="10,0,0,0" PlaceholderText="email" PlaceholderColor="#95989A" />
@@ -59,10 +53,10 @@
             </ClientPanel>
         </ScrollView>
         <Rectangle ux:Name="confirmrec" Height="44" Width="300" Color="#F05959" CornerRadius="10" Dock="Bottom" Margin="0, 0, 0, 60" Clicked="{testPay}" Alignment="Top">
-            <Horse Alignment="Center">CONFIRM</Horse>
+            <Horse Alignment="Center">PAY ${dollar_value}</Horse>
             <WhilePressed>
                 <Change confirmrec.Color="#F42D2D" Duration="0.05" DurationBack=".2" />
-          </WhilePressed>
+            </WhilePressed>
         </Rectangle>
     </DockPanel>
 </Page>

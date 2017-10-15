@@ -132,15 +132,22 @@ exports.add_emrals_10 = function(args) {
 
 
 exports.detail_add_emrals_1 = function(args) {
-
-  total_emrals.value = total_emrals.value + "100";
   emrals_popup_visibility.value = "Hidden";
   if(user_emrals.value < 100){
     if(user_name.value){
-      router.push("buyemrals");
+      router.push("buyemrals", {emrals:100, id:args.data.id.value, dollar_value:1});
     }else{
       router.push("login");
     }
+  }else{
+    user_emrals.value = user_emrals.value - 100;
+    emrals.value=emrals.value + 100
+
+    //add contributuion
+    //update users account on server
+    //refresh dirt alert locally
+    // go to add emrals thanks page
+
   }
 
 }

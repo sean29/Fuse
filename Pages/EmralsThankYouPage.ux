@@ -1,0 +1,21 @@
+<Page ux:Class="EmralsThankYouPage">
+    <Router ux:Dependency="router" />
+    <Panel Background="#FFF" Y="0">
+        <PTreal Alignment="Center" Margin="0,10,0,0">PAYMENT CONFIRMATION</PTreal>
+    </Panel>
+    <StackPanel Y="45">
+        <Rectangle Color="#636364" Height="460" Width="100%">
+            <Rectangle Color="#FFF" Opacity=".8" Width="320" Height="200" CornerRadius="10" Alignment="Center" Margin="0,60,0,0" StrokeWidth="2" StrokeColor="#8AB847">
+                <PTreal Color="#000" FontSize="18" Alignment="Center" TextAlignment="Center" TextWrapping="Wrap">Thank you for adding Emrals! 
+
+Your contribution will help clean up! </PTreal>
+            </Rectangle>
+            <Image File="{thumbnail}" Alignment="Top"  />
+        </Rectangle>
+    </StackPanel>
+    <StackPanel Alignment="BottomCenter" Orientation="Horizontal" ItemSpacing="80" Padding="40">
+        <Image File="Assets/cameratag.png" Height="40" Clicked="{goToAlerts}" />
+        <Image File="Assets/buyicon.png" Height="40" Clicked="{goToImpact}"/>
+        <Image File="Assets/v2ecansicon.png" Height="40" Clicked="{goToEcans}" />
+    </StackPanel>
+</Page>
