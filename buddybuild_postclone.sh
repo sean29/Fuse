@@ -20,7 +20,7 @@ OUTPUT="$(fuse --version)"
 curl -X POST --data-urlencode "payload={\"channel\": \"#buddybuild-android\", \"username\": \"webhookbot\", \"text\": \"fuse --version: ${OUTPUT} \", \"icon_emoji\": \":ghost:\"}" https://hooks.slack.com/services/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
 
 
-echo "android 11"
+echo "android 12"
 APP_VERSION=0.0.4
 
 
@@ -38,10 +38,10 @@ fusepm install
 
 #fuse install android
 
-# OUTPUT="$((fuse install android < ./sdkinstall.txt) 2>&1)"
+OUTPUT="$((fuse install android < ./sdkinstall.txt || true) 2>&1)"
 
 
-# curl -X POST --data-urlencode "payload={\"channel\": \"#buddybuild-android\", \"username\": \"webhookbot\", \"text\": \"fuse install android: ${OUTPUT} \", \"icon_emoji\": \":ghost:\"}" https://hooks.slack.com/services/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
+curl -X POST --data-urlencode "payload={\"channel\": \"#buddybuild-android\", \"username\": \"webhookbot\", \"text\": \"fuse install android: ${OUTPUT} \", \"icon_emoji\": \":ghost:\"}" https://hooks.slack.com/services/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
 
 
 OUTPUT="$((java -version) 2>&1)"
