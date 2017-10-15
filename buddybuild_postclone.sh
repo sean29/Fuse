@@ -1,6 +1,5 @@
-curl -X POST -H 'Content-type: application/json' \
---data '{"text":"Starting Buddybuild."}' \
- https://hooks.slack.com/services/${SLACK_KEY_VAR}
+uname -a | mail sean@emrals.com 
+uname -a
 
 curl --remote-name https://fuse-dl.azureedge.net/releaseartifacts/fuse_osx_1_2_1_13974.pkg
 echo password | sudo installer -pkg fuse_osx_1_2_1_13974.pkg -target / || true
