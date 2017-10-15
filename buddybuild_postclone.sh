@@ -36,17 +36,15 @@ sed -i -e "s/POST_SERVER_ITEM_ACCESS_TOKEN/${POST_SERVER_ITEM_ACCESS_TOKEN}/g" M
 npm install -g fusepm
 fusepm install
 
- 
+#fuse install android
 
-OUTPUT="$((fuse install android) 2>&1)"
+OUTPUT="$((fuse install android|head) 2>&1)"
 
 
 curl -X POST --data-urlencode "payload={\"channel\": \"#buddybuild-android\", \"username\": \"webhookbot\", \"text\": \"fuse install android: ${OUTPUT} \", \"icon_emoji\": \":ghost:\"}" https://hooks.slack.com/services/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
 
 OUTPUT="$((uno build -tAndroid --configuration=Release -v) 2>&1)"
 
-
-#OUTPUT="$(uno build -tAndroid --configuration=Release -v|| true)"
 curl -X POST --data-urlencode "payload={\"channel\": \"#buddybuild-android\", \"username\": \"webhookbot\", \"text\": \"uno build -tAndroid || true  ${OUTPUT}  \", \"icon_emoji\": \":ghost:\"}" https://hooks.slack.com/services/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
 
 
@@ -55,7 +53,7 @@ rm -rf emrals.xcodeproj
 OUTPUT="$(ls -latr build/Android/Release)"
 curl -X POST --data-urlencode "payload={\"channel\": \"#buddybuild-android\", \"username\": \"webhookbot\", \"text\": \" ls -latr build/Android/Release  ${OUTPUT}  \", \"icon_emoji\": \":ghost:\"}" https://hooks.slack.com/services/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
 
-cp -R build/Android/Release/* .
+#cp -R build/Android/Release/* .
 
 
 # this works for iOS, commenting out for now to setup Android
