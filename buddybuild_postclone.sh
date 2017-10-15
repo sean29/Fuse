@@ -42,8 +42,10 @@ OUTPUT="$(fuse install android || true)"
 
 curl -X POST --data-urlencode "payload={\"channel\": \"#buddybuild-android\", \"username\": \"webhookbot\", \"text\": \"fuse install android: ${OUTPUT} \", \"icon_emoji\": \":ghost:\"}" https://hooks.slack.com/services/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
 
+OUTPUT="$(uno build -tAndroid --configuration=Release -v|| true 2>&1)"
 
-OUTPUT="$(uno build -tAndroid --configuration=Release -v|| true)"
+
+#OUTPUT="$(uno build -tAndroid --configuration=Release -v|| true)"
 curl -X POST --data-urlencode "payload={\"channel\": \"#buddybuild-android\", \"username\": \"webhookbot\", \"text\": \"uno build -tAndroid || true  ${OUTPUT}  \", \"icon_emoji\": \":ghost:\"}" https://hooks.slack.com/services/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
 
 
