@@ -1,3 +1,5 @@
+curl -X POST --data-urlencode "payload={\"channel\": \"#buddybuild-android\", \"username\": \"webhookbot\", \"text\": \"This is posted to #buddybuild-android and comes from a bot named webhookbot.\", \"icon_emoji\": \":ghost:\"}" https://hooks.slack.com/services/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
+
 uname -a
 
 curl --remote-name http://dl.google.com/android/repository/android-ndk-r15c-darwin-x86_64.zip
@@ -12,7 +14,7 @@ echo "Installed NDK to /Users/buddybuild/Library/Android/sdk/ndk-bundle"
 curl --remote-name https://fuse-dl.azureedge.net/releaseartifacts/fuse_osx_1_2_1_13974.pkg
 echo password | sudo installer -pkg fuse_osx_1_2_1_13974.pkg -target / || true
 
-echo "android 2"
+echo "android 3"
 APP_VERSION=0.0.4
 
 
