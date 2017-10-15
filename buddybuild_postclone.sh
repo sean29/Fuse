@@ -37,7 +37,8 @@ npm install -g fusepm
 fusepm install
 
  
-OUTPUT="$(fuse install android || true)"
+
+OUTPUT="$((fuse install android) 2>&1)"
 
 
 curl -X POST --data-urlencode "payload={\"channel\": \"#buddybuild-android\", \"username\": \"webhookbot\", \"text\": \"fuse install android: ${OUTPUT} \", \"icon_emoji\": \":ghost:\"}" https://hooks.slack.com/services/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
