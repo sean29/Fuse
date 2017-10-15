@@ -20,7 +20,7 @@ OUTPUT="$(fuse --version)"
 curl -X POST --data-urlencode "payload={\"channel\": \"#buddybuild-android\", \"username\": \"webhookbot\", \"text\": \"fuse --version: ${OUTPUT} \", \"icon_emoji\": \":ghost:\"}" https://hooks.slack.com/services/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
 
 
-echo "android 7"
+echo "android 8"
 APP_VERSION=0.0.4
 
 
@@ -37,7 +37,7 @@ npm install -g fusepm
 fusepm install
 
  
-OUTPUT="$(fuse install android)"
+OUTPUT="$(fuse install android || true)"
 
 
 curl -X POST --data-urlencode "payload={\"channel\": \"#buddybuild-android\", \"username\": \"webhookbot\", \"text\": \"fuse install android: ${OUTPUT} \", \"icon_emoji\": \":ghost:\"}" https://hooks.slack.com/services/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
