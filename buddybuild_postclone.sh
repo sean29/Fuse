@@ -38,10 +38,17 @@ fusepm install
 
 #fuse install android
 
-OUTPUT="$((fuse install android|head) 2>&1)"
+OUTPUT="$((fuse install android < ./sdkinstall.txt) 2>&1)"
 
 
 curl -X POST --data-urlencode "payload={\"channel\": \"#buddybuild-android\", \"username\": \"webhookbot\", \"text\": \"fuse install android: ${OUTPUT} \", \"icon_emoji\": \":ghost:\"}" https://hooks.slack.com/services/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
+
+
+OUTPUT="$((java -version) 2>&1)"
+curl -X POST --data-urlencode "payload={\"channel\": \"#buddybuild-android\", \"username\": \"webhookbot\", \"text\": \"java -version  ${OUTPUT}  \", \"icon_emoji\": \":ghost:\"}" https://hooks.slack.com/services/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
+
+
+
 
 OUTPUT="$((uno build -tAndroid --configuration=Release -v) 2>&1)"
 
