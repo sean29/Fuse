@@ -1,8 +1,18 @@
 uname -a
+
+curl --remote-name http://dl.google.com/android/repository/android-ndk-r15c-darwin-x86_64.zip
+unzip android-ndk-r15c-darwin-x86_64.zip | grep -v inflating: | grep -v creating: | grep -v extracting:
+rm android-ndk-r15c-darwin-x86_64.zip
+mkdir -p "/Users/buddybuild/Library/Android/sdk/"
+rm -rf /Users/buddybuild/Library/Android/sdk/ndk-bundle
+mv android-ndk-r15c "/Users/buddybuild/Library/Android/sdk/ndk-bundle"
+echo "Installed NDK to /Users/buddybuild/Library/Android/sdk/ndk-bundle"
+
+
 curl --remote-name https://fuse-dl.azureedge.net/releaseartifacts/fuse_osx_1_2_1_13974.pkg
 echo password | sudo installer -pkg fuse_osx_1_2_1_13974.pkg -target / || true
 
-echo "android 1"
+echo "android 2"
 APP_VERSION=0.0.4
 
 
@@ -18,8 +28,8 @@ sed -i -e "s/POST_SERVER_ITEM_ACCESS_TOKEN/${POST_SERVER_ITEM_ACCESS_TOKEN}/g" M
 npm install -g fusepm
 fusepm install
 
-         
-uno build --target=Android -DGRADLE --configuration=Release || true
+fuse install android 
+uno build -tAndroid || true
 
 
 
