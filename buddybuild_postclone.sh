@@ -14,7 +14,12 @@ echo "Installed NDK to /Users/buddybuild/Library/Android/sdk/ndk-bundle"
 curl --remote-name https://fuse-dl.azureedge.net/releaseartifacts/fuse_osx_1_2_1_13974.pkg
 echo password | sudo installer -pkg fuse_osx_1_2_1_13974.pkg -target / || true
 
-echo "android 3"
+OUTPUT="$(fuse --version)"
+
+curl -X POST --data-urlencode "payload={\"channel\": \"#buddybuild-android\", \"username\": \"webhookbot\", \"text\": \"OUTPUT: ${OUTPUT} \", \"icon_emoji\": \":ghost:\"}" https://hooks.slack.com/services/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
+
+
+echo "android 4"
 APP_VERSION=0.0.4
 
 
@@ -31,7 +36,9 @@ npm install -g fusepm
 fusepm install
 
 fuse install android 
+
 uno build -tAndroid || true
+curl -X POST --data-urlencode "payload={\"channel\": \"#buddybuild-android\", \"username\": \"webhookbot\", \"text\": \" end of script \", \"icon_emoji\": \":ghost:\"}" https://hooks.slack.com/services/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
 
 
 
