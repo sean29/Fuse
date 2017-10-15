@@ -1,0 +1,7 @@
+
+9
+armeabi-v7a
+-O3 -DNDEBUG
+
+ -I/usr/local/share/uno/Packages/UnoCore/1.2.2/prebuilt/Android/include -I/sources/android/support/include -I/usr/local/share/uno/Packages/Fuse.Scripting.V8/1.2.1
+/sources/cxx-stl/gnu-libstdc++/4.9/include

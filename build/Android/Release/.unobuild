@@ -1,0 +1,4 @@
+$: 813959173
+BuildCommand: build.sh
+RunCommand: run.sh
+Product: emrals.apk
