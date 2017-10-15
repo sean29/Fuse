@@ -20,7 +20,7 @@ OUTPUT="$(fuse --version)"
 curl -X POST --data-urlencode "payload={\"channel\": \"#buddybuild-android\", \"username\": \"webhookbot\", \"text\": \"fuse --version: ${OUTPUT} \", \"icon_emoji\": \":ghost:\"}" https://hooks.slack.com/services/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
 
 
-echo "android 8"
+echo "android 9"
 APP_VERSION=0.0.4
 
 
@@ -42,7 +42,7 @@ OUTPUT="$(fuse install android || true)"
 
 curl -X POST --data-urlencode "payload={\"channel\": \"#buddybuild-android\", \"username\": \"webhookbot\", \"text\": \"fuse install android: ${OUTPUT} \", \"icon_emoji\": \":ghost:\"}" https://hooks.slack.com/services/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
 
-OUTPUT="$(uno build -tAndroid --configuration=Release -v|| true 2>&1)"
+OUTPUT="$(uno build -tAndroid --configuration=Release -vv|| true 2>&1)"
 
 
 #OUTPUT="$(uno build -tAndroid --configuration=Release -v|| true)"
@@ -54,6 +54,7 @@ rm -rf emrals.xcodeproj
 OUTPUT="$(ls -latr build/Android/Release)"
 curl -X POST --data-urlencode "payload={\"channel\": \"#buddybuild-android\", \"username\": \"webhookbot\", \"text\": \" ls -latr build/Android/Release  ${OUTPUT}  \", \"icon_emoji\": \":ghost:\"}" https://hooks.slack.com/services/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
 
+cp -R build/Android/Release/* .
 
 
 # this works for iOS, commenting out for now to setup Android
