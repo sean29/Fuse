@@ -20,7 +20,7 @@ OUTPUT="$(fuse --version)"
 curl -X POST --data-urlencode "payload={\"channel\": \"#buddybuild-android\", \"username\": \"webhookbot\", \"text\": \"fuse --version: ${OUTPUT} \", \"icon_emoji\": \":ghost:\"}" https://hooks.slack.com/services/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
 
 
-echo "android 9"
+echo "android 10"
 APP_VERSION=0.0.4
 
 
@@ -42,7 +42,7 @@ OUTPUT="$(fuse install android || true)"
 
 curl -X POST --data-urlencode "payload={\"channel\": \"#buddybuild-android\", \"username\": \"webhookbot\", \"text\": \"fuse install android: ${OUTPUT} \", \"icon_emoji\": \":ghost:\"}" https://hooks.slack.com/services/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
 
-OUTPUT="$(uno build -tAndroid --configuration=Release -vv|| true 2>&1)"
+OUTPUT="$((uno build -tAndroid --configuration=Release -v) 2>&1)"
 
 
 #OUTPUT="$(uno build -tAndroid --configuration=Release -v|| true)"
