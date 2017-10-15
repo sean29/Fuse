@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Controls.ScrollView/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Controls.ScrollView/1.3.0-rc2/ScrollView.Layout.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -15,6 +15,7 @@
 #include <Fuse.Triggers.Actions.IHide.h>
 #include <Fuse.Triggers.Actions.IShow.h>
 #include <Fuse.Triggers.Actions-ea70af1f.h>
+#include <Fuse.Visual.h>
 #include <Uno.Collections.ICollection-1.h>
 #include <Uno.Collections.IEnumerable-1.h>
 #include <Uno.Collections.IList-1.h>
@@ -27,7 +28,6 @@ namespace g{namespace Fuse{namespace Motion{struct MotionConfig;}}}
 namespace g{namespace Fuse{namespace Scripting{struct Context;}}}
 namespace g{namespace Fuse{struct LayoutParams;}}
 namespace g{namespace Fuse{struct Translation;}}
-namespace g{namespace Fuse{struct Visual;}}
 namespace g{namespace Uno{namespace UX{struct Selector;}}}
 namespace g{namespace Uno{struct Float4x4;}}
 
@@ -35,11 +35,11 @@ namespace g{
 namespace Fuse{
 namespace Controls{
 
-// public partial class ScrollViewBase :605
+// public partial class ScrollViewBase :21
 // {
 struct ScrollViewBase_type : ::g::Fuse::Controls::ContentControl_type
 {
-    ::g::Fuse::Controls::Native::IScrollViewHost interface16;
+    ::g::Fuse::Controls::Native::IScrollViewHost interface17;
 };
 
 ScrollViewBase_type* ScrollViewBase_typeof();
@@ -53,6 +53,7 @@ void ScrollViewBase__Constrain_fn(ScrollViewBase* __this, ::g::Uno::Float2* t, :
 void ScrollViewBase__ConstrainDown_fn(ScrollViewBase* __this, ::g::Uno::Float2* t, ::g::Uno::Float2* __retval);
 void ScrollViewBase__ConstrainExtents_fn(ScrollViewBase* __this, ::g::Uno::Float2* t, ::g::Uno::Float2* __retval);
 void ScrollViewBase__ConstrainUp_fn(ScrollViewBase* __this, ::g::Uno::Float2* t, ::g::Uno::Float2* __retval);
+void ScrollViewBase__get_ContentMarginSize_fn(ScrollViewBase* __this, ::g::Uno::Float2* __retval);
 void ScrollViewBase__get_Element_fn(ScrollViewBase* __this, ::g::Fuse::Elements::Element** __retval);
 void ScrollViewBase__FindAnchorElement_fn(ScrollViewBase* __this, ::g::Fuse::Elements::Element** __retval);
 void ScrollViewBase__FromScalarPosition_fn(ScrollViewBase* __this, float* value, ::g::Uno::Float2* __retval);
@@ -86,6 +87,7 @@ void ScrollViewBase__OnScrollPropertyChanged_fn(ScrollViewBase* __this, ::g::Uno
 void ScrollViewBase__OnUnrooted_fn(ScrollViewBase* __this);
 void ScrollViewBase__get_RelativeScrollPosition_fn(ScrollViewBase* __this, ::g::Uno::Float2* __retval);
 void ScrollViewBase__set_RelativeScrollPosition_fn(ScrollViewBase* __this, ::g::Uno::Float2* value);
+void ScrollViewBase__RelativeToAbsolutePosition_fn(ScrollViewBase* __this, ::g::Uno::Float2* pos, ::g::Uno::Float2* __retval);
 void ScrollViewBase__get_ScrollPosition_fn(ScrollViewBase* __this, ::g::Uno::Float2* __retval);
 void ScrollViewBase__set_ScrollPosition_fn(ScrollViewBase* __this, ::g::Uno::Float2* value);
 void ScrollViewBase__add_ScrollPositionChanged_fn(ScrollViewBase* __this, uDelegate* value);
@@ -136,6 +138,8 @@ struct ScrollViewBase : ::g::Fuse::Controls::ContentControl
     static ::g::Uno::UX::Selector& GesturePriorityName() { return ScrollViewBase_typeof()->Init(), GesturePriorityName_; }
     static ::g::Uno::UX::Selector ScrollPositionName_;
     static ::g::Uno::UX::Selector& ScrollPositionName() { return ScrollViewBase_typeof()->Init(), ScrollPositionName_; }
+    static ::g::Uno::UX::Selector SizingChanged_;
+    static ::g::Uno::UX::Selector& SizingChanged() { return ScrollViewBase_typeof()->Init(), SizingChanged_; }
     static ::g::Uno::UX::Selector UserScrollName_;
     static ::g::Uno::UX::Selector& UserScrollName() { return ScrollViewBase_typeof()->Init(), UserScrollName_; }
     uStrong<uDelegate*> ScrollPositionChanged1;
@@ -148,6 +152,7 @@ struct ScrollViewBase : ::g::Fuse::Controls::ContentControl
     ::g::Uno::Float2 ConstrainDown(::g::Uno::Float2 t);
     ::g::Uno::Float2 ConstrainExtents(::g::Uno::Float2 t);
     ::g::Uno::Float2 ConstrainUp(::g::Uno::Float2 t);
+    ::g::Uno::Float2 ContentMarginSize();
     ::g::Fuse::Elements::Element* Element();
     ::g::Fuse::Elements::Element* FindAnchorElement();
     ::g::Uno::Float2 FromScalarPosition(float value);
@@ -171,6 +176,7 @@ struct ScrollViewBase : ::g::Fuse::Controls::ContentControl
     void OnScrollPropertyChanged(::g::Uno::UX::Selector name, uObject* origin);
     ::g::Uno::Float2 RelativeScrollPosition();
     void RelativeScrollPosition(::g::Uno::Float2 value);
+    ::g::Uno::Float2 RelativeToAbsolutePosition(::g::Uno::Float2 pos);
     ::g::Uno::Float2 ScrollPosition();
     void ScrollPosition(::g::Uno::Float2 value);
     void add_ScrollPositionChanged(uDelegate* value);

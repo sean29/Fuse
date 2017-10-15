@@ -1,4 +1,4 @@
-// This file was generated based on '/Users/a/Library/Application Support/Fusetools/Packages/Fuse.ImageTools/1.2.1/$.uno'.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.ImageTools/1.3.0-rc2/PromiseCallbacks.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -10,7 +10,7 @@ namespace g{
 namespace Fuse{
 namespace ImageTools{
 
-// internal sealed class PromiseCallback<T> :675
+// internal sealed class PromiseCallback<T> :46
 // {
 uType* PromiseCallback_typeof();
 void PromiseCallback__ctor__fn(PromiseCallback* __this, ::g::Uno::Threading::Promise* p);

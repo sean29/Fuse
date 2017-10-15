@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/UnoCore/1.2.2/source/uno/compiler/exporttargetinterop/foreign/android/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/UnoCore/1.3.1/Source/Uno/Compiler/ExportTargetInterop/Foreign/Android/ExternBlockHost.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -12,7 +12,7 @@ namespace ExportTargetInterop{
 namespace Foreign{
 namespace Android{
 
-// internal static extern class ExternBlockHost :12
+// internal static extern class ExternBlockHost :10
 // {
 uClassType* ExternBlockHost_typeof();
 void ExternBlockHost__RegisterFunctions_fn();

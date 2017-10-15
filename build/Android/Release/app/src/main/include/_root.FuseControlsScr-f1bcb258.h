@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Controls.ScrollView/1.2.1/.uno/ux11/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Controls.ScrollView/1.3.0-rc2/.uno/ux13/Fuse.Controls.ScrollView.unoproj.g.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -11,7 +11,7 @@ namespace g{struct FuseControlsScrollView_FuseTriggersWhileBool_Value_Property;}
 
 namespace g{
 
-// internal sealed class FuseControlsScrollView_FuseTriggersWhileBool_Value_Property :151
+// internal sealed class FuseControlsScrollView_FuseTriggersWhileBool_Value_Property :10
 // {
 ::g::Uno::UX::Property1_type* FuseControlsScrollView_FuseTriggersWhileBool_Value_Property_typeof();
 void FuseControlsScrollView_FuseTriggersWhileBool_Value_Property__ctor_3_fn(FuseControlsScrollView_FuseTriggersWhileBool_Value_Property* __this, ::g::Fuse::Triggers::WhileBool* obj, ::g::Uno::UX::Selector* name);

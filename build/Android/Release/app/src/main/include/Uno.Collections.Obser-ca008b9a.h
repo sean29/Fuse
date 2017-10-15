@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Uno.Collections/1.0.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Uno.Collections/1.0.1/$.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once

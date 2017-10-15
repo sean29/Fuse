@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Controls.Native/1.2.1/android/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Controls.Native/1.3.0-rc2/Android/TextureView.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -16,24 +16,22 @@ namespace Controls{
 namespace Native{
 namespace Android{
 
-// public sealed extern class TextureView :2273
+// public extern class TextureView :7
 // {
 ::g::Fuse::Controls::Native::Android::GraphicsViewBase_type* TextureView_typeof();
-void TextureView__ctor_7_fn(TextureView* __this);
+void TextureView__ctor_8_fn(TextureView* __this);
 void TextureView__Create_fn(::g::Java::Object** __retval);
 void TextureView__InstallSurfaceListener_fn(TextureView* __this, ::g::Java::Object* handle);
-void TextureView__New4_fn(TextureView** __retval);
 void TextureView__OnSurfaceTextureAvailable_fn(TextureView* __this, ::g::Java::Object* surface);
 void TextureView__OnSurfaceTextureDestroyed_fn(TextureView* __this);
 
 struct TextureView : ::g::Fuse::Controls::Native::Android::GraphicsViewBase
 {
-    void ctor_7();
+    void ctor_8();
     void InstallSurfaceListener(::g::Java::Object* handle);
     void OnSurfaceTextureAvailable(::g::Java::Object* surface);
     void OnSurfaceTextureDestroyed();
     static ::g::Java::Object* Create();
-    static TextureView* New4();
 };
 // }
 

@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/UnoCore/1.2.2/source/uno/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/UnoCore/1.3.1/Source/Uno/Float2.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -9,7 +9,7 @@ namespace g{namespace Uno{struct Int2;}}
 namespace g{
 namespace Uno{
 
-// public intrinsic struct Float2 :2403
+// public intrinsic struct Float2 :7
 // {
 uStructType* Float2_typeof();
 void Float2__ctor__fn(Float2* __this, float* xy);

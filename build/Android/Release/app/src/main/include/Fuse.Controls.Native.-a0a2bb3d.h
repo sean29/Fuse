@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Controls.Native/1.2.1/android/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Controls.Native/1.3.0-rc2/Android/Circle.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -16,7 +16,7 @@ namespace Controls{
 namespace Native{
 namespace Android{
 
-// internal sealed extern class Circle :125
+// internal sealed extern class Circle :10
 // {
 struct Circle_type : ::g::Fuse::Controls::Native::Android::Shape_type
 {
@@ -24,12 +24,12 @@ struct Circle_type : ::g::Fuse::Controls::Native::Android::Shape_type
 };
 
 Circle_type* Circle_typeof();
-void Circle__ctor_7_fn(Circle* __this);
+void Circle__ctor_8_fn(Circle* __this);
 void Circle__FuseControlsNativeICircleViewset_EffectiveEndAngleDegrees_fn(Circle* __this, float* value);
 void Circle__FuseControlsNativeICircleViewset_EndAngleDegrees_fn(Circle* __this, float* value);
 void Circle__FuseControlsNativeICircleViewset_StartAngleDegrees_fn(Circle* __this, float* value);
 void Circle__FuseControlsNativeICircleViewset_UseAngle_fn(Circle* __this, bool* value);
-void Circle__New4_fn(Circle** __retval);
+void Circle__New5_fn(Circle** __retval);
 void Circle__OnSizeChanged_fn(Circle* __this);
 void Circle__UpdateShapeDrawable1_fn(Circle* __this, ::g::Java::Object* handle, bool* useAngle, float* width, float* height, float* startAngle, float* endAngle);
 void Circle__UpdateShapeDrawable_fn(Circle* __this, ::g::Java::Object* handle, float* pixelsPerPoint);
@@ -40,9 +40,9 @@ struct Circle : ::g::Fuse::Controls::Native::Android::Shape
     float _startAngle;
     bool _useAngle;
 
-    void ctor_7();
+    void ctor_8();
     void UpdateShapeDrawable1(::g::Java::Object* handle, bool useAngle, float width, float height, float startAngle, float endAngle);
-    static Circle* New4();
+    static Circle* New5();
 };
 // }
 

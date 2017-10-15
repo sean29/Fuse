@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Triggers/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Triggers/1.3.0-rc2/WhilePlaying.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -20,7 +20,7 @@ namespace g{
 namespace Fuse{
 namespace Triggers{
 
-// public sealed class WhilePaused :3907
+// public sealed class WhilePaused :51
 // {
 ::g::Fuse::Triggers::Trigger_type* WhilePaused_typeof();
 void WhilePaused__IsPaused_fn(::g::Fuse::Visual* n, bool* __retval);
@@ -30,7 +30,7 @@ void WhilePaused__SetState_fn(::g::Fuse::Visual* n, bool* paused);
 struct WhilePaused : ::g::Fuse::Triggers::WhileTrigger
 {
     static uSStrong< ::g::Fuse::PropertyHandle*> _whilePausedProp_;
-    static uSStrong< ::g::Fuse::PropertyHandle*>& _whilePausedProp() { return WhilePaused_typeof()->Init(), _whilePausedProp_; }
+    static uSStrong< ::g::Fuse::PropertyHandle*>& _whilePausedProp() { return _whilePausedProp_; }
 
     static bool IsPaused(::g::Fuse::Visual* n);
     static void SetState(::g::Fuse::Visual* n, bool paused);

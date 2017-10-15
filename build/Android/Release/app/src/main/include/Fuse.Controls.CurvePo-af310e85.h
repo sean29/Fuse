@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Controls.Primitives/1.2.1/shapes/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Controls.Primitives/1.3.0-rc2/Shapes/Curve.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -8,7 +8,7 @@ namespace g{
 namespace Fuse{
 namespace Controls{
 
-// private enum CurvePoint.HasFlags :307
+// private enum CurvePoint.HasFlags :67
 uEnumType* CurvePoint__HasFlags_typeof();
 
 }}} // ::g::Fuse::Controls

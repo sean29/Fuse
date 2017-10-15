@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Uno.Net.Http/1.2.2/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Uno.Net.Http/1.3.1/HttpMessageHandlerRequest.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -11,7 +11,7 @@ namespace Uno{
 namespace Net{
 namespace Http{
 
-// private sealed class HttpMessageHandlerRequest.ProgressClosure :381
+// private sealed class HttpMessageHandlerRequest.ProgressClosure :186
 // {
 uType* HttpMessageHandlerRequest__ProgressClosure_typeof();
 void HttpMessageHandlerRequest__ProgressClosure__ctor__fn(HttpMessageHandlerRequest__ProgressClosure* __this, int* state, uDelegate* action, ::g::Uno::Net::Http::HttpMessageHandlerRequest* request, int* current, int* total, bool* hasTotal);

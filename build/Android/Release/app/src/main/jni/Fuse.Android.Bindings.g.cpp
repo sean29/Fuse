@@ -16,10 +16,10 @@ namespace Fuse{
 namespace Android{
 namespace Bindings{
 
-// /usr/local/share/uno/Packages/Fuse.Android/1.2.1/$.uno
-// ------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Android\1.3.0-rc2\AndroidInterop.uno
+// -------------------------------------------------------------------------------------
 
-// internal static extern class AndroidDeviceInterop :403
+// internal static extern class AndroidDeviceInterop :16
 // {
 static void AndroidDeviceInterop_build(uType* type)
 {
@@ -37,19 +37,19 @@ uClassType* AndroidDeviceInterop_typeof()
     return type;
 }
 
-// public static extern Java.Object LaunchIntent(string action, string uri, [string packageName], [string className]) :406
+// public static extern Java.Object LaunchIntent(string action, string uri, [string packageName], [string className]) :19
 void AndroidDeviceInterop__LaunchIntent_fn(uString* action, uString* uri, uString* packageName, uString* className, ::g::Java::Object** __retval)
 {
     *__retval = AndroidDeviceInterop::LaunchIntent(action, uri, packageName, className);
 }
 
-// public static extern Java.Object LaunchIntent(string action, string uri, [string packageName], [string className]) [static] :406
+// public static extern Java.Object LaunchIntent(string action, string uri, [string packageName], [string className]) [static] :19
 ::g::Java::Object* AndroidDeviceInterop::LaunchIntent(uString* action, uString* uri, uString* packageName, uString* className)
 {
     {
         INIT_JNI;
         jclass __cls = JniHelper::GetNativeExternClass();
-        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "LaunchIntent316", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/Object;");
+        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "LaunchIntent315", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/Object;");
         uString* _uaction=action;
         jstring _action = JniHelper::UnoToJavaString(_uaction);
         uString* _uuri=uri;

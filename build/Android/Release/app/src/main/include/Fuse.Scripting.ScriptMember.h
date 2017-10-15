@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Scripting/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Scripting/1.3.0-rc2/ScriptClass.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -9,7 +9,7 @@ namespace g{
 namespace Fuse{
 namespace Scripting{
 
-// public abstract class ScriptMember :1500
+// public abstract class ScriptMember :15
 // {
 uType* ScriptMember_typeof();
 void ScriptMember__ctor__fn(ScriptMember* __this, uString* name);

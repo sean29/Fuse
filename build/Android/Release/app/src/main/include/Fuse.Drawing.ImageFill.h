@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Elements/1.2.1/drawing/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Elements/1.3.0-rc2/Drawing/ImageFill.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -23,7 +23,7 @@ namespace g{
 namespace Fuse{
 namespace Drawing{
 
-// public sealed class ImageFill :28
+// public sealed class ImageFill :26
 // {
 struct ImageFill_type : ::g::Fuse::Drawing::Brush_type
 {
@@ -68,20 +68,20 @@ struct ImageFill : ::g::Fuse::Drawing::DynamicBrush
 {
     ::g::Uno::Float4 _color;
     static ::g::Uno::UX::Selector _colorName_;
-    static ::g::Uno::UX::Selector& _colorName() { return ImageFill_typeof()->Init(), _colorName_; }
+    static ::g::Uno::UX::Selector& _colorName() { return _colorName_; }
     uStrong< ::g::Fuse::Internal::ImageContainer*> _container;
     ImageFill__DrawParams _drawParams;
     double _lastUsed;
     static ::g::Uno::UX::Selector _paramName_;
-    static ::g::Uno::UX::Selector& _paramName() { return ImageFill_typeof()->Init(), _paramName_; }
+    static ::g::Uno::UX::Selector& _paramName() { return _paramName_; }
     static ::g::Uno::UX::Selector _sizingName_;
-    static ::g::Uno::UX::Selector& _sizingName() { return ImageFill_typeof()->Init(), _sizingName_; }
+    static ::g::Uno::UX::Selector& _sizingName() { return _sizingName_; }
     static ::g::Uno::UX::Selector _sourceName_;
-    static ::g::Uno::UX::Selector& _sourceName() { return ImageFill_typeof()->Init(), _sourceName_; }
+    static ::g::Uno::UX::Selector& _sourceName() { return _sourceName_; }
     uStrong< ::g::Uno::Graphics::Framebuffer*> _tempTexture;
     int _wrapMode;
     static ::g::Uno::UX::Selector _wrapModeName_;
-    static ::g::Uno::UX::Selector& _wrapModeName() { return ImageFill_typeof()->Init(), _wrapModeName_; }
+    static ::g::Uno::UX::Selector& _wrapModeName() { return _wrapModeName_; }
 
     void ctor_3();
     void CleanTempTexture();

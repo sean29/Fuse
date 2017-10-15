@@ -1,4 +1,4 @@
-// This file was generated based on '/Users/a/Library/Application Support/Fusetools/Packages/Fuse.GeoLocation/1.2.1/$.uno'.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.GeoLocation/1.3.0-rc2/Location.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -11,7 +11,7 @@ namespace g{
 namespace Fuse{
 namespace GeoLocation{
 
-// public sealed class Location :379
+// public sealed class Location :5
 // {
 uType* Location_typeof();
 void Location__ctor__fn(Location* __this, ::g::Fuse::GeoLocation::GeoCoordinates* coordinates, double* accuracy, double* altitude, double* speed, ::g::Uno::Time::LocalDateTime* dateTime);

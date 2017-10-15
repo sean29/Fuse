@@ -1,4 +1,4 @@
-// This file was generated based on '/Users/a/Library/Application Support/Fusetools/Packages/Fuse.CameraRoll/1.2.1/$.uno'.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.CameraRoll/1.3.0-rc2/CameraRoll.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -13,7 +13,7 @@ namespace g{
 namespace Fuse{
 namespace CameraRoll{
 
-// public sealed class CameraRoll :53
+// public sealed class CameraRoll :51
 // {
 ::g::Fuse::Scripting::NativeModule_type* CameraRoll_typeof();
 void CameraRoll__ctor_2_fn(CameraRoll* __this);

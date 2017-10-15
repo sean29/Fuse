@@ -31,17 +31,17 @@
 #include <Uno.String.h>
 #include <Uno.Vector.h>
 static uString* STRINGS[1];
-static uType* TYPES[8];
+static uType* TYPES[4];
 
 namespace g{
 namespace Fuse{
 namespace Motion{
 namespace Simulation{
 
-// /usr/local/share/uno/Packages/Fuse.Motion/1.2.1/simulation/$.uno
-// ----------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Motion\1.3.0-rc2\Simulation\AngularAdapter.uno
+// -----------------------------------------------------------------------------------------------
 
-// internal sealed class AdapterMultiplier<T> :94
+// internal sealed class AdapterMultiplier<T> :92
 // {
 static void AdapterMultiplier_build(uType* type)
 {
@@ -49,19 +49,20 @@ static void AdapterMultiplier_build(uType* type)
     ::TYPES[1] = ::g::Fuse::Motion::Simulation::DestinationSimulation_typeof();
     ::TYPES[2] = ::g::Fuse::Motion::Simulation::Simulation_typeof();
     ::TYPES[3] = ::g::Fuse::Motion::Simulation::MotionSimulation_typeof();
+    type->SetDependencies(
+        ::g::Fuse::Internal::BlenderMap_typeof()->MakeMethod(1/*GetScalar<T>*/, type->T(0), NULL));
     type->SetPrecalc(
-        ::g::Fuse::Internal::BlenderMap_typeof()->MakeMethod(1/*GetScalar<T>*/, type->T(0), NULL),
-        type->T(0),
         ::g::Fuse::Motion::Simulation::DestinationSimulation_typeof()->MakeType(type->T(0), NULL),
+        ::g::Fuse::Internal::BlenderMap_typeof()->MakeMethod(1/*GetScalar<T>*/, type->T(0), NULL),
         ::g::Fuse::Motion::Simulation::MotionSimulation_typeof()->MakeType(type->T(0), NULL));
     type->SetInterfaces(
         ::TYPES[1/*Fuse.Motion.Simulation.DestinationSimulation`1*/]->MakeType(type->T(0), NULL), offsetof(AdapterMultiplier_type, interface0),
         ::TYPES[3/*Fuse.Motion.Simulation.MotionSimulation`1*/]->MakeType(type->T(0), NULL), offsetof(AdapterMultiplier_type, interface1),
         ::TYPES[2/*Fuse.Motion.Simulation.Simulation*/], offsetof(AdapterMultiplier_type, interface2));
     type->SetFields(0,
-        ::g::Fuse::Internal::ScalarBlender_typeof()->MakeType(type->T(0), NULL), offsetof(::g::Fuse::Motion::Simulation::AdapterMultiplier, _blender), 0,
-        ::TYPES[1/*Fuse.Motion.Simulation.DestinationSimulation`1*/]->MakeType(type->T(0), NULL), offsetof(::g::Fuse::Motion::Simulation::AdapterMultiplier, _impl), 0,
-        ::g::Uno::Double_typeof(), offsetof(::g::Fuse::Motion::Simulation::AdapterMultiplier, _multiplier), 0);
+        ::g::Fuse::Internal::ScalarBlender_typeof()->MakeType(type->T(0), NULL), offsetof(AdapterMultiplier, _blender), 0,
+        ::TYPES[1/*Fuse.Motion.Simulation.DestinationSimulation`1*/]->MakeType(type->T(0), NULL), offsetof(AdapterMultiplier, _impl), 0,
+        ::g::Uno::Double_typeof(), offsetof(AdapterMultiplier, _multiplier), 0);
 }
 
 AdapterMultiplier_type* AdapterMultiplier_typeof()
@@ -73,7 +74,8 @@ AdapterMultiplier_type* AdapterMultiplier_typeof()
     options.FieldCount = 3;
     options.GenericCount = 1;
     options.InterfaceCount = 3;
-    options.PrecalcCount = 4;
+    options.DependencyCount = 1;
+    options.PrecalcCount = 3;
     options.ObjectSize = sizeof(AdapterMultiplier);
     options.TypeSize = sizeof(AdapterMultiplier_type);
     type = (AdapterMultiplier_type*)uClassType::New("Fuse.Motion.Simulation.AdapterMultiplier`1", options);
@@ -91,167 +93,155 @@ AdapterMultiplier_type* AdapterMultiplier_typeof()
     return type;
 }
 
-// public AdapterMultiplier(Fuse.Motion.Simulation.DestinationSimulation<T> impl, double multiplier) :100
+// public AdapterMultiplier(Fuse.Motion.Simulation.DestinationSimulation<T> impl, double multiplier) :98
 void AdapterMultiplier__ctor__fn(AdapterMultiplier* __this, uObject* impl, double* multiplier)
 {
     __this->ctor_(impl, *multiplier);
 }
 
-// public T get_Destination() :140
+// public T get_Destination() :138
 void AdapterMultiplier__get_Destination_fn(AdapterMultiplier* __this, uTRef __retval)
 {
     uType* __types[] = {
-        __this->__type->Precalced(1/*T*/),
-        __this->__type->Precalced(2/*Fuse.Motion.Simulation.DestinationSimulation<T>*/),
+        __this->__type->Precalced(0/*Fuse.Motion.Simulation.DestinationSimulation<T>*/),
     };
-    uT ret4(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    uT ret5(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    return __retval.Store((AdapterMultiplier__Out_fn(__this, (::g::Fuse::Motion::Simulation::DestinationSimulation::get_Destination_ex(uInterface(uPtr(__this->_impl), __types[1]), &ret5), ret5), &ret4), ret4)), void();
+    uT ret4(__this->__type->T(0), U_ALLOCA(__this->__type->T(0)->ValueSize));
+    uT ret5(__this->__type->T(0), U_ALLOCA(__this->__type->T(0)->ValueSize));
+    return __retval.Store((AdapterMultiplier__Out_fn(__this, (::g::Fuse::Motion::Simulation::DestinationSimulation::get_Destination_ex(uInterface(uPtr(__this->_impl), __types[0]), &ret5), ret5), &ret4), ret4)), void();
 }
 
-// public void set_Destination(T value) :141
+// public void set_Destination(T value) :139
 void AdapterMultiplier__set_Destination_fn(AdapterMultiplier* __this, void* value)
 {
     uType* __types[] = {
-        __this->__type->Precalced(1/*T*/),
-        __this->__type->Precalced(2/*Fuse.Motion.Simulation.DestinationSimulation<T>*/),
+        __this->__type->Precalced(0/*Fuse.Motion.Simulation.DestinationSimulation<T>*/),
     };
-    uT ret6(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    ::g::Fuse::Motion::Simulation::DestinationSimulation::set_Destination_ex(uInterface(uPtr(__this->_impl), __types[1]), (AdapterMultiplier__In_fn(__this, value, &ret6), ret6));
+    uT ret6(__this->__type->T(0), U_ALLOCA(__this->__type->T(0)->ValueSize));
+    ::g::Fuse::Motion::Simulation::DestinationSimulation::set_Destination_ex(uInterface(uPtr(__this->_impl), __types[0]), (AdapterMultiplier__In_fn(__this, value, &ret6), ret6));
 }
 
-// private T In(T val) :116
+// private T In(T val) :114
 void AdapterMultiplier__In_fn(AdapterMultiplier* __this, void* val, uTRef __retval)
 {
-    uType* __types[] = {
-        __this->__type->Precalced(1/*T*/),
-    };
-    uT ret2(__types[0], U_ALLOCA(__types[0]->ValueSize));
+    uT ret2(__this->__type->T(0), U_ALLOCA(__this->__type->T(0)->ValueSize));
     return __retval.Store((::g::Fuse::Internal::Blender__ScalarMult_fn(uPtr(__this->_blender), val, uCRef(__this->_multiplier), &ret2), ret2)), void();
 }
 
-// public bool get_IsStatic() :108
+// public bool get_IsStatic() :106
 void AdapterMultiplier__get_IsStatic_fn(AdapterMultiplier* __this, bool* __retval)
 {
     *__retval = __this->IsStatic();
 }
 
-// public AdapterMultiplier New(Fuse.Motion.Simulation.DestinationSimulation<T> impl, double multiplier) :100
+// public AdapterMultiplier New(Fuse.Motion.Simulation.DestinationSimulation<T> impl, double multiplier) :98
 void AdapterMultiplier__New1_fn(uType* __type, uObject* impl, double* multiplier, AdapterMultiplier** __retval)
 {
     *__retval = AdapterMultiplier::New1(__type, impl, *multiplier);
 }
 
-// private T Out(T val) :121
+// private T Out(T val) :119
 void AdapterMultiplier__Out_fn(AdapterMultiplier* __this, void* val, uTRef __retval)
 {
-    uType* __types[] = {
-        __this->__type->Precalced(1/*T*/),
-    };
-    uT ret3(__types[0], U_ALLOCA(__types[0]->ValueSize));
+    uT ret3(__this->__type->T(0), U_ALLOCA(__this->__type->T(0)->ValueSize));
     return __retval.Store((::g::Fuse::Internal::Blender__ScalarMult_fn(uPtr(__this->_blender), val, uCRef(1.0 / __this->_multiplier), &ret3), ret3)), void();
 }
 
-// public T get_Position() :128
+// public T get_Position() :126
 void AdapterMultiplier__get_Position_fn(AdapterMultiplier* __this, uTRef __retval)
 {
     uType* __types[] = {
-        __this->__type->Precalced(1/*T*/),
-        __this->__type->Precalced(3/*Fuse.Motion.Simulation.MotionSimulation<T>*/),
+        __this->__type->Precalced(2/*Fuse.Motion.Simulation.MotionSimulation<T>*/),
     };
-    uT ret7(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    uT ret8(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    return __retval.Store((AdapterMultiplier__Out_fn(__this, (::g::Fuse::Motion::Simulation::MotionSimulation::get_Position_ex(uInterface(uPtr(__this->_impl), __types[1]), &ret8), ret8), &ret7), ret7)), void();
+    uT ret7(__this->__type->T(0), U_ALLOCA(__this->__type->T(0)->ValueSize));
+    uT ret8(__this->__type->T(0), U_ALLOCA(__this->__type->T(0)->ValueSize));
+    return __retval.Store((AdapterMultiplier__Out_fn(__this, (::g::Fuse::Motion::Simulation::MotionSimulation::get_Position_ex(uInterface(uPtr(__this->_impl), __types[0]), &ret8), ret8), &ret7), ret7)), void();
 }
 
-// public void set_Position(T value) :129
+// public void set_Position(T value) :127
 void AdapterMultiplier__set_Position_fn(AdapterMultiplier* __this, void* value)
 {
     uType* __types[] = {
-        __this->__type->Precalced(1/*T*/),
-        __this->__type->Precalced(3/*Fuse.Motion.Simulation.MotionSimulation<T>*/),
+        __this->__type->Precalced(2/*Fuse.Motion.Simulation.MotionSimulation<T>*/),
     };
-    uT ret9(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    ::g::Fuse::Motion::Simulation::MotionSimulation::set_Position_ex(uInterface(uPtr(__this->_impl), __types[1]), (AdapterMultiplier__In_fn(__this, value, &ret9), ret9));
+    uT ret9(__this->__type->T(0), U_ALLOCA(__this->__type->T(0)->ValueSize));
+    ::g::Fuse::Motion::Simulation::MotionSimulation::set_Position_ex(uInterface(uPtr(__this->_impl), __types[0]), (AdapterMultiplier__In_fn(__this, value, &ret9), ret9));
 }
 
-// public void Reset(T value) :144
+// public void Reset(T value) :142
 void AdapterMultiplier__Reset_fn(AdapterMultiplier* __this, void* value)
 {
     uType* __types[] = {
-        __this->__type->Precalced(2/*Fuse.Motion.Simulation.DestinationSimulation<T>*/),
+        __this->__type->Precalced(0/*Fuse.Motion.Simulation.DestinationSimulation<T>*/),
     };
     ::g::Fuse::Motion::Simulation::DestinationSimulation::Reset_ex(uInterface(uPtr(__this->_impl), __types[0]), value);
 }
 
-// public void Start() :149
+// public void Start() :147
 void AdapterMultiplier__Start_fn(AdapterMultiplier* __this)
 {
     __this->Start();
 }
 
-// public void Update(double elapsed) :111
+// public void Update(double elapsed) :109
 void AdapterMultiplier__Update_fn(AdapterMultiplier* __this, double* elapsed)
 {
     __this->Update(*elapsed);
 }
 
-// public T get_Velocity() :134
+// public T get_Velocity() :132
 void AdapterMultiplier__get_Velocity_fn(AdapterMultiplier* __this, uTRef __retval)
 {
     uType* __types[] = {
-        __this->__type->Precalced(1/*T*/),
-        __this->__type->Precalced(3/*Fuse.Motion.Simulation.MotionSimulation<T>*/),
+        __this->__type->Precalced(2/*Fuse.Motion.Simulation.MotionSimulation<T>*/),
     };
-    uT ret10(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    uT ret11(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    return __retval.Store((AdapterMultiplier__Out_fn(__this, (::g::Fuse::Motion::Simulation::MotionSimulation::get_Velocity_ex(uInterface(uPtr(__this->_impl), __types[1]), &ret11), ret11), &ret10), ret10)), void();
+    uT ret10(__this->__type->T(0), U_ALLOCA(__this->__type->T(0)->ValueSize));
+    uT ret11(__this->__type->T(0), U_ALLOCA(__this->__type->T(0)->ValueSize));
+    return __retval.Store((AdapterMultiplier__Out_fn(__this, (::g::Fuse::Motion::Simulation::MotionSimulation::get_Velocity_ex(uInterface(uPtr(__this->_impl), __types[0]), &ret11), ret11), &ret10), ret10)), void();
 }
 
-// public void set_Velocity(T value) :135
+// public void set_Velocity(T value) :133
 void AdapterMultiplier__set_Velocity_fn(AdapterMultiplier* __this, void* value)
 {
     uType* __types[] = {
-        __this->__type->Precalced(1/*T*/),
-        __this->__type->Precalced(3/*Fuse.Motion.Simulation.MotionSimulation<T>*/),
+        __this->__type->Precalced(2/*Fuse.Motion.Simulation.MotionSimulation<T>*/),
     };
-    uT ret12(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    ::g::Fuse::Motion::Simulation::MotionSimulation::set_Velocity_ex(uInterface(uPtr(__this->_impl), __types[1]), (AdapterMultiplier__In_fn(__this, value, &ret12), ret12));
+    uT ret12(__this->__type->T(0), U_ALLOCA(__this->__type->T(0)->ValueSize));
+    ::g::Fuse::Motion::Simulation::MotionSimulation::set_Velocity_ex(uInterface(uPtr(__this->_impl), __types[0]), (AdapterMultiplier__In_fn(__this, value, &ret12), ret12));
 }
 
-// public AdapterMultiplier(Fuse.Motion.Simulation.DestinationSimulation<T> impl, double multiplier) [instance] :100
+// public AdapterMultiplier(Fuse.Motion.Simulation.DestinationSimulation<T> impl, double multiplier) [instance] :98
 void AdapterMultiplier::ctor_(uObject* impl, double multiplier)
 {
     uType* __types[] = {
-        __type->Precalced(0/*Fuse.Internal.BlenderMap.GetScalar<T>*/),
+        __type->Precalced(1/*Fuse.Internal.BlenderMap.GetScalar<T>*/),
     };
     _blender = ((::g::Fuse::Internal::ScalarBlender*)::g::Fuse::Internal::BlenderMap::GetScalar(__types[0]));
     _impl = impl;
     _multiplier = multiplier;
 }
 
-// public bool get_IsStatic() [instance] :108
+// public bool get_IsStatic() [instance] :106
 bool AdapterMultiplier::IsStatic()
 {
     return ::g::Fuse::Motion::Simulation::Simulation::IsStatic(uInterface(uPtr(_impl), ::TYPES[2/*Fuse.Motion.Simulation.Simulation*/]));
 }
 
-// public void Start() [instance] :149
+// public void Start() [instance] :147
 void AdapterMultiplier::Start()
 {
     uType* __types[] = {
-        __type->Precalced(2/*Fuse.Motion.Simulation.DestinationSimulation<T>*/),
+        __type->Precalced(0/*Fuse.Motion.Simulation.DestinationSimulation<T>*/),
     };
     ::g::Fuse::Motion::Simulation::DestinationSimulation::Start(uInterface(uPtr(_impl), __types[0]));
 }
 
-// public void Update(double elapsed) [instance] :111
+// public void Update(double elapsed) [instance] :109
 void AdapterMultiplier::Update(double elapsed)
 {
     ::g::Fuse::Motion::Simulation::Simulation::Update(uInterface(uPtr(_impl), ::TYPES[2/*Fuse.Motion.Simulation.Simulation*/]), elapsed);
 }
 
-// public AdapterMultiplier New(Fuse.Motion.Simulation.DestinationSimulation<T> impl, double multiplier) [static] :100
+// public AdapterMultiplier New(Fuse.Motion.Simulation.DestinationSimulation<T> impl, double multiplier) [static] :98
 AdapterMultiplier* AdapterMultiplier::New1(uType* __type, uObject* impl, double multiplier)
 {
     AdapterMultiplier* obj1 = (AdapterMultiplier*)uNew(__type);
@@ -260,10 +250,10 @@ AdapterMultiplier* AdapterMultiplier::New1(uType* __type, uObject* impl, double 
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Motion/1.2.1/simulation/$.uno
-// ----------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Motion\1.3.0-rc2\Simulation\AngularAdapter.uno
+// -----------------------------------------------------------------------------------------------
 
-// internal sealed class AngularAdapter<T> :10
+// internal sealed class AngularAdapter<T> :8
 // {
 static void AngularAdapter_build(uType* type)
 {
@@ -271,18 +261,19 @@ static void AngularAdapter_build(uType* type)
     ::TYPES[1] = ::g::Fuse::Motion::Simulation::DestinationSimulation_typeof();
     ::TYPES[2] = ::g::Fuse::Motion::Simulation::Simulation_typeof();
     ::TYPES[3] = ::g::Fuse::Motion::Simulation::MotionSimulation_typeof();
+    type->SetDependencies(
+        ::g::Fuse::Internal::BlenderMap_typeof()->MakeMethod(1/*GetScalar<T>*/, type->T(0), NULL));
     type->SetPrecalc(
-        ::g::Fuse::Internal::BlenderMap_typeof()->MakeMethod(1/*GetScalar<T>*/, type->T(0), NULL),
         ::g::Fuse::Motion::Simulation::DestinationSimulation_typeof()->MakeType(type->T(0), NULL),
-        type->T(0),
+        ::g::Fuse::Internal::BlenderMap_typeof()->MakeMethod(1/*GetScalar<T>*/, type->T(0), NULL),
         ::g::Fuse::Motion::Simulation::MotionSimulation_typeof()->MakeType(type->T(0), NULL));
     type->SetInterfaces(
         ::TYPES[1/*Fuse.Motion.Simulation.DestinationSimulation`1*/]->MakeType(type->T(0), NULL), offsetof(AngularAdapter_type, interface0),
         ::TYPES[3/*Fuse.Motion.Simulation.MotionSimulation`1*/]->MakeType(type->T(0), NULL), offsetof(AngularAdapter_type, interface1),
         ::TYPES[2/*Fuse.Motion.Simulation.Simulation*/], offsetof(AngularAdapter_type, interface2));
     type->SetFields(0,
-        ::g::Fuse::Internal::ScalarBlender_typeof()->MakeType(type->T(0), NULL), offsetof(::g::Fuse::Motion::Simulation::AngularAdapter, _blender), 0,
-        ::TYPES[1/*Fuse.Motion.Simulation.DestinationSimulation`1*/]->MakeType(type->T(0), NULL), offsetof(::g::Fuse::Motion::Simulation::AngularAdapter, _impl), 0);
+        ::g::Fuse::Internal::ScalarBlender_typeof()->MakeType(type->T(0), NULL), offsetof(AngularAdapter, _blender), 0,
+        ::TYPES[1/*Fuse.Motion.Simulation.DestinationSimulation`1*/]->MakeType(type->T(0), NULL), offsetof(AngularAdapter, _impl), 0);
 }
 
 AngularAdapter_type* AngularAdapter_typeof()
@@ -294,7 +285,8 @@ AngularAdapter_type* AngularAdapter_typeof()
     options.FieldCount = 2;
     options.GenericCount = 1;
     options.InterfaceCount = 3;
-    options.PrecalcCount = 4;
+    options.DependencyCount = 1;
+    options.PrecalcCount = 3;
     options.ObjectSize = sizeof(AngularAdapter);
     options.TypeSize = sizeof(AngularAdapter_type);
     type = (AngularAdapter_type*)uClassType::New("Fuse.Motion.Simulation.AngularAdapter`1", options);
@@ -312,159 +304,155 @@ AngularAdapter_type* AngularAdapter_typeof()
     return type;
 }
 
-// public AngularAdapter(Fuse.Motion.Simulation.DestinationSimulation<T> impl) :14
+// public AngularAdapter(Fuse.Motion.Simulation.DestinationSimulation<T> impl) :12
 void AngularAdapter__ctor__fn(AngularAdapter* __this, uObject* impl)
 {
     __this->ctor_(impl);
 }
 
-// public T get_Destination() :52
+// public T get_Destination() :50
 void AngularAdapter__get_Destination_fn(AngularAdapter* __this, uTRef __retval)
 {
     uType* __types[] = {
-        __this->__type->Precalced(2/*T*/),
-        __this->__type->Precalced(1/*Fuse.Motion.Simulation.DestinationSimulation<T>*/),
+        __this->__type->Precalced(0/*Fuse.Motion.Simulation.DestinationSimulation<T>*/),
     };
-    uT ret7(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    return __retval.Store((::g::Fuse::Motion::Simulation::DestinationSimulation::get_Destination_ex(uInterface(uPtr(__this->_impl), __types[1]), &ret7), ret7)), void();
+    uT ret7(__this->__type->T(0), U_ALLOCA(__this->__type->T(0)->ValueSize));
+    return __retval.Store((::g::Fuse::Motion::Simulation::DestinationSimulation::get_Destination_ex(uInterface(uPtr(__this->_impl), __types[0]), &ret7), ret7)), void();
 }
 
-// public void set_Destination(T value) :53
+// public void set_Destination(T value) :51
 void AngularAdapter__set_Destination_fn(AngularAdapter* __this, void* value)
 {
     uType* __types[] = {
-        __this->__type->Precalced(1/*Fuse.Motion.Simulation.DestinationSimulation<T>*/),
+        __this->__type->Precalced(0/*Fuse.Motion.Simulation.DestinationSimulation<T>*/),
     };
     ::g::Fuse::Motion::Simulation::DestinationSimulation::set_Destination_ex(uInterface(uPtr(__this->_impl), __types[0]), value);
     __this->Wrap();
 }
 
-// public bool get_IsStatic() :23
+// public bool get_IsStatic() :21
 void AngularAdapter__get_IsStatic_fn(AngularAdapter* __this, bool* __retval)
 {
     *__retval = __this->IsStatic();
 }
 
-// public AngularAdapter New(Fuse.Motion.Simulation.DestinationSimulation<T> impl) :14
+// public AngularAdapter New(Fuse.Motion.Simulation.DestinationSimulation<T> impl) :12
 void AngularAdapter__New1_fn(uType* __type, uObject* impl, AngularAdapter** __retval)
 {
     *__retval = AngularAdapter::New1(__type, impl);
 }
 
-// public T get_Position() :33
+// public T get_Position() :31
 void AngularAdapter__get_Position_fn(AngularAdapter* __this, uTRef __retval)
 {
     uType* __types[] = {
-        __this->__type->Precalced(2/*T*/),
-        __this->__type->Precalced(3/*Fuse.Motion.Simulation.MotionSimulation<T>*/),
+        __this->__type->Precalced(2/*Fuse.Motion.Simulation.MotionSimulation<T>*/),
     };
-    uT ret8(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    return __retval.Store((::g::Fuse::Motion::Simulation::MotionSimulation::get_Position_ex(uInterface(uPtr(__this->_impl), __types[1]), &ret8), ret8)), void();
+    uT ret8(__this->__type->T(0), U_ALLOCA(__this->__type->T(0)->ValueSize));
+    return __retval.Store((::g::Fuse::Motion::Simulation::MotionSimulation::get_Position_ex(uInterface(uPtr(__this->_impl), __types[0]), &ret8), ret8)), void();
 }
 
-// public void set_Position(T value) :34
+// public void set_Position(T value) :32
 void AngularAdapter__set_Position_fn(AngularAdapter* __this, void* value)
 {
     uType* __types[] = {
-        __this->__type->Precalced(3/*Fuse.Motion.Simulation.MotionSimulation<T>*/),
+        __this->__type->Precalced(2/*Fuse.Motion.Simulation.MotionSimulation<T>*/),
     };
     ::g::Fuse::Motion::Simulation::MotionSimulation::set_Position_ex(uInterface(uPtr(__this->_impl), __types[0]), value);
     __this->Wrap();
 }
 
-// public void Reset(T value) :60
+// public void Reset(T value) :58
 void AngularAdapter__Reset_fn(AngularAdapter* __this, void* value)
 {
     uType* __types[] = {
-        __this->__type->Precalced(1/*Fuse.Motion.Simulation.DestinationSimulation<T>*/),
+        __this->__type->Precalced(0/*Fuse.Motion.Simulation.DestinationSimulation<T>*/),
     };
     ::g::Fuse::Motion::Simulation::DestinationSimulation::Reset_ex(uInterface(uPtr(__this->_impl), __types[0]), value);
 }
 
-// public void Start() :65
+// public void Start() :63
 void AngularAdapter__Start_fn(AngularAdapter* __this)
 {
     __this->Start();
 }
 
-// public void Update(double elapsed) :26
+// public void Update(double elapsed) :24
 void AngularAdapter__Update_fn(AngularAdapter* __this, double* elapsed)
 {
     __this->Update(*elapsed);
 }
 
-// public T get_Velocity() :43
+// public T get_Velocity() :41
 void AngularAdapter__get_Velocity_fn(AngularAdapter* __this, uTRef __retval)
 {
     uType* __types[] = {
-        __this->__type->Precalced(2/*T*/),
-        __this->__type->Precalced(3/*Fuse.Motion.Simulation.MotionSimulation<T>*/),
+        __this->__type->Precalced(2/*Fuse.Motion.Simulation.MotionSimulation<T>*/),
     };
-    uT ret9(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    return __retval.Store((::g::Fuse::Motion::Simulation::MotionSimulation::get_Velocity_ex(uInterface(uPtr(__this->_impl), __types[1]), &ret9), ret9)), void();
+    uT ret9(__this->__type->T(0), U_ALLOCA(__this->__type->T(0)->ValueSize));
+    return __retval.Store((::g::Fuse::Motion::Simulation::MotionSimulation::get_Velocity_ex(uInterface(uPtr(__this->_impl), __types[0]), &ret9), ret9)), void();
 }
 
-// public void set_Velocity(T value) :44
+// public void set_Velocity(T value) :42
 void AngularAdapter__set_Velocity_fn(AngularAdapter* __this, void* value)
 {
     uType* __types[] = {
-        __this->__type->Precalced(3/*Fuse.Motion.Simulation.MotionSimulation<T>*/),
+        __this->__type->Precalced(2/*Fuse.Motion.Simulation.MotionSimulation<T>*/),
     };
     ::g::Fuse::Motion::Simulation::MotionSimulation::set_Velocity_ex(uInterface(uPtr(__this->_impl), __types[0]), value);
 }
 
-// private void Wrap() :74
+// private void Wrap() :72
 void AngularAdapter__Wrap_fn(AngularAdapter* __this)
 {
     __this->Wrap();
 }
 
-// public AngularAdapter(Fuse.Motion.Simulation.DestinationSimulation<T> impl) [instance] :14
+// public AngularAdapter(Fuse.Motion.Simulation.DestinationSimulation<T> impl) [instance] :12
 void AngularAdapter::ctor_(uObject* impl)
 {
     uType* __types[] = {
-        __type->Precalced(0/*Fuse.Internal.BlenderMap.GetScalar<T>*/),
+        __type->Precalced(1/*Fuse.Internal.BlenderMap.GetScalar<T>*/),
     };
     _blender = ((::g::Fuse::Internal::ScalarBlender*)::g::Fuse::Internal::BlenderMap::GetScalar(__types[0]));
     _impl = impl;
 }
 
-// public bool get_IsStatic() [instance] :23
+// public bool get_IsStatic() [instance] :21
 bool AngularAdapter::IsStatic()
 {
     return ::g::Fuse::Motion::Simulation::Simulation::IsStatic(uInterface(uPtr(_impl), ::TYPES[2/*Fuse.Motion.Simulation.Simulation*/]));
 }
 
-// public void Start() [instance] :65
+// public void Start() [instance] :63
 void AngularAdapter::Start()
 {
     uType* __types[] = {
-        __type->Precalced(1/*Fuse.Motion.Simulation.DestinationSimulation<T>*/),
+        __type->Precalced(0/*Fuse.Motion.Simulation.DestinationSimulation<T>*/),
     };
     ::g::Fuse::Motion::Simulation::DestinationSimulation::Start(uInterface(uPtr(_impl), __types[0]));
 }
 
-// public void Update(double elapsed) [instance] :26
+// public void Update(double elapsed) [instance] :24
 void AngularAdapter::Update(double elapsed)
 {
     ::g::Fuse::Motion::Simulation::Simulation::Update(uInterface(uPtr(_impl), ::TYPES[2/*Fuse.Motion.Simulation.Simulation*/]), elapsed);
 }
 
-// private void Wrap() [instance] :74
+// private void Wrap() [instance] :72
 void AngularAdapter::Wrap()
 {
     uType* __types[] = {
-        __type->Precalced(2/*T*/),
-        __type->Precalced(3/*Fuse.Motion.Simulation.MotionSimulation<T>*/),
-        __type->Precalced(1/*Fuse.Motion.Simulation.DestinationSimulation<T>*/),
+        __type->Precalced(2/*Fuse.Motion.Simulation.MotionSimulation<T>*/),
+        __type->Precalced(0/*Fuse.Motion.Simulation.DestinationSimulation<T>*/),
     };
-    uT ret3(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    uT ret5(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    uT ret6(__types[0], U_ALLOCA(__types[0]->ValueSize));
+    uT ret3(__type->T(0), U_ALLOCA(__type->T(0)->ValueSize));
+    uT ret5(__type->T(0), U_ALLOCA(__type->T(0)->ValueSize));
+    uT ret6(__type->T(0), U_ALLOCA(__type->T(0)->ValueSize));
     double ret2;
     double ret4;
-    double pos = (uPtr(_blender)->ToDouble_ex((::g::Fuse::Motion::Simulation::MotionSimulation::get_Position_ex(uInterface(uPtr(_impl), __types[1]), &ret3), ret3), &ret2), ret2);
-    double dst = (uPtr(_blender)->ToDouble_ex((::g::Fuse::Motion::Simulation::DestinationSimulation::get_Destination_ex(uInterface(uPtr(_impl), __types[2]), &ret5), ret5), &ret4), ret4);
+    double pos = (uPtr(_blender)->ToDouble_ex((::g::Fuse::Motion::Simulation::MotionSimulation::get_Position_ex(uInterface(uPtr(_impl), __types[0]), &ret3), ret3), &ret2), ret2);
+    double dst = (uPtr(_blender)->ToDouble_ex((::g::Fuse::Motion::Simulation::DestinationSimulation::get_Destination_ex(uInterface(uPtr(_impl), __types[1]), &ret5), ret5), &ret4), ret4);
     double rpos = ::g::Uno::Math::Mod(pos, 6.2831853071795862);
     double rdst = ::g::Uno::Math::Mod(dst, 6.2831853071795862);
     double diff = rpos - rdst;
@@ -475,10 +463,10 @@ void AngularAdapter::Wrap()
         diff = diff + 6.2831853071795862;
 
     double npos = dst + diff;
-    ::g::Fuse::Motion::Simulation::MotionSimulation::set_Position_ex(uInterface(uPtr(_impl), __types[1]), (uPtr(_blender)->FromDouble_ex(uCRef(npos), &ret6), ret6));
+    ::g::Fuse::Motion::Simulation::MotionSimulation::set_Position_ex(uInterface(uPtr(_impl), __types[0]), (uPtr(_blender)->FromDouble_ex(uCRef(npos), &ret6), ret6));
 }
 
-// public AngularAdapter New(Fuse.Motion.Simulation.DestinationSimulation<T> impl) [static] :14
+// public AngularAdapter New(Fuse.Motion.Simulation.DestinationSimulation<T> impl) [static] :12
 AngularAdapter* AngularAdapter::New1(uType* __type, uObject* impl)
 {
     AngularAdapter* obj1 = (AngularAdapter*)uNew(__type);
@@ -487,33 +475,31 @@ AngularAdapter* AngularAdapter::New1(uType* __type, uObject* impl)
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Motion/1.2.1/simulation/$.uno
-// ----------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Motion\1.3.0-rc2\Simulation\BoundedRegion2D.uno
+// ------------------------------------------------------------------------------------------------
 
-// internal sealed class BasicBoundedRegion2D :185
+// internal sealed class BasicBoundedRegion2D :31
 // {
 static void BasicBoundedRegion2D_build(uType* type)
 {
-    ::TYPES[4] = ::g::Fuse::Motion::Simulation::Friction_typeof()->MakeType(::g::Uno::Float2_typeof(), NULL);
-    ::TYPES[5] = ::g::Fuse::Motion::Simulation::SmoothSnap_typeof()->MakeType(::g::Uno::Float2_typeof(), NULL);
-    ::TYPES[6] = ::g::Fuse::Motion::Simulation::MotionSimulation_typeof()->MakeType(::g::Uno::Float2_typeof(), NULL);
-    ::TYPES[2] = ::g::Fuse::Motion::Simulation::Simulation_typeof();
-    ::TYPES[7] = ::g::Fuse::Motion::Simulation::DestinationSimulation_typeof()->MakeType(::g::Uno::Float2_typeof(), NULL);
+    type->SetDependencies(
+        ::g::Fuse::Motion::Simulation::Friction_typeof()->MakeType(::g::Uno::Float2_typeof(), NULL),
+        ::g::Fuse::Motion::Simulation::SmoothSnap_typeof()->MakeType(::g::Uno::Float2_typeof(), NULL));
     type->SetInterfaces(
         ::g::Fuse::Motion::Simulation::BoundedRegion2D_typeof(), offsetof(BasicBoundedRegion2D_type, interface0),
-        ::TYPES[6/*Fuse.Motion.Simulation.MotionSimulation<float2>*/], offsetof(BasicBoundedRegion2D_type, interface1),
-        ::TYPES[2/*Fuse.Motion.Simulation.Simulation*/], offsetof(BasicBoundedRegion2D_type, interface2));
+        ::g::Fuse::Motion::Simulation::MotionSimulation_typeof()->MakeType(::g::Uno::Float2_typeof(), NULL), offsetof(BasicBoundedRegion2D_type, interface1),
+        ::g::Fuse::Motion::Simulation::Simulation_typeof(), offsetof(BasicBoundedRegion2D_type, interface2));
     type->SetFields(0,
-        ::TYPES[7/*Fuse.Motion.Simulation.DestinationSimulation<float2>*/], offsetof(::g::Fuse::Motion::Simulation::BasicBoundedRegion2D, _destination), 0,
-        ::TYPES[6/*Fuse.Motion.Simulation.MotionSimulation<float2>*/], offsetof(::g::Fuse::Motion::Simulation::BasicBoundedRegion2D, _friction), 0,
-        ::g::Uno::Float2_typeof(), offsetof(::g::Fuse::Motion::Simulation::BasicBoundedRegion2D, _maxPosition), 0,
-        ::g::Uno::Float2_typeof(), offsetof(::g::Fuse::Motion::Simulation::BasicBoundedRegion2D, _minPosition), 0,
-        BasicBoundedRegion2D__MoveMode_typeof(), offsetof(::g::Fuse::Motion::Simulation::BasicBoundedRegion2D, _moveMode), 0,
-        ::g::Fuse::Motion::OverflowType_typeof(), offsetof(::g::Fuse::Motion::Simulation::BasicBoundedRegion2D, _overflow), 0,
-        ::g::Uno::Float2_typeof(), offsetof(::g::Fuse::Motion::Simulation::BasicBoundedRegion2D, _overflowExtent), 0,
-        ::TYPES[7/*Fuse.Motion.Simulation.DestinationSimulation<float2>*/], offsetof(::g::Fuse::Motion::Simulation::BasicBoundedRegion2D, _snap), 0,
-        ::g::Uno::Float2_typeof(), offsetof(::g::Fuse::Motion::Simulation::BasicBoundedRegion2D, _velocity), 0,
-        ::g::Uno::Float2_typeof(), offsetof(::g::Fuse::Motion::Simulation::BasicBoundedRegion2D, _Position), 0);
+        ::g::Fuse::Motion::Simulation::DestinationSimulation_typeof()->MakeType(::g::Uno::Float2_typeof(), NULL), offsetof(BasicBoundedRegion2D, _destination), 0,
+        ::g::Fuse::Motion::Simulation::MotionSimulation_typeof()->MakeType(::g::Uno::Float2_typeof(), NULL), offsetof(BasicBoundedRegion2D, _friction), 0,
+        ::g::Uno::Float2_typeof(), offsetof(BasicBoundedRegion2D, _maxPosition), 0,
+        ::g::Uno::Float2_typeof(), offsetof(BasicBoundedRegion2D, _minPosition), 0,
+        BasicBoundedRegion2D__MoveMode_typeof(), offsetof(BasicBoundedRegion2D, _moveMode), 0,
+        ::g::Fuse::Motion::OverflowType_typeof(), offsetof(BasicBoundedRegion2D, _overflow), 0,
+        ::g::Uno::Float2_typeof(), offsetof(BasicBoundedRegion2D, _overflowExtent), 0,
+        ::g::Fuse::Motion::Simulation::DestinationSimulation_typeof()->MakeType(::g::Uno::Float2_typeof(), NULL), offsetof(BasicBoundedRegion2D, _snap), 0,
+        ::g::Uno::Float2_typeof(), offsetof(BasicBoundedRegion2D, _velocity), 0,
+        ::g::Uno::Float2_typeof(), offsetof(BasicBoundedRegion2D, _Position), 0);
 }
 
 BasicBoundedRegion2D_type* BasicBoundedRegion2D_typeof()
@@ -524,6 +510,7 @@ BasicBoundedRegion2D_type* BasicBoundedRegion2D_typeof()
     uTypeOptions options;
     options.FieldCount = 10;
     options.InterfaceCount = 3;
+    options.DependencyCount = 2;
     options.ObjectSize = sizeof(BasicBoundedRegion2D);
     options.TypeSize = sizeof(BasicBoundedRegion2D_type);
     type = (BasicBoundedRegion2D_type*)uClassType::New("Fuse.Motion.Simulation.BasicBoundedRegion2D", options);
@@ -534,6 +521,7 @@ BasicBoundedRegion2D_type* BasicBoundedRegion2D_typeof()
     type->interface0.fp_EndUser = (void(*)(uObject*, ::g::Uno::Float2*))BasicBoundedRegion2D__EndUser_fn;
     type->interface0.fp_MoveTo = (void(*)(uObject*, ::g::Uno::Float2*))BasicBoundedRegion2D__MoveTo_fn;
     type->interface0.fp_Reset = (void(*)(uObject*, ::g::Uno::Float2*))BasicBoundedRegion2D__Reset_fn;
+    type->interface0.fp_Adjust = (void(*)(uObject*, ::g::Uno::Float2*))BasicBoundedRegion2D__Adjust_fn;
     type->interface0.fp_get_MaxPosition = (void(*)(uObject*, ::g::Uno::Float2*))BasicBoundedRegion2D__get_MaxPosition_fn;
     type->interface0.fp_set_MaxPosition = (void(*)(uObject*, ::g::Uno::Float2*))BasicBoundedRegion2D__set_MaxPosition_fn;
     type->interface0.fp_get_MinPosition = (void(*)(uObject*, ::g::Uno::Float2*))BasicBoundedRegion2D__get_MinPosition_fn;
@@ -548,228 +536,264 @@ BasicBoundedRegion2D_type* BasicBoundedRegion2D_typeof()
     return type;
 }
 
-// internal BasicBoundedRegion2D() :215
+// internal BasicBoundedRegion2D() :61
 void BasicBoundedRegion2D__ctor__fn(BasicBoundedRegion2D* __this)
 {
     __this->ctor_();
 }
 
-// private float2 CalcOver(float2 sp) :511
+// public void Adjust(float2 adjust) :148
+void BasicBoundedRegion2D__Adjust_fn(BasicBoundedRegion2D* __this, ::g::Uno::Float2* adjust)
+{
+    __this->Adjust(*adjust);
+}
+
+// private float2 CalcOver(float2 sp) :386
 void BasicBoundedRegion2D__CalcOver_fn(BasicBoundedRegion2D* __this, ::g::Uno::Float2* sp, ::g::Uno::Float2* __retval)
 {
     *__retval = __this->CalcOver(*sp);
 }
 
-// internal Fuse.Motion.Simulation.DestinationSimulation<float2> get_DestinationSimulation() :293
+// public float2 get_Destination() :183
+void BasicBoundedRegion2D__get_Destination_fn(BasicBoundedRegion2D* __this, ::g::Uno::Float2* __retval)
+{
+    *__retval = __this->Destination();
+}
+
+// internal Fuse.Motion.Simulation.DestinationSimulation<float2> get_DestinationSimulation() :144
 void BasicBoundedRegion2D__get_DestinationSimulation_fn(BasicBoundedRegion2D* __this, uObject** __retval)
 {
     *__retval = __this->DestinationSimulation();
 }
 
-// internal void set_DestinationSimulation(Fuse.Motion.Simulation.DestinationSimulation<float2> value) :294
+// internal void set_DestinationSimulation(Fuse.Motion.Simulation.DestinationSimulation<float2> value) :145
 void BasicBoundedRegion2D__set_DestinationSimulation_fn(BasicBoundedRegion2D* __this, uObject* value)
 {
     __this->DestinationSimulation(value);
 }
 
-// public void EndUser([float2 velocity]) :275
+// public void EndUser([float2 velocity]) :121
 void BasicBoundedRegion2D__EndUser_fn(BasicBoundedRegion2D* __this, ::g::Uno::Float2* velocity)
 {
     __this->EndUser(*velocity);
 }
 
-// internal Fuse.Motion.Simulation.MotionSimulation<float2> get_FrictionSimulation() :354
+// internal Fuse.Motion.Simulation.MotionSimulation<float2> get_FrictionSimulation() :229
 void BasicBoundedRegion2D__get_FrictionSimulation_fn(BasicBoundedRegion2D* __this, uObject** __retval)
 {
     *__retval = __this->FrictionSimulation();
 }
 
-// internal void set_FrictionSimulation(Fuse.Motion.Simulation.MotionSimulation<float2> value) :355
+// internal void set_FrictionSimulation(Fuse.Motion.Simulation.MotionSimulation<float2> value) :230
 void BasicBoundedRegion2D__set_FrictionSimulation_fn(BasicBoundedRegion2D* __this, uObject* value)
 {
     __this->FrictionSimulation(value);
 }
 
-// public bool get_IsStatic() :313
+// public bool get_IsStatic() :188
 void BasicBoundedRegion2D__get_IsStatic_fn(BasicBoundedRegion2D* __this, bool* __retval)
 {
     *__retval = __this->IsStatic();
 }
 
-// public bool get_IsUser() :285
+// public bool get_IsUser() :131
 void BasicBoundedRegion2D__get_IsUser_fn(BasicBoundedRegion2D* __this, bool* __retval)
 {
     *__retval = __this->IsUser();
 }
 
-// public float2 get_MaxPosition() :239
+// public float2 get_MaxPosition() :85
 void BasicBoundedRegion2D__get_MaxPosition_fn(BasicBoundedRegion2D* __this, ::g::Uno::Float2* __retval)
 {
     *__retval = __this->MaxPosition();
 }
 
-// public void set_MaxPosition(float2 value) :240
+// public void set_MaxPosition(float2 value) :86
 void BasicBoundedRegion2D__set_MaxPosition_fn(BasicBoundedRegion2D* __this, ::g::Uno::Float2* value)
 {
     __this->MaxPosition(*value);
 }
 
-// public float2 get_MinPosition() :254
+// public float2 get_MinPosition() :100
 void BasicBoundedRegion2D__get_MinPosition_fn(BasicBoundedRegion2D* __this, ::g::Uno::Float2* __retval)
 {
     *__retval = __this->MinPosition();
 }
 
-// public void set_MinPosition(float2 value) :255
+// public void set_MinPosition(float2 value) :101
 void BasicBoundedRegion2D__set_MinPosition_fn(BasicBoundedRegion2D* __this, ::g::Uno::Float2* value)
 {
     __this->MinPosition(*value);
 }
 
-// private void MoveDestination(double elapsed) :498
+// private void MoveDestination(double elapsed) :373
 void BasicBoundedRegion2D__MoveDestination_fn(BasicBoundedRegion2D* __this, double* elapsed)
 {
     __this->MoveDestination(*elapsed);
 }
 
-// private void MoveFriction(double elapsed) :357
+// private void MoveFriction(double elapsed) :232
 void BasicBoundedRegion2D__MoveFriction_fn(BasicBoundedRegion2D* __this, double* elapsed)
 {
     __this->MoveFriction(*elapsed);
 }
 
-// private bool MoveSnap(double elapsed, [bool X], [bool Y]) :464
+// private bool MoveSnap(double elapsed, [bool X], [bool Y]) :339
 void BasicBoundedRegion2D__MoveSnap_fn(BasicBoundedRegion2D* __this, double* elapsed, bool* X, bool* Y, bool* __retval)
 {
     *__retval = __this->MoveSnap(*elapsed, *X, *Y);
 }
 
-// public void MoveTo(float2 target) :297
+// public void MoveTo(float2 target) :172
 void BasicBoundedRegion2D__MoveTo_fn(BasicBoundedRegion2D* __this, ::g::Uno::Float2* target)
 {
     __this->MoveTo(*target);
 }
 
-// internal BasicBoundedRegion2D New() :215
+// internal BasicBoundedRegion2D New() :61
 void BasicBoundedRegion2D__New1_fn(BasicBoundedRegion2D** __retval)
 {
     *__retval = BasicBoundedRegion2D::New1();
 }
 
-// public Fuse.Motion.OverflowType get_Overflow() :532
+// public Fuse.Motion.OverflowType get_Overflow() :407
 void BasicBoundedRegion2D__get_Overflow_fn(BasicBoundedRegion2D* __this, int* __retval)
 {
     *__retval = __this->Overflow();
 }
 
-// public void set_Overflow(Fuse.Motion.OverflowType value) :533
+// public void set_Overflow(Fuse.Motion.OverflowType value) :408
 void BasicBoundedRegion2D__set_Overflow_fn(BasicBoundedRegion2D* __this, int* value)
 {
     __this->Overflow(*value);
 }
 
-// public float2 get_OverflowExtent() :261
+// public float2 get_OverflowExtent() :107
 void BasicBoundedRegion2D__get_OverflowExtent_fn(BasicBoundedRegion2D* __this, ::g::Uno::Float2* __retval)
 {
     *__retval = __this->OverflowExtent();
 }
 
-// public void set_OverflowExtent(float2 value) :262
+// public void set_OverflowExtent(float2 value) :108
 void BasicBoundedRegion2D__set_OverflowExtent_fn(BasicBoundedRegion2D* __this, ::g::Uno::Float2* value)
 {
     __this->OverflowExtent(*value);
 }
 
-// public generated float2 get_Position() :288
+// public generated float2 get_Position() :139
 void BasicBoundedRegion2D__get_Position_fn(BasicBoundedRegion2D* __this, ::g::Uno::Float2* __retval)
 {
     *__retval = __this->Position();
 }
 
-// public generated void set_Position(float2 value) :288
+// public generated void set_Position(float2 value) :139
 void BasicBoundedRegion2D__set_Position_fn(BasicBoundedRegion2D* __this, ::g::Uno::Float2* value)
 {
     __this->Position(*value);
 }
 
-// public void Reset(float2 position) :219
+// public void Reset(float2 position) :65
 void BasicBoundedRegion2D__Reset_fn(BasicBoundedRegion2D* __this, ::g::Uno::Float2* position)
 {
     __this->Reset(*position);
 }
 
-// private float2 SnapPosition(float2 prev, float2 next) :384
+// private float2 SnapPosition(float2 prev, float2 next) :259
 void BasicBoundedRegion2D__SnapPosition_fn(BasicBoundedRegion2D* __this, ::g::Uno::Float2* prev, ::g::Uno::Float2* next, ::g::Uno::Float2* __retval)
 {
     *__retval = __this->SnapPosition(*prev, *next);
 }
 
-// private void SnapSetPositionVelocity(float2 nextPosition, float2 nextVelocity) :377
+// private void SnapSetPositionVelocity(float2 nextPosition, float2 nextVelocity) :252
 void BasicBoundedRegion2D__SnapSetPositionVelocity_fn(BasicBoundedRegion2D* __this, ::g::Uno::Float2* nextPosition, ::g::Uno::Float2* nextVelocity)
 {
     __this->SnapSetPositionVelocity(*nextPosition, *nextVelocity);
 }
 
-// internal Fuse.Motion.Simulation.DestinationSimulation<float2> get_SnapSimulation() :460
+// internal Fuse.Motion.Simulation.DestinationSimulation<float2> get_SnapSimulation() :335
 void BasicBoundedRegion2D__get_SnapSimulation_fn(BasicBoundedRegion2D* __this, uObject** __retval)
 {
     *__retval = __this->SnapSimulation();
 }
 
-// internal void set_SnapSimulation(Fuse.Motion.Simulation.DestinationSimulation<float2> value) :461
+// internal void set_SnapSimulation(Fuse.Motion.Simulation.DestinationSimulation<float2> value) :336
 void BasicBoundedRegion2D__set_SnapSimulation_fn(BasicBoundedRegion2D* __this, uObject* value)
 {
     __this->SnapSimulation(value);
 }
 
-// private float2 SnapVelocity(float2 position, float2 v) :419
+// private float2 SnapVelocity(float2 position, float2 v) :294
 void BasicBoundedRegion2D__SnapVelocity_fn(BasicBoundedRegion2D* __this, ::g::Uno::Float2* position, ::g::Uno::Float2* v, ::g::Uno::Float2* __retval)
 {
     *__retval = __this->SnapVelocity(*position, *v);
 }
 
-// public void StartUser() :265
+// public void StartUser() :111
 void BasicBoundedRegion2D__StartUser_fn(BasicBoundedRegion2D* __this)
 {
     __this->StartUser();
 }
 
-// public void StepUser(float2 inOffset) :270
+// public void StepUser(float2 inOffset) :116
 void BasicBoundedRegion2D__StepUser_fn(BasicBoundedRegion2D* __this, ::g::Uno::Float2* inOffset)
 {
     __this->StepUser(*inOffset);
 }
 
-// public void Update(double elapsed) :316
+// public void Update(double elapsed) :191
 void BasicBoundedRegion2D__Update_fn(BasicBoundedRegion2D* __this, double* elapsed)
 {
     __this->Update(*elapsed);
 }
 
-// public float2 get_Velocity() :342
+// public float2 get_Velocity() :217
 void BasicBoundedRegion2D__get_Velocity_fn(BasicBoundedRegion2D* __this, ::g::Uno::Float2* __retval)
 {
     *__retval = __this->Velocity();
 }
 
-// public void set_Velocity(float2 value) :343
+// public void set_Velocity(float2 value) :218
 void BasicBoundedRegion2D__set_Velocity_fn(BasicBoundedRegion2D* __this, ::g::Uno::Float2* value)
 {
     __this->Velocity(*value);
 }
 
-// internal BasicBoundedRegion2D() [instance] :215
+// internal BasicBoundedRegion2D() [instance] :61
 void BasicBoundedRegion2D::ctor_()
 {
     _maxPosition = ::g::Uno::Float2__New1(FLT_INF);
     _minPosition = ::g::Uno::Float2__New1(-FLT_INF);
     _overflowExtent = ::g::Uno::Float2__New1(150.0f);
-    _friction = (uObject*)((::g::Fuse::Motion::Simulation::Friction*)::g::Fuse::Motion::Simulation::Friction::CreatePoints(::TYPES[4/*Fuse.Motion.Simulation.Friction<float2>*/]));
-    _snap = (uObject*)((::g::Fuse::Motion::Simulation::SmoothSnap*)::g::Fuse::Motion::Simulation::SmoothSnap::CreatePoints(::TYPES[5/*Fuse.Motion.Simulation.SmoothSnap<float2>*/]));
+    _friction = (uObject*)((::g::Fuse::Motion::Simulation::Friction*)::g::Fuse::Motion::Simulation::Friction::CreatePoints(::g::Fuse::Motion::Simulation::Friction_typeof()->MakeType(::g::Uno::Float2_typeof(), NULL)));
+    _snap = (uObject*)((::g::Fuse::Motion::Simulation::SmoothSnap*)::g::Fuse::Motion::Simulation::SmoothSnap::CreatePoints(::g::Fuse::Motion::Simulation::SmoothSnap_typeof()->MakeType(::g::Uno::Float2_typeof(), NULL)));
     _overflow = 2;
 }
 
-// private float2 CalcOver(float2 sp) [instance] :511
+// public void Adjust(float2 adjust) [instance] :148
+void BasicBoundedRegion2D::Adjust(::g::Uno::Float2 adjust)
+{
+    if (::g::Uno::Float2__op_Equality(adjust, ::g::Uno::Float2__New1(0.0f)))
+        return;
+
+    if (_moveMode == 1)
+        return;
+
+    Position(::g::Uno::Float2__op_Addition2(Position(), adjust));
+
+    switch (_moveMode)
+    {
+        case 1:
+        case 0:
+            break;
+        case 4:
+        {
+            MoveTo(::g::Uno::Float2__op_Addition2(Destination(), adjust));
+            break;
+        }
+    }
+}
+
+// private float2 CalcOver(float2 sp) [instance] :386
 ::g::Uno::Float2 BasicBoundedRegion2D::CalcOver(::g::Uno::Float2 sp)
 {
     ::g::Uno::Float2 min = MinPosition();
@@ -789,19 +813,26 @@ void BasicBoundedRegion2D::ctor_()
     return over;
 }
 
-// internal Fuse.Motion.Simulation.DestinationSimulation<float2> get_DestinationSimulation() [instance] :293
+// public float2 get_Destination() [instance] :183
+::g::Uno::Float2 BasicBoundedRegion2D::Destination()
+{
+    ::g::Uno::Float2 ret11;
+    return (::g::Fuse::Motion::Simulation::DestinationSimulation::get_Destination_ex(uInterface(uPtr(_destination), ::TYPES[1/*Fuse.Motion.Simulation.DestinationSimulation`1*/]->MakeType(::g::Uno::Float2_typeof(), NULL)), &ret11), ret11);
+}
+
+// internal Fuse.Motion.Simulation.DestinationSimulation<float2> get_DestinationSimulation() [instance] :144
 uObject* BasicBoundedRegion2D::DestinationSimulation()
 {
     return _destination;
 }
 
-// internal void set_DestinationSimulation(Fuse.Motion.Simulation.DestinationSimulation<float2> value) [instance] :294
+// internal void set_DestinationSimulation(Fuse.Motion.Simulation.DestinationSimulation<float2> value) [instance] :145
 void BasicBoundedRegion2D::DestinationSimulation(uObject* value)
 {
     _destination = value;
 }
 
-// public void EndUser([float2 velocity]) [instance] :275
+// public void EndUser([float2 velocity]) [instance] :121
 void BasicBoundedRegion2D::EndUser(::g::Uno::Float2 velocity)
 {
     if (!IsUser())
@@ -811,37 +842,37 @@ void BasicBoundedRegion2D::EndUser(::g::Uno::Float2 velocity)
     _moveMode = 2;
 }
 
-// internal Fuse.Motion.Simulation.MotionSimulation<float2> get_FrictionSimulation() [instance] :354
+// internal Fuse.Motion.Simulation.MotionSimulation<float2> get_FrictionSimulation() [instance] :229
 uObject* BasicBoundedRegion2D::FrictionSimulation()
 {
     return _friction;
 }
 
-// internal void set_FrictionSimulation(Fuse.Motion.Simulation.MotionSimulation<float2> value) [instance] :355
+// internal void set_FrictionSimulation(Fuse.Motion.Simulation.MotionSimulation<float2> value) [instance] :230
 void BasicBoundedRegion2D::FrictionSimulation(uObject* value)
 {
     _friction = value;
 }
 
-// public bool get_IsStatic() [instance] :313
+// public bool get_IsStatic() [instance] :188
 bool BasicBoundedRegion2D::IsStatic()
 {
     return (_moveMode == 0) || (_moveMode == 1);
 }
 
-// public bool get_IsUser() [instance] :285
+// public bool get_IsUser() [instance] :131
 bool BasicBoundedRegion2D::IsUser()
 {
     return _moveMode == 1;
 }
 
-// public float2 get_MaxPosition() [instance] :239
+// public float2 get_MaxPosition() [instance] :85
 ::g::Uno::Float2 BasicBoundedRegion2D::MaxPosition()
 {
     return _maxPosition;
 }
 
-// public void set_MaxPosition(float2 value) [instance] :240
+// public void set_MaxPosition(float2 value) [instance] :86
 void BasicBoundedRegion2D::MaxPosition(::g::Uno::Float2 value)
 {
     ::g::Uno::Float2 ret12;
@@ -852,44 +883,44 @@ void BasicBoundedRegion2D::MaxPosition(::g::Uno::Float2 value)
     _maxPosition = value;
 
     if (_moveMode == 4)
-        ::g::Fuse::Motion::Simulation::DestinationSimulation::set_Destination_ex(uInterface(uPtr(_destination), ::TYPES[7/*Fuse.Motion.Simulation.DestinationSimulation<float2>*/]), uCRef(::g::Uno::Math::Clamp3((::g::Fuse::Motion::Simulation::DestinationSimulation::get_Destination_ex(uInterface(uPtr(_destination), ::TYPES[7/*Fuse.Motion.Simulation.DestinationSimulation<float2>*/]), &ret12), ret12), MinPosition(), MaxPosition())));
+        ::g::Fuse::Motion::Simulation::DestinationSimulation::set_Destination_ex(uInterface(uPtr(_destination), ::TYPES[1/*Fuse.Motion.Simulation.DestinationSimulation`1*/]->MakeType(::g::Uno::Float2_typeof(), NULL)), uCRef(::g::Uno::Math::Clamp3((::g::Fuse::Motion::Simulation::DestinationSimulation::get_Destination_ex(uInterface(uPtr(_destination), ::TYPES[1/*Fuse.Motion.Simulation.DestinationSimulation`1*/]->MakeType(::g::Uno::Float2_typeof(), NULL)), &ret12), ret12), MinPosition(), MaxPosition())));
 }
 
-// public float2 get_MinPosition() [instance] :254
+// public float2 get_MinPosition() [instance] :100
 ::g::Uno::Float2 BasicBoundedRegion2D::MinPosition()
 {
     return _minPosition;
 }
 
-// public void set_MinPosition(float2 value) [instance] :255
+// public void set_MinPosition(float2 value) [instance] :101
 void BasicBoundedRegion2D::MinPosition(::g::Uno::Float2 value)
 {
     _minPosition = value;
 }
 
-// private void MoveDestination(double elapsed) [instance] :498
+// private void MoveDestination(double elapsed) [instance] :373
 void BasicBoundedRegion2D::MoveDestination(double elapsed)
 {
     ::g::Uno::Float2 ret2;
     ::g::Uno::Float2 ret3;
-    ::g::Fuse::Motion::Simulation::MotionSimulation::set_Position_ex(uInterface(uPtr(_destination), ::TYPES[6/*Fuse.Motion.Simulation.MotionSimulation<float2>*/]), uCRef(Position()));
-    ::g::Fuse::Motion::Simulation::MotionSimulation::set_Velocity_ex(uInterface(uPtr(_destination), ::TYPES[6/*Fuse.Motion.Simulation.MotionSimulation<float2>*/]), uCRef(Velocity()));
+    ::g::Fuse::Motion::Simulation::MotionSimulation::set_Position_ex(uInterface(uPtr(_destination), ::TYPES[3/*Fuse.Motion.Simulation.MotionSimulation`1*/]->MakeType(::g::Uno::Float2_typeof(), NULL)), uCRef(Position()));
+    ::g::Fuse::Motion::Simulation::MotionSimulation::set_Velocity_ex(uInterface(uPtr(_destination), ::TYPES[3/*Fuse.Motion.Simulation.MotionSimulation`1*/]->MakeType(::g::Uno::Float2_typeof(), NULL)), uCRef(Velocity()));
     ::g::Fuse::Motion::Simulation::Simulation::Update(uInterface(uPtr(_destination), ::TYPES[2/*Fuse.Motion.Simulation.Simulation*/]), elapsed);
-    SnapSetPositionVelocity((::g::Fuse::Motion::Simulation::MotionSimulation::get_Position_ex(uInterface(uPtr(_destination), ::TYPES[6/*Fuse.Motion.Simulation.MotionSimulation<float2>*/]), &ret2), ret2), (::g::Fuse::Motion::Simulation::MotionSimulation::get_Velocity_ex(uInterface(uPtr(_destination), ::TYPES[6/*Fuse.Motion.Simulation.MotionSimulation<float2>*/]), &ret3), ret3));
+    SnapSetPositionVelocity((::g::Fuse::Motion::Simulation::MotionSimulation::get_Position_ex(uInterface(uPtr(_destination), ::TYPES[3/*Fuse.Motion.Simulation.MotionSimulation`1*/]->MakeType(::g::Uno::Float2_typeof(), NULL)), &ret2), ret2), (::g::Fuse::Motion::Simulation::MotionSimulation::get_Velocity_ex(uInterface(uPtr(_destination), ::TYPES[3/*Fuse.Motion.Simulation.MotionSimulation`1*/]->MakeType(::g::Uno::Float2_typeof(), NULL)), &ret3), ret3));
 
     if (::g::Fuse::Motion::Simulation::Simulation::IsStatic(uInterface(uPtr(_destination), ::TYPES[2/*Fuse.Motion.Simulation.Simulation*/])))
         _moveMode = 0;
 }
 
-// private void MoveFriction(double elapsed) [instance] :357
+// private void MoveFriction(double elapsed) [instance] :232
 void BasicBoundedRegion2D::MoveFriction(double elapsed)
 {
     ::g::Uno::Float2 ret4;
     ::g::Uno::Float2 ret5;
-    ::g::Fuse::Motion::Simulation::MotionSimulation::set_Velocity_ex(uInterface(uPtr(_friction), ::TYPES[6/*Fuse.Motion.Simulation.MotionSimulation<float2>*/]), uCRef(_velocity));
-    ::g::Fuse::Motion::Simulation::MotionSimulation::set_Position_ex(uInterface(uPtr(_friction), ::TYPES[6/*Fuse.Motion.Simulation.MotionSimulation<float2>*/]), uCRef(Position()));
+    ::g::Fuse::Motion::Simulation::MotionSimulation::set_Velocity_ex(uInterface(uPtr(_friction), ::TYPES[3/*Fuse.Motion.Simulation.MotionSimulation`1*/]->MakeType(::g::Uno::Float2_typeof(), NULL)), uCRef(_velocity));
+    ::g::Fuse::Motion::Simulation::MotionSimulation::set_Position_ex(uInterface(uPtr(_friction), ::TYPES[3/*Fuse.Motion.Simulation.MotionSimulation`1*/]->MakeType(::g::Uno::Float2_typeof(), NULL)), uCRef(Position()));
     ::g::Fuse::Motion::Simulation::Simulation::Update(uInterface(uPtr(_friction), ::TYPES[2/*Fuse.Motion.Simulation.Simulation*/]), elapsed);
-    SnapSetPositionVelocity((::g::Fuse::Motion::Simulation::MotionSimulation::get_Position_ex(uInterface(uPtr(_friction), ::TYPES[6/*Fuse.Motion.Simulation.MotionSimulation<float2>*/]), &ret4), ret4), (::g::Fuse::Motion::Simulation::MotionSimulation::get_Velocity_ex(uInterface(uPtr(_friction), ::TYPES[6/*Fuse.Motion.Simulation.MotionSimulation<float2>*/]), &ret5), ret5));
+    SnapSetPositionVelocity((::g::Fuse::Motion::Simulation::MotionSimulation::get_Position_ex(uInterface(uPtr(_friction), ::TYPES[3/*Fuse.Motion.Simulation.MotionSimulation`1*/]->MakeType(::g::Uno::Float2_typeof(), NULL)), &ret4), ret4), (::g::Fuse::Motion::Simulation::MotionSimulation::get_Velocity_ex(uInterface(uPtr(_friction), ::TYPES[3/*Fuse.Motion.Simulation.MotionSimulation`1*/]->MakeType(::g::Uno::Float2_typeof(), NULL)), &ret5), ret5));
 
     if (::g::Fuse::Motion::Simulation::Simulation::IsStatic(uInterface(uPtr(_friction), ::TYPES[2/*Fuse.Motion.Simulation.Simulation*/])))
     {
@@ -900,7 +931,7 @@ void BasicBoundedRegion2D::MoveFriction(double elapsed)
     MoveSnap(elapsed, ::g::Uno::Math::Abs1(_velocity.X) < 1e-05f, ::g::Uno::Math::Abs1(_velocity.Y) < 1e-05f);
 }
 
-// private bool MoveSnap(double elapsed, [bool X], [bool Y]) [instance] :464
+// private bool MoveSnap(double elapsed, [bool X], [bool Y]) [instance] :339
 bool BasicBoundedRegion2D::MoveSnap(double elapsed, bool X, bool Y)
 {
     ::g::Uno::Float2 ret6;
@@ -914,24 +945,24 @@ bool BasicBoundedRegion2D::MoveSnap(double elapsed, bool X, bool Y)
     if (off <= 0.0f)
         return true;
 
-    ::g::Fuse::Motion::Simulation::MotionSimulation::set_Position_ex(uInterface(uPtr(_snap), ::TYPES[6/*Fuse.Motion.Simulation.MotionSimulation<float2>*/]), uCRef(Position()));
-    ::g::Fuse::Motion::Simulation::MotionSimulation::set_Velocity_ex(uInterface(uPtr(_snap), ::TYPES[6/*Fuse.Motion.Simulation.MotionSimulation<float2>*/]), uCRef(Velocity()));
-    ::g::Fuse::Motion::Simulation::DestinationSimulation::set_Destination_ex(uInterface(uPtr(_snap), ::TYPES[7/*Fuse.Motion.Simulation.DestinationSimulation<float2>*/]), uCRef(::g::Uno::Float2__op_Subtraction2(Position(), over)));
+    ::g::Fuse::Motion::Simulation::MotionSimulation::set_Position_ex(uInterface(uPtr(_snap), ::TYPES[3/*Fuse.Motion.Simulation.MotionSimulation`1*/]->MakeType(::g::Uno::Float2_typeof(), NULL)), uCRef(Position()));
+    ::g::Fuse::Motion::Simulation::MotionSimulation::set_Velocity_ex(uInterface(uPtr(_snap), ::TYPES[3/*Fuse.Motion.Simulation.MotionSimulation`1*/]->MakeType(::g::Uno::Float2_typeof(), NULL)), uCRef(Velocity()));
+    ::g::Fuse::Motion::Simulation::DestinationSimulation::set_Destination_ex(uInterface(uPtr(_snap), ::TYPES[1/*Fuse.Motion.Simulation.DestinationSimulation`1*/]->MakeType(::g::Uno::Float2_typeof(), NULL)), uCRef(::g::Uno::Float2__op_Subtraction2(Position(), over)));
     ::g::Fuse::Motion::Simulation::Simulation::Update(uInterface(uPtr(_snap), ::TYPES[2/*Fuse.Motion.Simulation.Simulation*/]), elapsed);
-    Position((::g::Fuse::Motion::Simulation::MotionSimulation::get_Position_ex(uInterface(uPtr(_snap), ::TYPES[6/*Fuse.Motion.Simulation.MotionSimulation<float2>*/]), &ret6), ret6));
+    Position((::g::Fuse::Motion::Simulation::MotionSimulation::get_Position_ex(uInterface(uPtr(_snap), ::TYPES[3/*Fuse.Motion.Simulation.MotionSimulation`1*/]->MakeType(::g::Uno::Float2_typeof(), NULL)), &ret6), ret6));
     ::g::Uno::Float2 nv = Velocity();
     ::g::Uno::Float2 np = Position();
 
     if (X)
     {
-        nv.X = (::g::Fuse::Motion::Simulation::MotionSimulation::get_Velocity_ex(uInterface(uPtr(_snap), ::TYPES[6/*Fuse.Motion.Simulation.MotionSimulation<float2>*/]), &ret7), ret7).X;
-        np.X = (::g::Fuse::Motion::Simulation::MotionSimulation::get_Position_ex(uInterface(uPtr(_snap), ::TYPES[6/*Fuse.Motion.Simulation.MotionSimulation<float2>*/]), &ret8), ret8).X;
+        nv.X = (::g::Fuse::Motion::Simulation::MotionSimulation::get_Velocity_ex(uInterface(uPtr(_snap), ::TYPES[3/*Fuse.Motion.Simulation.MotionSimulation`1*/]->MakeType(::g::Uno::Float2_typeof(), NULL)), &ret7), ret7).X;
+        np.X = (::g::Fuse::Motion::Simulation::MotionSimulation::get_Position_ex(uInterface(uPtr(_snap), ::TYPES[3/*Fuse.Motion.Simulation.MotionSimulation`1*/]->MakeType(::g::Uno::Float2_typeof(), NULL)), &ret8), ret8).X;
     }
 
     if (Y)
     {
-        nv.Y = (::g::Fuse::Motion::Simulation::MotionSimulation::get_Velocity_ex(uInterface(uPtr(_snap), ::TYPES[6/*Fuse.Motion.Simulation.MotionSimulation<float2>*/]), &ret9), ret9).Y;
-        np.Y = (::g::Fuse::Motion::Simulation::MotionSimulation::get_Position_ex(uInterface(uPtr(_snap), ::TYPES[6/*Fuse.Motion.Simulation.MotionSimulation<float2>*/]), &ret10), ret10).Y;
+        nv.Y = (::g::Fuse::Motion::Simulation::MotionSimulation::get_Velocity_ex(uInterface(uPtr(_snap), ::TYPES[3/*Fuse.Motion.Simulation.MotionSimulation`1*/]->MakeType(::g::Uno::Float2_typeof(), NULL)), &ret9), ret9).Y;
+        np.Y = (::g::Fuse::Motion::Simulation::MotionSimulation::get_Position_ex(uInterface(uPtr(_snap), ::TYPES[3/*Fuse.Motion.Simulation.MotionSimulation`1*/]->MakeType(::g::Uno::Float2_typeof(), NULL)), &ret10), ret10).Y;
     }
 
     Velocity(nv);
@@ -939,61 +970,61 @@ bool BasicBoundedRegion2D::MoveSnap(double elapsed, bool X, bool Y)
     return ::g::Fuse::Motion::Simulation::Simulation::IsStatic(uInterface(uPtr(_snap), ::TYPES[2/*Fuse.Motion.Simulation.Simulation*/]));
 }
 
-// public void MoveTo(float2 target) [instance] :297
+// public void MoveTo(float2 target) [instance] :172
 void BasicBoundedRegion2D::MoveTo(::g::Uno::Float2 target)
 {
-    ::g::Fuse::Motion::Simulation::DestinationSimulation::set_Destination_ex(uInterface(uPtr(_destination), ::TYPES[7/*Fuse.Motion.Simulation.DestinationSimulation<float2>*/]), uCRef(::g::Uno::Math::Clamp3(target, MinPosition(), MaxPosition())));
-    ::g::Fuse::Motion::Simulation::MotionSimulation::set_Position_ex(uInterface(uPtr(_destination), ::TYPES[6/*Fuse.Motion.Simulation.MotionSimulation<float2>*/]), uCRef(Position()));
-    ::g::Fuse::Motion::Simulation::MotionSimulation::set_Velocity_ex(uInterface(uPtr(_destination), ::TYPES[6/*Fuse.Motion.Simulation.MotionSimulation<float2>*/]), uCRef(Velocity()));
-    ::g::Fuse::Motion::Simulation::DestinationSimulation::Start(uInterface(uPtr(_destination), ::TYPES[7/*Fuse.Motion.Simulation.DestinationSimulation<float2>*/]));
+    ::g::Fuse::Motion::Simulation::DestinationSimulation::set_Destination_ex(uInterface(uPtr(_destination), ::TYPES[1/*Fuse.Motion.Simulation.DestinationSimulation`1*/]->MakeType(::g::Uno::Float2_typeof(), NULL)), uCRef(::g::Uno::Math::Clamp3(target, MinPosition(), MaxPosition())));
+    ::g::Fuse::Motion::Simulation::MotionSimulation::set_Position_ex(uInterface(uPtr(_destination), ::TYPES[3/*Fuse.Motion.Simulation.MotionSimulation`1*/]->MakeType(::g::Uno::Float2_typeof(), NULL)), uCRef(Position()));
+    ::g::Fuse::Motion::Simulation::MotionSimulation::set_Velocity_ex(uInterface(uPtr(_destination), ::TYPES[3/*Fuse.Motion.Simulation.MotionSimulation`1*/]->MakeType(::g::Uno::Float2_typeof(), NULL)), uCRef(Velocity()));
+    ::g::Fuse::Motion::Simulation::DestinationSimulation::Start(uInterface(uPtr(_destination), ::TYPES[1/*Fuse.Motion.Simulation.DestinationSimulation`1*/]->MakeType(::g::Uno::Float2_typeof(), NULL)));
     _moveMode = 4;
 }
 
-// public Fuse.Motion.OverflowType get_Overflow() [instance] :532
+// public Fuse.Motion.OverflowType get_Overflow() [instance] :407
 int BasicBoundedRegion2D::Overflow()
 {
     return _overflow;
 }
 
-// public void set_Overflow(Fuse.Motion.OverflowType value) [instance] :533
+// public void set_Overflow(Fuse.Motion.OverflowType value) [instance] :408
 void BasicBoundedRegion2D::Overflow(int value)
 {
     _overflow = value;
 }
 
-// public float2 get_OverflowExtent() [instance] :261
+// public float2 get_OverflowExtent() [instance] :107
 ::g::Uno::Float2 BasicBoundedRegion2D::OverflowExtent()
 {
     return _overflowExtent;
 }
 
-// public void set_OverflowExtent(float2 value) [instance] :262
+// public void set_OverflowExtent(float2 value) [instance] :108
 void BasicBoundedRegion2D::OverflowExtent(::g::Uno::Float2 value)
 {
     _overflowExtent = value;
 }
 
-// public generated float2 get_Position() [instance] :288
+// public generated float2 get_Position() [instance] :139
 ::g::Uno::Float2 BasicBoundedRegion2D::Position()
 {
     return _Position;
 }
 
-// public generated void set_Position(float2 value) [instance] :288
+// public generated void set_Position(float2 value) [instance] :139
 void BasicBoundedRegion2D::Position(::g::Uno::Float2 value)
 {
     _Position = value;
 }
 
-// public void Reset(float2 position) [instance] :219
+// public void Reset(float2 position) [instance] :65
 void BasicBoundedRegion2D::Reset(::g::Uno::Float2 position)
 {
-    ::g::Fuse::Motion::Simulation::DestinationSimulation::Reset_ex(uInterface(uPtr(_destination), ::TYPES[7/*Fuse.Motion.Simulation.DestinationSimulation<float2>*/]), uCRef(position));
-    ::g::Fuse::Motion::Simulation::DestinationSimulation::Reset_ex(uInterface(uPtr(_snap), ::TYPES[7/*Fuse.Motion.Simulation.DestinationSimulation<float2>*/]), uCRef(position));
+    ::g::Fuse::Motion::Simulation::DestinationSimulation::Reset_ex(uInterface(uPtr(_destination), ::TYPES[1/*Fuse.Motion.Simulation.DestinationSimulation`1*/]->MakeType(::g::Uno::Float2_typeof(), NULL)), uCRef(position));
+    ::g::Fuse::Motion::Simulation::DestinationSimulation::Reset_ex(uInterface(uPtr(_snap), ::TYPES[1/*Fuse.Motion.Simulation.DestinationSimulation`1*/]->MakeType(::g::Uno::Float2_typeof(), NULL)), uCRef(position));
     _moveMode = 0;
 }
 
-// private float2 SnapPosition(float2 prev, float2 next) [instance] :384
+// private float2 SnapPosition(float2 prev, float2 next) [instance] :259
 ::g::Uno::Float2 BasicBoundedRegion2D::SnapPosition(::g::Uno::Float2 prev, ::g::Uno::Float2 next)
 {
     switch (Overflow())
@@ -1027,26 +1058,26 @@ void BasicBoundedRegion2D::Reset(::g::Uno::Float2 position)
     return next;
 }
 
-// private void SnapSetPositionVelocity(float2 nextPosition, float2 nextVelocity) [instance] :377
+// private void SnapSetPositionVelocity(float2 nextPosition, float2 nextVelocity) [instance] :252
 void BasicBoundedRegion2D::SnapSetPositionVelocity(::g::Uno::Float2 nextPosition, ::g::Uno::Float2 nextVelocity)
 {
     Velocity(SnapVelocity(nextPosition, nextVelocity));
     Position(SnapPosition(Position(), nextPosition));
 }
 
-// internal Fuse.Motion.Simulation.DestinationSimulation<float2> get_SnapSimulation() [instance] :460
+// internal Fuse.Motion.Simulation.DestinationSimulation<float2> get_SnapSimulation() [instance] :335
 uObject* BasicBoundedRegion2D::SnapSimulation()
 {
     return _snap;
 }
 
-// internal void set_SnapSimulation(Fuse.Motion.Simulation.DestinationSimulation<float2> value) [instance] :461
+// internal void set_SnapSimulation(Fuse.Motion.Simulation.DestinationSimulation<float2> value) [instance] :336
 void BasicBoundedRegion2D::SnapSimulation(uObject* value)
 {
     _snap = value;
 }
 
-// private float2 SnapVelocity(float2 position, float2 v) [instance] :419
+// private float2 SnapVelocity(float2 position, float2 v) [instance] :294
 ::g::Uno::Float2 BasicBoundedRegion2D::SnapVelocity(::g::Uno::Float2 position, ::g::Uno::Float2 v)
 {
     ::g::Uno::Float2 over = CalcOver(position);
@@ -1086,19 +1117,19 @@ void BasicBoundedRegion2D::SnapSimulation(uObject* value)
     return v;
 }
 
-// public void StartUser() [instance] :265
+// public void StartUser() [instance] :111
 void BasicBoundedRegion2D::StartUser()
 {
     _moveMode = 1;
 }
 
-// public void StepUser(float2 inOffset) [instance] :270
+// public void StepUser(float2 inOffset) [instance] :116
 void BasicBoundedRegion2D::StepUser(::g::Uno::Float2 inOffset)
 {
     Position(SnapPosition(Position(), ::g::Uno::Float2__op_Addition2(inOffset, Position())));
 }
 
-// public void Update(double elapsed) [instance] :316
+// public void Update(double elapsed) [instance] :191
 void BasicBoundedRegion2D::Update(double elapsed)
 {
     switch (_moveMode)
@@ -1126,13 +1157,13 @@ void BasicBoundedRegion2D::Update(double elapsed)
     }
 }
 
-// public float2 get_Velocity() [instance] :342
+// public float2 get_Velocity() [instance] :217
 ::g::Uno::Float2 BasicBoundedRegion2D::Velocity()
 {
     return _velocity;
 }
 
-// public void set_Velocity(float2 value) [instance] :343
+// public void set_Velocity(float2 value) [instance] :218
 void BasicBoundedRegion2D::Velocity(::g::Uno::Float2 value)
 {
     _velocity = value;
@@ -1141,7 +1172,7 @@ void BasicBoundedRegion2D::Velocity(::g::Uno::Float2 value)
         _moveMode = 2;
 }
 
-// internal BasicBoundedRegion2D New() [static] :215
+// internal BasicBoundedRegion2D New() [static] :61
 BasicBoundedRegion2D* BasicBoundedRegion2D::New1()
 {
     BasicBoundedRegion2D* obj1 = (BasicBoundedRegion2D*)uNew(BasicBoundedRegion2D_typeof());
@@ -1150,10 +1181,10 @@ BasicBoundedRegion2D* BasicBoundedRegion2D::New1()
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Motion/1.2.1/simulation/$.uno
-// ----------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Motion\1.3.0-rc2\Simulation\BoundedRegion2D.uno
+// ------------------------------------------------------------------------------------------------
 
-// internal abstract interface BoundedRegion2D :164
+// internal abstract interface BoundedRegion2D :7
 // {
 uInterfaceType* BoundedRegion2D_typeof()
 {
@@ -1165,10 +1196,10 @@ uInterfaceType* BoundedRegion2D_typeof()
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Motion/1.2.1/simulation/$.uno
-// ----------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Motion\1.3.0-rc2\Simulation\Simulation.uno
+// -------------------------------------------------------------------------------------------
 
-// internal abstract interface DestinationSimulation<T> :1332
+// internal abstract interface DestinationSimulation<T> :25
 // {
 uInterfaceType* DestinationSimulation_typeof()
 {
@@ -1180,39 +1211,41 @@ uInterfaceType* DestinationSimulation_typeof()
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Motion/1.2.1/simulation/$.uno
-// ----------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Motion\1.3.0-rc2\Simulation\EasingMotion.uno
+// ---------------------------------------------------------------------------------------------
 
-// internal sealed class EasingMotion<T> :547
+// internal sealed class EasingMotion<T> :7
 // {
 static void EasingMotion_build(uType* type)
 {
     ::STRINGS[0] = uString::Const("Unsupported unit type: ");
     ::TYPES[0] = ::g::Fuse::Internal::BlenderMap_typeof();
+    type->SetDependencies(
+        ::g::Fuse::Animations::Easing_typeof(),
+        ::g::Fuse::Internal::BlenderMap_typeof()->MakeMethod(0/*Get<T>*/, type->T(0), NULL));
     type->SetPrecalc(
-        ::g::Fuse::Internal::BlenderMap_typeof()->MakeMethod(0/*Get<T>*/, type->T(0), NULL),
-        type->T(0));
+        ::g::Fuse::Internal::BlenderMap_typeof()->MakeMethod(0/*Get<T>*/, type->T(0), NULL));
     type->SetInterfaces(
         ::g::Fuse::Motion::Simulation::DestinationSimulation_typeof()->MakeType(type->T(0), NULL), offsetof(EasingMotion_type, interface0),
         ::g::Fuse::Motion::Simulation::MotionSimulation_typeof()->MakeType(type->T(0), NULL), offsetof(EasingMotion_type, interface1),
         ::g::Fuse::Motion::Simulation::Simulation_typeof(), offsetof(EasingMotion_type, interface2));
     type->SetFields(0,
-        ::g::Fuse::Internal::Blender_typeof()->MakeType(type->T(0), NULL), offsetof(::g::Fuse::Motion::Simulation::EasingMotion, _blender), 0,
+        ::g::Fuse::Internal::Blender_typeof()->MakeType(type->T(0), NULL), offsetof(EasingMotion, _blender), 0,
         type->T(0), (uintptr_t)0, uFieldFlagsConstrained,
-        ::g::Uno::Float_typeof(), offsetof(::g::Fuse::Motion::Simulation::EasingMotion, _duration), 0,
-        ::g::Uno::Float_typeof(), offsetof(::g::Fuse::Motion::Simulation::EasingMotion, _durationExp), 0,
-        ::g::Fuse::Animations::Easing_typeof(), offsetof(::g::Fuse::Motion::Simulation::EasingMotion, _easing), 0,
-        ::g::Uno::Bool_typeof(), offsetof(::g::Fuse::Motion::Simulation::EasingMotion, _isDirty), 0,
-        ::g::Uno::Bool_typeof(), offsetof(::g::Fuse::Motion::Simulation::EasingMotion, _isLocked), 0,
-        ::g::Uno::Bool_typeof(), offsetof(::g::Fuse::Motion::Simulation::EasingMotion, _isStatic), 0,
-        ::g::Uno::Float_typeof(), offsetof(::g::Fuse::Motion::Simulation::EasingMotion, _nominalDistance), 0,
+        ::g::Uno::Float_typeof(), offsetof(EasingMotion, _duration), 0,
+        ::g::Uno::Float_typeof(), offsetof(EasingMotion, _durationExp), 0,
+        ::g::Fuse::Animations::Easing_typeof(), offsetof(EasingMotion, _easing), 0,
+        ::g::Uno::Bool_typeof(), offsetof(EasingMotion, _isDirty), 0,
+        ::g::Uno::Bool_typeof(), offsetof(EasingMotion, _isLocked), 0,
+        ::g::Uno::Bool_typeof(), offsetof(EasingMotion, _isStatic), 0,
+        ::g::Uno::Float_typeof(), offsetof(EasingMotion, _nominalDistance), 0,
         type->T(0), (uintptr_t)0, uFieldFlagsConstrained,
-        ::g::Uno::Double_typeof(), offsetof(::g::Fuse::Motion::Simulation::EasingMotion, _progress), 0,
-        ::g::Uno::Double_typeof(), offsetof(::g::Fuse::Motion::Simulation::EasingMotion, _progressSpeed), 0,
+        ::g::Uno::Double_typeof(), offsetof(EasingMotion, _progress), 0,
+        ::g::Uno::Double_typeof(), offsetof(EasingMotion, _progressSpeed), 0,
         type->T(0), (uintptr_t)0, uFieldFlagsConstrained,
         type->T(0), (uintptr_t)0, uFieldFlagsConstrained,
-        ::g::Uno::Double_typeof(), offsetof(::g::Fuse::Motion::Simulation::EasingMotion, _transitionRemain), 0,
-        ::g::Uno::Double_typeof(), offsetof(::g::Fuse::Motion::Simulation::EasingMotion, _transitionTime), 0,
+        ::g::Uno::Double_typeof(), offsetof(EasingMotion, _transitionRemain), 0,
+        ::g::Uno::Double_typeof(), offsetof(EasingMotion, _transitionTime), 0,
         type->T(0), (uintptr_t)0, uFieldFlagsConstrained,
         type->T(0), (uintptr_t)0, uFieldFlagsConstrained);
 }
@@ -1226,7 +1259,8 @@ EasingMotion_type* EasingMotion_typeof()
     options.FieldCount = 18;
     options.GenericCount = 1;
     options.InterfaceCount = 3;
-    options.PrecalcCount = 2;
+    options.DependencyCount = 2;
+    options.PrecalcCount = 1;
     options.ObjectSize = sizeof(EasingMotion);
     options.TypeSize = sizeof(EasingMotion_type);
     type = (EasingMotion_type*)uClassType::New("Fuse.Motion.Simulation.EasingMotion`1", options);
@@ -1245,43 +1279,43 @@ EasingMotion_type* EasingMotion_typeof()
     return type;
 }
 
-// public generated EasingMotion() :547
+// public generated EasingMotion() :7
 void EasingMotion__ctor__fn(EasingMotion* __this)
 {
     __this->ctor_();
 }
 
-// public static Fuse.Motion.Simulation.EasingMotion<T> CreateNormalized() :552
+// public static Fuse.Motion.Simulation.EasingMotion<T> CreateNormalized() :12
 void EasingMotion__CreateNormalized_fn(uType* __type, EasingMotion** __retval)
 {
     *__retval = EasingMotion::CreateNormalized(__type);
 }
 
-// public static Fuse.Motion.Simulation.EasingMotion<T> CreatePoints() :566
+// public static Fuse.Motion.Simulation.EasingMotion<T> CreatePoints() :26
 void EasingMotion__CreatePoints_fn(uType* __type, EasingMotion** __retval)
 {
     *__retval = EasingMotion::CreatePoints(__type);
 }
 
-// public static Fuse.Motion.Simulation.EasingMotion<T> CreateRadians() :559
+// public static Fuse.Motion.Simulation.EasingMotion<T> CreateRadians() :19
 void EasingMotion__CreateRadians_fn(uType* __type, EasingMotion** __retval)
 {
     *__retval = EasingMotion::CreateRadians(__type);
 }
 
-// public static Fuse.Motion.Simulation.EasingMotion<T> CreateUnit(Fuse.Motion.MotionUnit unit) :573
+// public static Fuse.Motion.Simulation.EasingMotion<T> CreateUnit(Fuse.Motion.MotionUnit unit) :33
 void EasingMotion__CreateUnit_fn(uType* __type, int* unit, EasingMotion** __retval)
 {
     *__retval = EasingMotion::CreateUnit(__type, *unit);
 }
 
-// public T get_Destination() :684
+// public T get_Destination() :144
 void EasingMotion__get_Destination_fn(EasingMotion* __this, uTRef __retval)
 {
     return __retval.Store(__this->_destination()), void();
 }
 
-// public void set_Destination(T value) :685
+// public void set_Destination(T value) :145
 void EasingMotion__set_Destination_fn(EasingMotion* __this, void* value)
 {
     double ret21;
@@ -1292,73 +1326,73 @@ void EasingMotion__set_Destination_fn(EasingMotion* __this, void* value)
     __this->_destination() = value;
 }
 
-// public float get_Duration() :753
+// public float get_Duration() :213
 void EasingMotion__get_Duration_fn(EasingMotion* __this, float* __retval)
 {
     *__retval = __this->Duration();
 }
 
-// public void set_Duration(float value) :754
+// public void set_Duration(float value) :214
 void EasingMotion__set_Duration_fn(EasingMotion* __this, float* value)
 {
     __this->Duration(*value);
 }
 
-// public float get_DurationExp() :760
+// public float get_DurationExp() :220
 void EasingMotion__get_DurationExp_fn(EasingMotion* __this, float* __retval)
 {
     *__retval = __this->DurationExp();
 }
 
-// public void set_DurationExp(float value) :761
+// public void set_DurationExp(float value) :221
 void EasingMotion__set_DurationExp_fn(EasingMotion* __this, float* value)
 {
     __this->DurationExp(*value);
 }
 
-// public Fuse.Animations.Easing get_Easing() :595
+// public Fuse.Animations.Easing get_Easing() :55
 void EasingMotion__get_Easing_fn(EasingMotion* __this, ::g::Fuse::Animations::Easing** __retval)
 {
     *__retval = __this->Easing();
 }
 
-// public void set_Easing(Fuse.Animations.Easing value) :596
+// public void set_Easing(Fuse.Animations.Easing value) :56
 void EasingMotion__set_Easing_fn(EasingMotion* __this, ::g::Fuse::Animations::Easing* value)
 {
     __this->Easing(value);
 }
 
-// public bool get_IsStatic() :588
+// public bool get_IsStatic() :48
 void EasingMotion__get_IsStatic_fn(EasingMotion* __this, bool* __retval)
 {
     *__retval = __this->IsStatic();
 }
 
-// public generated EasingMotion New() :547
+// public generated EasingMotion New() :7
 void EasingMotion__New1_fn(uType* __type, EasingMotion** __retval)
 {
     *__retval = EasingMotion::New1(__type);
 }
 
-// public float get_NominalDistance() :767
+// public float get_NominalDistance() :227
 void EasingMotion__get_NominalDistance_fn(EasingMotion* __this, float* __retval)
 {
     *__retval = __this->NominalDistance();
 }
 
-// public void set_NominalDistance(float value) :768
+// public void set_NominalDistance(float value) :228
 void EasingMotion__set_NominalDistance_fn(EasingMotion* __this, float* value)
 {
     __this->NominalDistance(*value);
 }
 
-// public T get_Position() :660
+// public T get_Position() :120
 void EasingMotion__get_Position_fn(EasingMotion* __this, uTRef __retval)
 {
     return __retval.Store(__this->_position()), void();
 }
 
-// public void set_Position(T value) :661
+// public void set_Position(T value) :121
 void EasingMotion__set_Position_fn(EasingMotion* __this, void* value)
 {
     double ret22;
@@ -1369,13 +1403,10 @@ void EasingMotion__set_Position_fn(EasingMotion* __this, void* value)
     __this->_position() = value;
 }
 
-// public void Reset(T destination) :771
+// public void Reset(T destination) :231
 void EasingMotion__Reset_fn(EasingMotion* __this, void* destination)
 {
-    uType* __types[] = {
-        __this->__type->Precalced(1/*T*/),
-    };
-    uT ret2(__types[0], U_ALLOCA(__types[0]->ValueSize));
+    uT ret2(__this->__type->T(0), U_ALLOCA(__this->__type->T(0)->ValueSize));
     __this->_position() = destination;
     __this->_destination() = destination;
     __this->_velocity() = (uPtr(__this->_blender)->get_Zero_ex(&ret2), ret2);
@@ -1383,31 +1414,31 @@ void EasingMotion__Reset_fn(EasingMotion* __this, void* destination)
     __this->_isDirty = false;
 }
 
-// public void Start() :693
+// public void Start() :153
 void EasingMotion__Start_fn(EasingMotion* __this)
 {
     __this->Start();
 }
 
-// public void Update(double elapsed) :613
+// public void Update(double elapsed) :73
 void EasingMotion__Update_fn(EasingMotion* __this, double* elapsed)
 {
     __this->Update(*elapsed);
 }
 
-// private void UpdateDestination(bool start) :699
+// private void UpdateDestination(bool start) :159
 void EasingMotion__UpdateDestination_fn(EasingMotion* __this, bool* start)
 {
     __this->UpdateDestination(*start);
 }
 
-// public T get_Velocity() :672
+// public T get_Velocity() :132
 void EasingMotion__get_Velocity_fn(EasingMotion* __this, uTRef __retval)
 {
     return __retval.Store(__this->_velocity()), void();
 }
 
-// public void set_Velocity(T value) :673
+// public void set_Velocity(T value) :133
 void EasingMotion__set_Velocity_fn(EasingMotion* __this, void* value)
 {
     double ret23;
@@ -1418,7 +1449,7 @@ void EasingMotion__set_Velocity_fn(EasingMotion* __this, void* value)
     __this->_velocity() = value;
 }
 
-// public generated EasingMotion() [instance] :547
+// public generated EasingMotion() [instance] :7
 void EasingMotion::ctor_()
 {
     uType* __types[] = {
@@ -1427,7 +1458,7 @@ void EasingMotion::ctor_()
     _blender = ((::g::Fuse::Internal::Blender*)::g::Fuse::Internal::BlenderMap::Get(__types[0]));
     _isDirty = true;
     _isStatic = true;
-    _easing = ::g::Fuse::Animations::Easing::Linear();
+    _easing = ::g::Fuse::Animations::Easing::Linear_;
     _progress = 1.0;
     _progressSpeed = 0.0;
     _transitionTime = 1.0;
@@ -1438,85 +1469,82 @@ void EasingMotion::ctor_()
     _nominalDistance = 1.0f;
 }
 
-// public float get_Duration() [instance] :753
+// public float get_Duration() [instance] :213
 float EasingMotion::Duration()
 {
     return _duration;
 }
 
-// public void set_Duration(float value) [instance] :754
+// public void set_Duration(float value) [instance] :214
 void EasingMotion::Duration(float value)
 {
     _duration = value;
 }
 
-// public float get_DurationExp() [instance] :760
+// public float get_DurationExp() [instance] :220
 float EasingMotion::DurationExp()
 {
     return _durationExp;
 }
 
-// public void set_DurationExp(float value) [instance] :761
+// public void set_DurationExp(float value) [instance] :221
 void EasingMotion::DurationExp(float value)
 {
     _durationExp = value;
 }
 
-// public Fuse.Animations.Easing get_Easing() [instance] :595
+// public Fuse.Animations.Easing get_Easing() [instance] :55
 ::g::Fuse::Animations::Easing* EasingMotion::Easing()
 {
     return _easing;
 }
 
-// public void set_Easing(Fuse.Animations.Easing value) [instance] :596
+// public void set_Easing(Fuse.Animations.Easing value) [instance] :56
 void EasingMotion::Easing(::g::Fuse::Animations::Easing* value)
 {
     _easing = value;
 }
 
-// public bool get_IsStatic() [instance] :588
+// public bool get_IsStatic() [instance] :48
 bool EasingMotion::IsStatic()
 {
     return _isStatic && !_isDirty;
 }
 
-// public float get_NominalDistance() [instance] :767
+// public float get_NominalDistance() [instance] :227
 float EasingMotion::NominalDistance()
 {
     return _nominalDistance;
 }
 
-// public void set_NominalDistance(float value) [instance] :768
+// public void set_NominalDistance(float value) [instance] :228
 void EasingMotion::NominalDistance(float value)
 {
     _nominalDistance = value;
 }
 
-// public void Start() [instance] :693
+// public void Start() [instance] :153
 void EasingMotion::Start()
 {
     UpdateDestination(true);
 }
 
-// public void Update(double elapsed) [instance] :613
+// public void Update(double elapsed) [instance] :73
 void EasingMotion::Update(double elapsed)
 {
-    uType* __types[] = {
-        __type->Precalced(1/*T*/),
-    };
-    uT ret3(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    uT ret4(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    uT ret5(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    uT ret6(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    uT ret7(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    uT ret8(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    uT ret9(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    uT ret10(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    uT ret11(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    uT ret12(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    uT desiredPosition(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    uT prevPos(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    uT desiredVelocity(__types[0], U_ALLOCA(__types[0]->ValueSize));
+    uT ret3(__type->T(0), U_ALLOCA(__type->T(0)->ValueSize));
+    uT ret4(__type->T(0), U_ALLOCA(__type->T(0)->ValueSize));
+    uT ret5(__type->T(0), U_ALLOCA(__type->T(0)->ValueSize));
+    uT ret6(__type->T(0), U_ALLOCA(__type->T(0)->ValueSize));
+    uT ret7(__type->T(0), U_ALLOCA(__type->T(0)->ValueSize));
+    uT ret8(__type->T(0), U_ALLOCA(__type->T(0)->ValueSize));
+    uT ret9(__type->T(0), U_ALLOCA(__type->T(0)->ValueSize));
+    uT ret10(__type->T(0), U_ALLOCA(__type->T(0)->ValueSize));
+    uT ret11(__type->T(0), U_ALLOCA(__type->T(0)->ValueSize));
+    uT ret12(__type->T(0), U_ALLOCA(__type->T(0)->ValueSize));
+    uT desiredPosition(__type->T(0), U_ALLOCA(__type->T(0)->ValueSize));
+    uT prevPos(__type->T(0), U_ALLOCA(__type->T(0)->ValueSize));
+    uT desiredVelocity(__type->T(0), U_ALLOCA(__type->T(0)->ValueSize));
 
     if (_isDirty)
         UpdateDestination(false);
@@ -1555,18 +1583,15 @@ void EasingMotion::Update(double elapsed)
     _position() = (uPtr(_blender)->Lerp_ex(desiredPosition, _transitionPosition(), uCRef((double)tp), &ret12), ret12);
 }
 
-// private void UpdateDestination(bool start) [instance] :699
+// private void UpdateDestination(bool start) [instance] :159
 void EasingMotion::UpdateDestination(bool start)
 {
-    uType* __types[] = {
-        __type->Precalced(1/*T*/),
-    };
-    uT ret14(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    uT ret15(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    uT ret17(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    uT ret18(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    uT ret19(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    uT ret20(__types[0], U_ALLOCA(__types[0]->ValueSize));
+    uT ret14(__type->T(0), U_ALLOCA(__type->T(0)->ValueSize));
+    uT ret15(__type->T(0), U_ALLOCA(__type->T(0)->ValueSize));
+    uT ret17(__type->T(0), U_ALLOCA(__type->T(0)->ValueSize));
+    uT ret18(__type->T(0), U_ALLOCA(__type->T(0)->ValueSize));
+    uT ret19(__type->T(0), U_ALLOCA(__type->T(0)->ValueSize));
+    uT ret20(__type->T(0), U_ALLOCA(__type->T(0)->ValueSize));
     double ret13;
     double ret16;
     _isDirty = false;
@@ -1602,7 +1627,7 @@ void EasingMotion::UpdateDestination(bool start)
     _transitionVelocity() = (EasingMotion__get_Velocity_fn(this, &ret20), ret20);
 }
 
-// public static Fuse.Motion.Simulation.EasingMotion<T> CreateNormalized() [static] :552
+// public static Fuse.Motion.Simulation.EasingMotion<T> CreateNormalized() [static] :12
 EasingMotion* EasingMotion::CreateNormalized(uType* __type)
 {
     EasingMotion* q = EasingMotion::New1(__type);
@@ -1610,7 +1635,7 @@ EasingMotion* EasingMotion::CreateNormalized(uType* __type)
     return q;
 }
 
-// public static Fuse.Motion.Simulation.EasingMotion<T> CreatePoints() [static] :566
+// public static Fuse.Motion.Simulation.EasingMotion<T> CreatePoints() [static] :26
 EasingMotion* EasingMotion::CreatePoints(uType* __type)
 {
     EasingMotion* q = EasingMotion::New1(__type);
@@ -1618,7 +1643,7 @@ EasingMotion* EasingMotion::CreatePoints(uType* __type)
     return q;
 }
 
-// public static Fuse.Motion.Simulation.EasingMotion<T> CreateRadians() [static] :559
+// public static Fuse.Motion.Simulation.EasingMotion<T> CreateRadians() [static] :19
 EasingMotion* EasingMotion::CreateRadians(uType* __type)
 {
     EasingMotion* q = EasingMotion::New1(__type);
@@ -1626,7 +1651,7 @@ EasingMotion* EasingMotion::CreateRadians(uType* __type)
     return q;
 }
 
-// public static Fuse.Motion.Simulation.EasingMotion<T> CreateUnit(Fuse.Motion.MotionUnit unit) [static] :573
+// public static Fuse.Motion.Simulation.EasingMotion<T> CreateUnit(Fuse.Motion.MotionUnit unit) [static] :33
 EasingMotion* EasingMotion::CreateUnit(uType* __type, int unit)
 {
     switch (unit)
@@ -1642,7 +1667,7 @@ EasingMotion* EasingMotion::CreateUnit(uType* __type, int unit)
     U_THROW(::g::Uno::Exception::New2(::g::Uno::String::op_Addition1(::STRINGS[0/*"Unsupported...*/], uBox<int>(::g::Fuse::Motion::MotionUnit_typeof(), unit))));
 }
 
-// public generated EasingMotion New() [static] :547
+// public generated EasingMotion New() [static] :7
 EasingMotion* EasingMotion::New1(uType* __type)
 {
     EasingMotion* obj1 = (EasingMotion*)uNew(__type);
@@ -1651,37 +1676,38 @@ EasingMotion* EasingMotion::New1(uType* __type)
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Motion/1.2.1/simulation/$.uno
-// ----------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Motion\1.3.0-rc2\Simulation\ElasticForce.uno
+// ---------------------------------------------------------------------------------------------
 
-// internal sealed class ElasticForce<T> :792
+// internal sealed class ElasticForce<T> :6
 // {
 static void ElasticForce_build(uType* type)
 {
     ::STRINGS[0] = uString::Const("Unsupported unit type: ");
     ::TYPES[0] = ::g::Fuse::Internal::BlenderMap_typeof();
+    type->SetDependencies(
+        ::g::Fuse::Internal::BlenderMap_typeof()->MakeMethod(0/*Get<T>*/, type->T(0), NULL));
     type->SetPrecalc(
-        ::g::Fuse::Internal::BlenderMap_typeof()->MakeMethod(0/*Get<T>*/, type->T(0), NULL),
-        type->T(0));
+        ::g::Fuse::Internal::BlenderMap_typeof()->MakeMethod(0/*Get<T>*/, type->T(0), NULL));
     type->SetInterfaces(
         ::g::Fuse::Motion::Simulation::DestinationSimulation_typeof()->MakeType(type->T(0), NULL), offsetof(ElasticForce_type, interface0),
         ::g::Fuse::Motion::Simulation::MotionSimulation_typeof()->MakeType(type->T(0), NULL), offsetof(ElasticForce_type, interface1),
         ::g::Fuse::Motion::Simulation::Simulation_typeof(), offsetof(ElasticForce_type, interface2));
     type->SetFields(0,
-        ::g::Uno::Float_typeof(), offsetof(::g::Fuse::Motion::Simulation::ElasticForce, _attractionCurve), 0,
+        ::g::Uno::Float_typeof(), offsetof(ElasticForce, _attractionCurve), 0,
         type->T(0), (uintptr_t)0, uFieldFlagsConstrained,
-        ::g::Uno::Float_typeof(), offsetof(::g::Fuse::Motion::Simulation::ElasticForce, _attractionForce), 0,
-        ::g::Fuse::Internal::Blender_typeof()->MakeType(type->T(0), NULL), offsetof(::g::Fuse::Motion::Simulation::ElasticForce, _blender), 0,
-        ::g::Uno::Float_typeof(), offsetof(::g::Fuse::Motion::Simulation::ElasticForce, _damping), 0,
-        ::g::Uno::Float_typeof(), offsetof(::g::Fuse::Motion::Simulation::ElasticForce, _energyEps), 0,
-        ::g::Uno::Bool_typeof(), offsetof(::g::Fuse::Motion::Simulation::ElasticForce, _hasMaxSpeed), 0,
-        ::g::Uno::Bool_typeof(), offsetof(::g::Fuse::Motion::Simulation::ElasticForce, _isStatic), 0,
-        ::g::Uno::Float_typeof(), offsetof(::g::Fuse::Motion::Simulation::ElasticForce, _maxSpeed), 0,
-        ::g::Uno::Double_typeof(), offsetof(::g::Fuse::Motion::Simulation::ElasticForce, _remainTime), 0,
-        ::g::Uno::Float_typeof(), offsetof(::g::Fuse::Motion::Simulation::ElasticForce, _scale), 0,
+        ::g::Uno::Float_typeof(), offsetof(ElasticForce, _attractionForce), 0,
+        ::g::Fuse::Internal::Blender_typeof()->MakeType(type->T(0), NULL), offsetof(ElasticForce, _blender), 0,
+        ::g::Uno::Float_typeof(), offsetof(ElasticForce, _damping), 0,
+        ::g::Uno::Float_typeof(), offsetof(ElasticForce, _energyEps), 0,
+        ::g::Uno::Bool_typeof(), offsetof(ElasticForce, _hasMaxSpeed), 0,
+        ::g::Uno::Bool_typeof(), offsetof(ElasticForce, _isStatic), 0,
+        ::g::Uno::Float_typeof(), offsetof(ElasticForce, _maxSpeed), 0,
+        ::g::Uno::Double_typeof(), offsetof(ElasticForce, _remainTime), 0,
+        ::g::Uno::Float_typeof(), offsetof(ElasticForce, _scale), 0,
         type->T(0), (uintptr_t)0, uFieldFlagsConstrained,
-        ::g::Uno::Double_typeof(), offsetof(::g::Fuse::Motion::Simulation::ElasticForce, timeStep), 0,
-        ::g::Uno::Bool_typeof(), offsetof(::g::Fuse::Motion::Simulation::ElasticForce, _IsLocked), 0,
+        ::g::Uno::Double_typeof(), offsetof(ElasticForce, timeStep), 0,
+        ::g::Uno::Bool_typeof(), offsetof(ElasticForce, _IsLocked), 0,
         type->T(0), (uintptr_t)0, uFieldFlagsConstrained);
 }
 
@@ -1694,7 +1720,8 @@ ElasticForce_type* ElasticForce_typeof()
     options.FieldCount = 15;
     options.GenericCount = 1;
     options.InterfaceCount = 3;
-    options.PrecalcCount = 2;
+    options.DependencyCount = 1;
+    options.PrecalcCount = 1;
     options.ObjectSize = sizeof(ElasticForce);
     options.TypeSize = sizeof(ElasticForce_type);
     type = (ElasticForce_type*)uClassType::New("Fuse.Motion.Simulation.ElasticForce`1", options);
@@ -1712,26 +1739,23 @@ ElasticForce_type* ElasticForce_typeof()
     return type;
 }
 
-// public ElasticForce([float scale]) :841
+// public ElasticForce([float scale]) :55
 void ElasticForce__ctor__fn(ElasticForce* __this, float* scale)
 {
     __this->ctor_(*scale);
 }
 
-// private T get_Attraction() :956
+// private T get_Attraction() :170
 void ElasticForce__get_Attraction_fn(ElasticForce* __this, uTRef __retval)
 {
-    uType* __types[] = {
-        __this->__type->Precalced(1/*T*/),
-    };
-    uT ret17(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    uT ret18(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    uT ret19(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    uT ret20(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    uT ret21(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    uT ret22(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    uT v(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    uT unit(__types[0], U_ALLOCA(__types[0]->ValueSize));
+    uT ret17(__this->__type->T(0), U_ALLOCA(__this->__type->T(0)->ValueSize));
+    uT ret18(__this->__type->T(0), U_ALLOCA(__this->__type->T(0)->ValueSize));
+    uT ret19(__this->__type->T(0), U_ALLOCA(__this->__type->T(0)->ValueSize));
+    uT ret20(__this->__type->T(0), U_ALLOCA(__this->__type->T(0)->ValueSize));
+    uT ret21(__this->__type->T(0), U_ALLOCA(__this->__type->T(0)->ValueSize));
+    uT ret22(__this->__type->T(0), U_ALLOCA(__this->__type->T(0)->ValueSize));
+    uT v(__this->__type->T(0), U_ALLOCA(__this->__type->T(0)->ValueSize));
+    uT unit(__this->__type->T(0), U_ALLOCA(__this->__type->T(0)->ValueSize));
     v = (uPtr(__this->_blender)->Sub_ex((ElasticForce__get_Destination_fn(__this, &ret18), ret18), (ElasticForce__get_Position_fn(__this, &ret19), ret19), &ret17), ret17);
     double dlength;
     unit = (uPtr(__this->_blender)->ToUnit_ex(v, &dlength, &ret20), ret20);
@@ -1744,196 +1768,193 @@ void ElasticForce__get_Attraction_fn(ElasticForce* __this, uTRef __retval)
     return __retval.Store((uPtr(__this->_blender)->Weight_ex(unit, uCRef((double)p), &ret22), ret22)), void();
 }
 
-// public float get_AttractionCurve() :890
+// public float get_AttractionCurve() :104
 void ElasticForce__get_AttractionCurve_fn(ElasticForce* __this, float* __retval)
 {
     *__retval = __this->AttractionCurve();
 }
 
-// public void set_AttractionCurve(float value) :891
+// public void set_AttractionCurve(float value) :105
 void ElasticForce__set_AttractionCurve_fn(ElasticForce* __this, float* value)
 {
     __this->AttractionCurve(*value);
 }
 
-// public float get_AttractionForce() :883
+// public float get_AttractionForce() :97
 void ElasticForce__get_AttractionForce_fn(ElasticForce* __this, float* __retval)
 {
     *__retval = __this->AttractionForce();
 }
 
-// public void set_AttractionForce(float value) :884
+// public void set_AttractionForce(float value) :98
 void ElasticForce__set_AttractionForce_fn(ElasticForce* __this, float* value)
 {
     __this->AttractionForce(*value);
 }
 
-// public static Fuse.Motion.Simulation.ElasticForce<T> CreateNormalized() :817
+// public static Fuse.Motion.Simulation.ElasticForce<T> CreateNormalized() :31
 void ElasticForce__CreateNormalized_fn(uType* __type, ElasticForce** __retval)
 {
     *__retval = ElasticForce::CreateNormalized(__type);
 }
 
-// public static Fuse.Motion.Simulation.ElasticForce<T> CreatePoints() :796
+// public static Fuse.Motion.Simulation.ElasticForce<T> CreatePoints() :10
 void ElasticForce__CreatePoints_fn(uType* __type, ElasticForce** __retval)
 {
     *__retval = ElasticForce::CreatePoints(__type);
 }
 
-// public static Fuse.Motion.Simulation.ElasticForce<T> CreateRadians() :806
+// public static Fuse.Motion.Simulation.ElasticForce<T> CreateRadians() :20
 void ElasticForce__CreateRadians_fn(uType* __type, ElasticForce** __retval)
 {
     *__retval = ElasticForce::CreateRadians(__type);
 }
 
-// public static Fuse.Motion.Simulation.ElasticForce<T> CreateUnit(Fuse.Motion.MotionUnit unit) :828
+// public static Fuse.Motion.Simulation.ElasticForce<T> CreateUnit(Fuse.Motion.MotionUnit unit) :42
 void ElasticForce__CreateUnit_fn(uType* __type, int* unit, ElasticForce** __retval)
 {
     *__retval = ElasticForce::CreateUnit(__type, *unit);
 }
 
-// public float get_Damping() :897
+// public float get_Damping() :111
 void ElasticForce__get_Damping_fn(ElasticForce* __this, float* __retval)
 {
     *__retval = __this->Damping();
 }
 
-// public void set_Damping(float value) :898
+// public void set_Damping(float value) :112
 void ElasticForce__set_Damping_fn(ElasticForce* __this, float* value)
 {
     __this->Damping(*value);
 }
 
-// public T get_Destination() :872
+// public T get_Destination() :86
 void ElasticForce__get_Destination_fn(ElasticForce* __this, uTRef __retval)
 {
     return __retval.Store(__this->_attractionDestination()), void();
 }
 
-// public void set_Destination(T value) :873
+// public void set_Destination(T value) :87
 void ElasticForce__set_Destination_fn(ElasticForce* __this, void* value)
 {
     __this->_attractionDestination() = value;
     __this->_isStatic = false;
 }
 
-// private float get_Energy() :973
+// private float get_Energy() :187
 void ElasticForce__get_Energy_fn(ElasticForce* __this, float* __retval)
 {
     *__retval = __this->Energy();
 }
 
-// public float get_EnergyEps() :904
+// public float get_EnergyEps() :118
 void ElasticForce__get_EnergyEps_fn(ElasticForce* __this, float* __retval)
 {
     *__retval = __this->EnergyEps();
 }
 
-// public void set_EnergyEps(float value) :905
+// public void set_EnergyEps(float value) :119
 void ElasticForce__set_EnergyEps_fn(ElasticForce* __this, float* value)
 {
     __this->EnergyEps(*value);
 }
 
-// public generated bool get_IsLocked() :848
+// public generated bool get_IsLocked() :62
 void ElasticForce__get_IsLocked_fn(ElasticForce* __this, bool* __retval)
 {
     *__retval = __this->IsLocked();
 }
 
-// public generated void set_IsLocked(bool value) :849
+// public generated void set_IsLocked(bool value) :63
 void ElasticForce__set_IsLocked_fn(ElasticForce* __this, bool* value)
 {
     __this->IsLocked(*value);
 }
 
-// public bool get_IsStatic() :928
+// public bool get_IsStatic() :142
 void ElasticForce__get_IsStatic_fn(ElasticForce* __this, bool* __retval)
 {
     *__retval = __this->IsStatic();
 }
 
-// public void set_IsStatic(bool value) :929
+// public void set_IsStatic(bool value) :143
 void ElasticForce__set_IsStatic_fn(ElasticForce* __this, bool* value)
 {
     __this->IsStatic(*value);
 }
 
-// private void Iterate() :976
+// private void Iterate() :190
 void ElasticForce__Iterate_fn(ElasticForce* __this)
 {
     __this->Iterate();
 }
 
-// public float get_MaxSpeed() :912
+// public float get_MaxSpeed() :126
 void ElasticForce__get_MaxSpeed_fn(ElasticForce* __this, float* __retval)
 {
     *__retval = __this->MaxSpeed();
 }
 
-// public void set_MaxSpeed(float value) :913
+// public void set_MaxSpeed(float value) :127
 void ElasticForce__set_MaxSpeed_fn(ElasticForce* __this, float* value)
 {
     __this->MaxSpeed(*value);
 }
 
-// public ElasticForce New([float scale]) :841
+// public ElasticForce New([float scale]) :55
 void ElasticForce__New1_fn(uType* __type, float* scale, ElasticForce** __retval)
 {
     *__retval = ElasticForce::New1(__type, *scale);
 }
 
-// public generated T get_Position() :854
+// public generated T get_Position() :68
 void ElasticForce__get_Position_fn(ElasticForce* __this, uTRef __retval)
 {
     return __retval.Store(__this->_Position()), void();
 }
 
-// public generated void set_Position(T value) :855
+// public generated void set_Position(T value) :69
 void ElasticForce__set_Position_fn(ElasticForce* __this, void* value)
 {
     __this->_Position() = value;
 }
 
-// public void Reset(T value) :1002
+// public void Reset(T value) :216
 void ElasticForce__Reset_fn(ElasticForce* __this, void* value)
 {
-    uType* __types[] = {
-        __this->__type->Precalced(1/*T*/),
-    };
-    uT ret14(__types[0], U_ALLOCA(__types[0]->ValueSize));
+    uT ret14(__this->__type->T(0), U_ALLOCA(__this->__type->T(0)->ValueSize));
     ElasticForce__set_Position_fn(__this, value);
     ElasticForce__set_Destination_fn(__this, value);
     ElasticForce__set_Velocity_fn(__this, (uPtr(__this->_blender)->get_Zero_ex(&ret14), ret14));
     __this->IsStatic(true);
 }
 
-// public void Start() :1010
+// public void Start() :224
 void ElasticForce__Start_fn(ElasticForce* __this)
 {
     __this->Start();
 }
 
-// public void Update(double elapsed) :941
+// public void Update(double elapsed) :155
 void ElasticForce__Update_fn(ElasticForce* __this, double* elapsed)
 {
     __this->Update(*elapsed);
 }
 
-// public T get_Velocity() :861
+// public T get_Velocity() :75
 void ElasticForce__get_Velocity_fn(ElasticForce* __this, uTRef __retval)
 {
     return __retval.Store(__this->_velocity()), void();
 }
 
-// public void set_Velocity(T value) :862
+// public void set_Velocity(T value) :76
 void ElasticForce__set_Velocity_fn(ElasticForce* __this, void* value)
 {
     __this->_velocity() = value;
     __this->_isStatic = false;
 }
 
-// public ElasticForce([float scale]) [instance] :841
+// public ElasticForce([float scale]) [instance] :55
 void ElasticForce::ctor_(float scale)
 {
     uType* __types[] = {
@@ -1949,113 +1970,107 @@ void ElasticForce::ctor_(float scale)
     _scale = scale;
 }
 
-// public float get_AttractionCurve() [instance] :890
+// public float get_AttractionCurve() [instance] :104
 float ElasticForce::AttractionCurve()
 {
     return _attractionCurve;
 }
 
-// public void set_AttractionCurve(float value) [instance] :891
+// public void set_AttractionCurve(float value) [instance] :105
 void ElasticForce::AttractionCurve(float value)
 {
     _attractionCurve = value;
 }
 
-// public float get_AttractionForce() [instance] :883
+// public float get_AttractionForce() [instance] :97
 float ElasticForce::AttractionForce()
 {
     return _attractionForce;
 }
 
-// public void set_AttractionForce(float value) [instance] :884
+// public void set_AttractionForce(float value) [instance] :98
 void ElasticForce::AttractionForce(float value)
 {
     _attractionForce = value;
 }
 
-// public float get_Damping() [instance] :897
+// public float get_Damping() [instance] :111
 float ElasticForce::Damping()
 {
     return _damping;
 }
 
-// public void set_Damping(float value) [instance] :898
+// public void set_Damping(float value) [instance] :112
 void ElasticForce::Damping(float value)
 {
     _damping = value;
 }
 
-// private float get_Energy() [instance] :973
+// private float get_Energy() [instance] :187
 float ElasticForce::Energy()
 {
-    uType* __types[] = {
-        __type->Precalced(1/*T*/),
-    };
-    uT ret24(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    uT ret26(__types[0], U_ALLOCA(__types[0]->ValueSize));
+    uT ret24(__type->T(0), U_ALLOCA(__type->T(0)->ValueSize));
+    uT ret26(__type->T(0), U_ALLOCA(__type->T(0)->ValueSize));
     double ret23;
     double ret25;
     return (float)((uPtr(_blender)->Length_ex((ElasticForce__get_Attraction_fn(this, &ret24), ret24), &ret23), ret23) + (uPtr(_blender)->Length_ex((ElasticForce__get_Velocity_fn(this, &ret26), ret26), &ret25), ret25));
 }
 
-// public float get_EnergyEps() [instance] :904
+// public float get_EnergyEps() [instance] :118
 float ElasticForce::EnergyEps()
 {
     return _energyEps;
 }
 
-// public void set_EnergyEps(float value) [instance] :905
+// public void set_EnergyEps(float value) [instance] :119
 void ElasticForce::EnergyEps(float value)
 {
     _energyEps = value;
 }
 
-// public generated bool get_IsLocked() [instance] :848
+// public generated bool get_IsLocked() [instance] :62
 bool ElasticForce::IsLocked()
 {
     return _IsLocked;
 }
 
-// public generated void set_IsLocked(bool value) [instance] :849
+// public generated void set_IsLocked(bool value) [instance] :63
 void ElasticForce::IsLocked(bool value)
 {
     _IsLocked = value;
 }
 
-// public bool get_IsStatic() [instance] :928
+// public bool get_IsStatic() [instance] :142
 bool ElasticForce::IsStatic()
 {
     return _isStatic;
 }
 
-// public void set_IsStatic(bool value) [instance] :929
+// public void set_IsStatic(bool value) [instance] :143
 void ElasticForce::IsStatic(bool value)
 {
     if (_isStatic != value)
         _isStatic = value;
 }
 
-// private void Iterate() [instance] :976
+// private void Iterate() [instance] :190
 void ElasticForce::Iterate()
 {
-    uType* __types[] = {
-        __type->Precalced(1/*T*/),
-    };
-    uT ret2(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    uT ret3(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    uT ret4(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    uT ret5(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    uT ret6(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    uT ret7(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    uT ret8(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    uT ret9(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    uT ret10(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    uT ret11(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    uT ret12(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    uT ret13(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    uT acc(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    uT unit(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    uT step(__types[0], U_ALLOCA(__types[0]->ValueSize));
+    uT ret2(__type->T(0), U_ALLOCA(__type->T(0)->ValueSize));
+    uT ret3(__type->T(0), U_ALLOCA(__type->T(0)->ValueSize));
+    uT ret4(__type->T(0), U_ALLOCA(__type->T(0)->ValueSize));
+    uT ret5(__type->T(0), U_ALLOCA(__type->T(0)->ValueSize));
+    uT ret6(__type->T(0), U_ALLOCA(__type->T(0)->ValueSize));
+    uT ret7(__type->T(0), U_ALLOCA(__type->T(0)->ValueSize));
+    uT ret8(__type->T(0), U_ALLOCA(__type->T(0)->ValueSize));
+    uT ret9(__type->T(0), U_ALLOCA(__type->T(0)->ValueSize));
+    uT ret10(__type->T(0), U_ALLOCA(__type->T(0)->ValueSize));
+    uT ret11(__type->T(0), U_ALLOCA(__type->T(0)->ValueSize));
+    uT ret12(__type->T(0), U_ALLOCA(__type->T(0)->ValueSize));
+    uT ret13(__type->T(0), U_ALLOCA(__type->T(0)->ValueSize));
+    uT acc(__type->T(0), U_ALLOCA(__type->T(0)->ValueSize));
+    uT unit(__type->T(0), U_ALLOCA(__type->T(0)->ValueSize));
+    uT step(__type->T(0), U_ALLOCA(__type->T(0)->ValueSize));
     acc = (uPtr(_blender)->Weight_ex((ElasticForce__get_Attraction_fn(this, &ret3), ret3), uCRef((double)(float)((double)AttractionForce() * timeStep)), &ret2), ret2);
     ElasticForce__set_Velocity_fn(this, (uPtr(_blender)->Add_ex((ElasticForce__get_Velocity_fn(this, &ret5), ret5), acc, &ret4), ret4));
 
@@ -2081,32 +2096,29 @@ void ElasticForce::Iterate()
     }
 }
 
-// public float get_MaxSpeed() [instance] :912
+// public float get_MaxSpeed() [instance] :126
 float ElasticForce::MaxSpeed()
 {
     return _maxSpeed;
 }
 
-// public void set_MaxSpeed(float value) [instance] :913
+// public void set_MaxSpeed(float value) [instance] :127
 void ElasticForce::MaxSpeed(float value)
 {
     _hasMaxSpeed = true;
     _maxSpeed = value;
 }
 
-// public void Start() [instance] :1010
+// public void Start() [instance] :224
 void ElasticForce::Start()
 {
 }
 
-// public void Update(double elapsed) [instance] :941
+// public void Update(double elapsed) [instance] :155
 void ElasticForce::Update(double elapsed)
 {
-    uType* __types[] = {
-        __type->Precalced(1/*T*/),
-    };
-    uT ret15(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    uT ret16(__types[0], U_ALLOCA(__types[0]->ValueSize));
+    uT ret15(__type->T(0), U_ALLOCA(__type->T(0)->ValueSize));
+    uT ret16(__type->T(0), U_ALLOCA(__type->T(0)->ValueSize));
     _remainTime = (_remainTime + elapsed);
 
     while ((_remainTime > 0.0) && !IsStatic())
@@ -2119,7 +2131,7 @@ void ElasticForce::Update(double elapsed)
         ElasticForce__set_Velocity_fn(this, (uPtr(_blender)->Weight_ex((ElasticForce__get_Velocity_fn(this, &ret16), ret16), uCRef((double)(float)(1.0 - ::g::Uno::Math::Min(1.0, (double)Damping() * elapsed))), &ret15), ret15));
 }
 
-// public static Fuse.Motion.Simulation.ElasticForce<T> CreateNormalized() [static] :817
+// public static Fuse.Motion.Simulation.ElasticForce<T> CreateNormalized() [static] :31
 ElasticForce* ElasticForce::CreateNormalized(uType* __type)
 {
     ElasticForce* a = ElasticForce::New1(__type, 0.0001f);
@@ -2131,7 +2143,7 @@ ElasticForce* ElasticForce::CreateNormalized(uType* __type)
     return a;
 }
 
-// public static Fuse.Motion.Simulation.ElasticForce<T> CreatePoints() [static] :796
+// public static Fuse.Motion.Simulation.ElasticForce<T> CreatePoints() [static] :10
 ElasticForce* ElasticForce::CreatePoints(uType* __type)
 {
     ElasticForce* a = ElasticForce::New1(__type, 0.01f);
@@ -2142,7 +2154,7 @@ ElasticForce* ElasticForce::CreatePoints(uType* __type)
     return a;
 }
 
-// public static Fuse.Motion.Simulation.ElasticForce<T> CreateRadians() [static] :806
+// public static Fuse.Motion.Simulation.ElasticForce<T> CreateRadians() [static] :20
 ElasticForce* ElasticForce::CreateRadians(uType* __type)
 {
     ElasticForce* a = ElasticForce::New1(__type, 0.01f);
@@ -2154,7 +2166,7 @@ ElasticForce* ElasticForce::CreateRadians(uType* __type)
     return a;
 }
 
-// public static Fuse.Motion.Simulation.ElasticForce<T> CreateUnit(Fuse.Motion.MotionUnit unit) [static] :828
+// public static Fuse.Motion.Simulation.ElasticForce<T> CreateUnit(Fuse.Motion.MotionUnit unit) [static] :42
 ElasticForce* ElasticForce::CreateUnit(uType* __type, int unit)
 {
     switch (unit)
@@ -2170,7 +2182,7 @@ ElasticForce* ElasticForce::CreateUnit(uType* __type, int unit)
     U_THROW(::g::Uno::Exception::New2(::g::Uno::String::op_Addition1(::STRINGS[0/*"Unsupported...*/], uBox<int>(::g::Fuse::Motion::MotionUnit_typeof(), unit))));
 }
 
-// public ElasticForce New([float scale]) [static] :841
+// public ElasticForce New([float scale]) [static] :55
 ElasticForce* ElasticForce::New1(uType* __type, float scale)
 {
     ElasticForce* obj1 = (ElasticForce*)uNew(__type);
@@ -2179,29 +2191,30 @@ ElasticForce* ElasticForce::New1(uType* __type, float scale)
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Motion/1.2.1/simulation/$.uno
-// ----------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Motion\1.3.0-rc2\Simulation\Friction.uno
+// -----------------------------------------------------------------------------------------
 
-// internal sealed class Friction<T> :1025
+// internal sealed class Friction<T> :6
 // {
 static void Friction_build(uType* type)
 {
     ::STRINGS[0] = uString::Const("Unsupported unit type: ");
     ::TYPES[0] = ::g::Fuse::Internal::BlenderMap_typeof();
+    type->SetDependencies(
+        ::g::Fuse::Internal::BlenderMap_typeof()->MakeMethod(0/*Get<T>*/, type->T(0), NULL));
     type->SetPrecalc(
-        ::g::Fuse::Internal::BlenderMap_typeof()->MakeMethod(0/*Get<T>*/, type->T(0), NULL),
-        type->T(0));
+        ::g::Fuse::Internal::BlenderMap_typeof()->MakeMethod(0/*Get<T>*/, type->T(0), NULL));
     type->SetInterfaces(
         ::g::Fuse::Motion::Simulation::MotionSimulation_typeof()->MakeType(type->T(0), NULL), offsetof(Friction_type, interface0),
         ::g::Fuse::Motion::Simulation::Simulation_typeof(), offsetof(Friction_type, interface1));
     type->SetFields(0,
-        ::g::Fuse::Internal::Blender_typeof()->MakeType(type->T(0), NULL), offsetof(::g::Fuse::Motion::Simulation::Friction, _blender), 0,
-        ::g::Uno::Float_typeof(), offsetof(::g::Fuse::Motion::Simulation::Friction, _highFluidDeceleration), 0,
-        ::g::Uno::Bool_typeof(), offsetof(::g::Fuse::Motion::Simulation::Friction, _isStatic), 0,
-        ::g::Uno::Float_typeof(), offsetof(::g::Fuse::Motion::Simulation::Friction, _kineticDeceleration), 0,
-        ::g::Uno::Float_typeof(), offsetof(::g::Fuse::Motion::Simulation::Friction, _lowFluidDeceleration), 0,
+        ::g::Fuse::Internal::Blender_typeof()->MakeType(type->T(0), NULL), offsetof(Friction, _blender), 0,
+        ::g::Uno::Float_typeof(), offsetof(Friction, _highFluidDeceleration), 0,
+        ::g::Uno::Bool_typeof(), offsetof(Friction, _isStatic), 0,
+        ::g::Uno::Float_typeof(), offsetof(Friction, _kineticDeceleration), 0,
+        ::g::Uno::Float_typeof(), offsetof(Friction, _lowFluidDeceleration), 0,
         type->T(0), (uintptr_t)0, uFieldFlagsConstrained,
-        ::g::Uno::Float_typeof(), offsetof(::g::Fuse::Motion::Simulation::Friction, _speedDropout), 0,
+        ::g::Uno::Float_typeof(), offsetof(Friction, _speedDropout), 0,
         type->T(0), (uintptr_t)0, uFieldFlagsConstrained);
 }
 
@@ -2214,7 +2227,8 @@ Friction_type* Friction_typeof()
     options.FieldCount = 8;
     options.GenericCount = 1;
     options.InterfaceCount = 2;
-    options.PrecalcCount = 2;
+    options.DependencyCount = 1;
+    options.PrecalcCount = 1;
     options.ObjectSize = sizeof(Friction);
     options.TypeSize = sizeof(Friction_type);
     type = (Friction_type*)uClassType::New("Fuse.Motion.Simulation.Friction`1", options);
@@ -2229,128 +2243,128 @@ Friction_type* Friction_typeof()
     return type;
 }
 
-// public generated Friction() :1025
+// public generated Friction() :6
 void Friction__ctor__fn(Friction* __this)
 {
     __this->ctor_();
 }
 
-// public static Fuse.Motion.Simulation.Friction<T> CreateNormalized() :1048
+// public static Fuse.Motion.Simulation.Friction<T> CreateNormalized() :29
 void Friction__CreateNormalized_fn(uType* __type, Friction** __retval)
 {
     *__retval = Friction::CreateNormalized(__type);
 }
 
-// public static Fuse.Motion.Simulation.Friction<T> CreatePoints() :1028
+// public static Fuse.Motion.Simulation.Friction<T> CreatePoints() :9
 void Friction__CreatePoints_fn(uType* __type, Friction** __retval)
 {
     *__retval = Friction::CreatePoints(__type);
 }
 
-// public static Fuse.Motion.Simulation.Friction<T> CreateRadians() :1038
+// public static Fuse.Motion.Simulation.Friction<T> CreateRadians() :19
 void Friction__CreateRadians_fn(uType* __type, Friction** __retval)
 {
     *__retval = Friction::CreateRadians(__type);
 }
 
-// public static Fuse.Motion.Simulation.Friction<T> CreateUnit(Fuse.Motion.MotionUnit unit) :1058
+// public static Fuse.Motion.Simulation.Friction<T> CreateUnit(Fuse.Motion.MotionUnit unit) :39
 void Friction__CreateUnit_fn(uType* __type, int* unit, Friction** __retval)
 {
     *__retval = Friction::CreateUnit(__type, *unit);
 }
 
-// public float get_HighFluidDeceleration() :1096
+// public float get_HighFluidDeceleration() :77
 void Friction__get_HighFluidDeceleration_fn(Friction* __this, float* __retval)
 {
     *__retval = __this->HighFluidDeceleration();
 }
 
-// public void set_HighFluidDeceleration(float value) :1097
+// public void set_HighFluidDeceleration(float value) :78
 void Friction__set_HighFluidDeceleration_fn(Friction* __this, float* value)
 {
     __this->HighFluidDeceleration(*value);
 }
 
-// public bool get_IsStatic() :1121
+// public bool get_IsStatic() :102
 void Friction__get_IsStatic_fn(Friction* __this, bool* __retval)
 {
     *__retval = __this->IsStatic();
 }
 
-// public float get_KineticDeceleration() :1082
+// public float get_KineticDeceleration() :63
 void Friction__get_KineticDeceleration_fn(Friction* __this, float* __retval)
 {
     *__retval = __this->KineticDeceleration();
 }
 
-// public void set_KineticDeceleration(float value) :1083
+// public void set_KineticDeceleration(float value) :64
 void Friction__set_KineticDeceleration_fn(Friction* __this, float* value)
 {
     __this->KineticDeceleration(*value);
 }
 
-// public float get_LowFluidDeceleration() :1089
+// public float get_LowFluidDeceleration() :70
 void Friction__get_LowFluidDeceleration_fn(Friction* __this, float* __retval)
 {
     *__retval = __this->LowFluidDeceleration();
 }
 
-// public void set_LowFluidDeceleration(float value) :1090
+// public void set_LowFluidDeceleration(float value) :71
 void Friction__set_LowFluidDeceleration_fn(Friction* __this, float* value)
 {
     __this->LowFluidDeceleration(*value);
 }
 
-// public generated Friction New() :1025
+// public generated Friction New() :6
 void Friction__New1_fn(uType* __type, Friction** __retval)
 {
     *__retval = Friction::New1(__type);
 }
 
-// public T get_Position() :1114
+// public T get_Position() :95
 void Friction__get_Position_fn(Friction* __this, uTRef __retval)
 {
     return __retval.Store(__this->_position()), void();
 }
 
-// public void set_Position(T value) :1115
+// public void set_Position(T value) :96
 void Friction__set_Position_fn(Friction* __this, void* value)
 {
     __this->_position() = value;
 }
 
-// public float get_SpeedDropout() :1075
+// public float get_SpeedDropout() :56
 void Friction__get_SpeedDropout_fn(Friction* __this, float* __retval)
 {
     *__retval = __this->SpeedDropout();
 }
 
-// public void set_SpeedDropout(float value) :1076
+// public void set_SpeedDropout(float value) :57
 void Friction__set_SpeedDropout_fn(Friction* __this, float* value)
 {
     __this->SpeedDropout(*value);
 }
 
-// public void Update(double elapsed) :1124
+// public void Update(double elapsed) :105
 void Friction__Update_fn(Friction* __this, double* elapsed)
 {
     __this->Update(*elapsed);
 }
 
-// public T get_Velocity() :1103
+// public T get_Velocity() :84
 void Friction__get_Velocity_fn(Friction* __this, uTRef __retval)
 {
     return __retval.Store(__this->_velocity()), void();
 }
 
-// public void set_Velocity(T value) :1104
+// public void set_Velocity(T value) :85
 void Friction__set_Velocity_fn(Friction* __this, void* value)
 {
     __this->_velocity() = value;
     __this->_isStatic = false;
 }
 
-// public generated Friction() [instance] :1025
+// public generated Friction() [instance] :6
 void Friction::ctor_()
 {
     uType* __types[] = {
@@ -2362,72 +2376,69 @@ void Friction::ctor_()
     _lowFluidDeceleration = 1.5f;
 }
 
-// public float get_HighFluidDeceleration() [instance] :1096
+// public float get_HighFluidDeceleration() [instance] :77
 float Friction::HighFluidDeceleration()
 {
     return _highFluidDeceleration;
 }
 
-// public void set_HighFluidDeceleration(float value) [instance] :1097
+// public void set_HighFluidDeceleration(float value) [instance] :78
 void Friction::HighFluidDeceleration(float value)
 {
     _highFluidDeceleration = value;
 }
 
-// public bool get_IsStatic() [instance] :1121
+// public bool get_IsStatic() [instance] :102
 bool Friction::IsStatic()
 {
     return _isStatic;
 }
 
-// public float get_KineticDeceleration() [instance] :1082
+// public float get_KineticDeceleration() [instance] :63
 float Friction::KineticDeceleration()
 {
     return _kineticDeceleration;
 }
 
-// public void set_KineticDeceleration(float value) [instance] :1083
+// public void set_KineticDeceleration(float value) [instance] :64
 void Friction::KineticDeceleration(float value)
 {
     _kineticDeceleration = value;
 }
 
-// public float get_LowFluidDeceleration() [instance] :1089
+// public float get_LowFluidDeceleration() [instance] :70
 float Friction::LowFluidDeceleration()
 {
     return _lowFluidDeceleration;
 }
 
-// public void set_LowFluidDeceleration(float value) [instance] :1090
+// public void set_LowFluidDeceleration(float value) [instance] :71
 void Friction::LowFluidDeceleration(float value)
 {
     _lowFluidDeceleration = value;
 }
 
-// public float get_SpeedDropout() [instance] :1075
+// public float get_SpeedDropout() [instance] :56
 float Friction::SpeedDropout()
 {
     return _speedDropout;
 }
 
-// public void set_SpeedDropout(float value) [instance] :1076
+// public void set_SpeedDropout(float value) [instance] :57
 void Friction::SpeedDropout(float value)
 {
     _speedDropout = value;
 }
 
-// public void Update(double elapsed) [instance] :1124
+// public void Update(double elapsed) [instance] :105
 void Friction::Update(double elapsed)
 {
-    uType* __types[] = {
-        __type->Precalced(1/*T*/),
-    };
-    uT ret2(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    uT ret3(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    uT ret5(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    uT ret6(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    uT ret7(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    uT step(__types[0], U_ALLOCA(__types[0]->ValueSize));
+    uT ret2(__type->T(0), U_ALLOCA(__type->T(0)->ValueSize));
+    uT ret3(__type->T(0), U_ALLOCA(__type->T(0)->ValueSize));
+    uT ret5(__type->T(0), U_ALLOCA(__type->T(0)->ValueSize));
+    uT ret6(__type->T(0), U_ALLOCA(__type->T(0)->ValueSize));
+    uT ret7(__type->T(0), U_ALLOCA(__type->T(0)->ValueSize));
+    uT step(__type->T(0), U_ALLOCA(__type->T(0)->ValueSize));
     double ret4;
     step = (uPtr(_blender)->Weight_ex(_velocity(), uCRef((double)(float)elapsed), &ret2), ret2);
     _position() = (uPtr(_blender)->Add_ex(_position(), step, &ret3), ret3);
@@ -2453,7 +2464,7 @@ void Friction::Update(double elapsed)
     _velocity() = (::g::Fuse::Internal::Blender__UnitWeight_fn(uPtr(_blender), _velocity(), uCRef(linear), &ret7), ret7);
 }
 
-// public static Fuse.Motion.Simulation.Friction<T> CreateNormalized() [static] :1048
+// public static Fuse.Motion.Simulation.Friction<T> CreateNormalized() [static] :29
 Friction* Friction::CreateNormalized(uType* __type)
 {
     Friction* n = Friction::New1(__type);
@@ -2464,7 +2475,7 @@ Friction* Friction::CreateNormalized(uType* __type)
     return n;
 }
 
-// public static Fuse.Motion.Simulation.Friction<T> CreatePoints() [static] :1028
+// public static Fuse.Motion.Simulation.Friction<T> CreatePoints() [static] :9
 Friction* Friction::CreatePoints(uType* __type)
 {
     Friction* n = Friction::New1(__type);
@@ -2475,7 +2486,7 @@ Friction* Friction::CreatePoints(uType* __type)
     return n;
 }
 
-// public static Fuse.Motion.Simulation.Friction<T> CreateRadians() [static] :1038
+// public static Fuse.Motion.Simulation.Friction<T> CreateRadians() [static] :19
 Friction* Friction::CreateRadians(uType* __type)
 {
     Friction* n = Friction::New1(__type);
@@ -2486,7 +2497,7 @@ Friction* Friction::CreateRadians(uType* __type)
     return n;
 }
 
-// public static Fuse.Motion.Simulation.Friction<T> CreateUnit(Fuse.Motion.MotionUnit unit) [static] :1058
+// public static Fuse.Motion.Simulation.Friction<T> CreateUnit(Fuse.Motion.MotionUnit unit) [static] :39
 Friction* Friction::CreateUnit(uType* __type, int unit)
 {
     switch (unit)
@@ -2502,7 +2513,7 @@ Friction* Friction::CreateUnit(uType* __type, int unit)
     U_THROW(::g::Uno::Exception::New2(::g::Uno::String::op_Addition1(::STRINGS[0/*"Unsupported...*/], uBox<int>(::g::Fuse::Motion::MotionUnit_typeof(), unit))));
 }
 
-// public generated Friction New() [static] :1025
+// public generated Friction New() [static] :6
 Friction* Friction::New1(uType* __type)
 {
     Friction* obj1 = (Friction*)uNew(__type);
@@ -2511,10 +2522,10 @@ Friction* Friction::New1(uType* __type)
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Motion/1.2.1/simulation/$.uno
-// ----------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Motion\1.3.0-rc2\Simulation\Simulation.uno
+// -------------------------------------------------------------------------------------------
 
-// internal abstract interface MotionSimulation<T> :1326
+// internal abstract interface MotionSimulation<T> :19
 // {
 uInterfaceType* MotionSimulation_typeof()
 {
@@ -2526,10 +2537,10 @@ uInterfaceType* MotionSimulation_typeof()
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Motion/1.2.1/simulation/$.uno
-// ----------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Motion\1.3.0-rc2\Simulation\BoundedRegion2D.uno
+// ------------------------------------------------------------------------------------------------
 
-// private enum BasicBoundedRegion2D.MoveMode :226
+// private enum BasicBoundedRegion2D.MoveMode :72
 uEnumType* BasicBoundedRegion2D__MoveMode_typeof()
 {
     static uSStrong<uEnumType*> type;
@@ -2545,31 +2556,32 @@ uEnumType* BasicBoundedRegion2D__MoveMode_typeof()
     return type;
 }
 
-// /usr/local/share/uno/Packages/Fuse.Motion/1.2.1/simulation/$.uno
-// ----------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Motion\1.3.0-rc2\Simulation\PointerVelocity.uno
+// ------------------------------------------------------------------------------------------------
 
-// public sealed class PointerVelocity<T> :1172
+// public sealed class PointerVelocity<T> :17
 // {
 static void PointerVelocity_build(uType* type)
 {
     ::TYPES[0] = ::g::Fuse::Internal::BlenderMap_typeof();
+    type->SetDependencies(
+        ::g::Fuse::Internal::BlenderMap_typeof()->MakeMethod(0/*Get<T>*/, type->T(0), NULL));
     type->SetPrecalc(
-        ::g::Fuse::Internal::BlenderMap_typeof()->MakeMethod(0/*Get<T>*/, type->T(0), NULL),
-        type->T(0));
+        ::g::Fuse::Internal::BlenderMap_typeof()->MakeMethod(0/*Get<T>*/, type->T(0), NULL));
     type->SetFields(0,
-        ::g::Uno::Float_typeof(), offsetof(::g::Fuse::Motion::Simulation::PointerVelocity, _accelFactor), 0,
-        ::g::Uno::Float_typeof(), offsetof(::g::Fuse::Motion::Simulation::PointerVelocity, _accelLimit), 0,
-        ::g::Uno::Float_typeof(), offsetof(::g::Fuse::Motion::Simulation::PointerVelocity, _accelThreshold), 0,
-        ::g::Fuse::Internal::Blender_typeof()->MakeType(type->T(0), NULL), offsetof(::g::Fuse::Motion::Simulation::PointerVelocity, _blender), 0,
+        ::g::Uno::Float_typeof(), offsetof(PointerVelocity, _accelFactor), 0,
+        ::g::Uno::Float_typeof(), offsetof(PointerVelocity, _accelLimit), 0,
+        ::g::Uno::Float_typeof(), offsetof(PointerVelocity, _accelThreshold), 0,
+        ::g::Fuse::Internal::Blender_typeof()->MakeType(type->T(0), NULL), offsetof(PointerVelocity, _blender), 0,
         type->T(0), (uintptr_t)0, uFieldFlagsConstrained,
-        ::g::Uno::Float_typeof(), offsetof(::g::Fuse::Motion::Simulation::PointerVelocity, _inSpeedLimit), 0,
-        ::g::Uno::Float_typeof(), offsetof(::g::Fuse::Motion::Simulation::PointerVelocity, _period), 0,
-        ::g::Uno::Double_typeof(), offsetof(::g::Fuse::Motion::Simulation::PointerVelocity, _prevTime), 0,
-        ::g::Uno::Float_typeof(), offsetof(::g::Fuse::Motion::Simulation::PointerVelocity, _speedDistanceThreshold), 0,
-        ::g::Uno::Double_typeof(), offsetof(::g::Fuse::Motion::Simulation::PointerVelocity, _speedThreshold), 0,
+        ::g::Uno::Float_typeof(), offsetof(PointerVelocity, _inSpeedLimit), 0,
+        ::g::Uno::Float_typeof(), offsetof(PointerVelocity, _period), 0,
+        ::g::Uno::Double_typeof(), offsetof(PointerVelocity, _prevTime), 0,
+        ::g::Uno::Float_typeof(), offsetof(PointerVelocity, _speedDistanceThreshold), 0,
+        ::g::Uno::Double_typeof(), offsetof(PointerVelocity, _speedThreshold), 0,
         type->T(0), (uintptr_t)0, uFieldFlagsConstrained,
-        ::g::Uno::Double_typeof(), offsetof(::g::Fuse::Motion::Simulation::PointerVelocity, _totalDistance), 0,
-        ::g::Uno::Double_typeof(), offsetof(::g::Fuse::Motion::Simulation::PointerVelocity, _totalTime), 0,
+        ::g::Uno::Double_typeof(), offsetof(PointerVelocity, _totalDistance), 0,
+        ::g::Uno::Double_typeof(), offsetof(PointerVelocity, _totalTime), 0,
         type->T(0), (uintptr_t)0, uFieldFlagsConstrained);
 }
 
@@ -2581,7 +2593,8 @@ uType* PointerVelocity_typeof()
     uTypeOptions options;
     options.FieldCount = 14;
     options.GenericCount = 1;
-    options.PrecalcCount = 2;
+    options.DependencyCount = 1;
+    options.PrecalcCount = 1;
     options.ObjectSize = sizeof(PointerVelocity);
     options.TypeSize = sizeof(uType);
     type = uClassType::New("Fuse.Motion.Simulation.PointerVelocity`1", options);
@@ -2590,26 +2603,23 @@ uType* PointerVelocity_typeof()
     return type;
 }
 
-// public generated PointerVelocity() :1172
+// public generated PointerVelocity() :17
 void PointerVelocity__ctor__fn(PointerVelocity* __this)
 {
     __this->ctor_();
 }
 
-// public void AddSample(T location, double elapsed, [Fuse.Motion.Simulation.SampleFlags flags]) :1245
+// public void AddSample(T location, double elapsed, [Fuse.Motion.Simulation.SampleFlags flags]) :90
 void PointerVelocity__AddSample_fn(PointerVelocity* __this, void* location, double* elapsed, int* flags)
 {
-    uType* __types[] = {
-        __this->__type->Precalced(1/*T*/),
-    };
-    uT ret2(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    uT ret3(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    uT ret4(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    uT ret5(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    uT ret6(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    uT diff(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    uT unit(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    uT sample(__types[0], U_ALLOCA(__types[0]->ValueSize));
+    uT ret2(__this->__type->T(0), U_ALLOCA(__this->__type->T(0)->ValueSize));
+    uT ret3(__this->__type->T(0), U_ALLOCA(__this->__type->T(0)->ValueSize));
+    uT ret4(__this->__type->T(0), U_ALLOCA(__this->__type->T(0)->ValueSize));
+    uT ret5(__this->__type->T(0), U_ALLOCA(__this->__type->T(0)->ValueSize));
+    uT ret6(__this->__type->T(0), U_ALLOCA(__this->__type->T(0)->ValueSize));
+    uT diff(__this->__type->T(0), U_ALLOCA(__this->__type->T(0)->ValueSize));
+    uT unit(__this->__type->T(0), U_ALLOCA(__this->__type->T(0)->ValueSize));
+    uT sample(__this->__type->T(0), U_ALLOCA(__this->__type->T(0)->ValueSize));
     int flags_ = *flags;
     double elapsed_ = *elapsed;
     diff = (uPtr(__this->_blender)->Sub_ex(location, __this->_currentLocation(), &ret2), ret2);
@@ -2652,7 +2662,7 @@ void PointerVelocity__AddSample_fn(PointerVelocity* __this, void* location, doub
     PointerVelocity__ApplySample_fn(__this, sample, uCRef(elapsed_));
 }
 
-// public void AddSampleTime(T location, double timestamp, [Fuse.Motion.Simulation.SampleFlags flags]) :1239
+// public void AddSampleTime(T location, double timestamp, [Fuse.Motion.Simulation.SampleFlags flags]) :84
 void PointerVelocity__AddSampleTime_fn(PointerVelocity* __this, void* location, double* timestamp, int* flags)
 {
     double timestamp_ = *timestamp;
@@ -2661,13 +2671,10 @@ void PointerVelocity__AddSampleTime_fn(PointerVelocity* __this, void* location, 
     __this->_prevTime = timestamp_;
 }
 
-// private void ApplySample(T sample, double elapsed) :1287
+// private void ApplySample(T sample, double elapsed) :132
 void PointerVelocity__ApplySample_fn(PointerVelocity* __this, void* sample, double* elapsed)
 {
-    uType* __types[] = {
-        __this->__type->Precalced(1/*T*/),
-    };
-    uT ret7(__types[0], U_ALLOCA(__types[0]->ValueSize));
+    uT ret7(__this->__type->T(0), U_ALLOCA(__this->__type->T(0)->ValueSize));
     double elapsed_ = *elapsed;
 
     if (__this->_totalTime < 9.9999997473787516e-06)
@@ -2681,35 +2688,32 @@ void PointerVelocity__ApplySample_fn(PointerVelocity* __this, void* sample, doub
     __this->_totalTime = (__this->_totalTime + elapsed_);
 }
 
-// public T get_CurrentVelocity() :1190
+// public T get_CurrentVelocity() :35
 void PointerVelocity__get_CurrentVelocity_fn(PointerVelocity* __this, uTRef __retval)
 {
     return __retval.Store(__this->_velocity()), void();
 }
 
-// public void set_CurrentVelocity(T value) :1191
+// public void set_CurrentVelocity(T value) :36
 void PointerVelocity__set_CurrentVelocity_fn(PointerVelocity* __this, void* value)
 {
     __this->_velocity() = value;
 }
 
-// public generated PointerVelocity New() :1172
+// public generated PointerVelocity New() :17
 void PointerVelocity__New1_fn(uType* __type, PointerVelocity** __retval)
 {
     *__retval = PointerVelocity::New1(__type);
 }
 
-// public void Reset(T location0) :1225
+// public void Reset(T location0) :70
 void PointerVelocity__Reset_fn(PointerVelocity* __this, void* location0)
 {
-    uType* __types[] = {
-        __this->__type->Precalced(1/*T*/),
-    };
-    uT ret8(__types[0], U_ALLOCA(__types[0]->ValueSize));
+    uT ret8(__this->__type->T(0), U_ALLOCA(__this->__type->T(0)->ValueSize));
     PointerVelocity__Reset1_fn(__this, location0, (uPtr(__this->_blender)->get_Zero_ex(&ret8), ret8), uCRef(0.0));
 }
 
-// public void Reset(T location0, T velocity0, [double currentTime]) :1230
+// public void Reset(T location0, T velocity0, [double currentTime]) :75
 void PointerVelocity__Reset1_fn(PointerVelocity* __this, void* location0, void* velocity0, double* currentTime)
 {
     double currentTime_ = *currentTime;
@@ -2720,7 +2724,7 @@ void PointerVelocity__Reset1_fn(PointerVelocity* __this, void* location0, void* 
     __this->_prevTime = currentTime_;
 }
 
-// public generated PointerVelocity() [instance] :1172
+// public generated PointerVelocity() [instance] :17
 void PointerVelocity::ctor_()
 {
     uType* __types[] = {
@@ -2736,7 +2740,7 @@ void PointerVelocity::ctor_()
     _speedDistanceThreshold = 50.0f;
 }
 
-// public generated PointerVelocity New() [static] :1172
+// public generated PointerVelocity New() [static] :17
 PointerVelocity* PointerVelocity::New1(uType* __type)
 {
     PointerVelocity* obj1 = (PointerVelocity*)uNew(__type);
@@ -2745,10 +2749,10 @@ PointerVelocity* PointerVelocity::New1(uType* __type)
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Motion/1.2.1/simulation/$.uno
-// ----------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Motion\1.3.0-rc2\Simulation\PointerVelocity.uno
+// ------------------------------------------------------------------------------------------------
 
-// public enum SampleFlags :1161
+// public enum SampleFlags :6
 uEnumType* SampleFlags_typeof()
 {
     static uSStrong<uEnumType*> type;
@@ -2762,10 +2766,10 @@ uEnumType* SampleFlags_typeof()
     return type;
 }
 
-// /usr/local/share/uno/Packages/Fuse.Motion/1.2.1/simulation/$.uno
-// ----------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Motion\1.3.0-rc2\Simulation\Simulation.uno
+// -------------------------------------------------------------------------------------------
 
-// internal abstract interface Simulation :1312
+// internal abstract interface Simulation :5
 // {
 uInterfaceType* Simulation_typeof()
 {
@@ -2777,28 +2781,29 @@ uInterfaceType* Simulation_typeof()
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Motion/1.2.1/simulation/$.uno
-// ----------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Motion\1.3.0-rc2\Simulation\SmoothSnap.uno
+// -------------------------------------------------------------------------------------------
 
-// internal sealed class SmoothSnap<T> :1353
+// internal sealed class SmoothSnap<T> :5
 // {
 static void SmoothSnap_build(uType* type)
 {
     ::STRINGS[0] = uString::Const("Unsupported unit type: ");
     ::TYPES[0] = ::g::Fuse::Internal::BlenderMap_typeof();
+    type->SetDependencies(
+        ::g::Fuse::Internal::BlenderMap_typeof()->MakeMethod(0/*Get<T>*/, type->T(0), NULL));
     type->SetPrecalc(
-        ::g::Fuse::Internal::BlenderMap_typeof()->MakeMethod(0/*Get<T>*/, type->T(0), NULL),
-        type->T(0));
+        ::g::Fuse::Internal::BlenderMap_typeof()->MakeMethod(0/*Get<T>*/, type->T(0), NULL));
     type->SetInterfaces(
         ::g::Fuse::Motion::Simulation::DestinationSimulation_typeof()->MakeType(type->T(0), NULL), offsetof(SmoothSnap_type, interface0),
         ::g::Fuse::Motion::Simulation::MotionSimulation_typeof()->MakeType(type->T(0), NULL), offsetof(SmoothSnap_type, interface1),
         ::g::Fuse::Motion::Simulation::Simulation_typeof(), offsetof(SmoothSnap_type, interface2));
     type->SetFields(0,
-        ::g::Fuse::Internal::Blender_typeof()->MakeType(type->T(0), NULL), offsetof(::g::Fuse::Motion::Simulation::SmoothSnap, _blender), 0,
-        ::g::Uno::Float_typeof(), offsetof(::g::Fuse::Motion::Simulation::SmoothSnap, _scale), 0,
-        ::g::Uno::Float_typeof(), offsetof(::g::Fuse::Motion::Simulation::SmoothSnap, _speed), 0,
-        ::g::Uno::Float_typeof(), offsetof(::g::Fuse::Motion::Simulation::SmoothSnap, _speedDropoutDistance), 0,
-        ::g::Uno::Float_typeof(), offsetof(::g::Fuse::Motion::Simulation::SmoothSnap, _speedMin), 0,
+        ::g::Fuse::Internal::Blender_typeof()->MakeType(type->T(0), NULL), offsetof(SmoothSnap, _blender), 0,
+        ::g::Uno::Float_typeof(), offsetof(SmoothSnap, _scale), 0,
+        ::g::Uno::Float_typeof(), offsetof(SmoothSnap, _speed), 0,
+        ::g::Uno::Float_typeof(), offsetof(SmoothSnap, _speedDropoutDistance), 0,
+        ::g::Uno::Float_typeof(), offsetof(SmoothSnap, _speedMin), 0,
         type->T(0), (uintptr_t)0, uFieldFlagsConstrained,
         type->T(0), (uintptr_t)0, uFieldFlagsConstrained,
         type->T(0), (uintptr_t)0, uFieldFlagsConstrained);
@@ -2813,7 +2818,8 @@ SmoothSnap_type* SmoothSnap_typeof()
     options.FieldCount = 8;
     options.GenericCount = 1;
     options.InterfaceCount = 3;
-    options.PrecalcCount = 2;
+    options.DependencyCount = 1;
+    options.PrecalcCount = 1;
     options.ObjectSize = sizeof(SmoothSnap);
     options.TypeSize = sizeof(SmoothSnap_type);
     type = (SmoothSnap_type*)uClassType::New("Fuse.Motion.Simulation.SmoothSnap`1", options);
@@ -2831,139 +2837,136 @@ SmoothSnap_type* SmoothSnap_typeof()
     return type;
 }
 
-// public SmoothSnap([float scale]) :1397
+// public SmoothSnap([float scale]) :49
 void SmoothSnap__ctor__fn(SmoothSnap* __this, float* scale)
 {
     __this->ctor_(*scale);
 }
 
-// public static Fuse.Motion.Simulation.SmoothSnap<T> CreateNormalized() :1358
+// public static Fuse.Motion.Simulation.SmoothSnap<T> CreateNormalized() :10
 void SmoothSnap__CreateNormalized_fn(uType* __type, SmoothSnap** __retval)
 {
     *__retval = SmoothSnap::CreateNormalized(__type);
 }
 
-// public static Fuse.Motion.Simulation.SmoothSnap<T> CreatePoints() :1376
+// public static Fuse.Motion.Simulation.SmoothSnap<T> CreatePoints() :28
 void SmoothSnap__CreatePoints_fn(uType* __type, SmoothSnap** __retval)
 {
     *__retval = SmoothSnap::CreatePoints(__type);
 }
 
-// public static Fuse.Motion.Simulation.SmoothSnap<T> CreateRadians() :1367
+// public static Fuse.Motion.Simulation.SmoothSnap<T> CreateRadians() :19
 void SmoothSnap__CreateRadians_fn(uType* __type, SmoothSnap** __retval)
 {
     *__retval = SmoothSnap::CreateRadians(__type);
 }
 
-// public static Fuse.Motion.Simulation.SmoothSnap<T> CreateUnit(Fuse.Motion.MotionUnit unit) :1385
+// public static Fuse.Motion.Simulation.SmoothSnap<T> CreateUnit(Fuse.Motion.MotionUnit unit) :37
 void SmoothSnap__CreateUnit_fn(uType* __type, int* unit, SmoothSnap** __retval)
 {
     *__retval = SmoothSnap::CreateUnit(__type, *unit);
 }
 
-// public generated T get_Destination() :1404
+// public generated T get_Destination() :56
 void SmoothSnap__get_Destination_fn(SmoothSnap* __this, uTRef __retval)
 {
     return __retval.Store(__this->_Destination()), void();
 }
 
-// public generated void set_Destination(T value) :1404
+// public generated void set_Destination(T value) :56
 void SmoothSnap__set_Destination_fn(SmoothSnap* __this, void* value)
 {
     __this->_Destination() = value;
 }
 
-// public bool get_IsStatic() :1453
+// public bool get_IsStatic() :105
 void SmoothSnap__get_IsStatic_fn(SmoothSnap* __this, bool* __retval)
 {
     *__retval = __this->IsStatic();
 }
 
-// public SmoothSnap New([float scale]) :1397
+// public SmoothSnap New([float scale]) :49
 void SmoothSnap__New1_fn(uType* __type, float* scale, SmoothSnap** __retval)
 {
     *__retval = SmoothSnap::New1(__type, *scale);
 }
 
-// public generated T get_Position() :1402
+// public generated T get_Position() :54
 void SmoothSnap__get_Position_fn(SmoothSnap* __this, uTRef __retval)
 {
     return __retval.Store(__this->_Position()), void();
 }
 
-// public generated void set_Position(T value) :1402
+// public generated void set_Position(T value) :54
 void SmoothSnap__set_Position_fn(SmoothSnap* __this, void* value)
 {
     __this->_Position() = value;
 }
 
-// public void Reset(T destination) :1406
+// public void Reset(T destination) :58
 void SmoothSnap__Reset_fn(SmoothSnap* __this, void* destination)
 {
-    uType* __types[] = {
-        __this->__type->Precalced(1/*T*/),
-    };
-    uT ret2(__types[0], U_ALLOCA(__types[0]->ValueSize));
+    uT ret2(__this->__type->T(0), U_ALLOCA(__this->__type->T(0)->ValueSize));
     SmoothSnap__set_Destination_fn(__this, destination);
     SmoothSnap__set_Velocity_fn(__this, (uPtr(__this->_blender)->get_Zero_ex(&ret2), ret2));
     SmoothSnap__set_Position_fn(__this, destination);
 }
 
-// public void SetDuration(float t) :1444
+// public void SetDuration(float t) :96
 void SmoothSnap__SetDuration_fn(SmoothSnap* __this, float* t)
 {
     __this->SetDuration(*t);
 }
 
-// public float get_Speed() :1431
+// public float get_Speed() :83
 void SmoothSnap__get_Speed_fn(SmoothSnap* __this, float* __retval)
 {
     *__retval = __this->Speed();
 }
 
-// public void set_Speed(float value) :1432
+// public void set_Speed(float value) :84
 void SmoothSnap__set_Speed_fn(SmoothSnap* __this, float* value)
 {
     __this->Speed(*value);
 }
 
-// public float get_SpeedDropoutDistance() :1424
+// public float get_SpeedDropoutDistance() :76
 void SmoothSnap__get_SpeedDropoutDistance_fn(SmoothSnap* __this, float* __retval)
 {
     *__retval = __this->SpeedDropoutDistance();
 }
 
-// public void set_SpeedDropoutDistance(float value) :1425
+// public void set_SpeedDropoutDistance(float value) :77
 void SmoothSnap__set_SpeedDropoutDistance_fn(SmoothSnap* __this, float* value)
 {
     __this->SpeedDropoutDistance(*value);
 }
 
-// public void Start() :1413
+// public void Start() :65
 void SmoothSnap__Start_fn(SmoothSnap* __this)
 {
     __this->Start();
 }
 
-// public void Update(double elapsed) :1459
+// public void Update(double elapsed) :111
 void SmoothSnap__Update_fn(SmoothSnap* __this, double* elapsed)
 {
     __this->Update(*elapsed);
 }
 
-// public generated T get_Velocity() :1403
+// public generated T get_Velocity() :55
 void SmoothSnap__get_Velocity_fn(SmoothSnap* __this, uTRef __retval)
 {
     return __retval.Store(__this->_Velocity()), void();
 }
 
-// public generated void set_Velocity(T value) :1403
+// public generated void set_Velocity(T value) :55
 void SmoothSnap__set_Velocity_fn(SmoothSnap* __this, void* value)
 {
     __this->_Velocity() = value;
 }
 
-// public SmoothSnap([float scale]) [instance] :1397
+// public SmoothSnap([float scale]) [instance] :49
 void SmoothSnap::ctor_(float scale)
 {
     uType* __types[] = {
@@ -2977,74 +2980,68 @@ void SmoothSnap::ctor_(float scale)
     _scale = scale;
 }
 
-// public bool get_IsStatic() [instance] :1453
+// public bool get_IsStatic() [instance] :105
 bool SmoothSnap::IsStatic()
 {
-    uType* __types[] = {
-        __type->Precalced(1/*T*/),
-    };
-    uT ret15(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    uT ret16(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    uT ret17(__types[0], U_ALLOCA(__types[0]->ValueSize));
+    uT ret15(__type->T(0), U_ALLOCA(__type->T(0)->ValueSize));
+    uT ret16(__type->T(0), U_ALLOCA(__type->T(0)->ValueSize));
+    uT ret17(__type->T(0), U_ALLOCA(__type->T(0)->ValueSize));
     double ret14;
     return (uPtr(_blender)->Length_ex((uPtr(_blender)->Sub_ex((SmoothSnap__get_Destination_fn(this, &ret16), ret16), (SmoothSnap__get_Position_fn(this, &ret17), ret17), &ret15), ret15), &ret14), ret14) < (double)_scale;
 }
 
-// public void SetDuration(float t) [instance] :1444
+// public void SetDuration(float t) [instance] :96
 void SmoothSnap::SetDuration(float t)
 {
     float s = -((t * _speedMin) - (2.0f * _speedDropoutDistance)) / t;
     Speed(::g::Uno::Math::Max1(s, _speedMin));
 }
 
-// public float get_Speed() [instance] :1431
+// public float get_Speed() [instance] :83
 float SmoothSnap::Speed()
 {
     return _speed;
 }
 
-// public void set_Speed(float value) [instance] :1432
+// public void set_Speed(float value) [instance] :84
 void SmoothSnap::Speed(float value)
 {
     _speed = value;
 }
 
-// public float get_SpeedDropoutDistance() [instance] :1424
+// public float get_SpeedDropoutDistance() [instance] :76
 float SmoothSnap::SpeedDropoutDistance()
 {
     return _speedDropoutDistance;
 }
 
-// public void set_SpeedDropoutDistance(float value) [instance] :1425
+// public void set_SpeedDropoutDistance(float value) [instance] :77
 void SmoothSnap::SpeedDropoutDistance(float value)
 {
     _speedDropoutDistance = value;
 }
 
-// public void Start() [instance] :1413
+// public void Start() [instance] :65
 void SmoothSnap::Start()
 {
 }
 
-// public void Update(double elapsed) [instance] :1459
+// public void Update(double elapsed) [instance] :111
 void SmoothSnap::Update(double elapsed)
 {
-    uType* __types[] = {
-        __type->Precalced(1/*T*/),
-    };
-    uT ret3(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    uT ret4(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    uT ret5(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    uT ret6(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    uT ret7(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    uT ret8(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    uT ret9(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    uT ret10(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    uT ret11(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    uT ret12(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    uT ret13(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    uT off(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    uT offUnit(__types[0], U_ALLOCA(__types[0]->ValueSize));
+    uT ret3(__type->T(0), U_ALLOCA(__type->T(0)->ValueSize));
+    uT ret4(__type->T(0), U_ALLOCA(__type->T(0)->ValueSize));
+    uT ret5(__type->T(0), U_ALLOCA(__type->T(0)->ValueSize));
+    uT ret6(__type->T(0), U_ALLOCA(__type->T(0)->ValueSize));
+    uT ret7(__type->T(0), U_ALLOCA(__type->T(0)->ValueSize));
+    uT ret8(__type->T(0), U_ALLOCA(__type->T(0)->ValueSize));
+    uT ret9(__type->T(0), U_ALLOCA(__type->T(0)->ValueSize));
+    uT ret10(__type->T(0), U_ALLOCA(__type->T(0)->ValueSize));
+    uT ret11(__type->T(0), U_ALLOCA(__type->T(0)->ValueSize));
+    uT ret12(__type->T(0), U_ALLOCA(__type->T(0)->ValueSize));
+    uT ret13(__type->T(0), U_ALLOCA(__type->T(0)->ValueSize));
+    uT off(__type->T(0), U_ALLOCA(__type->T(0)->ValueSize));
+    uT offUnit(__type->T(0), U_ALLOCA(__type->T(0)->ValueSize));
     off = (uPtr(_blender)->Sub_ex((SmoothSnap__get_Destination_fn(this, &ret4), ret4), (SmoothSnap__get_Position_fn(this, &ret5), ret5), &ret3), ret3);
     double offLen;
     offUnit = (uPtr(_blender)->ToUnit_ex(off, &offLen, &ret6), ret6);
@@ -3064,7 +3061,7 @@ void SmoothSnap::Update(double elapsed)
     SmoothSnap__set_Position_fn(this, (uPtr(_blender)->Add_ex((SmoothSnap__get_Position_fn(this, &ret11), ret11), (uPtr(_blender)->Weight_ex((SmoothSnap__get_Velocity_fn(this, &ret13), ret13), uCRef((double)(float)elapsed), &ret12), ret12), &ret10), ret10));
 }
 
-// public static Fuse.Motion.Simulation.SmoothSnap<T> CreateNormalized() [static] :1358
+// public static Fuse.Motion.Simulation.SmoothSnap<T> CreateNormalized() [static] :10
 SmoothSnap* SmoothSnap::CreateNormalized(uType* __type)
 {
     SmoothSnap* s = SmoothSnap::New1(__type, 1e-05f);
@@ -3074,7 +3071,7 @@ SmoothSnap* SmoothSnap::CreateNormalized(uType* __type)
     return s;
 }
 
-// public static Fuse.Motion.Simulation.SmoothSnap<T> CreatePoints() [static] :1376
+// public static Fuse.Motion.Simulation.SmoothSnap<T> CreatePoints() [static] :28
 SmoothSnap* SmoothSnap::CreatePoints(uType* __type)
 {
     SmoothSnap* s = SmoothSnap::New1(__type, 1e-05f);
@@ -3084,7 +3081,7 @@ SmoothSnap* SmoothSnap::CreatePoints(uType* __type)
     return s;
 }
 
-// public static Fuse.Motion.Simulation.SmoothSnap<T> CreateRadians() [static] :1367
+// public static Fuse.Motion.Simulation.SmoothSnap<T> CreateRadians() [static] :19
 SmoothSnap* SmoothSnap::CreateRadians(uType* __type)
 {
     SmoothSnap* s = SmoothSnap::New1(__type, 1e-05f);
@@ -3094,7 +3091,7 @@ SmoothSnap* SmoothSnap::CreateRadians(uType* __type)
     return s;
 }
 
-// public static Fuse.Motion.Simulation.SmoothSnap<T> CreateUnit(Fuse.Motion.MotionUnit unit) [static] :1385
+// public static Fuse.Motion.Simulation.SmoothSnap<T> CreateUnit(Fuse.Motion.MotionUnit unit) [static] :37
 SmoothSnap* SmoothSnap::CreateUnit(uType* __type, int unit)
 {
     switch (unit)
@@ -3110,7 +3107,7 @@ SmoothSnap* SmoothSnap::CreateUnit(uType* __type, int unit)
     U_THROW(::g::Uno::Exception::New2(::g::Uno::String::op_Addition1(::STRINGS[0/*"Unsupported...*/], uBox<int>(::g::Fuse::Motion::MotionUnit_typeof(), unit))));
 }
 
-// public SmoothSnap New([float scale]) [static] :1397
+// public SmoothSnap New([float scale]) [static] :49
 SmoothSnap* SmoothSnap::New1(uType* __type, float scale)
 {
     SmoothSnap* obj1 = (SmoothSnap*)uNew(__type);

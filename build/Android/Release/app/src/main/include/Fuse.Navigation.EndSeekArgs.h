@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Navigation/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Navigation/1.3.0-rc2/SwipeNavigate.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -9,7 +9,7 @@ namespace g{
 namespace Fuse{
 namespace Navigation{
 
-// internal sealed class EndSeekArgs :4402
+// internal sealed class EndSeekArgs :50
 // {
 uType* EndSeekArgs_typeof();
 void EndSeekArgs__ctor__fn(EndSeekArgs* __this, int* snapTo, float* velocity);

@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Reactive.Bindings/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Reactive.Bindings/1.3.0-rc2/Each.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -20,22 +20,30 @@ namespace g{
 namespace Fuse{
 namespace Reactive{
 
-// public sealed class Each :540
+// public sealed class Each :94
 // {
 ::g::Fuse::Reactive::Instantiator_type* Each_typeof();
 void Each__ctor_5_fn(Each* __this);
 void Each__get_Items_fn(Each* __this, uObject** __retval);
 void Each__set_Items_fn(Each* __this, uObject* value);
+void Each__get_Limit1_fn(Each* __this, int* __retval);
+void Each__set_Limit1_fn(Each* __this, int* value);
 void Each__New4_fn(Each** __retval);
+void Each__get_Offset1_fn(Each* __this, int* __retval);
+void Each__set_Offset1_fn(Each* __this, int* value);
 
 struct Each : ::g::Fuse::Reactive::Instantiator
 {
     static uSStrong< ::g::Fuse::PropertyHandle*> _eachHandle_;
-    static uSStrong< ::g::Fuse::PropertyHandle*>& _eachHandle() { return Each_typeof()->Init(), _eachHandle_; }
+    static uSStrong< ::g::Fuse::PropertyHandle*>& _eachHandle() { return _eachHandle_; }
 
     void ctor_5();
     uObject* Items();
     void Items(uObject* value);
+    int Limit1();
+    void Limit1(int value);
+    int Offset1();
+    void Offset1(int value);
     static Each* New4();
 };
 // }

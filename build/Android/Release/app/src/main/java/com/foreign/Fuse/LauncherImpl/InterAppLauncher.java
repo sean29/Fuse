@@ -26,7 +26,7 @@ public class InterAppLauncher
         android.util.Log.d("emrals", (message==null ? "null" : message.toString()));
     }
 
-    public static String get__actionView430()
+    public static String get__actionView429()
     {
         return Intent.ACTION_VIEW;
     }

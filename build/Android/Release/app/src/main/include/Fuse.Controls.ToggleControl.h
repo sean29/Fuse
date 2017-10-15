@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Controls.Primitives/1.2.1/togglecontrols/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Controls.Primitives/1.3.0-rc2/ToggleControls/ToggleControl.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -18,6 +18,7 @@
 #include <Fuse.Triggers.Actions-b5190bae.h>
 #include <Fuse.Triggers.Actions-ea70af1f.h>
 #include <Fuse.Triggers.IValue-1.h>
+#include <Fuse.Visual.h>
 #include <Uno.Bool.h>
 #include <Uno.Collections.ICollection-1.h>
 #include <Uno.Collections.IEnumerable-1.h>
@@ -30,13 +31,13 @@ namespace g{
 namespace Fuse{
 namespace Controls{
 
-// public sealed class ToggleControl :66
+// public sealed class ToggleControl :35
 // {
 struct ToggleControl_type : ::g::Fuse::Controls::Panel_type
 {
-    ::g::Fuse::Triggers::IValue interface17;
-    ::g::Fuse::Controls::Native::IToggleViewHost interface18;
-    ::g::Fuse::Triggers::Actions::IToggleable interface19;
+    ::g::Fuse::Triggers::IValue interface18;
+    ::g::Fuse::Controls::Native::IToggleViewHost interface19;
+    ::g::Fuse::Triggers::Actions::IToggleable interface20;
 };
 
 ToggleControl_type* ToggleControl_typeof();
@@ -55,7 +56,7 @@ struct ToggleControl : ::g::Fuse::Controls::Panel
 {
     bool _value;
     static ::g::Uno::UX::Selector _valueName_;
-    static ::g::Uno::UX::Selector& _valueName() { return ToggleControl_typeof()->Init(), _valueName_; }
+    static ::g::Uno::UX::Selector& _valueName() { return _valueName_; }
     uStrong<uDelegate*> ValueChanged1;
 
     void OnValueChanged(bool value, uObject* origin);

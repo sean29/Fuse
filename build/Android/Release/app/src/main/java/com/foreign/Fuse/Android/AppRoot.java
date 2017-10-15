@@ -23,12 +23,12 @@ public class AppRoot
         android.util.Log.d("emrals", (message==null ? "null" : message.toString()));
     }
 
-    public static void ClearRoot1336(final Object handle)
+    public static void ClearRoot1335(final Object handle)
     {
         ((android.widget.FrameLayout)handle).removeAllViews();
     }
     
-    public static Object CreateRootView337()
+    public static Object CreateRootView336()
     {
         android.widget.FrameLayout frameLayout = new android.widget.FrameLayout(com.apps.emrals.emrals.GetRootActivity()) {
         
@@ -43,7 +43,7 @@ public class AppRoot
         			if (_currentEvent != motionEvent)
         				return false;
         			boolean result = super.onTouchEvent(motionEvent);
-        			ExternedBlockHost.callUno_Fuse_Android_AppRoot_OnTouchEvent__338((Object)motionEvent,UnoHelper.GetUnoObjectRef((Object)motionEvent));
+        			ExternedBlockHost.callUno_Fuse_Android_AppRoot_OnTouchEvent__337((Object)motionEvent,UnoHelper.GetUnoObjectRef((Object)motionEvent));
         			return _currentEvent == motionEvent;
         		}
         
@@ -54,7 +54,7 @@ public class AppRoot
         return frameLayout;
     }
     
-    public static void SetRootView1339(final Object handle,final Object rootHandle)
+    public static void SetRootView1338(final Object handle,final Object rootHandle)
     {
         ((android.widget.FrameLayout)handle).addView(((android.view.View)rootHandle));
     }

@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/UnoCore/1.2.2/source/uno/time/utilities/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/UnoCore/1.3.1/Source/Uno/Time/Utilities/Converter.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -9,7 +9,7 @@ namespace g{
 namespace Uno{
 namespace Time{
 
-// internal static class Converter :53
+// internal static class Converter :3
 // {
 uClassType* Converter_typeof();
 void Converter__TicksToDays_fn(int64_t* ticks, int* __retval);

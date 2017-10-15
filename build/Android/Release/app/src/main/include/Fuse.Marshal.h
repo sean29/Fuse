@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Marshal/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Marshal/1.3.0-rc2/Marshal.Cast.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -16,7 +16,7 @@ namespace g{namespace Uno{struct Float4;}}
 namespace g{
 namespace Fuse{
 
-// public partial static class Marshal :200
+// public partial static class Marshal :12
 // {
 uClassType* Marshal_typeof();
 void Marshal__Add_fn(uObject* a, uObject* b, uObject** __retval);

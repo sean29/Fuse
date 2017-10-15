@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Navigation/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Navigation/1.3.0-rc2/PageBinding.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -8,7 +8,7 @@ namespace g{
 namespace Fuse{
 namespace Navigation{
 
-// internal abstract interface IPageResourceBinding :1609
+// internal abstract interface IPageResourceBinding :9
 // {
 uInterfaceType* IPageResourceBinding_typeof();
 

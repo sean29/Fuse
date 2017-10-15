@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Gestures/1.2.1/internal/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Gestures/1.3.0-rc2/Internal/Swiper.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -23,7 +23,7 @@ namespace Fuse{
 namespace Gestures{
 namespace Internal{
 
-// internal sealed class Swiper :1006
+// internal sealed class Swiper :287
 // {
 struct Swiper_type : uType
 {
@@ -69,7 +69,7 @@ struct Swiper : uObject
     ::g::Uno::Float2 _startCoord;
     double _startProgress;
     static uSStrong< ::g::Fuse::PropertyHandle*> _swiperProperty_;
-    static uSStrong< ::g::Fuse::PropertyHandle*>& _swiperProperty() { return Swiper_typeof()->Init(), _swiperProperty_; }
+    static uSStrong< ::g::Fuse::PropertyHandle*>& _swiperProperty() { return _swiperProperty_; }
     uStrong< ::g::Fuse::Motion::Simulation::PointerVelocity*> _velocity;
     float _velocityThreshold;
 

@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Reactive.Bindings/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Reactive.Bindings/1.3.0-rc2/Instance.API.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -27,7 +27,7 @@ namespace g{
 namespace Fuse{
 namespace Reactive{
 
-// public partial class Instantiator :915
+// public partial class Instantiator :53
 // {
 struct Instantiator_type : ::g::Fuse::Node_type
 {
@@ -48,6 +48,7 @@ void Instantiator__CompleteNodeAction_fn(Instantiator* __this);
 void Instantiator__CompleteWindowItem_fn(Instantiator* __this, Instantiator__WindowItem* wi, int* windowIndex);
 void Instantiator__CompleteWindowItems_fn(Instantiator* __this, bool* one, bool* __retval);
 void Instantiator__CompleteWindowItemsAction_fn(Instantiator* __this);
+void Instantiator__get_DataCount_fn(Instantiator* __this, int* __retval);
 void Instantiator__DataIndexOfChild_fn(Instantiator* __this, ::g::Fuse::Node* child, int* __retval);
 void Instantiator__DataToWindowIndex_fn(Instantiator* __this, int* dataIndex, int* __retval);
 void Instantiator__get_Defer_fn(Instantiator* __this, int* __retval);
@@ -101,7 +102,6 @@ void Instantiator__RemoveLastActive_fn(Instantiator* __this);
 void Instantiator__RemovePendingAvailableItems_fn(Instantiator* __this);
 void Instantiator__RemovePendingAvailableItemsAction_fn(Instantiator* __this);
 void Instantiator__RemoveWindowItem_fn(Instantiator* __this, Instantiator__WindowItem* wi);
-void Instantiator__ReplaceAll_fn(Instantiator* __this, uArray* dcs);
 void Instantiator__Repopulate_fn(Instantiator* __this);
 void Instantiator__get_Reuse_fn(Instantiator* __this, int* __retval);
 void Instantiator__set_Reuse_fn(Instantiator* __this, int* value);
@@ -158,6 +158,7 @@ struct Instantiator : ::g::Fuse::Behavior
     void CompleteWindowItem(Instantiator__WindowItem* wi, int windowIndex);
     bool CompleteWindowItems(bool one);
     void CompleteWindowItemsAction();
+    int DataCount();
     int DataIndexOfChild(::g::Fuse::Node* child);
     int DataToWindowIndex(int dataIndex);
     int Defer();
@@ -198,7 +199,6 @@ struct Instantiator : ::g::Fuse::Behavior
     void RemovePendingAvailableItems();
     void RemovePendingAvailableItemsAction();
     void RemoveWindowItem(Instantiator__WindowItem* wi);
-    void ReplaceAll(uArray* dcs);
     void Repopulate();
     int Reuse();
     void Reuse(int value);

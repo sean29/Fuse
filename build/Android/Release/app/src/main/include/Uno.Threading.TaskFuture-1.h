@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Uno.Threading/1.2.2/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Uno.Threading/1.3.1/Promise.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -13,7 +13,7 @@ namespace g{
 namespace Uno{
 namespace Threading{
 
-// internal sealed class TaskFuture<T> :794
+// internal sealed class TaskFuture<T> :53
 // {
 ::g::Uno::Threading::Future_type* TaskFuture_typeof();
 void TaskFuture__ctor_3_fn(TaskFuture* __this, uDelegate* func);

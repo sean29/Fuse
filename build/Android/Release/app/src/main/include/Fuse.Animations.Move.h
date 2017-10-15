@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Animations/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Animations/1.3.0-rc2/TransformAnimator.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -12,7 +12,7 @@ namespace g{
 namespace Fuse{
 namespace Animations{
 
-// public sealed class Move :3894
+// public sealed class Move :214
 // {
 ::g::Fuse::Animations::TransformAnimator_type* Move_typeof();
 void Move__ctor_4_fn(Move* __this);

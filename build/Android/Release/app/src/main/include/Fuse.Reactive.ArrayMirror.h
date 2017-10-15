@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Reactive.JavaScript/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Reactive.JavaScript/1.3.0-rc2/ArrayMirror.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -13,7 +13,7 @@ namespace g{
 namespace Fuse{
 namespace Reactive{
 
-// internal sealed class ArrayMirror :8
+// internal sealed class ArrayMirror :6
 // {
 ::g::Fuse::Reactive::ListMirror_type* ArrayMirror_typeof();
 void ArrayMirror__ctor_2_fn(ArrayMirror* __this, ::g::Fuse::Reactive::ThreadWorker* worker, ::g::Fuse::Scripting::Array* arr);

@@ -1,4 +1,4 @@
-// This file was generated based on '.uno/ux11/CogWheelReload.g.uno'.
+// This file was generated based on '.uno/ux13/CogWheelReload.g.uno'.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -15,6 +15,7 @@
 #include <Fuse.Triggers.Actions.IHide.h>
 #include <Fuse.Triggers.Actions.IShow.h>
 #include <Fuse.Triggers.Actions-ea70af1f.h>
+#include <Fuse.Visual.h>
 #include <Uno.Collections.ICollection-1.h>
 #include <Uno.Collections.IEnumerable-1.h>
 #include <Uno.Collections.IList-1.h>
@@ -25,7 +26,6 @@ namespace g{namespace Fuse{namespace Triggers{struct Timeline;}}}
 namespace g{namespace Fuse{namespace Triggers{struct WhileTrue;}}}
 namespace g{namespace Fuse{struct Rotation;}}
 namespace g{namespace Fuse{struct Translation;}}
-namespace g{namespace Uno{namespace UX{struct NameTable;}}}
 namespace g{namespace Uno{namespace UX{struct Property1;}}}
 namespace g{namespace Uno{namespace UX{struct Selector;}}}
 namespace g{struct BigCog;}
@@ -43,9 +43,6 @@ void CogWheelReload__New4_fn(CogWheelReload** __retval);
 
 struct CogWheelReload : ::g::Fuse::Controls::Panel
 {
-    uStrong< ::g::Uno::UX::NameTable*> __g_nametable1;
-    static uSStrong<uArray*> __g_static_nametable1_;
-    static uSStrong<uArray*>& __g_static_nametable1() { return CogWheelReload_typeof()->Init(), __g_static_nametable1_; }
     static ::g::Uno::UX::Selector __selector0_;
     static ::g::Uno::UX::Selector& __selector0() { return CogWheelReload_typeof()->Init(), __selector0_; }
     static ::g::Uno::UX::Selector __selector1_;

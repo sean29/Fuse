@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.FileSystem/1.2.1/uno/io/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.FileSystem/1.3.0-rc2/Uno/IO/FileStatusHelpers.Unix.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -11,7 +11,7 @@ namespace g{
 namespace Fuse{
 namespace FileSystem{
 
-// internal static extern class FileStatusHelpers :186
+// internal static extern class FileStatusHelpers :11
 // {
 uClassType* FileStatusHelpers_typeof();
 void FileStatusHelpers__GetFileStatus_fn(uString* path, ::g::Fuse::FileSystem::FileStatus** __retval);

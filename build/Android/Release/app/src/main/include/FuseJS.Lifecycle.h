@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/FuseJS/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/FuseJS/1.3.0-rc2/Lifecycle.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -12,7 +12,7 @@ namespace g{namespace FuseJS{struct Lifecycle;}}
 namespace g{
 namespace FuseJS{
 
-// public sealed class Lifecycle :142
+// public sealed class Lifecycle :97
 // {
 ::g::Fuse::Scripting::NativeModule_type* Lifecycle_typeof();
 void Lifecycle__ctor_3_fn(Lifecycle* __this);

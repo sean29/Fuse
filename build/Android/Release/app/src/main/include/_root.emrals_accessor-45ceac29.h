@@ -1,4 +1,4 @@
-// This file was generated based on '.uno/ux11/emrals.unoproj.g.uno'.
+// This file was generated based on '.uno/ux13/emrals.unoproj.g.uno'.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -23,9 +23,9 @@ void emrals_accessor_MyLoadingIndicator3_ThemeColor__get_SupportsOriginSetter_fn
 struct emrals_accessor_MyLoadingIndicator3_ThemeColor : ::g::Uno::UX::PropertyAccessor
 {
     static ::g::Uno::UX::Selector _name_;
-    static ::g::Uno::UX::Selector& _name() { return emrals_accessor_MyLoadingIndicator3_ThemeColor_typeof()->Init(), _name_; }
+    static ::g::Uno::UX::Selector& _name() { return _name_; }
     static uSStrong< ::g::Uno::UX::PropertyAccessor*> Singleton_;
-    static uSStrong< ::g::Uno::UX::PropertyAccessor*>& Singleton() { return emrals_accessor_MyLoadingIndicator3_ThemeColor_typeof()->Init(), Singleton_; }
+    static uSStrong< ::g::Uno::UX::PropertyAccessor*>& Singleton() { return Singleton_; }
 
     void ctor_1();
     static emrals_accessor_MyLoadingIndicator3_ThemeColor* New1();

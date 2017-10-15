@@ -18,10 +18,10 @@ namespace g{
 namespace Experimental{
 namespace Cache{
 
-// /usr/local/share/uno/Packages/Experimental.Http/1.2.1/$.uno
-// -----------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Experimental.Http\1.3.0-rc2\ICache.uno
+// ----------------------------------------------------------------------------------
 
-// public delegate void CacheLoaded(Experimental.Cache.ICacheReader record) :678
+// public delegate void CacheLoaded(Experimental.Cache.ICacheReader record) :24
 uDelegateType* CacheLoaded_typeof()
 {
     static uSStrong<uDelegateType*> type;
@@ -33,10 +33,10 @@ uDelegateType* CacheLoaded_typeof()
     return type;
 }
 
-// /usr/local/share/uno/Packages/Experimental.Http/1.2.1/$.uno
-// -----------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Experimental.Http\1.3.0-rc2\ICache.uno
+// ----------------------------------------------------------------------------------
 
-// public abstract interface ICache :680
+// public abstract interface ICache :26
 // {
 uInterfaceType* ICache_typeof()
 {
@@ -48,10 +48,10 @@ uInterfaceType* ICache_typeof()
 }
 // }
 
-// /usr/local/share/uno/Packages/Experimental.Http/1.2.1/$.uno
-// -----------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Experimental.Http\1.3.0-rc2\ICache.uno
+// ----------------------------------------------------------------------------------
 
-// public abstract interface ICacheReader :669
+// public abstract interface ICacheReader :15
 // {
 uInterfaceType* ICacheReader_typeof()
 {
@@ -63,10 +63,10 @@ uInterfaceType* ICacheReader_typeof()
 }
 // }
 
-// /usr/local/share/uno/Packages/Experimental.Http/1.2.1/$.uno
-// -----------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Experimental.Http\1.3.0-rc2\ICache.uno
+// ----------------------------------------------------------------------------------
 
-// public abstract interface ICacheWriter :660
+// public abstract interface ICacheWriter :6
 // {
 uInterfaceType* ICacheWriter_typeof()
 {
@@ -78,17 +78,17 @@ uInterfaceType* ICacheWriter_typeof()
 }
 // }
 
-// /usr/local/share/uno/Packages/Experimental.Http/1.2.1/$.uno
-// -----------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Experimental.Http\1.3.0-rc2\DiskCache.uno
+// -------------------------------------------------------------------------------------
 
-// internal sealed class ProxyStream :121
+// internal sealed class ProxyStream :66
 // {
 static void ProxyStream_build(uType* type)
 {
     type->SetInterfaces(
         ::g::Uno::IDisposable_typeof(), offsetof(::g::Uno::IO::Stream_type, interface0));
     type->SetFields(0,
-        ::g::Uno::IO::Stream_typeof(), offsetof(::g::Experimental::Cache::ProxyStream, Backing), 0);
+        ::g::Uno::IO::Stream_typeof(), offsetof(ProxyStream, Backing), 0);
 }
 
 ::g::Uno::IO::Stream_type* ProxyStream_typeof()
@@ -116,44 +116,44 @@ static void ProxyStream_build(uType* type)
     return type;
 }
 
-// public override sealed void Close() :162
+// public override sealed void Close() :107
 void ProxyStream__Close_fn(ProxyStream* __this)
 {
     uPtr(__this->Backing)->Close();
 }
 
-// public override sealed void Dispose(bool disposing) :161
+// public override sealed void Dispose(bool disposing) :106
 void ProxyStream__Dispose1_fn(ProxyStream* __this, bool* disposing)
 {
     bool disposing_ = *disposing;
     uPtr(__this->Backing)->Dispose1(disposing_);
 }
 
-// public override sealed void Flush() :158
+// public override sealed void Flush() :103
 void ProxyStream__Flush_fn(ProxyStream* __this)
 {
     uPtr(__this->Backing)->Flush();
 }
 
-// public override sealed long get_Length() :143
+// public override sealed long get_Length() :88
 void ProxyStream__get_Length_fn(ProxyStream* __this, int64_t* __retval)
 {
     return *__retval = uPtr(__this->Backing)->Length(), void();
 }
 
-// public override sealed long get_Position() :146
+// public override sealed long get_Position() :91
 void ProxyStream__get_Position_fn(ProxyStream* __this, int64_t* __retval)
 {
     return *__retval = uPtr(__this->Backing)->Position(), void();
 }
 
-// public override sealed void set_Position(long value) :147
+// public override sealed void set_Position(long value) :92
 void ProxyStream__set_Position_fn(ProxyStream* __this, int64_t* value)
 {
     U_THROW(::g::Uno::NotSupportedException::New4());
 }
 
-// public override sealed int Read(byte[] dst, int byteOffset, int byteCount) :152
+// public override sealed int Read(byte[] dst, int byteOffset, int byteCount) :97
 void ProxyStream__Read_fn(ProxyStream* __this, uArray* dst, int* byteOffset, int* byteCount, int* __retval)
 {
     int byteOffset_ = *byteOffset;
@@ -161,7 +161,7 @@ void ProxyStream__Read_fn(ProxyStream* __this, uArray* dst, int* byteOffset, int
     return *__retval = uPtr(__this->Backing)->Read(dst, byteOffset_, byteCount_), void();
 }
 
-// public override sealed void Write(byte[] src, int byteOffset, int byteCount) :154
+// public override sealed void Write(byte[] src, int byteOffset, int byteCount) :99
 void ProxyStream__Write_fn(ProxyStream* __this, uArray* src, int* byteOffset, int* byteCount)
 {
     int byteOffset_ = *byteOffset;

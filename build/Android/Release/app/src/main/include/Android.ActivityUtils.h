@@ -1,4 +1,4 @@
-// This file was generated based on '/Users/a/Library/Application Support/Fusetools/Packages/Android.ActivityUtils/1.2.1/$.uno'.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Android.ActivityUtils/1.3.0-rc2/ActivityUtils.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -10,7 +10,7 @@ namespace g{namespace Uno{namespace Collections{struct Dictionary;}}}
 namespace g{
 namespace Android{
 
-// public static extern class ActivityUtils :15
+// public static extern class ActivityUtils :13
 // {
 uClassType* ActivityUtils_typeof();
 void ActivityUtils__Init_fn(::g::Java::Object** __retval);

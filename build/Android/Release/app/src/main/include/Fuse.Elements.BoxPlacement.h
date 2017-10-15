@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Elements/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Elements/1.3.0-rc2/BoxSizing.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -10,7 +10,7 @@ namespace g{
 namespace Fuse{
 namespace Elements{
 
-// public struct BoxPlacement :160
+// public struct BoxPlacement :9
 // {
 uStructType* BoxPlacement_typeof();
 void BoxPlacement__NoGood_fn(BoxPlacement* __this, float* value, bool* __retval);

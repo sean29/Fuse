@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/UnoCore/1.2.2/source/uno/runtime/implementation/shaderbackends/opengl/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/UnoCore/1.3.1/Source/Uno/Runtime/Implementation/ShaderBackends/OpenGL/GLCompiledProgram.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -13,7 +13,7 @@ namespace Implementation{
 namespace ShaderBackends{
 namespace OpenGL{
 
-// public sealed extern class GLCompiledProgram :8
+// public sealed extern class GLCompiledProgram :6
 // {
 struct GLCompiledProgram_type : uType
 {

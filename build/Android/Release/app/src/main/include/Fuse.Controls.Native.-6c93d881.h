@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Controls.Native/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Controls.Native/1.3.0-rc2/NativeRootViewport.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -11,6 +11,7 @@
 #include <Fuse.Node.h>
 #include <Fuse.RootViewport.h>
 #include <Fuse.Scripting.IScriptObject.h>
+#include <Fuse.Visual.h>
 #include <Uno.Collections.ICollection-1.h>
 #include <Uno.Collections.IEnumerable-1.h>
 #include <Uno.Collections.IList-1.h>
@@ -24,7 +25,7 @@ namespace Fuse{
 namespace Controls{
 namespace Native{
 
-// internal sealed extern class NativeRootViewport :818
+// internal sealed extern class NativeRootViewport :6
 // {
 ::g::Fuse::RootViewport_type* NativeRootViewport_typeof();
 void NativeRootViewport__ctor_5_fn(NativeRootViewport* __this, ::g::Fuse::Controls::Native::ViewHandle* rootView);

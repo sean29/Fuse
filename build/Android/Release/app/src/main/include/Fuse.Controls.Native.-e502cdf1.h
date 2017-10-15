@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Nodes/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Nodes/1.3.0-rc2/ViewHandle.Android.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -16,7 +16,7 @@ namespace Fuse{
 namespace Controls{
 namespace Native{
 
-// public extern class ViewHandle :4877
+// public extern class ViewHandle :12
 // {
 struct ViewHandle_type : uType
 {
@@ -30,6 +30,7 @@ ViewHandle_type* ViewHandle_typeof();
 void ViewHandle__ctor__fn(ViewHandle* __this, ::g::Java::Object* nativeHandle);
 void ViewHandle__ctor_1_fn(ViewHandle* __this, ::g::Java::Object* nativeHandle, bool* isLeafView);
 void ViewHandle__ctor_2_fn(ViewHandle* __this, ::g::Java::Object* nativeHandle, bool* isLeafView, bool* handlesInput);
+void ViewHandle__ctor_3_fn(ViewHandle* __this, ::g::Java::Object* nativeHandle, bool* isLeafView, bool* handlesInput, int* invalidation);
 void ViewHandle__BringToFront_fn(ViewHandle* __this);
 void ViewHandle__CopyState_fn(ViewHandle* sourceHandle, ViewHandle* destHandle);
 void ViewHandle__Dispose_fn(ViewHandle* __this);
@@ -70,10 +71,12 @@ struct ViewHandle : uObject
     bool HandlesInput;
     bool IsLeafView;
     uStrong< ::g::Java::Object*> NativeHandle;
+    bool NeedsInvalidation;
 
     void ctor_(::g::Java::Object* nativeHandle);
     void ctor_1(::g::Java::Object* nativeHandle, bool isLeafView);
     void ctor_2(::g::Java::Object* nativeHandle, bool isLeafView, bool handlesInput);
+    void ctor_3(::g::Java::Object* nativeHandle, bool isLeafView, bool handlesInput, int invalidation);
     void BringToFront();
     void Dispose() { (((ViewHandle_type*)__type)->fp_Dispose)(this); }
     uString* Format();

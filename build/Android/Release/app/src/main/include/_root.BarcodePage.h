@@ -1,4 +1,4 @@
-// This file was generated based on '.uno/ux11/BarcodePage.g.uno'.
+// This file was generated based on '.uno/ux13/BarcodePage.g.uno'.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -15,6 +15,7 @@
 #include <Fuse.Triggers.Actions.IHide.h>
 #include <Fuse.Triggers.Actions.IShow.h>
 #include <Fuse.Triggers.Actions-ea70af1f.h>
+#include <Fuse.Visual.h>
 #include <Uno.Collections.ICollection-1.h>
 #include <Uno.Collections.IEnumerable-1.h>
 #include <Uno.Collections.IList-1.h>
@@ -29,12 +30,11 @@ namespace g{struct Qreader;}
 
 namespace g{
 
-// public partial sealed class BarcodePage :2
+// public partial class BarcodePage :2
 // {
 ::g::Fuse::Controls::Panel_type* BarcodePage_typeof();
 void BarcodePage__ctor_8_fn(BarcodePage* __this, ::g::Fuse::Navigation::Router* router1);
 void BarcodePage__InitializeUX_fn(BarcodePage* __this);
-void BarcodePage__New5_fn(::g::Fuse::Navigation::Router* router1, BarcodePage** __retval);
 
 struct BarcodePage : ::g::Fuse::Controls::Page
 {
@@ -51,7 +51,6 @@ struct BarcodePage : ::g::Fuse::Controls::Page
 
     void ctor_8(::g::Fuse::Navigation::Router* router1);
     void InitializeUX();
-    static BarcodePage* New5(::g::Fuse::Navigation::Router* router1);
 };
 // }
 

@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Controls.Native/1.2.1/android/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Controls.Native/1.3.0-rc2/Android/Shape.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -19,7 +19,7 @@ namespace Controls{
 namespace Native{
 namespace Android{
 
-// internal abstract extern class Shape :1214
+// internal abstract extern class Shape :11
 // {
 struct Shape_type : ::g::Fuse::Controls::Native::Android::View_type
 {
@@ -28,7 +28,7 @@ struct Shape_type : ::g::Fuse::Controls::Native::Android::View_type
 };
 
 Shape_type* Shape_typeof();
-void Shape__ctor_6_fn(Shape* __this);
+void Shape__ctor_7_fn(Shape* __this);
 void Shape__Create_fn(::g::Java::Object** __retval);
 void Shape__FuseControlsNativeIShapeViewUpdate_fn(Shape* __this, uArray* fills, uArray* strokes, float* pixelsPerPoint);
 void Shape__GetLayer_fn(::g::Java::Object* handle, int* layer, ::g::Java::Object** __retval);
@@ -48,7 +48,7 @@ struct Shape : ::g::Fuse::Controls::Native::Android::View
     float _pixelsPerPoint;
     uStrong<uArray*> _strokes;
 
-    void ctor_6();
+    void ctor_7();
     void OnShapeChanged();
     void SetBrush(::g::Java::Object* shapeDrawable, ::g::Fuse::Drawing::Brush* brush);
     void SetLinearGradient(::g::Java::Object* shapeDrawable, ::g::Fuse::Drawing::LinearGradient* linearGradient);

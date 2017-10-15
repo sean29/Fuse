@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/UnoCore/1.2.2/backends/cplusplus/Uno/_config.h.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/UnoCore/1.3.1/Backends/CPlusPlus/Uno/_config.h.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #include <cfloat>
@@ -72,3 +72,8 @@ T uAssertPtr(T ptr, const char* src, const char* msg) {
 #include <alloca.h>
 #endif
 #define U_ALLOCA(SIZE) alloca(SIZE)
+
+// C++11 compatibility
+#ifdef _MSC_VER
+#define alignof __alignof
+#endif

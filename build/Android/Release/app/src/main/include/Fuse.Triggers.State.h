@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Triggers/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Triggers/1.3.0-rc2/State.ScriptClass.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -20,7 +20,7 @@ namespace g{
 namespace Fuse{
 namespace Triggers{
 
-// public partial sealed class State :2024
+// public partial sealed class State :8
 // {
 ::g::Fuse::Triggers::Trigger_type* State_typeof();
 void State__ctor_5_fn(State* __this);

@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Controls.Panels/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Controls.Panels/1.3.0-rc2/GraphicsView.ux.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -19,6 +19,7 @@
 #include <Fuse.Triggers.Actions.IHide.h>
 #include <Fuse.Triggers.Actions.IShow.h>
 #include <Fuse.Triggers.Actions-ea70af1f.h>
+#include <Fuse.Visual.h>
 #include <Uno.Collections.ICollection-1.h>
 #include <Uno.Collections.IEnumerable-1.h>
 #include <Uno.Collections.IList-1.h>
@@ -33,9 +34,7 @@ namespace g{namespace Fuse{struct FrustumViewport;}}
 namespace g{namespace Fuse{struct LayoutParams;}}
 namespace g{namespace Fuse{struct OrthographicFrustum;}}
 namespace g{namespace Fuse{struct Ray;}}
-namespace g{namespace Fuse{struct Visual;}}
 namespace g{namespace Fuse{struct VisualBounds;}}
-namespace g{namespace Uno{namespace Collections{struct List;}}}
 namespace g{namespace Uno{struct EventArgs;}}
 namespace g{namespace Uno{struct Float2;}}
 namespace g{namespace Uno{struct Float4x4;}}
@@ -44,15 +43,15 @@ namespace g{
 namespace Fuse{
 namespace Controls{
 
-// public partial class GraphicsView :310
+// public partial class GraphicsView :106
 // {
 struct GraphicsView_type : ::g::Fuse::Controls::Control_type
 {
-    ::g::Fuse::IViewport interface16;
-    ::g::Fuse::IRenderViewport interface17;
-    ::g::Fuse::Elements::ITreeRenderer interface18;
-    ::g::Fuse::Controls::IProxyHost interface19;
-    ::g::Fuse::ICommonViewport interface20;
+    ::g::Fuse::IViewport interface17;
+    ::g::Fuse::IRenderViewport interface18;
+    ::g::Fuse::Elements::ITreeRenderer interface19;
+    ::g::Fuse::Controls::IProxyHost interface20;
+    ::g::Fuse::ICommonViewport interface21;
 };
 
 GraphicsView_type* GraphicsView_typeof();
@@ -78,7 +77,7 @@ void GraphicsView__FuseElementsITreeRendererRooted_fn(GraphicsView* __this, ::g:
 void GraphicsView__FuseElementsITreeRendererRootingStarted_fn(GraphicsView* __this, ::g::Fuse::Elements::Element* e);
 void GraphicsView__FuseElementsITreeRendererTransformChanged_fn(GraphicsView* __this, ::g::Fuse::Elements::Element* e);
 void GraphicsView__FuseElementsITreeRendererUnrooted_fn(GraphicsView* __this, ::g::Fuse::Elements::Element* e);
-void GraphicsView__FuseElementsITreeRendererZOrderChanged_fn(GraphicsView* __this, ::g::Fuse::Elements::Element* e, ::g::Uno::Collections::List* zorder);
+void GraphicsView__FuseElementsITreeRendererZOrderChanged_fn(GraphicsView* __this, ::g::Fuse::Elements::Element* e, uArray* zorder);
 void GraphicsView__GetTreeRenderer_fn(GraphicsView* __this, ::g::Fuse::Elements::Element* e, uObject** __retval);
 void GraphicsView__InitializeUX_fn(GraphicsView* __this);
 void GraphicsView__OnEnteringBackground_fn(GraphicsView* __this, int* s);

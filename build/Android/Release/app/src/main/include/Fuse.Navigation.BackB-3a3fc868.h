@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Navigation/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Navigation/1.3.0-rc2/Router.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -8,7 +8,7 @@ namespace g{
 namespace Fuse{
 namespace Navigation{
 
-// public enum BackButtonAction :2999
+// public enum BackButtonAction :8
 uEnumType* BackButtonAction_typeof();
 
 }}} // ::g::Fuse::Navigation

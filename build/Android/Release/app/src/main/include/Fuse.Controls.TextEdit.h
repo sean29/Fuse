@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Controls.Primitives/1.2.1/textcontrols/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Controls.Primitives/1.3.0-rc2/TextControls/TextEdit.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -15,6 +15,7 @@
 #include <Fuse.Triggers.Actions.IShow.h>
 #include <Fuse.Triggers.Actions-ea70af1f.h>
 #include <Fuse.Triggers.IValue-1.h>
+#include <Fuse.Visual.h>
 #include <Uno.Collections.ICollection-1.h>
 #include <Uno.Collections.IEnumerable-1.h>
 #include <Uno.Collections.IList-1.h>
@@ -29,7 +30,7 @@ namespace g{
 namespace Fuse{
 namespace Controls{
 
-// internal abstract class TextEdit :2413
+// internal abstract class TextEdit :24
 // {
 struct TextEdit_type : ::g::Fuse::Controls::TextControl_type
 {
@@ -88,25 +89,25 @@ struct TextEdit : ::g::Fuse::Controls::TextControl
 {
     bool _isMultiline;
     static ::g::Uno::UX::Selector ActionStylePropertyName_;
-    static ::g::Uno::UX::Selector& ActionStylePropertyName() { return TextEdit_typeof()->Init(), ActionStylePropertyName_; }
+    static ::g::Uno::UX::Selector& ActionStylePropertyName() { return ActionStylePropertyName_; }
     static ::g::Uno::UX::Selector AutoCapitalizationHintPropertyName_;
-    static ::g::Uno::UX::Selector& AutoCapitalizationHintPropertyName() { return TextEdit_typeof()->Init(), AutoCapitalizationHintPropertyName_; }
+    static ::g::Uno::UX::Selector& AutoCapitalizationHintPropertyName() { return AutoCapitalizationHintPropertyName_; }
     static ::g::Uno::UX::Selector AutoCorrectHintPropertyName_;
-    static ::g::Uno::UX::Selector& AutoCorrectHintPropertyName() { return TextEdit_typeof()->Init(), AutoCorrectHintPropertyName_; }
+    static ::g::Uno::UX::Selector& AutoCorrectHintPropertyName() { return AutoCorrectHintPropertyName_; }
     static ::g::Uno::UX::Selector CaretColorPropertyName_;
-    static ::g::Uno::UX::Selector& CaretColorPropertyName() { return TextEdit_typeof()->Init(), CaretColorPropertyName_; }
+    static ::g::Uno::UX::Selector& CaretColorPropertyName() { return CaretColorPropertyName_; }
     static ::g::Uno::UX::Selector InputHintPropertyName_;
-    static ::g::Uno::UX::Selector& InputHintPropertyName() { return TextEdit_typeof()->Init(), InputHintPropertyName_; }
+    static ::g::Uno::UX::Selector& InputHintPropertyName() { return InputHintPropertyName_; }
     static ::g::Uno::UX::Selector IsPasswordPropertyName_;
-    static ::g::Uno::UX::Selector& IsPasswordPropertyName() { return TextEdit_typeof()->Init(), IsPasswordPropertyName_; }
+    static ::g::Uno::UX::Selector& IsPasswordPropertyName() { return IsPasswordPropertyName_; }
     static ::g::Uno::UX::Selector IsReadOnlyPropertyName_;
-    static ::g::Uno::UX::Selector& IsReadOnlyPropertyName() { return TextEdit_typeof()->Init(), IsReadOnlyPropertyName_; }
+    static ::g::Uno::UX::Selector& IsReadOnlyPropertyName() { return IsReadOnlyPropertyName_; }
     static ::g::Uno::UX::Selector PlaceholderColorPropertyName_;
-    static ::g::Uno::UX::Selector& PlaceholderColorPropertyName() { return TextEdit_typeof()->Init(), PlaceholderColorPropertyName_; }
+    static ::g::Uno::UX::Selector& PlaceholderColorPropertyName() { return PlaceholderColorPropertyName_; }
     static ::g::Uno::UX::Selector PlaceholderTextPropertyName_;
-    static ::g::Uno::UX::Selector& PlaceholderTextPropertyName() { return TextEdit_typeof()->Init(), PlaceholderTextPropertyName_; }
+    static ::g::Uno::UX::Selector& PlaceholderTextPropertyName() { return PlaceholderTextPropertyName_; }
     static ::g::Uno::UX::Selector SelectionColorPropertyName_;
-    static ::g::Uno::UX::Selector& SelectionColorPropertyName() { return TextEdit_typeof()->Init(), SelectionColorPropertyName_; }
+    static ::g::Uno::UX::Selector& SelectionColorPropertyName() { return SelectionColorPropertyName_; }
     uStrong<uDelegate*> ActionTriggered1;
 
     void ctor_7(bool multiline);

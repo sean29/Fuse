@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.WebSockets/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.WebSockets/1.3.0-rc2/WebSocketModule.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -13,7 +13,7 @@ namespace g{
 namespace Fuse{
 namespace WebSocket{
 
-// public abstract class NativeFunctionModule :111
+// public abstract class NativeFunctionModule :10
 // {
 struct NativeFunctionModule_type : ::g::Fuse::Scripting::NativeModule_type
 {

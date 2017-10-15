@@ -1,7 +1,8 @@
-// This file was generated based on /usr/local/share/uno/Packages/UnoCore/1.2.2/source/uno/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/UnoCore/1.3.1/Source/Uno/Tuple.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
+#include <Uno.ITuple.h>
 #include <Uno.Object.h>
 namespace g{namespace Uno{namespace Text{struct StringBuilder;}}}
 namespace g{namespace Uno{struct Tuple2;}}
@@ -9,11 +10,15 @@ namespace g{namespace Uno{struct Tuple2;}}
 namespace g{
 namespace Uno{
 
-// public sealed class Tuple<T1, T2> :7433
+// public sealed class Tuple<T1, T2> :63
 // {
-uType* Tuple2_typeof();
+struct Tuple2_type : uType
+{
+    ::g::Uno::ITuple interface0;
+};
+
+Tuple2_type* Tuple2_typeof();
 void Tuple2__ctor__fn(Tuple2* __this, void* item1, void* item2);
-void Tuple2__AppendItems_fn(Tuple2* __this, ::g::Uno::Text::StringBuilder* sb);
 void Tuple2__Equals_fn(Tuple2* __this, uObject* other, bool* __retval);
 void Tuple2__GetHashCode_fn(Tuple2* __this, int* __retval);
 void Tuple2__get_Item1_fn(Tuple2* __this, uTRef __retval);
@@ -22,6 +27,7 @@ void Tuple2__get_Item2_fn(Tuple2* __this, uTRef __retval);
 void Tuple2__set_Item2_fn(Tuple2* __this, void* value);
 void Tuple2__New1_fn(uType* __type, void* item1, void* item2, Tuple2** __retval);
 void Tuple2__ToString_fn(Tuple2* __this, uString** __retval);
+void Tuple2__UnoITupleAppendItems_fn(Tuple2* __this, ::g::Uno::Text::StringBuilder* sb);
 
 struct Tuple2 : uObject
 {
@@ -30,7 +36,6 @@ struct Tuple2 : uObject
 
     template<class T1, class T2>
     void ctor_(T1 item1, T2 item2) { Tuple2__ctor__fn(this, uConstrain(__type->T(0), item1), uConstrain(__type->T(1), item2)); }
-    void AppendItems(::g::Uno::Text::StringBuilder* sb);
     template<class T1>
     T1 Item1() { T1 __retval; return Tuple2__get_Item1_fn(this, &__retval), __retval; }
     template<class T1>

@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.FileSystem/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.FileSystem/1.3.0-rc2/Nothing.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -9,7 +9,7 @@ namespace g{
 namespace Fuse{
 namespace FileSystem{
 
-// internal sealed class Nothing :1405
+// internal sealed class Nothing :4
 // {
 uType* Nothing_typeof();
 

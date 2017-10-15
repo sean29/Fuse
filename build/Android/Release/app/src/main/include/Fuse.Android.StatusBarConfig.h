@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Android/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Android/1.3.0-rc2/StatusBarConfig.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -17,7 +17,7 @@ namespace g{
 namespace Fuse{
 namespace Android{
 
-// public sealed class StatusBarConfig :84
+// public sealed class StatusBarConfig :82
 // {
 ::g::Fuse::Node_type* StatusBarConfig_typeof();
 void StatusBarConfig__ctor_3_fn(StatusBarConfig* __this);

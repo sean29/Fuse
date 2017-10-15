@@ -1,4 +1,4 @@
-$: 813959173
-BuildCommand: build.sh
-RunCommand: run.sh
+$: -1159111005
+BuildCommand: build.bat
+RunCommand: run.bat
 Product: emrals.apk

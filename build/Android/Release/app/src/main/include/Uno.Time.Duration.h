@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/UnoCore/1.2.2/source/uno/time/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/UnoCore/1.3.1/Source/Uno/Time/Duration.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -9,7 +9,7 @@ namespace g{
 namespace Uno{
 namespace Time{
 
-// public struct Duration :383
+// public struct Duration :3
 // {
 uStructType* Duration_typeof();
 void Duration__ctor__fn(Duration* __this, int64_t* ticks1);

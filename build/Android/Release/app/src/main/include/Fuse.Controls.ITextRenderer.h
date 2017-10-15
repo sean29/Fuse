@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Controls.Primitives/1.2.1/textcontrols/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Controls.Primitives/1.3.0-rc2/TextControls/TextControl.GraphicsText.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -13,7 +13,7 @@ namespace g{
 namespace Fuse{
 namespace Controls{
 
-// internal abstract interface ITextRenderer :2005
+// internal abstract interface ITextRenderer :6
 // {
 uInterfaceType* ITextRenderer_typeof();
 

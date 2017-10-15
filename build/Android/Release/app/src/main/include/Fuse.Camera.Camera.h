@@ -1,4 +1,4 @@
-// This file was generated based on '/Users/a/Library/Application Support/Fusetools/Packages/Fuse.Camera/1.2.1/$.uno'.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Camera/1.3.0-rc2/Camera.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -14,7 +14,7 @@ namespace g{
 namespace Fuse{
 namespace Camera{
 
-// public sealed class Camera :34
+// public sealed class Camera :32
 // {
 ::g::Fuse::Scripting::NativeModule_type* Camera_typeof();
 void Camera__ctor_2_fn(Camera* __this);

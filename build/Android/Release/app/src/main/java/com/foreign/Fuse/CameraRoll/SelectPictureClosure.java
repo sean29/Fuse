@@ -29,7 +29,7 @@ public class SelectPictureClosure
         android.util.Log.d("emrals", (message==null ? "null" : message.toString()));
     }
 
-    public static void HandleIntent407(final UnoObject _this, final int resultCode,final Object intent,final com.foreign.Uno.Action_String onComplete,final com.foreign.Uno.Action_String onFail)
+    public static void HandleIntent406(final UnoObject _this, final int resultCode,final Object intent,final com.foreign.Uno.Action_String onComplete,final com.foreign.Uno.Action_String onFail)
     {
         Intent i = (Intent)intent;
         switch (resultCode)

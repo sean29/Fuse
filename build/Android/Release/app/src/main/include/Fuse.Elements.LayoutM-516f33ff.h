@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Elements/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Elements/1.3.0-rc2/LayoutMasterBoxSizing.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -15,7 +15,7 @@ namespace g{
 namespace Fuse{
 namespace Elements{
 
-// internal sealed class LayoutMasterBoxSizing :3265
+// internal sealed class LayoutMasterBoxSizing :18
 // {
 ::g::Fuse::Elements::BoxSizing_type* LayoutMasterBoxSizing_typeof();
 void LayoutMasterBoxSizing__ctor_1_fn(LayoutMasterBoxSizing* __this);
@@ -31,9 +31,9 @@ void LayoutMasterBoxSizing__RequestLayout_fn(LayoutMasterBoxSizing* __this, ::g:
 struct LayoutMasterBoxSizing : ::g::Fuse::Elements::BoxSizing
 {
     static uSStrong< ::g::Fuse::PropertyHandle*> _layoutMasterDataProperty_;
-    static uSStrong< ::g::Fuse::PropertyHandle*>& _layoutMasterDataProperty() { return LayoutMasterBoxSizing_typeof()->Init(), _layoutMasterDataProperty_; }
+    static uSStrong< ::g::Fuse::PropertyHandle*>& _layoutMasterDataProperty() { return _layoutMasterDataProperty_; }
     static uSStrong<LayoutMasterBoxSizing*> Singleton_;
-    static uSStrong<LayoutMasterBoxSizing*>& Singleton() { return LayoutMasterBoxSizing_typeof()->Init(), Singleton_; }
+    static uSStrong<LayoutMasterBoxSizing*>& Singleton() { return Singleton_; }
 
     void ctor_1();
     static ::g::Fuse::Elements::Element* GetLayoutMaster(::g::Fuse::Elements::Element* elm);

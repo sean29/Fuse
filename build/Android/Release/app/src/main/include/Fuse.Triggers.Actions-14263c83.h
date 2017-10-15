@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Controls.WebView/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Controls.WebView/1.3.0-rc2/WebViewNavActions.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -11,7 +11,7 @@ namespace Fuse{
 namespace Triggers{
 namespace Actions{
 
-// public sealed class StopLoading :710
+// public sealed class StopLoading :40
 // {
 ::g::Fuse::Triggers::Actions::WebViewNavAction_type* StopLoading_typeof();
 void StopLoading__Execute_fn(StopLoading* __this, ::g::Fuse::Controls::WebView* webview);

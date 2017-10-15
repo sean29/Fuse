@@ -30,7 +30,7 @@ public class AndroidDeviceInterop
         android.util.Log.d("emrals", (message==null ? "null" : message.toString()));
     }
 
-    public static Object LaunchIntent316(final String action,final String uri,final String packageName,final String className)
+    public static Object LaunchIntent315(final String action,final String uri,final String packageName,final String className)
     {
         Intent pendingIntent = new Intent(action);
         pendingIntent.setData(Uri.parse(uri));
@@ -43,21 +43,21 @@ public class AndroidDeviceInterop
         return pendingIntent;
     }
     
-    public static Object MakeBufferInputStream1317(final Object buf)
+    public static Object MakeBufferInputStream1316(final Object buf)
     {
         return new com.fuse.android.ByteBufferInputStream((com.uno.UnoBackedByteBuffer)buf);
     }
     
-    public static Object MakeMediaDataSource1318(final Object buf)
+    public static Object MakeMediaDataSource1317(final Object buf)
     {
         return new com.fuse.android.ByteBufferMediaDataSource((com.uno.UnoBackedByteBuffer)buf);
     }
     
-    public static Object OpenAssetFileDescriptor319(final UnoObject bundle)
+    public static Object OpenAssetFileDescriptor318(final UnoObject bundle)
     {
         try
         {
-        	String uri = ExternedBlockHost.callUno_Uno_IO_BundleFile_BundlePathGet320(bundle);
+        	String uri = ExternedBlockHost.callUno_Uno_IO_BundleFile_BundlePathGet319(bundle);
         	AssetManager am = com.fuse.Activity.getRootActivity().getAssets();
         	AssetFileDescriptor afd = am.openFd(uri);
         	return afd;

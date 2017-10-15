@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.UserEvents/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.UserEvents/1.3.0-rc2/UserEvent.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -12,7 +12,7 @@ namespace g{namespace Uno{namespace Collections{struct Dictionary;}}}
 namespace g{
 namespace Fuse{
 
-// internal sealed class UserEventDispatch :496
+// internal sealed class UserEventDispatch :48
 // {
 uType* UserEventDispatch_typeof();
 void UserEventDispatch__ctor__fn(UserEventDispatch* __this);
@@ -29,7 +29,7 @@ void UserEventDispatch__remove_Raised_fn(UserEventDispatch* __this, uDelegate* v
 struct UserEventDispatch : uObject
 {
     static uSStrong< ::g::Uno::Collections::Dictionary*> _userEvents_;
-    static uSStrong< ::g::Uno::Collections::Dictionary*>& _userEvents() { return UserEventDispatch_typeof()->Init(), _userEvents_; }
+    static uSStrong< ::g::Uno::Collections::Dictionary*>& _userEvents() { return _userEvents_; }
     ::g::Uno::UX::Selector _Name;
     uStrong<uDelegate*> Raised1;
 

@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Controls.ScrollView/1.2.1/triggers/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Controls.ScrollView/1.3.0-rc2/Triggers/Scrolled.ScriptClass.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -22,7 +22,7 @@ namespace g{
 namespace Fuse{
 namespace Triggers{
 
-// public partial sealed class Scrolled :223
+// public partial sealed class Scrolled :8
 // {
 ::g::Fuse::Triggers::Trigger_type* Scrolled_typeof();
 void Scrolled__check_fn(::g::Fuse::Scripting::Context* c, Scrolled* s, uArray* args);

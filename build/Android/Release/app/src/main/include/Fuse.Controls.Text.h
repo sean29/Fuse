@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Controls.Primitives/1.2.1/textcontrols/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Controls.Primitives/1.3.0-rc2/TextControls/Text.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -15,6 +15,7 @@
 #include <Fuse.Triggers.Actions.IShow.h>
 #include <Fuse.Triggers.Actions-ea70af1f.h>
 #include <Fuse.Triggers.IValue-1.h>
+#include <Fuse.Visual.h>
 #include <Uno.Collections.ICollection-1.h>
 #include <Uno.Collections.IEnumerable-1.h>
 #include <Uno.Collections.IList-1.h>
@@ -26,7 +27,7 @@ namespace g{
 namespace Fuse{
 namespace Controls{
 
-// public class Text :1773
+// public class Text :15
 // {
 ::g::Fuse::Controls::TextControl_type* Text_typeof();
 void Text__ctor_7_fn(Text* __this);

@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Controls.Navigation/1.2.1/navigationinternal/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Controls.Navigation/1.3.0-rc2/NavigationInternal/EnterHorizontal.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -19,7 +19,7 @@ namespace Fuse{
 namespace Controls{
 namespace NavigationInternal{
 
-// public partial sealed class EnterHorizontal :11
+// public partial sealed class EnterHorizontal :9
 // {
 ::g::Fuse::Navigation::NavigationAnimation_type* EnterHorizontal_typeof();
 void EnterHorizontal__ctor_8_fn(EnterHorizontal* __this);

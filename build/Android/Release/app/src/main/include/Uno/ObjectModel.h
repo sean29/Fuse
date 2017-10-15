@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/UnoCore/1.2.2/backends/cplusplus/Uno/ObjectModel.h.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/UnoCore/1.3.1/Backends/CPlusPlus/Uno/ObjectModel.h.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -104,6 +104,7 @@ struct uType : uObject
     size_t TypeSize;
     size_t ValueSize;
     size_t ObjectSize;
+    size_t Alignment;
 #ifdef DEBUG_ARC
     size_t ObjectCount;
 #endif
@@ -203,6 +204,7 @@ struct uTypeOptions
     size_t ObjectSize;
     size_t TypeSize;
     size_t ValueSize;
+    size_t Alignment;
 
     uTypeOptions() {
         memset(this, 0, sizeof(uTypeOptions));

@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Reactive.JavaScript/1.2.1/fusejs/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Reactive.JavaScript/1.3.0-rc2/FuseJS/Timer.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -10,7 +10,7 @@ namespace Fuse{
 namespace Reactive{
 namespace FuseJS{
 
-// private sealed class TimerManager.Timer :940
+// private sealed class TimerManager.Timer :244
 // {
 uType* TimerManager__Timer_typeof();
 void TimerManager__Timer__ctor__fn(TimerManager__Timer* __this, double* ms, uDelegate* callback, bool* repeat);

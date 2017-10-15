@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Triggers/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Triggers/1.3.0-rc2/BusyTaskModule.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -12,7 +12,7 @@ namespace g{
 namespace Fuse{
 namespace Triggers{
 
-// public sealed class BusyTaskModule :552
+// public sealed class BusyTaskModule :12
 // {
 ::g::Fuse::Scripting::NativeModule_type* BusyTaskModule_typeof();
 void BusyTaskModule__ctor_2_fn(BusyTaskModule* __this);

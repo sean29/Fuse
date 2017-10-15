@@ -33,17 +33,16 @@
 #include <Uno.Threading.Future-1.h>
 #include <Uno.UX.FileSource.h>
 #include <Uno/JNIHelper.h>
-static uType* TYPES[9];
 
 namespace g{
 namespace Fuse{
 namespace Maps{
 namespace Android{
 
-// /Users/a/Library/Application Support/Fusetools/Packages/Fuse.Maps/1.2.1/android/$.uno
-// -------------------------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Maps\1.3.0-rc2\Android\ForeignHelpers.uno
+// ------------------------------------------------------------------------------------------
 
-// internal static extern class ForeignHelpers :12
+// internal static extern class ForeignHelpers :10
 // {
 static void ForeignHelpers_build(uType* type)
 {
@@ -61,121 +60,121 @@ uClassType* ForeignHelpers_typeof()
     return type;
 }
 
-// internal static string AddMarker(Java.Object handle, double lat, double lng, string label, string iconPath, float iconAnchorX, float iconAnchorY, int uid) :133
+// internal static string AddMarker(Java.Object handle, double lat, double lng, string label, string iconPath, float iconAnchorX, float iconAnchorY, int uid) :131
 void ForeignHelpers__AddMarker_fn(::g::Java::Object* handle, double* lat, double* lng, uString* label, uString* iconPath, float* iconAnchorX, float* iconAnchorY, int* uid, uString** __retval)
 {
     *__retval = ForeignHelpers::AddMarker(handle, *lat, *lng, label, iconPath, *iconAnchorX, *iconAnchorY, *uid);
 }
 
-// internal static void Clear(Java.Object handle) :112
+// internal static void Clear(Java.Object handle) :110
 void ForeignHelpers__Clear_fn(::g::Java::Object* handle)
 {
     ForeignHelpers::Clear(handle);
 }
 
-// internal static void Configure(Java.Object handle) :154
+// internal static void Configure(Java.Object handle) :152
 void ForeignHelpers__Configure_fn(::g::Java::Object* handle)
 {
     ForeignHelpers::Configure(handle);
 }
 
-// internal static void ConfigureGestures(Java.Object handle, bool zoom, bool rotate, bool tilt, bool scroll) :56
+// internal static void ConfigureGestures(Java.Object handle, bool zoom, bool rotate, bool tilt, bool scroll) :54
 void ForeignHelpers__ConfigureGestures_fn(::g::Java::Object* handle, bool* zoom, bool* rotate, bool* tilt, bool* scroll)
 {
     ForeignHelpers::ConfigureGestures(handle, *zoom, *rotate, *tilt, *scroll);
 }
 
-// internal static void ConfigureUI(Java.Object handle, bool compass, bool myLocationButton) :49
+// internal static void ConfigureUI(Java.Object handle, bool compass, bool myLocationButton) :47
 void ForeignHelpers__ConfigureUI_fn(::g::Java::Object* handle, bool* compass, bool* myLocationButton)
 {
     ForeignHelpers::ConfigureUI(handle, *compass, *myLocationButton);
 }
 
-// internal static Java.Object CreateMap() :15
+// internal static Java.Object CreateMap() :13
 void ForeignHelpers__CreateMap_fn(::g::Java::Object** __retval)
 {
     *__retval = ForeignHelpers::CreateMap();
 }
 
-// internal static void Destroy(Java.Object handle) :147
+// internal static void Destroy(Java.Object handle) :145
 void ForeignHelpers__Destroy_fn(::g::Java::Object* handle)
 {
     ForeignHelpers::Destroy(handle);
 }
 
-// internal static float GetOrientation(Java.Object handle) :77
+// internal static float GetOrientation(Java.Object handle) :75
 void ForeignHelpers__GetOrientation_fn(::g::Java::Object* handle, float* __retval)
 {
     *__retval = ForeignHelpers::GetOrientation(handle);
 }
 
-// internal static double GetPositionLat(Java.Object handle) :35
+// internal static double GetPositionLat(Java.Object handle) :33
 void ForeignHelpers__GetPositionLat_fn(::g::Java::Object* handle, double* __retval)
 {
     *__retval = ForeignHelpers::GetPositionLat(handle);
 }
 
-// internal static double GetPositionLong(Java.Object handle) :42
+// internal static double GetPositionLong(Java.Object handle) :40
 void ForeignHelpers__GetPositionLong_fn(::g::Java::Object* handle, double* __retval)
 {
     *__retval = ForeignHelpers::GetPositionLong(handle);
 }
 
-// internal static float GetTilt(Java.Object handle) :63
+// internal static float GetTilt(Java.Object handle) :61
 void ForeignHelpers__GetTilt_fn(::g::Java::Object* handle, float* __retval)
 {
     *__retval = ForeignHelpers::GetTilt(handle);
 }
 
-// internal static float GetZoom(Java.Object handle) :119
+// internal static float GetZoom(Java.Object handle) :117
 void ForeignHelpers__GetZoom_fn(::g::Java::Object* handle, float* __retval)
 {
     *__retval = ForeignHelpers::GetZoom(handle);
 }
 
-// internal static void MoveCamera(Java.Object handle, double lat, double lng, float zoom, float tilt, float bearing, double duration) :21
+// internal static void MoveCamera(Java.Object handle, double lat, double lng, float zoom, float tilt, float bearing, double duration) :19
 void ForeignHelpers__MoveCamera_fn(::g::Java::Object* handle, double* lat, double* lng, float* zoom, float* tilt, float* bearing, double* duration)
 {
     ForeignHelpers::MoveCamera(handle, *lat, *lng, *zoom, *tilt, *bearing, *duration);
 }
 
-// internal static void SetHybridStyle(Java.Object handle) :98
+// internal static void SetHybridStyle(Java.Object handle) :96
 void ForeignHelpers__SetHybridStyle_fn(::g::Java::Object* handle)
 {
     ForeignHelpers::SetHybridStyle(handle);
 }
 
-// internal static void SetMapEventHandlers(Java.Object handle, Uno.Action onMapReady, Uno.Action<double, double> handleLocationLongPress, Uno.Action<double, double> handleLocationTapped, Uno.Action onAnimationBegin, Uno.Action onAnimationEnd, Uno.Action<double, double> handleCameraChange, Uno.Action<int, string> handleMarkerPressed, Uno.Action<int, float, float> handleTouchEvent) :162
+// internal static void SetMapEventHandlers(Java.Object handle, Uno.Action onMapReady, Uno.Action<double, double> handleLocationLongPress, Uno.Action<double, double> handleLocationTapped, Uno.Action onAnimationBegin, Uno.Action onAnimationEnd, Uno.Action<double, double> handleCameraChange, Uno.Action<int, string> handleMarkerPressed, Uno.Action<int, float, float> handleTouchEvent) :160
 void ForeignHelpers__SetMapEventHandlers_fn(::g::Java::Object* handle, uDelegate* onMapReady, uDelegate* handleLocationLongPress, uDelegate* handleLocationTapped, uDelegate* onAnimationBegin, uDelegate* onAnimationEnd, uDelegate* handleCameraChange, uDelegate* handleMarkerPressed, uDelegate* handleTouchEvent)
 {
     ForeignHelpers::SetMapEventHandlers(handle, onMapReady, handleLocationLongPress, handleLocationTapped, onAnimationBegin, onAnimationEnd, handleCameraChange, handleMarkerPressed, handleTouchEvent);
 }
 
-// internal static void SetMyLocationEnabled(Java.Object handle, bool b) :140
+// internal static void SetMyLocationEnabled(Java.Object handle, bool b) :138
 void ForeignHelpers__SetMyLocationEnabled_fn(::g::Java::Object* handle, bool* b)
 {
     ForeignHelpers::SetMyLocationEnabled(handle, *b);
 }
 
-// public static void SetNormalStyle(Java.Object handle) :105
+// public static void SetNormalStyle(Java.Object handle) :103
 void ForeignHelpers__SetNormalStyle_fn(::g::Java::Object* handle)
 {
     ForeignHelpers::SetNormalStyle(handle);
 }
 
-// internal static void SetSatelliteStyle(Java.Object handle) :91
+// internal static void SetSatelliteStyle(Java.Object handle) :89
 void ForeignHelpers__SetSatelliteStyle_fn(::g::Java::Object* handle)
 {
     ForeignHelpers::SetSatelliteStyle(handle);
 }
 
-// internal static string AddMarker(Java.Object handle, double lat, double lng, string label, string iconPath, float iconAnchorX, float iconAnchorY, int uid) [static] :133
+// internal static string AddMarker(Java.Object handle, double lat, double lng, string label, string iconPath, float iconAnchorX, float iconAnchorY, int uid) [static] :131
 uString* ForeignHelpers::AddMarker(::g::Java::Object* handle, double lat, double lng, uString* label, uString* iconPath, float iconAnchorX, float iconAnchorY, int uid)
 {
     {
         INIT_JNI;
         jclass __cls = JniHelper::GetNativeExternClass();
-        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "AddMarker384", "(Ljava/lang/Object;DDLjava/lang/String;Ljava/lang/String;FFI)Ljava/lang/String;");
+        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "AddMarker383", "(Ljava/lang/Object;DDLjava/lang/String;Ljava/lang/String;FFI)Ljava/lang/String;");
         ::g::Java::Object* _uhandle=handle;
         jobject _handle = (_uhandle==NULL ? NULL : U_JNIVAR->NewLocalRef(::g::Android::Base::Wrappers::IJWrapper::_GetJavaObject(uInterface((uObject*)_uhandle, ::g::Android::Base::Wrappers::IJWrapper_typeof()))));
         double _ulat=lat;
@@ -209,13 +208,13 @@ uString* ForeignHelpers::AddMarker(::g::Java::Object* handle, double lat, double
     
 }
 
-// internal static void Clear(Java.Object handle) [static] :112
+// internal static void Clear(Java.Object handle) [static] :110
 void ForeignHelpers::Clear(::g::Java::Object* handle)
 {
     {
         INIT_JNI;
         jclass __cls = JniHelper::GetNativeExternClass();
-        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "Clear385", "(Ljava/lang/Object;)V");
+        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "Clear384", "(Ljava/lang/Object;)V");
         ::g::Java::Object* _uhandle=handle;
         jobject _handle = (_uhandle==NULL ? NULL : U_JNIVAR->NewLocalRef(::g::Android::Base::Wrappers::IJWrapper::_GetJavaObject(uInterface((uObject*)_uhandle, ::g::Android::Base::Wrappers::IJWrapper_typeof()))));
         U_JNIVAR->CallStaticVoidMethod(__cls,__mtd,_handle);
@@ -227,13 +226,13 @@ void ForeignHelpers::Clear(::g::Java::Object* handle)
     
 }
 
-// internal static void Configure(Java.Object handle) [static] :154
+// internal static void Configure(Java.Object handle) [static] :152
 void ForeignHelpers::Configure(::g::Java::Object* handle)
 {
     {
         INIT_JNI;
         jclass __cls = JniHelper::GetNativeExternClass();
-        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "Configure386", "(Ljava/lang/Object;)V");
+        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "Configure385", "(Ljava/lang/Object;)V");
         ::g::Java::Object* _uhandle=handle;
         jobject _handle = (_uhandle==NULL ? NULL : U_JNIVAR->NewLocalRef(::g::Android::Base::Wrappers::IJWrapper::_GetJavaObject(uInterface((uObject*)_uhandle, ::g::Android::Base::Wrappers::IJWrapper_typeof()))));
         U_JNIVAR->CallStaticVoidMethod(__cls,__mtd,_handle);
@@ -245,13 +244,13 @@ void ForeignHelpers::Configure(::g::Java::Object* handle)
     
 }
 
-// internal static void ConfigureGestures(Java.Object handle, bool zoom, bool rotate, bool tilt, bool scroll) [static] :56
+// internal static void ConfigureGestures(Java.Object handle, bool zoom, bool rotate, bool tilt, bool scroll) [static] :54
 void ForeignHelpers::ConfigureGestures(::g::Java::Object* handle, bool zoom, bool rotate, bool tilt, bool scroll)
 {
     {
         INIT_JNI;
         jclass __cls = JniHelper::GetNativeExternClass();
-        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "ConfigureGestures387", "(Ljava/lang/Object;ZZZZ)V");
+        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "ConfigureGestures386", "(Ljava/lang/Object;ZZZZ)V");
         ::g::Java::Object* _uhandle=handle;
         jobject _handle = (_uhandle==NULL ? NULL : U_JNIVAR->NewLocalRef(::g::Android::Base::Wrappers::IJWrapper::_GetJavaObject(uInterface((uObject*)_uhandle, ::g::Android::Base::Wrappers::IJWrapper_typeof()))));
         bool _uzoom=zoom;
@@ -275,13 +274,13 @@ void ForeignHelpers::ConfigureGestures(::g::Java::Object* handle, bool zoom, boo
     
 }
 
-// internal static void ConfigureUI(Java.Object handle, bool compass, bool myLocationButton) [static] :49
+// internal static void ConfigureUI(Java.Object handle, bool compass, bool myLocationButton) [static] :47
 void ForeignHelpers::ConfigureUI(::g::Java::Object* handle, bool compass, bool myLocationButton)
 {
     {
         INIT_JNI;
         jclass __cls = JniHelper::GetNativeExternClass();
-        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "ConfigureUI388", "(Ljava/lang/Object;ZZ)V");
+        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "ConfigureUI387", "(Ljava/lang/Object;ZZ)V");
         ::g::Java::Object* _uhandle=handle;
         jobject _handle = (_uhandle==NULL ? NULL : U_JNIVAR->NewLocalRef(::g::Android::Base::Wrappers::IJWrapper::_GetJavaObject(uInterface((uObject*)_uhandle, ::g::Android::Base::Wrappers::IJWrapper_typeof()))));
         bool _ucompass=compass;
@@ -299,13 +298,13 @@ void ForeignHelpers::ConfigureUI(::g::Java::Object* handle, bool compass, bool m
     
 }
 
-// internal static Java.Object CreateMap() [static] :15
+// internal static Java.Object CreateMap() [static] :13
 ::g::Java::Object* ForeignHelpers::CreateMap()
 {
     {
         INIT_JNI;
         jclass __cls = JniHelper::GetNativeExternClass();
-        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "CreateMap389", "()Ljava/lang/Object;");
+        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "CreateMap388", "()Ljava/lang/Object;");
         jobject __jresult = U_JNIVAR->CallStaticObjectMethod(__cls,__mtd);
         ::g::Java::Object* __result = (::g::Java::Object*)::g::Android::Base::Wrappers::JavaObjectHelper::JObjectToJWrapper(__jresult, false);
         ::g::Android::Base::JNI::CheckException();
@@ -314,13 +313,13 @@ void ForeignHelpers::ConfigureUI(::g::Java::Object* handle, bool compass, bool m
     
 }
 
-// internal static void Destroy(Java.Object handle) [static] :147
+// internal static void Destroy(Java.Object handle) [static] :145
 void ForeignHelpers::Destroy(::g::Java::Object* handle)
 {
     {
         INIT_JNI;
         jclass __cls = JniHelper::GetNativeExternClass();
-        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "Destroy390", "(Ljava/lang/Object;)V");
+        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "Destroy389", "(Ljava/lang/Object;)V");
         ::g::Java::Object* _uhandle=handle;
         jobject _handle = (_uhandle==NULL ? NULL : U_JNIVAR->NewLocalRef(::g::Android::Base::Wrappers::IJWrapper::_GetJavaObject(uInterface((uObject*)_uhandle, ::g::Android::Base::Wrappers::IJWrapper_typeof()))));
         U_JNIVAR->CallStaticVoidMethod(__cls,__mtd,_handle);
@@ -332,13 +331,13 @@ void ForeignHelpers::Destroy(::g::Java::Object* handle)
     
 }
 
-// internal static float GetOrientation(Java.Object handle) [static] :77
+// internal static float GetOrientation(Java.Object handle) [static] :75
 float ForeignHelpers::GetOrientation(::g::Java::Object* handle)
 {
     {
         INIT_JNI;
         jclass __cls = JniHelper::GetNativeExternClass();
-        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "GetOrientation391", "(Ljava/lang/Object;)F");
+        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "GetOrientation390", "(Ljava/lang/Object;)F");
         ::g::Java::Object* _uhandle=handle;
         jobject _handle = (_uhandle==NULL ? NULL : U_JNIVAR->NewLocalRef(::g::Android::Base::Wrappers::IJWrapper::_GetJavaObject(uInterface((uObject*)_uhandle, ::g::Android::Base::Wrappers::IJWrapper_typeof()))));
         jfloat __jresult = U_JNIVAR->CallStaticFloatMethod(__cls,__mtd,_handle);
@@ -350,13 +349,13 @@ float ForeignHelpers::GetOrientation(::g::Java::Object* handle)
     
 }
 
-// internal static double GetPositionLat(Java.Object handle) [static] :35
+// internal static double GetPositionLat(Java.Object handle) [static] :33
 double ForeignHelpers::GetPositionLat(::g::Java::Object* handle)
 {
     {
         INIT_JNI;
         jclass __cls = JniHelper::GetNativeExternClass();
-        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "GetPositionLat392", "(Ljava/lang/Object;)D");
+        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "GetPositionLat391", "(Ljava/lang/Object;)D");
         ::g::Java::Object* _uhandle=handle;
         jobject _handle = (_uhandle==NULL ? NULL : U_JNIVAR->NewLocalRef(::g::Android::Base::Wrappers::IJWrapper::_GetJavaObject(uInterface((uObject*)_uhandle, ::g::Android::Base::Wrappers::IJWrapper_typeof()))));
         jdouble __jresult = U_JNIVAR->CallStaticDoubleMethod(__cls,__mtd,_handle);
@@ -368,13 +367,13 @@ double ForeignHelpers::GetPositionLat(::g::Java::Object* handle)
     
 }
 
-// internal static double GetPositionLong(Java.Object handle) [static] :42
+// internal static double GetPositionLong(Java.Object handle) [static] :40
 double ForeignHelpers::GetPositionLong(::g::Java::Object* handle)
 {
     {
         INIT_JNI;
         jclass __cls = JniHelper::GetNativeExternClass();
-        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "GetPositionLong393", "(Ljava/lang/Object;)D");
+        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "GetPositionLong392", "(Ljava/lang/Object;)D");
         ::g::Java::Object* _uhandle=handle;
         jobject _handle = (_uhandle==NULL ? NULL : U_JNIVAR->NewLocalRef(::g::Android::Base::Wrappers::IJWrapper::_GetJavaObject(uInterface((uObject*)_uhandle, ::g::Android::Base::Wrappers::IJWrapper_typeof()))));
         jdouble __jresult = U_JNIVAR->CallStaticDoubleMethod(__cls,__mtd,_handle);
@@ -386,13 +385,13 @@ double ForeignHelpers::GetPositionLong(::g::Java::Object* handle)
     
 }
 
-// internal static float GetTilt(Java.Object handle) [static] :63
+// internal static float GetTilt(Java.Object handle) [static] :61
 float ForeignHelpers::GetTilt(::g::Java::Object* handle)
 {
     {
         INIT_JNI;
         jclass __cls = JniHelper::GetNativeExternClass();
-        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "GetTilt394", "(Ljava/lang/Object;)F");
+        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "GetTilt393", "(Ljava/lang/Object;)F");
         ::g::Java::Object* _uhandle=handle;
         jobject _handle = (_uhandle==NULL ? NULL : U_JNIVAR->NewLocalRef(::g::Android::Base::Wrappers::IJWrapper::_GetJavaObject(uInterface((uObject*)_uhandle, ::g::Android::Base::Wrappers::IJWrapper_typeof()))));
         jfloat __jresult = U_JNIVAR->CallStaticFloatMethod(__cls,__mtd,_handle);
@@ -404,13 +403,13 @@ float ForeignHelpers::GetTilt(::g::Java::Object* handle)
     
 }
 
-// internal static float GetZoom(Java.Object handle) [static] :119
+// internal static float GetZoom(Java.Object handle) [static] :117
 float ForeignHelpers::GetZoom(::g::Java::Object* handle)
 {
     {
         INIT_JNI;
         jclass __cls = JniHelper::GetNativeExternClass();
-        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "GetZoom395", "(Ljava/lang/Object;)F");
+        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "GetZoom394", "(Ljava/lang/Object;)F");
         ::g::Java::Object* _uhandle=handle;
         jobject _handle = (_uhandle==NULL ? NULL : U_JNIVAR->NewLocalRef(::g::Android::Base::Wrappers::IJWrapper::_GetJavaObject(uInterface((uObject*)_uhandle, ::g::Android::Base::Wrappers::IJWrapper_typeof()))));
         jfloat __jresult = U_JNIVAR->CallStaticFloatMethod(__cls,__mtd,_handle);
@@ -422,13 +421,13 @@ float ForeignHelpers::GetZoom(::g::Java::Object* handle)
     
 }
 
-// internal static void MoveCamera(Java.Object handle, double lat, double lng, float zoom, float tilt, float bearing, double duration) [static] :21
+// internal static void MoveCamera(Java.Object handle, double lat, double lng, float zoom, float tilt, float bearing, double duration) [static] :19
 void ForeignHelpers::MoveCamera(::g::Java::Object* handle, double lat, double lng, float zoom, float tilt, float bearing, double duration)
 {
     {
         INIT_JNI;
         jclass __cls = JniHelper::GetNativeExternClass();
-        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "MoveCamera396", "(Ljava/lang/Object;DDFFFD)V");
+        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "MoveCamera395", "(Ljava/lang/Object;DDFFFD)V");
         ::g::Java::Object* _uhandle=handle;
         jobject _handle = (_uhandle==NULL ? NULL : U_JNIVAR->NewLocalRef(::g::Android::Base::Wrappers::IJWrapper::_GetJavaObject(uInterface((uObject*)_uhandle, ::g::Android::Base::Wrappers::IJWrapper_typeof()))));
         double _ulat=lat;
@@ -458,13 +457,13 @@ void ForeignHelpers::MoveCamera(::g::Java::Object* handle, double lat, double ln
     
 }
 
-// internal static void SetHybridStyle(Java.Object handle) [static] :98
+// internal static void SetHybridStyle(Java.Object handle) [static] :96
 void ForeignHelpers::SetHybridStyle(::g::Java::Object* handle)
 {
     {
         INIT_JNI;
         jclass __cls = JniHelper::GetNativeExternClass();
-        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "SetHybridStyle397", "(Ljava/lang/Object;)V");
+        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "SetHybridStyle396", "(Ljava/lang/Object;)V");
         ::g::Java::Object* _uhandle=handle;
         jobject _handle = (_uhandle==NULL ? NULL : U_JNIVAR->NewLocalRef(::g::Android::Base::Wrappers::IJWrapper::_GetJavaObject(uInterface((uObject*)_uhandle, ::g::Android::Base::Wrappers::IJWrapper_typeof()))));
         U_JNIVAR->CallStaticVoidMethod(__cls,__mtd,_handle);
@@ -476,13 +475,13 @@ void ForeignHelpers::SetHybridStyle(::g::Java::Object* handle)
     
 }
 
-// internal static void SetMapEventHandlers(Java.Object handle, Uno.Action onMapReady, Uno.Action<double, double> handleLocationLongPress, Uno.Action<double, double> handleLocationTapped, Uno.Action onAnimationBegin, Uno.Action onAnimationEnd, Uno.Action<double, double> handleCameraChange, Uno.Action<int, string> handleMarkerPressed, Uno.Action<int, float, float> handleTouchEvent) [static] :162
+// internal static void SetMapEventHandlers(Java.Object handle, Uno.Action onMapReady, Uno.Action<double, double> handleLocationLongPress, Uno.Action<double, double> handleLocationTapped, Uno.Action onAnimationBegin, Uno.Action onAnimationEnd, Uno.Action<double, double> handleCameraChange, Uno.Action<int, string> handleMarkerPressed, Uno.Action<int, float, float> handleTouchEvent) [static] :160
 void ForeignHelpers::SetMapEventHandlers(::g::Java::Object* handle, uDelegate* onMapReady, uDelegate* handleLocationLongPress, uDelegate* handleLocationTapped, uDelegate* onAnimationBegin, uDelegate* onAnimationEnd, uDelegate* handleCameraChange, uDelegate* handleMarkerPressed, uDelegate* handleTouchEvent)
 {
     {
         INIT_JNI;
         jclass __cls = JniHelper::GetNativeExternClass();
-        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "SetMapEventHandlers398", "(Ljava/lang/Object;Lcom/foreign/Uno/Action;Lcom/foreign/Uno/Action_double_double;Lcom/foreign/Uno/Action_double_double;Lcom/foreign/Uno/Action;Lcom/foreign/Uno/Action;Lcom/foreign/Uno/Action_double_double;Lcom/foreign/Uno/Action_int_String;Lcom/foreign/Uno/Action_int_float_float;)V");
+        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "SetMapEventHandlers397", "(Ljava/lang/Object;Lcom/foreign/Uno/Action;Lcom/foreign/Uno/Action_double_double;Lcom/foreign/Uno/Action_double_double;Lcom/foreign/Uno/Action;Lcom/foreign/Uno/Action;Lcom/foreign/Uno/Action_double_double;Lcom/foreign/Uno/Action_int_String;Lcom/foreign/Uno/Action_int_float_float;)V");
         ::g::Java::Object* _uhandle=handle;
         jobject _handle = (_uhandle==NULL ? NULL : U_JNIVAR->NewLocalRef(::g::Android::Base::Wrappers::IJWrapper::_GetJavaObject(uInterface((uObject*)_uhandle, ::g::Android::Base::Wrappers::IJWrapper_typeof()))));
         uDelegate* _uonMapReady=onMapReady;
@@ -518,13 +517,13 @@ void ForeignHelpers::SetMapEventHandlers(::g::Java::Object* handle, uDelegate* o
     
 }
 
-// internal static void SetMyLocationEnabled(Java.Object handle, bool b) [static] :140
+// internal static void SetMyLocationEnabled(Java.Object handle, bool b) [static] :138
 void ForeignHelpers::SetMyLocationEnabled(::g::Java::Object* handle, bool b)
 {
     {
         INIT_JNI;
         jclass __cls = JniHelper::GetNativeExternClass();
-        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "SetMyLocationEnabled399", "(Ljava/lang/Object;Z)V");
+        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "SetMyLocationEnabled398", "(Ljava/lang/Object;Z)V");
         ::g::Java::Object* _uhandle=handle;
         jobject _handle = (_uhandle==NULL ? NULL : U_JNIVAR->NewLocalRef(::g::Android::Base::Wrappers::IJWrapper::_GetJavaObject(uInterface((uObject*)_uhandle, ::g::Android::Base::Wrappers::IJWrapper_typeof()))));
         bool _ub=b;
@@ -539,13 +538,13 @@ void ForeignHelpers::SetMyLocationEnabled(::g::Java::Object* handle, bool b)
     
 }
 
-// public static void SetNormalStyle(Java.Object handle) [static] :105
+// public static void SetNormalStyle(Java.Object handle) [static] :103
 void ForeignHelpers::SetNormalStyle(::g::Java::Object* handle)
 {
     {
         INIT_JNI;
         jclass __cls = JniHelper::GetNativeExternClass();
-        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "SetNormalStyle400", "(Ljava/lang/Object;)V");
+        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "SetNormalStyle399", "(Ljava/lang/Object;)V");
         ::g::Java::Object* _uhandle=handle;
         jobject _handle = (_uhandle==NULL ? NULL : U_JNIVAR->NewLocalRef(::g::Android::Base::Wrappers::IJWrapper::_GetJavaObject(uInterface((uObject*)_uhandle, ::g::Android::Base::Wrappers::IJWrapper_typeof()))));
         U_JNIVAR->CallStaticVoidMethod(__cls,__mtd,_handle);
@@ -557,13 +556,13 @@ void ForeignHelpers::SetNormalStyle(::g::Java::Object* handle)
     
 }
 
-// internal static void SetSatelliteStyle(Java.Object handle) [static] :91
+// internal static void SetSatelliteStyle(Java.Object handle) [static] :89
 void ForeignHelpers::SetSatelliteStyle(::g::Java::Object* handle)
 {
     {
         INIT_JNI;
         jclass __cls = JniHelper::GetNativeExternClass();
-        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "SetSatelliteStyle403", "(Ljava/lang/Object;)V");
+        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "SetSatelliteStyle402", "(Ljava/lang/Object;)V");
         ::g::Java::Object* _uhandle=handle;
         jobject _handle = (_uhandle==NULL ? NULL : U_JNIVAR->NewLocalRef(::g::Android::Base::Wrappers::IJWrapper::_GetJavaObject(uInterface((uObject*)_uhandle, ::g::Android::Base::Wrappers::IJWrapper_typeof()))));
         U_JNIVAR->CallStaticVoidMethod(__cls,__mtd,_handle);
@@ -576,40 +575,31 @@ void ForeignHelpers::SetSatelliteStyle(::g::Java::Object* handle)
 }
 // }
 
-// /Users/a/Library/Application Support/Fusetools/Packages/Fuse.Maps/1.2.1/android/$.uno
-// -------------------------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Maps\1.3.0-rc2\Android\MapView.uno
+// -----------------------------------------------------------------------------------
 
-// public sealed extern class MapView :235
+// public sealed extern class MapView :18
 // {
 static void MapView_build(uType* type)
 {
-    ::TYPES[0] = ::g::Uno::Action_typeof();
-    ::TYPES[1] = ::g::Uno::Action2_typeof()->MakeType(::g::Uno::Double_typeof(), ::g::Uno::Double_typeof(), NULL);
-    ::TYPES[2] = ::g::Uno::Action2_typeof()->MakeType(::g::Uno::Int_typeof(), ::g::Uno::String_typeof(), NULL);
-    ::TYPES[3] = ::g::Uno::Action3_typeof()->MakeType(::g::Uno::Int_typeof(), ::g::Uno::Float_typeof(), ::g::Uno::Float_typeof(), NULL);
-    ::TYPES[4] = ::g::Uno::Collections::IEnumerator_typeof();
-    ::TYPES[5] = ::g::Uno::Collections::IEnumerator1_typeof()->MakeType(::g::Fuse::Controls::MapMarker_typeof(), NULL);
-    ::TYPES[6] = ::g::Uno::Permissions::PlatformPermission_typeof()->Array();
-    ::TYPES[7] = ::g::Uno::Action1_typeof()->MakeType(::TYPES[6/*Uno.Permissions.PlatformPermission[]*/], NULL);
-    ::TYPES[8] = ::g::Uno::Action1_typeof()->MakeType(::g::Uno::Exception_typeof(), NULL);
     type->SetInterfaces(
         ::g::Uno::IDisposable_typeof(), offsetof(MapView_type, interface0),
         ::g::Fuse::Controls::Native::IView_typeof(), offsetof(MapView_type, interface1),
         ::g::Fuse::Controls::IMapView_typeof(), offsetof(MapView_type, interface2));
-    type->SetFields(5,
-        ::g::Uno::Bool_typeof(), offsetof(::g::Fuse::Maps::Android::MapView, _allowRotate), 0,
-        ::g::Uno::Bool_typeof(), offsetof(::g::Fuse::Maps::Android::MapView, _allowScroll), 0,
-        ::g::Uno::Bool_typeof(), offsetof(::g::Fuse::Maps::Android::MapView, _allowTilt), 0,
-        ::g::Uno::Bool_typeof(), offsetof(::g::Fuse::Maps::Android::MapView, _allowZoom), 0,
-        ::g::Fuse::Controls::MapStyle_typeof(), offsetof(::g::Fuse::Maps::Android::MapView, _mapStyleInternal), 0,
-        ::g::Java::Object_typeof(), offsetof(::g::Fuse::Maps::Android::MapView, _mapView), 0,
-        ::g::Fuse::Controls::MapView_typeof(), offsetof(::g::Fuse::Maps::Android::MapView, _mapViewHost), 0,
-        ::g::Fuse::Maps::MarkerIconCache_typeof(), offsetof(::g::Fuse::Maps::Android::MapView, _markerGraphicsCache), 0,
-        ::g::Uno::Bool_typeof(), offsetof(::g::Fuse::Maps::Android::MapView, _showCompass), 0,
-        ::g::Uno::Bool_typeof(), offsetof(::g::Fuse::Maps::Android::MapView, _showLocation), 0,
-        ::g::Uno::Bool_typeof(), offsetof(::g::Fuse::Maps::Android::MapView, _showLocationButton), 0,
-        ::g::Uno::Bool_typeof(), offsetof(::g::Fuse::Maps::Android::MapView, _IsReady), 0,
-        ::TYPES[0/*Uno.Action*/], offsetof(::g::Fuse::Maps::Android::MapView, _OnReady), 0);
+    type->SetFields(6,
+        ::g::Uno::Bool_typeof(), offsetof(MapView, _allowRotate), 0,
+        ::g::Uno::Bool_typeof(), offsetof(MapView, _allowScroll), 0,
+        ::g::Uno::Bool_typeof(), offsetof(MapView, _allowTilt), 0,
+        ::g::Uno::Bool_typeof(), offsetof(MapView, _allowZoom), 0,
+        ::g::Fuse::Controls::MapStyle_typeof(), offsetof(MapView, _mapStyleInternal), 0,
+        ::g::Java::Object_typeof(), offsetof(MapView, _mapView), 0,
+        ::g::Fuse::Controls::MapView_typeof(), offsetof(MapView, _mapViewHost), 0,
+        ::g::Fuse::Maps::MarkerIconCache_typeof(), offsetof(MapView, _markerGraphicsCache), 0,
+        ::g::Uno::Bool_typeof(), offsetof(MapView, _showCompass), 0,
+        ::g::Uno::Bool_typeof(), offsetof(MapView, _showLocation), 0,
+        ::g::Uno::Bool_typeof(), offsetof(MapView, _showLocationButton), 0,
+        ::g::Uno::Bool_typeof(), offsetof(MapView, _IsReady), 0,
+        ::g::Uno::Action_typeof(), offsetof(MapView, _OnReady), 0);
 }
 
 MapView_type* MapView_typeof()
@@ -619,7 +609,7 @@ MapView_type* MapView_typeof()
 
     uTypeOptions options;
     options.BaseDefinition = ::g::Fuse::Controls::Native::Android::LeafView_typeof();
-    options.FieldCount = 18;
+    options.FieldCount = 19;
     options.InterfaceCount = 3;
     options.ObjectSize = sizeof(MapView);
     options.TypeSize = sizeof(MapView_type);
@@ -655,85 +645,85 @@ MapView_type* MapView_typeof()
     return type;
 }
 
-// private MapView(Fuse.Controls.MapView mapViewHost, Java.Object map) :251
-void MapView__ctor_8_fn(MapView* __this, ::g::Fuse::Controls::MapView* mapViewHost, ::g::Java::Object* map)
+// private MapView(Fuse.Controls.MapView mapViewHost, Java.Object map) :34
+void MapView__ctor_9_fn(MapView* __this, ::g::Fuse::Controls::MapView* mapViewHost, ::g::Java::Object* map)
 {
-    __this->ctor_8(mapViewHost, map);
+    __this->ctor_9(mapViewHost, map);
 }
 
-// public bool get_AllowRotate() :535
+// public bool get_AllowRotate() :318
 void MapView__get_AllowRotate_fn(MapView* __this, bool* __retval)
 {
     *__retval = __this->AllowRotate();
 }
 
-// public void set_AllowRotate(bool value) :538
+// public void set_AllowRotate(bool value) :321
 void MapView__set_AllowRotate_fn(MapView* __this, bool* value)
 {
     __this->AllowRotate(*value);
 }
 
-// public bool get_AllowScroll() :546
+// public bool get_AllowScroll() :329
 void MapView__get_AllowScroll_fn(MapView* __this, bool* __retval)
 {
     *__retval = __this->AllowScroll();
 }
 
-// public void set_AllowScroll(bool value) :549
+// public void set_AllowScroll(bool value) :332
 void MapView__set_AllowScroll_fn(MapView* __this, bool* value)
 {
     __this->AllowScroll(*value);
 }
 
-// public bool get_AllowTilt() :524
+// public bool get_AllowTilt() :307
 void MapView__get_AllowTilt_fn(MapView* __this, bool* __retval)
 {
     *__retval = __this->AllowTilt();
 }
 
-// public void set_AllowTilt(bool value) :527
+// public void set_AllowTilt(bool value) :310
 void MapView__set_AllowTilt_fn(MapView* __this, bool* value)
 {
     __this->AllowTilt(*value);
 }
 
-// public bool get_AllowZoom() :513
+// public bool get_AllowZoom() :296
 void MapView__get_AllowZoom_fn(MapView* __this, bool* __retval)
 {
     *__retval = __this->AllowZoom();
 }
 
-// public void set_AllowZoom(bool value) :516
+// public void set_AllowZoom(bool value) :299
 void MapView__set_AllowZoom_fn(MapView* __this, bool* value)
 {
     __this->AllowZoom(*value);
 }
 
-// public double get_Bearing() :408
+// public double get_Bearing() :191
 void MapView__get_Bearing_fn(MapView* __this, double* __retval)
 {
     *__retval = __this->Bearing();
 }
 
-// private void ConfigGestures() :440
+// private void ConfigGestures() :223
 void MapView__ConfigGestures_fn(MapView* __this)
 {
     __this->ConfigGestures();
 }
 
-// private void ConfigUI() :436
+// private void ConfigUI() :219
 void MapView__ConfigUI_fn(MapView* __this)
 {
     __this->ConfigUI();
 }
 
-// public static Fuse.Maps.Android.MapView Create(Fuse.Controls.MapView mapViewHost) :241
+// public static Fuse.Maps.Android.MapView Create(Fuse.Controls.MapView mapViewHost) :24
 void MapView__Create_fn(::g::Fuse::Controls::MapView* mapViewHost, MapView** __retval)
 {
     *__retval = MapView::Create(mapViewHost);
 }
 
-// public override sealed void Dispose() :272
+// public override sealed void Dispose() :55
 void MapView__Dispose_fn(MapView* __this)
 {
     uPtr(__this->SemanticControl())->MapViewClient(NULL);
@@ -747,332 +737,332 @@ void MapView__Dispose_fn(MapView* __this)
     ::g::Fuse::Controls::Native::ViewHandle__Dispose_fn(__this);
 }
 
-// public void HandleLocationLongPress(double latitude, double longitude) :323
+// public void HandleLocationLongPress(double latitude, double longitude) :106
 void MapView__HandleLocationLongPress_fn(MapView* __this, double* latitude, double* longitude)
 {
     __this->HandleLocationLongPress(*latitude, *longitude);
 }
 
-// public void HandleLocationTapped(double latitude, double longitude) :318
+// public void HandleLocationTapped(double latitude, double longitude) :101
 void MapView__HandleLocationTapped_fn(MapView* __this, double* latitude, double* longitude)
 {
     __this->HandleLocationTapped(*latitude, *longitude);
 }
 
-// public void HandleMarkerTapped(int uid, string title) :328
+// public void HandleMarkerTapped(int uid, string title) :111
 void MapView__HandleMarkerTapped_fn(MapView* __this, int* uid, uString* title)
 {
     __this->HandleMarkerTapped(*uid, title);
 }
 
-// public generated bool get_IsReady() :237
+// public generated bool get_IsReady() :20
 void MapView__get_IsReady_fn(MapView* __this, bool* __retval)
 {
     *__retval = __this->IsReady();
 }
 
-// private generated void set_IsReady(bool value) :237
+// private generated void set_IsReady(bool value) :20
 void MapView__set_IsReady_fn(MapView* __this, bool* value)
 {
     __this->IsReady(*value);
 }
 
-// public double get_Latitude() :420
+// public double get_Latitude() :203
 void MapView__get_Latitude_fn(MapView* __this, double* __retval)
 {
     *__retval = __this->Latitude();
 }
 
-// public double get_Longitude() :426
+// public double get_Longitude() :209
 void MapView__get_Longitude_fn(MapView* __this, double* __retval)
 {
     *__retval = __this->Longitude();
 }
 
-// public Uno.Collections.ObservableList<Fuse.Controls.MapMarker> get_Markers() :378
+// public Uno.Collections.ObservableList<Fuse.Controls.MapMarker> get_Markers() :161
 void MapView__get_Markers_fn(MapView* __this, ::g::Uno::Collections::ObservableList** __retval)
 {
     *__retval = __this->Markers();
 }
 
-// public void MoveTo(double latitude, double longitude, double zoomlevel, double tilt, double orientation) :431
+// public void MoveTo(double latitude, double longitude, double zoomlevel, double tilt, double orientation) :214
 void MapView__MoveTo_fn(MapView* __this, double* latitude, double* longitude, double* zoomlevel, double* tilt, double* orientation)
 {
     __this->MoveTo(*latitude, *longitude, *zoomlevel, *tilt, *orientation);
 }
 
-// private MapView New(Fuse.Controls.MapView mapViewHost, Java.Object map) :251
-void MapView__New4_fn(::g::Fuse::Controls::MapView* mapViewHost, ::g::Java::Object* map, MapView** __retval)
+// private MapView New(Fuse.Controls.MapView mapViewHost, Java.Object map) :34
+void MapView__New5_fn(::g::Fuse::Controls::MapView* mapViewHost, ::g::Java::Object* map, MapView** __retval)
 {
-    *__retval = MapView::New4(mapViewHost, map);
+    *__retval = MapView::New5(mapViewHost, map);
 }
 
-// private void OnAnimationEnd() :300
+// private void OnAnimationEnd() :83
 void MapView__OnAnimationEnd_fn(MapView* __this)
 {
     __this->OnAnimationEnd();
 }
 
-// private void OnAnimationStart() :294
+// private void OnAnimationStart() :77
 void MapView__OnAnimationStart_fn(MapView* __this)
 {
     __this->OnAnimationStart();
 }
 
-// internal void OnMapReady() :333
+// internal void OnMapReady() :116
 void MapView__OnMapReady_fn(MapView* __this)
 {
     __this->OnMapReady();
 }
 
-// public generated Uno.Action get_OnReady() :238
+// public generated Uno.Action get_OnReady() :21
 void MapView__get_OnReady_fn(MapView* __this, uDelegate** __retval)
 {
     *__retval = __this->OnReady();
 }
 
-// public generated void set_OnReady(Uno.Action value) :238
+// public generated void set_OnReady(Uno.Action value) :21
 void MapView__set_OnReady_fn(MapView* __this, uDelegate* value)
 {
     __this->OnReady(value);
 }
 
-// private void OnTouchEvent(int action, float x, float y) :305
+// private void OnTouchEvent(int action, float x, float y) :88
 void MapView__OnTouchEvent_fn(MapView* __this, int* action, float* x, float* y)
 {
     __this->OnTouchEvent(*action, *x, *y);
 }
 
-// private Fuse.Controls.MapView get_SemanticControl() :285
+// private Fuse.Controls.MapView get_SemanticControl() :68
 void MapView__get_SemanticControl_fn(MapView* __this, ::g::Fuse::Controls::MapView** __retval)
 {
     *__retval = __this->SemanticControl();
 }
 
-// private void SetLocationFromMap(double lat, double lng) :288
+// private void SetLocationFromMap(double lat, double lng) :71
 void MapView__SetLocationFromMap_fn(MapView* __this, double* lat, double* lng)
 {
     __this->SetLocationFromMap(*lat, *lng);
 }
 
-// public bool get_ShowCompass() :503
+// public bool get_ShowCompass() :286
 void MapView__get_ShowCompass_fn(MapView* __this, bool* __retval)
 {
     *__retval = __this->ShowCompass();
 }
 
-// public void set_ShowCompass(bool value) :506
+// public void set_ShowCompass(bool value) :289
 void MapView__set_ShowCompass_fn(MapView* __this, bool* value)
 {
     __this->ShowCompass(*value);
 }
 
-// public bool get_ShowMyLocation() :465
+// public bool get_ShowMyLocation() :248
 void MapView__get_ShowMyLocation_fn(MapView* __this, bool* __retval)
 {
     *__retval = __this->ShowMyLocation();
 }
 
-// public void set_ShowMyLocation(bool value) :468
+// public void set_ShowMyLocation(bool value) :251
 void MapView__set_ShowMyLocation_fn(MapView* __this, bool* value)
 {
     __this->ShowMyLocation(*value);
 }
 
-// public bool get_ShowMyLocationButton() :492
+// public bool get_ShowMyLocationButton() :275
 void MapView__get_ShowMyLocationButton_fn(MapView* __this, bool* __retval)
 {
     *__retval = __this->ShowMyLocationButton();
 }
 
-// public void set_ShowMyLocationButton(bool value) :495
+// public void set_ShowMyLocationButton(bool value) :278
 void MapView__set_ShowMyLocationButton_fn(MapView* __this, bool* value)
 {
     __this->ShowMyLocationButton(*value);
 }
 
-// public Fuse.Controls.MapStyle get_Style() :348
+// public Fuse.Controls.MapStyle get_Style() :131
 void MapView__get_Style_fn(MapView* __this, int* __retval)
 {
     *__retval = __this->Style();
 }
 
-// public void set_Style(Fuse.Controls.MapStyle value) :349
+// public void set_Style(Fuse.Controls.MapStyle value) :132
 void MapView__set_Style_fn(MapView* __this, int* value)
 {
     __this->Style(*value);
 }
 
-// public double get_Tilt() :414
+// public double get_Tilt() :197
 void MapView__get_Tilt_fn(MapView* __this, double* __retval)
 {
     *__retval = __this->Tilt();
 }
 
-// public void UpdateMarkers() :384
+// public void UpdateMarkers() :167
 void MapView__UpdateMarkers_fn(MapView* __this)
 {
     __this->UpdateMarkers();
 }
 
-// public double get_Zoom() :370
+// public double get_Zoom() :153
 void MapView__get_Zoom_fn(MapView* __this, double* __retval)
 {
     *__retval = __this->Zoom();
 }
 
-// private MapView(Fuse.Controls.MapView mapViewHost, Java.Object map) [instance] :251
-void MapView::ctor_8(::g::Fuse::Controls::MapView* mapViewHost, ::g::Java::Object* map)
+// private MapView(Fuse.Controls.MapView mapViewHost, Java.Object map) [instance] :34
+void MapView::ctor_9(::g::Fuse::Controls::MapView* mapViewHost, ::g::Java::Object* map)
 {
-    ctor_6(map);
+    ctor_7(map);
     IsReady(false);
     _mapView = map;
     _mapViewHost = mapViewHost;
-    _markerGraphicsCache = ::g::Fuse::Maps::MarkerIconCache::New1(uDelegate::New(::TYPES[0/*Uno.Action*/], (void*)MapView__UpdateMarkers_fn, this));
-    ::g::Fuse::Maps::Android::ForeignHelpers::SetMapEventHandlers(_mapView, uDelegate::New(::TYPES[0/*Uno.Action*/], (void*)MapView__OnMapReady_fn, this), uDelegate::New(::TYPES[1/*Uno.Action<double, double>*/], (void*)MapView__HandleLocationLongPress_fn, this), uDelegate::New(::TYPES[1/*Uno.Action<double, double>*/], (void*)MapView__HandleLocationTapped_fn, this), uDelegate::New(::TYPES[0/*Uno.Action*/], (void*)MapView__OnAnimationStart_fn, this), uDelegate::New(::TYPES[0/*Uno.Action*/], (void*)MapView__OnAnimationEnd_fn, this), uDelegate::New(::TYPES[1/*Uno.Action<double, double>*/], (void*)MapView__SetLocationFromMap_fn, this), uDelegate::New(::TYPES[2/*Uno.Action<int, string>*/], (void*)MapView__HandleMarkerTapped_fn, this), uDelegate::New(::TYPES[3/*Uno.Action<int, float, float>*/], (void*)MapView__OnTouchEvent_fn, this));
+    _markerGraphicsCache = ::g::Fuse::Maps::MarkerIconCache::New1(uDelegate::New(::g::Uno::Action_typeof(), (void*)MapView__UpdateMarkers_fn, this));
+    ::g::Fuse::Maps::Android::ForeignHelpers::SetMapEventHandlers(_mapView, uDelegate::New(::g::Uno::Action_typeof(), (void*)MapView__OnMapReady_fn, this), uDelegate::New(::g::Uno::Action2_typeof()->MakeType(::g::Uno::Double_typeof(), ::g::Uno::Double_typeof(), NULL), (void*)MapView__HandleLocationLongPress_fn, this), uDelegate::New(::g::Uno::Action2_typeof()->MakeType(::g::Uno::Double_typeof(), ::g::Uno::Double_typeof(), NULL), (void*)MapView__HandleLocationTapped_fn, this), uDelegate::New(::g::Uno::Action_typeof(), (void*)MapView__OnAnimationStart_fn, this), uDelegate::New(::g::Uno::Action_typeof(), (void*)MapView__OnAnimationEnd_fn, this), uDelegate::New(::g::Uno::Action2_typeof()->MakeType(::g::Uno::Double_typeof(), ::g::Uno::Double_typeof(), NULL), (void*)MapView__SetLocationFromMap_fn, this), uDelegate::New(::g::Uno::Action2_typeof()->MakeType(::g::Uno::Int_typeof(), ::g::Uno::String_typeof(), NULL), (void*)MapView__HandleMarkerTapped_fn, this), uDelegate::New(::g::Uno::Action3_typeof()->MakeType(::g::Uno::Int_typeof(), ::g::Uno::Float_typeof(), ::g::Uno::Float_typeof(), NULL), (void*)MapView__OnTouchEvent_fn, this));
     ::g::Fuse::Maps::Android::ForeignHelpers::Configure(_mapView);
     uPtr(SemanticControl())->MapViewClient((uObject*)this);
 }
 
-// public bool get_AllowRotate() [instance] :535
+// public bool get_AllowRotate() [instance] :318
 bool MapView::AllowRotate()
 {
     return _allowRotate;
 }
 
-// public void set_AllowRotate(bool value) [instance] :538
+// public void set_AllowRotate(bool value) [instance] :321
 void MapView::AllowRotate(bool value)
 {
     _allowRotate = value;
     ConfigGestures();
 }
 
-// public bool get_AllowScroll() [instance] :546
+// public bool get_AllowScroll() [instance] :329
 bool MapView::AllowScroll()
 {
     return _allowScroll;
 }
 
-// public void set_AllowScroll(bool value) [instance] :549
+// public void set_AllowScroll(bool value) [instance] :332
 void MapView::AllowScroll(bool value)
 {
     _allowScroll = value;
     ConfigGestures();
 }
 
-// public bool get_AllowTilt() [instance] :524
+// public bool get_AllowTilt() [instance] :307
 bool MapView::AllowTilt()
 {
     return _allowTilt;
 }
 
-// public void set_AllowTilt(bool value) [instance] :527
+// public void set_AllowTilt(bool value) [instance] :310
 void MapView::AllowTilt(bool value)
 {
     _allowTilt = value;
     ConfigGestures();
 }
 
-// public bool get_AllowZoom() [instance] :513
+// public bool get_AllowZoom() [instance] :296
 bool MapView::AllowZoom()
 {
     return _allowZoom;
 }
 
-// public void set_AllowZoom(bool value) [instance] :516
+// public void set_AllowZoom(bool value) [instance] :299
 void MapView::AllowZoom(bool value)
 {
     _allowZoom = value;
     ConfigGestures();
 }
 
-// public double get_Bearing() [instance] :408
+// public double get_Bearing() [instance] :191
 double MapView::Bearing()
 {
     return (double)::g::Fuse::Maps::Android::ForeignHelpers::GetOrientation(_mapView);
 }
 
-// private void ConfigGestures() [instance] :440
+// private void ConfigGestures() [instance] :223
 void MapView::ConfigGestures()
 {
     if (IsReady())
         ::g::Fuse::Maps::Android::ForeignHelpers::ConfigureGestures(_mapView, _allowZoom, _allowRotate, _allowTilt, _allowScroll);
 }
 
-// private void ConfigUI() [instance] :436
+// private void ConfigUI() [instance] :219
 void MapView::ConfigUI()
 {
     if (IsReady())
         ::g::Fuse::Maps::Android::ForeignHelpers::ConfigureUI(_mapView, _showCompass, _showLocationButton);
 }
 
-// public void HandleLocationLongPress(double latitude, double longitude) [instance] :323
+// public void HandleLocationLongPress(double latitude, double longitude) [instance] :106
 void MapView::HandleLocationLongPress(double latitude, double longitude)
 {
     uPtr(SemanticControl())->HandleLocationLongPress(latitude, longitude);
 }
 
-// public void HandleLocationTapped(double latitude, double longitude) [instance] :318
+// public void HandleLocationTapped(double latitude, double longitude) [instance] :101
 void MapView::HandleLocationTapped(double latitude, double longitude)
 {
     uPtr(SemanticControl())->HandleLocationTapped(latitude, longitude);
 }
 
-// public void HandleMarkerTapped(int uid, string title) [instance] :328
+// public void HandleMarkerTapped(int uid, string title) [instance] :111
 void MapView::HandleMarkerTapped(int uid, uString* title)
 {
     uPtr(SemanticControl())->HandleMarkerTapped(uid, title);
 }
 
-// public generated bool get_IsReady() [instance] :237
+// public generated bool get_IsReady() [instance] :20
 bool MapView::IsReady()
 {
     return _IsReady;
 }
 
-// private generated void set_IsReady(bool value) [instance] :237
+// private generated void set_IsReady(bool value) [instance] :20
 void MapView::IsReady(bool value)
 {
     _IsReady = value;
 }
 
-// public double get_Latitude() [instance] :420
+// public double get_Latitude() [instance] :203
 double MapView::Latitude()
 {
     return ::g::Fuse::Maps::Android::ForeignHelpers::GetPositionLat(_mapView);
 }
 
-// public double get_Longitude() [instance] :426
+// public double get_Longitude() [instance] :209
 double MapView::Longitude()
 {
     return ::g::Fuse::Maps::Android::ForeignHelpers::GetPositionLong(_mapView);
 }
 
-// public Uno.Collections.ObservableList<Fuse.Controls.MapMarker> get_Markers() [instance] :378
+// public Uno.Collections.ObservableList<Fuse.Controls.MapMarker> get_Markers() [instance] :161
 ::g::Uno::Collections::ObservableList* MapView::Markers()
 {
     return uPtr(SemanticControl())->Markers();
 }
 
-// public void MoveTo(double latitude, double longitude, double zoomlevel, double tilt, double orientation) [instance] :431
+// public void MoveTo(double latitude, double longitude, double zoomlevel, double tilt, double orientation) [instance] :214
 void MapView::MoveTo(double latitude, double longitude, double zoomlevel, double tilt, double orientation)
 {
     ::g::Fuse::Maps::Android::ForeignHelpers::MoveCamera(_mapView, latitude, longitude, (float)zoomlevel, (float)tilt, (float)orientation, 0.0);
 }
 
-// private void OnAnimationEnd() [instance] :300
+// private void OnAnimationEnd() [instance] :83
 void MapView::OnAnimationEnd()
 {
     uPtr(SemanticControl())->OnMapInteractionEnd();
 }
 
-// private void OnAnimationStart() [instance] :294
+// private void OnAnimationStart() [instance] :77
 void MapView::OnAnimationStart()
 {
     uPtr(SemanticControl())->OnMapInteractionStart();
 }
 
-// internal void OnMapReady() [instance] :333
+// internal void OnMapReady() [instance] :116
 void MapView::OnMapReady()
 {
     IsReady(true);
@@ -1084,19 +1074,19 @@ void MapView::OnMapReady()
     uPtr(OnReady())->InvokeVoid();
 }
 
-// public generated Uno.Action get_OnReady() [instance] :238
+// public generated Uno.Action get_OnReady() [instance] :21
 uDelegate* MapView::OnReady()
 {
     return _OnReady;
 }
 
-// public generated void set_OnReady(Uno.Action value) [instance] :238
+// public generated void set_OnReady(Uno.Action value) [instance] :21
 void MapView::OnReady(uDelegate* value)
 {
     _OnReady = value;
 }
 
-// private void OnTouchEvent(int action, float x, float y) [instance] :305
+// private void OnTouchEvent(int action, float x, float y) [instance] :88
 void MapView::OnTouchEvent(int action, float x, float y)
 {
     switch (action)
@@ -1114,39 +1104,39 @@ void MapView::OnTouchEvent(int action, float x, float y)
     }
 }
 
-// private Fuse.Controls.MapView get_SemanticControl() [instance] :285
+// private Fuse.Controls.MapView get_SemanticControl() [instance] :68
 ::g::Fuse::Controls::MapView* MapView::SemanticControl()
 {
     return _mapViewHost;
 }
 
-// private void SetLocationFromMap(double lat, double lng) [instance] :288
+// private void SetLocationFromMap(double lat, double lng) [instance] :71
 void MapView::SetLocationFromMap(double lat, double lng)
 {
     if (uPtr(SemanticControl())->UserInteractingWithMap())
         uPtr(SemanticControl())->UpdateRestState();
 }
 
-// public bool get_ShowCompass() [instance] :503
+// public bool get_ShowCompass() [instance] :286
 bool MapView::ShowCompass()
 {
     return _showCompass;
 }
 
-// public void set_ShowCompass(bool value) [instance] :506
+// public void set_ShowCompass(bool value) [instance] :289
 void MapView::ShowCompass(bool value)
 {
     _showCompass = value;
     ConfigUI();
 }
 
-// public bool get_ShowMyLocation() [instance] :465
+// public bool get_ShowMyLocation() [instance] :248
 bool MapView::ShowMyLocation()
 {
     return _showLocation;
 }
 
-// public void set_ShowMyLocation(bool value) [instance] :468
+// public void set_ShowMyLocation(bool value) [instance] :251
 void MapView::ShowMyLocation(bool value)
 {
     uArray* array4;
@@ -1156,38 +1146,38 @@ void MapView::ShowMyLocation(bool value)
     {
         if (_showLocation)
         {
-            array4 = uArray::New(::TYPES[6/*Uno.Permissions.PlatformPermission[]*/], 2);
+            array4 = uArray::New(::g::Uno::Permissions::PlatformPermission_typeof()->Array(), 2);
             uPtr(array4)->Item< ::g::Uno::Permissions::PlatformPermission>(0) = ::g::Uno::Permissions::Permissions__Android::ACCESS_FINE_LOCATION();
             uPtr(array4)->Item< ::g::Uno::Permissions::PlatformPermission>(1) = ::g::Uno::Permissions::Permissions__Android::ACCESS_COARSE_LOCATION();
             uArray* permissions = array4;
             MapView__ShowLocationCommand* cmd = MapView__ShowLocationCommand::New1(_mapView, _showLocation);
-            uPtr(::g::Uno::Permissions::Permissions::Request1(permissions))->Then1(uDelegate::New(::TYPES[7/*Uno.Action<Uno.Permissions.PlatformPermission[]>*/], (void*)MapView__ShowLocationCommand__Execute_fn, cmd), uDelegate::New(::TYPES[8/*Uno.Action<Uno.Exception>*/], (void*)MapView__ShowLocationCommand__Reject_fn, cmd));
+            uPtr(::g::Uno::Permissions::Permissions::Request1(permissions))->Then1(uDelegate::New(::g::Uno::Action1_typeof()->MakeType(::g::Uno::Permissions::PlatformPermission_typeof()->Array(), NULL), (void*)MapView__ShowLocationCommand__Execute_fn, cmd), uDelegate::New(::g::Uno::Action1_typeof()->MakeType(::g::Uno::Exception_typeof(), NULL), (void*)MapView__ShowLocationCommand__Reject_fn, cmd));
         }
         else
             ::g::Fuse::Maps::Android::ForeignHelpers::SetMyLocationEnabled(_mapView, _showLocation);
     }
 }
 
-// public bool get_ShowMyLocationButton() [instance] :492
+// public bool get_ShowMyLocationButton() [instance] :275
 bool MapView::ShowMyLocationButton()
 {
     return _showLocationButton;
 }
 
-// public void set_ShowMyLocationButton(bool value) [instance] :495
+// public void set_ShowMyLocationButton(bool value) [instance] :278
 void MapView::ShowMyLocationButton(bool value)
 {
     _showLocationButton = value;
     ConfigUI();
 }
 
-// public Fuse.Controls.MapStyle get_Style() [instance] :348
+// public Fuse.Controls.MapStyle get_Style() [instance] :131
 int MapView::Style()
 {
     return _mapStyleInternal;
 }
 
-// public void set_Style(Fuse.Controls.MapStyle value) [instance] :349
+// public void set_Style(Fuse.Controls.MapStyle value) [instance] :132
 void MapView::Style(int value)
 {
     _mapStyleInternal = value;
@@ -1214,13 +1204,13 @@ void MapView::Style(int value)
         }
 }
 
-// public double get_Tilt() [instance] :414
+// public double get_Tilt() [instance] :197
 double MapView::Tilt()
 {
     return (double)::g::Fuse::Maps::Android::ForeignHelpers::GetTilt(_mapView);
 }
 
-// public void UpdateMarkers() [instance] :384
+// public void UpdateMarkers() [instance] :167
 void MapView::UpdateMarkers()
 {
     ::g::Fuse::Controls::MapMarker* ret3;
@@ -1229,15 +1219,25 @@ void MapView::UpdateMarkers()
         return;
 
     ::g::Fuse::Maps::Android::ForeignHelpers::Clear(_mapView);
+    uObject* enum1 = (uObject*)uPtr(Markers())->GetEnumerator();
 
-    for (uObject* enum1 = (uObject*)uPtr(Markers())->GetEnumerator(); ::g::Uno::Collections::IEnumerator::MoveNext(uInterface(uPtr(enum1), ::TYPES[4/*Uno.Collections.IEnumerator*/])); )
     {
-        ::g::Fuse::Controls::MapMarker* m = (::g::Uno::Collections::IEnumerator1::get_Current_ex(uInterface(uPtr(enum1), ::TYPES[5/*Uno.Collections.IEnumerator<Fuse.Controls.MapMarker>*/]), &ret3), ret3);
-        ::g::Fuse::Maps::Android::ForeignHelpers::AddMarker(_mapView, uPtr(m)->Latitude(), uPtr(m)->Longitude(), uPtr(m)->Label(), uPtr(_markerGraphicsCache)->Get(uPtr(m)->IconFile()), uPtr(m)->IconAnchorX(), uPtr(m)->IconAnchorY(), uPtr(m)->uid);
+        const auto __finally_fun = [&]()
+        {
+            ::g::Uno::IDisposable::Dispose(uInterface(uPtr(enum1), ::g::Uno::IDisposable_typeof()));
+        };
+
+        const uFinally<decltype(__finally_fun)> __f(__finally_fun);
+
+        while (::g::Uno::Collections::IEnumerator::MoveNext(uInterface(uPtr(enum1), ::g::Uno::Collections::IEnumerator_typeof())))
+        {
+            ::g::Fuse::Controls::MapMarker* m = (::g::Uno::Collections::IEnumerator1::get_Current_ex(uInterface(uPtr(enum1), ::g::Uno::Collections::IEnumerator1_typeof()->MakeType(::g::Fuse::Controls::MapMarker_typeof(), NULL)), &ret3), ret3);
+            ::g::Fuse::Maps::Android::ForeignHelpers::AddMarker(_mapView, uPtr(m)->Latitude(), uPtr(m)->Longitude(), uPtr(m)->Label(), uPtr(_markerGraphicsCache)->Get(uPtr(m)->IconFile()), uPtr(m)->IconAnchorX(), uPtr(m)->IconAnchorY(), uPtr(m)->uid);
+        }
     }
 }
 
-// public double get_Zoom() [instance] :370
+// public double get_Zoom() [instance] :153
 double MapView::Zoom()
 {
     if (!IsReady())
@@ -1246,32 +1246,32 @@ double MapView::Zoom()
     return (double)::g::Fuse::Maps::Android::ForeignHelpers::GetZoom(_mapView);
 }
 
-// public static Fuse.Maps.Android.MapView Create(Fuse.Controls.MapView mapViewHost) [static] :241
+// public static Fuse.Maps.Android.MapView Create(Fuse.Controls.MapView mapViewHost) [static] :24
 MapView* MapView::Create(::g::Fuse::Controls::MapView* mapViewHost)
 {
     ::g::Java::Object* m = ::g::Fuse::Maps::Android::ForeignHelpers::CreateMap();
-    return MapView::New4(mapViewHost, m);
+    return MapView::New5(mapViewHost, m);
 }
 
-// private MapView New(Fuse.Controls.MapView mapViewHost, Java.Object map) [static] :251
-MapView* MapView::New4(::g::Fuse::Controls::MapView* mapViewHost, ::g::Java::Object* map)
+// private MapView New(Fuse.Controls.MapView mapViewHost, Java.Object map) [static] :34
+MapView* MapView::New5(::g::Fuse::Controls::MapView* mapViewHost, ::g::Java::Object* map)
 {
     MapView* obj2 = (MapView*)uNew(MapView_typeof());
-    obj2->ctor_8(mapViewHost, map);
+    obj2->ctor_9(mapViewHost, map);
     return obj2;
 }
 // }
 
-// /Users/a/Library/Application Support/Fusetools/Packages/Fuse.Maps/1.2.1/android/$.uno
-// -------------------------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Maps\1.3.0-rc2\Android\MapView.uno
+// -----------------------------------------------------------------------------------
 
-// private sealed class MapView.ShowLocationCommand :444
+// private sealed class MapView.ShowLocationCommand :227
 // {
 static void MapView__ShowLocationCommand_build(uType* type)
 {
     type->SetFields(0,
-        ::g::Java::Object_typeof(), offsetof(::g::Fuse::Maps::Android::MapView__ShowLocationCommand, _handle), 0,
-        ::g::Uno::Bool_typeof(), offsetof(::g::Fuse::Maps::Android::MapView__ShowLocationCommand, _value), 0);
+        ::g::Java::Object_typeof(), offsetof(MapView__ShowLocationCommand, _handle), 0,
+        ::g::Uno::Bool_typeof(), offsetof(MapView__ShowLocationCommand, _value), 0);
 }
 
 uType* MapView__ShowLocationCommand_typeof()
@@ -1288,49 +1288,49 @@ uType* MapView__ShowLocationCommand_typeof()
     return type;
 }
 
-// public ShowLocationCommand(Java.Object handle, bool newValue) :448
+// public ShowLocationCommand(Java.Object handle, bool newValue) :231
 void MapView__ShowLocationCommand__ctor__fn(MapView__ShowLocationCommand* __this, ::g::Java::Object* handle, bool* newValue)
 {
     __this->ctor_(handle, *newValue);
 }
 
-// public void Execute(Uno.Permissions.PlatformPermission[] grantedPermissions) :453
+// public void Execute(Uno.Permissions.PlatformPermission[] grantedPermissions) :236
 void MapView__ShowLocationCommand__Execute_fn(MapView__ShowLocationCommand* __this, uArray* grantedPermissions)
 {
     __this->Execute(grantedPermissions);
 }
 
-// public ShowLocationCommand New(Java.Object handle, bool newValue) :448
+// public ShowLocationCommand New(Java.Object handle, bool newValue) :231
 void MapView__ShowLocationCommand__New1_fn(::g::Java::Object* handle, bool* newValue, MapView__ShowLocationCommand** __retval)
 {
     *__retval = MapView__ShowLocationCommand::New1(handle, *newValue);
 }
 
-// public void Reject(Uno.Exception e) :457
+// public void Reject(Uno.Exception e) :240
 void MapView__ShowLocationCommand__Reject_fn(MapView__ShowLocationCommand* __this, ::g::Uno::Exception* e)
 {
     __this->Reject(e);
 }
 
-// public ShowLocationCommand(Java.Object handle, bool newValue) [instance] :448
+// public ShowLocationCommand(Java.Object handle, bool newValue) [instance] :231
 void MapView__ShowLocationCommand::ctor_(::g::Java::Object* handle, bool newValue)
 {
     _handle = handle;
     _value = newValue;
 }
 
-// public void Execute(Uno.Permissions.PlatformPermission[] grantedPermissions) [instance] :453
+// public void Execute(Uno.Permissions.PlatformPermission[] grantedPermissions) [instance] :236
 void MapView__ShowLocationCommand::Execute(uArray* grantedPermissions)
 {
     ::g::Fuse::Maps::Android::ForeignHelpers::SetMyLocationEnabled(_handle, _value);
 }
 
-// public void Reject(Uno.Exception e) [instance] :457
+// public void Reject(Uno.Exception e) [instance] :240
 void MapView__ShowLocationCommand::Reject(::g::Uno::Exception* e)
 {
 }
 
-// public ShowLocationCommand New(Java.Object handle, bool newValue) [static] :448
+// public ShowLocationCommand New(Java.Object handle, bool newValue) [static] :231
 MapView__ShowLocationCommand* MapView__ShowLocationCommand::New1(::g::Java::Object* handle, bool newValue)
 {
     MapView__ShowLocationCommand* obj1 = (MapView__ShowLocationCommand*)uNew(MapView__ShowLocationCommand_typeof());

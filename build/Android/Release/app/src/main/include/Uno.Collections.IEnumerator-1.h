@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/UnoCore/1.2.2/source/uno/collections/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/UnoCore/1.3.1/Source/Uno/Collections/IEnumerator.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -10,7 +10,7 @@ namespace g{
 namespace Uno{
 namespace Collections{
 
-// public abstract interface IEnumerator<T> :718
+// public abstract interface IEnumerator<T> :13
 // {
 uInterfaceType* IEnumerator1_typeof();
 

@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/UnoCore/1.2.2/source/uno/runtime/interopservices/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/UnoCore/1.3.1/Source/Uno/Runtime/InteropServices/GCHandle.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -10,7 +10,7 @@ namespace Uno{
 namespace Runtime{
 namespace InteropServices{
 
-// public struct GCHandle :9
+// public struct GCHandle :7
 // {
 uStructType* GCHandle_typeof();
 void GCHandle__ctor__fn(GCHandle* __this, uObject* target);

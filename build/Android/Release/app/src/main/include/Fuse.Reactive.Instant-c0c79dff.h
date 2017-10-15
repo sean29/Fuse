@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Reactive.Bindings/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Reactive.Bindings/1.3.0-rc2/Instance.Data.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -12,7 +12,7 @@ namespace g{
 namespace Fuse{
 namespace Reactive{
 
-// private sealed class Instantiator.ObservableLink :1381
+// private sealed class Instantiator.ObservableLink :134
 // {
 ::g::Fuse::Reactive::ValueObserver_type* Instantiator__ObservableLink_typeof();
 void Instantiator__ObservableLink__ctor_1_fn(Instantiator__ObservableLink* __this, uObject* obs, ::g::Fuse::Reactive::Instantiator__WindowItem* target);

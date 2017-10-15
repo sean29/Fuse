@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Triggers/1.2.1/actions/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Triggers/1.3.0-rc2/Actions/Focus.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -12,7 +12,7 @@ namespace Fuse{
 namespace Triggers{
 namespace Actions{
 
-// public sealed class GiveFocus :224
+// public sealed class GiveFocus :25
 // {
 ::g::Fuse::Triggers::Actions::TriggerAction_type* GiveFocus_typeof();
 void GiveFocus__ctor_2_fn(GiveFocus* __this);
@@ -24,7 +24,7 @@ void GiveFocus__set_Target_fn(GiveFocus* __this, ::g::Fuse::Visual* value);
 struct GiveFocus : ::g::Fuse::Triggers::Actions::TriggerAction
 {
     static uSStrong< ::g::Fuse::Triggers::Actions::TriggerAction*> Singleton_;
-    static uSStrong< ::g::Fuse::Triggers::Actions::TriggerAction*>& Singleton() { return GiveFocus_typeof()->Init(), Singleton_; }
+    static uSStrong< ::g::Fuse::Triggers::Actions::TriggerAction*>& Singleton() { return Singleton_; }
     uStrong< ::g::Fuse::Visual*> _Target;
 
     void ctor_2();

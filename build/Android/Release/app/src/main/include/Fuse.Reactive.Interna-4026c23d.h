@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Reactive.Bindings/1.2.1/internal/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Reactive.Bindings/1.3.0-rc2/Internal/PatchList.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -10,7 +10,7 @@ namespace Fuse{
 namespace Reactive{
 namespace Internal{
 
-// private struct SimpleAlgorithm<T>.Location :123
+// private struct SimpleAlgorithm<T>.Location :121
 // {
 uStructType* SimpleAlgorithm__Location_typeof();
 void SimpleAlgorithm__Location__ToString_fn(SimpleAlgorithm__Location* __this, uType* __type, uString** __retval);

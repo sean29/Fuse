@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Android/1.2.1/.uno/ux11/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Android/1.3.0-rc2/.uno/ux13/Fuse.Android.RootGraphicsView.g.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -19,6 +19,7 @@
 #include <Fuse.Triggers.Actions.IHide.h>
 #include <Fuse.Triggers.Actions.IShow.h>
 #include <Fuse.Triggers.Actions-ea70af1f.h>
+#include <Fuse.Visual.h>
 #include <Uno.Collections.ICollection-1.h>
 #include <Uno.Collections.IEnumerable-1.h>
 #include <Uno.Collections.IList-1.h>
@@ -29,7 +30,7 @@ namespace g{
 namespace Fuse{
 namespace Android{
 
-// public partial sealed class RootGraphicsView :6
+// public partial sealed class RootGraphicsView :4
 // {
 ::g::Fuse::Controls::GraphicsView_type* RootGraphicsView_typeof();
 void RootGraphicsView__ctor_7_fn(RootGraphicsView* __this);

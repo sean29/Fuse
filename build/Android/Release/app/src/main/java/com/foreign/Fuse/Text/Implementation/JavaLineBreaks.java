@@ -27,7 +27,7 @@ public class JavaLineBreaks
         android.util.Log.d("emrals", (message==null ? "null" : message.toString()));
     }
 
-    public static void CopyLineBreaks315(final String text,final Object outByteBufferHandle)
+    public static void CopyLineBreaks314(final String text,final Object outByteBufferHandle)
     {
         ByteBuffer outByteBuffer = (ByteBuffer)outByteBufferHandle;
         BreakIterator bi = BreakIterator.getLineInstance();

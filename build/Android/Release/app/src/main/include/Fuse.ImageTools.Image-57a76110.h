@@ -1,4 +1,4 @@
-// This file was generated based on '/Users/a/Library/Application Support/Fusetools/Packages/Fuse.ImageTools/1.2.1/$.uno'.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.ImageTools/1.3.0-rc2/ImageTools.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -10,7 +10,7 @@ namespace g{
 namespace Fuse{
 namespace ImageTools{
 
-// private sealed extern class ImageTools.ImageFromBase64Command :588
+// private sealed extern class ImageTools.ImageFromBase64Command :394
 // {
 ::g::Fuse::ImageTools::PCommand_type* ImageTools__ImageFromBase64Command_typeof();
 void ImageTools__ImageFromBase64Command__ctor_1_fn(ImageTools__ImageFromBase64Command* __this, uString* base64Image, uDelegate* Resolve, uDelegate* Reject);

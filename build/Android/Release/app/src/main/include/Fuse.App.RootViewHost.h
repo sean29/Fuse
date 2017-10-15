@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Android/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Android/1.3.0-rc2/AndroidApp.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -10,7 +10,7 @@ namespace g{namespace Fuse{struct App__RootViewHost;}}
 namespace g{
 namespace Fuse{
 
-// private sealed class App.RootViewHost :160
+// private sealed class App.RootViewHost :16
 // {
 struct App__RootViewHost_type : uType
 {

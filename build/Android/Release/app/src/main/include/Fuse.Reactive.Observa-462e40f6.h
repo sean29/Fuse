@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Reactive.JavaScript/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Reactive.JavaScript/1.3.0-rc2/ObservableProperty.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -9,7 +9,7 @@ namespace g{
 namespace Fuse{
 namespace Reactive{
 
-// private sealed class ObservableProperty.PushCapture :1448
+// private sealed class ObservableProperty.PushCapture :128
 // {
 uType* ObservableProperty__PushCapture_typeof();
 void ObservableProperty__PushCapture__ctor__fn(ObservableProperty__PushCapture* __this, uDelegate* push, uObject* arg);

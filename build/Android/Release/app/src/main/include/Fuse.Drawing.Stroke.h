@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Drawing/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Drawing/1.3.0-rc2/Stroke.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -15,7 +15,7 @@ namespace g{
 namespace Fuse{
 namespace Drawing{
 
-// public sealed class Stroke :249
+// public sealed class Stroke :21
 // {
 struct Stroke_type : uType
 {
@@ -57,33 +57,33 @@ struct Stroke : ::g::Uno::UX::PropertyObject
 {
     int _adjustment;
     static ::g::Uno::UX::Selector _adjustmentName_;
-    static ::g::Uno::UX::Selector& _adjustmentName() { return Stroke_typeof()->Init(), _adjustmentName_; }
+    static ::g::Uno::UX::Selector& _adjustmentName() { return _adjustmentName_; }
     int _alignment;
     static ::g::Uno::UX::Selector _alignmentName_;
-    static ::g::Uno::UX::Selector& _alignmentName() { return Stroke_typeof()->Init(), _alignmentName_; }
+    static ::g::Uno::UX::Selector& _alignmentName() { return _alignmentName_; }
     uStrong< ::g::Fuse::Drawing::Brush*> _brush;
     static ::g::Uno::UX::Selector _brushName_;
-    static ::g::Uno::UX::Selector& _brushName() { return Stroke_typeof()->Init(), _brushName_; }
+    static ::g::Uno::UX::Selector& _brushName() { return _brushName_; }
     static ::g::Uno::UX::Selector _colorName_;
-    static ::g::Uno::UX::Selector& _colorName() { return Stroke_typeof()->Init(), _colorName_; }
+    static ::g::Uno::UX::Selector& _colorName() { return _colorName_; }
     int _lineCap;
     static ::g::Uno::UX::Selector _lineCapName_;
-    static ::g::Uno::UX::Selector& _lineCapName() { return Stroke_typeof()->Init(), _lineCapName_; }
+    static ::g::Uno::UX::Selector& _lineCapName() { return _lineCapName_; }
     int _lineJoin;
     float _lineJoinMiterLimit;
     static ::g::Uno::UX::Selector _lineJoinMiterLimitName_;
-    static ::g::Uno::UX::Selector& _lineJoinMiterLimitName() { return Stroke_typeof()->Init(), _lineJoinMiterLimitName_; }
+    static ::g::Uno::UX::Selector& _lineJoinMiterLimitName() { return _lineJoinMiterLimitName_; }
     static ::g::Uno::UX::Selector _lineJoinName_;
-    static ::g::Uno::UX::Selector& _lineJoinName() { return Stroke_typeof()->Init(), _lineJoinName_; }
+    static ::g::Uno::UX::Selector& _lineJoinName() { return _lineJoinName_; }
     float _offset;
     static ::g::Uno::UX::Selector _offsetName_;
-    static ::g::Uno::UX::Selector& _offsetName() { return Stroke_typeof()->Init(), _offsetName_; }
+    static ::g::Uno::UX::Selector& _offsetName() { return _offsetName_; }
     int _pinCount;
     static ::g::Uno::UX::Selector _shadingName_;
-    static ::g::Uno::UX::Selector& _shadingName() { return Stroke_typeof()->Init(), _shadingName_; }
+    static ::g::Uno::UX::Selector& _shadingName() { return _shadingName_; }
     float _width;
     static ::g::Uno::UX::Selector _widthName_;
-    static ::g::Uno::UX::Selector& _widthName() { return Stroke_typeof()->Init(), _widthName_; }
+    static ::g::Uno::UX::Selector& _widthName() { return _widthName_; }
 
     void ctor_1();
     float Adjust(float w, float ppi);

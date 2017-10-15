@@ -52,13 +52,19 @@
 #include <Fuse.Scripting.Script-102b1113.h>
 #include <Fuse.Scripting.Script-1fc6121d.h>
 #include <Fuse.Scripting.Script-48066473.h>
+#include <Fuse.Scripting.Script-6b7426dc.h>
+#include <Fuse.Scripting.Script-b112cc00.h>
+#include <Fuse.Scripting.Script-bd87d99a.h>
 #include <Fuse.Scripting.Script-c28a137b.h>
+#include <Fuse.Scripting.Script-c345ffc8.h>
+#include <Fuse.Scripting.Script-c8a158ba.h>
 #include <Fuse.Scripting.ScriptClass.h>
 #include <Fuse.Scripting.ScriptException.h>
 #include <Fuse.Scripting.ScriptMember.h>
 #include <Fuse.Scripting.ScriptMethod.h>
 #include <Fuse.Scripting.ScriptMethod-1.h>
 #include <Fuse.Scripting.ScriptModule.h>
+#include <Fuse.Scripting.ScriptPromise-3.h>
 #include <Fuse.Scripting.ScriptProperty.h>
 #include <Fuse.Scripting.String-a37c2db8.h>
 #include <Fuse.Scripting.Value.h>
@@ -118,22 +124,22 @@
 #include <Uno.UX.Property-1.h>
 #include <Uno.UX.PropertyObject.h>
 #include <Uno.UX.Resource.h>
-static uString* STRINGS[60];
-static uType* TYPES[64];
+static uString* STRINGS[47];
+static uType* TYPES[38];
 
 namespace g{
 namespace Fuse{
 namespace Scripting{
 
-// /usr/local/share/uno/Packages/Fuse.Scripting/1.2.1/$.uno
-// --------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Scripting\1.3.0-rc2\JSCallback.uno
+// -----------------------------------------------------------------------------------
 
-// private sealed class JSCallback.ActionClosure :395
+// private sealed class JSCallback.ActionClosure :37
 // {
 static void JSCallback__ActionClosure_build(uType* type)
 {
     type->SetFields(0,
-        ::g::Uno::Action_typeof(), offsetof(::g::Fuse::Scripting::JSCallback__ActionClosure, _action), 0);
+        ::g::Uno::Action_typeof(), offsetof(JSCallback__ActionClosure, _action), 0);
 }
 
 uType* JSCallback__ActionClosure_typeof()
@@ -150,38 +156,38 @@ uType* JSCallback__ActionClosure_typeof()
     return type;
 }
 
-// public ActionClosure(Uno.Action action) :399
+// public ActionClosure(Uno.Action action) :41
 void JSCallback__ActionClosure__ctor__fn(JSCallback__ActionClosure* __this, uDelegate* action)
 {
     __this->ctor_(action);
 }
 
-// public ActionClosure New(Uno.Action action) :399
+// public ActionClosure New(Uno.Action action) :41
 void JSCallback__ActionClosure__New1_fn(uDelegate* action, JSCallback__ActionClosure** __retval)
 {
     *__retval = JSCallback__ActionClosure::New1(action);
 }
 
-// public object Run(object[] args) :404
+// public object Run(object[] args) :46
 void JSCallback__ActionClosure__Run_fn(JSCallback__ActionClosure* __this, uArray* args, uObject** __retval)
 {
     *__retval = __this->Run(args);
 }
 
-// public ActionClosure(Uno.Action action) [instance] :399
+// public ActionClosure(Uno.Action action) [instance] :41
 void JSCallback__ActionClosure::ctor_(uDelegate* action)
 {
     _action = action;
 }
 
-// public object Run(object[] args) [instance] :404
+// public object Run(object[] args) [instance] :46
 uObject* JSCallback__ActionClosure::Run(uArray* args)
 {
     uPtr(_action)->InvokeVoid();
     return NULL;
 }
 
-// public ActionClosure New(Uno.Action action) [static] :399
+// public ActionClosure New(Uno.Action action) [static] :41
 JSCallback__ActionClosure* JSCallback__ActionClosure::New1(uDelegate* action)
 {
     JSCallback__ActionClosure* obj1 = (JSCallback__ActionClosure*)uNew(JSCallback__ActionClosure_typeof());
@@ -190,10 +196,10 @@ JSCallback__ActionClosure* JSCallback__ActionClosure::New1(uDelegate* action)
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Scripting/1.2.1/$.uno
-// --------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Scripting\1.3.0-rc2\JSCallback.uno
+// -----------------------------------------------------------------------------------
 
-// private sealed class JSCallback.ActionClosure<T> :411
+// private sealed class JSCallback.ActionClosure<T> :53
 // {
 static void JSCallback__ActionClosure1_build(uType* type)
 {
@@ -202,10 +208,9 @@ static void JSCallback__ActionClosure1_build(uType* type)
     ::TYPES[0] = ::g::Fuse::Scripting::JSCallback_typeof();
     ::TYPES[1] = ::g::Uno::Type_typeof();
     type->SetPrecalc(
-        type->T(0),
         ::g::Fuse::Scripting::JSCallback_typeof()->MakeMethod(4/*GetArg<T>*/, type->T(0), NULL));
     type->SetFields(0,
-        ::g::Uno::Action1_typeof()->MakeType(type->T(0), NULL), offsetof(::g::Fuse::Scripting::JSCallback__ActionClosure1, _action), 0);
+        ::g::Uno::Action1_typeof()->MakeType(type->T(0), NULL), offsetof(JSCallback__ActionClosure1, _action), 0);
 }
 
 uType* JSCallback__ActionClosure1_typeof()
@@ -216,7 +221,7 @@ uType* JSCallback__ActionClosure1_typeof()
     uTypeOptions options;
     options.FieldCount = 1;
     options.GenericCount = 1;
-    options.PrecalcCount = 2;
+    options.PrecalcCount = 1;
     options.ObjectSize = sizeof(JSCallback__ActionClosure1);
     options.TypeSize = sizeof(uType);
     type = uClassType::New("Fuse.Scripting.JSCallback.ActionClosure`1", options);
@@ -224,50 +229,49 @@ uType* JSCallback__ActionClosure1_typeof()
     return type;
 }
 
-// public ActionClosure(Uno.Action<T> action) :415
+// public ActionClosure(Uno.Action<T> action) :57
 void JSCallback__ActionClosure1__ctor__fn(JSCallback__ActionClosure1* __this, uDelegate* action)
 {
     __this->ctor_(action);
 }
 
-// public ActionClosure New(Uno.Action<T> action) :415
+// public ActionClosure New(Uno.Action<T> action) :57
 void JSCallback__ActionClosure1__New1_fn(uType* __type, uDelegate* action, JSCallback__ActionClosure1** __retval)
 {
     *__retval = JSCallback__ActionClosure1::New1(__type, action);
 }
 
-// public object Run(object[] args) :420
+// public object Run(object[] args) :62
 void JSCallback__ActionClosure1__Run_fn(JSCallback__ActionClosure1* __this, uArray* args, uObject** __retval)
 {
     *__retval = __this->Run(args);
 }
 
-// public ActionClosure(Uno.Action<T> action) [instance] :415
+// public ActionClosure(Uno.Action<T> action) [instance] :57
 void JSCallback__ActionClosure1::ctor_(uDelegate* action)
 {
     _action = action;
 }
 
-// public object Run(object[] args) [instance] :420
+// public object Run(object[] args) [instance] :62
 uObject* JSCallback__ActionClosure1::Run(uArray* args)
 {
     uType* __types[] = {
-        __type->Precalced(0/*T*/),
-        __type->Precalced(1/*Fuse.Scripting.JSCallback.GetArg<T>*/),
+        __type->Precalced(0/*Fuse.Scripting.JSCallback.GetArg<T>*/),
     };
-    uT arg(__types[0], U_ALLOCA(__types[0]->ValueSize));
+    uT arg(__type->T(0), U_ALLOCA(__type->T(0)->ValueSize));
     bool ret2;
-    arg = uT(__types[0], U_ALLOCA(__types[0]->ValueSize));
+    arg = uT(__type->T(0), U_ALLOCA(__type->T(0)->ValueSize));
 
-    if ((::g::Fuse::Scripting::JSCallback__GetArg_fn(__types[1], args, &arg, uCRef<int>(0), &ret2), ret2))
+    if ((::g::Fuse::Scripting::JSCallback__GetArg_fn(__types[0], args, &arg, uCRef<int>(0), &ret2), ret2))
         uPtr(_action)->InvokeVoid(arg);
     else
-        U_THROW(::g::Uno::ArgumentException::New4(::g::Uno::String::op_Addition1(::g::Uno::String::op_Addition2(::g::Uno::String::op_Addition1(::STRINGS[0/*"First argum...*/], __types[0]), ::STRINGS[1/*" value was "*/]), uPtr(args)->Strong<uObject*>(0))));
+        U_THROW(::g::Uno::ArgumentException::New4(::g::Uno::String::op_Addition1(::g::Uno::String::op_Addition2(::g::Uno::String::op_Addition1(::STRINGS[0/*"First argum...*/], __type->T(0)), ::STRINGS[1/*" value was "*/]), uPtr(args)->Strong<uObject*>(0))));
 
     return NULL;
 }
 
-// public ActionClosure New(Uno.Action<T> action) [static] :415
+// public ActionClosure New(Uno.Action<T> action) [static] :57
 JSCallback__ActionClosure1* JSCallback__ActionClosure1::New1(uType* __type, uDelegate* action)
 {
     JSCallback__ActionClosure1* obj1 = (JSCallback__ActionClosure1*)uNew(__type);
@@ -276,10 +280,10 @@ JSCallback__ActionClosure1* JSCallback__ActionClosure1::New1(uType* __type, uDel
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Scripting/1.2.1/$.uno
-// --------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Scripting\1.3.0-rc2\JSCallback.uno
+// -----------------------------------------------------------------------------------
 
-// private sealed class JSCallback.ActionClosure<T1, T2> :432
+// private sealed class JSCallback.ActionClosure<T1, T2> :74
 // {
 static void JSCallback__ActionClosure2_build(uType* type)
 {
@@ -287,12 +291,10 @@ static void JSCallback__ActionClosure2_build(uType* type)
     ::TYPES[0] = ::g::Fuse::Scripting::JSCallback_typeof();
     ::TYPES[1] = ::g::Uno::Type_typeof();
     type->SetPrecalc(
-        type->T(0),
-        type->T(1),
         ::g::Fuse::Scripting::JSCallback_typeof()->MakeMethod(4/*GetArg<T1>*/, type->T(0), NULL),
         ::g::Fuse::Scripting::JSCallback_typeof()->MakeMethod(4/*GetArg<T2>*/, type->T(1), NULL));
     type->SetFields(0,
-        ::g::Uno::Action2_typeof()->MakeType(type->T(0), type->T(1), NULL), offsetof(::g::Fuse::Scripting::JSCallback__ActionClosure2, _action), 0);
+        ::g::Uno::Action2_typeof()->MakeType(type->T(0), type->T(1), NULL), offsetof(JSCallback__ActionClosure2, _action), 0);
 }
 
 uType* JSCallback__ActionClosure2_typeof()
@@ -303,7 +305,7 @@ uType* JSCallback__ActionClosure2_typeof()
     uTypeOptions options;
     options.FieldCount = 1;
     options.GenericCount = 2;
-    options.PrecalcCount = 4;
+    options.PrecalcCount = 2;
     options.ObjectSize = sizeof(JSCallback__ActionClosure2);
     options.TypeSize = sizeof(uType);
     type = uClassType::New("Fuse.Scripting.JSCallback.ActionClosure`2", options);
@@ -311,55 +313,53 @@ uType* JSCallback__ActionClosure2_typeof()
     return type;
 }
 
-// public ActionClosure(Uno.Action<T1, T2> action) :436
+// public ActionClosure(Uno.Action<T1, T2> action) :78
 void JSCallback__ActionClosure2__ctor__fn(JSCallback__ActionClosure2* __this, uDelegate* action)
 {
     __this->ctor_(action);
 }
 
-// public ActionClosure New(Uno.Action<T1, T2> action) :436
+// public ActionClosure New(Uno.Action<T1, T2> action) :78
 void JSCallback__ActionClosure2__New1_fn(uType* __type, uDelegate* action, JSCallback__ActionClosure2** __retval)
 {
     *__retval = JSCallback__ActionClosure2::New1(__type, action);
 }
 
-// public object Run(object[] args) :441
+// public object Run(object[] args) :83
 void JSCallback__ActionClosure2__Run_fn(JSCallback__ActionClosure2* __this, uArray* args, uObject** __retval)
 {
     *__retval = __this->Run(args);
 }
 
-// public ActionClosure(Uno.Action<T1, T2> action) [instance] :436
+// public ActionClosure(Uno.Action<T1, T2> action) [instance] :78
 void JSCallback__ActionClosure2::ctor_(uDelegate* action)
 {
     _action = action;
 }
 
-// public object Run(object[] args) [instance] :441
+// public object Run(object[] args) [instance] :83
 uObject* JSCallback__ActionClosure2::Run(uArray* args)
 {
     uType* __types[] = {
-        __type->Precalced(0/*T1*/),
-        __type->Precalced(1/*T2*/),
-        __type->Precalced(2/*Fuse.Scripting.JSCallback.GetArg<T1>*/),
-        __type->Precalced(3/*Fuse.Scripting.JSCallback.GetArg<T2>*/),
+        __type->Precalced(0/*Fuse.Scripting.JSCallback.GetArg<T1>*/),
+        __type->Precalced(1/*Fuse.Scripting.JSCallback.GetArg<T2>*/),
     };
-    uT arg(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    uT arg1(__types[1], U_ALLOCA(__types[1]->ValueSize));
+    uT arg(__type->T(0), U_ALLOCA(__type->T(0)->ValueSize));
+    uT arg1(__type->T(1), U_ALLOCA(__type->T(1)->ValueSize));
     bool ret2;
     bool ret3;
-    arg = uT(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    arg1 = uT(__types[1], U_ALLOCA(__types[1]->ValueSize));
+    arg = uT(__type->T(0), U_ALLOCA(__type->T(0)->ValueSize));
+    arg1 = uT(__type->T(1), U_ALLOCA(__type->T(1)->ValueSize));
 
-    if ((::g::Fuse::Scripting::JSCallback__GetArg_fn(__types[2], args, &arg, uCRef<int>(0), &ret2), ret2) && (::g::Fuse::Scripting::JSCallback__GetArg_fn(__types[3], args, &arg1, uCRef<int>(1), &ret3), ret3))
+    if ((::g::Fuse::Scripting::JSCallback__GetArg_fn(__types[0], args, &arg, uCRef<int>(0), &ret2), ret2) && (::g::Fuse::Scripting::JSCallback__GetArg_fn(__types[1], args, &arg1, uCRef<int>(1), &ret3), ret3))
         uPtr(_action)->Invoke(2, (void*)arg, (void*)arg1);
     else
-        U_THROW(::g::Uno::ArgumentException::New4(::g::Uno::String::op_Addition1(::STRINGS[0/*"First argum...*/], __types[0])));
+        U_THROW(::g::Uno::ArgumentException::New4(::g::Uno::String::op_Addition1(::STRINGS[0/*"First argum...*/], __type->T(0))));
 
     return NULL;
 }
 
-// public ActionClosure New(Uno.Action<T1, T2> action) [static] :436
+// public ActionClosure New(Uno.Action<T1, T2> action) [static] :78
 JSCallback__ActionClosure2* JSCallback__ActionClosure2::New1(uType* __type, uDelegate* action)
 {
     JSCallback__ActionClosure2* obj1 = (JSCallback__ActionClosure2*)uNew(__type);
@@ -368,17 +368,15 @@ JSCallback__ActionClosure2* JSCallback__ActionClosure2::New1(uType* __type, uDel
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Scripting/1.2.1/$.uno
-// --------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Scripting\1.3.0-rc2\AppInitialized.uno
+// ---------------------------------------------------------------------------------------
 
-// internal static class AppInitialized :17
+// internal static class AppInitialized :15
 // {
 static void AppInitialized_build(uType* type)
 {
-    ::TYPES[2] = ::g::Uno::Threading::IDispatcher_typeof();
-    ::TYPES[3] = ::g::Uno::Action_typeof();
     type->SetFields(0,
-        ::g::Uno::Bool_typeof(), (uintptr_t)&::g::Fuse::Scripting::AppInitialized::_initialized_, uFieldFlagsStatic);
+        ::g::Uno::Bool_typeof(), (uintptr_t)&AppInitialized::_initialized_, uFieldFlagsStatic);
 }
 
 uClassType* AppInitialized_typeof()
@@ -394,13 +392,13 @@ uClassType* AppInitialized_typeof()
     return type;
 }
 
-// public static void On(Fuse.Scripting.Context context, Uno.Action action) :21
+// public static void On(Fuse.Scripting.Context context, Uno.Action action) :19
 void AppInitialized__On_fn(::g::Fuse::Scripting::Context* context, uDelegate* action)
 {
     AppInitialized::On(context, action);
 }
 
-// internal static void Reset() :33
+// internal static void Reset() :31
 void AppInitialized__Reset_fn()
 {
     AppInitialized::Reset();
@@ -408,26 +406,26 @@ void AppInitialized__Reset_fn()
 
 bool AppInitialized::_initialized_;
 
-// public static void On(Fuse.Scripting.Context context, Uno.Action action) [static] :21
+// public static void On(Fuse.Scripting.Context context, Uno.Action action) [static] :19
 void AppInitialized::On(::g::Fuse::Scripting::Context* context, uDelegate* action)
 {
     if (AppInitialized::_initialized_)
         uPtr(action)->InvokeVoid();
     else
-        ::g::Uno::Threading::IDispatcher::Invoke(uInterface(uPtr(::g::Fuse::UpdateManager::Dispatcher()), ::TYPES[2/*Uno.Threading.IDispatcher*/]), uDelegate::New(::TYPES[3/*Uno.Action*/], (void*)AppInitialized__Closure__Run_fn, AppInitialized__Closure::New1(context, action)));
+        ::g::Uno::Threading::IDispatcher::Invoke(uInterface(uPtr(::g::Fuse::UpdateManager::Dispatcher()), ::TYPES[8/*Uno.Threading.IDispatcher*/]), uDelegate::New(::TYPES[15/*Uno.Action*/], (void*)AppInitialized__Closure__Run_fn, AppInitialized__Closure::New1(context, action)));
 }
 
-// internal static void Reset() [static] :33
+// internal static void Reset() [static] :31
 void AppInitialized::Reset()
 {
     AppInitialized::_initialized_ = false;
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Scripting/1.2.1/$.uno
-// --------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Scripting\1.3.0-rc2\Types.uno
+// ------------------------------------------------------------------------------
 
-// public abstract class Array :2106
+// public abstract class Array :9
 // {
 static void Array_build(uType* type)
 {
@@ -451,41 +449,41 @@ Array_type* Array_typeof()
     return type;
 }
 
-// protected generated Array() :2106
+// protected generated Array() :9
 void Array__ctor__fn(Array* __this)
 {
     __this->ctor_();
 }
 
-// public override sealed bool Equals(object o) :2113
+// public override sealed bool Equals(object o) :16
 void Array__Equals_fn(Array* __this, uObject* o, bool* __retval)
 {
     Array* a = uAs<Array*>(o, Array_typeof());
     return *__retval = (a != NULL) && __this->Equals2(a), void();
 }
 
-// public override int GetHashCode() :2119
+// public override int GetHashCode() :22
 void Array__GetHashCode_fn(Array* __this, int* __retval)
 {
     int ret1;
     return *__retval = (::g::Uno::Object__GetHashCode_fn(__this, &ret1), ret1), void();
 }
 
-// protected generated Array() [instance] :2106
+// protected generated Array() [instance] :9
 void Array::ctor_()
 {
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Scripting/1.2.1/$.uno
-// --------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Scripting\1.3.0-rc2\IScriptEvent.uno
+// -------------------------------------------------------------------------------------
 
-// public sealed class BoolChangedArgs :344
+// public sealed class BoolChangedArgs :64
 // {
 static void BoolChangedArgs_build(uType* type)
 {
     ::STRINGS[2] = uString::Const("value");
-    ::TYPES[4] = ::g::Fuse::Scripting::IEventSerializer_typeof();
+    ::TYPES[2] = ::g::Fuse::Scripting::IEventSerializer_typeof();
     type->SetBase(::g::Uno::UX::ValueChangedArgs_typeof()->MakeType(::g::Uno::Bool_typeof(), NULL));
     type->SetInterfaces(
         ::g::Fuse::Scripting::IScriptEvent_typeof(), offsetof(BoolChangedArgs_type, interface0));
@@ -509,32 +507,32 @@ BoolChangedArgs_type* BoolChangedArgs_typeof()
     return type;
 }
 
-// public BoolChangedArgs(bool value) :346
+// public BoolChangedArgs(bool value) :66
 void BoolChangedArgs__ctor_2_fn(BoolChangedArgs* __this, bool* value)
 {
     __this->ctor_2(*value);
 }
 
-// private void Fuse.Scripting.IScriptEvent.Serialize(Fuse.Scripting.IEventSerializer s) :350
+// private void Fuse.Scripting.IScriptEvent.Serialize(Fuse.Scripting.IEventSerializer s) :70
 void BoolChangedArgs__FuseScriptingIScriptEventSerialize_fn(BoolChangedArgs* __this, uObject* s)
 {
     bool ret2;
-    ::g::Fuse::Scripting::IEventSerializer::AddBool(uInterface(uPtr(s), ::TYPES[4/*Fuse.Scripting.IEventSerializer*/]), ::STRINGS[2/*"value"*/], (::g::Uno::UX::ValueChangedArgs__get_Value_fn(__this, &ret2), ret2));
+    ::g::Fuse::Scripting::IEventSerializer::AddBool(uInterface(uPtr(s), ::TYPES[2/*Fuse.Scripting.IEventSerializer*/]), ::STRINGS[2/*"value"*/], (::g::Uno::UX::ValueChangedArgs__get_Value_fn(__this, &ret2), ret2));
 }
 
-// public BoolChangedArgs New(bool value) :346
+// public BoolChangedArgs New(bool value) :66
 void BoolChangedArgs__New3_fn(bool* value, BoolChangedArgs** __retval)
 {
     *__retval = BoolChangedArgs::New3(*value);
 }
 
-// public BoolChangedArgs(bool value) [instance] :346
+// public BoolChangedArgs(bool value) [instance] :66
 void BoolChangedArgs::ctor_2(bool value)
 {
     ::g::Uno::UX::ValueChangedArgs__ctor_1_fn(this, uCRef(value));
 }
 
-// public BoolChangedArgs New(bool value) [static] :346
+// public BoolChangedArgs New(bool value) [static] :66
 BoolChangedArgs* BoolChangedArgs::New3(bool value)
 {
     BoolChangedArgs* obj1 = (BoolChangedArgs*)uNew(BoolChangedArgs_typeof());
@@ -543,10 +541,10 @@ BoolChangedArgs* BoolChangedArgs::New3(bool value)
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Scripting/1.2.1/$.uno
-// --------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Scripting\1.3.0-rc2\Types.uno
+// ------------------------------------------------------------------------------
 
-// public delegate object Callback(object[] args) :2223
+// public delegate object Callback(object[] args) :126
 uDelegateType* Callback_typeof()
 {
     static uSStrong<uDelegateType*> type;
@@ -558,18 +556,18 @@ uDelegateType* Callback_typeof()
     return type;
 }
 
-// /usr/local/share/uno/Packages/Fuse.Scripting/1.2.1/$.uno
-// --------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Scripting\1.3.0-rc2\ScriptClass.uno
+// ------------------------------------------------------------------------------------
 
-// private sealed class ScriptMethod<T>.CallClosure :1601
+// private sealed class ScriptMethod<T>.CallClosure :126
 // {
 static void ScriptMethod1__CallClosure_build(uType* type)
 {
     type->SetFields(0,
-        uObject_typeof()->Array(), offsetof(::g::Fuse::Scripting::ScriptMethod1__CallClosure, _args), 0,
-        ::g::Fuse::Scripting::Context_typeof(), offsetof(::g::Fuse::Scripting::ScriptMethod1__CallClosure, _context), 0,
-        ::g::Uno::Action3_typeof()->MakeType(::g::Fuse::Scripting::Context_typeof(), type->T(0), uObject_typeof()->Array(), NULL), offsetof(::g::Fuse::Scripting::ScriptMethod1__CallClosure, _method), 0,
-        uObject_typeof(), offsetof(::g::Fuse::Scripting::ScriptMethod1__CallClosure, _obj), 0);
+        uObject_typeof()->Array(), offsetof(ScriptMethod1__CallClosure, _args), 0,
+        ::g::Fuse::Scripting::Context_typeof(), offsetof(ScriptMethod1__CallClosure, _context), 0,
+        ::g::Uno::Action3_typeof()->MakeType(::g::Fuse::Scripting::Context_typeof(), type->T(0), uObject_typeof()->Array(), NULL), offsetof(ScriptMethod1__CallClosure, _method), 0,
+        uObject_typeof(), offsetof(ScriptMethod1__CallClosure, _obj), 0);
 }
 
 uType* ScriptMethod1__CallClosure_typeof()
@@ -587,25 +585,25 @@ uType* ScriptMethod1__CallClosure_typeof()
     return type;
 }
 
-// public CallClosure(Uno.Action<Fuse.Scripting.Context, T, object[]> method, Fuse.Scripting.Context c, object obj, object[] args) :1608
+// public CallClosure(Uno.Action<Fuse.Scripting.Context, T, object[]> method, Fuse.Scripting.Context c, object obj, object[] args) :133
 void ScriptMethod1__CallClosure__ctor__fn(ScriptMethod1__CallClosure* __this, uDelegate* method, ::g::Fuse::Scripting::Context* c, uObject* obj, uArray* args)
 {
     __this->ctor_(method, c, obj, args);
 }
 
-// public CallClosure New(Uno.Action<Fuse.Scripting.Context, T, object[]> method, Fuse.Scripting.Context c, object obj, object[] args) :1608
+// public CallClosure New(Uno.Action<Fuse.Scripting.Context, T, object[]> method, Fuse.Scripting.Context c, object obj, object[] args) :133
 void ScriptMethod1__CallClosure__New1_fn(uType* __type, uDelegate* method, ::g::Fuse::Scripting::Context* c, uObject* obj, uArray* args, ScriptMethod1__CallClosure** __retval)
 {
     *__retval = ScriptMethod1__CallClosure::New1(__type, method, c, obj, args);
 }
 
-// public void Run() :1616
+// public void Run() :141
 void ScriptMethod1__CallClosure__Run_fn(ScriptMethod1__CallClosure* __this)
 {
     __this->Run();
 }
 
-// public CallClosure(Uno.Action<Fuse.Scripting.Context, T, object[]> method, Fuse.Scripting.Context c, object obj, object[] args) [instance] :1608
+// public CallClosure(Uno.Action<Fuse.Scripting.Context, T, object[]> method, Fuse.Scripting.Context c, object obj, object[] args) [instance] :133
 void ScriptMethod1__CallClosure::ctor_(uDelegate* method, ::g::Fuse::Scripting::Context* c, uObject* obj, uArray* args)
 {
     _method = method;
@@ -614,13 +612,13 @@ void ScriptMethod1__CallClosure::ctor_(uDelegate* method, ::g::Fuse::Scripting::
     _args = args;
 }
 
-// public void Run() [instance] :1616
+// public void Run() [instance] :141
 void ScriptMethod1__CallClosure::Run()
 {
     uPtr(_method)->Invoke(3, (::g::Fuse::Scripting::Context*)_context, (void*)uUnboxAny(__type->T(0), _obj), (uArray*)_args);
 }
 
-// public CallClosure New(Uno.Action<Fuse.Scripting.Context, T, object[]> method, Fuse.Scripting.Context c, object obj, object[] args) [static] :1608
+// public CallClosure New(Uno.Action<Fuse.Scripting.Context, T, object[]> method, Fuse.Scripting.Context c, object obj, object[] args) [static] :133
 ScriptMethod1__CallClosure* ScriptMethod1__CallClosure::New1(uType* __type, uDelegate* method, ::g::Fuse::Scripting::Context* c, uObject* obj, uArray* args)
 {
     ScriptMethod1__CallClosure* obj1 = (ScriptMethod1__CallClosure*)uNew(__type);
@@ -629,18 +627,18 @@ ScriptMethod1__CallClosure* ScriptMethod1__CallClosure::New1(uType* __type, uDel
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Scripting/1.2.1/$.uno
-// --------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Scripting\1.3.0-rc2\AppInitialized.uno
+// ---------------------------------------------------------------------------------------
 
-// private sealed class AppInitialized.Closure :38
+// private sealed class AppInitialized.Closure :36
 // {
 static void AppInitialized__Closure_build(uType* type)
 {
-    ::TYPES[5] = ::g::Uno::Threading::IDispatcherExtensions_typeof()->MakeMethod(0/*Invoke1<Uno.Action>*/, ::g::Uno::Action_typeof(), NULL);
-    ::TYPES[6] = ::g::Uno::Action1_typeof()->MakeType(::g::Uno::Action_typeof(), NULL);
+    ::TYPES[3] = ::g::Uno::Threading::IDispatcherExtensions_typeof()->MakeMethod(0/*Invoke1<Uno.Action>*/, ::g::Uno::Action_typeof(), NULL);
+    ::TYPES[4] = ::g::Uno::Action1_typeof()->MakeType(::g::Uno::Action_typeof(), NULL);
     type->SetFields(0,
-        ::g::Uno::Action_typeof(), offsetof(::g::Fuse::Scripting::AppInitialized__Closure, _action), 0,
-        ::g::Fuse::Scripting::Context_typeof(), offsetof(::g::Fuse::Scripting::AppInitialized__Closure, _context), 0);
+        ::g::Uno::Action_typeof(), offsetof(AppInitialized__Closure, _action), 0,
+        ::g::Fuse::Scripting::Context_typeof(), offsetof(AppInitialized__Closure, _context), 0);
 }
 
 uType* AppInitialized__Closure_typeof()
@@ -657,44 +655,44 @@ uType* AppInitialized__Closure_typeof()
     return type;
 }
 
-// public Closure(Fuse.Scripting.Context context, Uno.Action action) :43
+// public Closure(Fuse.Scripting.Context context, Uno.Action action) :41
 void AppInitialized__Closure__ctor__fn(AppInitialized__Closure* __this, ::g::Fuse::Scripting::Context* context, uDelegate* action)
 {
     __this->ctor_(context, action);
 }
 
-// public Closure New(Fuse.Scripting.Context context, Uno.Action action) :43
+// public Closure New(Fuse.Scripting.Context context, Uno.Action action) :41
 void AppInitialized__Closure__New1_fn(::g::Fuse::Scripting::Context* context, uDelegate* action, AppInitialized__Closure** __retval)
 {
     *__retval = AppInitialized__Closure::New1(context, action);
 }
 
-// public void Run() :49
+// public void Run() :47
 void AppInitialized__Closure__Run_fn(AppInitialized__Closure* __this)
 {
     __this->Run();
 }
 
-// private static void RunJS(Uno.Action action) :54
+// private static void RunJS(Uno.Action action) :52
 void AppInitialized__Closure__RunJS_fn(uDelegate* action)
 {
     AppInitialized__Closure::RunJS(action);
 }
 
-// public Closure(Fuse.Scripting.Context context, Uno.Action action) [instance] :43
+// public Closure(Fuse.Scripting.Context context, Uno.Action action) [instance] :41
 void AppInitialized__Closure::ctor_(::g::Fuse::Scripting::Context* context, uDelegate* action)
 {
     _context = context;
     _action = action;
 }
 
-// public void Run() [instance] :49
+// public void Run() [instance] :47
 void AppInitialized__Closure::Run()
 {
-    ::g::Uno::Threading::IDispatcherExtensions__Invoke1_fn(::TYPES[5/*Uno.Threading.IDispatcherExtensions.Invoke1<Uno.Action>*/], uPtr(_context)->Dispatcher(), uDelegate::New(::TYPES[6/*Uno.Action<Uno.Action>*/], (void*)AppInitialized__Closure__RunJS_fn), _action);
+    ::g::Uno::Threading::IDispatcherExtensions__Invoke1_fn(::TYPES[3/*Uno.Threading.IDispatcherExtensions.Invoke1<Uno.Action>*/], uPtr(_context)->Dispatcher(), uDelegate::New(::TYPES[4/*Uno.Action<Uno.Action>*/], (void*)AppInitialized__Closure__RunJS_fn), _action);
 }
 
-// public Closure New(Fuse.Scripting.Context context, Uno.Action action) [static] :43
+// public Closure New(Fuse.Scripting.Context context, Uno.Action action) [static] :41
 AppInitialized__Closure* AppInitialized__Closure::New1(::g::Fuse::Scripting::Context* context, uDelegate* action)
 {
     AppInitialized__Closure* obj1 = (AppInitialized__Closure*)uNew(AppInitialized__Closure_typeof());
@@ -702,7 +700,7 @@ AppInitialized__Closure* AppInitialized__Closure::New1(::g::Fuse::Scripting::Con
     return obj1;
 }
 
-// private static void RunJS(Uno.Action action) [static] :54
+// private static void RunJS(Uno.Action action) [static] :52
 void AppInitialized__Closure::RunJS(uDelegate* action)
 {
     ::g::Fuse::Scripting::AppInitialized::_initialized_ = true;
@@ -710,10 +708,10 @@ void AppInitialized__Closure::RunJS(uDelegate* action)
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Scripting/1.2.1/$.uno
-// --------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Scripting\1.3.0-rc2\Context.uno
+// --------------------------------------------------------------------------------
 
-// public interfacemodifiers class Context :83
+// public interfacemodifiers class Context :18
 // {
 static void Context_build(uType* type)
 {
@@ -727,22 +725,22 @@ static void Context_build(uType* type)
     ::STRINGS[10] = uString::Const(" enumerable: e, configurable: c }); })");
     ::STRINGS[11] = uString::Const("(function(obj, name, value, e, c) { Object.defineProperty(obj, name, { value: value, enumerable: e, configurable: c }); })");
     ::STRINGS[12] = uString::Const("JSON.parse");
-    ::TYPES[7] = ::g::Uno::Threading::ConcurrentDictionary_typeof()->MakeType(::g::Uno::String_typeof(), ::g::Fuse::Scripting::ModuleResult_typeof(), NULL);
-    ::TYPES[8] = ::g::Fuse::Scripting::Function_typeof();
-    ::TYPES[9] = uObject_typeof()->Array();
-    ::TYPES[2] = ::g::Uno::Threading::IDispatcher_typeof();
-    ::TYPES[10] = ::g::Fuse::Scripting::IThreadWorker_typeof();
-    ::TYPES[11] = ::g::Fuse::Scripting::Array_typeof();
-    ::TYPES[12] = ::g::Fuse::Scripting::Object_typeof();
+    ::TYPES[5] = ::g::Uno::Threading::ConcurrentDictionary_typeof()->MakeType(::g::Uno::String_typeof(), ::g::Fuse::Scripting::ModuleResult_typeof(), NULL);
+    ::TYPES[6] = ::g::Fuse::Scripting::Function_typeof();
+    ::TYPES[7] = uObject_typeof()->Array();
+    ::TYPES[8] = ::g::Uno::Threading::IDispatcher_typeof();
+    ::TYPES[9] = ::g::Fuse::Scripting::IThreadWorker_typeof();
+    ::TYPES[10] = ::g::Fuse::Scripting::Array_typeof();
+    ::TYPES[11] = ::g::Fuse::Scripting::Object_typeof();
     type->SetInterfaces(
         ::g::Uno::IDisposable_typeof(), offsetof(Context_type, interface0));
     type->SetFields(0,
-        ::TYPES[8/*Fuse.Scripting.Function*/], offsetof(::g::Fuse::Scripting::Context, _identity), 0,
-        ::TYPES[7/*Uno.Threading.ConcurrentDictionary<string, Fuse.Scripting.ModuleResult>*/], offsetof(::g::Fuse::Scripting::Context, _moduleResults), 0,
-        ::TYPES[8/*Fuse.Scripting.Function*/], offsetof(::g::Fuse::Scripting::Context, _newArray), 0,
-        ::TYPES[8/*Fuse.Scripting.Function*/], offsetof(::g::Fuse::Scripting::Context, _newObject), 0,
-        ::TYPES[8/*Fuse.Scripting.Function*/], offsetof(::g::Fuse::Scripting::Context, _parseJson), 0,
-        ::TYPES[10/*Fuse.Scripting.IThreadWorker*/], offsetof(::g::Fuse::Scripting::Context, _worker), 0);
+        ::TYPES[6/*Fuse.Scripting.Function*/], offsetof(Context, _identity), 0,
+        ::TYPES[5/*Uno.Threading.ConcurrentDictionary<string, Fuse.Scripting.ModuleResult>*/], offsetof(Context, _moduleResults), 0,
+        ::TYPES[6/*Fuse.Scripting.Function*/], offsetof(Context, _newArray), 0,
+        ::TYPES[6/*Fuse.Scripting.Function*/], offsetof(Context, _newObject), 0,
+        ::TYPES[6/*Fuse.Scripting.Function*/], offsetof(Context, _parseJson), 0,
+        ::TYPES[9/*Fuse.Scripting.IThreadWorker*/], offsetof(Context, _worker), 0);
 }
 
 Context_type* Context_typeof()
@@ -760,119 +758,119 @@ Context_type* Context_typeof()
     return type;
 }
 
-// protected Context(Fuse.Scripting.IThreadWorker worker) :129
+// protected Context(Fuse.Scripting.IThreadWorker worker) :64
 void Context__ctor__fn(Context* __this, uObject* worker)
 {
     __this->ctor_(worker);
 }
 
-// public Fuse.Scripting.Function CallbackToFunction(Fuse.Scripting.Callback c) :153
+// public Fuse.Scripting.Function CallbackToFunction(Fuse.Scripting.Callback c) :88
 void Context__CallbackToFunction_fn(Context* __this, uDelegate* c, ::g::Fuse::Scripting::Function** __retval)
 {
     *__retval = __this->CallbackToFunction(c);
 }
 
-// internal void DeleteGlobalModuleResult(Fuse.Scripting.ModuleResult mr) :102
+// internal void DeleteGlobalModuleResult(Fuse.Scripting.ModuleResult mr) :37
 void Context__DeleteGlobalModuleResult_fn(Context* __this, ::g::Fuse::Scripting::ModuleResult* mr)
 {
     __this->DeleteGlobalModuleResult(mr);
 }
 
-// public Uno.Threading.IDispatcher get_Dispatcher() :139
+// public Uno.Threading.IDispatcher get_Dispatcher() :74
 void Context__get_Dispatcher_fn(Context* __this, uObject** __retval)
 {
     *__retval = __this->Dispatcher();
 }
 
-// public void Invoke(Uno.Action action) :141
+// public void Invoke(Uno.Action action) :76
 void Context__Invoke_fn(Context* __this, uDelegate* action)
 {
     __this->Invoke(action);
 }
 
-// public Fuse.Scripting.Array NewArray(object[] values) :200
+// public Fuse.Scripting.Array NewArray(object[] values) :135
 void Context__NewArray_fn(Context* __this, uArray* values, ::g::Fuse::Scripting::Array** __retval)
 {
     *__retval = __this->NewArray(values);
 }
 
-// public Fuse.Scripting.Object NewObject() :193
+// public Fuse.Scripting.Object NewObject() :128
 void Context__NewObject_fn(Context* __this, ::g::Fuse::Scripting::Object** __retval)
 {
     *__retval = __this->NewObject();
 }
 
-// public void ObjectDefineProperty(Fuse.Scripting.Object obj, string name, Fuse.Scripting.Callback getProperty, [Fuse.Scripting.Callback setProperty], [bool enumerable], [bool configurable]) :161
+// public void ObjectDefineProperty(Fuse.Scripting.Object obj, string name, Fuse.Scripting.Callback getProperty, [Fuse.Scripting.Callback setProperty], [bool enumerable], [bool configurable]) :96
 void Context__ObjectDefineProperty_fn(Context* __this, ::g::Fuse::Scripting::Object* obj, uString* name, uDelegate* getProperty, uDelegate* setProperty, bool* enumerable, bool* configurable)
 {
     __this->ObjectDefineProperty(obj, name, getProperty, setProperty, *enumerable, *configurable);
 }
 
-// public void ObjectDefineProperty(Fuse.Scripting.Object obj, string name, object value, [bool enumerable], [bool configurable]) :168
+// public void ObjectDefineProperty(Fuse.Scripting.Object obj, string name, object value, [bool enumerable], [bool configurable]) :103
 void Context__ObjectDefineProperty1_fn(Context* __this, ::g::Fuse::Scripting::Object* obj, uString* name, uObject* value, bool* enumerable, bool* configurable)
 {
     __this->ObjectDefineProperty1(obj, name, value, *enumerable, *configurable);
 }
 
-// public Fuse.Scripting.Function get_Observable() :148
+// public Fuse.Scripting.Function get_Observable() :83
 void Context__get_Observable_fn(Context* __this, ::g::Fuse::Scripting::Function** __retval)
 {
     *__retval = __this->Observable();
 }
 
-// public object ParseJson(string json) :184
+// public object ParseJson(string json) :119
 void Context__ParseJson_fn(Context* __this, uString* json, uObject** __retval)
 {
     *__retval = __this->ParseJson(json);
 }
 
-// public void RegisterGlobalModuleResult(Fuse.Scripting.ModuleResult result) :87
+// public void RegisterGlobalModuleResult(Fuse.Scripting.ModuleResult result) :22
 void Context__RegisterGlobalModuleResult_fn(Context* __this, ::g::Fuse::Scripting::ModuleResult* result)
 {
     __this->RegisterGlobalModuleResult(result);
 }
 
-// public Fuse.Scripting.IThreadWorker get_ThreadWorker() :134
+// public Fuse.Scripting.IThreadWorker get_ThreadWorker() :69
 void Context__get_ThreadWorker_fn(Context* __this, uObject** __retval)
 {
     *__retval = __this->ThreadWorker();
 }
 
-// public Fuse.Scripting.ModuleResult TryGetGlobalModuleResult(string id) :94
+// public Fuse.Scripting.ModuleResult TryGetGlobalModuleResult(string id) :29
 void Context__TryGetGlobalModuleResult_fn(Context* __this, uString* id, ::g::Fuse::Scripting::ModuleResult** __retval)
 {
     *__retval = __this->TryGetGlobalModuleResult(id);
 }
 
-// public object Unwrap(object obj) :137
+// public object Unwrap(object obj) :72
 void Context__Unwrap_fn(Context* __this, uObject* obj, uObject** __retval)
 {
     *__retval = __this->Unwrap(obj);
 }
 
-// public object Wrap(object obj) :136
+// public object Wrap(object obj) :71
 void Context__Wrap_fn(Context* __this, uObject* obj, uObject** __retval)
 {
     *__retval = __this->Wrap(obj);
 }
 
-// protected Context(Fuse.Scripting.IThreadWorker worker) [instance] :129
+// protected Context(Fuse.Scripting.IThreadWorker worker) [instance] :64
 void Context::ctor_(uObject* worker)
 {
-    _moduleResults = ((::g::Uno::Threading::ConcurrentDictionary*)::g::Uno::Threading::ConcurrentDictionary::New1(::TYPES[7/*Uno.Threading.ConcurrentDictionary<string, Fuse.Scripting.ModuleResult>*/]));
+    _moduleResults = ((::g::Uno::Threading::ConcurrentDictionary*)::g::Uno::Threading::ConcurrentDictionary::New1(::TYPES[5/*Uno.Threading.ConcurrentDictionary<string, Fuse.Scripting.ModuleResult>*/]));
     _worker = worker;
 }
 
-// public Fuse.Scripting.Function CallbackToFunction(Fuse.Scripting.Callback c) [instance] :153
+// public Fuse.Scripting.Function CallbackToFunction(Fuse.Scripting.Callback c) [instance] :88
 ::g::Fuse::Scripting::Function* Context::CallbackToFunction(uDelegate* c)
 {
     if (_identity == NULL)
-        _identity = uCast< ::g::Fuse::Scripting::Function*>(Evaluate(::STRINGS[3/*"(Context)"*/], ::STRINGS[4/*"(function(x...*/]), ::TYPES[8/*Fuse.Scripting.Function*/]);
+        _identity = uCast< ::g::Fuse::Scripting::Function*>(Evaluate(::STRINGS[3/*"(Context)"*/], ::STRINGS[4/*"(function(x...*/]), ::TYPES[6/*Fuse.Scripting.Function*/]);
 
-    return uCast< ::g::Fuse::Scripting::Function*>(uPtr(_identity)->Call(uArray::Init<uObject*>(::TYPES[9/*object[]*/], 1, c)), ::TYPES[8/*Fuse.Scripting.Function*/]);
+    return uCast< ::g::Fuse::Scripting::Function*>(uPtr(_identity)->Call(uArray::Init<uObject*>(::TYPES[7/*object[]*/], 1, c)), ::TYPES[6/*Fuse.Scripting.Function*/]);
 }
 
-// internal void DeleteGlobalModuleResult(Fuse.Scripting.ModuleResult mr) [instance] :102
+// internal void DeleteGlobalModuleResult(Fuse.Scripting.ModuleResult mr) [instance] :37
 void Context::DeleteGlobalModuleResult(::g::Fuse::Scripting::ModuleResult* mr)
 {
     bool ret1;
@@ -885,25 +883,25 @@ void Context::DeleteGlobalModuleResult(::g::Fuse::Scripting::ModuleResult* mr)
         ::g::Uno::Threading::ConcurrentDictionary__Remove_fn(uPtr(_moduleResults), uPtr(mr)->Id, &ret2);
 }
 
-// public Uno.Threading.IDispatcher get_Dispatcher() [instance] :139
+// public Uno.Threading.IDispatcher get_Dispatcher() [instance] :74
 uObject* Context::Dispatcher()
 {
-    return ::g::Fuse::Scripting::IThreadWorker::Dispatcher(uInterface(uPtr(_worker), ::TYPES[10/*Fuse.Scripting.IThreadWorker*/]));
+    return ::g::Fuse::Scripting::IThreadWorker::Dispatcher(uInterface(uPtr(_worker), ::TYPES[9/*Fuse.Scripting.IThreadWorker*/]));
 }
 
-// public void Invoke(Uno.Action action) [instance] :141
+// public void Invoke(Uno.Action action) [instance] :76
 void Context::Invoke(uDelegate* action)
 {
-    ::g::Uno::Threading::IDispatcher::Invoke(uInterface(uPtr(::g::Fuse::Scripting::IThreadWorker::Dispatcher(uInterface(uPtr(_worker), ::TYPES[10/*Fuse.Scripting.IThreadWorker*/]))), ::TYPES[2/*Uno.Threading.IDispatcher*/]), action);
+    ::g::Uno::Threading::IDispatcher::Invoke(uInterface(uPtr(::g::Fuse::Scripting::IThreadWorker::Dispatcher(uInterface(uPtr(_worker), ::TYPES[9/*Fuse.Scripting.IThreadWorker*/]))), ::TYPES[8/*Uno.Threading.IDispatcher*/]), action);
 }
 
-// public Fuse.Scripting.Array NewArray(object[] values) [instance] :200
+// public Fuse.Scripting.Array NewArray(object[] values) [instance] :135
 ::g::Fuse::Scripting::Array* Context::NewArray(uArray* values)
 {
     if (_newArray == NULL)
-        _newArray = uCast< ::g::Fuse::Scripting::Function*>(Evaluate(::STRINGS[3/*"(Context)"*/], ::STRINGS[5/*"(function(c...*/]), ::TYPES[8/*Fuse.Scripting.Function*/]);
+        _newArray = uCast< ::g::Fuse::Scripting::Function*>(Evaluate(::STRINGS[3/*"(Context)"*/], ::STRINGS[5/*"(function(c...*/]), ::TYPES[6/*Fuse.Scripting.Function*/]);
 
-    ::g::Fuse::Scripting::Array* a = uCast< ::g::Fuse::Scripting::Array*>(uPtr(_newArray)->Call(uArray::Init<uObject*>(::TYPES[9/*object[]*/], 1, uBox<int>(::TYPES[47/*int*/], uPtr(values)->Length()))), ::TYPES[11/*Fuse.Scripting.Array*/]);
+    ::g::Fuse::Scripting::Array* a = uCast< ::g::Fuse::Scripting::Array*>(uPtr(_newArray)->Call(uArray::Init<uObject*>(::TYPES[7/*object[]*/], 1, uBox<int>(::TYPES[30/*int*/], uPtr(values)->Length()))), ::TYPES[10/*Fuse.Scripting.Array*/]);
 
     for (int i = 0; i < values->Length(); i++)
         uPtr(a)->Item(i, uPtr(values)->Strong<uObject*>(i));
@@ -911,45 +909,45 @@ void Context::Invoke(uDelegate* action)
     return a;
 }
 
-// public Fuse.Scripting.Object NewObject() [instance] :193
+// public Fuse.Scripting.Object NewObject() [instance] :128
 ::g::Fuse::Scripting::Object* Context::NewObject()
 {
     if (_newObject == NULL)
-        _newObject = uCast< ::g::Fuse::Scripting::Function*>(Evaluate(::STRINGS[3/*"(Context)"*/], ::STRINGS[6/*"(function()...*/]), ::TYPES[8/*Fuse.Scripting.Function*/]);
+        _newObject = uCast< ::g::Fuse::Scripting::Function*>(Evaluate(::STRINGS[3/*"(Context)"*/], ::STRINGS[6/*"(function()...*/]), ::TYPES[6/*Fuse.Scripting.Function*/]);
 
-    return uCast< ::g::Fuse::Scripting::Object*>(uPtr(_newObject)->Call(uArray::New(::TYPES[9/*object[]*/], 0)), ::TYPES[12/*Fuse.Scripting.Object*/]);
+    return uCast< ::g::Fuse::Scripting::Object*>(uPtr(_newObject)->Call(uArray::New(::TYPES[7/*object[]*/], 0)), ::TYPES[11/*Fuse.Scripting.Object*/]);
 }
 
-// public void ObjectDefineProperty(Fuse.Scripting.Object obj, string name, Fuse.Scripting.Callback getProperty, [Fuse.Scripting.Callback setProperty], [bool enumerable], [bool configurable]) [instance] :161
+// public void ObjectDefineProperty(Fuse.Scripting.Object obj, string name, Fuse.Scripting.Callback getProperty, [Fuse.Scripting.Callback setProperty], [bool enumerable], [bool configurable]) [instance] :96
 void Context::ObjectDefineProperty(::g::Fuse::Scripting::Object* obj, uString* name, uDelegate* getProperty, uDelegate* setProperty, bool enumerable, bool configurable)
 {
-    ::g::Fuse::Scripting::Function* func = uAs< ::g::Fuse::Scripting::Function*>(Evaluate(name, ::g::Uno::String::op_Addition2(::g::Uno::String::op_Addition2(::STRINGS[7/*"(function(o...*/], ::g::Uno::Delegate::op_Inequality(setProperty, NULL) ? ::STRINGS[8/*" set: setCa...*/] : ::STRINGS[9/*""*/]), ::STRINGS[10/*" enumerable...*/])), ::TYPES[8/*Fuse.Scripting.Function*/]);
-    uPtr(func)->Call(uArray::Init<uObject*>(::TYPES[9/*object[]*/], 6, obj, name, getProperty, setProperty, uBox(::g::Uno::Bool_typeof(), enumerable), uBox(::g::Uno::Bool_typeof(), configurable)));
+    ::g::Fuse::Scripting::Function* func = uAs< ::g::Fuse::Scripting::Function*>(Evaluate(name, ::g::Uno::String::op_Addition2(::g::Uno::String::op_Addition2(::STRINGS[7/*"(function(o...*/], ::g::Uno::Delegate::op_Inequality(setProperty, NULL) ? ::STRINGS[8/*" set: setCa...*/] : ::STRINGS[9/*""*/]), ::STRINGS[10/*" enumerable...*/])), ::TYPES[6/*Fuse.Scripting.Function*/]);
+    uPtr(func)->Call(uArray::Init<uObject*>(::TYPES[7/*object[]*/], 6, obj, name, getProperty, setProperty, uBox(::g::Uno::Bool_typeof(), enumerable), uBox(::g::Uno::Bool_typeof(), configurable)));
 }
 
-// public void ObjectDefineProperty(Fuse.Scripting.Object obj, string name, object value, [bool enumerable], [bool configurable]) [instance] :168
+// public void ObjectDefineProperty(Fuse.Scripting.Object obj, string name, object value, [bool enumerable], [bool configurable]) [instance] :103
 void Context::ObjectDefineProperty1(::g::Fuse::Scripting::Object* obj, uString* name, uObject* value, bool enumerable, bool configurable)
 {
-    ::g::Fuse::Scripting::Function* func = uAs< ::g::Fuse::Scripting::Function*>(Evaluate(name, ::STRINGS[11/*"(function(o...*/]), ::TYPES[8/*Fuse.Scripting.Function*/]);
-    uPtr(func)->Call(uArray::Init<uObject*>(::TYPES[9/*object[]*/], 5, obj, name, value, uBox(::g::Uno::Bool_typeof(), enumerable), uBox(::g::Uno::Bool_typeof(), configurable)));
+    ::g::Fuse::Scripting::Function* func = uAs< ::g::Fuse::Scripting::Function*>(Evaluate(name, ::STRINGS[11/*"(function(o...*/]), ::TYPES[6/*Fuse.Scripting.Function*/]);
+    uPtr(func)->Call(uArray::Init<uObject*>(::TYPES[7/*object[]*/], 5, obj, name, value, uBox(::g::Uno::Bool_typeof(), enumerable), uBox(::g::Uno::Bool_typeof(), configurable)));
 }
 
-// public Fuse.Scripting.Function get_Observable() [instance] :148
+// public Fuse.Scripting.Function get_Observable() [instance] :83
 ::g::Fuse::Scripting::Function* Context::Observable()
 {
-    return ::g::Fuse::Scripting::IThreadWorker::Observable(uInterface(uPtr(_worker), ::TYPES[10/*Fuse.Scripting.IThreadWorker*/]));
+    return ::g::Fuse::Scripting::IThreadWorker::Observable(uInterface(uPtr(_worker), ::TYPES[9/*Fuse.Scripting.IThreadWorker*/]));
 }
 
-// public object ParseJson(string json) [instance] :184
+// public object ParseJson(string json) [instance] :119
 uObject* Context::ParseJson(uString* json)
 {
     if (_parseJson == NULL)
-        _parseJson = uCast< ::g::Fuse::Scripting::Function*>(Evaluate(::STRINGS[3/*"(Context)"*/], ::STRINGS[12/*"JSON.parse"*/]), ::TYPES[8/*Fuse.Scripting.Function*/]);
+        _parseJson = uCast< ::g::Fuse::Scripting::Function*>(Evaluate(::STRINGS[3/*"(Context)"*/], ::STRINGS[12/*"JSON.parse"*/]), ::TYPES[6/*Fuse.Scripting.Function*/]);
 
-    return uPtr(_parseJson)->Call(uArray::Init<uObject*>(::TYPES[9/*object[]*/], 1, json));
+    return uPtr(_parseJson)->Call(uArray::Init<uObject*>(::TYPES[7/*object[]*/], 1, json));
 }
 
-// public void RegisterGlobalModuleResult(Fuse.Scripting.ModuleResult result) [instance] :87
+// public void RegisterGlobalModuleResult(Fuse.Scripting.ModuleResult result) [instance] :22
 void Context::RegisterGlobalModuleResult(::g::Fuse::Scripting::ModuleResult* result)
 {
     if (::g::Uno::String::op_Equality(uPtr(result)->Id, NULL))
@@ -958,13 +956,13 @@ void Context::RegisterGlobalModuleResult(::g::Fuse::Scripting::ModuleResult* res
     ::g::Uno::Threading::ConcurrentDictionary__Add_fn(uPtr(_moduleResults), uPtr(result)->Id, result);
 }
 
-// public Fuse.Scripting.IThreadWorker get_ThreadWorker() [instance] :134
+// public Fuse.Scripting.IThreadWorker get_ThreadWorker() [instance] :69
 uObject* Context::ThreadWorker()
 {
     return _worker;
 }
 
-// public Fuse.Scripting.ModuleResult TryGetGlobalModuleResult(string id) [instance] :94
+// public Fuse.Scripting.ModuleResult TryGetGlobalModuleResult(string id) [instance] :29
 ::g::Fuse::Scripting::ModuleResult* Context::TryGetGlobalModuleResult(uString* id)
 {
     bool ret3;
@@ -979,37 +977,37 @@ uObject* Context::ThreadWorker()
     return NULL;
 }
 
-// public object Unwrap(object obj) [instance] :137
+// public object Unwrap(object obj) [instance] :72
 uObject* Context::Unwrap(uObject* obj)
 {
-    return ::g::Fuse::Scripting::IThreadWorker::Unwrap(uInterface(uPtr(_worker), ::TYPES[10/*Fuse.Scripting.IThreadWorker*/]), obj);
+    return ::g::Fuse::Scripting::IThreadWorker::Unwrap(uInterface(uPtr(_worker), ::TYPES[9/*Fuse.Scripting.IThreadWorker*/]), obj);
 }
 
-// public object Wrap(object obj) [instance] :136
+// public object Wrap(object obj) [instance] :71
 uObject* Context::Wrap(uObject* obj)
 {
-    return ::g::Fuse::Scripting::IThreadWorker::Wrap(uInterface(uPtr(_worker), ::TYPES[10/*Fuse.Scripting.IThreadWorker*/]), obj);
+    return ::g::Fuse::Scripting::IThreadWorker::Wrap(uInterface(uPtr(_worker), ::TYPES[9/*Fuse.Scripting.IThreadWorker*/]), obj);
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Scripting/1.2.1/$.uno
-// --------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Scripting\1.3.0-rc2\NativePromise.uno
+// --------------------------------------------------------------------------------------
 
-// private sealed class NativePromise<T, TJSResult>.ContextClosure :1336
+// private sealed class NativePromise<T, TJSResult>.ContextClosure :71
 // {
 static void NativePromise__ContextClosure_build(uType* type)
 {
     ::STRINGS[13] = uString::Const("Promise");
-    ::TYPES[8] = ::g::Fuse::Scripting::Function_typeof();
-    ::TYPES[9] = uObject_typeof()->Array();
-    ::TYPES[13] = ::g::Fuse::Scripting::Callback_typeof();
-    ::TYPES[14] = ::g::Fuse::Scripting::NativePromise__PromiseClosure_typeof();
+    ::TYPES[6] = ::g::Fuse::Scripting::Function_typeof();
+    ::TYPES[7] = uObject_typeof()->Array();
+    ::TYPES[12] = ::g::Fuse::Scripting::Callback_typeof();
+    ::TYPES[13] = ::g::Fuse::Scripting::NativePromise__PromiseClosure_typeof();
     type->SetPrecalc(
         ::g::Fuse::Scripting::NativePromise__PromiseClosure_typeof()->MakeType(type->T(0), type->T(1), NULL));
     type->SetFields(0,
-        ::g::Fuse::Scripting::Context_typeof(), offsetof(::g::Fuse::Scripting::NativePromise__ContextClosure, _c), 0,
-        ::g::Fuse::Scripting::ResultConverter_typeof()->MakeType(type->T(0), type->T(1), NULL), offsetof(::g::Fuse::Scripting::NativePromise__ContextClosure, _converter), 0,
-        ::g::Fuse::Scripting::FutureFactory_typeof()->MakeType(type->T(0), NULL), offsetof(::g::Fuse::Scripting::NativePromise__ContextClosure, _factory), 0);
+        ::g::Fuse::Scripting::Context_typeof(), offsetof(NativePromise__ContextClosure, _c), 0,
+        ::g::Fuse::Scripting::ResultConverter_typeof()->MakeType(type->T(0), type->T(1), NULL), offsetof(NativePromise__ContextClosure, _converter), 0,
+        ::g::Fuse::Scripting::FutureFactory_typeof()->MakeType(type->T(0), NULL), offsetof(NativePromise__ContextClosure, _factory), 0);
 }
 
 uType* NativePromise__ContextClosure_typeof()
@@ -1028,25 +1026,25 @@ uType* NativePromise__ContextClosure_typeof()
     return type;
 }
 
-// public ContextClosure(Fuse.Scripting.Context c, Fuse.Scripting.FutureFactory<T> factory, Fuse.Scripting.ResultConverter<T, TJSResult> converter) :1341
+// public ContextClosure(Fuse.Scripting.Context c, Fuse.Scripting.FutureFactory<T> factory, Fuse.Scripting.ResultConverter<T, TJSResult> converter) :76
 void NativePromise__ContextClosure__ctor__fn(NativePromise__ContextClosure* __this, ::g::Fuse::Scripting::Context* c, uDelegate* factory, uDelegate* converter)
 {
     __this->ctor_(c, factory, converter);
 }
 
-// internal object CreatePromise(object[] args) :1347
+// internal object CreatePromise(object[] args) :82
 void NativePromise__ContextClosure__CreatePromise_fn(NativePromise__ContextClosure* __this, uArray* args, uObject** __retval)
 {
     *__retval = __this->CreatePromise(args);
 }
 
-// public ContextClosure New(Fuse.Scripting.Context c, Fuse.Scripting.FutureFactory<T> factory, Fuse.Scripting.ResultConverter<T, TJSResult> converter) :1341
+// public ContextClosure New(Fuse.Scripting.Context c, Fuse.Scripting.FutureFactory<T> factory, Fuse.Scripting.ResultConverter<T, TJSResult> converter) :76
 void NativePromise__ContextClosure__New1_fn(uType* __type, ::g::Fuse::Scripting::Context* c, uDelegate* factory, uDelegate* converter, NativePromise__ContextClosure** __retval)
 {
     *__retval = NativePromise__ContextClosure::New1(__type, c, factory, converter);
 }
 
-// public ContextClosure(Fuse.Scripting.Context c, Fuse.Scripting.FutureFactory<T> factory, Fuse.Scripting.ResultConverter<T, TJSResult> converter) [instance] :1341
+// public ContextClosure(Fuse.Scripting.Context c, Fuse.Scripting.FutureFactory<T> factory, Fuse.Scripting.ResultConverter<T, TJSResult> converter) [instance] :76
 void NativePromise__ContextClosure::ctor_(::g::Fuse::Scripting::Context* c, uDelegate* factory, uDelegate* converter)
 {
     _c = c;
@@ -1054,18 +1052,18 @@ void NativePromise__ContextClosure::ctor_(::g::Fuse::Scripting::Context* c, uDel
     _converter = converter;
 }
 
-// internal object CreatePromise(object[] args) [instance] :1347
+// internal object CreatePromise(object[] args) [instance] :82
 uObject* NativePromise__ContextClosure::CreatePromise(uArray* args)
 {
     uType* __types[] = {
         __type->Precalced(0/*Fuse.Scripting.NativePromise<T, TJSResult>.PromiseClosure*/),
     };
-    ::g::Fuse::Scripting::Function* promise = uCast< ::g::Fuse::Scripting::Function*>(uPtr(uPtr(_c)->GlobalObject())->Item(::STRINGS[13/*"Promise"*/]), ::TYPES[8/*Fuse.Scripting.Function*/]);
+    ::g::Fuse::Scripting::Function* promise = uCast< ::g::Fuse::Scripting::Function*>(uPtr(uPtr(_c)->GlobalObject())->Item(::STRINGS[13/*"Promise"*/]), ::TYPES[6/*Fuse.Scripting.Function*/]);
     ::g::Uno::Threading::Future1* future = (::g::Uno::Threading::Future1*)uPtr(_factory)->Invoke(1, args);
-    return uPtr(promise)->Construct(uArray::Init<uObject*>(::TYPES[9/*object[]*/], 1, uDelegate::New(::TYPES[13/*Fuse.Scripting.Callback*/], (void*)::g::Fuse::Scripting::NativePromise__PromiseClosure__Run_fn, ::g::Fuse::Scripting::NativePromise__PromiseClosure::New1(__types[0], _c, future, _converter))));
+    return uPtr(promise)->Construct(uArray::Init<uObject*>(::TYPES[7/*object[]*/], 1, uDelegate::New(::TYPES[12/*Fuse.Scripting.Callback*/], (void*)::g::Fuse::Scripting::NativePromise__PromiseClosure__Run_fn, ::g::Fuse::Scripting::NativePromise__PromiseClosure::New1(__types[0], _c, future, _converter))));
 }
 
-// public ContextClosure New(Fuse.Scripting.Context c, Fuse.Scripting.FutureFactory<T> factory, Fuse.Scripting.ResultConverter<T, TJSResult> converter) [static] :1341
+// public ContextClosure New(Fuse.Scripting.Context c, Fuse.Scripting.FutureFactory<T> factory, Fuse.Scripting.ResultConverter<T, TJSResult> converter) [static] :76
 NativePromise__ContextClosure* NativePromise__ContextClosure::New1(uType* __type, ::g::Fuse::Scripting::Context* c, uDelegate* factory, uDelegate* converter)
 {
     NativePromise__ContextClosure* obj1 = (NativePromise__ContextClosure*)uNew(__type);
@@ -1074,16 +1072,16 @@ NativePromise__ContextClosure* NativePromise__ContextClosure::New1(uType* __type
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Scripting/1.2.1/$.uno
-// --------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Scripting\1.3.0-rc2\NativeEventEmitterModule.uno
+// -------------------------------------------------------------------------------------------------
 
-// private sealed class NativeEventEmitterModule.EmitClosure :1073
+// private sealed class NativeEventEmitterModule.EmitClosure :163
 // {
 static void NativeEventEmitterModule__EmitClosure_build(uType* type)
 {
     ::STRINGS[14] = uString::Const("emit");
     type->SetFields(0,
-        uObject_typeof()->Array(), offsetof(::g::Fuse::Scripting::NativeEventEmitterModule__EmitClosure, _args), 0);
+        uObject_typeof()->Array(), offsetof(NativeEventEmitterModule__EmitClosure, _args), 0);
 }
 
 uType* NativeEventEmitterModule__EmitClosure_typeof()
@@ -1100,37 +1098,37 @@ uType* NativeEventEmitterModule__EmitClosure_typeof()
     return type;
 }
 
-// public EmitClosure(object[] args) :1077
+// public EmitClosure(object[] args) :167
 void NativeEventEmitterModule__EmitClosure__ctor__fn(NativeEventEmitterModule__EmitClosure* __this, uArray* args)
 {
     __this->ctor_(args);
 }
 
-// public void Emit(Fuse.Scripting.Context c, Fuse.Scripting.Object o) :1082
+// public void Emit(Fuse.Scripting.Context c, Fuse.Scripting.Object o) :172
 void NativeEventEmitterModule__EmitClosure__Emit_fn(NativeEventEmitterModule__EmitClosure* __this, ::g::Fuse::Scripting::Context* c, ::g::Fuse::Scripting::Object* o)
 {
     __this->Emit(c, o);
 }
 
-// public EmitClosure New(object[] args) :1077
+// public EmitClosure New(object[] args) :167
 void NativeEventEmitterModule__EmitClosure__New1_fn(uArray* args, NativeEventEmitterModule__EmitClosure** __retval)
 {
     *__retval = NativeEventEmitterModule__EmitClosure::New1(args);
 }
 
-// public EmitClosure(object[] args) [instance] :1077
+// public EmitClosure(object[] args) [instance] :167
 void NativeEventEmitterModule__EmitClosure::ctor_(uArray* args)
 {
     _args = args;
 }
 
-// public void Emit(Fuse.Scripting.Context c, Fuse.Scripting.Object o) [instance] :1082
+// public void Emit(Fuse.Scripting.Context c, Fuse.Scripting.Object o) [instance] :172
 void NativeEventEmitterModule__EmitClosure::Emit(::g::Fuse::Scripting::Context* c, ::g::Fuse::Scripting::Object* o)
 {
     uPtr(o)->CallMethod(::STRINGS[14/*"emit"*/], _args);
 }
 
-// public EmitClosure New(object[] args) [static] :1077
+// public EmitClosure New(object[] args) [static] :167
 NativeEventEmitterModule__EmitClosure* NativeEventEmitterModule__EmitClosure::New1(uArray* args)
 {
     NativeEventEmitterModule__EmitClosure* obj1 = (NativeEventEmitterModule__EmitClosure*)uNew(NativeEventEmitterModule__EmitClosure_typeof());
@@ -1139,10 +1137,10 @@ NativeEventEmitterModule__EmitClosure* NativeEventEmitterModule__EmitClosure::Ne
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Scripting/1.2.1/$.uno
-// --------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Scripting\1.3.0-rc2\Types.uno
+// ------------------------------------------------------------------------------
 
-// public sealed class Error :2177
+// public sealed class Error :80
 // {
 static void Error_build(uType* type)
 {
@@ -1164,25 +1162,25 @@ static void Error_build(uType* type)
     return type;
 }
 
-// public Error(string message) :2179
+// public Error(string message) :82
 void Error__ctor_3_fn(Error* __this, uString* message)
 {
     __this->ctor_3(message);
 }
 
-// public Error New(string message) :2179
+// public Error New(string message) :82
 void Error__New4_fn(uString* message, Error** __retval)
 {
     *__retval = Error::New4(message);
 }
 
-// public Error(string message) [instance] :2179
+// public Error(string message) [instance] :82
 void Error::ctor_3(uString* message)
 {
     ctor_1(message);
 }
 
-// public Error New(string message) [static] :2179
+// public Error New(string message) [static] :82
 Error* Error::New4(uString* message)
 {
     Error* obj1 = (Error*)uNew(Error_typeof());
@@ -1191,10 +1189,10 @@ Error* Error::New4(uString* message)
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Scripting/1.2.1/$.uno
-// --------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Scripting\1.3.0-rc2\EventEmitterModule.uno
+// -------------------------------------------------------------------------------------------
 
-// internal static class EventEmitterModule :230
+// internal static class EventEmitterModule :7
 // {
 static void EventEmitterModule_build(uType* type)
 {
@@ -1202,9 +1200,11 @@ static void EventEmitterModule_build(uType* type)
     ::STRINGS[16] = uString::Const("FuseJS/EventEmitter.js");
     ::STRINGS[17] = uString::Const("FuseJS/EventEmitter");
     ::STRINGS[18] = uString::Const("Unable to get a FuseJS/EventEmitter instance");
-    ::TYPES[8] = ::g::Fuse::Scripting::Function_typeof();
+    ::TYPES[6] = ::g::Fuse::Scripting::Function_typeof();
+    type->SetDependencies(
+        ::g::Uno::UX::FileSource_typeof());
     type->SetFields(0,
-        ::TYPES[8/*Fuse.Scripting.Function*/], (uintptr_t)&::g::Fuse::Scripting::EventEmitterModule::_instance_, uFieldFlagsStatic);
+        ::TYPES[6/*Fuse.Scripting.Function*/], (uintptr_t)&EventEmitterModule::_instance_, uFieldFlagsStatic);
 }
 
 uClassType* EventEmitterModule_typeof()
@@ -1214,13 +1214,14 @@ uClassType* EventEmitterModule_typeof()
 
     uTypeOptions options;
     options.FieldCount = 1;
+    options.DependencyCount = 1;
     options.TypeSize = sizeof(uClassType);
     type = uClassType::New("Fuse.Scripting.EventEmitterModule", options);
     type->fp_build_ = EventEmitterModule_build;
     return type;
 }
 
-// public static Fuse.Scripting.Function GetConstructor(Fuse.Scripting.Context c) :233
+// public static Fuse.Scripting.Function GetConstructor(Fuse.Scripting.Context c) :10
 void EventEmitterModule__GetConstructor_fn(::g::Fuse::Scripting::Context* c, ::g::Fuse::Scripting::Function** __retval)
 {
     *__retval = EventEmitterModule::GetConstructor(c);
@@ -1228,14 +1229,14 @@ void EventEmitterModule__GetConstructor_fn(::g::Fuse::Scripting::Context* c, ::g
 
 uSStrong< ::g::Fuse::Scripting::Function*> EventEmitterModule::_instance_;
 
-// public static Fuse.Scripting.Function GetConstructor(Fuse.Scripting.Context c) [static] :233
+// public static Fuse.Scripting.Function GetConstructor(Fuse.Scripting.Context c) [static] :10
 ::g::Fuse::Scripting::Function* EventEmitterModule::GetConstructor(::g::Fuse::Scripting::Context* c)
 {
     if (EventEmitterModule::_instance_ == NULL)
     {
         ::g::Uno::IO::BundleFile* fileSource = uPtr(::g::Uno::IO::Bundle::Get(::STRINGS[15/*"Fuse.Reacti...*/]))->GetFile(::STRINGS[16/*"FuseJS/Even...*/]);
         uObject* exports = ::g::Fuse::Scripting::FileModule::New2(::g::Uno::UX::FileSource::op_Implicit(fileSource))->EvaluateExports(c, ::STRINGS[17/*"FuseJS/Even...*/]);
-        EventEmitterModule::_instance_ = uAs< ::g::Fuse::Scripting::Function*>(exports, ::TYPES[8/*Fuse.Scripting.Function*/]);
+        EventEmitterModule::_instance_ = uAs< ::g::Fuse::Scripting::Function*>(exports, ::TYPES[6/*Fuse.Scripting.Function*/]);
 
         if (EventEmitterModule::_instance_ == NULL)
             U_THROW(::g::Uno::Exception::New2(::STRINGS[18/*"Unable to g...*/]));
@@ -1245,10 +1246,10 @@ uSStrong< ::g::Fuse::Scripting::Function*> EventEmitterModule::_instance_;
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Scripting/1.2.1/$.uno
-// --------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Scripting\1.3.0-rc2\ScriptClass.uno
+// ------------------------------------------------------------------------------------
 
-// public enum ExecutionThread :1493
+// public enum ExecutionThread :8
 uEnumType* ExecutionThread_typeof()
 {
     static uSStrong<uEnumType*> type;
@@ -1262,15 +1263,15 @@ uEnumType* ExecutionThread_typeof()
     return type;
 }
 
-// /usr/local/share/uno/Packages/Fuse.Scripting/1.2.1/$.uno
-// --------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Scripting\1.3.0-rc2\Types.uno
+// ------------------------------------------------------------------------------
 
-// public sealed class External :2198
+// public sealed class External :101
 // {
 static void External_build(uType* type)
 {
     type->SetFields(0,
-        uObject_typeof(), offsetof(::g::Fuse::Scripting::External, Object), 0);
+        uObject_typeof(), offsetof(External, Object), 0);
 }
 
 uType* External_typeof()
@@ -1289,38 +1290,38 @@ uType* External_typeof()
     return type;
 }
 
-// public External(object o) :2202
+// public External(object o) :105
 void External__ctor__fn(External* __this, uObject* o)
 {
     __this->ctor_(o);
 }
 
-// public override sealed bool Equals(object o) :2207
+// public override sealed bool Equals(object o) :110
 void External__Equals_fn(External* __this, uObject* o, bool* __retval)
 {
     External* that = uAs<External*>(o, __this->__type);
     return *__retval = (that != NULL) && ::g::Uno::Object::Equals(uPtr(__this->Object), uPtr(that)->Object), void();
 }
 
-// public override sealed int GetHashCode() :2213
+// public override sealed int GetHashCode() :116
 void External__GetHashCode_fn(External* __this, int* __retval)
 {
     return *__retval = ::g::Uno::Object::GetHashCode(uPtr(__this->Object)), void();
 }
 
-// public External New(object o) :2202
+// public External New(object o) :105
 void External__New1_fn(uObject* o, External** __retval)
 {
     *__retval = External::New1(o);
 }
 
-// public External(object o) [instance] :2202
+// public External(object o) [instance] :105
 void External::ctor_(uObject* o)
 {
     Object = o;
 }
 
-// public External New(object o) [static] :2202
+// public External New(object o) [static] :105
 External* External::New1(uObject* o)
 {
     External* obj1 = (External*)uNew(External_typeof());
@@ -1329,20 +1330,18 @@ External* External::New1(uObject* o)
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Scripting/1.2.1/$.uno
-// --------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Scripting\1.3.0-rc2\NativePromise.uno
+// --------------------------------------------------------------------------------------
 
-// internal sealed class FactoryClosure<T> :1275
+// internal sealed class FactoryClosure<T> :10
 // {
 static void FactoryClosure_build(uType* type)
 {
-    ::TYPES[15] = ::g::Uno::Exception_typeof();
-    type->SetPrecalc(
-        type->T(0));
+    ::TYPES[14] = ::g::Uno::Exception_typeof();
     type->SetFields(0,
-        uObject_typeof()->Array(), offsetof(::g::Fuse::Scripting::FactoryClosure, _args), 0,
-        ::g::Fuse::Scripting::ResultFactory_typeof()->MakeType(type->T(0), NULL), offsetof(::g::Fuse::Scripting::FactoryClosure, _factory), 0,
-        ::g::Uno::Threading::Promise_typeof()->MakeType(type->T(0), NULL), offsetof(::g::Fuse::Scripting::FactoryClosure, _promise), 0);
+        uObject_typeof()->Array(), offsetof(FactoryClosure, _args), 0,
+        ::g::Fuse::Scripting::ResultFactory_typeof()->MakeType(type->T(0), NULL), offsetof(FactoryClosure, _factory), 0,
+        ::g::Uno::Threading::Promise_typeof()->MakeType(type->T(0), NULL), offsetof(FactoryClosure, _promise), 0);
 }
 
 uType* FactoryClosure_typeof()
@@ -1353,7 +1352,6 @@ uType* FactoryClosure_typeof()
     uTypeOptions options;
     options.FieldCount = 3;
     options.GenericCount = 1;
-    options.PrecalcCount = 1;
     options.ObjectSize = sizeof(FactoryClosure);
     options.TypeSize = sizeof(uType);
     type = uClassType::New("Fuse.Scripting.FactoryClosure`1", options);
@@ -1361,25 +1359,25 @@ uType* FactoryClosure_typeof()
     return type;
 }
 
-// public FactoryClosure(Fuse.Scripting.ResultFactory<T> factory, object[] args, Uno.Threading.Promise<T> promise) :1281
+// public FactoryClosure(Fuse.Scripting.ResultFactory<T> factory, object[] args, Uno.Threading.Promise<T> promise) :16
 void FactoryClosure__ctor__fn(FactoryClosure* __this, uDelegate* factory, uArray* args, ::g::Uno::Threading::Promise* promise)
 {
     __this->ctor_(factory, args, promise);
 }
 
-// public FactoryClosure New(Fuse.Scripting.ResultFactory<T> factory, object[] args, Uno.Threading.Promise<T> promise) :1281
+// public FactoryClosure New(Fuse.Scripting.ResultFactory<T> factory, object[] args, Uno.Threading.Promise<T> promise) :16
 void FactoryClosure__New1_fn(uType* __type, uDelegate* factory, uArray* args, ::g::Uno::Threading::Promise* promise, FactoryClosure** __retval)
 {
     *__retval = FactoryClosure::New1(__type, factory, args, promise);
 }
 
-// public void Run() :1288
+// public void Run() :23
 void FactoryClosure__Run_fn(FactoryClosure* __this)
 {
     __this->Run();
 }
 
-// public FactoryClosure(Fuse.Scripting.ResultFactory<T> factory, object[] args, Uno.Threading.Promise<T> promise) [instance] :1281
+// public FactoryClosure(Fuse.Scripting.ResultFactory<T> factory, object[] args, Uno.Threading.Promise<T> promise) [instance] :16
 void FactoryClosure::ctor_(uDelegate* factory, uArray* args, ::g::Uno::Threading::Promise* promise)
 {
     _factory = factory;
@@ -1387,15 +1385,12 @@ void FactoryClosure::ctor_(uDelegate* factory, uArray* args, ::g::Uno::Threading
     _promise = promise;
 }
 
-// public void Run() [instance] :1288
+// public void Run() [instance] :23
 void FactoryClosure::Run()
 {
-    uType* __types[] = {
-        __type->Precalced(0/*T*/),
-    };
-    uT ret2(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    uT res(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    res = uT(__types[0], U_ALLOCA(__types[0]->ValueSize));
+    uT ret2(__type->T(0), U_ALLOCA(__type->T(0)->ValueSize));
+    uT res(__type->T(0), U_ALLOCA(__type->T(0)->ValueSize));
+    res = uT(__type->T(0), U_ALLOCA(__type->T(0)->ValueSize));
 
     try
     {
@@ -1411,7 +1406,7 @@ void FactoryClosure::Run()
     ::g::Uno::Threading::Promise__Resolve_fn(uPtr(_promise), res);
 }
 
-// public FactoryClosure New(Fuse.Scripting.ResultFactory<T> factory, object[] args, Uno.Threading.Promise<T> promise) [static] :1281
+// public FactoryClosure New(Fuse.Scripting.ResultFactory<T> factory, object[] args, Uno.Threading.Promise<T> promise) [static] :16
 FactoryClosure* FactoryClosure::New1(uType* __type, uDelegate* factory, uArray* args, ::g::Uno::Threading::Promise* promise)
 {
     FactoryClosure* obj1 = (FactoryClosure*)uNew(__type);
@@ -1420,16 +1415,16 @@ FactoryClosure* FactoryClosure::New1(uType* __type, uDelegate* factory, uArray* 
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Scripting/1.2.1/$.uno
-// --------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Scripting\1.3.0-rc2\NativeEventEmitterModule.uno
+// -------------------------------------------------------------------------------------------------
 
-// private sealed class NativeEventEmitterModule.FactoryClosure1<T> :1103
+// private sealed class NativeEventEmitterModule.FactoryClosure1<T> :193
 // {
 static void NativeEventEmitterModule__FactoryClosure1_build(uType* type)
 {
     ::STRINGS[14] = uString::Const("emit");
     type->SetFields(0,
-        ::g::Uno::Func2_typeof()->MakeType(::g::Fuse::Scripting::Context_typeof(), type->T(0), uObject_typeof()->Array(), NULL), offsetof(::g::Fuse::Scripting::NativeEventEmitterModule__FactoryClosure1, _argsFactory), 0,
+        ::g::Uno::Func2_typeof()->MakeType(::g::Fuse::Scripting::Context_typeof(), type->T(0), uObject_typeof()->Array(), NULL), offsetof(NativeEventEmitterModule__FactoryClosure1, _argsFactory), 0,
         type->T(0), (uintptr_t)0, uFieldFlagsConstrained);
 }
 
@@ -1448,20 +1443,20 @@ uType* NativeEventEmitterModule__FactoryClosure1_typeof()
     return type;
 }
 
-// public FactoryClosure1(Uno.Func<Fuse.Scripting.Context, T, object[]> argsFactory, T t) :1108
+// public FactoryClosure1(Uno.Func<Fuse.Scripting.Context, T, object[]> argsFactory, T t) :198
 void NativeEventEmitterModule__FactoryClosure1__ctor__fn(NativeEventEmitterModule__FactoryClosure1* __this, uDelegate* argsFactory, void* t)
 {
     __this->_argsFactory = argsFactory;
     __this->_t() = t;
 }
 
-// public void Emit(Fuse.Scripting.Context c, Fuse.Scripting.Object o) :1114
+// public void Emit(Fuse.Scripting.Context c, Fuse.Scripting.Object o) :204
 void NativeEventEmitterModule__FactoryClosure1__Emit_fn(NativeEventEmitterModule__FactoryClosure1* __this, ::g::Fuse::Scripting::Context* c, ::g::Fuse::Scripting::Object* o)
 {
     __this->Emit(c, o);
 }
 
-// public FactoryClosure1 New(Uno.Func<Fuse.Scripting.Context, T, object[]> argsFactory, T t) :1108
+// public FactoryClosure1 New(Uno.Func<Fuse.Scripting.Context, T, object[]> argsFactory, T t) :198
 void NativeEventEmitterModule__FactoryClosure1__New1_fn(uType* __type, uDelegate* argsFactory, void* t, NativeEventEmitterModule__FactoryClosure1** __retval)
 {
     NativeEventEmitterModule__FactoryClosure1* obj1 = (NativeEventEmitterModule__FactoryClosure1*)uNew(__type);
@@ -1469,17 +1464,17 @@ void NativeEventEmitterModule__FactoryClosure1__New1_fn(uType* __type, uDelegate
     return *__retval = obj1, void();
 }
 
-// public void Emit(Fuse.Scripting.Context c, Fuse.Scripting.Object o) [instance] :1114
+// public void Emit(Fuse.Scripting.Context c, Fuse.Scripting.Object o) [instance] :204
 void NativeEventEmitterModule__FactoryClosure1::Emit(::g::Fuse::Scripting::Context* c, ::g::Fuse::Scripting::Object* o)
 {
     uPtr(o)->CallMethod(::STRINGS[14/*"emit"*/], (uArray*)uPtr(_argsFactory)->Invoke(2, c, (void*)_t()));
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Scripting/1.2.1/$.uno
-// --------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Scripting\1.3.0-rc2\FileModule.uno
+// -----------------------------------------------------------------------------------
 
-// public class FileModule :270
+// public class FileModule :19
 // {
 static void FileModule_build(uType* type)
 {
@@ -1505,26 +1500,26 @@ static void FileModule_build(uType* type)
     return type;
 }
 
-// public FileModule(Uno.UX.FileSource fs) :272
+// public FileModule(Uno.UX.FileSource fs) :21
 void FileModule__ctor_2_fn(FileModule* __this, ::g::Uno::UX::FileSource* fs)
 {
     __this->ctor_2(fs);
 }
 
-// public FileModule New(Uno.UX.FileSource fs) :272
+// public FileModule New(Uno.UX.FileSource fs) :21
 void FileModule__New2_fn(::g::Uno::UX::FileSource* fs, FileModule** __retval)
 {
     *__retval = FileModule::New2(fs);
 }
 
-// public FileModule(Uno.UX.FileSource fs) [instance] :272
+// public FileModule(Uno.UX.FileSource fs) [instance] :21
 void FileModule::ctor_2(::g::Uno::UX::FileSource* fs)
 {
     ctor_1();
     File(fs);
 }
 
-// public FileModule New(Uno.UX.FileSource fs) [static] :272
+// public FileModule New(Uno.UX.FileSource fs) [static] :21
 FileModule* FileModule::New2(::g::Uno::UX::FileSource* fs)
 {
     FileModule* obj1 = (FileModule*)uNew(FileModule_typeof());
@@ -1533,17 +1528,15 @@ FileModule* FileModule::New2(::g::Uno::UX::FileSource* fs)
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Scripting/1.2.1/$.uno
-// --------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Scripting\1.3.0-rc2\JSCallback.uno
+// -----------------------------------------------------------------------------------
 
-// private sealed class JSCallback.FuncClosure<TResult> :454
+// private sealed class JSCallback.FuncClosure<TResult> :96
 // {
 static void JSCallback__FuncClosure_build(uType* type)
 {
-    type->SetPrecalc(
-        type->T(0));
     type->SetFields(0,
-        ::g::Uno::Func_typeof()->MakeType(type->T(0), NULL), offsetof(::g::Fuse::Scripting::JSCallback__FuncClosure, _method), 0);
+        ::g::Uno::Func_typeof()->MakeType(type->T(0), NULL), offsetof(JSCallback__FuncClosure, _method), 0);
 }
 
 uType* JSCallback__FuncClosure_typeof()
@@ -1554,7 +1547,6 @@ uType* JSCallback__FuncClosure_typeof()
     uTypeOptions options;
     options.FieldCount = 1;
     options.GenericCount = 1;
-    options.PrecalcCount = 1;
     options.ObjectSize = sizeof(JSCallback__FuncClosure);
     options.TypeSize = sizeof(uType);
     type = uClassType::New("Fuse.Scripting.JSCallback.FuncClosure`1", options);
@@ -1562,41 +1554,38 @@ uType* JSCallback__FuncClosure_typeof()
     return type;
 }
 
-// public FuncClosure(Uno.Func<TResult> method) :458
+// public FuncClosure(Uno.Func<TResult> method) :100
 void JSCallback__FuncClosure__ctor__fn(JSCallback__FuncClosure* __this, uDelegate* method)
 {
     __this->ctor_(method);
 }
 
-// public FuncClosure New(Uno.Func<TResult> method) :458
+// public FuncClosure New(Uno.Func<TResult> method) :100
 void JSCallback__FuncClosure__New1_fn(uType* __type, uDelegate* method, JSCallback__FuncClosure** __retval)
 {
     *__retval = JSCallback__FuncClosure::New1(__type, method);
 }
 
-// public object Run(object[] args) :463
+// public object Run(object[] args) :105
 void JSCallback__FuncClosure__Run_fn(JSCallback__FuncClosure* __this, uArray* args, uObject** __retval)
 {
     *__retval = __this->Run(args);
 }
 
-// public FuncClosure(Uno.Func<TResult> method) [instance] :458
+// public FuncClosure(Uno.Func<TResult> method) [instance] :100
 void JSCallback__FuncClosure::ctor_(uDelegate* method)
 {
     _method = method;
 }
 
-// public object Run(object[] args) [instance] :463
+// public object Run(object[] args) [instance] :105
 uObject* JSCallback__FuncClosure::Run(uArray* args)
 {
-    uType* __types[] = {
-        __type->Precalced(0/*TResult*/),
-    };
-    uT ret2(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    return uBoxPtr(__types[0], (uPtr(_method)->Invoke(&ret2), ret2));
+    uT ret2(__type->T(0), U_ALLOCA(__type->T(0)->ValueSize));
+    return uBoxPtr(__type->T(0), (uPtr(_method)->Invoke(&ret2), ret2));
 }
 
-// public FuncClosure New(Uno.Func<TResult> method) [static] :458
+// public FuncClosure New(Uno.Func<TResult> method) [static] :100
 JSCallback__FuncClosure* JSCallback__FuncClosure::New1(uType* __type, uDelegate* method)
 {
     JSCallback__FuncClosure* obj1 = (JSCallback__FuncClosure*)uNew(__type);
@@ -1605,22 +1594,22 @@ JSCallback__FuncClosure* JSCallback__FuncClosure::New1(uType* __type, uDelegate*
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Scripting/1.2.1/$.uno
-// --------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Scripting\1.3.0-rc2\JSCallback.uno
+// -----------------------------------------------------------------------------------
 
-// private sealed class JSCallback.FuncClosure<TArg, TResult> :469
+// private sealed class JSCallback.FuncClosure<TArg, TResult> :111
 // {
 static void JSCallback__FuncClosure1_build(uType* type)
 {
     ::STRINGS[0] = uString::Const("First argument should be of type ");
     ::TYPES[1] = ::g::Uno::Type_typeof();
     ::TYPES[0] = ::g::Fuse::Scripting::JSCallback_typeof();
+    type->SetDependencies(
+        ::g::Uno::Type_typeof());
     type->SetPrecalc(
-        type->T(1),
-        type->T(0),
         ::g::Fuse::Scripting::JSCallback_typeof()->MakeMethod(4/*GetArg<TArg>*/, type->T(0), NULL));
     type->SetFields(0,
-        ::g::Uno::Func1_typeof()->MakeType(type->T(0), type->T(1), NULL), offsetof(::g::Fuse::Scripting::JSCallback__FuncClosure1, _method), 0);
+        ::g::Uno::Func1_typeof()->MakeType(type->T(0), type->T(1), NULL), offsetof(JSCallback__FuncClosure1, _method), 0);
 }
 
 uType* JSCallback__FuncClosure1_typeof()
@@ -1631,7 +1620,8 @@ uType* JSCallback__FuncClosure1_typeof()
     uTypeOptions options;
     options.FieldCount = 1;
     options.GenericCount = 2;
-    options.PrecalcCount = 3;
+    options.DependencyCount = 1;
+    options.PrecalcCount = 1;
     options.ObjectSize = sizeof(JSCallback__FuncClosure1);
     options.TypeSize = sizeof(uType);
     type = uClassType::New("Fuse.Scripting.JSCallback.FuncClosure`2", options);
@@ -1639,55 +1629,53 @@ uType* JSCallback__FuncClosure1_typeof()
     return type;
 }
 
-// public FuncClosure(Uno.Func<TArg, TResult> method) :473
+// public FuncClosure(Uno.Func<TArg, TResult> method) :115
 void JSCallback__FuncClosure1__ctor__fn(JSCallback__FuncClosure1* __this, uDelegate* method)
 {
     __this->ctor_(method);
 }
 
-// public FuncClosure New(Uno.Func<TArg, TResult> method) :473
+// public FuncClosure New(Uno.Func<TArg, TResult> method) :115
 void JSCallback__FuncClosure1__New1_fn(uType* __type, uDelegate* method, JSCallback__FuncClosure1** __retval)
 {
     *__retval = JSCallback__FuncClosure1::New1(__type, method);
 }
 
-// public object Run(object[] args) :478
+// public object Run(object[] args) :120
 void JSCallback__FuncClosure1__Run_fn(JSCallback__FuncClosure1* __this, uArray* args, uObject** __retval)
 {
     *__retval = __this->Run(args);
 }
 
-// public FuncClosure(Uno.Func<TArg, TResult> method) [instance] :473
+// public FuncClosure(Uno.Func<TArg, TResult> method) [instance] :115
 void JSCallback__FuncClosure1::ctor_(uDelegate* method)
 {
     _method = method;
 }
 
-// public object Run(object[] args) [instance] :478
+// public object Run(object[] args) [instance] :120
 uObject* JSCallback__FuncClosure1::Run(uArray* args)
 {
     uType* __types[] = {
-        __type->Precalced(0/*TResult*/),
-        __type->Precalced(1/*TArg*/),
-        __type->Precalced(2/*Fuse.Scripting.JSCallback.GetArg<TArg>*/),
+        __type->Precalced(0/*Fuse.Scripting.JSCallback.GetArg<TArg>*/),
     };
-    uT ret2(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    uT ret4(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    uT arg(__types[1], U_ALLOCA(__types[1]->ValueSize));
+    uT ret2(__type->T(1), U_ALLOCA(__type->T(1)->ValueSize));
+    uT ret4(__type->T(1), U_ALLOCA(__type->T(1)->ValueSize));
+    uT arg(__type->T(0), U_ALLOCA(__type->T(0)->ValueSize));
     bool ret3;
 
-    if (::g::Uno::Type::op_Equality(__types[1], ::TYPES[9/*object[]*/]))
-        return uBoxPtr(__types[0], (uPtr(_method)->Invoke(&ret2, 1, (void*)uUnboxAny(__types[1], args)), ret2));
+    if (::g::Uno::Type::op_Equality(__type->T(0), ::TYPES[7/*object[]*/]))
+        return uBoxPtr(__type->T(1), (uPtr(_method)->Invoke(&ret2, 1, (void*)uUnboxAny(__type->T(0), args)), ret2));
 
-    arg = uT(__types[1], U_ALLOCA(__types[1]->ValueSize));
+    arg = uT(__type->T(0), U_ALLOCA(__type->T(0)->ValueSize));
 
-    if ((::g::Fuse::Scripting::JSCallback__GetArg_fn(__types[2], args, &arg, uCRef<int>(0), &ret3), ret3))
-        return uBoxPtr(__types[0], (uPtr(_method)->Invoke(&ret4, 1, (void*)arg), ret4));
+    if ((::g::Fuse::Scripting::JSCallback__GetArg_fn(__types[0], args, &arg, uCRef<int>(0), &ret3), ret3))
+        return uBoxPtr(__type->T(1), (uPtr(_method)->Invoke(&ret4, 1, (void*)arg), ret4));
 
-    U_THROW(::g::Uno::ArgumentException::New4(::g::Uno::String::op_Addition1(::STRINGS[0/*"First argum...*/], __types[1])));
+    U_THROW(::g::Uno::ArgumentException::New4(::g::Uno::String::op_Addition1(::STRINGS[0/*"First argum...*/], __type->T(0))));
 }
 
-// public FuncClosure New(Uno.Func<TArg, TResult> method) [static] :473
+// public FuncClosure New(Uno.Func<TArg, TResult> method) [static] :115
 JSCallback__FuncClosure1* JSCallback__FuncClosure1::New1(uType* __type, uDelegate* method)
 {
     JSCallback__FuncClosure1* obj1 = (JSCallback__FuncClosure1*)uNew(__type);
@@ -1696,10 +1684,10 @@ JSCallback__FuncClosure1* JSCallback__FuncClosure1::New1(uType* __type, uDelegat
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Scripting/1.2.1/$.uno
-// --------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Scripting\1.3.0-rc2\Types.uno
+// ------------------------------------------------------------------------------
 
-// public abstract class Function :2155
+// public abstract class Function :58
 // {
 static void Function_build(uType* type)
 {
@@ -1720,36 +1708,112 @@ Function_type* Function_typeof()
     return type;
 }
 
-// protected generated Function() :2155
+// protected generated Function() :58
 void Function__ctor__fn(Function* __this)
 {
     __this->ctor_();
 }
 
-// public override sealed bool Equals(object o) :2161
+// public override sealed bool Equals(object o) :64
 void Function__Equals_fn(Function* __this, uObject* o, bool* __retval)
 {
     Function* a = uAs<Function*>(o, Function_typeof());
     return *__retval = (a != NULL) && __this->Equals2(a), void();
 }
 
-// public override int GetHashCode() :2167
+// public override int GetHashCode() :70
 void Function__GetHashCode_fn(Function* __this, int* __retval)
 {
     int ret1;
     return *__retval = (::g::Uno::Object__GetHashCode_fn(__this, &ret1), ret1), void();
 }
 
-// protected generated Function() [instance] :2155
+// protected generated Function() [instance] :58
 void Function::ctor_()
 {
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Scripting/1.2.1/$.uno
-// --------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Scripting\1.3.0-rc2\ScriptClass.uno
+// ------------------------------------------------------------------------------------
 
-// public delegate Uno.Threading.Future<T> FutureFactory<T>(object[] args) :1272
+// private sealed class ScriptPromise<TSelf, TResult, TJSResult>.FutureClosure :200
+// {
+static void ScriptPromise__FutureClosure_build(uType* type)
+{
+    ::TYPES[15] = ::g::Uno::Action_typeof();
+    type->SetFields(0,
+        uObject_typeof()->Array(), offsetof(ScriptPromise__FutureClosure, _args), 0,
+        ::g::Fuse::Scripting::Context_typeof(), offsetof(ScriptPromise__FutureClosure, _context), 0,
+        ::g::Uno::Threading::Future1_typeof()->MakeType(type->T(1), NULL), offsetof(ScriptPromise__FutureClosure, _future), 0,
+        ::g::Fuse::Scripting::ScriptPromise__FutureFactory_typeof()->MakeType(type->T(0), type->T(1), type->T(2), type->T(0), type->T(1), NULL), offsetof(ScriptPromise__FutureClosure, _futureFactory), 0,
+        ::g::Fuse::Scripting::ScriptPromise__PromiseClosure_typeof()->MakeType(type->T(0), type->T(1), type->T(2), NULL), offsetof(ScriptPromise__FutureClosure, _promiseClosure), 0,
+        type->T(0), (uintptr_t)0, uFieldFlagsConstrained);
+}
+
+uType* ScriptPromise__FutureClosure_typeof()
+{
+    static uSStrong<uType*> type;
+    if (type != NULL) return type;
+
+    uTypeOptions options;
+    options.FieldCount = 6;
+    options.GenericCount = 3;
+    options.ObjectSize = sizeof(ScriptPromise__FutureClosure);
+    options.TypeSize = sizeof(uType);
+    type = uClassType::New("Fuse.Scripting.ScriptPromise`3.FutureClosure", options);
+    type->fp_build_ = ScriptPromise__FutureClosure_build;
+    return type;
+}
+
+// public FutureClosure(Fuse.Scripting.Context context, Fuse.Scripting.ScriptPromise<TSelf, TResult, TJSResult>.FutureFactory<TSelf, TResult> futureFactory, Fuse.Scripting.ScriptPromise<TSelf, TResult, TJSResult>.PromiseClosure promiseClosure, TSelf self, object[] args) :208
+void ScriptPromise__FutureClosure__ctor__fn(ScriptPromise__FutureClosure* __this, ::g::Fuse::Scripting::Context* context, uDelegate* futureFactory, ::g::Fuse::Scripting::ScriptPromise__PromiseClosure* promiseClosure, void* self, uArray* args)
+{
+    __this->_context = context;
+    __this->_futureFactory = futureFactory;
+    __this->_promiseClosure = promiseClosure;
+    __this->_self() = self;
+    __this->_args = args;
+}
+
+// private void DispatchFuture() :229
+void ScriptPromise__FutureClosure__DispatchFuture_fn(ScriptPromise__FutureClosure* __this)
+{
+    __this->DispatchFuture();
+}
+
+// public FutureClosure New(Fuse.Scripting.Context context, Fuse.Scripting.ScriptPromise<TSelf, TResult, TJSResult>.FutureFactory<TSelf, TResult> futureFactory, Fuse.Scripting.ScriptPromise<TSelf, TResult, TJSResult>.PromiseClosure promiseClosure, TSelf self, object[] args) :208
+void ScriptPromise__FutureClosure__New1_fn(uType* __type, ::g::Fuse::Scripting::Context* context, uDelegate* futureFactory, ::g::Fuse::Scripting::ScriptPromise__PromiseClosure* promiseClosure, void* self, uArray* args, ScriptPromise__FutureClosure** __retval)
+{
+    ScriptPromise__FutureClosure* obj1 = (ScriptPromise__FutureClosure*)uNew(__type);
+    ScriptPromise__FutureClosure__ctor__fn(obj1, context, futureFactory, promiseClosure, self, args);
+    return *__retval = obj1, void();
+}
+
+// public void Run() :223
+void ScriptPromise__FutureClosure__Run_fn(ScriptPromise__FutureClosure* __this)
+{
+    __this->Run();
+}
+
+// private void DispatchFuture() [instance] :229
+void ScriptPromise__FutureClosure::DispatchFuture()
+{
+    uPtr(_promiseClosure)->OnFutureReady(_future);
+}
+
+// public void Run() [instance] :223
+void ScriptPromise__FutureClosure::Run()
+{
+    _future = (::g::Uno::Threading::Future1*)uPtr(_futureFactory)->Invoke(3, (::g::Fuse::Scripting::Context*)_context, (void*)_self(), (uArray*)_args);
+    uPtr(_context)->Invoke(uDelegate::New(::TYPES[15/*Uno.Action*/], (void*)ScriptPromise__FutureClosure__DispatchFuture_fn, this));
+}
+// }
+
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Scripting\1.3.0-rc2\NativePromise.uno
+// --------------------------------------------------------------------------------------
+
+// public delegate Uno.Threading.Future<T> FutureFactory<T>(object[] args) :7
 uDelegateType* FutureFactory_typeof()
 {
     static uSStrong<uDelegateType*> type;
@@ -1761,10 +1825,27 @@ uDelegateType* FutureFactory_typeof()
     return type;
 }
 
-// /usr/local/share/uno/Packages/Fuse.Scripting/1.2.1/$.uno
-// --------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Scripting\1.3.0-rc2\ScriptClass.uno
+// ------------------------------------------------------------------------------------
 
-// public abstract interface IEventSerializer :285
+// public delegate Uno.Threading.Future<TResult> ScriptPromise<TSelf, TResult, TJSResult>.FutureFactory<TSelf, TResult>(Fuse.Scripting.Context context, TSelf self, object[] args) :151
+uDelegateType* ScriptPromise__FutureFactory_typeof()
+{
+    static uSStrong<uDelegateType*> type;
+    if (type != NULL) return type;
+
+    type = uDelegateType::New("Fuse.Scripting.ScriptPromise`3.FutureFactory`2", 3, 5);
+    type->SetSignature(::g::Uno::Threading::Future1_typeof()->MakeType(type->T(4), NULL),
+        ::g::Fuse::Scripting::Context_typeof(),
+        type->T(3),
+        uObject_typeof()->Array());
+    return type;
+}
+
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Scripting\1.3.0-rc2\IScriptEvent.uno
+// -------------------------------------------------------------------------------------
+
+// public abstract interface IEventSerializer :5
 // {
 uInterfaceType* IEventSerializer_typeof()
 {
@@ -1776,10 +1857,10 @@ uInterfaceType* IEventSerializer_typeof()
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Scripting/1.2.1/$.uno
-// --------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Scripting\1.3.0-rc2\ScriptModule.uno
+// -------------------------------------------------------------------------------------
 
-// public abstract interface IModuleProvider :2015
+// public abstract interface IModuleProvider :10
 // {
 uInterfaceType* IModuleProvider_typeof()
 {
@@ -1791,10 +1872,10 @@ uInterfaceType* IModuleProvider_typeof()
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Scripting/1.2.1/$.uno
-// --------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Scripting\1.3.0-rc2\IScriptEvent.uno
+// -------------------------------------------------------------------------------------
 
-// public abstract interface IScriptEvent :307
+// public abstract interface IScriptEvent :27
 // {
 uInterfaceType* IScriptEvent_typeof()
 {
@@ -1806,10 +1887,10 @@ uInterfaceType* IScriptEvent_typeof()
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Scripting/1.2.1/$.uno
-// --------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Scripting\1.3.0-rc2\IScriptEvent.uno
+// -------------------------------------------------------------------------------------
 
-// public abstract interface IScriptObject :295
+// public abstract interface IScriptObject :15
 // {
 uInterfaceType* IScriptObject_typeof()
 {
@@ -1821,10 +1902,10 @@ uInterfaceType* IScriptObject_typeof()
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Scripting/1.2.1/$.uno
-// --------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Scripting\1.3.0-rc2\Context.uno
+// --------------------------------------------------------------------------------
 
-// public abstract interface IThreadWorker :75
+// public abstract interface IThreadWorker :10
 // {
 uInterfaceType* IThreadWorker_typeof()
 {
@@ -1836,29 +1917,23 @@ uInterfaceType* IThreadWorker_typeof()
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Scripting/1.2.1/$.uno
-// --------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Scripting\1.3.0-rc2\JSCallback.uno
+// -----------------------------------------------------------------------------------
 
-// public static class JSCallback :363
+// public static class JSCallback :5
 // {
 static void JSCallback_build(uType* type)
 {
-    ::TYPES[13] = ::g::Fuse::Scripting::Callback_typeof();
-    ::TYPES[16] = JSCallback__ActionClosure1_typeof();
-    ::TYPES[17] = JSCallback__ActionClosure2_typeof();
-    ::TYPES[18] = JSCallback__FuncClosure_typeof();
-    ::TYPES[19] = JSCallback__FuncClosure1_typeof();
-    ::TYPES[20] = JSCallback__NumberConverter_typeof();
     type->MethodTypes[0]->SetPrecalc(
-        ::TYPES[16/*Fuse.Scripting.JSCallback.ActionClosure`1*/]->MakeType(type->MethodTypes[0]->U(0), NULL));
+        JSCallback__ActionClosure1_typeof()->MakeType(type->MethodTypes[0]->U(0), NULL));
     type->MethodTypes[1]->SetPrecalc(
-        ::TYPES[17/*Fuse.Scripting.JSCallback.ActionClosure`2*/]->MakeType(type->MethodTypes[1]->U(0), type->MethodTypes[1]->U(1), NULL));
+        JSCallback__ActionClosure2_typeof()->MakeType(type->MethodTypes[1]->U(0), type->MethodTypes[1]->U(1), NULL));
     type->MethodTypes[2]->SetPrecalc(
-        ::TYPES[18/*Fuse.Scripting.JSCallback.FuncClosure`1*/]->MakeType(type->MethodTypes[2]->U(0), NULL));
+        JSCallback__FuncClosure_typeof()->MakeType(type->MethodTypes[2]->U(0), NULL));
     type->MethodTypes[3]->SetPrecalc(
-        ::TYPES[19/*Fuse.Scripting.JSCallback.FuncClosure`2*/]->MakeType(type->MethodTypes[3]->U(0), type->MethodTypes[3]->U(1), NULL));
+        JSCallback__FuncClosure1_typeof()->MakeType(type->MethodTypes[3]->U(0), type->MethodTypes[3]->U(1), NULL));
     type->MethodTypes[4]->SetPrecalc(
-        ::TYPES[20/*Fuse.Scripting.JSCallback.NumberConverter*/]->MakeMethod(1/*TryConvert<T>*/, type->MethodTypes[4]->U(0), NULL));
+        JSCallback__NumberConverter_typeof()->MakeMethod(1/*TryConvert<T>*/, type->MethodTypes[4]->U(0), NULL));
 }
 
 uClassType* JSCallback_typeof()
@@ -1870,46 +1945,46 @@ uClassType* JSCallback_typeof()
     options.MethodTypeCount = 5;
     options.TypeSize = sizeof(uClassType);
     type = uClassType::New("Fuse.Scripting.JSCallback", options);
-    type->MethodTypes[0] = type->NewMethodType(1, 1);
-    type->MethodTypes[1] = type->NewMethodType(2, 1);
-    type->MethodTypes[2] = type->NewMethodType(1, 1);
-    type->MethodTypes[3] = type->NewMethodType(2, 1);
-    type->MethodTypes[4] = type->NewMethodType(1, 1);
+    type->MethodTypes[0] = type->NewMethodType(1, 1,0);
+    type->MethodTypes[1] = type->NewMethodType(2, 1,0);
+    type->MethodTypes[2] = type->NewMethodType(1, 1,0);
+    type->MethodTypes[3] = type->NewMethodType(2, 1,0);
+    type->MethodTypes[4] = type->NewMethodType(1, 1,0);
     type->fp_build_ = JSCallback_build;
     return type;
 }
 
-// public static Fuse.Scripting.Callback FromAction(Uno.Action action) :365
+// public static Fuse.Scripting.Callback FromAction(Uno.Action action) :7
 void JSCallback__FromAction_fn(uDelegate* action, uDelegate** __retval)
 {
     *__retval = JSCallback::FromAction(action);
 }
 
-// public static Fuse.Scripting.Callback FromAction<T>(Uno.Action<T> action) :370
+// public static Fuse.Scripting.Callback FromAction<T>(Uno.Action<T> action) :12
 void JSCallback__FromAction1_fn(uType* __type, uDelegate* action, uDelegate** __retval)
 {
     *__retval = JSCallback::FromAction1(__type, action);
 }
 
-// public static Fuse.Scripting.Callback FromAction<T1, T2>(Uno.Action<T1, T2> action) :375
+// public static Fuse.Scripting.Callback FromAction<T1, T2>(Uno.Action<T1, T2> action) :17
 void JSCallback__FromAction2_fn(uType* __type, uDelegate* action, uDelegate** __retval)
 {
     *__retval = JSCallback::FromAction2(__type, action);
 }
 
-// public static Fuse.Scripting.Callback FromFunc<TResult>(Uno.Func<TResult> func) :380
+// public static Fuse.Scripting.Callback FromFunc<TResult>(Uno.Func<TResult> func) :22
 void JSCallback__FromFunc_fn(uType* __type, uDelegate* func, uDelegate** __retval)
 {
     *__retval = JSCallback::FromFunc(__type, func);
 }
 
-// public static Fuse.Scripting.Callback FromFunc<T, TResult>(Uno.Func<T, TResult> func) :385
+// public static Fuse.Scripting.Callback FromFunc<T, TResult>(Uno.Func<T, TResult> func) :27
 void JSCallback__FromFunc1_fn(uType* __type, uDelegate* func, uDelegate** __retval)
 {
     *__retval = JSCallback::FromFunc1(__type, func);
 }
 
-// private static bool GetArg<T>(object[] args, T& arg, int index) :510
+// private static bool GetArg<T>(object[] args, T& arg, int index) :152
 void JSCallback__GetArg_fn(uType* __type, uArray* args, uTRef arg, int* index, bool* __retval)
 {
     uType* __types[] = {
@@ -1928,65 +2003,65 @@ void JSCallback__GetArg_fn(uType* __type, uArray* args, uTRef arg, int* index, b
     return *__retval = false, void();
 }
 
-// public static Fuse.Scripting.Callback FromAction(Uno.Action action) [static] :365
+// public static Fuse.Scripting.Callback FromAction(Uno.Action action) [static] :7
 uDelegate* JSCallback::FromAction(uDelegate* action)
 {
-    return uDelegate::New(::TYPES[13/*Fuse.Scripting.Callback*/], (void*)JSCallback__ActionClosure__Run_fn, JSCallback__ActionClosure::New1(action));
+    return uDelegate::New(::TYPES[12/*Fuse.Scripting.Callback*/], (void*)JSCallback__ActionClosure__Run_fn, JSCallback__ActionClosure::New1(action));
 }
 
-// public static Fuse.Scripting.Callback FromAction<T>(Uno.Action<T> action) [static] :370
+// public static Fuse.Scripting.Callback FromAction<T>(Uno.Action<T> action) [static] :12
 uDelegate* JSCallback::FromAction1(uType* __type, uDelegate* action)
 {
     uType* __types[] = {
         __type->Precalced(0/*Fuse.Scripting.JSCallback.ActionClosure<T>*/),
     };
-    return uDelegate::New(::TYPES[13/*Fuse.Scripting.Callback*/], (void*)JSCallback__ActionClosure1__Run_fn, (JSCallback__ActionClosure1*)JSCallback__ActionClosure1::New1(__types[0], action));
+    return uDelegate::New(::TYPES[12/*Fuse.Scripting.Callback*/], (void*)JSCallback__ActionClosure1__Run_fn, (JSCallback__ActionClosure1*)JSCallback__ActionClosure1::New1(__types[0], action));
 }
 
-// public static Fuse.Scripting.Callback FromAction<T1, T2>(Uno.Action<T1, T2> action) [static] :375
+// public static Fuse.Scripting.Callback FromAction<T1, T2>(Uno.Action<T1, T2> action) [static] :17
 uDelegate* JSCallback::FromAction2(uType* __type, uDelegate* action)
 {
     uType* __types[] = {
         __type->Precalced(0/*Fuse.Scripting.JSCallback.ActionClosure<T1, T2>*/),
     };
-    return uDelegate::New(::TYPES[13/*Fuse.Scripting.Callback*/], (void*)JSCallback__ActionClosure2__Run_fn, (JSCallback__ActionClosure2*)JSCallback__ActionClosure2::New1(__types[0], action));
+    return uDelegate::New(::TYPES[12/*Fuse.Scripting.Callback*/], (void*)JSCallback__ActionClosure2__Run_fn, (JSCallback__ActionClosure2*)JSCallback__ActionClosure2::New1(__types[0], action));
 }
 
-// public static Fuse.Scripting.Callback FromFunc<TResult>(Uno.Func<TResult> func) [static] :380
+// public static Fuse.Scripting.Callback FromFunc<TResult>(Uno.Func<TResult> func) [static] :22
 uDelegate* JSCallback::FromFunc(uType* __type, uDelegate* func)
 {
     uType* __types[] = {
         __type->Precalced(0/*Fuse.Scripting.JSCallback.FuncClosure<TResult>*/),
     };
-    return uDelegate::New(::TYPES[13/*Fuse.Scripting.Callback*/], (void*)JSCallback__FuncClosure__Run_fn, (JSCallback__FuncClosure*)JSCallback__FuncClosure::New1(__types[0], func));
+    return uDelegate::New(::TYPES[12/*Fuse.Scripting.Callback*/], (void*)JSCallback__FuncClosure__Run_fn, (JSCallback__FuncClosure*)JSCallback__FuncClosure::New1(__types[0], func));
 }
 
-// public static Fuse.Scripting.Callback FromFunc<T, TResult>(Uno.Func<T, TResult> func) [static] :385
+// public static Fuse.Scripting.Callback FromFunc<T, TResult>(Uno.Func<T, TResult> func) [static] :27
 uDelegate* JSCallback::FromFunc1(uType* __type, uDelegate* func)
 {
     uType* __types[] = {
         __type->Precalced(0/*Fuse.Scripting.JSCallback.FuncClosure<T, TResult>*/),
     };
-    return uDelegate::New(::TYPES[13/*Fuse.Scripting.Callback*/], (void*)JSCallback__FuncClosure1__Run_fn, (JSCallback__FuncClosure1*)JSCallback__FuncClosure1::New1(__types[0], func));
+    return uDelegate::New(::TYPES[12/*Fuse.Scripting.Callback*/], (void*)JSCallback__FuncClosure1__Run_fn, (JSCallback__FuncClosure1*)JSCallback__FuncClosure1::New1(__types[0], func));
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Scripting/1.2.1/$.uno
-// --------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Scripting\1.3.0-rc2\JSObjectUtils.uno
+// --------------------------------------------------------------------------------------
 
-// public static class JSObjectUtils :602
+// public static class JSObjectUtils :3
 // {
 static void JSObjectUtils_build(uType* type)
 {
     ::STRINGS[19] = uString::Const("(Object Freeze)");
     ::STRINGS[20] = uString::Const("Object.freeze");
-    ::TYPES[8] = ::g::Fuse::Scripting::Function_typeof();
-    ::TYPES[9] = uObject_typeof()->Array();
-    ::TYPES[21] = ::g::Fuse::Marshal_typeof();
+    ::TYPES[6] = ::g::Fuse::Scripting::Function_typeof();
+    ::TYPES[7] = uObject_typeof()->Array();
+    ::TYPES[16] = ::g::Fuse::Marshal_typeof();
     type->MethodTypes[0]->SetPrecalc(
-        ::TYPES[21/*Fuse.Marshal*/]->MakeMethod(0/*ToType<T>*/, type->MethodTypes[0]->U(0), NULL));
+        ::TYPES[16/*Fuse.Marshal*/]->MakeMethod(0/*ToType<T>*/, type->MethodTypes[0]->U(0), NULL));
     type->MethodTypes[1]->SetPrecalc(
-        ::TYPES[21/*Fuse.Marshal*/]->MakeMethod(0/*ToType<T>*/, type->MethodTypes[1]->U(0), NULL));
+        ::TYPES[16/*Fuse.Marshal*/]->MakeMethod(0/*ToType<T>*/, type->MethodTypes[1]->U(0), NULL));
 }
 
 uClassType* JSObjectUtils_typeof()
@@ -1998,75 +2073,75 @@ uClassType* JSObjectUtils_typeof()
     options.MethodTypeCount = 2;
     options.TypeSize = sizeof(uClassType);
     type = uClassType::New("Fuse.Scripting.JSObjectUtils", options);
-    type->MethodTypes[0] = type->NewMethodType(1, 1);
-    type->MethodTypes[1] = type->NewMethodType(1, 1);
+    type->MethodTypes[0] = type->NewMethodType(1, 1,0);
+    type->MethodTypes[1] = type->NewMethodType(1, 1,0);
     type->fp_build_ = JSObjectUtils_build;
     return type;
 }
 
-// public static void Freeze(Fuse.Scripting.Object ob, Fuse.Scripting.Context c) :629
+// public static void Freeze(Fuse.Scripting.Object ob, Fuse.Scripting.Context c) :30
 void JSObjectUtils__Freeze_fn(::g::Fuse::Scripting::Object* ob, ::g::Fuse::Scripting::Context* c)
 {
     JSObjectUtils::Freeze(ob, c);
 }
 
-// public static T ValueOrDefault<T>(Fuse.Scripting.Object obj, string name, T defaultValue) :604
+// public static T ValueOrDefault<T>(Fuse.Scripting.Object obj, string name, T defaultValue) :5
 void JSObjectUtils__ValueOrDefault_fn(uType* __type, ::g::Fuse::Scripting::Object* obj, uString* name, void* defaultValue, uTRef __retval)
 {
     uType* __types[] = {
-        __type->U(0),
         __type->Precalced(0/*Fuse.Marshal.ToType<T>*/),
     };
-    uT ret3(__types[0], U_ALLOCA(__types[0]->ValueSize));
+    uT ret3(__type->U(0), U_ALLOCA(__type->U(0)->ValueSize));
     uObject* v = uPtr(obj)->Item(name);
 
     if (v == NULL)
-        return __retval.Store(__types[0], defaultValue), void();
+        return __retval.Store(__type->U(0), defaultValue), void();
 
-    return __retval.Store((::g::Fuse::Marshal__ToType_fn(__types[1], v, &ret3), ret3)), void();
+    return __retval.Store((::g::Fuse::Marshal__ToType_fn(__types[0], v, &ret3), ret3)), void();
 }
 
-// public static T ValueOrDefault<T>(object[] args, int index, [T defaultValue]) :611
+// public static T ValueOrDefault<T>(object[] args, int index, [T defaultValue]) :12
 void JSObjectUtils__ValueOrDefault1_fn(uType* __type, uArray* args, int* index, void* defaultValue, uTRef __retval)
 {
     uType* __types[] = {
-        __type->U(0),
         __type->Precalced(0/*Fuse.Marshal.ToType<T>*/),
     };
-    uT ret4(__types[0], U_ALLOCA(__types[0]->ValueSize));
+    uT ret4(__type->U(0), U_ALLOCA(__type->U(0)->ValueSize));
     int index_ = *index;
 
     if ((index_ < 0) || (index_ > (uPtr(args)->Length() - 1)))
-        return __retval.Store(__types[0], defaultValue), void();
+        return __retval.Store(__type->U(0), defaultValue), void();
 
-    return __retval.Store((::g::Fuse::Marshal__ToType_fn(__types[1], uPtr(args)->Strong<uObject*>(index_), &ret4), ret4)), void();
+    return __retval.Store((::g::Fuse::Marshal__ToType_fn(__types[0], uPtr(args)->Strong<uObject*>(index_), &ret4), ret4)), void();
 }
 
-// public static void Freeze(Fuse.Scripting.Object ob, Fuse.Scripting.Context c) [static] :629
+// public static void Freeze(Fuse.Scripting.Object ob, Fuse.Scripting.Context c) [static] :30
 void JSObjectUtils::Freeze(::g::Fuse::Scripting::Object* ob, ::g::Fuse::Scripting::Context* c)
 {
-    ::g::Fuse::Scripting::Function* freeze = uCast< ::g::Fuse::Scripting::Function*>(uPtr(c)->Evaluate(::STRINGS[19/*"(Object Fre...*/], ::STRINGS[20/*"Object.freeze"*/]), ::TYPES[8/*Fuse.Scripting.Function*/]);
-    uPtr(freeze)->Call(uArray::Init<uObject*>(::TYPES[9/*object[]*/], 1, ob));
+    ::g::Fuse::Scripting::Function* freeze = uCast< ::g::Fuse::Scripting::Function*>(uPtr(c)->Evaluate(::STRINGS[19/*"(Object Fre...*/], ::STRINGS[20/*"Object.freeze"*/]), ::TYPES[6/*Fuse.Scripting.Function*/]);
+    uPtr(freeze)->Call(uArray::Init<uObject*>(::TYPES[7/*object[]*/], 1, ob));
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Scripting/1.2.1/$.uno
-// --------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Scripting\1.3.0-rc2\Module.uno
+// -------------------------------------------------------------------------------
 
-// public abstract class Module :646
+// public abstract class Module :7
 // {
 static void Module_build(uType* type)
 {
     ::STRINGS[21] = uString::Const("exports");
     ::STRINGS[22] = uString::Const("disposed");
     ::STRINGS[23] = uString::Const("id");
-    ::TYPES[9] = uObject_typeof()->Array();
-    ::TYPES[22] = ::g::Fuse::Scripting::ScriptException_typeof();
+    ::TYPES[7] = uObject_typeof()->Array();
+    ::TYPES[17] = ::g::Fuse::Scripting::ScriptException_typeof();
+    type->SetDependencies(
+        ::g::Uno::EventArgs_typeof());
     type->SetInterfaces(
         ::g::Uno::IDisposable_typeof(), offsetof(Module_type, interface0));
     type->SetFields(0,
-        ::g::Uno::EventHandler_typeof(), offsetof(::g::Fuse::Scripting::Module, _evaluated), 0,
-        ::g::Uno::Bool_typeof(), offsetof(::g::Fuse::Scripting::Module, _isEvaluated), 0);
+        ::g::Uno::EventHandler_typeof(), offsetof(Module, _evaluated), 0,
+        ::g::Uno::Bool_typeof(), offsetof(Module, _isEvaluated), 0);
 }
 
 Module_type* Module_typeof()
@@ -2077,6 +2152,7 @@ Module_type* Module_typeof()
     uTypeOptions options;
     options.FieldCount = 2;
     options.InterfaceCount = 1;
+    options.DependencyCount = 1;
     options.ObjectSize = sizeof(Module);
     options.TypeSize = sizeof(Module_type);
     type = (Module_type*)uClassType::New("Fuse.Scripting.Module", options);
@@ -2087,65 +2163,65 @@ Module_type* Module_typeof()
     return type;
 }
 
-// protected generated Module() :646
+// protected generated Module() :7
 void Module__ctor__fn(Module* __this)
 {
     __this->ctor_();
 }
 
-// private virtual object CreateExportsObject(Fuse.Scripting.Context c) :715
+// private virtual object CreateExportsObject(Fuse.Scripting.Context c) :76
 void Module__CreateExportsObject_fn(Module* __this, ::g::Fuse::Scripting::Context* c, uObject** __retval)
 {
     return *__retval = uPtr(c)->NewObject(), void();
 }
 
-// public void Dispose() :720
+// public void Dispose() :81
 void Module__Dispose_fn(Module* __this)
 {
     __this->Dispose();
 }
 
-// public Fuse.Scripting.ModuleResult Evaluate(Fuse.Scripting.Context c, string id) :654
+// public Fuse.Scripting.ModuleResult Evaluate(Fuse.Scripting.Context c, string id) :15
 void Module__Evaluate1_fn(Module* __this, ::g::Fuse::Scripting::Context* c, uString* id, ::g::Fuse::Scripting::ModuleResult** __retval)
 {
     *__retval = __this->Evaluate1(c, id);
 }
 
-// public object EvaluateExports(Fuse.Scripting.Context c, string id) :648
+// public object EvaluateExports(Fuse.Scripting.Context c, string id) :9
 void Module__EvaluateExports_fn(Module* __this, ::g::Fuse::Scripting::Context* c, uString* id, uObject** __retval)
 {
     *__retval = __this->EvaluateExports(c, id);
 }
 
-// public virtual Uno.UX.FileSource GetFile() :710
+// public virtual Uno.UX.FileSource GetFile() :71
 void Module__GetFile_fn(Module* __this, ::g::Uno::UX::FileSource** __retval)
 {
     return *__retval = NULL, void();
 }
 
-// protected bool get_IsEvaluated() :680
+// protected bool get_IsEvaluated() :41
 void Module__get_IsEvaluated_fn(Module* __this, bool* __retval)
 {
     *__retval = __this->IsEvaluated();
 }
 
-// private void MarkEvaluated() :696
+// private void MarkEvaluated() :57
 void Module__MarkEvaluated_fn(Module* __this)
 {
     __this->MarkEvaluated();
 }
 
-// protected generated Module() [instance] :646
+// protected generated Module() [instance] :7
 void Module::ctor_()
 {
 }
 
-// public void Dispose() [instance] :720
+// public void Dispose() [instance] :81
 void Module::Dispose()
 {
 }
 
-// public Fuse.Scripting.ModuleResult Evaluate(Fuse.Scripting.Context c, string id) [instance] :654
+// public Fuse.Scripting.ModuleResult Evaluate(Fuse.Scripting.Context c, string id) [instance] :15
 ::g::Fuse::Scripting::ModuleResult* Module::Evaluate1(::g::Fuse::Scripting::Context* c, uString* id)
 {
     ::g::Fuse::Scripting::ModuleResult* mr = uPtr(c)->TryGetGlobalModuleResult(id);
@@ -2155,7 +2231,7 @@ void Module::Dispose()
 
     ::g::Fuse::Scripting::Object* module = c->NewObject();
     uPtr(module)->Item(::STRINGS[21/*"exports"*/], CreateExportsObject(c));
-    module->Item(::STRINGS[22/*"disposed"*/], c->NewArray(uArray::New(::TYPES[9/*object[]*/], 0)));
+    module->Item(::STRINGS[22/*"disposed"*/], c->NewArray(uArray::New(::TYPES[7/*object[]*/], 0)));
     ::g::Fuse::Scripting::ModuleResult* result = ::g::Fuse::Scripting::ModuleResult::New1(c, id, this, module);
 
     if (::g::Uno::String::op_Inequality(id, NULL))
@@ -2168,7 +2244,7 @@ void Module::Dispose()
     }
     catch (const uThrowable& __t)
     {
-        if (uIs(__t.Exception, ::TYPES[22/*Fuse.Scripting.ScriptException*/]))
+        if (uIs(__t.Exception, ::TYPES[17/*Fuse.Scripting.ScriptException*/]))
         {
             ::g::Fuse::Scripting::ScriptException* e = (::g::Fuse::Scripting::ScriptException*)__t.Exception;
             uPtr(result)->Error(e);
@@ -2182,20 +2258,20 @@ void Module::Dispose()
     return result;
 }
 
-// public object EvaluateExports(Fuse.Scripting.Context c, string id) [instance] :648
+// public object EvaluateExports(Fuse.Scripting.Context c, string id) [instance] :9
 uObject* Module::EvaluateExports(::g::Fuse::Scripting::Context* c, uString* id)
 {
     uObject* r = uPtr(uPtr(Evaluate1(c, id))->Object)->Item(::STRINGS[21/*"exports"*/]);
     return r;
 }
 
-// protected bool get_IsEvaluated() [instance] :680
+// protected bool get_IsEvaluated() [instance] :41
 bool Module::IsEvaluated()
 {
     return _isEvaluated;
 }
 
-// private void MarkEvaluated() [instance] :696
+// private void MarkEvaluated() [instance] :57
 void Module::MarkEvaluated()
 {
     _isEvaluated = true;
@@ -2203,37 +2279,39 @@ void Module::MarkEvaluated()
 
     if (::g::Uno::Delegate::op_Inequality(handler, NULL))
     {
-        uPtr(handler)->Invoke(2, NULL, (::g::Uno::EventArgs*)::g::Uno::EventArgs::Empty());
+        uPtr(handler)->Invoke(2, NULL, (::g::Uno::EventArgs*)::g::Uno::EventArgs::Empty_);
         _evaluated = NULL;
     }
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Scripting/1.2.1/$.uno
-// --------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Scripting\1.3.0-rc2\ModuleResult.uno
+// -------------------------------------------------------------------------------------
 
-// public sealed class ModuleResult :736
+// public sealed class ModuleResult :10
 // {
 static void ModuleResult_build(uType* type)
 {
     ::STRINGS[22] = uString::Const("disposed");
     ::STRINGS[24] = uString::Const("(unknown module)");
-    ::TYPES[23] = ::g::Uno::Collections::List_typeof()->MakeType(::g::Uno::Action_typeof(), NULL);
-    ::TYPES[24] = ::g::Uno::Action1_typeof()->MakeType(::g::Uno::String_typeof(), NULL);
-    ::TYPES[25] = ::g::Uno::EventHandler1_typeof()->MakeType(::g::Uno::EventArgs_typeof(), NULL);
-    ::TYPES[3] = ::g::Uno::Action_typeof();
-    ::TYPES[11] = ::g::Fuse::Scripting::Array_typeof();
-    ::TYPES[8] = ::g::Fuse::Scripting::Function_typeof();
-    ::TYPES[9] = uObject_typeof()->Array();
+    ::TYPES[18] = ::g::Uno::Collections::List_typeof()->MakeType(::g::Uno::Action_typeof(), NULL);
+    ::TYPES[19] = ::g::Uno::Action1_typeof()->MakeType(::g::Uno::String_typeof(), NULL);
+    ::TYPES[20] = ::g::Uno::EventHandler1_typeof()->MakeType(::g::Uno::EventArgs_typeof(), NULL);
+    ::TYPES[15] = ::g::Uno::Action_typeof();
+    ::TYPES[10] = ::g::Fuse::Scripting::Array_typeof();
+    ::TYPES[6] = ::g::Fuse::Scripting::Function_typeof();
+    ::TYPES[7] = uObject_typeof()->Array();
+    type->SetDependencies(
+        ::g::Uno::UX::Resource_typeof());
     type->SetFields(0,
-        ::g::Uno::Bool_typeof(), offsetof(::g::Fuse::Scripting::ModuleResult, _fileListening), 0,
-        ::g::Uno::Bool_typeof(), offsetof(::g::Fuse::Scripting::ModuleResult, _globalKeyListening), 0,
-        ::TYPES[23/*Uno.Collections.List<Uno.Action>*/], offsetof(::g::Fuse::Scripting::ModuleResult, _invalidateCallbacks), 0,
-        ::g::Fuse::Scripting::Context_typeof(), offsetof(::g::Fuse::Scripting::ModuleResult, Context), 0,
-        ::g::Uno::String_typeof(), offsetof(::g::Fuse::Scripting::ModuleResult, Id), 0,
-        ::g::Fuse::Scripting::Module_typeof(), offsetof(::g::Fuse::Scripting::ModuleResult, Module), 0,
-        ::g::Fuse::Scripting::Object_typeof(), offsetof(::g::Fuse::Scripting::ModuleResult, Object), 0,
-        ::g::Fuse::Scripting::ScriptException_typeof(), offsetof(::g::Fuse::Scripting::ModuleResult, _Error), 0);
+        ::g::Uno::Bool_typeof(), offsetof(ModuleResult, _fileListening), 0,
+        ::g::Uno::Bool_typeof(), offsetof(ModuleResult, _globalKeyListening), 0,
+        ::TYPES[18/*Uno.Collections.List<Uno.Action>*/], offsetof(ModuleResult, _invalidateCallbacks), 0,
+        ::g::Fuse::Scripting::Context_typeof(), offsetof(ModuleResult, Context), 0,
+        ::g::Uno::String_typeof(), offsetof(ModuleResult, Id), 0,
+        ::g::Fuse::Scripting::Module_typeof(), offsetof(ModuleResult, Module), 0,
+        ::g::Fuse::Scripting::Object_typeof(), offsetof(ModuleResult, Object), 0,
+        ::g::Fuse::Scripting::ScriptException_typeof(), offsetof(ModuleResult, _Error), 0);
 }
 
 uType* ModuleResult_typeof()
@@ -2243,6 +2321,7 @@ uType* ModuleResult_typeof()
 
     uTypeOptions options;
     options.FieldCount = 8;
+    options.DependencyCount = 1;
     options.ObjectSize = sizeof(ModuleResult);
     options.TypeSize = sizeof(uType);
     type = uClassType::New("Fuse.Scripting.ModuleResult", options);
@@ -2251,67 +2330,67 @@ uType* ModuleResult_typeof()
     return type;
 }
 
-// public ModuleResult(Fuse.Scripting.Context context, string id, Fuse.Scripting.Module mod, Fuse.Scripting.Object obj) :749
+// public ModuleResult(Fuse.Scripting.Context context, string id, Fuse.Scripting.Module mod, Fuse.Scripting.Object obj) :23
 void ModuleResult__ctor__fn(ModuleResult* __this, ::g::Fuse::Scripting::Context* context, uString* id, ::g::Fuse::Scripting::Module* mod, ::g::Fuse::Scripting::Object* obj)
 {
     __this->ctor_(context, id, mod, obj);
 }
 
-// public void AddDependency(Uno.Action invalidateCallback) :781
+// public void AddDependency(Uno.Action invalidateCallback) :55
 void ModuleResult__AddDependency_fn(ModuleResult* __this, uDelegate* invalidateCallback)
 {
     __this->AddDependency(invalidateCallback);
 }
 
-// public void Dispose() :814
+// public void Dispose() :88
 void ModuleResult__Dispose_fn(ModuleResult* __this)
 {
     __this->Dispose();
 }
 
-// public generated Fuse.Scripting.ScriptException get_Error() :744
+// public generated Fuse.Scripting.ScriptException get_Error() :18
 void ModuleResult__get_Error_fn(ModuleResult* __this, ::g::Fuse::Scripting::ScriptException** __retval)
 {
     *__retval = __this->Error();
 }
 
-// internal generated void set_Error(Fuse.Scripting.ScriptException value) :744
+// internal generated void set_Error(Fuse.Scripting.ScriptException value) :18
 void ModuleResult__set_Error_fn(ModuleResult* __this, ::g::Fuse::Scripting::ScriptException* value)
 {
     __this->Error(value);
 }
 
-// public void Invalidate() :801
+// public void Invalidate() :75
 void ModuleResult__Invalidate_fn(ModuleResult* __this)
 {
     __this->Invalidate();
 }
 
-// public ModuleResult New(Fuse.Scripting.Context context, string id, Fuse.Scripting.Module mod, Fuse.Scripting.Object obj) :749
+// public ModuleResult New(Fuse.Scripting.Context context, string id, Fuse.Scripting.Module mod, Fuse.Scripting.Object obj) :23
 void ModuleResult__New1_fn(::g::Fuse::Scripting::Context* context, uString* id, ::g::Fuse::Scripting::Module* mod, ::g::Fuse::Scripting::Object* obj, ModuleResult** __retval)
 {
     *__retval = ModuleResult::New1(context, id, mod, obj);
 }
 
-// private void OnDataChanged(object sender, Uno.EventArgs args) :786
+// private void OnDataChanged(object sender, Uno.EventArgs args) :60
 void ModuleResult__OnDataChanged_fn(ModuleResult* __this, uObject* sender, ::g::Uno::EventArgs* args)
 {
     __this->OnDataChanged(sender, args);
 }
 
-// private void OnDisposed() :833
+// private void OnDisposed() :107
 void ModuleResult__OnDisposed_fn(ModuleResult* __this)
 {
     __this->OnDisposed();
 }
 
-// private void OnGlobalKeyChanged(string key) :774
+// private void OnGlobalKeyChanged(string key) :48
 void ModuleResult__OnGlobalKeyChanged_fn(ModuleResult* __this, uString* key)
 {
     __this->OnGlobalKeyChanged(key);
 }
 
-// public override sealed string ToString() :791
+// public override sealed string ToString() :65
 void ModuleResult__ToString_fn(ModuleResult* __this, uString** __retval)
 {
     if (::g::Uno::String::op_Inequality(__this->Id, NULL))
@@ -2323,10 +2402,10 @@ void ModuleResult__ToString_fn(ModuleResult* __this, uString** __retval)
     return *__retval = ::STRINGS[24/*"(unknown mo...*/], void();
 }
 
-// public ModuleResult(Fuse.Scripting.Context context, string id, Fuse.Scripting.Module mod, Fuse.Scripting.Object obj) [instance] :749
+// public ModuleResult(Fuse.Scripting.Context context, string id, Fuse.Scripting.Module mod, Fuse.Scripting.Object obj) [instance] :23
 void ModuleResult::ctor_(::g::Fuse::Scripting::Context* context, uString* id, ::g::Fuse::Scripting::Module* mod, ::g::Fuse::Scripting::Object* obj)
 {
-    _invalidateCallbacks = ((::g::Uno::Collections::List*)::g::Uno::Collections::List::New1(::TYPES[23/*Uno.Collections.List<Uno.Action>*/]));
+    _invalidateCallbacks = ((::g::Uno::Collections::List*)::g::Uno::Collections::List::New1(::TYPES[18/*Uno.Collections.List<Uno.Action>*/]));
     Context = context;
     Module = mod;
     Object = obj;
@@ -2335,56 +2414,56 @@ void ModuleResult::ctor_(::g::Fuse::Scripting::Context* context, uString* id, ::
     if (::g::Uno::String::op_Inequality(Id, NULL))
     {
         _globalKeyListening = true;
-        ::g::Uno::UX::Resource::AddGlobalKeyListener(uDelegate::New(::TYPES[24/*Uno.Action<string>*/], (void*)ModuleResult__OnGlobalKeyChanged_fn, this));
+        ::g::Uno::UX::Resource::AddGlobalKeyListener(uDelegate::New(::TYPES[19/*Uno.Action<string>*/], (void*)ModuleResult__OnGlobalKeyChanged_fn, this));
     }
 
     if (uPtr(Module)->GetFile() != NULL)
     {
-        uPtr(uPtr(Module)->GetFile())->add_DataChanged(uDelegate::New(::TYPES[25/*Uno.EventHandler<Uno.EventArgs>*/], (void*)ModuleResult__OnDataChanged_fn, this));
+        uPtr(uPtr(Module)->GetFile())->add_DataChanged(uDelegate::New(::TYPES[20/*Uno.EventHandler<Uno.EventArgs>*/], (void*)ModuleResult__OnDataChanged_fn, this));
         _fileListening = true;
     }
 }
 
-// public void AddDependency(Uno.Action invalidateCallback) [instance] :781
+// public void AddDependency(Uno.Action invalidateCallback) [instance] :55
 void ModuleResult::AddDependency(uDelegate* invalidateCallback)
 {
     ::g::Uno::Collections::List__Add_fn(uPtr(_invalidateCallbacks), invalidateCallback);
 }
 
-// public void Dispose() [instance] :814
+// public void Dispose() [instance] :88
 void ModuleResult::Dispose()
 {
     if (_fileListening)
     {
-        uPtr(uPtr(Module)->GetFile())->remove_DataChanged(uDelegate::New(::TYPES[25/*Uno.EventHandler<Uno.EventArgs>*/], (void*)ModuleResult__OnDataChanged_fn, this));
+        uPtr(uPtr(Module)->GetFile())->remove_DataChanged(uDelegate::New(::TYPES[20/*Uno.EventHandler<Uno.EventArgs>*/], (void*)ModuleResult__OnDataChanged_fn, this));
         _fileListening = false;
     }
 
     if (_globalKeyListening)
     {
-        ::g::Uno::UX::Resource::RemoveGlobalKeyListener(uDelegate::New(::TYPES[24/*Uno.Action<string>*/], (void*)ModuleResult__OnGlobalKeyChanged_fn, this));
+        ::g::Uno::UX::Resource::RemoveGlobalKeyListener(uDelegate::New(::TYPES[19/*Uno.Action<string>*/], (void*)ModuleResult__OnGlobalKeyChanged_fn, this));
         _globalKeyListening = false;
     }
 
     if (::g::Uno::String::op_Inequality(Id, NULL))
         uPtr(Context)->DeleteGlobalModuleResult(this);
 
-    uPtr(Context)->Invoke(uDelegate::New(::TYPES[3/*Uno.Action*/], (void*)ModuleResult__OnDisposed_fn, this));
+    uPtr(Context)->Invoke(uDelegate::New(::TYPES[15/*Uno.Action*/], (void*)ModuleResult__OnDisposed_fn, this));
 }
 
-// public generated Fuse.Scripting.ScriptException get_Error() [instance] :744
+// public generated Fuse.Scripting.ScriptException get_Error() [instance] :18
 ::g::Fuse::Scripting::ScriptException* ModuleResult::Error()
 {
     return _Error;
 }
 
-// internal generated void set_Error(Fuse.Scripting.ScriptException value) [instance] :744
+// internal generated void set_Error(Fuse.Scripting.ScriptException value) [instance] :18
 void ModuleResult::Error(::g::Fuse::Scripting::ScriptException* value)
 {
     _Error = value;
 }
 
-// public void Invalidate() [instance] :801
+// public void Invalidate() [instance] :75
 void ModuleResult::Invalidate()
 {
     Dispose();
@@ -2398,39 +2477,39 @@ void ModuleResult::Invalidate()
     }
 }
 
-// private void OnDataChanged(object sender, Uno.EventArgs args) [instance] :786
+// private void OnDataChanged(object sender, Uno.EventArgs args) [instance] :60
 void ModuleResult::OnDataChanged(uObject* sender, ::g::Uno::EventArgs* args)
 {
     Invalidate();
 }
 
-// private void OnDisposed() [instance] :833
+// private void OnDisposed() [instance] :107
 void ModuleResult::OnDisposed()
 {
     if (uPtr(Object)->ContainsKey(::STRINGS[22/*"disposed"*/]))
     {
-        ::g::Fuse::Scripting::Array* disposed = uAs< ::g::Fuse::Scripting::Array*>(uPtr(Object)->Item(::STRINGS[22/*"disposed"*/]), ::TYPES[11/*Fuse.Scripting.Array*/]);
+        ::g::Fuse::Scripting::Array* disposed = uAs< ::g::Fuse::Scripting::Array*>(uPtr(Object)->Item(::STRINGS[22/*"disposed"*/]), ::TYPES[10/*Fuse.Scripting.Array*/]);
 
         if (disposed != NULL)
 
             for (int i = 0; i < uPtr(disposed)->Length(); i++)
             {
-                ::g::Fuse::Scripting::Function* func = uCast< ::g::Fuse::Scripting::Function*>(uPtr(disposed)->Item(i), ::TYPES[8/*Fuse.Scripting.Function*/]);
+                ::g::Fuse::Scripting::Function* func = uCast< ::g::Fuse::Scripting::Function*>(uPtr(disposed)->Item(i), ::TYPES[6/*Fuse.Scripting.Function*/]);
 
                 if (func != NULL)
-                    uPtr(func)->Call(uArray::New(::TYPES[9/*object[]*/], 0));
+                    uPtr(func)->Call(uArray::New(::TYPES[7/*object[]*/], 0));
             }
     }
 }
 
-// private void OnGlobalKeyChanged(string key) [instance] :774
+// private void OnGlobalKeyChanged(string key) [instance] :48
 void ModuleResult::OnGlobalKeyChanged(uString* key)
 {
     if (::g::Uno::String::op_Equality(key, Id))
         Invalidate();
 }
 
-// public ModuleResult New(Fuse.Scripting.Context context, string id, Fuse.Scripting.Module mod, Fuse.Scripting.Object obj) [static] :749
+// public ModuleResult New(Fuse.Scripting.Context context, string id, Fuse.Scripting.Module mod, Fuse.Scripting.Object obj) [static] :23
 ModuleResult* ModuleResult::New1(::g::Fuse::Scripting::Context* context, uString* id, ::g::Fuse::Scripting::Module* mod, ::g::Fuse::Scripting::Object* obj)
 {
     ModuleResult* obj4 = (ModuleResult*)uNew(ModuleResult_typeof());
@@ -2439,10 +2518,10 @@ ModuleResult* ModuleResult::New1(::g::Fuse::Scripting::Context* context, uString
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Scripting/1.2.1/$.uno
-// --------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Scripting\1.3.0-rc2\NativeFunction.uno
+// ---------------------------------------------------------------------------------------
 
-// public delegate object NativeCallback(Fuse.Scripting.Context c, object[] args) :1147
+// public delegate object NativeCallback(Fuse.Scripting.Context c, object[] args) :6
 uDelegateType* NativeCallback_typeof()
 {
     static uSStrong<uDelegateType*> type;
@@ -2455,21 +2534,21 @@ uDelegateType* NativeCallback_typeof()
     return type;
 }
 
-// /usr/local/share/uno/Packages/Fuse.Scripting/1.2.1/$.uno
-// --------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Scripting\1.3.0-rc2\NativeEvent.uno
+// ------------------------------------------------------------------------------------
 
-// public sealed class NativeEvent :860
+// public sealed class NativeEvent :7
 // {
 static void NativeEvent_build(uType* type)
 {
-    ::TYPES[26] = ::g::Uno::Collections::Queue_typeof()->MakeType(uObject_typeof()->Array(), NULL);
-    ::TYPES[27] = ::g::Uno::Threading::IDispatcherExtensions_typeof()->MakeMethod(1/*Invoke1<object[], object>*/, uObject_typeof()->Array(), uObject_typeof(), NULL);
-    ::TYPES[28] = ::g::Uno::Func1_typeof()->MakeType(uObject_typeof()->Array(), uObject_typeof(), NULL);
+    ::TYPES[21] = ::g::Uno::Collections::Queue_typeof()->MakeType(uObject_typeof()->Array(), NULL);
+    ::TYPES[22] = ::g::Uno::Threading::IDispatcherExtensions_typeof()->MakeMethod(1/*Invoke1<object[], object>*/, uObject_typeof()->Array(), uObject_typeof(), NULL);
+    ::TYPES[23] = ::g::Uno::Func1_typeof()->MakeType(uObject_typeof()->Array(), uObject_typeof(), NULL);
     type->SetBase(::g::Fuse::Scripting::NativeProperty_typeof()->MakeType(::g::Fuse::Scripting::Function_typeof(), ::g::Fuse::Scripting::Function_typeof(), NULL));
     type->SetFields(8,
-        ::TYPES[26/*Uno.Collections.Queue<object[]>*/], offsetof(::g::Fuse::Scripting::NativeEvent, _eventArgsQueue), 0,
-        ::g::Fuse::Scripting::Function_typeof(), offsetof(::g::Fuse::Scripting::NativeEvent, _jsFunction), 0,
-        ::g::Uno::Bool_typeof(), offsetof(::g::Fuse::Scripting::NativeEvent, _queueEventsBeforeEvaluation), 0);
+        ::TYPES[21/*Uno.Collections.Queue<object[]>*/], offsetof(NativeEvent, _eventArgsQueue), 0,
+        ::g::Fuse::Scripting::Function_typeof(), offsetof(NativeEvent, _jsFunction), 0,
+        ::g::Uno::Bool_typeof(), offsetof(NativeEvent, _queueEventsBeforeEvaluation), 0);
 }
 
 ::g::Fuse::Scripting::NativeProperty_type* NativeEvent_typeof()
@@ -2489,70 +2568,70 @@ static void NativeEvent_build(uType* type)
     return type;
 }
 
-// public NativeEvent(string name, [bool queueEventsBeforeHandlerIsSet]) :866
+// public NativeEvent(string name, [bool queueEventsBeforeHandlerIsSet]) :13
 void NativeEvent__ctor_4_fn(NativeEvent* __this, uString* name, bool* queueEventsBeforeHandlerIsSet)
 {
     __this->ctor_4(name, *queueEventsBeforeHandlerIsSet);
 }
 
-// private void DispatchQueue() :883
+// private void DispatchQueue() :30
 void NativeEvent__DispatchQueue_fn(NativeEvent* __this)
 {
     __this->DispatchQueue();
 }
 
-// protected override sealed Fuse.Scripting.Function GetProperty() :878
+// protected override sealed Fuse.Scripting.Function GetProperty() :25
 void NativeEvent__GetProperty_fn(NativeEvent* __this, ::g::Fuse::Scripting::Function** __retval)
 {
     return *__retval = __this->_jsFunction, void();
 }
 
-// public NativeEvent New(string name, [bool queueEventsBeforeHandlerIsSet]) :866
+// public NativeEvent New(string name, [bool queueEventsBeforeHandlerIsSet]) :13
 void NativeEvent__New4_fn(uString* name, bool* queueEventsBeforeHandlerIsSet, NativeEvent** __retval)
 {
     *__retval = NativeEvent::New4(name, *queueEventsBeforeHandlerIsSet);
 }
 
-// internal object RaiseSync(object[] args) :897
+// internal object RaiseSync(object[] args) :44
 void NativeEvent__RaiseSync_fn(NativeEvent* __this, uArray* args, uObject** __retval)
 {
     *__retval = __this->RaiseSync(args);
 }
 
-// protected override sealed void SetProperty(Fuse.Scripting.Function function) :872
+// protected override sealed void SetProperty(Fuse.Scripting.Function function) :19
 void NativeEvent__SetProperty1_fn(NativeEvent* __this, ::g::Fuse::Scripting::Function* function)
 {
     __this->_jsFunction = function;
     __this->DispatchQueue();
 }
 
-// public NativeEvent(string name, [bool queueEventsBeforeHandlerIsSet]) [instance] :866
+// public NativeEvent(string name, [bool queueEventsBeforeHandlerIsSet]) [instance] :13
 void NativeEvent::ctor_4(uString* name, bool queueEventsBeforeHandlerIsSet)
 {
     ctor_1(name);
-    _eventArgsQueue = ((::g::Uno::Collections::Queue*)::g::Uno::Collections::Queue::New1(::TYPES[26/*Uno.Collections.Queue<object[]>*/]));
+    _eventArgsQueue = ((::g::Uno::Collections::Queue*)::g::Uno::Collections::Queue::New1(::TYPES[21/*Uno.Collections.Queue<object[]>*/]));
     _queueEventsBeforeEvaluation = queueEventsBeforeHandlerIsSet;
 }
 
-// private void DispatchQueue() [instance] :883
+// private void DispatchQueue() [instance] :30
 void NativeEvent::DispatchQueue()
 {
     uArray* ret2;
 
     while ((uPtr(_eventArgsQueue)->Count() > 0) && (_jsFunction != NULL))
-        ::g::Uno::Threading::IDispatcherExtensions__Invoke11_fn(::TYPES[27/*Uno.Threading.IDispatcherExtensions.Invoke1<object[], object>*/], uPtr(Context())->Dispatcher(), uDelegate::New(::TYPES[28/*Uno.Func<object[], object>*/], uPtr(_jsFunction), offsetof(::g::Fuse::Scripting::Function_type, fp_Call)), (::g::Uno::Collections::Queue__Dequeue_fn(uPtr(_eventArgsQueue), &ret2), ret2));
+        ::g::Uno::Threading::IDispatcherExtensions__Invoke11_fn(::TYPES[22/*Uno.Threading.IDispatcherExtensions.Invoke1<object[], object>*/], uPtr(Context())->Dispatcher(), uDelegate::New(::TYPES[23/*Uno.Func<object[], object>*/], uPtr(_jsFunction), offsetof(::g::Fuse::Scripting::Function_type, fp_Call)), (::g::Uno::Collections::Queue__Dequeue_fn(uPtr(_eventArgsQueue), &ret2), ret2));
 }
 
-// internal object RaiseSync(object[] args) [instance] :897
+// internal object RaiseSync(object[] args) [instance] :44
 uObject* NativeEvent::RaiseSync(uArray* args)
 {
     if (_jsFunction != NULL)
-        ::g::Uno::Threading::IDispatcherExtensions__Invoke11_fn(::TYPES[27/*Uno.Threading.IDispatcherExtensions.Invoke1<object[], object>*/], uPtr(Context())->Dispatcher(), uDelegate::New(::TYPES[28/*Uno.Func<object[], object>*/], uPtr(_jsFunction), offsetof(::g::Fuse::Scripting::Function_type, fp_Call)), args);
+        ::g::Uno::Threading::IDispatcherExtensions__Invoke11_fn(::TYPES[22/*Uno.Threading.IDispatcherExtensions.Invoke1<object[], object>*/], uPtr(Context())->Dispatcher(), uDelegate::New(::TYPES[23/*Uno.Func<object[], object>*/], uPtr(_jsFunction), offsetof(::g::Fuse::Scripting::Function_type, fp_Call)), args);
 
     return NULL;
 }
 
-// public NativeEvent New(string name, [bool queueEventsBeforeHandlerIsSet]) [static] :866
+// public NativeEvent New(string name, [bool queueEventsBeforeHandlerIsSet]) [static] :13
 NativeEvent* NativeEvent::New4(uString* name, bool queueEventsBeforeHandlerIsSet)
 {
     NativeEvent* obj1 = (NativeEvent*)uNew(NativeEvent_typeof());
@@ -2561,41 +2640,29 @@ NativeEvent* NativeEvent::New4(uString* name, bool queueEventsBeforeHandlerIsSet
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Scripting/1.2.1/$.uno
-// --------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Scripting\1.3.0-rc2\NativeEventEmitterModule.uno
+// -------------------------------------------------------------------------------------------------
 
-// public class NativeEventEmitterModule :919
+// public class NativeEventEmitterModule :9
 // {
 static void NativeEventEmitterModule_build(uType* type)
 {
-    ::STRINGS[25] = uString::Const("error");
-    ::STRINGS[26] = uString::Const("removeAllListeners");
-    ::TYPES[29] = ::g::Uno::Collections::List_typeof()->MakeType(::g::Uno::Tuple2_typeof()->MakeType(uObject_typeof(), ::g::Fuse::Scripting::Callback_typeof(), NULL), NULL);
-    ::TYPES[30] = ::g::Uno::Collections::Queue_typeof()->MakeType(::g::Uno::Action2_typeof()->MakeType(::g::Fuse::Scripting::Context_typeof(), ::g::Fuse::Scripting::Object_typeof(), NULL), NULL);
-    ::TYPES[31] = ::g::Uno::EventHandler_typeof();
-    ::TYPES[3] = ::g::Uno::Action_typeof();
-    ::TYPES[32] = ::g::Uno::Threading::IDispatcherExtensions_typeof()->MakeMethod(2/*Invoke2<Fuse.Scripting.Context, Fuse.Scripting.Object>*/, ::g::Fuse::Scripting::Context_typeof(), ::g::Fuse::Scripting::Object_typeof(), NULL);
-    ::TYPES[33] = ::g::Uno::Action2_typeof()->MakeType(::g::Fuse::Scripting::Context_typeof(), ::g::Fuse::Scripting::Object_typeof(), NULL);
-    ::TYPES[9] = uObject_typeof()->Array();
-    ::TYPES[34] = NativeEventEmitterModule__FactoryClosure1_typeof();
-    ::TYPES[35] = ::g::Uno::Tuple_typeof()->MakeMethod(0/*Create<object, Fuse.Scripting.Callback>*/, uObject_typeof(), ::g::Fuse::Scripting::Callback_typeof(), NULL);
-    ::TYPES[13] = ::g::Fuse::Scripting::Callback_typeof();
-    ::TYPES[2] = ::g::Uno::Threading::IDispatcher_typeof();
-    ::TYPES[36] = ::g::Uno::Collections::List__Enumerator_typeof()->MakeType(::g::Uno::Tuple2_typeof()->MakeType(uObject_typeof(), ::TYPES[13/*Fuse.Scripting.Callback*/], NULL), NULL);
+    type->SetDependencies(
+        ::g::Fuse::Scripting::EventEmitterModule_typeof());
     type->MethodTypes[0]->SetPrecalc(
-        ::TYPES[34/*Fuse.Scripting.NativeEventEmitterModule.FactoryClosure1`1*/]->MakeType(type->MethodTypes[0]->U(0), NULL));
+        NativeEventEmitterModule__FactoryClosure1_typeof()->MakeType(type->MethodTypes[0]->U(0), NULL));
     type->SetInterfaces(
         ::g::Uno::IDisposable_typeof(), offsetof(::g::Fuse::Scripting::NativeModule_type, interface0),
         ::g::Fuse::Scripting::IModuleProvider_typeof(), offsetof(::g::Fuse::Scripting::NativeModule_type, interface1));
     type->SetFields(4,
-        ::g::Fuse::Scripting::Context_typeof(), offsetof(::g::Fuse::Scripting::NativeEventEmitterModule, _context), 0,
-        ::TYPES[9/*object[]*/], offsetof(::g::Fuse::Scripting::NativeEventEmitterModule, _eventNames), 0,
-        ::g::Uno::Bool_typeof(), offsetof(::g::Fuse::Scripting::NativeEventEmitterModule, _initialized), 0,
-        ::TYPES[29/*Uno.Collections.List<Uno.Tuple<object, Fuse.Scripting.Callback>>*/], offsetof(::g::Fuse::Scripting::NativeEventEmitterModule, _listeningCallbacks), 0,
-        uObject_typeof(), offsetof(::g::Fuse::Scripting::NativeEventEmitterModule, _mutex), 0,
-        ::TYPES[30/*Uno.Collections.Queue<Uno.Action<Fuse.Scripting.Context, Fuse.Scripting.Object>>*/], offsetof(::g::Fuse::Scripting::NativeEventEmitterModule, _queuedEvents), 0,
-        ::g::Uno::Bool_typeof(), offsetof(::g::Fuse::Scripting::NativeEventEmitterModule, _queueEventsBeforeInit), 0,
-        ::g::Fuse::Scripting::Object_typeof(), offsetof(::g::Fuse::Scripting::NativeEventEmitterModule, _this), 0);
+        ::g::Fuse::Scripting::Context_typeof(), offsetof(NativeEventEmitterModule, _context), 0,
+        uObject_typeof()->Array(), offsetof(NativeEventEmitterModule, _eventNames), 0,
+        ::g::Uno::Bool_typeof(), offsetof(NativeEventEmitterModule, _initialized), 0,
+        ::g::Uno::Collections::List_typeof()->MakeType(::g::Uno::Tuple2_typeof()->MakeType(uObject_typeof(), ::g::Fuse::Scripting::Callback_typeof(), NULL), NULL), offsetof(NativeEventEmitterModule, _listeningCallbacks), 0,
+        uObject_typeof(), offsetof(NativeEventEmitterModule, _mutex), 0,
+        ::g::Uno::Collections::Queue_typeof()->MakeType(::g::Uno::Action2_typeof()->MakeType(::g::Fuse::Scripting::Context_typeof(), ::g::Fuse::Scripting::Object_typeof(), NULL), NULL), offsetof(NativeEventEmitterModule, _queuedEvents), 0,
+        ::g::Uno::Bool_typeof(), offsetof(NativeEventEmitterModule, _queueEventsBeforeInit), 0,
+        ::g::Fuse::Scripting::Object_typeof(), offsetof(NativeEventEmitterModule, _this), 0);
 }
 
 ::g::Fuse::Scripting::NativeModule_type* NativeEventEmitterModule_typeof()
@@ -2608,10 +2675,11 @@ static void NativeEventEmitterModule_build(uType* type)
     options.FieldCount = 12;
     options.InterfaceCount = 2;
     options.MethodTypeCount = 1;
+    options.DependencyCount = 1;
     options.ObjectSize = sizeof(NativeEventEmitterModule);
     options.TypeSize = sizeof(::g::Fuse::Scripting::NativeModule_type);
     type = (::g::Fuse::Scripting::NativeModule_type*)uClassType::New("Fuse.Scripting.NativeEventEmitterModule", options);
-    type->MethodTypes[0] = type->NewMethodType(1, 1);
+    type->MethodTypes[0] = type->NewMethodType(1, 1,0);
     type->fp_build_ = NativeEventEmitterModule_build;
     type->fp_CreateExportsObject = (void(*)(::g::Fuse::Scripting::Module*, ::g::Fuse::Scripting::Context*, uObject**))NativeEventEmitterModule__CreateExportsObject_fn;
     type->interface1.fp_GetModule = (void(*)(uObject*, ::g::Fuse::Scripting::Module**))::g::Fuse::Scripting::NativeModule__FuseScriptingIModuleProviderGetModule_fn;
@@ -2619,92 +2687,92 @@ static void NativeEventEmitterModule_build(uType* type)
     return type;
 }
 
-// public NativeEventEmitterModule(bool queueEventsBeforeInit, object[] eventNames) :935
+// public NativeEventEmitterModule(bool queueEventsBeforeInit, object[] eventNames) :25
 void NativeEventEmitterModule__ctor_2_fn(NativeEventEmitterModule* __this, bool* queueEventsBeforeInit, uArray* eventNames)
 {
     __this->ctor_2(*queueEventsBeforeInit, eventNames);
 }
 
-// private override sealed object CreateExportsObject(Fuse.Scripting.Context c) :965
+// private override sealed object CreateExportsObject(Fuse.Scripting.Context c) :55
 void NativeEventEmitterModule__CreateExportsObject_fn(NativeEventEmitterModule* __this, ::g::Fuse::Scripting::Context* c, uObject** __retval)
 {
     __this->_context = c;
     __this->_this = uPtr(::g::Fuse::Scripting::EventEmitterModule::GetConstructor(__this->_context))->Construct(__this->_eventNames);
-    ::g::Fuse::Scripting::AppInitialized::On(c, uDelegate::New(::TYPES[3/*Uno.Action*/], (void*)NativeEventEmitterModule__OnAppInitialized_fn, __this));
+    ::g::Fuse::Scripting::AppInitialized::On(c, uDelegate::New(::TYPES[15/*Uno.Action*/], (void*)NativeEventEmitterModule__OnAppInitialized_fn, __this));
     return *__retval = __this->_this, void();
 }
 
-// private void Dispatch(Uno.Action<Fuse.Scripting.Context, Fuse.Scripting.Object> action, [bool alwaysQueueEventBeforeInit]) :1037
+// private void Dispatch(Uno.Action<Fuse.Scripting.Context, Fuse.Scripting.Object> action, [bool alwaysQueueEventBeforeInit]) :127
 void NativeEventEmitterModule__Dispatch_fn(NativeEventEmitterModule* __this, uDelegate* action, bool* alwaysQueueEventBeforeInit)
 {
     __this->Dispatch(action, *alwaysQueueEventBeforeInit);
 }
 
-// protected void Emit(object[] args) :991
+// protected void Emit(object[] args) :81
 void NativeEventEmitterModule__Emit_fn(NativeEventEmitterModule* __this, uArray* args)
 {
     __this->Emit(args);
 }
 
-// protected void EmitError(string reason) :1020
+// protected void EmitError(string reason) :110
 void NativeEventEmitterModule__EmitError_fn(NativeEventEmitterModule* __this, uString* reason)
 {
     __this->EmitError(reason);
 }
 
-// protected void EmitFactory<T>(Uno.Func<Fuse.Scripting.Context, T, object[]> argsFactory, T t) :1013
+// protected void EmitFactory<T>(Uno.Func<Fuse.Scripting.Context, T, object[]> argsFactory, T t) :103
 void NativeEventEmitterModule__EmitFactory1_fn(NativeEventEmitterModule* __this, uType* __type, uDelegate* argsFactory, void* t)
 {
     uType* __types[] = {
         __type->Precalced(0/*Fuse.Scripting.NativeEventEmitterModule.FactoryClosure1<T>*/),
     };
     NativeEventEmitterModule__FactoryClosure1* ret3;
-    __this->Dispatch(uDelegate::New(::TYPES[33/*Uno.Action<Fuse.Scripting.Context, Fuse.Scripting.Object>*/], (void*)NativeEventEmitterModule__FactoryClosure1__Emit_fn, (NativeEventEmitterModule__FactoryClosure1__New1_fn(__types[0], argsFactory, t, &ret3), ret3)), false);
+    __this->Dispatch(uDelegate::New(::g::Uno::Action2_typeof()->MakeType(::g::Fuse::Scripting::Context_typeof(), ::TYPES[11/*Fuse.Scripting.Object*/], NULL), (void*)NativeEventEmitterModule__FactoryClosure1__Emit_fn, (NativeEventEmitterModule__FactoryClosure1__New1_fn(__types[0], argsFactory, t, &ret3), ret3)), false);
 }
 
-// protected void On(object eventName, Fuse.Scripting.Callback listener) :1066
+// protected void On(object eventName, Fuse.Scripting.Callback listener) :156
 void NativeEventEmitterModule__On_fn(NativeEventEmitterModule* __this, uObject* eventName, uDelegate* listener)
 {
     __this->On(eventName, listener);
 }
 
-// protected void On(object eventName, Fuse.Scripting.NativeEvent nativeEvent) :1057
+// protected void On(object eventName, Fuse.Scripting.NativeEvent nativeEvent) :147
 void NativeEventEmitterModule__On1_fn(NativeEventEmitterModule* __this, uObject* eventName, ::g::Fuse::Scripting::NativeEvent* nativeEvent)
 {
     __this->On1(eventName, nativeEvent);
 }
 
-// private void OnAppInitialized() :975
+// private void OnAppInitialized() :65
 void NativeEventEmitterModule__OnAppInitialized_fn(NativeEventEmitterModule* __this)
 {
     __this->OnAppInitialized();
 }
 
-// private void ResetListeners(object sender, Uno.EventArgs eventArgs) :943
+// private void ResetListeners(object sender, Uno.EventArgs eventArgs) :33
 void NativeEventEmitterModule__ResetListeners_fn(NativeEventEmitterModule* __this, uObject* sender, ::g::Uno::EventArgs* eventArgs)
 {
     __this->ResetListeners(sender, eventArgs);
 }
 
-// private void ResetListenersJS() :955
+// private void ResetListenersJS() :45
 void NativeEventEmitterModule__ResetListenersJS_fn(NativeEventEmitterModule* __this)
 {
     __this->ResetListenersJS();
 }
 
-// public NativeEventEmitterModule(bool queueEventsBeforeInit, object[] eventNames) [instance] :935
+// public NativeEventEmitterModule(bool queueEventsBeforeInit, object[] eventNames) [instance] :25
 void NativeEventEmitterModule::ctor_2(bool queueEventsBeforeInit, uArray* eventNames)
 {
-    _listeningCallbacks = ((::g::Uno::Collections::List*)::g::Uno::Collections::List::New1(::TYPES[29/*Uno.Collections.List<Uno.Tuple<object, Fuse.Scripting.Callback>>*/]));
+    _listeningCallbacks = ((::g::Uno::Collections::List*)::g::Uno::Collections::List::New1(::g::Uno::Collections::List_typeof()->MakeType(::g::Uno::Tuple2_typeof()->MakeType(uObject_typeof(), ::TYPES[12/*Fuse.Scripting.Callback*/], NULL), NULL)));
     _mutex = ::g::Uno::Object::New();
-    _queuedEvents = ((::g::Uno::Collections::Queue*)::g::Uno::Collections::Queue::New1(::TYPES[30/*Uno.Collections.Queue<Uno.Action<Fuse.Scripting.Context, Fuse.Scripting.Object>>*/]));
+    _queuedEvents = ((::g::Uno::Collections::Queue*)::g::Uno::Collections::Queue::New1(::g::Uno::Collections::Queue_typeof()->MakeType(::g::Uno::Action2_typeof()->MakeType(::g::Fuse::Scripting::Context_typeof(), ::TYPES[11/*Fuse.Scripting.Object*/], NULL), NULL)));
     ctor_1();
     _queueEventsBeforeInit = queueEventsBeforeInit;
     _eventNames = eventNames;
-    add_Reset(uDelegate::New(::TYPES[31/*Uno.EventHandler*/], (void*)NativeEventEmitterModule__ResetListeners_fn, this));
+    add_Reset(uDelegate::New(::TYPES[26/*Uno.EventHandler*/], (void*)NativeEventEmitterModule__ResetListeners_fn, this));
 }
 
-// private void Dispatch(Uno.Action<Fuse.Scripting.Context, Fuse.Scripting.Object> action, [bool alwaysQueueEventBeforeInit]) [instance] :1037
+// private void Dispatch(Uno.Action<Fuse.Scripting.Context, Fuse.Scripting.Object> action, [bool alwaysQueueEventBeforeInit]) [instance] :127
 void NativeEventEmitterModule::Dispatch(uDelegate* action, bool alwaysQueueEventBeforeInit)
 {
     ::g::Uno::Threading::Monitor::Enter(_mutex);
@@ -2726,22 +2794,22 @@ void NativeEventEmitterModule::Dispatch(uDelegate* action, bool alwaysQueueEvent
         }
     }
 
-    ::g::Uno::Threading::IDispatcherExtensions__Invoke2_fn(::TYPES[32/*Uno.Threading.IDispatcherExtensions.Invoke2<Fuse.Scripting.Context, Fuse.Scripting.Object>*/], uPtr(_context)->Dispatcher(), action, _context, _this);
+    ::g::Uno::Threading::IDispatcherExtensions__Invoke2_fn(::g::Uno::Threading::IDispatcherExtensions_typeof()->MakeMethod(2/*Invoke2<Fuse.Scripting.Context, Fuse.Scripting.Object>*/, ::g::Fuse::Scripting::Context_typeof(), ::TYPES[11/*Fuse.Scripting.Object*/], NULL), uPtr(_context)->Dispatcher(), action, _context, _this);
 }
 
-// protected void Emit(object[] args) [instance] :991
+// protected void Emit(object[] args) [instance] :81
 void NativeEventEmitterModule::Emit(uArray* args)
 {
-    Dispatch(uDelegate::New(::TYPES[33/*Uno.Action<Fuse.Scripting.Context, Fuse.Scripting.Object>*/], (void*)NativeEventEmitterModule__EmitClosure__Emit_fn, NativeEventEmitterModule__EmitClosure::New1(args)), false);
+    Dispatch(uDelegate::New(::g::Uno::Action2_typeof()->MakeType(::g::Fuse::Scripting::Context_typeof(), ::TYPES[11/*Fuse.Scripting.Object*/], NULL), (void*)NativeEventEmitterModule__EmitClosure__Emit_fn, NativeEventEmitterModule__EmitClosure::New1(args)), false);
 }
 
-// protected void EmitError(string reason) [instance] :1020
+// protected void EmitError(string reason) [instance] :110
 void NativeEventEmitterModule::EmitError(uString* reason)
 {
-    Emit(uArray::Init<uObject*>(::TYPES[9/*object[]*/], 2, ::STRINGS[25/*"error"*/], reason));
+    Emit(uArray::Init<uObject*>(::TYPES[7/*object[]*/], 2, uString::Const("error"), reason));
 }
 
-// protected void On(object eventName, Fuse.Scripting.Callback listener) [instance] :1066
+// protected void On(object eventName, Fuse.Scripting.Callback listener) [instance] :156
 void NativeEventEmitterModule::On(uObject* eventName, uDelegate* listener)
 {
     ::g::Uno::Tuple2* ret4;
@@ -2754,19 +2822,19 @@ void NativeEventEmitterModule::On(uObject* eventName, uDelegate* listener)
         };
 
         const uFinally<decltype(__finally_fun)> __f(__finally_fun);
-        ::g::Uno::Collections::List__Add_fn(uPtr(_listeningCallbacks), (::g::Uno::Tuple__Create1_fn(::TYPES[35/*Uno.Tuple.Create<object, Fuse.Scripting.Callback>*/], eventName, listener, &ret4), ret4));
+        ::g::Uno::Collections::List__Add_fn(uPtr(_listeningCallbacks), (::g::Uno::Tuple__Create1_fn(::g::Uno::Tuple_typeof()->MakeMethod(0/*Create<object, Fuse.Scripting.Callback>*/, uObject_typeof(), ::TYPES[12/*Fuse.Scripting.Callback*/], NULL), eventName, listener, &ret4), ret4));
     }
 
-    Dispatch(uDelegate::New(::TYPES[33/*Uno.Action<Fuse.Scripting.Context, Fuse.Scripting.Object>*/], (void*)NativeEventEmitterModule__OnClosure__On_fn, NativeEventEmitterModule__OnClosure::New1(eventName, listener)), true);
+    Dispatch(uDelegate::New(::g::Uno::Action2_typeof()->MakeType(::g::Fuse::Scripting::Context_typeof(), ::TYPES[11/*Fuse.Scripting.Object*/], NULL), (void*)NativeEventEmitterModule__OnClosure__On_fn, NativeEventEmitterModule__OnClosure::New1(eventName, listener)), true);
 }
 
-// protected void On(object eventName, Fuse.Scripting.NativeEvent nativeEvent) [instance] :1057
+// protected void On(object eventName, Fuse.Scripting.NativeEvent nativeEvent) [instance] :147
 void NativeEventEmitterModule::On1(uObject* eventName, ::g::Fuse::Scripting::NativeEvent* nativeEvent)
 {
-    On(eventName, uDelegate::New(::TYPES[13/*Fuse.Scripting.Callback*/], (void*)::g::Fuse::Scripting::NativeEvent__RaiseSync_fn, uPtr(nativeEvent)));
+    On(eventName, uDelegate::New(::TYPES[12/*Fuse.Scripting.Callback*/], (void*)::g::Fuse::Scripting::NativeEvent__RaiseSync_fn, uPtr(nativeEvent)));
 }
 
-// private void OnAppInitialized() [instance] :975
+// private void OnAppInitialized() [instance] :65
 void NativeEventEmitterModule::OnAppInitialized()
 {
     uDelegate* ret5;
@@ -2786,7 +2854,7 @@ void NativeEventEmitterModule::OnAppInitialized()
     }
 }
 
-// private void ResetListeners(object sender, Uno.EventArgs eventArgs) [instance] :943
+// private void ResetListeners(object sender, Uno.EventArgs eventArgs) [instance] :33
 void NativeEventEmitterModule::ResetListeners(uObject* sender, ::g::Uno::EventArgs* eventArgs)
 {
     ::g::Uno::Threading::Monitor::Enter(_mutex);
@@ -2803,16 +2871,16 @@ void NativeEventEmitterModule::ResetListeners(uObject* sender, ::g::Uno::EventAr
     }
 
     if (_context != NULL)
-        ::g::Uno::Threading::IDispatcher::Invoke(uInterface(uPtr(uPtr(_context)->Dispatcher()), ::TYPES[2/*Uno.Threading.IDispatcher*/]), uDelegate::New(::TYPES[3/*Uno.Action*/], (void*)NativeEventEmitterModule__ResetListenersJS_fn, this));
+        ::g::Uno::Threading::IDispatcher::Invoke(uInterface(uPtr(uPtr(_context)->Dispatcher()), ::TYPES[8/*Uno.Threading.IDispatcher*/]), uDelegate::New(::TYPES[15/*Uno.Action*/], (void*)NativeEventEmitterModule__ResetListenersJS_fn, this));
 }
 
-// private void ResetListenersJS() [instance] :955
+// private void ResetListenersJS() [instance] :45
 void NativeEventEmitterModule::ResetListenersJS()
 {
     ::g::Uno::Collections::List__Enumerator<uStrong< ::g::Uno::Tuple2*> > ret6;
     uObject* ret7;
     uDelegate* ret8;
-    uPtr(_this)->CallMethod(::STRINGS[26/*"removeAllLi...*/], uArray::New(::TYPES[9/*object[]*/], 0));
+    uPtr(_this)->CallMethod(uString::Const("removeAllListeners"), uArray::New(::TYPES[7/*object[]*/], 0));
     ::g::Uno::Threading::Monitor::Enter(_mutex);
 
     {
@@ -2822,28 +2890,37 @@ void NativeEventEmitterModule::ResetListenersJS()
         };
 
         const uFinally<decltype(__finally_fun)> __f(__finally_fun);
+        ::g::Uno::Collections::List__Enumerator<uStrong< ::g::Uno::Tuple2*> > enum1 = (::g::Uno::Collections::List__GetEnumerator_fn(uPtr(_listeningCallbacks), &ret6), ret6);
 
-        for (::g::Uno::Collections::List__Enumerator<uStrong< ::g::Uno::Tuple2*> > enum1 = (::g::Uno::Collections::List__GetEnumerator_fn(uPtr(_listeningCallbacks), &ret6), ret6); enum1.MoveNext(::TYPES[36/*Uno.Collections.List<Uno.Tuple<object, Fuse.Scripting.Callback>>.Enumerator*/]); )
         {
-            ::g::Uno::Tuple2* l = enum1.Current(::TYPES[36/*Uno.Collections.List<Uno.Tuple<object, Fuse.Scripting.Callback>>.Enumerator*/]);
-            Dispatch(uDelegate::New(::TYPES[33/*Uno.Action<Fuse.Scripting.Context, Fuse.Scripting.Object>*/], (void*)NativeEventEmitterModule__OnClosure__On_fn, NativeEventEmitterModule__OnClosure::New1((::g::Uno::Tuple2__get_Item1_fn(uPtr(l), &ret7), ret7), (::g::Uno::Tuple2__get_Item2_fn(uPtr(l), &ret8), ret8))), true);
+            const auto __finally_fun = [&]()
+            {
+                enum1.Dispose(::g::Uno::Collections::List__Enumerator_typeof()->MakeType(::g::Uno::Tuple2_typeof()->MakeType(uObject_typeof(), ::TYPES[12/*Fuse.Scripting.Callback*/], NULL), NULL));
+            };
+
+            const uFinally<decltype(__finally_fun)> __f(__finally_fun);
+
+            while (enum1.MoveNext(::g::Uno::Collections::List__Enumerator_typeof()->MakeType(::g::Uno::Tuple2_typeof()->MakeType(uObject_typeof(), ::TYPES[12/*Fuse.Scripting.Callback*/], NULL), NULL)))
+            {
+                ::g::Uno::Tuple2* l = enum1.Current(::g::Uno::Collections::List__Enumerator_typeof()->MakeType(::g::Uno::Tuple2_typeof()->MakeType(uObject_typeof(), ::TYPES[12/*Fuse.Scripting.Callback*/], NULL), NULL));
+                Dispatch(uDelegate::New(::g::Uno::Action2_typeof()->MakeType(::g::Fuse::Scripting::Context_typeof(), ::TYPES[11/*Fuse.Scripting.Object*/], NULL), (void*)NativeEventEmitterModule__OnClosure__On_fn, NativeEventEmitterModule__OnClosure::New1((::g::Uno::Tuple2__get_Item1_fn(uPtr(l), &ret7), ret7), (::g::Uno::Tuple2__get_Item2_fn(uPtr(l), &ret8), ret8))), true);
+            }
         }
     }
 
-    ::g::Fuse::Scripting::AppInitialized::On(_context, uDelegate::New(::TYPES[3/*Uno.Action*/], (void*)NativeEventEmitterModule__OnAppInitialized_fn, this));
+    ::g::Fuse::Scripting::AppInitialized::On(_context, uDelegate::New(::TYPES[15/*Uno.Action*/], (void*)NativeEventEmitterModule__OnAppInitialized_fn, this));
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Scripting/1.2.1/$.uno
-// --------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Scripting\1.3.0-rc2\NativeFunction.uno
+// ---------------------------------------------------------------------------------------
 
-// public sealed class NativeFunction :1149
+// public sealed class NativeFunction :8
 // {
 static void NativeFunction_build(uType* type)
 {
-    ::TYPES[13] = ::g::Fuse::Scripting::Callback_typeof();
     type->SetFields(3,
-        ::g::Fuse::Scripting::NativeCallback_typeof(), offsetof(::g::Fuse::Scripting::NativeFunction, _nativeCallback), 0);
+        ::g::Fuse::Scripting::NativeCallback_typeof(), offsetof(NativeFunction, _nativeCallback), 0);
 }
 
 ::g::Fuse::Scripting::NativeMember_type* NativeFunction_typeof()
@@ -2862,44 +2939,44 @@ static void NativeFunction_build(uType* type)
     return type;
 }
 
-// public NativeFunction(string name, Fuse.Scripting.NativeCallback callback) :1163
+// public NativeFunction(string name, Fuse.Scripting.NativeCallback callback) :22
 void NativeFunction__ctor_1_fn(NativeFunction* __this, uString* name, uDelegate* callback)
 {
     __this->ctor_1(name, callback);
 }
 
-// internal Fuse.Scripting.Callback CreateCallback() :1158
+// internal Fuse.Scripting.Callback CreateCallback() :17
 void NativeFunction__CreateCallback_fn(NativeFunction* __this, uDelegate** __retval)
 {
     *__retval = __this->CreateCallback();
 }
 
-// protected override sealed object CreateObject() :1153
+// protected override sealed object CreateObject() :12
 void NativeFunction__CreateObject_fn(NativeFunction* __this, uObject** __retval)
 {
     return *__retval = __this->CreateCallback(), void();
 }
 
-// public NativeFunction New(string name, Fuse.Scripting.NativeCallback callback) :1163
+// public NativeFunction New(string name, Fuse.Scripting.NativeCallback callback) :22
 void NativeFunction__New1_fn(uString* name, uDelegate* callback, NativeFunction** __retval)
 {
     *__retval = NativeFunction::New1(name, callback);
 }
 
-// public NativeFunction(string name, Fuse.Scripting.NativeCallback callback) [instance] :1163
+// public NativeFunction(string name, Fuse.Scripting.NativeCallback callback) [instance] :22
 void NativeFunction::ctor_1(uString* name, uDelegate* callback)
 {
     ctor_(name);
     _nativeCallback = callback;
 }
 
-// internal Fuse.Scripting.Callback CreateCallback() [instance] :1158
+// internal Fuse.Scripting.Callback CreateCallback() [instance] :17
 uDelegate* NativeFunction::CreateCallback()
 {
-    return uDelegate::New(::TYPES[13/*Fuse.Scripting.Callback*/], (void*)NativeFunction__NativeFunctionClosure__Callback_fn, NativeFunction__NativeFunctionClosure::New1(_nativeCallback, Context()));
+    return uDelegate::New(::TYPES[12/*Fuse.Scripting.Callback*/], (void*)NativeFunction__NativeFunctionClosure__Callback_fn, NativeFunction__NativeFunctionClosure::New1(_nativeCallback, Context()));
 }
 
-// public NativeFunction New(string name, Fuse.Scripting.NativeCallback callback) [static] :1163
+// public NativeFunction New(string name, Fuse.Scripting.NativeCallback callback) [static] :22
 NativeFunction* NativeFunction::New1(uString* name, uDelegate* callback)
 {
     NativeFunction* obj1 = (NativeFunction*)uNew(NativeFunction_typeof());
@@ -2908,16 +2985,16 @@ NativeFunction* NativeFunction::New1(uString* name, uDelegate* callback)
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Scripting/1.2.1/$.uno
-// --------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Scripting\1.3.0-rc2\NativeFunction.uno
+// ---------------------------------------------------------------------------------------
 
-// private sealed class NativeFunction.NativeFunctionClosure :1168
+// private sealed class NativeFunction.NativeFunctionClosure :27
 // {
 static void NativeFunction__NativeFunctionClosure_build(uType* type)
 {
     type->SetFields(0,
-        ::g::Fuse::Scripting::NativeCallback_typeof(), offsetof(::g::Fuse::Scripting::NativeFunction__NativeFunctionClosure, _callback), 0,
-        ::g::Fuse::Scripting::Context_typeof(), offsetof(::g::Fuse::Scripting::NativeFunction__NativeFunctionClosure, _context), 0);
+        ::g::Fuse::Scripting::NativeCallback_typeof(), offsetof(NativeFunction__NativeFunctionClosure, _callback), 0,
+        ::g::Fuse::Scripting::Context_typeof(), offsetof(NativeFunction__NativeFunctionClosure, _context), 0);
 }
 
 uType* NativeFunction__NativeFunctionClosure_typeof()
@@ -2934,38 +3011,38 @@ uType* NativeFunction__NativeFunctionClosure_typeof()
     return type;
 }
 
-// public NativeFunctionClosure(Fuse.Scripting.NativeCallback callback, Fuse.Scripting.Context context) :1173
+// public NativeFunctionClosure(Fuse.Scripting.NativeCallback callback, Fuse.Scripting.Context context) :32
 void NativeFunction__NativeFunctionClosure__ctor__fn(NativeFunction__NativeFunctionClosure* __this, uDelegate* callback, ::g::Fuse::Scripting::Context* context)
 {
     __this->ctor_(callback, context);
 }
 
-// public object Callback(object[] args) :1179
+// public object Callback(object[] args) :38
 void NativeFunction__NativeFunctionClosure__Callback_fn(NativeFunction__NativeFunctionClosure* __this, uArray* args, uObject** __retval)
 {
     *__retval = __this->Callback(args);
 }
 
-// public NativeFunctionClosure New(Fuse.Scripting.NativeCallback callback, Fuse.Scripting.Context context) :1173
+// public NativeFunctionClosure New(Fuse.Scripting.NativeCallback callback, Fuse.Scripting.Context context) :32
 void NativeFunction__NativeFunctionClosure__New1_fn(uDelegate* callback, ::g::Fuse::Scripting::Context* context, NativeFunction__NativeFunctionClosure** __retval)
 {
     *__retval = NativeFunction__NativeFunctionClosure::New1(callback, context);
 }
 
-// public NativeFunctionClosure(Fuse.Scripting.NativeCallback callback, Fuse.Scripting.Context context) [instance] :1173
+// public NativeFunctionClosure(Fuse.Scripting.NativeCallback callback, Fuse.Scripting.Context context) [instance] :32
 void NativeFunction__NativeFunctionClosure::ctor_(uDelegate* callback, ::g::Fuse::Scripting::Context* context)
 {
     _context = context;
     _callback = callback;
 }
 
-// public object Callback(object[] args) [instance] :1179
+// public object Callback(object[] args) [instance] :38
 uObject* NativeFunction__NativeFunctionClosure::Callback(uArray* args)
 {
     return uPtr(_callback)->Invoke(2, (::g::Fuse::Scripting::Context*)_context, args);
 }
 
-// public NativeFunctionClosure New(Fuse.Scripting.NativeCallback callback, Fuse.Scripting.Context context) [static] :1173
+// public NativeFunctionClosure New(Fuse.Scripting.NativeCallback callback, Fuse.Scripting.Context context) [static] :32
 NativeFunction__NativeFunctionClosure* NativeFunction__NativeFunctionClosure::New1(uDelegate* callback, ::g::Fuse::Scripting::Context* context)
 {
     NativeFunction__NativeFunctionClosure* obj1 = (NativeFunction__NativeFunctionClosure*)uNew(NativeFunction__NativeFunctionClosure_typeof());
@@ -2974,17 +3051,17 @@ NativeFunction__NativeFunctionClosure* NativeFunction__NativeFunctionClosure::Ne
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Scripting/1.2.1/$.uno
-// --------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Scripting\1.3.0-rc2\NativeMember.uno
+// -------------------------------------------------------------------------------------
 
-// public abstract class NativeMember :1195
+// public abstract class NativeMember :6
 // {
 static void NativeMember_build(uType* type)
 {
     type->SetFields(0,
-        ::g::Fuse::Scripting::Context_typeof(), offsetof(::g::Fuse::Scripting::NativeMember, _Context), 0,
-        ::g::Fuse::Scripting::Object_typeof(), offsetof(::g::Fuse::Scripting::NativeMember, _ModuleObject), 0,
-        ::g::Uno::String_typeof(), offsetof(::g::Fuse::Scripting::NativeMember, _Name), 0);
+        ::g::Fuse::Scripting::Context_typeof(), offsetof(NativeMember, _Context), 0,
+        ::g::Fuse::Scripting::Object_typeof(), offsetof(NativeMember, _ModuleObject), 0,
+        ::g::Uno::String_typeof(), offsetof(NativeMember, _Name), 0);
 }
 
 NativeMember_type* NativeMember_typeof()
@@ -3001,73 +3078,73 @@ NativeMember_type* NativeMember_typeof()
     return type;
 }
 
-// protected internal NativeMember(string name) :1200
+// protected internal NativeMember(string name) :11
 void NativeMember__ctor__fn(NativeMember* __this, uString* name)
 {
     __this->ctor_(name);
 }
 
-// public generated Fuse.Scripting.Context get_Context() :1198
+// public generated Fuse.Scripting.Context get_Context() :9
 void NativeMember__get_Context_fn(NativeMember* __this, ::g::Fuse::Scripting::Context** __retval)
 {
     *__retval = __this->Context();
 }
 
-// private generated void set_Context(Fuse.Scripting.Context value) :1198
+// private generated void set_Context(Fuse.Scripting.Context value) :9
 void NativeMember__set_Context_fn(NativeMember* __this, ::g::Fuse::Scripting::Context* value)
 {
     __this->Context(value);
 }
 
-// internal void Create(Fuse.Scripting.Object obj, Fuse.Scripting.Context context) :1202
+// internal void Create(Fuse.Scripting.Object obj, Fuse.Scripting.Context context) :13
 void NativeMember__Create_fn(NativeMember* __this, ::g::Fuse::Scripting::Object* obj, ::g::Fuse::Scripting::Context* context)
 {
     __this->Create(obj, context);
 }
 
-// protected generated Fuse.Scripting.Object get_ModuleObject() :1199
+// protected generated Fuse.Scripting.Object get_ModuleObject() :10
 void NativeMember__get_ModuleObject_fn(NativeMember* __this, ::g::Fuse::Scripting::Object** __retval)
 {
     *__retval = __this->ModuleObject();
 }
 
-// private generated void set_ModuleObject(Fuse.Scripting.Object value) :1199
+// private generated void set_ModuleObject(Fuse.Scripting.Object value) :10
 void NativeMember__set_ModuleObject_fn(NativeMember* __this, ::g::Fuse::Scripting::Object* value)
 {
     __this->ModuleObject(value);
 }
 
-// protected generated string get_Name() :1197
+// protected generated string get_Name() :8
 void NativeMember__get_Name_fn(NativeMember* __this, uString** __retval)
 {
     *__retval = __this->Name();
 }
 
-// private generated void set_Name(string value) :1197
+// private generated void set_Name(string value) :8
 void NativeMember__set_Name_fn(NativeMember* __this, uString* value)
 {
     __this->Name(value);
 }
 
-// protected internal NativeMember(string name) [instance] :1200
+// protected internal NativeMember(string name) [instance] :11
 void NativeMember::ctor_(uString* name)
 {
     Name(name);
 }
 
-// public generated Fuse.Scripting.Context get_Context() [instance] :1198
+// public generated Fuse.Scripting.Context get_Context() [instance] :9
 ::g::Fuse::Scripting::Context* NativeMember::Context()
 {
     return _Context;
 }
 
-// private generated void set_Context(Fuse.Scripting.Context value) [instance] :1198
+// private generated void set_Context(Fuse.Scripting.Context value) [instance] :9
 void NativeMember::Context(::g::Fuse::Scripting::Context* value)
 {
     _Context = value;
 }
 
-// internal void Create(Fuse.Scripting.Object obj, Fuse.Scripting.Context context) [instance] :1202
+// internal void Create(Fuse.Scripting.Object obj, Fuse.Scripting.Context context) [instance] :13
 void NativeMember::Create(::g::Fuse::Scripting::Object* obj, ::g::Fuse::Scripting::Context* context)
 {
     ModuleObject(obj);
@@ -3078,50 +3155,52 @@ void NativeMember::Create(::g::Fuse::Scripting::Object* obj, ::g::Fuse::Scriptin
         uPtr(ModuleObject())->Item(Name(), member);
 }
 
-// protected generated Fuse.Scripting.Object get_ModuleObject() [instance] :1199
+// protected generated Fuse.Scripting.Object get_ModuleObject() [instance] :10
 ::g::Fuse::Scripting::Object* NativeMember::ModuleObject()
 {
     return _ModuleObject;
 }
 
-// private generated void set_ModuleObject(Fuse.Scripting.Object value) [instance] :1199
+// private generated void set_ModuleObject(Fuse.Scripting.Object value) [instance] :10
 void NativeMember::ModuleObject(::g::Fuse::Scripting::Object* value)
 {
     _ModuleObject = value;
 }
 
-// protected generated string get_Name() [instance] :1197
+// protected generated string get_Name() [instance] :8
 uString* NativeMember::Name()
 {
     return _Name;
 }
 
-// private generated void set_Name(string value) [instance] :1197
+// private generated void set_Name(string value) [instance] :8
 void NativeMember::Name(uString* value)
 {
     _Name = value;
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Scripting/1.2.1/$.uno
-// --------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Scripting\1.3.0-rc2\NativeModule.uno
+// -------------------------------------------------------------------------------------
 
-// public class NativeModule :1223
+// public class NativeModule :6
 // {
 static void NativeModule_build(uType* type)
 {
-    ::STRINGS[27] = uString::Const("NativeModule(): Cannot add more members after first use");
+    ::STRINGS[25] = uString::Const("NativeModule(): Cannot add more members after first use");
     ::STRINGS[21] = uString::Const("exports");
-    ::TYPES[37] = ::g::Uno::Collections::List_typeof()->MakeType(::g::Fuse::Scripting::NativeMember_typeof(), NULL);
-    ::TYPES[12] = ::g::Fuse::Scripting::Object_typeof();
-    ::TYPES[38] = ::g::Uno::Collections::List__Enumerator_typeof()->MakeType(::g::Fuse::Scripting::NativeMember_typeof(), NULL);
-    ::TYPES[31] = ::g::Uno::EventHandler_typeof();
+    ::TYPES[24] = ::g::Uno::Collections::List_typeof()->MakeType(::g::Fuse::Scripting::NativeMember_typeof(), NULL);
+    ::TYPES[11] = ::g::Fuse::Scripting::Object_typeof();
+    ::TYPES[25] = ::g::Uno::Collections::List__Enumerator_typeof()->MakeType(::g::Fuse::Scripting::NativeMember_typeof(), NULL);
+    ::TYPES[26] = ::g::Uno::EventHandler_typeof();
+    type->SetDependencies(
+        ::g::Uno::EventArgs_typeof());
     type->SetInterfaces(
         ::g::Uno::IDisposable_typeof(), offsetof(NativeModule_type, interface0),
         ::g::Fuse::Scripting::IModuleProvider_typeof(), offsetof(NativeModule_type, interface1));
     type->SetFields(2,
-        ::TYPES[37/*Uno.Collections.List<Fuse.Scripting.NativeMember>*/], offsetof(::g::Fuse::Scripting::NativeModule, _members), 0,
-        ::TYPES[31/*Uno.EventHandler*/], offsetof(::g::Fuse::Scripting::NativeModule, Reset1), 0);
+        ::TYPES[24/*Uno.Collections.List<Fuse.Scripting.NativeMember>*/], offsetof(NativeModule, _members), 0,
+        ::TYPES[26/*Uno.EventHandler*/], offsetof(NativeModule, Reset1), 0);
 }
 
 NativeModule_type* NativeModule_typeof()
@@ -3133,6 +3212,7 @@ NativeModule_type* NativeModule_typeof()
     options.BaseDefinition = ::g::Fuse::Scripting::Module_typeof();
     options.FieldCount = 4;
     options.InterfaceCount = 2;
+    options.DependencyCount = 1;
     options.ObjectSize = sizeof(NativeModule);
     options.TypeSize = sizeof(NativeModule_type);
     type = (NativeModule_type*)uClassType::New("Fuse.Scripting.NativeModule", options);
@@ -3143,19 +3223,19 @@ NativeModule_type* NativeModule_typeof()
     return type;
 }
 
-// public generated NativeModule() :1223
+// public generated NativeModule() :6
 void NativeModule__ctor_1_fn(NativeModule* __this)
 {
     __this->ctor_1();
 }
 
-// protected void AddMember(Fuse.Scripting.NativeMember member) :1240
+// protected void AddMember(Fuse.Scripting.NativeMember member) :23
 void NativeModule__AddMember_fn(NativeModule* __this, ::g::Fuse::Scripting::NativeMember* member)
 {
     __this->AddMember(member);
 }
 
-// public override void Evaluate(Fuse.Scripting.Context c, Fuse.Scripting.ModuleResult result) :1247
+// public override void Evaluate(Fuse.Scripting.Context c, Fuse.Scripting.ModuleResult result) :30
 void NativeModule__Evaluate_fn(NativeModule* __this, ::g::Fuse::Scripting::Context* c, ::g::Fuse::Scripting::ModuleResult* result)
 {
     ::g::Uno::Collections::List__Enumerator<uStrong< ::g::Fuse::Scripting::NativeMember*> > ret3;
@@ -3163,100 +3243,106 @@ void NativeModule__Evaluate_fn(NativeModule* __this, ::g::Fuse::Scripting::Conte
 
     if (module != NULL)
     {
-        ::g::Fuse::Scripting::Object* obj = uAs< ::g::Fuse::Scripting::Object*>(uPtr(module)->Item(::STRINGS[21/*"exports"*/]), ::TYPES[12/*Fuse.Scripting.Object*/]);
+        ::g::Fuse::Scripting::Object* obj = uAs< ::g::Fuse::Scripting::Object*>(uPtr(module)->Item(::STRINGS[21/*"exports"*/]), ::TYPES[11/*Fuse.Scripting.Object*/]);
 
         if (obj != NULL)
+        {
+            ::g::Uno::Collections::List__Enumerator<uStrong< ::g::Fuse::Scripting::NativeMember*> > enum1 = (::g::Uno::Collections::List__GetEnumerator_fn(uPtr(__this->_members), &ret3), ret3);
 
-            for (::g::Uno::Collections::List__Enumerator<uStrong< ::g::Fuse::Scripting::NativeMember*> > enum1 = (::g::Uno::Collections::List__GetEnumerator_fn(uPtr(__this->_members), &ret3), ret3); enum1.MoveNext(::TYPES[38/*Uno.Collections.List<Fuse.Scripting.NativeMember>.Enumerator*/]); )
             {
-                ::g::Fuse::Scripting::NativeMember* m = enum1.Current(::TYPES[38/*Uno.Collections.List<Fuse.Scripting.NativeMember>.Enumerator*/]);
-                uPtr(m)->Create(obj, c);
+                const auto __finally_fun = [&]()
+                {
+                    enum1.Dispose(::TYPES[25/*Uno.Collections.List<Fuse.Scripting.NativeMember>.Enumerator*/]);
+                };
+
+                const uFinally<decltype(__finally_fun)> __f(__finally_fun);
+
+                while (enum1.MoveNext(::TYPES[25/*Uno.Collections.List<Fuse.Scripting.NativeMember>.Enumerator*/]))
+                {
+                    ::g::Fuse::Scripting::NativeMember* m = enum1.Current(::TYPES[25/*Uno.Collections.List<Fuse.Scripting.NativeMember>.Enumerator*/]);
+                    uPtr(m)->Create(obj, c);
+                }
             }
+        }
     }
 }
 
-// private Fuse.Scripting.Module Fuse.Scripting.IModuleProvider.GetModule() :1227
+// private Fuse.Scripting.Module Fuse.Scripting.IModuleProvider.GetModule() :10
 void NativeModule__FuseScriptingIModuleProviderGetModule_fn(NativeModule* __this, ::g::Fuse::Scripting::Module** __retval)
 {
     return *__retval = __this, void();
 }
 
-// internal void InternalReset() :1234
+// internal void InternalReset() :17
 void NativeModule__InternalReset_fn(NativeModule* __this)
 {
     __this->InternalReset();
 }
 
-// public generated void add_Reset(Uno.EventHandler value) :1232
+// public generated void add_Reset(Uno.EventHandler value) :15
 void NativeModule__add_Reset_fn(NativeModule* __this, uDelegate* value)
 {
     __this->add_Reset(value);
 }
 
-// public generated void remove_Reset(Uno.EventHandler value) :1232
+// public generated void remove_Reset(Uno.EventHandler value) :15
 void NativeModule__remove_Reset_fn(NativeModule* __this, uDelegate* value)
 {
     __this->remove_Reset(value);
 }
 
-// public generated NativeModule() [instance] :1223
+// public generated NativeModule() [instance] :6
 void NativeModule::ctor_1()
 {
-    _members = ((::g::Uno::Collections::List*)::g::Uno::Collections::List::New1(::TYPES[37/*Uno.Collections.List<Fuse.Scripting.NativeMember>*/]));
+    _members = ((::g::Uno::Collections::List*)::g::Uno::Collections::List::New1(::TYPES[24/*Uno.Collections.List<Fuse.Scripting.NativeMember>*/]));
     ctor_();
 }
 
-// protected void AddMember(Fuse.Scripting.NativeMember member) [instance] :1240
+// protected void AddMember(Fuse.Scripting.NativeMember member) [instance] :23
 void NativeModule::AddMember(::g::Fuse::Scripting::NativeMember* member)
 {
     if (IsEvaluated())
-        U_THROW(::g::Uno::Exception::New2(::STRINGS[27/*"NativeModul...*/]));
+        U_THROW(::g::Uno::Exception::New2(::STRINGS[25/*"NativeModul...*/]));
 
     ::g::Uno::Collections::List__Add_fn(uPtr(_members), member);
 }
 
-// internal void InternalReset() [instance] :1234
+// internal void InternalReset() [instance] :17
 void NativeModule::InternalReset()
 {
     if (::g::Uno::Delegate::op_Inequality(Reset1, NULL))
-        uPtr(Reset1)->Invoke(2, NULL, (::g::Uno::EventArgs*)::g::Uno::EventArgs::Empty());
+        uPtr(Reset1)->Invoke(2, NULL, (::g::Uno::EventArgs*)::g::Uno::EventArgs::Empty_);
 }
 
-// public generated void add_Reset(Uno.EventHandler value) [instance] :1232
+// public generated void add_Reset(Uno.EventHandler value) [instance] :15
 void NativeModule::add_Reset(uDelegate* value)
 {
-    Reset1 = uCast<uDelegate*>(::g::Uno::Delegate::Combine(Reset1, value), ::TYPES[31/*Uno.EventHandler*/]);
+    Reset1 = uCast<uDelegate*>(::g::Uno::Delegate::Combine(Reset1, value), ::TYPES[26/*Uno.EventHandler*/]);
 }
 
-// public generated void remove_Reset(Uno.EventHandler value) [instance] :1232
+// public generated void remove_Reset(Uno.EventHandler value) [instance] :15
 void NativeModule::remove_Reset(uDelegate* value)
 {
-    Reset1 = uCast<uDelegate*>(::g::Uno::Delegate::Remove(Reset1, value), ::TYPES[31/*Uno.EventHandler*/]);
+    Reset1 = uCast<uDelegate*>(::g::Uno::Delegate::Remove(Reset1, value), ::TYPES[26/*Uno.EventHandler*/]);
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Scripting/1.2.1/$.uno
-// --------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Scripting\1.3.0-rc2\NativePromise.uno
+// --------------------------------------------------------------------------------------
 
-// public sealed class NativePromise<T, TJSResult> :1305
+// public sealed class NativePromise<T, TJSResult> :40
 // {
 static void NativePromise_build(uType* type)
 {
-    ::TYPES[39] = ::g::Fuse::Scripting::FutureFactory_typeof();
-    ::TYPES[13] = ::g::Fuse::Scripting::Callback_typeof();
-    ::TYPES[40] = NativePromise__ContextClosure_typeof();
-    ::TYPES[41] = ::g::Uno::Threading::Promise_typeof();
-    ::TYPES[42] = ::g::Uno::Threading::ThreadStart_typeof();
-    ::TYPES[43] = ::g::Fuse::Scripting::FactoryClosure_typeof();
     type->SetPrecalc(
-        ::g::Fuse::Scripting::FutureFactory_typeof()->MakeType(type->T(0), NULL),
         NativePromise__ContextClosure_typeof()->MakeType(type->T(0), type->T(1), NULL),
-        ::g::Uno::Threading::Promise_typeof()->MakeType(type->T(0), NULL),
-        ::g::Fuse::Scripting::FactoryClosure_typeof()->MakeType(type->T(0), NULL));
+        ::g::Fuse::Scripting::FactoryClosure_typeof()->MakeType(type->T(0), NULL),
+        ::g::Fuse::Scripting::FutureFactory_typeof()->MakeType(type->T(0), NULL),
+        ::g::Uno::Threading::Promise_typeof()->MakeType(type->T(0), NULL));
     type->SetFields(3,
-        ::g::Fuse::Scripting::ResultFactory_typeof()->MakeType(type->T(0), NULL), offsetof(::g::Fuse::Scripting::NativePromise, _func), 0,
-        ::TYPES[39/*Fuse.Scripting.FutureFactory`1*/]->MakeType(type->T(0), NULL), offsetof(::g::Fuse::Scripting::NativePromise, _futureFactory), 0,
-        ::g::Fuse::Scripting::ResultConverter_typeof()->MakeType(type->T(0), type->T(1), NULL), offsetof(::g::Fuse::Scripting::NativePromise, _resultConverter), 0);
+        ::g::Fuse::Scripting::ResultFactory_typeof()->MakeType(type->T(0), NULL), offsetof(NativePromise, _func), 0,
+        ::g::Fuse::Scripting::FutureFactory_typeof()->MakeType(type->T(0), NULL), offsetof(NativePromise, _futureFactory), 0,
+        ::g::Fuse::Scripting::ResultConverter_typeof()->MakeType(type->T(0), type->T(1), NULL), offsetof(NativePromise, _resultConverter), 0);
 }
 
 ::g::Fuse::Scripting::NativeMember_type* NativePromise_typeof()
@@ -3277,46 +3363,46 @@ static void NativePromise_build(uType* type)
     return type;
 }
 
-// public NativePromise(string name, Fuse.Scripting.FutureFactory<T> futureFactory, [Fuse.Scripting.ResultConverter<T, TJSResult> resultConverter]) :1325
+// public NativePromise(string name, Fuse.Scripting.FutureFactory<T> futureFactory, [Fuse.Scripting.ResultConverter<T, TJSResult> resultConverter]) :60
 void NativePromise__ctor_1_fn(NativePromise* __this, uString* name, uDelegate* futureFactory, uDelegate* resultConverter)
 {
     __this->ctor_1(name, futureFactory, resultConverter);
 }
 
-// public NativePromise(string name, Fuse.Scripting.ResultFactory<T> func, [Fuse.Scripting.ResultConverter<T, TJSResult> resultConverter]) :1311
+// public NativePromise(string name, Fuse.Scripting.ResultFactory<T> func, [Fuse.Scripting.ResultConverter<T, TJSResult> resultConverter]) :46
 void NativePromise__ctor_2_fn(NativePromise* __this, uString* name, uDelegate* func, uDelegate* resultConverter)
 {
     __this->ctor_2(name, func, resultConverter);
 }
 
-// protected override sealed object CreateObject() :1331
+// protected override sealed object CreateObject() :66
 void NativePromise__CreateObject_fn(NativePromise* __this, uObject** __retval)
 {
     uType* __types[] = {
-        __this->__type->Precalced(1/*Fuse.Scripting.NativePromise<T, TJSResult>.ContextClosure*/),
+        __this->__type->Precalced(0/*Fuse.Scripting.NativePromise<T, TJSResult>.ContextClosure*/),
     };
-    return *__retval = uDelegate::New(::TYPES[13/*Fuse.Scripting.Callback*/], (void*)NativePromise__ContextClosure__CreatePromise_fn, NativePromise__ContextClosure::New1(__types[0], __this->Context(), __this->_futureFactory, __this->_resultConverter)), void();
+    return *__retval = uDelegate::New(::TYPES[12/*Fuse.Scripting.Callback*/], (void*)NativePromise__ContextClosure__CreatePromise_fn, NativePromise__ContextClosure::New1(__types[0], __this->Context(), __this->_futureFactory, __this->_resultConverter)), void();
 }
 
-// private Uno.Threading.Future<T> Factory(object[] args) :1318
+// private Uno.Threading.Future<T> Factory(object[] args) :53
 void NativePromise__Factory_fn(NativePromise* __this, uArray* args, ::g::Uno::Threading::Future1** __retval)
 {
     *__retval = __this->Factory(args);
 }
 
-// public NativePromise New(string name, Fuse.Scripting.FutureFactory<T> futureFactory, [Fuse.Scripting.ResultConverter<T, TJSResult> resultConverter]) :1325
+// public NativePromise New(string name, Fuse.Scripting.FutureFactory<T> futureFactory, [Fuse.Scripting.ResultConverter<T, TJSResult> resultConverter]) :60
 void NativePromise__New1_fn(uType* __type, uString* name, uDelegate* futureFactory, uDelegate* resultConverter, NativePromise** __retval)
 {
     *__retval = NativePromise::New1(__type, name, futureFactory, resultConverter);
 }
 
-// public NativePromise New(string name, Fuse.Scripting.ResultFactory<T> func, [Fuse.Scripting.ResultConverter<T, TJSResult> resultConverter]) :1311
+// public NativePromise New(string name, Fuse.Scripting.ResultFactory<T> func, [Fuse.Scripting.ResultConverter<T, TJSResult> resultConverter]) :46
 void NativePromise__New2_fn(uType* __type, uString* name, uDelegate* func, uDelegate* resultConverter, NativePromise** __retval)
 {
     *__retval = NativePromise::New2(__type, name, func, resultConverter);
 }
 
-// public NativePromise(string name, Fuse.Scripting.FutureFactory<T> futureFactory, [Fuse.Scripting.ResultConverter<T, TJSResult> resultConverter]) [instance] :1325
+// public NativePromise(string name, Fuse.Scripting.FutureFactory<T> futureFactory, [Fuse.Scripting.ResultConverter<T, TJSResult> resultConverter]) [instance] :60
 void NativePromise::ctor_1(uString* name, uDelegate* futureFactory, uDelegate* resultConverter)
 {
     ctor_(name);
@@ -3324,11 +3410,11 @@ void NativePromise::ctor_1(uString* name, uDelegate* futureFactory, uDelegate* r
     _resultConverter = resultConverter;
 }
 
-// public NativePromise(string name, Fuse.Scripting.ResultFactory<T> func, [Fuse.Scripting.ResultConverter<T, TJSResult> resultConverter]) [instance] :1311
+// public NativePromise(string name, Fuse.Scripting.ResultFactory<T> func, [Fuse.Scripting.ResultConverter<T, TJSResult> resultConverter]) [instance] :46
 void NativePromise::ctor_2(uString* name, uDelegate* func, uDelegate* resultConverter)
 {
     uType* __types[] = {
-        __type->Precalced(0/*Fuse.Scripting.FutureFactory<T>*/),
+        __type->Precalced(2/*Fuse.Scripting.FutureFactory<T>*/),
     };
     ctor_(name);
     _func = func;
@@ -3336,19 +3422,19 @@ void NativePromise::ctor_2(uString* name, uDelegate* func, uDelegate* resultConv
     _resultConverter = resultConverter;
 }
 
-// private Uno.Threading.Future<T> Factory(object[] args) [instance] :1318
+// private Uno.Threading.Future<T> Factory(object[] args) [instance] :53
 ::g::Uno::Threading::Future1* NativePromise::Factory(uArray* args)
 {
     uType* __types[] = {
-        __type->Precalced(2/*Uno.Threading.Promise<T>*/),
-        __type->Precalced(3/*Fuse.Scripting.FactoryClosure<T>*/),
+        __type->Precalced(3/*Uno.Threading.Promise<T>*/),
+        __type->Precalced(1/*Fuse.Scripting.FactoryClosure<T>*/),
     };
     ::g::Uno::Threading::Promise* future = (::g::Uno::Threading::Promise*)::g::Uno::Threading::Promise::New1(__types[0]);
-    ::g::Uno::Threading::Thread::New2(uDelegate::New(::TYPES[42/*Uno.Threading.ThreadStart*/], (void*)::g::Fuse::Scripting::FactoryClosure__Run_fn, (::g::Fuse::Scripting::FactoryClosure*)::g::Fuse::Scripting::FactoryClosure::New1(__types[1], _func, args, future)))->Start();
+    ::g::Uno::Threading::Thread::New2(uDelegate::New(::g::Uno::Threading::ThreadStart_typeof(), (void*)::g::Fuse::Scripting::FactoryClosure__Run_fn, (::g::Fuse::Scripting::FactoryClosure*)::g::Fuse::Scripting::FactoryClosure::New1(__types[1], _func, args, future)))->Start();
     return future;
 }
 
-// public NativePromise New(string name, Fuse.Scripting.FutureFactory<T> futureFactory, [Fuse.Scripting.ResultConverter<T, TJSResult> resultConverter]) [static] :1325
+// public NativePromise New(string name, Fuse.Scripting.FutureFactory<T> futureFactory, [Fuse.Scripting.ResultConverter<T, TJSResult> resultConverter]) [static] :60
 NativePromise* NativePromise::New1(uType* __type, uString* name, uDelegate* futureFactory, uDelegate* resultConverter)
 {
     NativePromise* obj2 = (NativePromise*)uNew(__type);
@@ -3356,7 +3442,7 @@ NativePromise* NativePromise::New1(uType* __type, uString* name, uDelegate* futu
     return obj2;
 }
 
-// public NativePromise New(string name, Fuse.Scripting.ResultFactory<T> func, [Fuse.Scripting.ResultConverter<T, TJSResult> resultConverter]) [static] :1311
+// public NativePromise New(string name, Fuse.Scripting.ResultFactory<T> func, [Fuse.Scripting.ResultConverter<T, TJSResult> resultConverter]) [static] :46
 NativePromise* NativePromise::New2(uType* __type, uString* name, uDelegate* func, uDelegate* resultConverter)
 {
     NativePromise* obj1 = (NativePromise*)uNew(__type);
@@ -3365,27 +3451,25 @@ NativePromise* NativePromise::New2(uType* __type, uString* name, uDelegate* func
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Scripting/1.2.1/$.uno
-// --------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Scripting\1.3.0-rc2\NativeProperty.uno
+// ---------------------------------------------------------------------------------------
 
-// public class NativeProperty<T, TJSValue> :1425
+// public class NativeProperty<T, TJSValue> :8
 // {
 static void NativeProperty_build(uType* type)
 {
-    ::TYPES[13] = ::g::Fuse::Scripting::Callback_typeof();
-    ::TYPES[44] = ::g::Uno::Func_typeof();
-    ::TYPES[45] = ::g::Uno::Action1_typeof();
+    ::TYPES[12] = ::g::Fuse::Scripting::Callback_typeof();
+    ::TYPES[27] = ::g::Uno::Func_typeof();
+    ::TYPES[28] = ::g::Uno::Action1_typeof();
     type->SetPrecalc(
-        type->T(1),
-        type->T(0),
-        ::g::Uno::Func_typeof()->MakeType(type->T(0), NULL),
-        ::g::Uno::Action1_typeof()->MakeType(type->T(1), NULL));
+        ::g::Uno::Action1_typeof()->MakeType(type->T(1), NULL),
+        ::g::Uno::Func_typeof()->MakeType(type->T(0), NULL));
     type->SetFields(3,
-        ::TYPES[44/*Uno.Func`1*/]->MakeType(type->T(0), NULL), offsetof(::g::Fuse::Scripting::NativeProperty, _getHandler), 0,
-        ::g::Uno::Bool_typeof(), offsetof(::g::Fuse::Scripting::NativeProperty, _isReadonly), 0,
+        ::TYPES[27/*Uno.Func`1*/]->MakeType(type->T(0), NULL), offsetof(NativeProperty, _getHandler), 0,
+        ::g::Uno::Bool_typeof(), offsetof(NativeProperty, _isReadonly), 0,
         type->T(1), (uintptr_t)0, uFieldFlagsConstrained,
-        ::TYPES[45/*Uno.Action`1*/]->MakeType(type->T(1), NULL), offsetof(::g::Fuse::Scripting::NativeProperty, _setHandler), 0,
-        ::g::Fuse::Scripting::ValueConverter_typeof()->MakeType(type->T(0), type->T(1), NULL), offsetof(::g::Fuse::Scripting::NativeProperty, _valueConverter), 0);
+        ::TYPES[28/*Uno.Action`1*/]->MakeType(type->T(1), NULL), offsetof(NativeProperty, _setHandler), 0,
+        ::g::Fuse::Scripting::ValueConverter_typeof()->MakeType(type->T(0), type->T(1), NULL), offsetof(NativeProperty, _valueConverter), 0);
 }
 
 NativeProperty_type* NativeProperty_typeof()
@@ -3397,7 +3481,7 @@ NativeProperty_type* NativeProperty_typeof()
     options.BaseDefinition = ::g::Fuse::Scripting::NativeMember_typeof();
     options.FieldCount = 8;
     options.GenericCount = 2;
-    options.PrecalcCount = 4;
+    options.PrecalcCount = 2;
     options.ObjectSize = sizeof(NativeProperty);
     options.TypeSize = sizeof(NativeProperty_type);
     type = (NativeProperty_type*)uClassType::New("Fuse.Scripting.NativeProperty`2", options);
@@ -3408,19 +3492,19 @@ NativeProperty_type* NativeProperty_typeof()
     return type;
 }
 
-// public NativeProperty(string name) :1433
+// public NativeProperty(string name) :16
 void NativeProperty__ctor_1_fn(NativeProperty* __this, uString* name)
 {
     __this->ctor_1(name);
 }
 
-// public NativeProperty(string name, [Uno.Func<T> getHandler], [Uno.Action<TJSValue> setHandler], [Fuse.Scripting.ValueConverter<T, TJSValue> valueConverter]) :1442
+// public NativeProperty(string name, [Uno.Func<T> getHandler], [Uno.Action<TJSValue> setHandler], [Fuse.Scripting.ValueConverter<T, TJSValue> valueConverter]) :25
 void NativeProperty__ctor_2_fn(NativeProperty* __this, uString* name, uDelegate* getHandler, uDelegate* setHandler, uDelegate* valueConverter)
 {
     __this->ctor_2(name, getHandler, setHandler, valueConverter);
 }
 
-// public NativeProperty(string name, TJSValue value) :1436
+// public NativeProperty(string name, TJSValue value) :19
 void NativeProperty__ctor_3_fn(NativeProperty* __this, uString* name, void* value)
 {
     __this->ctor_2(name, NULL, NULL, NULL);
@@ -3428,36 +3512,36 @@ void NativeProperty__ctor_3_fn(NativeProperty* __this, uString* name, void* valu
     __this->_readonlyValue() = value;
 }
 
-// protected override sealed object CreateObject() :1450
+// protected override sealed object CreateObject() :33
 void NativeProperty__CreateObject_fn(NativeProperty* __this, uObject** __retval)
 {
     if (__this->_isReadonly)
         uPtr(__this->Context())->ObjectDefineProperty1(__this->ModuleObject(), __this->Name(), uBoxPtr(__this->__type->GetBase(NativeProperty_typeof())->T(1), __this->_readonlyValue()), false, false);
     else
-        uPtr(__this->Context())->ObjectDefineProperty(__this->ModuleObject(), __this->Name(), uDelegate::New(::TYPES[13/*Fuse.Scripting.Callback*/], (void*)NativeProperty__GetProperty1_fn, __this), uDelegate::New(::TYPES[13/*Fuse.Scripting.Callback*/], (void*)NativeProperty__SetProperty_fn, __this), false, false);
+        uPtr(__this->Context())->ObjectDefineProperty(__this->ModuleObject(), __this->Name(), uDelegate::New(::TYPES[12/*Fuse.Scripting.Callback*/], (void*)NativeProperty__GetProperty1_fn, __this), uDelegate::New(::TYPES[12/*Fuse.Scripting.Callback*/], (void*)NativeProperty__SetProperty_fn, __this), false, false);
 
     return *__retval = NULL, void();
 }
 
-// protected virtual T GetProperty() :1480
+// protected virtual T GetProperty() :63
 void NativeProperty__GetProperty_fn(NativeProperty* __this, uTRef __retval)
 {
     return __retval.Store(__this->__type->GetBase(NativeProperty_typeof())->T(0), uT(__this->__type->GetBase(NativeProperty_typeof())->T(0), U_ALLOCA(__this->__type->GetBase(NativeProperty_typeof())->T(0)->ValueSize))), void();
 }
 
-// private object GetProperty(object[] args) :1470
+// private object GetProperty(object[] args) :53
 void NativeProperty__GetProperty1_fn(NativeProperty* __this, uArray* args, uObject** __retval)
 {
     *__retval = __this->GetProperty1(args);
 }
 
-// public NativeProperty New(string name, [Uno.Func<T> getHandler], [Uno.Action<TJSValue> setHandler], [Fuse.Scripting.ValueConverter<T, TJSValue> valueConverter]) :1442
+// public NativeProperty New(string name, [Uno.Func<T> getHandler], [Uno.Action<TJSValue> setHandler], [Fuse.Scripting.ValueConverter<T, TJSValue> valueConverter]) :25
 void NativeProperty__New2_fn(uType* __type, uString* name, uDelegate* getHandler, uDelegate* setHandler, uDelegate* valueConverter, NativeProperty** __retval)
 {
     *__retval = NativeProperty::New2(__type, name, getHandler, setHandler, valueConverter);
 }
 
-// public NativeProperty New(string name, TJSValue value) :1436
+// public NativeProperty New(string name, TJSValue value) :19
 void NativeProperty__New3_fn(uType* __type, uString* name, void* value, NativeProperty** __retval)
 {
     NativeProperty* obj2 = (NativeProperty*)uNew(__type);
@@ -3465,24 +3549,24 @@ void NativeProperty__New3_fn(uType* __type, uString* name, void* value, NativePr
     return *__retval = obj2, void();
 }
 
-// private object SetProperty(object[] args) :1460
+// private object SetProperty(object[] args) :43
 void NativeProperty__SetProperty_fn(NativeProperty* __this, uArray* args, uObject** __retval)
 {
     *__retval = __this->SetProperty(args);
 }
 
-// protected virtual void SetProperty(TJSValue value) :1468
+// protected virtual void SetProperty(TJSValue value) :51
 void NativeProperty__SetProperty1_fn(NativeProperty* __this, void* value)
 {
 }
 
-// public NativeProperty(string name) [instance] :1433
+// public NativeProperty(string name) [instance] :16
 void NativeProperty::ctor_1(uString* name)
 {
     ctor_2(name, NULL, NULL, NULL);
 }
 
-// public NativeProperty(string name, [Uno.Func<T> getHandler], [Uno.Action<TJSValue> setHandler], [Fuse.Scripting.ValueConverter<T, TJSValue> valueConverter]) [instance] :1442
+// public NativeProperty(string name, [Uno.Func<T> getHandler], [Uno.Action<TJSValue> setHandler], [Fuse.Scripting.ValueConverter<T, TJSValue> valueConverter]) [instance] :25
 void NativeProperty::ctor_2(uString* name, uDelegate* getHandler, uDelegate* setHandler, uDelegate* valueConverter)
 {
     ctor_(name);
@@ -3491,43 +3575,40 @@ void NativeProperty::ctor_2(uString* name, uDelegate* getHandler, uDelegate* set
     _valueConverter = valueConverter;
 }
 
-// private object GetProperty(object[] args) [instance] :1470
+// private object GetProperty(object[] args) [instance] :53
 uObject* NativeProperty::GetProperty1(uArray* args)
 {
     uType* __types[] = {
-        __type->GetBase(NativeProperty_typeof())->Precalced(0/*TJSValue*/),
-        __type->GetBase(NativeProperty_typeof())->Precalced(1/*T*/),
-        __type->GetBase(NativeProperty_typeof())->Precalced(2/*Uno.Func<T>*/),
+        __type->GetBase(NativeProperty_typeof())->Precalced(1/*Uno.Func<T>*/),
     };
-    uT ret4(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    uT ret5(__types[1], U_ALLOCA(__types[1]->ValueSize));
-    uT ret6(__types[1], U_ALLOCA(__types[1]->ValueSize));
+    uT ret4(__type->GetBase(NativeProperty_typeof())->T(1), U_ALLOCA(__type->GetBase(NativeProperty_typeof())->T(1)->ValueSize));
+    uT ret5(__type->GetBase(NativeProperty_typeof())->T(0), U_ALLOCA(__type->GetBase(NativeProperty_typeof())->T(0)->ValueSize));
+    uT ret6(__type->GetBase(NativeProperty_typeof())->T(0), U_ALLOCA(__type->GetBase(NativeProperty_typeof())->T(0)->ValueSize));
 
     if (::g::Uno::Delegate::op_Equality(_getHandler, NULL))
-        _getHandler = uDelegate::New(__types[2], this, offsetof(NativeProperty_type, fp_GetProperty));
+        _getHandler = uDelegate::New(__types[0], this, offsetof(NativeProperty_type, fp_GetProperty));
 
     if (::g::Uno::Delegate::op_Inequality(_valueConverter, NULL))
-        return uBoxPtr(__types[0], (uPtr(_valueConverter)->Invoke(&ret4, 2, (::g::Fuse::Scripting::Context*)Context(), (uPtr(_getHandler)->Invoke(&ret5), (void*)ret5)), ret4));
+        return uBoxPtr(__type->GetBase(NativeProperty_typeof())->T(1), (uPtr(_valueConverter)->Invoke(&ret4, 2, (::g::Fuse::Scripting::Context*)Context(), (uPtr(_getHandler)->Invoke(&ret5), (void*)ret5)), ret4));
 
-    return uBoxPtr(__types[1], (uPtr(_getHandler)->Invoke(&ret6), ret6));
+    return uBoxPtr(__type->GetBase(NativeProperty_typeof())->T(0), (uPtr(_getHandler)->Invoke(&ret6), ret6));
 }
 
-// private object SetProperty(object[] args) [instance] :1460
+// private object SetProperty(object[] args) [instance] :43
 uObject* NativeProperty::SetProperty(uArray* args)
 {
     uType* __types[] = {
-        __type->GetBase(NativeProperty_typeof())->Precalced(3/*Uno.Action<TJSValue>*/),
-        __type->GetBase(NativeProperty_typeof())->Precalced(0/*TJSValue*/),
+        __type->GetBase(NativeProperty_typeof())->Precalced(0/*Uno.Action<TJSValue>*/),
     };
 
     if (::g::Uno::Delegate::op_Equality(_setHandler, NULL))
         _setHandler = uDelegate::New(__types[0], this, offsetof(NativeProperty_type, fp_SetProperty1));
 
-    uPtr(_setHandler)->InvokeVoid(((uPtr(args)->Length() > 0) && uIs((uObject*)uPtr(args)->Strong<uObject*>(0), __types[1])) ? (void*)uUnboxAny(__types[1], uPtr(args)->Strong<uObject*>(0)) : (void*)uT(__types[1], U_ALLOCA(__types[1]->ValueSize)));
+    uPtr(_setHandler)->InvokeVoid(((uPtr(args)->Length() > 0) && uIs((uObject*)uPtr(args)->Strong<uObject*>(0), __type->GetBase(NativeProperty_typeof())->T(1))) ? (void*)uUnboxAny(__type->GetBase(NativeProperty_typeof())->T(1), uPtr(args)->Strong<uObject*>(0)) : (void*)uT(__type->GetBase(NativeProperty_typeof())->T(1), U_ALLOCA(__type->GetBase(NativeProperty_typeof())->T(1)->ValueSize)));
     return NULL;
 }
 
-// public NativeProperty New(string name, [Uno.Func<T> getHandler], [Uno.Action<TJSValue> setHandler], [Fuse.Scripting.ValueConverter<T, TJSValue> valueConverter]) [static] :1442
+// public NativeProperty New(string name, [Uno.Func<T> getHandler], [Uno.Action<TJSValue> setHandler], [Fuse.Scripting.ValueConverter<T, TJSValue> valueConverter]) [static] :25
 NativeProperty* NativeProperty::New2(uType* __type, uString* name, uDelegate* getHandler, uDelegate* setHandler, uDelegate* valueConverter)
 {
     NativeProperty* obj3 = (NativeProperty*)uNew(__type);
@@ -3536,20 +3617,22 @@ NativeProperty* NativeProperty::New2(uType* __type, uString* name, uDelegate* ge
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Scripting/1.2.1/$.uno
-// --------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Scripting\1.3.0-rc2\JSCallback.uno
+// -----------------------------------------------------------------------------------
 
-// public static class JSCallback.NumberConverter :521
+// public static class JSCallback.NumberConverter :163
 // {
 static void JSCallback__NumberConverter_build(uType* type)
 {
     ::TYPES[1] = ::g::Uno::Type_typeof();
-    ::TYPES[46] = ::g::Uno::Short_typeof();
-    ::TYPES[47] = ::g::Uno::Int_typeof();
-    ::TYPES[48] = ::g::Uno::Long_typeof();
-    ::TYPES[49] = ::g::Uno::Float_typeof();
-    ::TYPES[50] = ::g::Uno::Double_typeof();
-    ::TYPES[15] = ::g::Uno::Exception_typeof();
+    ::TYPES[29] = ::g::Uno::Short_typeof();
+    ::TYPES[30] = ::g::Uno::Int_typeof();
+    ::TYPES[31] = ::g::Uno::Long_typeof();
+    ::TYPES[32] = ::g::Uno::Float_typeof();
+    ::TYPES[33] = ::g::Uno::Double_typeof();
+    ::TYPES[14] = ::g::Uno::Exception_typeof();
+    type->SetDependencies(
+        ::g::Uno::Type_typeof());
     type->MethodTypes[1]->SetPrecalc(
         type->MakeMethod(0/*Convert<TValue>*/, type->MethodTypes[1]->U(0), NULL));
 }
@@ -3561,69 +3644,69 @@ uClassType* JSCallback__NumberConverter_typeof()
 
     uTypeOptions options;
     options.MethodTypeCount = 2;
+    options.DependencyCount = 1;
     options.TypeSize = sizeof(uClassType);
     type = uClassType::New("Fuse.Scripting.JSCallback.NumberConverter", options);
-    type->MethodTypes[0] = type->NewMethodType(1, 0);
-    type->MethodTypes[1] = type->NewMethodType(1, 1);
+    type->MethodTypes[0] = type->NewMethodType(1, 0,0);
+    type->MethodTypes[1] = type->NewMethodType(1, 1,0);
     type->fp_build_ = JSCallback__NumberConverter_build;
     return type;
 }
 
-// private static object Convert(double value, Uno.Type targetType) :586
+// private static object Convert(double value, Uno.Type targetType) :228
 void JSCallback__NumberConverter__Convert_fn(double* value, uType* targetType, uObject** __retval)
 {
     *__retval = JSCallback__NumberConverter::Convert(*value, targetType);
 }
 
-// private static object Convert(float value, Uno.Type targetType) :577
+// private static object Convert(float value, Uno.Type targetType) :219
 void JSCallback__NumberConverter__Convert1_fn(float* value, uType* targetType, uObject** __retval)
 {
     *__retval = JSCallback__NumberConverter::Convert1(*value, targetType);
 }
 
-// private static object Convert(int value, Uno.Type targetType) :559
+// private static object Convert(int value, Uno.Type targetType) :201
 void JSCallback__NumberConverter__Convert2_fn(int* value, uType* targetType, uObject** __retval)
 {
     *__retval = JSCallback__NumberConverter::Convert2(*value, targetType);
 }
 
-// private static object Convert(long value, Uno.Type targetType) :568
+// private static object Convert(long value, Uno.Type targetType) :210
 void JSCallback__NumberConverter__Convert3_fn(int64_t* value, uType* targetType, uObject** __retval)
 {
     *__retval = JSCallback__NumberConverter::Convert3(*value, targetType);
 }
 
-// private static object Convert(short value, Uno.Type targetType) :550
+// private static object Convert(short value, Uno.Type targetType) :192
 void JSCallback__NumberConverter__Convert4_fn(int16_t* value, uType* targetType, uObject** __retval)
 {
     *__retval = JSCallback__NumberConverter::Convert4(*value, targetType);
 }
 
-// public static object Convert(Uno.Type targetType, object value) :540
+// public static object Convert(Uno.Type targetType, object value) :182
 void JSCallback__NumberConverter__Convert5_fn(uType* targetType, uObject* value, uObject** __retval)
 {
     *__retval = JSCallback__NumberConverter::Convert5(targetType, value);
 }
 
-// public static TValue Convert<TValue>(object value) :535
+// public static TValue Convert<TValue>(object value) :177
 void JSCallback__NumberConverter__Convert6_fn(uType* __type, uObject* value, uTRef __retval)
 {
     return __retval.Store(__type->U(0), uUnboxAny(__type->U(0), JSCallback__NumberConverter::Convert5(__type->U(0), value))), void();
 }
 
-// public static bool TryConvert<TValue>(object value, TValue& convertedValue) :523
+// public static bool TryConvert<TValue>(object value, TValue& convertedValue) :165
 void JSCallback__NumberConverter__TryConvert_fn(uType* __type, uObject* value, uTRef convertedValue, bool* __retval)
 {
     uType* __types[] = {
-        __type->U(0),
         __type->Precalced(0/*Fuse.Scripting.JSCallback.NumberConverter.Convert<TValue>*/),
     };
-    uT ret1(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    convertedValue.Default(__types[0]);
+    uT ret1(__type->U(0), U_ALLOCA(__type->U(0)->ValueSize));
+    convertedValue.Default(__type->U(0));
 
     try
     {
-        convertedValue.Store((JSCallback__NumberConverter__Convert6_fn(__types[1], value, &ret1), ret1));
+        convertedValue.Store((JSCallback__NumberConverter__Convert6_fn(__types[0], value, &ret1), ret1));
         return *__retval = true, void();
     }
     catch (const uThrowable& __t)
@@ -3634,122 +3717,122 @@ void JSCallback__NumberConverter__TryConvert_fn(uType* __type, uObject* value, u
     return *__retval = false, void();
 }
 
-// private static object Convert(double value, Uno.Type targetType) [static] :586
+// private static object Convert(double value, Uno.Type targetType) [static] :228
 uObject* JSCallback__NumberConverter::Convert(double value, uType* targetType)
 {
-    if (::g::Uno::Type::op_Equality(targetType, ::TYPES[46/*short*/]))
-        return uBox<int16_t>(::TYPES[46/*short*/], (int16_t)value);
+    if (::g::Uno::Type::op_Equality(targetType, ::TYPES[29/*short*/]))
+        return uBox<int16_t>(::TYPES[29/*short*/], (int16_t)value);
 
-    if (::g::Uno::Type::op_Equality(targetType, ::TYPES[47/*int*/]))
-        return uBox<int>(::TYPES[47/*int*/], (int)value);
+    if (::g::Uno::Type::op_Equality(targetType, ::TYPES[30/*int*/]))
+        return uBox<int>(::TYPES[30/*int*/], (int)value);
 
-    if (::g::Uno::Type::op_Equality(targetType, ::TYPES[48/*long*/]))
-        return uBox<int64_t>(::TYPES[48/*long*/], (int64_t)value);
+    if (::g::Uno::Type::op_Equality(targetType, ::TYPES[31/*long*/]))
+        return uBox<int64_t>(::TYPES[31/*long*/], (int64_t)value);
 
-    if (::g::Uno::Type::op_Equality(targetType, ::TYPES[49/*float*/]))
-        return uBox(::TYPES[49/*float*/], (float)value);
+    if (::g::Uno::Type::op_Equality(targetType, ::TYPES[32/*float*/]))
+        return uBox(::TYPES[32/*float*/], (float)value);
 
-    return uBox(::TYPES[50/*double*/], value);
+    return uBox(::TYPES[33/*double*/], value);
 }
 
-// private static object Convert(float value, Uno.Type targetType) [static] :577
+// private static object Convert(float value, Uno.Type targetType) [static] :219
 uObject* JSCallback__NumberConverter::Convert1(float value, uType* targetType)
 {
-    if (::g::Uno::Type::op_Equality(targetType, ::TYPES[46/*short*/]))
-        return uBox<int16_t>(::TYPES[46/*short*/], (int16_t)value);
+    if (::g::Uno::Type::op_Equality(targetType, ::TYPES[29/*short*/]))
+        return uBox<int16_t>(::TYPES[29/*short*/], (int16_t)value);
 
-    if (::g::Uno::Type::op_Equality(targetType, ::TYPES[47/*int*/]))
-        return uBox<int>(::TYPES[47/*int*/], (int)value);
+    if (::g::Uno::Type::op_Equality(targetType, ::TYPES[30/*int*/]))
+        return uBox<int>(::TYPES[30/*int*/], (int)value);
 
-    if (::g::Uno::Type::op_Equality(targetType, ::TYPES[48/*long*/]))
-        return uBox<int64_t>(::TYPES[48/*long*/], (int64_t)value);
+    if (::g::Uno::Type::op_Equality(targetType, ::TYPES[31/*long*/]))
+        return uBox<int64_t>(::TYPES[31/*long*/], (int64_t)value);
 
-    if (::g::Uno::Type::op_Equality(targetType, ::TYPES[50/*double*/]))
-        return uBox(::TYPES[50/*double*/], (double)value);
+    if (::g::Uno::Type::op_Equality(targetType, ::TYPES[33/*double*/]))
+        return uBox(::TYPES[33/*double*/], (double)value);
 
-    return uBox(::TYPES[49/*float*/], value);
+    return uBox(::TYPES[32/*float*/], value);
 }
 
-// private static object Convert(int value, Uno.Type targetType) [static] :559
+// private static object Convert(int value, Uno.Type targetType) [static] :201
 uObject* JSCallback__NumberConverter::Convert2(int value, uType* targetType)
 {
-    if (::g::Uno::Type::op_Equality(targetType, ::TYPES[46/*short*/]))
-        return uBox<int16_t>(::TYPES[46/*short*/], (int16_t)value);
+    if (::g::Uno::Type::op_Equality(targetType, ::TYPES[29/*short*/]))
+        return uBox<int16_t>(::TYPES[29/*short*/], (int16_t)value);
 
-    if (::g::Uno::Type::op_Equality(targetType, ::TYPES[48/*long*/]))
-        return uBox<int64_t>(::TYPES[48/*long*/], (int64_t)value);
+    if (::g::Uno::Type::op_Equality(targetType, ::TYPES[31/*long*/]))
+        return uBox<int64_t>(::TYPES[31/*long*/], (int64_t)value);
 
-    if (::g::Uno::Type::op_Equality(targetType, ::TYPES[49/*float*/]))
-        return uBox(::TYPES[49/*float*/], (float)value);
+    if (::g::Uno::Type::op_Equality(targetType, ::TYPES[32/*float*/]))
+        return uBox(::TYPES[32/*float*/], (float)value);
 
-    if (::g::Uno::Type::op_Equality(targetType, ::TYPES[50/*double*/]))
-        return uBox(::TYPES[50/*double*/], (double)value);
+    if (::g::Uno::Type::op_Equality(targetType, ::TYPES[33/*double*/]))
+        return uBox(::TYPES[33/*double*/], (double)value);
 
-    return uBox<int>(::TYPES[47/*int*/], value);
+    return uBox<int>(::TYPES[30/*int*/], value);
 }
 
-// private static object Convert(long value, Uno.Type targetType) [static] :568
+// private static object Convert(long value, Uno.Type targetType) [static] :210
 uObject* JSCallback__NumberConverter::Convert3(int64_t value, uType* targetType)
 {
-    if (::g::Uno::Type::op_Equality(targetType, ::TYPES[46/*short*/]))
-        return uBox<int16_t>(::TYPES[46/*short*/], (int16_t)value);
+    if (::g::Uno::Type::op_Equality(targetType, ::TYPES[29/*short*/]))
+        return uBox<int16_t>(::TYPES[29/*short*/], (int16_t)value);
 
-    if (::g::Uno::Type::op_Equality(targetType, ::TYPES[47/*int*/]))
-        return uBox<int>(::TYPES[47/*int*/], (int)value);
+    if (::g::Uno::Type::op_Equality(targetType, ::TYPES[30/*int*/]))
+        return uBox<int>(::TYPES[30/*int*/], (int)value);
 
-    if (::g::Uno::Type::op_Equality(targetType, ::TYPES[49/*float*/]))
-        return uBox(::TYPES[49/*float*/], (float)value);
+    if (::g::Uno::Type::op_Equality(targetType, ::TYPES[32/*float*/]))
+        return uBox(::TYPES[32/*float*/], (float)value);
 
-    if (::g::Uno::Type::op_Equality(targetType, ::TYPES[50/*double*/]))
-        return uBox(::TYPES[50/*double*/], (double)value);
+    if (::g::Uno::Type::op_Equality(targetType, ::TYPES[33/*double*/]))
+        return uBox(::TYPES[33/*double*/], (double)value);
 
-    return uBox<int64_t>(::TYPES[48/*long*/], value);
+    return uBox<int64_t>(::TYPES[31/*long*/], value);
 }
 
-// private static object Convert(short value, Uno.Type targetType) [static] :550
+// private static object Convert(short value, Uno.Type targetType) [static] :192
 uObject* JSCallback__NumberConverter::Convert4(int16_t value, uType* targetType)
 {
-    if (::g::Uno::Type::op_Equality(targetType, ::TYPES[47/*int*/]))
-        return uBox<int>(::TYPES[47/*int*/], (int)value);
+    if (::g::Uno::Type::op_Equality(targetType, ::TYPES[30/*int*/]))
+        return uBox<int>(::TYPES[30/*int*/], (int)value);
 
-    if (::g::Uno::Type::op_Equality(targetType, ::TYPES[48/*long*/]))
-        return uBox<int64_t>(::TYPES[48/*long*/], (int64_t)value);
+    if (::g::Uno::Type::op_Equality(targetType, ::TYPES[31/*long*/]))
+        return uBox<int64_t>(::TYPES[31/*long*/], (int64_t)value);
 
-    if (::g::Uno::Type::op_Equality(targetType, ::TYPES[49/*float*/]))
-        return uBox(::TYPES[49/*float*/], (float)value);
+    if (::g::Uno::Type::op_Equality(targetType, ::TYPES[32/*float*/]))
+        return uBox(::TYPES[32/*float*/], (float)value);
 
-    if (::g::Uno::Type::op_Equality(targetType, ::TYPES[50/*double*/]))
-        return uBox(::TYPES[50/*double*/], (double)value);
+    if (::g::Uno::Type::op_Equality(targetType, ::TYPES[33/*double*/]))
+        return uBox(::TYPES[33/*double*/], (double)value);
 
-    return uBox<int16_t>(::TYPES[46/*short*/], value);
+    return uBox<int16_t>(::TYPES[29/*short*/], value);
 }
 
-// public static object Convert(Uno.Type targetType, object value) [static] :540
+// public static object Convert(Uno.Type targetType, object value) [static] :182
 uObject* JSCallback__NumberConverter::Convert5(uType* targetType, uObject* value)
 {
-    if (uIs(value, ::TYPES[46/*short*/]))
-        return JSCallback__NumberConverter::Convert4(uUnbox<int16_t>(::TYPES[46/*short*/], value), targetType);
+    if (uIs(value, ::TYPES[29/*short*/]))
+        return JSCallback__NumberConverter::Convert4(uUnbox<int16_t>(::TYPES[29/*short*/], value), targetType);
 
-    if (uIs(value, ::TYPES[47/*int*/]))
-        return JSCallback__NumberConverter::Convert2(uUnbox<int>(::TYPES[47/*int*/], value), targetType);
+    if (uIs(value, ::TYPES[30/*int*/]))
+        return JSCallback__NumberConverter::Convert2(uUnbox<int>(::TYPES[30/*int*/], value), targetType);
 
-    if (uIs(value, ::TYPES[48/*long*/]))
-        return JSCallback__NumberConverter::Convert3(uUnbox<int64_t>(::TYPES[48/*long*/], value), targetType);
+    if (uIs(value, ::TYPES[31/*long*/]))
+        return JSCallback__NumberConverter::Convert3(uUnbox<int64_t>(::TYPES[31/*long*/], value), targetType);
 
-    if (uIs(value, ::TYPES[49/*float*/]))
-        return JSCallback__NumberConverter::Convert1(uUnbox<float>(::TYPES[49/*float*/], value), targetType);
+    if (uIs(value, ::TYPES[32/*float*/]))
+        return JSCallback__NumberConverter::Convert1(uUnbox<float>(::TYPES[32/*float*/], value), targetType);
 
-    if (uIs(value, ::TYPES[50/*double*/]))
-        return JSCallback__NumberConverter::Convert(uUnbox<double>(::TYPES[50/*double*/], value), targetType);
+    if (uIs(value, ::TYPES[33/*double*/]))
+        return JSCallback__NumberConverter::Convert(uUnbox<double>(::TYPES[33/*double*/], value), targetType);
 
     return value;
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Scripting/1.2.1/$.uno
-// --------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Scripting\1.3.0-rc2\Types.uno
+// ------------------------------------------------------------------------------
 
-// public abstract class Object :2129
+// public abstract class Object :32
 // {
 static void Object_build(uType* type)
 {
@@ -3773,44 +3856,44 @@ Object_type* Object_typeof()
     return type;
 }
 
-// protected generated Object() :2129
+// protected generated Object() :32
 void Object__ctor__fn(Object* __this)
 {
     __this->ctor_();
 }
 
-// public override sealed bool Equals(object o) :2139
+// public override sealed bool Equals(object o) :42
 void Object__Equals_fn(Object* __this, uObject* o, bool* __retval)
 {
     Object* a = uAs<Object*>(o, Object_typeof());
     return *__retval = (a != NULL) && __this->Equals2(a), void();
 }
 
-// public override int GetHashCode() :2145
+// public override int GetHashCode() :48
 void Object__GetHashCode_fn(Object* __this, int* __retval)
 {
     int ret1;
     return *__retval = (::g::Uno::Object__GetHashCode_fn(__this, &ret1), ret1), void();
 }
 
-// protected generated Object() [instance] :2129
+// protected generated Object() [instance] :32
 void Object::ctor_()
 {
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Scripting/1.2.1/$.uno
-// --------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Scripting\1.3.0-rc2\NativeEventEmitterModule.uno
+// -------------------------------------------------------------------------------------------------
 
-// private sealed class NativeEventEmitterModule.OnClosure :1120
+// private sealed class NativeEventEmitterModule.OnClosure :210
 // {
 static void NativeEventEmitterModule__OnClosure_build(uType* type)
 {
-    ::STRINGS[28] = uString::Const("on");
-    ::TYPES[9] = uObject_typeof()->Array();
+    ::STRINGS[26] = uString::Const("on");
+    ::TYPES[7] = uObject_typeof()->Array();
     type->SetFields(0,
-        uObject_typeof(), offsetof(::g::Fuse::Scripting::NativeEventEmitterModule__OnClosure, _eventName), 0,
-        ::g::Fuse::Scripting::Callback_typeof(), offsetof(::g::Fuse::Scripting::NativeEventEmitterModule__OnClosure, _listener), 0);
+        uObject_typeof(), offsetof(NativeEventEmitterModule__OnClosure, _eventName), 0,
+        ::g::Fuse::Scripting::Callback_typeof(), offsetof(NativeEventEmitterModule__OnClosure, _listener), 0);
 }
 
 uType* NativeEventEmitterModule__OnClosure_typeof()
@@ -3827,38 +3910,38 @@ uType* NativeEventEmitterModule__OnClosure_typeof()
     return type;
 }
 
-// public OnClosure(object eventName, Fuse.Scripting.Callback listener) :1125
+// public OnClosure(object eventName, Fuse.Scripting.Callback listener) :215
 void NativeEventEmitterModule__OnClosure__ctor__fn(NativeEventEmitterModule__OnClosure* __this, uObject* eventName, uDelegate* listener)
 {
     __this->ctor_(eventName, listener);
 }
 
-// public OnClosure New(object eventName, Fuse.Scripting.Callback listener) :1125
+// public OnClosure New(object eventName, Fuse.Scripting.Callback listener) :215
 void NativeEventEmitterModule__OnClosure__New1_fn(uObject* eventName, uDelegate* listener, NativeEventEmitterModule__OnClosure** __retval)
 {
     *__retval = NativeEventEmitterModule__OnClosure::New1(eventName, listener);
 }
 
-// public void On(Fuse.Scripting.Context c, Fuse.Scripting.Object o) :1131
+// public void On(Fuse.Scripting.Context c, Fuse.Scripting.Object o) :221
 void NativeEventEmitterModule__OnClosure__On_fn(NativeEventEmitterModule__OnClosure* __this, ::g::Fuse::Scripting::Context* c, ::g::Fuse::Scripting::Object* o)
 {
     __this->On(c, o);
 }
 
-// public OnClosure(object eventName, Fuse.Scripting.Callback listener) [instance] :1125
+// public OnClosure(object eventName, Fuse.Scripting.Callback listener) [instance] :215
 void NativeEventEmitterModule__OnClosure::ctor_(uObject* eventName, uDelegate* listener)
 {
     _eventName = eventName;
     _listener = listener;
 }
 
-// public void On(Fuse.Scripting.Context c, Fuse.Scripting.Object o) [instance] :1131
+// public void On(Fuse.Scripting.Context c, Fuse.Scripting.Object o) [instance] :221
 void NativeEventEmitterModule__OnClosure::On(::g::Fuse::Scripting::Context* c, ::g::Fuse::Scripting::Object* o)
 {
-    uPtr(o)->CallMethod(::STRINGS[28/*"on"*/], uArray::Init<uObject*>(::TYPES[9/*object[]*/], 2, (uObject*)_eventName, (uDelegate*)_listener));
+    uPtr(o)->CallMethod(::STRINGS[26/*"on"*/], uArray::Init<uObject*>(::TYPES[7/*object[]*/], 2, (uObject*)_eventName, (uDelegate*)_listener));
 }
 
-// public OnClosure New(object eventName, Fuse.Scripting.Callback listener) [static] :1125
+// public OnClosure New(object eventName, Fuse.Scripting.Callback listener) [static] :215
 NativeEventEmitterModule__OnClosure* NativeEventEmitterModule__OnClosure::New1(uObject* eventName, uDelegate* listener)
 {
     NativeEventEmitterModule__OnClosure* obj1 = (NativeEventEmitterModule__OnClosure*)uNew(NativeEventEmitterModule__OnClosure_typeof());
@@ -3867,29 +3950,193 @@ NativeEventEmitterModule__OnClosure* NativeEventEmitterModule__OnClosure::New1(u
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Scripting/1.2.1/$.uno
-// --------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Scripting\1.3.0-rc2\ScriptClass.uno
+// ------------------------------------------------------------------------------------
 
-// private sealed class NativePromise<T, TJSResult>.PromiseClosure :1355
+// private sealed class ScriptPromise<TSelf, TResult, TJSResult>.PromiseClosure :235
+// {
+static void ScriptPromise__PromiseClosure_build(uType* type)
+{
+    ::TYPES[7] = uObject_typeof()->Array();
+    ::TYPES[28] = ::g::Uno::Action1_typeof();
+    ::TYPES[34] = ::TYPES[28/*Uno.Action`1*/]->MakeType(::g::Uno::Exception_typeof(), NULL);
+    ::TYPES[8] = ::g::Uno::Threading::IDispatcher_typeof();
+    ::TYPES[15] = ::g::Uno::Action_typeof();
+    ::TYPES[6] = ::g::Fuse::Scripting::Function_typeof();
+    type->SetPrecalc(
+        ::g::Uno::Action1_typeof()->MakeType(type->T(1), NULL));
+    type->SetFields(0,
+        ::g::Fuse::Scripting::Context_typeof(), offsetof(ScriptPromise__PromiseClosure, _context), 0,
+        ::g::Uno::Threading::Future1_typeof()->MakeType(type->T(1), NULL), offsetof(ScriptPromise__PromiseClosure, _future), 0,
+        ::g::Uno::Exception_typeof(), offsetof(ScriptPromise__PromiseClosure, _reason), 0,
+        ::TYPES[6/*Fuse.Scripting.Function*/], offsetof(ScriptPromise__PromiseClosure, _reject), 0,
+        ::TYPES[6/*Fuse.Scripting.Function*/], offsetof(ScriptPromise__PromiseClosure, _resolve), 0,
+        type->T(1), (uintptr_t)0, uFieldFlagsConstrained,
+        ::g::Fuse::Scripting::ScriptPromise__ResultConverter_typeof()->MakeType(type->T(0), type->T(1), type->T(2), type->T(1), type->T(2), NULL), offsetof(ScriptPromise__PromiseClosure, _resultConverter), 0);
+}
+
+uType* ScriptPromise__PromiseClosure_typeof()
+{
+    static uSStrong<uType*> type;
+    if (type != NULL) return type;
+
+    uTypeOptions options;
+    options.FieldCount = 7;
+    options.GenericCount = 3;
+    options.PrecalcCount = 1;
+    options.ObjectSize = sizeof(ScriptPromise__PromiseClosure);
+    options.TypeSize = sizeof(uType);
+    type = uClassType::New("Fuse.Scripting.ScriptPromise`3.PromiseClosure", options);
+    type->fp_build_ = ScriptPromise__PromiseClosure_build;
+    return type;
+}
+
+// public PromiseClosure(Fuse.Scripting.Context context, Fuse.Scripting.ScriptPromise<TSelf, TResult, TJSResult>.ResultConverter<TResult, TJSResult> resultConverter) :240
+void ScriptPromise__PromiseClosure__ctor__fn(ScriptPromise__PromiseClosure* __this, ::g::Fuse::Scripting::Context* context, uDelegate* resultConverter)
+{
+    __this->ctor_(context, resultConverter);
+}
+
+// private void DispatchReject() :294
+void ScriptPromise__PromiseClosure__DispatchReject_fn(ScriptPromise__PromiseClosure* __this)
+{
+    __this->DispatchReject();
+}
+
+// private void DispatchResolve() :286
+void ScriptPromise__PromiseClosure__DispatchResolve_fn(ScriptPromise__PromiseClosure* __this)
+{
+    __this->DispatchResolve();
+}
+
+// public PromiseClosure New(Fuse.Scripting.Context context, Fuse.Scripting.ScriptPromise<TSelf, TResult, TJSResult>.ResultConverter<TResult, TJSResult> resultConverter) :240
+void ScriptPromise__PromiseClosure__New1_fn(uType* __type, ::g::Fuse::Scripting::Context* context, uDelegate* resultConverter, ScriptPromise__PromiseClosure** __retval)
+{
+    *__retval = ScriptPromise__PromiseClosure::New1(__type, context, resultConverter);
+}
+
+// public void OnFutureReady(Uno.Threading.Future<TResult> future) :263
+void ScriptPromise__PromiseClosure__OnFutureReady_fn(ScriptPromise__PromiseClosure* __this, ::g::Uno::Threading::Future1* future)
+{
+    __this->OnFutureReady(future);
+}
+
+// private void Reject(Uno.Exception reason) :279
+void ScriptPromise__PromiseClosure__Reject_fn(ScriptPromise__PromiseClosure* __this, ::g::Uno::Exception* reason)
+{
+    __this->Reject(reason);
+}
+
+// private void Resolve(TResult result) :271
+void ScriptPromise__PromiseClosure__Resolve_fn(ScriptPromise__PromiseClosure* __this, void* result)
+{
+    __this->_result() = result;
+
+    if (__this->_resolve != NULL)
+        ::g::Uno::Threading::IDispatcher::Invoke(uInterface(uPtr(uPtr(__this->_context)->Dispatcher()), ::TYPES[8/*Uno.Threading.IDispatcher*/]), uDelegate::New(::TYPES[15/*Uno.Action*/], (void*)ScriptPromise__PromiseClosure__DispatchResolve_fn, __this));
+}
+
+// public object Run(object[] args) :248
+void ScriptPromise__PromiseClosure__Run_fn(ScriptPromise__PromiseClosure* __this, uArray* args, uObject** __retval)
+{
+    *__retval = __this->Run(args);
+}
+
+// public PromiseClosure(Fuse.Scripting.Context context, Fuse.Scripting.ScriptPromise<TSelf, TResult, TJSResult>.ResultConverter<TResult, TJSResult> resultConverter) [instance] :240
+void ScriptPromise__PromiseClosure::ctor_(::g::Fuse::Scripting::Context* context, uDelegate* resultConverter)
+{
+    _context = context;
+    _resultConverter = resultConverter;
+}
+
+// private void DispatchReject() [instance] :294
+void ScriptPromise__PromiseClosure::DispatchReject()
+{
+    uPtr(_reject)->Call(uArray::Init<uObject*>(::TYPES[7/*object[]*/], 1, (uString*)uPtr(_reason)->Message()));
+}
+
+// private void DispatchResolve() [instance] :286
+void ScriptPromise__PromiseClosure::DispatchResolve()
+{
+    uT ret2(__type->T(2), U_ALLOCA(__type->T(2)->ValueSize));
+
+    if (::g::Uno::Delegate::op_Inequality(_resultConverter, NULL))
+        uPtr(_resolve)->Call(uArray::Init<uObject*>(::TYPES[7/*object[]*/], 1, uBoxPtr(__type->T(2), (uPtr(_resultConverter)->Invoke(&ret2, 2, (::g::Fuse::Scripting::Context*)_context, (void*)_result()), ret2))));
+    else
+        uPtr(_resolve)->Call(uArray::Init<uObject*>(::TYPES[7/*object[]*/], 1, uBoxPtr(__type->T(1), _result())));
+}
+
+// public void OnFutureReady(Uno.Threading.Future<TResult> future) [instance] :263
+void ScriptPromise__PromiseClosure::OnFutureReady(::g::Uno::Threading::Future1* future)
+{
+    uType* __types[] = {
+        __type->Precalced(0/*Uno.Action<TResult>*/),
+    };
+    _future = future;
+
+    if ((_resolve != NULL) || (_reject != NULL))
+        uPtr(_future)->Then1(uDelegate::New(__types[0], (void*)ScriptPromise__PromiseClosure__Resolve_fn, this), uDelegate::New(::TYPES[34/*Uno.Action<Uno.Exception>*/], (void*)ScriptPromise__PromiseClosure__Reject_fn, this));
+}
+
+// private void Reject(Uno.Exception reason) [instance] :279
+void ScriptPromise__PromiseClosure::Reject(::g::Uno::Exception* reason)
+{
+    _reason = reason;
+
+    if (_reject != NULL)
+        ::g::Uno::Threading::IDispatcher::Invoke(uInterface(uPtr(uPtr(_context)->Dispatcher()), ::TYPES[8/*Uno.Threading.IDispatcher*/]), uDelegate::New(::TYPES[15/*Uno.Action*/], (void*)ScriptPromise__PromiseClosure__DispatchReject_fn, this));
+}
+
+// public object Run(object[] args) [instance] :248
+uObject* ScriptPromise__PromiseClosure::Run(uArray* args)
+{
+    uType* __types[] = {
+        __type->Precalced(0/*Uno.Action<TResult>*/),
+    };
+
+    if (uPtr(args)->Length() > 0)
+        _resolve = uAs< ::g::Fuse::Scripting::Function*>(uPtr(args)->Strong<uObject*>(0), ::TYPES[6/*Fuse.Scripting.Function*/]);
+
+    if (uPtr(args)->Length() > 1)
+        _reject = uAs< ::g::Fuse::Scripting::Function*>(uPtr(args)->Strong<uObject*>(1), ::TYPES[6/*Fuse.Scripting.Function*/]);
+
+    if (_future != NULL)
+        uPtr(_future)->Then1(uDelegate::New(__types[0], (void*)ScriptPromise__PromiseClosure__Resolve_fn, this), uDelegate::New(::TYPES[34/*Uno.Action<Uno.Exception>*/], (void*)ScriptPromise__PromiseClosure__Reject_fn, this));
+
+    return NULL;
+}
+
+// public PromiseClosure New(Fuse.Scripting.Context context, Fuse.Scripting.ScriptPromise<TSelf, TResult, TJSResult>.ResultConverter<TResult, TJSResult> resultConverter) [static] :240
+ScriptPromise__PromiseClosure* ScriptPromise__PromiseClosure::New1(uType* __type, ::g::Fuse::Scripting::Context* context, uDelegate* resultConverter)
+{
+    ScriptPromise__PromiseClosure* obj1 = (ScriptPromise__PromiseClosure*)uNew(__type);
+    obj1->ctor_(context, resultConverter);
+    return obj1;
+}
+// }
+
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Scripting\1.3.0-rc2\NativePromise.uno
+// --------------------------------------------------------------------------------------
+
+// private sealed class NativePromise<T, TJSResult>.PromiseClosure :90
 // {
 static void NativePromise__PromiseClosure_build(uType* type)
 {
-    ::TYPES[9] = uObject_typeof()->Array();
-    ::TYPES[2] = ::g::Uno::Threading::IDispatcher_typeof();
-    ::TYPES[3] = ::g::Uno::Action_typeof();
-    ::TYPES[8] = ::g::Fuse::Scripting::Function_typeof();
-    ::TYPES[45] = ::g::Uno::Action1_typeof();
-    ::TYPES[51] = ::TYPES[45/*Uno.Action`1*/]->MakeType(::g::Uno::Exception_typeof(), NULL);
+    ::TYPES[7] = uObject_typeof()->Array();
+    ::TYPES[8] = ::g::Uno::Threading::IDispatcher_typeof();
+    ::TYPES[15] = ::g::Uno::Action_typeof();
+    ::TYPES[6] = ::g::Fuse::Scripting::Function_typeof();
+    ::TYPES[28] = ::g::Uno::Action1_typeof();
+    ::TYPES[34] = ::TYPES[28/*Uno.Action`1*/]->MakeType(::g::Uno::Exception_typeof(), NULL);
     type->SetPrecalc(
-        type->T(1),
         ::g::Uno::Action1_typeof()->MakeType(type->T(0), NULL));
     type->SetFields(0,
-        ::g::Fuse::Scripting::Context_typeof(), offsetof(::g::Fuse::Scripting::NativePromise__PromiseClosure, _c), 0,
-        ::g::Fuse::Scripting::ResultConverter_typeof()->MakeType(type->T(0), type->T(1), NULL), offsetof(::g::Fuse::Scripting::NativePromise__PromiseClosure, _converter), 0,
-        ::g::Uno::Threading::Future1_typeof()->MakeType(type->T(0), NULL), offsetof(::g::Fuse::Scripting::NativePromise__PromiseClosure, _promise), 0,
-        ::g::Uno::Exception_typeof(), offsetof(::g::Fuse::Scripting::NativePromise__PromiseClosure, _reason), 0,
-        ::TYPES[8/*Fuse.Scripting.Function*/], offsetof(::g::Fuse::Scripting::NativePromise__PromiseClosure, _reject), 0,
-        ::TYPES[8/*Fuse.Scripting.Function*/], offsetof(::g::Fuse::Scripting::NativePromise__PromiseClosure, _resolve), 0,
+        ::g::Fuse::Scripting::Context_typeof(), offsetof(NativePromise__PromiseClosure, _c), 0,
+        ::g::Fuse::Scripting::ResultConverter_typeof()->MakeType(type->T(0), type->T(1), NULL), offsetof(NativePromise__PromiseClosure, _converter), 0,
+        ::g::Uno::Threading::Future1_typeof()->MakeType(type->T(0), NULL), offsetof(NativePromise__PromiseClosure, _promise), 0,
+        ::g::Uno::Exception_typeof(), offsetof(NativePromise__PromiseClosure, _reason), 0,
+        ::TYPES[6/*Fuse.Scripting.Function*/], offsetof(NativePromise__PromiseClosure, _reject), 0,
+        ::TYPES[6/*Fuse.Scripting.Function*/], offsetof(NativePromise__PromiseClosure, _resolve), 0,
         type->T(0), (uintptr_t)0, uFieldFlagsConstrained);
 }
 
@@ -3901,7 +4148,7 @@ uType* NativePromise__PromiseClosure_typeof()
     uTypeOptions options;
     options.FieldCount = 7;
     options.GenericCount = 2;
-    options.PrecalcCount = 2;
+    options.PrecalcCount = 1;
     options.ObjectSize = sizeof(NativePromise__PromiseClosure);
     options.TypeSize = sizeof(uType);
     type = uClassType::New("Fuse.Scripting.NativePromise`2.PromiseClosure", options);
@@ -3909,52 +4156,52 @@ uType* NativePromise__PromiseClosure_typeof()
     return type;
 }
 
-// public PromiseClosure(Fuse.Scripting.Context context, Uno.Threading.Future<T> promise, Fuse.Scripting.ResultConverter<T, TJSResult> converter) :1365
+// public PromiseClosure(Fuse.Scripting.Context context, Uno.Threading.Future<T> promise, Fuse.Scripting.ResultConverter<T, TJSResult> converter) :100
 void NativePromise__PromiseClosure__ctor__fn(NativePromise__PromiseClosure* __this, ::g::Fuse::Scripting::Context* context, ::g::Uno::Threading::Future1* promise, uDelegate* converter)
 {
     __this->ctor_(context, promise, converter);
 }
 
-// private void InternalReject() :1407
+// private void InternalReject() :142
 void NativePromise__PromiseClosure__InternalReject_fn(NativePromise__PromiseClosure* __this)
 {
     __this->InternalReject();
 }
 
-// private void InternalResolve() :1392
+// private void InternalResolve() :127
 void NativePromise__PromiseClosure__InternalResolve_fn(NativePromise__PromiseClosure* __this)
 {
     __this->InternalResolve();
 }
 
-// public PromiseClosure New(Fuse.Scripting.Context context, Uno.Threading.Future<T> promise, Fuse.Scripting.ResultConverter<T, TJSResult> converter) :1365
+// public PromiseClosure New(Fuse.Scripting.Context context, Uno.Threading.Future<T> promise, Fuse.Scripting.ResultConverter<T, TJSResult> converter) :100
 void NativePromise__PromiseClosure__New1_fn(uType* __type, ::g::Fuse::Scripting::Context* context, ::g::Uno::Threading::Future1* promise, uDelegate* converter, NativePromise__PromiseClosure** __retval)
 {
     *__retval = NativePromise__PromiseClosure::New1(__type, context, promise, converter);
 }
 
-// private void Reject(Uno.Exception reason) :1400
+// private void Reject(Uno.Exception reason) :135
 void NativePromise__PromiseClosure__Reject_fn(NativePromise__PromiseClosure* __this, ::g::Uno::Exception* reason)
 {
     __this->Reject(reason);
 }
 
-// private void Resolve(T result) :1385
+// private void Resolve(T result) :120
 void NativePromise__PromiseClosure__Resolve_fn(NativePromise__PromiseClosure* __this, void* result)
 {
     __this->_result() = result;
 
     if (__this->_resolve != NULL)
-        ::g::Uno::Threading::IDispatcher::Invoke(uInterface(uPtr(uPtr(__this->_c)->Dispatcher()), ::TYPES[2/*Uno.Threading.IDispatcher*/]), uDelegate::New(::TYPES[3/*Uno.Action*/], (void*)NativePromise__PromiseClosure__InternalResolve_fn, __this));
+        ::g::Uno::Threading::IDispatcher::Invoke(uInterface(uPtr(uPtr(__this->_c)->Dispatcher()), ::TYPES[8/*Uno.Threading.IDispatcher*/]), uDelegate::New(::TYPES[15/*Uno.Action*/], (void*)NativePromise__PromiseClosure__InternalResolve_fn, __this));
 }
 
-// public object Run(object[] args) :1372
+// public object Run(object[] args) :107
 void NativePromise__PromiseClosure__Run_fn(NativePromise__PromiseClosure* __this, uArray* args, uObject** __retval)
 {
     *__retval = __this->Run(args);
 }
 
-// public PromiseClosure(Fuse.Scripting.Context context, Uno.Threading.Future<T> promise, Fuse.Scripting.ResultConverter<T, TJSResult> converter) [instance] :1365
+// public PromiseClosure(Fuse.Scripting.Context context, Uno.Threading.Future<T> promise, Fuse.Scripting.ResultConverter<T, TJSResult> converter) [instance] :100
 void NativePromise__PromiseClosure::ctor_(::g::Fuse::Scripting::Context* context, ::g::Uno::Threading::Future1* promise, uDelegate* converter)
 {
     _c = context;
@@ -3962,53 +4209,50 @@ void NativePromise__PromiseClosure::ctor_(::g::Fuse::Scripting::Context* context
     _converter = converter;
 }
 
-// private void InternalReject() [instance] :1407
+// private void InternalReject() [instance] :142
 void NativePromise__PromiseClosure::InternalReject()
 {
-    uPtr(_reject)->Call(uArray::Init<uObject*>(::TYPES[9/*object[]*/], 1, (uString*)uPtr(_reason)->Message()));
+    uPtr(_reject)->Call(uArray::Init<uObject*>(::TYPES[7/*object[]*/], 1, (uString*)uPtr(_reason)->Message()));
 }
 
-// private void InternalResolve() [instance] :1392
+// private void InternalResolve() [instance] :127
 void NativePromise__PromiseClosure::InternalResolve()
 {
-    uType* __types[] = {
-        __type->Precalced(0/*TJSResult*/),
-    };
-    uT ret2(__types[0], U_ALLOCA(__types[0]->ValueSize));
+    uT ret2(__type->T(1), U_ALLOCA(__type->T(1)->ValueSize));
 
     if (::g::Uno::Delegate::op_Inequality(_converter, NULL))
-        uPtr(_resolve)->Call(uArray::Init<uObject*>(::TYPES[9/*object[]*/], 1, uBoxPtr(__types[0], (uPtr(_converter)->Invoke(&ret2, 2, (::g::Fuse::Scripting::Context*)_c, (void*)_result()), ret2))));
+        uPtr(_resolve)->Call(uArray::Init<uObject*>(::TYPES[7/*object[]*/], 1, uBoxPtr(__type->T(1), (uPtr(_converter)->Invoke(&ret2, 2, (::g::Fuse::Scripting::Context*)_c, (void*)_result()), ret2))));
     else
-        uPtr(_resolve)->Call(uArray::Init<uObject*>(::TYPES[9/*object[]*/], 1, uBoxPtr(__type->T(0), _result())));
+        uPtr(_resolve)->Call(uArray::Init<uObject*>(::TYPES[7/*object[]*/], 1, uBoxPtr(__type->T(0), _result())));
 }
 
-// private void Reject(Uno.Exception reason) [instance] :1400
+// private void Reject(Uno.Exception reason) [instance] :135
 void NativePromise__PromiseClosure::Reject(::g::Uno::Exception* reason)
 {
     _reason = reason;
 
     if (_reject != NULL)
-        ::g::Uno::Threading::IDispatcher::Invoke(uInterface(uPtr(uPtr(_c)->Dispatcher()), ::TYPES[2/*Uno.Threading.IDispatcher*/]), uDelegate::New(::TYPES[3/*Uno.Action*/], (void*)NativePromise__PromiseClosure__InternalReject_fn, this));
+        ::g::Uno::Threading::IDispatcher::Invoke(uInterface(uPtr(uPtr(_c)->Dispatcher()), ::TYPES[8/*Uno.Threading.IDispatcher*/]), uDelegate::New(::TYPES[15/*Uno.Action*/], (void*)NativePromise__PromiseClosure__InternalReject_fn, this));
 }
 
-// public object Run(object[] args) [instance] :1372
+// public object Run(object[] args) [instance] :107
 uObject* NativePromise__PromiseClosure::Run(uArray* args)
 {
     uType* __types[] = {
-        __type->Precalced(1/*Uno.Action<T>*/),
+        __type->Precalced(0/*Uno.Action<T>*/),
     };
 
     if (uPtr(args)->Length() > 0)
-        _resolve = uAs< ::g::Fuse::Scripting::Function*>(uPtr(args)->Strong<uObject*>(0), ::TYPES[8/*Fuse.Scripting.Function*/]);
+        _resolve = uAs< ::g::Fuse::Scripting::Function*>(uPtr(args)->Strong<uObject*>(0), ::TYPES[6/*Fuse.Scripting.Function*/]);
 
     if (uPtr(args)->Length() > 1)
-        _reject = uAs< ::g::Fuse::Scripting::Function*>(uPtr(args)->Strong<uObject*>(1), ::TYPES[8/*Fuse.Scripting.Function*/]);
+        _reject = uAs< ::g::Fuse::Scripting::Function*>(uPtr(args)->Strong<uObject*>(1), ::TYPES[6/*Fuse.Scripting.Function*/]);
 
-    uPtr(_promise)->Then1(uDelegate::New(__types[0], (void*)NativePromise__PromiseClosure__Resolve_fn, this), uDelegate::New(::TYPES[51/*Uno.Action<Uno.Exception>*/], (void*)NativePromise__PromiseClosure__Reject_fn, this));
+    uPtr(_promise)->Then1(uDelegate::New(__types[0], (void*)NativePromise__PromiseClosure__Resolve_fn, this), uDelegate::New(::TYPES[34/*Uno.Action<Uno.Exception>*/], (void*)NativePromise__PromiseClosure__Reject_fn, this));
     return NULL;
 }
 
-// public PromiseClosure New(Fuse.Scripting.Context context, Uno.Threading.Future<T> promise, Fuse.Scripting.ResultConverter<T, TJSResult> converter) [static] :1365
+// public PromiseClosure New(Fuse.Scripting.Context context, Uno.Threading.Future<T> promise, Fuse.Scripting.ResultConverter<T, TJSResult> converter) [static] :100
 NativePromise__PromiseClosure* NativePromise__PromiseClosure::New1(uType* __type, ::g::Fuse::Scripting::Context* context, ::g::Uno::Threading::Future1* promise, uDelegate* converter)
 {
     NativePromise__PromiseClosure* obj1 = (NativePromise__PromiseClosure*)uNew(__type);
@@ -4017,31 +4261,38 @@ NativePromise__PromiseClosure* NativePromise__PromiseClosure::New1(uType* __type
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Scripting/1.2.1/$.uno
-// --------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Scripting\1.3.0-rc2\ScriptModule.Require.uno
+// ---------------------------------------------------------------------------------------------
 
-// private sealed class ScriptModule.RequireContext :1833
+// private sealed class ScriptModule.RequireContext :14
 // {
 static void ScriptModule__RequireContext_build(uType* type)
 {
-    ::STRINGS[29] = uString::Const("require(): accepts exactly one argument, ");
-    ::STRINGS[30] = uString::Const(" provided");
-    ::STRINGS[31] = uString::Const("require(): argument must be a string");
-    ::STRINGS[32] = uString::Const("require(): module not found: ");
-    ::STRINGS[33] = uString::Const("JavaScript error in ");
-    ::STRINGS[34] = uString::Const(" was fixed!");
-    ::STRINGS[35] = uString::Const("/usr/local/share/uno/Packages/Fuse.Scripting/1.2.1/$.uno");
-    ::STRINGS[36] = uString::Const("Require");
-    ::STRINGS[37] = uString::Const(" line ");
-    ::STRINGS[38] = uString::Const(". ");
+    ::STRINGS[27] = uString::Const("require(): accepts exactly one argument, ");
+    ::STRINGS[28] = uString::Const(" provided");
+    ::STRINGS[29] = uString::Const("require(): argument must be a string");
+    ::STRINGS[30] = uString::Const("ux:");
+    ::STRINGS[31] = uString::Const("require(): unable to resolve ux: prefixes: ");
+    ::STRINGS[32] = uString::Const("require(): ux name not found: ");
+    ::STRINGS[33] = uString::Const("require(): module not found: ");
+    ::STRINGS[34] = uString::Const("JavaScript error in ");
+    ::STRINGS[35] = uString::Const(" was fixed!");
+    ::STRINGS[36] = uString::Const("C:\\Users\\q\\AppData\\Local\\Fusetools\\Packages\\Fuse.Scripting\\1.3.0-rc2\\ScriptModule.Require.uno");
+    ::STRINGS[37] = uString::Const("Require");
+    ::STRINGS[38] = uString::Const(" line ");
+    ::STRINGS[39] = uString::Const(". ");
     ::STRINGS[21] = uString::Const("exports");
-    ::TYPES[52] = ::g::Uno::String_typeof();
-    ::TYPES[3] = ::g::Uno::Action_typeof();
+    ::TYPES[35] = ::g::Uno::String_typeof();
+    ::TYPES[15] = ::g::Uno::Action_typeof();
+    type->SetDependencies(
+        ::g::Fuse::Diagnostics_typeof(),
+        ::g::Fuse::Scripting::ScriptModule_typeof());
     type->SetFields(0,
-        ::g::Fuse::Scripting::Context_typeof(), offsetof(::g::Fuse::Scripting::ScriptModule__RequireContext, _c), 0,
-        ::g::Fuse::Scripting::ModuleResult_typeof(), offsetof(::g::Fuse::Scripting::ScriptModule__RequireContext, _dependant), 0,
-        ::g::Fuse::Scripting::ScriptModule_typeof(), offsetof(::g::Fuse::Scripting::ScriptModule__RequireContext, _m), 0,
-        ::TYPES[52/*string*/], (uintptr_t)&::g::Fuse::Scripting::ScriptModule__RequireContext::_lastErrorPath_, uFieldFlagsStatic);
+        ::g::Fuse::Scripting::Context_typeof(), offsetof(ScriptModule__RequireContext, _c), 0,
+        ::g::Fuse::Scripting::ModuleResult_typeof(), offsetof(ScriptModule__RequireContext, _dependant), 0,
+        ::g::Fuse::Scripting::ScriptModule_typeof(), offsetof(ScriptModule__RequireContext, _m), 0,
+        ::g::Uno::Collections::Dictionary_typeof()->MakeType(::TYPES[35/*string*/], uObject_typeof(), NULL), offsetof(ScriptModule__RequireContext, _rt), 0,
+        ::TYPES[35/*string*/], (uintptr_t)&ScriptModule__RequireContext::_lastErrorPath_, uFieldFlagsStatic);
 }
 
 uType* ScriptModule__RequireContext_typeof()
@@ -4050,7 +4301,8 @@ uType* ScriptModule__RequireContext_typeof()
     if (type != NULL) return type;
 
     uTypeOptions options;
-    options.FieldCount = 4;
+    options.FieldCount = 5;
+    options.DependencyCount = 2;
     options.ObjectSize = sizeof(ScriptModule__RequireContext);
     options.TypeSize = sizeof(uType);
     type = uClassType::New("Fuse.Scripting.ScriptModule.RequireContext", options);
@@ -4058,25 +4310,25 @@ uType* ScriptModule__RequireContext_typeof()
     return type;
 }
 
-// public RequireContext(Fuse.Scripting.Context c, Fuse.Scripting.ScriptModule m, Fuse.Scripting.ModuleResult dependant) :1839
-void ScriptModule__RequireContext__ctor__fn(ScriptModule__RequireContext* __this, ::g::Fuse::Scripting::Context* c, ::g::Fuse::Scripting::ScriptModule* m, ::g::Fuse::Scripting::ModuleResult* dependant)
+// public RequireContext(Fuse.Scripting.Context c, Fuse.Scripting.ScriptModule m, Fuse.Scripting.ModuleResult dependant, Uno.Collections.Dictionary<string, object> rt) :21
+void ScriptModule__RequireContext__ctor__fn(ScriptModule__RequireContext* __this, ::g::Fuse::Scripting::Context* c, ::g::Fuse::Scripting::ScriptModule* m, ::g::Fuse::Scripting::ModuleResult* dependant, ::g::Uno::Collections::Dictionary* rt)
 {
-    __this->ctor_(c, m, dependant);
+    __this->ctor_(c, m, dependant, rt);
 }
 
-// public RequireContext New(Fuse.Scripting.Context c, Fuse.Scripting.ScriptModule m, Fuse.Scripting.ModuleResult dependant) :1839
-void ScriptModule__RequireContext__New1_fn(::g::Fuse::Scripting::Context* c, ::g::Fuse::Scripting::ScriptModule* m, ::g::Fuse::Scripting::ModuleResult* dependant, ScriptModule__RequireContext** __retval)
+// public RequireContext New(Fuse.Scripting.Context c, Fuse.Scripting.ScriptModule m, Fuse.Scripting.ModuleResult dependant, Uno.Collections.Dictionary<string, object> rt) :21
+void ScriptModule__RequireContext__New1_fn(::g::Fuse::Scripting::Context* c, ::g::Fuse::Scripting::ScriptModule* m, ::g::Fuse::Scripting::ModuleResult* dependant, ::g::Uno::Collections::Dictionary* rt, ScriptModule__RequireContext** __retval)
 {
-    *__retval = ScriptModule__RequireContext::New1(c, m, dependant);
+    *__retval = ScriptModule__RequireContext::New1(c, m, dependant, rt);
 }
 
-// public object Require(object[] args) :1846
+// public object Require(object[] args) :29
 void ScriptModule__RequireContext__Require_fn(ScriptModule__RequireContext* __this, uArray* args, uObject** __retval)
 {
     *__retval = __this->Require(args);
 }
 
-// public object Require(string id) :1858
+// public object Require(string id) :41
 void ScriptModule__RequireContext__Require1_fn(ScriptModule__RequireContext* __this, uString* id, uObject** __retval)
 {
     *__retval = __this->Require1(id);
@@ -4084,50 +4336,67 @@ void ScriptModule__RequireContext__Require1_fn(ScriptModule__RequireContext* __t
 
 uSStrong<uString*> ScriptModule__RequireContext::_lastErrorPath_;
 
-// public RequireContext(Fuse.Scripting.Context c, Fuse.Scripting.ScriptModule m, Fuse.Scripting.ModuleResult dependant) [instance] :1839
-void ScriptModule__RequireContext::ctor_(::g::Fuse::Scripting::Context* c, ::g::Fuse::Scripting::ScriptModule* m, ::g::Fuse::Scripting::ModuleResult* dependant)
+// public RequireContext(Fuse.Scripting.Context c, Fuse.Scripting.ScriptModule m, Fuse.Scripting.ModuleResult dependant, Uno.Collections.Dictionary<string, object> rt) [instance] :21
+void ScriptModule__RequireContext::ctor_(::g::Fuse::Scripting::Context* c, ::g::Fuse::Scripting::ScriptModule* m, ::g::Fuse::Scripting::ModuleResult* dependant, ::g::Uno::Collections::Dictionary* rt)
 {
     _c = c;
     _m = m;
     _dependant = dependant;
+    _rt = rt;
 }
 
-// public object Require(object[] args) [instance] :1846
+// public object Require(object[] args) [instance] :29
 uObject* ScriptModule__RequireContext::Require(uArray* args)
 {
     if (uPtr(args)->Length() != 1)
-        U_THROW(::g::Fuse::Scripting::Error::New4(::g::Uno::String::op_Addition2(::g::Uno::String::op_Addition1(::STRINGS[29/*"require(): ...*/], uBox<int>(::TYPES[47/*int*/], uPtr(args)->Length())), ::STRINGS[30/*" provided"*/])));
+        U_THROW(::g::Fuse::Scripting::Error::New4(::g::Uno::String::op_Addition2(::g::Uno::String::op_Addition1(::STRINGS[27/*"require(): ...*/], uBox<int>(::TYPES[30/*int*/], uPtr(args)->Length())), ::STRINGS[28/*" provided"*/])));
 
-    uString* id = uAs<uString*>(uPtr(args)->Strong<uObject*>(0), ::TYPES[52/*string*/]);
+    uString* id = uAs<uString*>(uPtr(args)->Strong<uObject*>(0), ::TYPES[35/*string*/]);
 
     if (::g::Uno::String::op_Equality(id, NULL))
-        U_THROW(::g::Fuse::Scripting::Error::New4(::STRINGS[31/*"require(): ...*/]));
+        U_THROW(::g::Fuse::Scripting::Error::New4(::STRINGS[29/*"require(): ...*/]));
 
     return Require1(id);
 }
 
-// public object Require(string id) [instance] :1858
+// public object Require(string id) [instance] :41
 uObject* ScriptModule__RequireContext::Require1(uString* id)
 {
+    bool ret2;
     bool isFile;
     uString* path = uPtr(_m)->ComputePath(id, &isFile);
     ::g::Fuse::Scripting::ModuleResult* module = uPtr(_c)->TryGetGlobalModuleResult(path);
 
     if (module == NULL)
     {
+        uString* uxPrefix = ::STRINGS[30/*"ux:"*/];
+
+        if (::g::Uno::String::StartsWith(uPtr(id), ::STRINGS[30/*"ux:"*/]))
+        {
+            if (_rt == NULL)
+                U_THROW(::g::Fuse::Scripting::Error::New4(::g::Uno::String::op_Addition2(::STRINGS[31/*"require(): ...*/], id)));
+
+            uObject* res;
+
+            if ((::g::Uno::Collections::Dictionary__TryGetValue_fn(uPtr(_rt), ::g::Uno::String::Substring(uPtr(id), uPtr<uString*>(::STRINGS[30/*"ux:"*/])->Length()), (void**)(&res), &ret2), ret2))
+                return res;
+
+            U_THROW(::g::Fuse::Scripting::Error::New4(::g::Uno::String::op_Addition2(::STRINGS[32/*"require(): ...*/], id)));
+        }
+
         ::g::Fuse::Scripting::Module* mod = uPtr(_m)->TryResolve(path, isFile);
 
         if (mod == NULL)
-            U_THROW(::g::Fuse::Scripting::Error::New4(::g::Uno::String::op_Addition2(::STRINGS[32/*"require(): ...*/], id)));
+            U_THROW(::g::Fuse::Scripting::Error::New4(::g::Uno::String::op_Addition2(::STRINGS[33/*"require(): ...*/], id)));
 
         module = uPtr(mod)->Evaluate1(_c, path);
-        uPtr(module)->AddDependency(uDelegate::New(::TYPES[3/*Uno.Action*/], (void*)::g::Fuse::Scripting::ModuleResult__Invalidate_fn, uPtr(_dependant)));
+        uPtr(module)->AddDependency(uDelegate::New(::TYPES[15/*Uno.Action*/], (void*)::g::Fuse::Scripting::ModuleResult__Invalidate_fn, uPtr(_dependant)));
 
         if (module->Error() == NULL)
         {
             if (::g::Uno::String::op_Equality(ScriptModule__RequireContext::_lastErrorPath_, path))
             {
-                ::g::Fuse::Diagnostics::UserSuccess(::g::Uno::String::op_Addition2(::g::Uno::String::op_Addition2(::STRINGS[33/*"JavaScript ...*/], path), ::STRINGS[34/*" was fixed!"*/]), this, ::STRINGS[35/*"/usr/local/...*/], 1879, ::STRINGS[36/*"Require"*/]);
+                ::g::Fuse::Diagnostics::UserSuccess(::g::Uno::String::op_Addition2(::g::Uno::String::op_Addition2(::STRINGS[34/*"JavaScript ...*/], path), ::STRINGS[35/*" was fixed!"*/]), this, ::STRINGS[36/*"C:\\Users\\...*/], 73, ::STRINGS[37/*"Require"*/]);
                 ScriptModule__RequireContext::_lastErrorPath_ = NULL;
             }
         }
@@ -4135,34 +4404,34 @@ uObject* ScriptModule__RequireContext::Require1(uString* id)
         {
             ::g::Fuse::Scripting::ScriptException* e = uPtr(module)->Error();
 
-            if (!::g::Uno::String::Contains(uPtr(uPtr(e)->Message()), ::g::Fuse::Scripting::ScriptModule::ModuleContainsAnErrorMessage()))
+            if (!::g::Uno::String::Contains(uPtr(uPtr(e)->Message()), ::g::Fuse::Scripting::ScriptModule::ModuleContainsAnErrorMessage_))
             {
-                ::g::Fuse::Diagnostics::UserError(::g::Uno::String::op_Addition2(::g::Uno::String::op_Addition2(::g::Uno::String::op_Addition1(::g::Uno::String::op_Addition2(::g::Uno::String::op_Addition2(::STRINGS[33/*"JavaScript ...*/], path), ::STRINGS[37/*" line "*/]), uBox<int>(::TYPES[47/*int*/], uPtr(e)->LineNumber())), ::STRINGS[38/*". "*/]), uPtr(e)->ErrorMessage()), this, ::STRINGS[35/*"/usr/local/...*/], 1889, ::STRINGS[36/*"Require"*/], NULL);
+                ::g::Fuse::Diagnostics::UserError(::g::Uno::String::op_Addition2(::g::Uno::String::op_Addition2(::g::Uno::String::op_Addition1(::g::Uno::String::op_Addition2(::g::Uno::String::op_Addition2(::STRINGS[34/*"JavaScript ...*/], path), ::STRINGS[38/*" line "*/]), uBox<int>(::TYPES[30/*int*/], uPtr(e)->LineNumber())), ::STRINGS[39/*". "*/]), uPtr(e)->ErrorMessage()), this, ::STRINGS[36/*"C:\\Users\\...*/], 83, ::STRINGS[37/*"Require"*/], NULL);
                 ScriptModule__RequireContext::_lastErrorPath_ = path;
             }
 
-            U_THROW(::g::Fuse::Scripting::Error::New4(::g::Uno::String::op_Addition2(::g::Fuse::Scripting::ScriptModule::ModuleContainsAnErrorMessage(), id)));
+            U_THROW(::g::Fuse::Scripting::Error::New4(::g::Uno::String::op_Addition2(::g::Fuse::Scripting::ScriptModule::ModuleContainsAnErrorMessage_, id)));
         }
     }
     else
-        uPtr(module)->AddDependency(uDelegate::New(::TYPES[3/*Uno.Action*/], (void*)::g::Fuse::Scripting::ModuleResult__Invalidate_fn, uPtr(_dependant)));
+        uPtr(module)->AddDependency(uDelegate::New(::TYPES[15/*Uno.Action*/], (void*)::g::Fuse::Scripting::ModuleResult__Invalidate_fn, uPtr(_dependant)));
 
     return uPtr(uPtr(module)->Object)->Item(::STRINGS[21/*"exports"*/]);
 }
 
-// public RequireContext New(Fuse.Scripting.Context c, Fuse.Scripting.ScriptModule m, Fuse.Scripting.ModuleResult dependant) [static] :1839
-ScriptModule__RequireContext* ScriptModule__RequireContext::New1(::g::Fuse::Scripting::Context* c, ::g::Fuse::Scripting::ScriptModule* m, ::g::Fuse::Scripting::ModuleResult* dependant)
+// public RequireContext New(Fuse.Scripting.Context c, Fuse.Scripting.ScriptModule m, Fuse.Scripting.ModuleResult dependant, Uno.Collections.Dictionary<string, object> rt) [static] :21
+ScriptModule__RequireContext* ScriptModule__RequireContext::New1(::g::Fuse::Scripting::Context* c, ::g::Fuse::Scripting::ScriptModule* m, ::g::Fuse::Scripting::ModuleResult* dependant, ::g::Uno::Collections::Dictionary* rt)
 {
     ScriptModule__RequireContext* obj1 = (ScriptModule__RequireContext*)uNew(ScriptModule__RequireContext_typeof());
-    obj1->ctor_(c, m, dependant);
+    obj1->ctor_(c, m, dependant, rt);
     return obj1;
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Scripting/1.2.1/$.uno
-// --------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Scripting\1.3.0-rc2\NativePromise.uno
+// --------------------------------------------------------------------------------------
 
-// public delegate TJSResult ResultConverter<T, TJSResult>(Fuse.Scripting.Context context, T result) :1273
+// public delegate TJSResult ResultConverter<T, TJSResult>(Fuse.Scripting.Context context, T result) :8
 uDelegateType* ResultConverter_typeof()
 {
     static uSStrong<uDelegateType*> type;
@@ -4175,10 +4444,26 @@ uDelegateType* ResultConverter_typeof()
     return type;
 }
 
-// /usr/local/share/uno/Packages/Fuse.Scripting/1.2.1/$.uno
-// --------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Scripting\1.3.0-rc2\ScriptClass.uno
+// ------------------------------------------------------------------------------------
 
-// public delegate T ResultFactory<T>(object[] args) :1271
+// public delegate TJSResult ScriptPromise<TSelf, TResult, TJSResult>.ResultConverter<TResult, TJSResult>(Fuse.Scripting.Context context, TResult result) :152
+uDelegateType* ScriptPromise__ResultConverter_typeof()
+{
+    static uSStrong<uDelegateType*> type;
+    if (type != NULL) return type;
+
+    type = uDelegateType::New("Fuse.Scripting.ScriptPromise`3.ResultConverter`2", 2, 5);
+    type->SetSignature(type->T(4),
+        ::g::Fuse::Scripting::Context_typeof(),
+        type->T(3));
+    return type;
+}
+
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Scripting\1.3.0-rc2\NativePromise.uno
+// --------------------------------------------------------------------------------------
+
+// public delegate T ResultFactory<T>(object[] args) :6
 uDelegateType* ResultFactory_typeof()
 {
     static uSStrong<uDelegateType*> type;
@@ -4190,24 +4475,26 @@ uDelegateType* ResultFactory_typeof()
     return type;
 }
 
-// /usr/local/share/uno/Packages/Fuse.Scripting/1.2.1/$.uno
-// --------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Scripting\1.3.0-rc2\ScriptClass.uno
+// ------------------------------------------------------------------------------------
 
-// public sealed class ScriptClass :1624
+// public sealed class ScriptClass :301
 // {
-// static ScriptClass() :1624
+// static generated ScriptClass() :301
 static void ScriptClass__cctor__fn(uType* __type)
 {
-    ScriptClass::_unoTypeToScriptClass_ = ((::g::Uno::Collections::Dictionary*)::g::Uno::Collections::Dictionary::New1(::TYPES[53/*Uno.Collections.Dictionary<Uno.Type, Fuse.Scripting.ScriptClass>*/]));
+    ScriptClass::_unoTypeToScriptClass_ = ((::g::Uno::Collections::Dictionary*)::g::Uno::Collections::Dictionary::New1(::TYPES[36/*Uno.Collections.Dictionary<Uno.Type, Fuse.Scripting.ScriptClass>*/]));
 }
 
 static void ScriptClass_build(uType* type)
 {
-    ::TYPES[53] = ::g::Uno::Collections::Dictionary_typeof()->MakeType(::g::Uno::Type_typeof(), type, NULL);
+    ::TYPES[36] = ::g::Uno::Collections::Dictionary_typeof()->MakeType(::g::Uno::Type_typeof(), type, NULL);
+    type->SetDependencies(
+        ::g::Uno::Type_typeof());
     type->SetFields(0,
-        ::g::Fuse::Scripting::ScriptMember_typeof()->Array(), offsetof(::g::Fuse::Scripting::ScriptClass, _members), 0,
-        ::g::Uno::Type_typeof(), offsetof(::g::Fuse::Scripting::ScriptClass, _unoType), 0,
-        ::TYPES[53/*Uno.Collections.Dictionary<Uno.Type, Fuse.Scripting.ScriptClass>*/], (uintptr_t)&::g::Fuse::Scripting::ScriptClass::_unoTypeToScriptClass_, uFieldFlagsStatic);
+        ::g::Fuse::Scripting::ScriptMember_typeof()->Array(), offsetof(ScriptClass, _members), 0,
+        ::g::Uno::Type_typeof(), offsetof(ScriptClass, _unoType), 0,
+        ::TYPES[36/*Uno.Collections.Dictionary<Uno.Type, Fuse.Scripting.ScriptClass>*/], (uintptr_t)&ScriptClass::_unoTypeToScriptClass_, uFieldFlagsStatic);
 }
 
 uType* ScriptClass_typeof()
@@ -4217,6 +4504,7 @@ uType* ScriptClass_typeof()
 
     uTypeOptions options;
     options.FieldCount = 3;
+    options.DependencyCount = 1;
     options.ObjectSize = sizeof(ScriptClass);
     options.TypeSize = sizeof(uType);
     type = uClassType::New("Fuse.Scripting.ScriptClass", options);
@@ -4225,43 +4513,43 @@ uType* ScriptClass_typeof()
     return type;
 }
 
-// private ScriptClass(Uno.Type unoType, Fuse.Scripting.ScriptMember[] members) :1653
+// private ScriptClass(Uno.Type unoType, Fuse.Scripting.ScriptMember[] members) :330
 void ScriptClass__ctor__fn(ScriptClass* __this, uType* unoType, uArray* members)
 {
     __this->ctor_(unoType, members);
 }
 
-// public static Fuse.Scripting.ScriptClass Get(Uno.Type t) :1636
+// public static Fuse.Scripting.ScriptClass Get(Uno.Type t) :313
 void ScriptClass__Get_fn(uType* t, ScriptClass** __retval)
 {
     *__retval = ScriptClass::Get(t);
 }
 
-// public Fuse.Scripting.ScriptMember[] get_Members() :1651
+// public Fuse.Scripting.ScriptMember[] get_Members() :328
 void ScriptClass__get_Members_fn(ScriptClass* __this, uArray** __retval)
 {
     *__retval = __this->Members();
 }
 
-// private ScriptClass New(Uno.Type unoType, Fuse.Scripting.ScriptMember[] members) :1653
+// private ScriptClass New(Uno.Type unoType, Fuse.Scripting.ScriptMember[] members) :330
 void ScriptClass__New1_fn(uType* unoType, uArray* members, ScriptClass** __retval)
 {
     *__retval = ScriptClass::New1(unoType, members);
 }
 
-// public static void Register(Uno.Type unoType, Fuse.Scripting.ScriptMember[] members) :1659
+// public static void Register(Uno.Type unoType, Fuse.Scripting.ScriptMember[] members) :336
 void ScriptClass__Register_fn(uType* unoType, uArray* members)
 {
     ScriptClass::Register(unoType, members);
 }
 
-// public Fuse.Scripting.ScriptClass get_SuperType() :1630
+// public Fuse.Scripting.ScriptClass get_SuperType() :307
 void ScriptClass__get_SuperType_fn(ScriptClass* __this, ScriptClass** __retval)
 {
     *__retval = __this->SuperType();
 }
 
-// public Uno.Type get_Type() :1627
+// public Uno.Type get_Type() :304
 void ScriptClass__get_Type_fn(ScriptClass* __this, uType** __retval)
 {
     *__retval = __this->Type();
@@ -4269,42 +4557,41 @@ void ScriptClass__get_Type_fn(ScriptClass* __this, uType** __retval)
 
 uSStrong< ::g::Uno::Collections::Dictionary*> ScriptClass::_unoTypeToScriptClass_;
 
-// private ScriptClass(Uno.Type unoType, Fuse.Scripting.ScriptMember[] members) [instance] :1653
+// private ScriptClass(Uno.Type unoType, Fuse.Scripting.ScriptMember[] members) [instance] :330
 void ScriptClass::ctor_(uType* unoType, uArray* members)
 {
     _unoType = unoType;
     _members = members;
 }
 
-// public Fuse.Scripting.ScriptMember[] get_Members() [instance] :1651
+// public Fuse.Scripting.ScriptMember[] get_Members() [instance] :328
 uArray* ScriptClass::Members()
 {
     return _members;
 }
 
-// public Fuse.Scripting.ScriptClass get_SuperType() [instance] :1630
+// public Fuse.Scripting.ScriptClass get_SuperType() [instance] :307
 ScriptClass* ScriptClass::SuperType()
 {
     return ScriptClass::Get(::g::Uno::Type::BaseType(uPtr(_unoType)));
 }
 
-// public Uno.Type get_Type() [instance] :1627
+// public Uno.Type get_Type() [instance] :304
 uType* ScriptClass::Type()
 {
     return _unoType;
 }
 
-// public static Fuse.Scripting.ScriptClass Get(Uno.Type t) [static] :1636
+// public static Fuse.Scripting.ScriptClass Get(Uno.Type t) [static] :313
 ScriptClass* ScriptClass::Get(uType* t)
 {
-    ScriptClass_typeof()->Init();
     bool ret2;
 
     while (::g::Uno::Type::op_Inequality(t, NULL))
     {
         ScriptClass* sc;
 
-        if ((::g::Uno::Collections::Dictionary__TryGetValue_fn(uPtr(ScriptClass::_unoTypeToScriptClass()), t, (void**)(&sc), &ret2), ret2))
+        if ((::g::Uno::Collections::Dictionary__TryGetValue_fn(uPtr(ScriptClass::_unoTypeToScriptClass_), t, (void**)(&sc), &ret2), ret2))
             return sc;
 
         t = ::g::Uno::Type::BaseType(uPtr(t));
@@ -4313,7 +4600,7 @@ ScriptClass* ScriptClass::Get(uType* t)
     return NULL;
 }
 
-// private ScriptClass New(Uno.Type unoType, Fuse.Scripting.ScriptMember[] members) [static] :1653
+// private ScriptClass New(Uno.Type unoType, Fuse.Scripting.ScriptMember[] members) [static] :330
 ScriptClass* ScriptClass::New1(uType* unoType, uArray* members)
 {
     ScriptClass* obj1 = (ScriptClass*)uNew(ScriptClass_typeof());
@@ -4321,35 +4608,34 @@ ScriptClass* ScriptClass::New1(uType* unoType, uArray* members)
     return obj1;
 }
 
-// public static void Register(Uno.Type unoType, Fuse.Scripting.ScriptMember[] members) [static] :1659
+// public static void Register(Uno.Type unoType, Fuse.Scripting.ScriptMember[] members) [static] :336
 void ScriptClass::Register(uType* unoType, uArray* members)
 {
-    ScriptClass_typeof()->Init();
-    ::g::Uno::Collections::Dictionary__Add_fn(uPtr(ScriptClass::_unoTypeToScriptClass()), unoType, ScriptClass::New1(unoType, members));
+    ::g::Uno::Collections::Dictionary__Add_fn(uPtr(ScriptClass::_unoTypeToScriptClass_), unoType, ScriptClass::New1(unoType, members));
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Scripting/1.2.1/$.uno
-// --------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Scripting\1.3.0-rc2\ScriptException.uno
+// ----------------------------------------------------------------------------------------
 
-// public sealed class ScriptException :1671
+// public sealed class ScriptException :4
 // {
 static void ScriptException_build(uType* type)
 {
-    ::STRINGS[39] = uString::Const("Name: ");
-    ::STRINGS[40] = uString::Const("Error message: ");
-    ::STRINGS[41] = uString::Const("File name: ");
-    ::STRINGS[42] = uString::Const("Line number: ");
-    ::STRINGS[43] = uString::Const("Source line: ");
-    ::STRINGS[44] = uString::Const("JS stack trace: ");
-    ::TYPES[47] = ::g::Uno::Int_typeof();
+    ::STRINGS[40] = uString::Const("Name: ");
+    ::STRINGS[41] = uString::Const("Error message: ");
+    ::STRINGS[42] = uString::Const("File name: ");
+    ::STRINGS[43] = uString::Const("Line number: ");
+    ::STRINGS[44] = uString::Const("Source line: ");
+    ::STRINGS[45] = uString::Const("JS stack trace: ");
+    ::TYPES[30] = ::g::Uno::Int_typeof();
     type->SetFields(4,
-        ::g::Uno::String_typeof(), offsetof(::g::Fuse::Scripting::ScriptException, _ErrorMessage), 0,
-        ::g::Uno::String_typeof(), offsetof(::g::Fuse::Scripting::ScriptException, _FileName), 0,
-        ::g::Uno::String_typeof(), offsetof(::g::Fuse::Scripting::ScriptException, _JSStackTrace), 0,
-        ::TYPES[47/*int*/], offsetof(::g::Fuse::Scripting::ScriptException, _LineNumber), 0,
-        ::g::Uno::String_typeof(), offsetof(::g::Fuse::Scripting::ScriptException, _Name), 0,
-        ::g::Uno::String_typeof(), offsetof(::g::Fuse::Scripting::ScriptException, _SourceLine), 0);
+        ::g::Uno::String_typeof(), offsetof(ScriptException, _ErrorMessage), 0,
+        ::g::Uno::String_typeof(), offsetof(ScriptException, _FileName), 0,
+        ::g::Uno::String_typeof(), offsetof(ScriptException, _JSStackTrace), 0,
+        ::TYPES[30/*int*/], offsetof(ScriptException, _LineNumber), 0,
+        ::g::Uno::String_typeof(), offsetof(ScriptException, _Name), 0,
+        ::g::Uno::String_typeof(), offsetof(ScriptException, _SourceLine), 0);
 }
 
 ::g::Uno::Exception_type* ScriptException_typeof()
@@ -4368,135 +4654,135 @@ static void ScriptException_build(uType* type)
     return type;
 }
 
-// public ScriptException(string name, string errorMessage, string fileName, int lineNumber, string sourceLine, string stackTrace) :1680
+// public ScriptException(string name, string errorMessage, string fileName, int lineNumber, string sourceLine, string stackTrace) :13
 void ScriptException__ctor_3_fn(ScriptException* __this, uString* name, uString* errorMessage, uString* fileName, int* lineNumber, uString* sourceLine, uString* stackTrace)
 {
     __this->ctor_3(name, errorMessage, fileName, *lineNumber, sourceLine, stackTrace);
 }
 
-// public generated string get_ErrorMessage() :1674
+// public generated string get_ErrorMessage() :7
 void ScriptException__get_ErrorMessage_fn(ScriptException* __this, uString** __retval)
 {
     *__retval = __this->ErrorMessage();
 }
 
-// private generated void set_ErrorMessage(string value) :1674
+// private generated void set_ErrorMessage(string value) :7
 void ScriptException__set_ErrorMessage_fn(ScriptException* __this, uString* value)
 {
     __this->ErrorMessage(value);
 }
 
-// public generated string get_FileName() :1675
+// public generated string get_FileName() :8
 void ScriptException__get_FileName_fn(ScriptException* __this, uString** __retval)
 {
     *__retval = __this->FileName();
 }
 
-// private generated void set_FileName(string value) :1675
+// private generated void set_FileName(string value) :8
 void ScriptException__set_FileName_fn(ScriptException* __this, uString* value)
 {
     __this->FileName(value);
 }
 
-// public generated string get_JSStackTrace() :1678
+// public generated string get_JSStackTrace() :11
 void ScriptException__get_JSStackTrace_fn(ScriptException* __this, uString** __retval)
 {
     *__retval = __this->JSStackTrace();
 }
 
-// private generated void set_JSStackTrace(string value) :1678
+// private generated void set_JSStackTrace(string value) :11
 void ScriptException__set_JSStackTrace_fn(ScriptException* __this, uString* value)
 {
     __this->JSStackTrace(value);
 }
 
-// public generated int get_LineNumber() :1676
+// public generated int get_LineNumber() :9
 void ScriptException__get_LineNumber_fn(ScriptException* __this, int* __retval)
 {
     *__retval = __this->LineNumber();
 }
 
-// private generated void set_LineNumber(int value) :1676
+// private generated void set_LineNumber(int value) :9
 void ScriptException__set_LineNumber_fn(ScriptException* __this, int* value)
 {
     __this->LineNumber(*value);
 }
 
-// public override sealed string get_Message() :1698
+// public override sealed string get_Message() :31
 void ScriptException__get_Message_fn(ScriptException* __this, uString** __retval)
 {
     ::g::Uno::Text::StringBuilder* stringBuilder = ::g::Uno::Text::StringBuilder::New1();
 
     if (!::g::Uno::String::IsNullOrEmpty(__this->Name()))
     {
-        uPtr(stringBuilder)->Append2(::STRINGS[39/*"Name: "*/]);
+        uPtr(stringBuilder)->Append2(::STRINGS[40/*"Name: "*/]);
         stringBuilder->AppendLine(__this->Name());
     }
 
     if (!::g::Uno::String::IsNullOrEmpty(__this->ErrorMessage()))
     {
-        uPtr(stringBuilder)->Append2(::STRINGS[40/*"Error messa...*/]);
+        uPtr(stringBuilder)->Append2(::STRINGS[41/*"Error messa...*/]);
         stringBuilder->AppendLine(__this->ErrorMessage());
     }
 
     if (!::g::Uno::String::IsNullOrEmpty(__this->FileName()))
     {
-        uPtr(stringBuilder)->Append2(::STRINGS[41/*"File name: "*/]);
+        uPtr(stringBuilder)->Append2(::STRINGS[42/*"File name: "*/]);
         stringBuilder->AppendLine(__this->FileName());
     }
 
     if (__this->LineNumber() >= 0)
     {
-        uPtr(stringBuilder)->Append2(::STRINGS[42/*"Line number: "*/]);
-        stringBuilder->AppendLine(::g::Uno::Int::ToString(__this->LineNumber(), ::TYPES[47/*int*/]));
+        uPtr(stringBuilder)->Append2(::STRINGS[43/*"Line number: "*/]);
+        stringBuilder->AppendLine(::g::Uno::Int::ToString(__this->LineNumber(), ::TYPES[30/*int*/]));
     }
 
     if (!::g::Uno::String::IsNullOrEmpty(__this->SourceLine()))
     {
-        uPtr(stringBuilder)->Append2(::STRINGS[43/*"Source line: "*/]);
+        uPtr(stringBuilder)->Append2(::STRINGS[44/*"Source line: "*/]);
         stringBuilder->AppendLine(__this->SourceLine());
     }
 
     if (!::g::Uno::String::IsNullOrEmpty(__this->JSStackTrace()))
     {
-        uPtr(stringBuilder)->Append2(::STRINGS[44/*"JS stack tr...*/]);
+        uPtr(stringBuilder)->Append2(::STRINGS[45/*"JS stack tr...*/]);
         stringBuilder->AppendLine(__this->JSStackTrace());
     }
 
     return *__retval = stringBuilder->ToString(), void();
 }
 
-// public generated string get_Name() :1673
+// public generated string get_Name() :6
 void ScriptException__get_Name_fn(ScriptException* __this, uString** __retval)
 {
     *__retval = __this->Name();
 }
 
-// private generated void set_Name(string value) :1673
+// private generated void set_Name(string value) :6
 void ScriptException__set_Name_fn(ScriptException* __this, uString* value)
 {
     __this->Name(value);
 }
 
-// public ScriptException New(string name, string errorMessage, string fileName, int lineNumber, string sourceLine, string stackTrace) :1680
+// public ScriptException New(string name, string errorMessage, string fileName, int lineNumber, string sourceLine, string stackTrace) :13
 void ScriptException__New4_fn(uString* name, uString* errorMessage, uString* fileName, int* lineNumber, uString* sourceLine, uString* stackTrace, ScriptException** __retval)
 {
     *__retval = ScriptException::New4(name, errorMessage, fileName, *lineNumber, sourceLine, stackTrace);
 }
 
-// public generated string get_SourceLine() :1677
+// public generated string get_SourceLine() :10
 void ScriptException__get_SourceLine_fn(ScriptException* __this, uString** __retval)
 {
     *__retval = __this->SourceLine();
 }
 
-// private generated void set_SourceLine(string value) :1677
+// private generated void set_SourceLine(string value) :10
 void ScriptException__set_SourceLine_fn(ScriptException* __this, uString* value)
 {
     __this->SourceLine(value);
 }
 
-// public ScriptException(string name, string errorMessage, string fileName, int lineNumber, string sourceLine, string stackTrace) [instance] :1680
+// public ScriptException(string name, string errorMessage, string fileName, int lineNumber, string sourceLine, string stackTrace) [instance] :13
 void ScriptException::ctor_3(uString* name, uString* errorMessage, uString* fileName, int lineNumber, uString* sourceLine, uString* stackTrace)
 {
     ctor_();
@@ -4508,79 +4794,79 @@ void ScriptException::ctor_3(uString* name, uString* errorMessage, uString* file
     JSStackTrace(stackTrace);
 }
 
-// public generated string get_ErrorMessage() [instance] :1674
+// public generated string get_ErrorMessage() [instance] :7
 uString* ScriptException::ErrorMessage()
 {
     return _ErrorMessage;
 }
 
-// private generated void set_ErrorMessage(string value) [instance] :1674
+// private generated void set_ErrorMessage(string value) [instance] :7
 void ScriptException::ErrorMessage(uString* value)
 {
     _ErrorMessage = value;
 }
 
-// public generated string get_FileName() [instance] :1675
+// public generated string get_FileName() [instance] :8
 uString* ScriptException::FileName()
 {
     return _FileName;
 }
 
-// private generated void set_FileName(string value) [instance] :1675
+// private generated void set_FileName(string value) [instance] :8
 void ScriptException::FileName(uString* value)
 {
     _FileName = value;
 }
 
-// public generated string get_JSStackTrace() [instance] :1678
+// public generated string get_JSStackTrace() [instance] :11
 uString* ScriptException::JSStackTrace()
 {
     return _JSStackTrace;
 }
 
-// private generated void set_JSStackTrace(string value) [instance] :1678
+// private generated void set_JSStackTrace(string value) [instance] :11
 void ScriptException::JSStackTrace(uString* value)
 {
     _JSStackTrace = value;
 }
 
-// public generated int get_LineNumber() [instance] :1676
+// public generated int get_LineNumber() [instance] :9
 int ScriptException::LineNumber()
 {
     return _LineNumber;
 }
 
-// private generated void set_LineNumber(int value) [instance] :1676
+// private generated void set_LineNumber(int value) [instance] :9
 void ScriptException::LineNumber(int value)
 {
     _LineNumber = value;
 }
 
-// public generated string get_Name() [instance] :1673
+// public generated string get_Name() [instance] :6
 uString* ScriptException::Name()
 {
     return _Name;
 }
 
-// private generated void set_Name(string value) [instance] :1673
+// private generated void set_Name(string value) [instance] :6
 void ScriptException::Name(uString* value)
 {
     _Name = value;
 }
 
-// public generated string get_SourceLine() [instance] :1677
+// public generated string get_SourceLine() [instance] :10
 uString* ScriptException::SourceLine()
 {
     return _SourceLine;
 }
 
-// private generated void set_SourceLine(string value) [instance] :1677
+// private generated void set_SourceLine(string value) [instance] :10
 void ScriptException::SourceLine(uString* value)
 {
     _SourceLine = value;
 }
 
-// public ScriptException New(string name, string errorMessage, string fileName, int lineNumber, string sourceLine, string stackTrace) [static] :1680
+// public ScriptException New(string name, string errorMessage, string fileName, int lineNumber, string sourceLine, string stackTrace) [static] :13
 ScriptException* ScriptException::New4(uString* name, uString* errorMessage, uString* fileName, int lineNumber, uString* sourceLine, uString* stackTrace)
 {
     ScriptException* obj1 = (ScriptException*)uNew(ScriptException_typeof());
@@ -4589,15 +4875,15 @@ ScriptException* ScriptException::New4(uString* name, uString* errorMessage, uSt
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Scripting/1.2.1/$.uno
-// --------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Scripting\1.3.0-rc2\ScriptClass.uno
+// ------------------------------------------------------------------------------------
 
-// public abstract class ScriptMember :1500
+// public abstract class ScriptMember :15
 // {
 static void ScriptMember_build(uType* type)
 {
     type->SetFields(0,
-        ::g::Uno::String_typeof(), offsetof(::g::Fuse::Scripting::ScriptMember, Name), 0);
+        ::g::Uno::String_typeof(), offsetof(ScriptMember, Name), 0);
 }
 
 uType* ScriptMember_typeof()
@@ -4614,28 +4900,28 @@ uType* ScriptMember_typeof()
     return type;
 }
 
-// protected ScriptMember(string name) :1504
+// protected ScriptMember(string name) :19
 void ScriptMember__ctor__fn(ScriptMember* __this, uString* name)
 {
     __this->ctor_(name);
 }
 
-// protected ScriptMember(string name) [instance] :1504
+// protected ScriptMember(string name) [instance] :19
 void ScriptMember::ctor_(uString* name)
 {
     Name = name;
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Scripting/1.2.1/$.uno
-// --------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Scripting\1.3.0-rc2\ScriptClass.uno
+// ------------------------------------------------------------------------------------
 
-// public abstract class ScriptMethod :1534
+// public abstract class ScriptMethod :59
 // {
 static void ScriptMethod_build(uType* type)
 {
     type->SetFields(1,
-        ::g::Fuse::Scripting::ExecutionThread_typeof(), offsetof(::g::Fuse::Scripting::ScriptMethod, Thread), 0);
+        ::g::Fuse::Scripting::ExecutionThread_typeof(), offsetof(ScriptMethod, Thread), 0);
 }
 
 ScriptMethod_type* ScriptMethod_typeof()
@@ -4653,13 +4939,13 @@ ScriptMethod_type* ScriptMethod_typeof()
     return type;
 }
 
-// protected ScriptMethod(string name, Fuse.Scripting.ExecutionThread thread) :1538
+// protected ScriptMethod(string name, Fuse.Scripting.ExecutionThread thread) :63
 void ScriptMethod__ctor_1_fn(ScriptMethod* __this, uString* name, int* thread)
 {
     __this->ctor_1(name, *thread);
 }
 
-// protected ScriptMethod(string name, Fuse.Scripting.ExecutionThread thread) [instance] :1538
+// protected ScriptMethod(string name, Fuse.Scripting.ExecutionThread thread) [instance] :63
 void ScriptMethod::ctor_1(uString* name, int thread)
 {
     ctor_(name);
@@ -4667,23 +4953,20 @@ void ScriptMethod::ctor_1(uString* name, int thread)
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Scripting/1.2.1/$.uno
-// --------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Scripting\1.3.0-rc2\ScriptClass.uno
+// ------------------------------------------------------------------------------------
 
-// public sealed class ScriptMethod<T> :1561
+// public sealed class ScriptMethod<T> :86
 // {
 static void ScriptMethod1_build(uType* type)
 {
-    ::STRINGS[45] = uString::Const("Cannot call a non-void method asynchronously");
-    ::STRINGS[35] = uString::Const("/usr/local/share/uno/Packages/Fuse.Scripting/1.2.1/$.uno");
-    ::STRINGS[46] = uString::Const("Call");
-    ::TYPES[3] = ::g::Uno::Action_typeof();
-    ::TYPES[54] = ScriptMethod1__CallClosure_typeof();
+    type->SetDependencies(
+        ::g::Fuse::Diagnostics_typeof());
     type->SetPrecalc(
         ScriptMethod1__CallClosure_typeof()->MakeType(type->T(0), NULL));
     type->SetFields(2,
-        ::g::Uno::Func3_typeof()->MakeType(::g::Fuse::Scripting::Context_typeof(), type->T(0), uObject_typeof()->Array(), uObject_typeof(), NULL), offsetof(::g::Fuse::Scripting::ScriptMethod1, _method), 0,
-        ::g::Uno::Action3_typeof()->MakeType(::g::Fuse::Scripting::Context_typeof(), type->T(0), uObject_typeof()->Array(), NULL), offsetof(::g::Fuse::Scripting::ScriptMethod1, _voidMethod), 0);
+        ::g::Uno::Func3_typeof()->MakeType(::g::Fuse::Scripting::Context_typeof(), type->T(0), uObject_typeof()->Array(), uObject_typeof(), NULL), offsetof(ScriptMethod1, _method), 0,
+        ::g::Uno::Action3_typeof()->MakeType(::g::Fuse::Scripting::Context_typeof(), type->T(0), uObject_typeof()->Array(), NULL), offsetof(ScriptMethod1, _voidMethod), 0);
 }
 
 ::g::Fuse::Scripting::ScriptMethod_type* ScriptMethod1_typeof()
@@ -4695,6 +4978,7 @@ static void ScriptMethod1_build(uType* type)
     options.BaseDefinition = ::g::Fuse::Scripting::ScriptMethod_typeof();
     options.FieldCount = 4;
     options.GenericCount = 1;
+    options.DependencyCount = 1;
     options.PrecalcCount = 1;
     options.ObjectSize = sizeof(ScriptMethod1);
     options.TypeSize = sizeof(::g::Fuse::Scripting::ScriptMethod_type);
@@ -4704,19 +4988,19 @@ static void ScriptMethod1_build(uType* type)
     return type;
 }
 
-// public ScriptMethod(string name, Uno.Action<Fuse.Scripting.Context, T, object[]> method, Fuse.Scripting.ExecutionThread thread) :1571
+// public ScriptMethod(string name, Uno.Action<Fuse.Scripting.Context, T, object[]> method, Fuse.Scripting.ExecutionThread thread) :96
 void ScriptMethod1__ctor_2_fn(ScriptMethod1* __this, uString* name, uDelegate* method, int* thread)
 {
     __this->ctor_2(name, method, *thread);
 }
 
-// public ScriptMethod(string name, Uno.Func<Fuse.Scripting.Context, T, object[], object> method, Fuse.Scripting.ExecutionThread thread) :1566
+// public ScriptMethod(string name, Uno.Func<Fuse.Scripting.Context, T, object[], object> method, Fuse.Scripting.ExecutionThread thread) :91
 void ScriptMethod1__ctor_3_fn(ScriptMethod1* __this, uString* name, uDelegate* method, int* thread)
 {
     __this->ctor_3(name, method, *thread);
 }
 
-// public override sealed object Call(Fuse.Scripting.Context c, object obj, object[] args) :1576
+// public override sealed object Call(Fuse.Scripting.Context c, object obj, object[] args) :101
 void ScriptMethod1__Call_fn(ScriptMethod1* __this, ::g::Fuse::Scripting::Context* c, uObject* obj, uArray* args, uObject** __retval)
 {
     uType* __types[] = {
@@ -4727,11 +5011,11 @@ void ScriptMethod1__Call_fn(ScriptMethod1* __this, ::g::Fuse::Scripting::Context
     {
         if (::g::Uno::Delegate::op_Equality(__this->_voidMethod, NULL))
         {
-            ::g::Fuse::Diagnostics::InternalError(::STRINGS[45/*"Cannot call...*/], __this, ::STRINGS[35/*"/usr/local/...*/], 1582, ::STRINGS[46/*"Call"*/]);
+            ::g::Fuse::Diagnostics::InternalError(uString::Const("Cannot call a non-void method asynchronously"), __this, uString::Const("C:\\Users\\q\\AppData\\Local\\Fusetools\\Packages\\Fuse.Scripting\\1.3.0-rc2\\ScriptClass.uno"), 107, uString::Const("Call"));
             return *__retval = NULL, void();
         }
 
-        ::g::Fuse::UpdateManager::PostAction(uDelegate::New(::TYPES[3/*Uno.Action*/], (void*)ScriptMethod1__CallClosure__Run_fn, ScriptMethod1__CallClosure::New1(__types[0], __this->_voidMethod, c, obj, args)));
+        ::g::Fuse::UpdateManager::PostAction(uDelegate::New(::TYPES[15/*Uno.Action*/], (void*)ScriptMethod1__CallClosure__Run_fn, ScriptMethod1__CallClosure::New1(__types[0], __this->_voidMethod, c, obj, args)));
         return *__retval = NULL, void();
     }
 
@@ -4744,33 +5028,33 @@ void ScriptMethod1__Call_fn(ScriptMethod1* __this, ::g::Fuse::Scripting::Context
         return *__retval = uPtr(__this->_method)->Invoke(3, c, (void*)uUnboxAny(__this->__type->T(0), obj), args), void();
 }
 
-// public ScriptMethod New(string name, Uno.Action<Fuse.Scripting.Context, T, object[]> method, Fuse.Scripting.ExecutionThread thread) :1571
+// public ScriptMethod New(string name, Uno.Action<Fuse.Scripting.Context, T, object[]> method, Fuse.Scripting.ExecutionThread thread) :96
 void ScriptMethod1__New1_fn(uType* __type, uString* name, uDelegate* method, int* thread, ScriptMethod1** __retval)
 {
     *__retval = ScriptMethod1::New1(__type, name, method, *thread);
 }
 
-// public ScriptMethod New(string name, Uno.Func<Fuse.Scripting.Context, T, object[], object> method, Fuse.Scripting.ExecutionThread thread) :1566
+// public ScriptMethod New(string name, Uno.Func<Fuse.Scripting.Context, T, object[], object> method, Fuse.Scripting.ExecutionThread thread) :91
 void ScriptMethod1__New2_fn(uType* __type, uString* name, uDelegate* method, int* thread, ScriptMethod1** __retval)
 {
     *__retval = ScriptMethod1::New2(__type, name, method, *thread);
 }
 
-// public ScriptMethod(string name, Uno.Action<Fuse.Scripting.Context, T, object[]> method, Fuse.Scripting.ExecutionThread thread) [instance] :1571
+// public ScriptMethod(string name, Uno.Action<Fuse.Scripting.Context, T, object[]> method, Fuse.Scripting.ExecutionThread thread) [instance] :96
 void ScriptMethod1::ctor_2(uString* name, uDelegate* method, int thread)
 {
     ctor_1(name, thread);
     _voidMethod = method;
 }
 
-// public ScriptMethod(string name, Uno.Func<Fuse.Scripting.Context, T, object[], object> method, Fuse.Scripting.ExecutionThread thread) [instance] :1566
+// public ScriptMethod(string name, Uno.Func<Fuse.Scripting.Context, T, object[], object> method, Fuse.Scripting.ExecutionThread thread) [instance] :91
 void ScriptMethod1::ctor_3(uString* name, uDelegate* method, int thread)
 {
     ctor_1(name, thread);
     _method = method;
 }
 
-// public ScriptMethod New(string name, Uno.Action<Fuse.Scripting.Context, T, object[]> method, Fuse.Scripting.ExecutionThread thread) [static] :1571
+// public ScriptMethod New(string name, Uno.Action<Fuse.Scripting.Context, T, object[]> method, Fuse.Scripting.ExecutionThread thread) [static] :96
 ScriptMethod1* ScriptMethod1::New1(uType* __type, uString* name, uDelegate* method, int thread)
 {
     ScriptMethod1* obj2 = (ScriptMethod1*)uNew(__type);
@@ -4778,7 +5062,7 @@ ScriptMethod1* ScriptMethod1::New1(uType* __type, uString* name, uDelegate* meth
     return obj2;
 }
 
-// public ScriptMethod New(string name, Uno.Func<Fuse.Scripting.Context, T, object[], object> method, Fuse.Scripting.ExecutionThread thread) [static] :1566
+// public ScriptMethod New(string name, Uno.Func<Fuse.Scripting.Context, T, object[], object> method, Fuse.Scripting.ExecutionThread thread) [static] :91
 ScriptMethod1* ScriptMethod1::New2(uType* __type, uString* name, uDelegate* method, int thread)
 {
     ScriptMethod1* obj1 = (ScriptMethod1*)uNew(__type);
@@ -4787,15 +5071,15 @@ ScriptMethod1* ScriptMethod1::New2(uType* __type, uString* name, uDelegate* meth
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Scripting/1.2.1/$.uno
-// --------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Scripting\1.3.0-rc2\ScriptClass.uno
+// ------------------------------------------------------------------------------------
 
-// public sealed class ScriptMethodInline :1546
+// public sealed class ScriptMethodInline :71
 // {
 static void ScriptMethodInline_build(uType* type)
 {
     type->SetFields(2,
-        ::g::Uno::String_typeof(), offsetof(::g::Fuse::Scripting::ScriptMethodInline, Code), 0);
+        ::g::Uno::String_typeof(), offsetof(ScriptMethodInline, Code), 0);
 }
 
 ::g::Fuse::Scripting::ScriptMethod_type* ScriptMethodInline_typeof()
@@ -4814,32 +5098,32 @@ static void ScriptMethodInline_build(uType* type)
     return type;
 }
 
-// public ScriptMethodInline(string name, Fuse.Scripting.ExecutionThread thread, string code) :1550
+// public ScriptMethodInline(string name, Fuse.Scripting.ExecutionThread thread, string code) :75
 void ScriptMethodInline__ctor_2_fn(ScriptMethodInline* __this, uString* name, int* thread, uString* code)
 {
     __this->ctor_2(name, *thread, code);
 }
 
-// public override sealed object Call(Fuse.Scripting.Context c, object obj, object[] args) :1555
+// public override sealed object Call(Fuse.Scripting.Context c, object obj, object[] args) :80
 void ScriptMethodInline__Call_fn(ScriptMethodInline* __this, ::g::Fuse::Scripting::Context* c, uObject* obj, uArray* args, uObject** __retval)
 {
     U_THROW(::g::Uno::Exception::New1());
 }
 
-// public ScriptMethodInline New(string name, Fuse.Scripting.ExecutionThread thread, string code) :1550
+// public ScriptMethodInline New(string name, Fuse.Scripting.ExecutionThread thread, string code) :75
 void ScriptMethodInline__New1_fn(uString* name, int* thread, uString* code, ScriptMethodInline** __retval)
 {
     *__retval = ScriptMethodInline::New1(name, *thread, code);
 }
 
-// public ScriptMethodInline(string name, Fuse.Scripting.ExecutionThread thread, string code) [instance] :1550
+// public ScriptMethodInline(string name, Fuse.Scripting.ExecutionThread thread, string code) [instance] :75
 void ScriptMethodInline::ctor_2(uString* name, int thread, uString* code)
 {
     ctor_1(name, thread);
     Code = code;
 }
 
-// public ScriptMethodInline New(string name, Fuse.Scripting.ExecutionThread thread, string code) [static] :1550
+// public ScriptMethodInline New(string name, Fuse.Scripting.ExecutionThread thread, string code) [static] :75
 ScriptMethodInline* ScriptMethodInline::New1(uString* name, int thread, uString* code)
 {
     ScriptMethodInline* obj1 = (ScriptMethodInline*)uNew(ScriptMethodInline_typeof());
@@ -4848,55 +5132,33 @@ ScriptMethodInline* ScriptMethodInline::New1(uString* name, int thread, uString*
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Scripting/1.2.1/$.uno
-// --------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Scripting\1.3.0-rc2\ScriptModule.Evaluate.uno
+// ----------------------------------------------------------------------------------------------
 
-// public partial class ScriptModule :1749
+// public partial class ScriptModule :10
 // {
-// static ScriptModule() :1749
+// static generated ScriptModule() :10
 static void ScriptModule__cctor__fn(uType* __type)
 {
-    ScriptModule::ModuleContainsAnErrorMessage_ = ::STRINGS[47/*"require(): ...*/];
+    ScriptModule::ModuleContainsAnErrorMessage_ = uString::Const("require(): module contains an error: ");
 }
 
 static void ScriptModule_build(uType* type)
 {
-    ::STRINGS[47] = uString::Const("require(): module contains an error: ");
-    ::STRINGS[48] = uString::Const(".js");
-    ::STRINGS[9] = uString::Const("");
-    ::STRINGS[49] = uString::Const(".");
-    ::STRINGS[50] = uString::Const("/");
-    ::STRINGS[51] = uString::Const("..");
-    ::STRINGS[52] = uString::Const("(function(");
-    ::STRINGS[53] = uString::Const(") { ");
-    ::STRINGS[54] = uString::Const("\n"
-        " })");
-    ::STRINGS[55] = uString::Const("Could not evaluate module '");
-    ::STRINGS[56] = uString::Const("': JavaScript code contains errors");
-    ::STRINGS[21] = uString::Const("exports");
-    ::STRINGS[57] = uString::Const("module, exports, require");
-    ::STRINGS[58] = uString::Const("/index.js");
-    ::TYPES[55] = ::g::Fuse::Scripting::IModuleProvider_typeof();
-    ::TYPES[56] = ::g::Uno::Char_typeof()->Array();
-    ::TYPES[57] = ::g::Uno::Collections::List_typeof()->MakeType(uObject_typeof(), NULL);
-    ::TYPES[8] = ::g::Fuse::Scripting::Function_typeof();
-    ::TYPES[13] = ::g::Fuse::Scripting::Callback_typeof();
-    ::TYPES[58] = ::g::Uno::Collections::IEnumerable_typeof()->MakeType(::g::Uno::IO::BundleFile_typeof(), NULL);
-    ::TYPES[59] = ::g::Uno::Collections::IEnumerator_typeof();
-    ::TYPES[60] = ::g::Uno::Collections::IEnumerator1_typeof()->MakeType(::g::Uno::IO::BundleFile_typeof(), NULL);
-    ::TYPES[61] = ::g::Uno::Predicate_typeof()->MakeType(uObject_typeof(), NULL);
-    ::TYPES[62] = ::g::Uno::UX::BundleFileSource_typeof();
+    type->SetDependencies(
+        ::g::Uno::IO::Path_typeof(),
+        ::g::Uno::UX::Resource_typeof());
     type->SetInterfaces(
         ::g::Uno::IDisposable_typeof(), offsetof(ScriptModule_type, interface0));
     type->SetFields(2,
-        ::g::Uno::IO::Bundle_typeof(), offsetof(::g::Fuse::Scripting::ScriptModule, _bundle), 0,
-        ::g::Uno::String_typeof(), offsetof(::g::Fuse::Scripting::ScriptModule, _code), 0,
-        ::g::Uno::UX::FileSource_typeof(), offsetof(::g::Fuse::Scripting::ScriptModule, _file), 0,
-        ::g::Uno::String_typeof(), offsetof(::g::Fuse::Scripting::ScriptModule, _fileName), 0,
-        ::g::Uno::Int_typeof(), offsetof(::g::Fuse::Scripting::ScriptModule, _lineNumberOffset), 0,
-        ::g::Uno::String_typeof(), offsetof(::g::Fuse::Scripting::ScriptModule, _Postamble), 0,
-        ::g::Uno::String_typeof(), offsetof(::g::Fuse::Scripting::ScriptModule, _Preamble), 0,
-        ::g::Uno::String_typeof(), (uintptr_t)&::g::Fuse::Scripting::ScriptModule::ModuleContainsAnErrorMessage_, uFieldFlagsStatic);
+        ::g::Uno::IO::Bundle_typeof(), offsetof(ScriptModule, _bundle), 0,
+        ::g::Uno::String_typeof(), offsetof(ScriptModule, _code), 0,
+        ::g::Uno::UX::FileSource_typeof(), offsetof(ScriptModule, _file), 0,
+        ::g::Uno::String_typeof(), offsetof(ScriptModule, _fileName), 0,
+        ::g::Uno::Int_typeof(), offsetof(ScriptModule, _lineNumberOffset), 0,
+        ::g::Uno::String_typeof(), offsetof(ScriptModule, _Postamble), 0,
+        ::g::Uno::String_typeof(), offsetof(ScriptModule, _Preamble), 0,
+        ::g::Uno::String_typeof(), (uintptr_t)&ScriptModule::ModuleContainsAnErrorMessage_, uFieldFlagsStatic);
 }
 
 ScriptModule_type* ScriptModule_typeof()
@@ -4908,6 +5170,7 @@ ScriptModule_type* ScriptModule_typeof()
     options.BaseDefinition = ::g::Fuse::Scripting::Module_typeof();
     options.FieldCount = 10;
     options.InterfaceCount = 1;
+    options.DependencyCount = 2;
     options.ObjectSize = sizeof(ScriptModule);
     options.TypeSize = sizeof(ScriptModule_type);
     type = (ScriptModule_type*)uClassType::New("Fuse.Scripting.ScriptModule", options);
@@ -4916,191 +5179,200 @@ ScriptModule_type* ScriptModule_typeof()
     type->fp_CallModuleFunc = ScriptModule__CallModuleFunc_fn;
     type->fp_Evaluate = (void(*)(::g::Fuse::Scripting::Module*, ::g::Fuse::Scripting::Context*, ::g::Fuse::Scripting::ModuleResult*))ScriptModule__Evaluate_fn;
     type->fp_GenerateArgs = ScriptModule__GenerateArgs_fn;
+    type->fp_GenerateRequireTable = ScriptModule__GenerateRequireTable_fn;
     type->fp_GetFile = (void(*)(::g::Fuse::Scripting::Module*, ::g::Uno::UX::FileSource**))ScriptModule__GetFile_fn;
     type->interface0.fp_Dispose = (void(*)(uObject*))::g::Fuse::Scripting::Module__Dispose_fn;
     return type;
 }
 
-// public generated ScriptModule() :1749
+// public generated ScriptModule() :10
 void ScriptModule__ctor_1_fn(ScriptModule* __this)
 {
     __this->ctor_1();
 }
 
-// private bool Acceptor(object obj) :1996
+// private bool Acceptor(object obj) :190
 void ScriptModule__Acceptor_fn(ScriptModule* __this, uObject* obj, bool* __retval)
 {
     *__retval = __this->Acceptor(obj);
 }
 
-// public Uno.IO.Bundle get_Bundle() :2037
+// public Uno.IO.Bundle get_Bundle() :32
 void ScriptModule__get_Bundle_fn(ScriptModule* __this, ::g::Uno::IO::Bundle** __retval)
 {
     *__retval = __this->Bundle();
 }
 
-// public void set_Bundle(Uno.IO.Bundle value) :2042
+// public void set_Bundle(Uno.IO.Bundle value) :37
 void ScriptModule__set_Bundle_fn(ScriptModule* __this, ::g::Uno::IO::Bundle* value)
 {
     __this->Bundle(value);
 }
 
-// protected virtual void CallModuleFunc(Fuse.Scripting.Function moduleFunc, object[] args) :1810
+// protected virtual void CallModuleFunc(Fuse.Scripting.Function moduleFunc, object[] args) :78
 void ScriptModule__CallModuleFunc_fn(ScriptModule* __this, ::g::Fuse::Scripting::Function* moduleFunc, uArray* args)
 {
     uPtr(moduleFunc)->Call(args);
 }
 
-// public string get_Code() :2054
+// public string get_Code() :49
 void ScriptModule__get_Code_fn(ScriptModule* __this, uString** __retval)
 {
     *__retval = __this->Code();
 }
 
-// public void set_Code(string value) :2059
+// public void set_Code(string value) :54
 void ScriptModule__set_Code_fn(ScriptModule* __this, uString* value)
 {
     __this->Code(value);
 }
 
-// private string ComputePath(string moduleId, bool& isFile) :1927
+// private string ComputePath(string moduleId, bool& isFile) :121
 void ScriptModule__ComputePath_fn(ScriptModule* __this, uString* moduleId, bool* isFile, uString** __retval)
 {
     *__retval = __this->ComputePath(moduleId, isFile);
 }
 
-// private static string ComputePath(string sourcePath, string moduleId) :1954
+// private static string ComputePath(string sourcePath, string moduleId) :148
 void ScriptModule__ComputePath1_fn(uString* sourcePath, uString* moduleId, uString** __retval)
 {
     *__retval = ScriptModule::ComputePath1(sourcePath, moduleId);
 }
 
-// public override void Evaluate(Fuse.Scripting.Context c, Fuse.Scripting.ModuleResult result) :1775
+// public override void Evaluate(Fuse.Scripting.Context c, Fuse.Scripting.ModuleResult result) :36
 void ScriptModule__Evaluate_fn(ScriptModule* __this, ::g::Fuse::Scripting::Context* c, ::g::Fuse::Scripting::ModuleResult* result)
 {
     int offset = ::g::Uno::Math::Max8(0, __this->LineNumberOffset() - (1 + __this->GetPreambleNewlines()));
-    uArray* newlines = uArray::New(::TYPES[56/*char[]*/], offset);
+    uArray* newlines = uArray::New(::g::Uno::Char_typeof()->Array(), offset);
 
     for (int i = 0; i < offset; ++i)
         uPtr(newlines)->Item<uChar>(i) = 10;
 
-    ::g::Uno::Collections::List* args = (::g::Uno::Collections::List*)::g::Uno::Collections::List::New1(::TYPES[57/*Uno.Collections.List<object>*/]);
-    uString* wrappedCode = ::g::Uno::String::op_Addition2(::g::Uno::String::op_Addition2(::g::Uno::String::op_Addition2(::g::Uno::String::op_Addition2(::g::Uno::String::op_Addition2(::STRINGS[52/*"(function("*/], __this->GenerateArgs(c, result, args)), ::STRINGS[53/*") { "*/]), uString::CharArray(newlines)), __this->GetEffectiveCode()), ::STRINGS[54/*"\n })"*/]);
-    ::g::Fuse::Scripting::Function* moduleFunc = uCast< ::g::Fuse::Scripting::Function*>(uPtr(c)->Evaluate(__this->FileName(), wrappedCode), ::TYPES[8/*Fuse.Scripting.Function*/]);
+    ::g::Uno::Collections::List* args = (::g::Uno::Collections::List*)::g::Uno::Collections::List::New1(::g::Uno::Collections::List_typeof()->MakeType(uObject_typeof(), NULL));
+    uString* wrappedCode = ::g::Uno::String::op_Addition2(::g::Uno::String::op_Addition2(::g::Uno::String::op_Addition2(::g::Uno::String::op_Addition2(::g::Uno::String::op_Addition2(uString::Const("(function("), __this->GenerateArgs(c, result, args)), uString::Const(") { ")), uString::CharArray(newlines)), __this->GetEffectiveCode()), uString::Const("\n"
+        " })"));
+    ::g::Fuse::Scripting::Function* moduleFunc = uCast< ::g::Fuse::Scripting::Function*>(uPtr(c)->Evaluate(__this->FileName(), wrappedCode), ::TYPES[6/*Fuse.Scripting.Function*/]);
 
     if (moduleFunc == NULL)
-        U_THROW(::g::Uno::Exception::New2(::g::Uno::String::op_Addition2(::g::Uno::String::op_Addition2(::STRINGS[55/*"Could not e...*/], __this->FileName()), ::STRINGS[56/*"': JavaScri...*/])));
+        U_THROW(::g::Uno::Exception::New2(::g::Uno::String::op_Addition2(::g::Uno::String::op_Addition2(uString::Const("Could not evaluate module '"), __this->FileName()), uString::Const("': JavaScript code contains errors"))));
 
     __this->CallModuleFunc(moduleFunc, (uArray*)args->ToArray());
 }
 
-// public Uno.UX.FileSource get_File() :2025
+// public Uno.UX.FileSource get_File() :20
 void ScriptModule__get_File_fn(ScriptModule* __this, ::g::Uno::UX::FileSource** __retval)
 {
     *__retval = __this->File();
 }
 
-// public void set_File(Uno.UX.FileSource value) :2026
+// public void set_File(Uno.UX.FileSource value) :21
 void ScriptModule__set_File_fn(ScriptModule* __this, ::g::Uno::UX::FileSource* value)
 {
     __this->File(value);
 }
 
-// public string get_FileName() :2068
+// public string get_FileName() :63
 void ScriptModule__get_FileName_fn(ScriptModule* __this, uString** __retval)
 {
     *__retval = __this->FileName();
 }
 
-// public void set_FileName(string value) :2073
+// public void set_FileName(string value) :68
 void ScriptModule__set_FileName_fn(ScriptModule* __this, uString* value)
 {
     __this->FileName(value);
 }
 
-// protected virtual string GenerateArgs(Fuse.Scripting.Context c, Fuse.Scripting.ModuleResult result, Uno.Collections.List<object> args) :1799
+// protected virtual string GenerateArgs(Fuse.Scripting.Context c, Fuse.Scripting.ModuleResult result, Uno.Collections.List<object> args) :65
 void ScriptModule__GenerateArgs_fn(ScriptModule* __this, ::g::Fuse::Scripting::Context* c, ::g::Fuse::Scripting::ModuleResult* result, ::g::Uno::Collections::List* args, uString** __retval)
 {
     ::g::Fuse::Scripting::Object* module = uPtr(result)->Object;
+    ::g::Uno::Collections::Dictionary* rt = __this->GenerateRequireTable(c);
     ::g::Uno::Collections::List__Add_fn(uPtr(args), module);
     ::g::Uno::Collections::List__Add_fn(args, uPtr(module)->Item(::STRINGS[21/*"exports"*/]));
-    ::g::Uno::Collections::List__Add_fn(args, uDelegate::New(::TYPES[13/*Fuse.Scripting.Callback*/], (void*)ScriptModule__RequireContext__Require_fn, ScriptModule__RequireContext::New1(c, __this, result)));
-    return *__retval = ::STRINGS[57/*"module, exp...*/], void();
+    ::g::Uno::Collections::List__Add_fn(args, uDelegate::New(::TYPES[12/*Fuse.Scripting.Callback*/], (void*)ScriptModule__RequireContext__Require_fn, ScriptModule__RequireContext::New1(c, __this, result, rt)));
+    return *__retval = uString::Const("module, exports, require"), void();
 }
 
-// private string GetEffectiveCode() :1751
+// protected virtual Uno.Collections.Dictionary<string, object> GenerateRequireTable(Fuse.Scripting.Context c) :60
+void ScriptModule__GenerateRequireTable_fn(ScriptModule* __this, ::g::Fuse::Scripting::Context* c, ::g::Uno::Collections::Dictionary** __retval)
+{
+    return *__retval = NULL, void();
+}
+
+// private string GetEffectiveCode() :12
 void ScriptModule__GetEffectiveCode_fn(ScriptModule* __this, uString** __retval)
 {
     *__retval = __this->GetEffectiveCode();
 }
 
-// public override sealed Uno.UX.FileSource GetFile() :2032
+// public override sealed Uno.UX.FileSource GetFile() :27
 void ScriptModule__GetFile_fn(ScriptModule* __this, ::g::Uno::UX::FileSource** __retval)
 {
     return *__retval = __this->_file, void();
 }
 
-// private int GetPreambleNewlines() :1764
+// private int GetPreambleNewlines() :25
 void ScriptModule__GetPreambleNewlines_fn(ScriptModule* __this, int* __retval)
 {
     *__retval = __this->GetPreambleNewlines();
 }
 
-// private string GetSourcePath() :1948
+// private string GetSourcePath() :142
 void ScriptModule__GetSourcePath_fn(ScriptModule* __this, uString** __retval)
 {
     *__retval = __this->GetSourcePath();
 }
 
-// private static bool IsPathEqual(string src, string path) :1988
+// private static bool IsPathEqual(string src, string path) :182
 void ScriptModule__IsPathEqual_fn(uString* src, uString* path, bool* __retval)
 {
     *__retval = ScriptModule::IsPathEqual(src, path);
 }
 
-// public int get_LineNumberOffset() :2082
+// public int get_LineNumberOffset() :77
 void ScriptModule__get_LineNumberOffset_fn(ScriptModule* __this, int* __retval)
 {
     *__retval = __this->LineNumberOffset();
 }
 
-// public void set_LineNumberOffset(int value) :2087
+// public void set_LineNumberOffset(int value) :82
 void ScriptModule__set_LineNumberOffset_fn(ScriptModule* __this, int* value)
 {
     __this->LineNumberOffset(*value);
 }
 
-// private Uno.IO.BundleFile LookForFile(string path) :1970
+// private Uno.IO.BundleFile LookForFile(string path) :164
 void ScriptModule__LookForFile_fn(ScriptModule* __this, uString* path, ::g::Uno::IO::BundleFile** __retval)
 {
     *__retval = __this->LookForFile(path);
 }
 
-// public generated string get_Postamble() :2049
+// public generated string get_Postamble() :44
 void ScriptModule__get_Postamble_fn(ScriptModule* __this, uString** __retval)
 {
     *__retval = __this->Postamble();
 }
 
-// public generated void set_Postamble(string value) :2049
+// public generated void set_Postamble(string value) :44
 void ScriptModule__set_Postamble_fn(ScriptModule* __this, uString* value)
 {
     __this->Postamble(value);
 }
 
-// public generated string get_Preamble() :2048
+// public generated string get_Preamble() :43
 void ScriptModule__get_Preamble_fn(ScriptModule* __this, uString** __retval)
 {
     *__retval = __this->Preamble();
 }
 
-// public generated void set_Preamble(string value) :2048
+// public generated void set_Preamble(string value) :43
 void ScriptModule__set_Preamble_fn(ScriptModule* __this, uString* value)
 {
     __this->Preamble(value);
 }
 
-// private Fuse.Scripting.Module TryResolve(string path, bool isFile) :1906
+// private Fuse.Scripting.Module TryResolve(string path, bool isFile) :100
 void ScriptModule__TryResolve_fn(ScriptModule* __this, uString* path, bool* isFile, ::g::Fuse::Scripting::Module** __retval)
 {
     *__retval = __this->TryResolve(path, *isFile);
@@ -5108,32 +5380,32 @@ void ScriptModule__TryResolve_fn(ScriptModule* __this, uString* path, bool* isFi
 
 uSStrong<uString*> ScriptModule::ModuleContainsAnErrorMessage_;
 
-// public generated ScriptModule() [instance] :1749
+// public generated ScriptModule() [instance] :10
 void ScriptModule::ctor_1()
 {
     ctor_();
 }
 
-// private bool Acceptor(object obj) [instance] :1996
+// private bool Acceptor(object obj) [instance] :190
 bool ScriptModule::Acceptor(uObject* obj)
 {
-    return uIs(obj, ::TYPES[55/*Fuse.Scripting.IModuleProvider*/]);
+    return uIs(obj, ::g::Fuse::Scripting::IModuleProvider_typeof());
 }
 
-// public Uno.IO.Bundle get_Bundle() [instance] :2037
+// public Uno.IO.Bundle get_Bundle() [instance] :32
 ::g::Uno::IO::Bundle* ScriptModule::Bundle()
 {
-    ::g::Uno::UX::BundleFileSource* bfs = uAs< ::g::Uno::UX::BundleFileSource*>(File(), ::TYPES[62/*Uno.UX.BundleFileSource*/]);
+    ::g::Uno::UX::BundleFileSource* bfs = uAs< ::g::Uno::UX::BundleFileSource*>(File(), ::g::Uno::UX::BundleFileSource_typeof());
     return (bfs != NULL) ? (::g::Uno::IO::Bundle*)uPtr(uPtr(bfs)->BundleFile)->Bundle() : (::g::Uno::IO::Bundle*)_bundle;
 }
 
-// public void set_Bundle(Uno.IO.Bundle value) [instance] :2042
+// public void set_Bundle(Uno.IO.Bundle value) [instance] :37
 void ScriptModule::Bundle(::g::Uno::IO::Bundle* value)
 {
     _bundle = value;
 }
 
-// public string get_Code() [instance] :2054
+// public string get_Code() [instance] :49
 uString* ScriptModule::Code()
 {
     if (File() != NULL)
@@ -5142,24 +5414,24 @@ uString* ScriptModule::Code()
     return _code;
 }
 
-// public void set_Code(string value) [instance] :2059
+// public void set_Code(string value) [instance] :54
 void ScriptModule::Code(uString* value)
 {
     _code = value;
 }
 
-// private string ComputePath(string moduleId, bool& isFile) [instance] :1927
+// private string ComputePath(string moduleId, bool& isFile) [instance] :121
 uString* ScriptModule::ComputePath(uString* moduleId, bool* isFile)
 {
-    if (::g::Uno::String::EndsWith(uPtr(moduleId), ::STRINGS[48/*".js"*/]))
-        moduleId = ::g::Uno::String::Replace1(uPtr(moduleId), ::STRINGS[48/*".js"*/], ::STRINGS[9/*""*/]);
+    if (::g::Uno::String::EndsWith(uPtr(moduleId), uString::Const(".js")))
+        moduleId = ::g::Uno::String::Replace1(uPtr(moduleId), uString::Const(".js"), ::STRINGS[9/*""*/]);
 
-    if (::g::Uno::String::StartsWith(uPtr(moduleId), ::STRINGS[49/*"."*/]))
+    if (::g::Uno::String::StartsWith(uPtr(moduleId), uString::Const(".")))
     {
         *isFile = true;
         return ScriptModule::ComputePath1(GetSourcePath(), moduleId);
     }
-    else if (::g::Uno::String::StartsWith(uPtr(moduleId), ::STRINGS[50/*"/"*/]))
+    else if (::g::Uno::String::StartsWith(uPtr(moduleId), uString::Const("/")))
     {
         *isFile = true;
         return ScriptModule::ComputePath1(::STRINGS[9/*""*/], moduleId);
@@ -5169,19 +5441,19 @@ uString* ScriptModule::ComputePath(uString* moduleId, bool* isFile)
     return moduleId;
 }
 
-// public Uno.UX.FileSource get_File() [instance] :2025
+// public Uno.UX.FileSource get_File() [instance] :20
 ::g::Uno::UX::FileSource* ScriptModule::File()
 {
     return _file;
 }
 
-// public void set_File(Uno.UX.FileSource value) [instance] :2026
+// public void set_File(Uno.UX.FileSource value) [instance] :21
 void ScriptModule::File(::g::Uno::UX::FileSource* value)
 {
     _file = value;
 }
 
-// public string get_FileName() [instance] :2068
+// public string get_FileName() [instance] :63
 uString* ScriptModule::FileName()
 {
     if (File() != NULL)
@@ -5190,13 +5462,13 @@ uString* ScriptModule::FileName()
         return _fileName;
 }
 
-// public void set_FileName(string value) [instance] :2073
+// public void set_FileName(string value) [instance] :68
 void ScriptModule::FileName(uString* value)
 {
     _fileName = value;
 }
 
-// private string GetEffectiveCode() [instance] :1751
+// private string GetEffectiveCode() [instance] :12
 uString* ScriptModule::GetEffectiveCode()
 {
     uString* code = Code();
@@ -5210,7 +5482,7 @@ uString* ScriptModule::GetEffectiveCode()
     return code;
 }
 
-// private int GetPreambleNewlines() [instance] :1764
+// private int GetPreambleNewlines() [instance] :25
 int ScriptModule::GetPreambleNewlines()
 {
     if (::g::Uno::String::IsNullOrEmpty(Preamble()))
@@ -5224,16 +5496,16 @@ int ScriptModule::GetPreambleNewlines()
     return count;
 }
 
-// private string GetSourcePath() [instance] :1948
+// private string GetSourcePath() [instance] :142
 uString* ScriptModule::GetSourcePath()
 {
     if (::g::Uno::String::op_Inequality(FileName(), NULL))
-        return ::g::Uno::String::Trim1(uPtr(::g::Uno::String::Replace(uPtr(::g::Uno::IO::Path::GetDirectoryName(FileName())), '\\', '/')), uArray::Init<int>(::TYPES[56/*char[]*/], 1, '/'));
+        return ::g::Uno::String::Trim1(uPtr(::g::Uno::String::Replace(uPtr(::g::Uno::IO::Path::GetDirectoryName(FileName())), '\\', '/')), uArray::Init<int>(::g::Uno::Char_typeof()->Array(), 1, '/'));
     else
         return ::STRINGS[9/*""*/];
 }
 
-// public int get_LineNumberOffset() [instance] :2082
+// public int get_LineNumberOffset() [instance] :77
 int ScriptModule::LineNumberOffset()
 {
     if (File() != NULL)
@@ -5242,64 +5514,87 @@ int ScriptModule::LineNumberOffset()
     return _lineNumberOffset;
 }
 
-// public void set_LineNumberOffset(int value) [instance] :2087
+// public void set_LineNumberOffset(int value) [instance] :82
 void ScriptModule::LineNumberOffset(int value)
 {
     _lineNumberOffset = value;
 }
 
-// private Uno.IO.BundleFile LookForFile(string path) [instance] :1970
+// private Uno.IO.BundleFile LookForFile(string path) [instance] :164
 ::g::Uno::IO::BundleFile* ScriptModule::LookForFile(uString* path)
 {
     ::g::Uno::IO::BundleFile* ret4;
     ::g::Uno::IO::BundleFile* ret5;
 
     if (Bundle() != NULL)
-
-        for (uObject* enum1 = (uObject*)::g::Uno::Collections::IEnumerable::GetEnumerator(uInterface(uPtr(uPtr(Bundle())->Files()), ::TYPES[58/*Uno.Collections.IEnumerable<Uno.IO.BundleFile>*/])); ::g::Uno::Collections::IEnumerator::MoveNext(uInterface(uPtr(enum1), ::TYPES[59/*Uno.Collections.IEnumerator*/])); )
-        {
-            ::g::Uno::IO::BundleFile* f = (::g::Uno::Collections::IEnumerator1::get_Current_ex(uInterface(uPtr(enum1), ::TYPES[60/*Uno.Collections.IEnumerator<Uno.IO.BundleFile>*/]), &ret4), ret4);
-
-            if (ScriptModule::IsPathEqual(uPtr(f)->SourcePath(), path))
-                return f;
-        }
-
-    for (uObject* enum2 = (uObject*)::g::Uno::Collections::IEnumerable::GetEnumerator(uInterface(uPtr(::g::Uno::IO::Bundle::AllFiles()), ::TYPES[58/*Uno.Collections.IEnumerable<Uno.IO.BundleFile>*/])); ::g::Uno::Collections::IEnumerator::MoveNext(uInterface(uPtr(enum2), ::TYPES[59/*Uno.Collections.IEnumerator*/])); )
     {
-        ::g::Uno::IO::BundleFile* f1 = (::g::Uno::Collections::IEnumerator1::get_Current_ex(uInterface(uPtr(enum2), ::TYPES[60/*Uno.Collections.IEnumerator<Uno.IO.BundleFile>*/]), &ret5), ret5);
+        uObject* enum1 = (uObject*)::g::Uno::Collections::IEnumerable::GetEnumerator(uInterface(uPtr(uPtr(Bundle())->Files()), ::g::Uno::Collections::IEnumerable_typeof()->MakeType(::g::Uno::IO::BundleFile_typeof(), NULL)));
 
-        if (ScriptModule::IsPathEqual(uPtr(f1)->SourcePath(), path))
-            return f1;
+        {
+            const auto __finally_fun = [&]()
+            {
+                ::g::Uno::IDisposable::Dispose(uInterface(uPtr(enum1), ::g::Uno::IDisposable_typeof()));
+            };
+
+            const uFinally<decltype(__finally_fun)> __f(__finally_fun);
+
+            while (::g::Uno::Collections::IEnumerator::MoveNext(uInterface(uPtr(enum1), ::g::Uno::Collections::IEnumerator_typeof())))
+            {
+                ::g::Uno::IO::BundleFile* f = (::g::Uno::Collections::IEnumerator1::get_Current_ex(uInterface(uPtr(enum1), ::g::Uno::Collections::IEnumerator1_typeof()->MakeType(::g::Uno::IO::BundleFile_typeof(), NULL)), &ret4), ret4);
+
+                if (ScriptModule::IsPathEqual(uPtr(f)->SourcePath(), path))
+                    return f;
+            }
+        }
+    }
+
+    uObject* enum2 = (uObject*)::g::Uno::Collections::IEnumerable::GetEnumerator(uInterface(uPtr(::g::Uno::IO::Bundle::AllFiles()), ::g::Uno::Collections::IEnumerable_typeof()->MakeType(::g::Uno::IO::BundleFile_typeof(), NULL)));
+
+    {
+        const auto __finally_fun = [&]()
+        {
+            ::g::Uno::IDisposable::Dispose(uInterface(uPtr(enum2), ::g::Uno::IDisposable_typeof()));
+        };
+
+        const uFinally<decltype(__finally_fun)> __f(__finally_fun);
+
+        while (::g::Uno::Collections::IEnumerator::MoveNext(uInterface(uPtr(enum2), ::g::Uno::Collections::IEnumerator_typeof())))
+        {
+            ::g::Uno::IO::BundleFile* f1 = (::g::Uno::Collections::IEnumerator1::get_Current_ex(uInterface(uPtr(enum2), ::g::Uno::Collections::IEnumerator1_typeof()->MakeType(::g::Uno::IO::BundleFile_typeof(), NULL)), &ret5), ret5);
+
+            if (ScriptModule::IsPathEqual(uPtr(f1)->SourcePath(), path))
+                return f1;
+        }
     }
 
     return NULL;
 }
 
-// public generated string get_Postamble() [instance] :2049
+// public generated string get_Postamble() [instance] :44
 uString* ScriptModule::Postamble()
 {
     return _Postamble;
 }
 
-// public generated void set_Postamble(string value) [instance] :2049
+// public generated void set_Postamble(string value) [instance] :44
 void ScriptModule::Postamble(uString* value)
 {
     _Postamble = value;
 }
 
-// public generated string get_Preamble() [instance] :2048
+// public generated string get_Preamble() [instance] :43
 uString* ScriptModule::Preamble()
 {
     return _Preamble;
 }
 
-// public generated void set_Preamble(string value) [instance] :2048
+// public generated void set_Preamble(string value) [instance] :43
 void ScriptModule::Preamble(uString* value)
 {
     _Preamble = value;
 }
 
-// private Fuse.Scripting.Module TryResolve(string path, bool isFile) [instance] :1906
+// private Fuse.Scripting.Module TryResolve(string path, bool isFile) [instance] :100
 ::g::Fuse::Scripting::Module* ScriptModule::TryResolve(uString* path, bool isFile)
 {
     ::g::Uno::IO::BundleFile* file = LookForFile(path);
@@ -5311,65 +5606,147 @@ void ScriptModule::Preamble(uString* value)
     {
         uObject* res;
 
-        if (::g::Uno::UX::Resource::TryFindGlobal(path, uDelegate::New(::TYPES[61/*Uno.Predicate<object>*/], (void*)ScriptModule__Acceptor_fn, this), &res))
+        if (::g::Uno::UX::Resource::TryFindGlobal(path, uDelegate::New(::g::Uno::Predicate_typeof()->MakeType(uObject_typeof(), NULL), (void*)ScriptModule__Acceptor_fn, this), &res))
         {
             uObject* mp = (uObject*)res;
-            return ::g::Fuse::Scripting::IModuleProvider::GetModule(uInterface(uPtr(mp), ::TYPES[55/*Fuse.Scripting.IModuleProvider*/]));
+            return ::g::Fuse::Scripting::IModuleProvider::GetModule(uInterface(uPtr(mp), ::g::Fuse::Scripting::IModuleProvider_typeof()));
         }
     }
 
     return NULL;
 }
 
-// private static string ComputePath(string sourcePath, string moduleId) [static] :1954
+// private static string ComputePath(string sourcePath, string moduleId) [static] :148
 uString* ScriptModule::ComputePath1(uString* sourcePath, uString* moduleId)
 {
-    ScriptModule_typeof()->Init();
-    uArray* parts = ::g::Uno::String::Split(uPtr(moduleId), uArray::Init<int>(::TYPES[56/*char[]*/], 1, '/'));
+    uArray* parts = ::g::Uno::String::Split(uPtr(moduleId), uArray::Init<int>(::g::Uno::Char_typeof()->Array(), 1, '/'));
 
     for (int i = 0; i < uPtr(parts)->Length(); i++)
         if (::g::Uno::String::op_Equality(uPtr(parts)->Strong<uString*>(i), ::STRINGS[9/*""*/]))
             continue;
-        else if (::g::Uno::String::op_Equality(uPtr(parts)->Strong<uString*>(i), ::STRINGS[49/*"."*/]))
+        else if (::g::Uno::String::op_Equality(uPtr(parts)->Strong<uString*>(i), uString::Const(".")))
             continue;
-        else if (::g::Uno::String::op_Equality(uPtr(parts)->Strong<uString*>(i), ::STRINGS[51/*".."*/]))
+        else if (::g::Uno::String::op_Equality(uPtr(parts)->Strong<uString*>(i), uString::Const("..")))
             sourcePath = ::g::Uno::String::Replace(uPtr(::g::Uno::IO::Path::GetDirectoryName(sourcePath)), '\\', '/');
         else if (uPtr(sourcePath)->Length() > 0)
-            sourcePath = ::g::Uno::String::op_Addition2(::g::Uno::String::op_Addition2(sourcePath, ::STRINGS[50/*"/"*/]), uPtr(parts)->Strong<uString*>(i));
+            sourcePath = ::g::Uno::String::op_Addition2(::g::Uno::String::op_Addition2(sourcePath, uString::Const("/")), uPtr(parts)->Strong<uString*>(i));
         else
             sourcePath = uPtr(parts)->Strong<uString*>(i);
 
     return sourcePath;
 }
 
-// private static bool IsPathEqual(string src, string path) [static] :1988
+// private static bool IsPathEqual(string src, string path) [static] :182
 bool ScriptModule::IsPathEqual(uString* src, uString* path)
 {
-    ScriptModule_typeof()->Init();
-
     if (::g::Uno::String::op_Equality(src, path))
         return true;
 
-    if (::g::Uno::String::op_Equality(src, ::g::Uno::String::op_Addition2(path, ::STRINGS[48/*".js"*/])))
+    if (::g::Uno::String::op_Equality(src, ::g::Uno::String::op_Addition2(path, uString::Const(".js"))))
         return true;
 
-    if (::g::Uno::String::op_Equality(src, ::g::Uno::String::op_Addition2(path, ::STRINGS[58/*"/index.js"*/])))
+    if (::g::Uno::String::op_Equality(src, ::g::Uno::String::op_Addition2(path, uString::Const("/index.js"))))
         return true;
 
     return false;
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Scripting/1.2.1/$.uno
-// --------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Scripting\1.3.0-rc2\ScriptClass.uno
+// ------------------------------------------------------------------------------------
 
-// public abstract class ScriptProperty :1510
+// public sealed class ScriptPromise<TSelf, TResult, TJSResult> :149
+// {
+static void ScriptPromise_build(uType* type)
+{
+    type->SetPrecalc(
+        ScriptPromise__FutureClosure_typeof()->MakeType(type->T(0), type->T(1), type->T(2), NULL),
+        ScriptPromise__FutureFactory_typeof()->MakeType(type->T(0), type->T(1), type->T(2), type->T(0), type->T(1), NULL),
+        ::g::Uno::Threading::Promise_typeof()->MakeType(type->T(1), NULL),
+        ScriptPromise__PromiseClosure_typeof()->MakeType(type->T(0), type->T(1), type->T(2), NULL));
+    type->SetFields(2,
+        ScriptPromise__FutureFactory_typeof()->MakeType(type->T(0), type->T(1), type->T(2), type->T(0), type->T(1), NULL), offsetof(ScriptPromise, _futureFactory), 0,
+        ScriptPromise__ResultConverter_typeof()->MakeType(type->T(0), type->T(1), type->T(2), type->T(1), type->T(2), NULL), offsetof(ScriptPromise, _resultConverter), 0);
+}
+
+::g::Fuse::Scripting::ScriptMethod_type* ScriptPromise_typeof()
+{
+    static uSStrong< ::g::Fuse::Scripting::ScriptMethod_type*> type;
+    if (type != NULL) return type;
+
+    uTypeOptions options;
+    options.BaseDefinition = ::g::Fuse::Scripting::ScriptMethod_typeof();
+    options.FieldCount = 4;
+    options.GenericCount = 3;
+    options.PrecalcCount = 4;
+    options.ObjectSize = sizeof(ScriptPromise);
+    options.TypeSize = sizeof(::g::Fuse::Scripting::ScriptMethod_type);
+    type = (::g::Fuse::Scripting::ScriptMethod_type*)uClassType::New("Fuse.Scripting.ScriptPromise`3", options);
+    type->fp_build_ = ScriptPromise_build;
+    type->fp_Call = (void(*)(::g::Fuse::Scripting::ScriptMethod*, ::g::Fuse::Scripting::Context*, uObject*, uArray*, uObject**))ScriptPromise__Call_fn;
+    return type;
+}
+
+// public override sealed object Call(Fuse.Scripting.Context c, object obj, object[] args) :186
+void ScriptPromise__Call_fn(ScriptPromise* __this, ::g::Fuse::Scripting::Context* c, uObject* obj, uArray* args, uObject** __retval)
+{
+    uType* __types[] = {
+        __this->__type->Precalced(3/*Fuse.Scripting.ScriptPromise<TSelf, TResult, TJSResult>.PromiseClosure*/),
+        __this->__type->Precalced(0/*Fuse.Scripting.ScriptPromise<TSelf, TResult, TJSResult>.FutureClosure*/),
+        __this->__type->Precalced(1/*Fuse.Scripting.ScriptPromise<TSelf, TResult, TJSResult>.FutureFactory<TSelf, TResult>*/),
+    };
+    uT self(__this->__type->T(0), U_ALLOCA(__this->__type->T(0)->ValueSize));
+    ScriptPromise__FutureClosure* ret2;
+    ::g::Uno::Threading::Future1* ret3;
+    ::g::Fuse::Scripting::Function* promise = uCast< ::g::Fuse::Scripting::Function*>(uPtr(uPtr(c)->GlobalObject())->Item(::STRINGS[13/*"Promise"*/]), ::TYPES[6/*Fuse.Scripting.Function*/]);
+    ScriptPromise__PromiseClosure* promiseClosure = ScriptPromise__PromiseClosure::New1(__types[0], c, __this->_resultConverter);
+    self = uUnboxAny(__this->__type->T(0), obj);
+
+    if (__this->Thread == 2)
+        ::g::Fuse::UpdateManager::PostAction(uDelegate::New(::TYPES[15/*Uno.Action*/], (void*)ScriptPromise__FutureClosure__Run_fn, (ScriptPromise__FutureClosure__New1_fn(__types[1], c, uDelegate::New(__types[2], (void*)ScriptPromise__InvokeFutureFactory_fn, __this), promiseClosure, self, args, &ret2), ret2)));
+    else
+        uPtr(promiseClosure)->OnFutureReady((ScriptPromise__InvokeFutureFactory_fn(__this, c, self, args, &ret3), ret3));
+
+    return *__retval = uPtr(promise)->Construct(uArray::Init<uObject*>(::TYPES[7/*object[]*/], 1, uDelegate::New(::TYPES[12/*Fuse.Scripting.Callback*/], (void*)ScriptPromise__PromiseClosure__Run_fn, promiseClosure))), void();
+}
+
+// private Uno.Threading.Future<TResult> InvokeFutureFactory(Fuse.Scripting.Context context, TSelf self, object[] args) :167
+void ScriptPromise__InvokeFutureFactory_fn(ScriptPromise* __this, ::g::Fuse::Scripting::Context* context, void* self, uArray* args, ::g::Uno::Threading::Future1** __retval)
+{
+    uType* __types[] = {
+        __this->__type->Precalced(2/*Uno.Threading.Promise<TResult>*/),
+    };
+
+    if (::g::Uno::Delegate::op_Equality(__this->_futureFactory, NULL))
+    {
+        ::g::Uno::Threading::Promise* p = (::g::Uno::Threading::Promise*)::g::Uno::Threading::Promise::New1(__types[0]);
+        p->Reject(::g::Uno::Exception::New2(uString::Const("FutureFactory is null")));
+        return *__retval = p, void();
+    }
+
+    ::g::Uno::Threading::Future1* future = (::g::Uno::Threading::Future1*)uPtr(__this->_futureFactory)->Invoke(3, context, self, args);
+
+    if (future == NULL)
+    {
+        ::g::Uno::Threading::Promise* p1 = (::g::Uno::Threading::Promise*)::g::Uno::Threading::Promise::New1(__types[0]);
+        p1->Reject(::g::Uno::Exception::New2(uString::Const("FutureFactory returned null")));
+        return *__retval = p1, void();
+    }
+
+    return *__retval = future, void();
+}
+// }
+
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Scripting\1.3.0-rc2\ScriptClass.uno
+// ------------------------------------------------------------------------------------
+
+// public abstract class ScriptProperty :35
 // {
 static void ScriptProperty_build(uType* type)
 {
     ::STRINGS[9] = uString::Const("");
     type->SetFields(1,
-        ::g::Uno::String_typeof(), offsetof(::g::Fuse::Scripting::ScriptProperty, Modifier), 0);
+        ::g::Uno::String_typeof(), offsetof(ScriptProperty, Modifier), 0);
 }
 
 ScriptProperty_type* ScriptProperty_typeof()
@@ -5387,13 +5764,13 @@ ScriptProperty_type* ScriptProperty_typeof()
     return type;
 }
 
-// protected ScriptProperty(string name, [string modifier]) :1513
+// protected ScriptProperty(string name, [string modifier]) :38
 void ScriptProperty__ctor_1_fn(ScriptProperty* __this, uString* name, uString* modifier)
 {
     __this->ctor_1(name, modifier);
 }
 
-// protected ScriptProperty(string name, [string modifier]) [instance] :1513
+// protected ScriptProperty(string name, [string modifier]) [instance] :38
 void ScriptProperty::ctor_1(uString* name, uString* modifier)
 {
     ctor_(name);
@@ -5401,18 +5778,16 @@ void ScriptProperty::ctor_1(uString* name, uString* modifier)
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Scripting/1.2.1/$.uno
-// --------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Scripting\1.3.0-rc2\ScriptClass.uno
+// ------------------------------------------------------------------------------------
 
-// public sealed class ScriptProperty<TOwner, TValue> :1520
+// public sealed class ScriptProperty<TOwner, TValue> :45
 // {
 static void ScriptProperty1_build(uType* type)
 {
-    ::STRINGS[59] = uString::Const("ScriptProperty: incorrect owner type");
-    type->SetPrecalc(
-        type->T(0));
+    ::STRINGS[46] = uString::Const("ScriptProperty: incorrect owner type");
     type->SetFields(2,
-        ::g::Uno::Func1_typeof()->MakeType(type->T(0), ::g::Uno::UX::Property1_typeof()->MakeType(type->T(1), NULL), NULL), offsetof(::g::Fuse::Scripting::ScriptProperty1, _getter), 0);
+        ::g::Uno::Func1_typeof()->MakeType(type->T(0), ::g::Uno::UX::Property1_typeof()->MakeType(type->T(1), NULL), NULL), offsetof(ScriptProperty1, _getter), 0);
 }
 
 ::g::Fuse::Scripting::ScriptProperty_type* ScriptProperty1_typeof()
@@ -5424,7 +5799,6 @@ static void ScriptProperty1_build(uType* type)
     options.BaseDefinition = ::g::Fuse::Scripting::ScriptProperty_typeof();
     options.FieldCount = 3;
     options.GenericCount = 2;
-    options.PrecalcCount = 1;
     options.ObjectSize = sizeof(ScriptProperty1);
     options.TypeSize = sizeof(::g::Fuse::Scripting::ScriptProperty_type);
     type = (::g::Fuse::Scripting::ScriptProperty_type*)uClassType::New("Fuse.Scripting.ScriptProperty`2", options);
@@ -5433,39 +5807,35 @@ static void ScriptProperty1_build(uType* type)
     return type;
 }
 
-// public ScriptProperty(string name, Uno.Func<TOwner, Uno.UX.Property<TValue>> getter, [string modifier]) :1528
+// public ScriptProperty(string name, Uno.Func<TOwner, Uno.UX.Property<TValue>> getter, [string modifier]) :53
 void ScriptProperty1__ctor_2_fn(ScriptProperty1* __this, uString* name, uDelegate* getter, uString* modifier)
 {
     __this->ctor_2(name, getter, modifier);
 }
 
-// public override sealed Uno.UX.Property GetProperty(Uno.UX.PropertyObject owner) :1523
+// public override sealed Uno.UX.Property GetProperty(Uno.UX.PropertyObject owner) :48
 void ScriptProperty1__GetProperty_fn(ScriptProperty1* __this, ::g::Uno::UX::PropertyObject* owner, ::g::Uno::UX::Property** __retval)
 {
-    uType* __types[] = {
-        __this->__type->Precalced(0/*TOwner*/),
-    };
+    if (!uIs(owner, __this->__type->T(0)))
+        U_THROW(::g::Uno::Exception::New2(::STRINGS[46/*"ScriptPrope...*/]));
 
-    if (!uIs(owner, __types[0]))
-        U_THROW(::g::Uno::Exception::New2(::STRINGS[59/*"ScriptPrope...*/]));
-
-    return *__retval = (::g::Uno::UX::Property1*)uPtr(__this->_getter)->Invoke(1, (void*)uUnboxAny(__types[0], owner)), void();
+    return *__retval = (::g::Uno::UX::Property1*)uPtr(__this->_getter)->Invoke(1, (void*)uUnboxAny(__this->__type->T(0), owner)), void();
 }
 
-// public ScriptProperty New(string name, Uno.Func<TOwner, Uno.UX.Property<TValue>> getter, [string modifier]) :1528
+// public ScriptProperty New(string name, Uno.Func<TOwner, Uno.UX.Property<TValue>> getter, [string modifier]) :53
 void ScriptProperty1__New1_fn(uType* __type, uString* name, uDelegate* getter, uString* modifier, ScriptProperty1** __retval)
 {
     *__retval = ScriptProperty1::New1(__type, name, getter, modifier);
 }
 
-// public ScriptProperty(string name, Uno.Func<TOwner, Uno.UX.Property<TValue>> getter, [string modifier]) [instance] :1528
+// public ScriptProperty(string name, Uno.Func<TOwner, Uno.UX.Property<TValue>> getter, [string modifier]) [instance] :53
 void ScriptProperty1::ctor_2(uString* name, uDelegate* getter, uString* modifier)
 {
     ctor_1(name, modifier);
     _getter = getter;
 }
 
-// public ScriptProperty New(string name, Uno.Func<TOwner, Uno.UX.Property<TValue>> getter, [string modifier]) [static] :1528
+// public ScriptProperty New(string name, Uno.Func<TOwner, Uno.UX.Property<TValue>> getter, [string modifier]) [static] :53
 ScriptProperty1* ScriptProperty1::New1(uType* __type, uString* name, uDelegate* getter, uString* modifier)
 {
     ScriptProperty1* obj1 = (ScriptProperty1*)uNew(__type);
@@ -5474,15 +5844,42 @@ ScriptProperty1* ScriptProperty1::New1(uType* __type, uString* name, uDelegate* 
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Scripting/1.2.1/$.uno
-// --------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Scripting\1.3.0-rc2\ScriptClass.uno
+// ------------------------------------------------------------------------------------
 
-// public sealed class StringChangedArgs :322
+// public sealed class ScriptReadonlyProperty :25
+// {
+static void ScriptReadonlyProperty_build(uType* type)
+{
+    type->SetFields(1,
+        uObject_typeof(), offsetof(ScriptReadonlyProperty, Value), 0);
+}
+
+uType* ScriptReadonlyProperty_typeof()
+{
+    static uSStrong<uType*> type;
+    if (type != NULL) return type;
+
+    uTypeOptions options;
+    options.BaseDefinition = ::g::Fuse::Scripting::ScriptMember_typeof();
+    options.FieldCount = 2;
+    options.ObjectSize = sizeof(ScriptReadonlyProperty);
+    options.TypeSize = sizeof(uType);
+    type = uClassType::New("Fuse.Scripting.ScriptReadonlyProperty", options);
+    type->fp_build_ = ScriptReadonlyProperty_build;
+    return type;
+}
+// }
+
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Scripting\1.3.0-rc2\IScriptEvent.uno
+// -------------------------------------------------------------------------------------
+
+// public sealed class StringChangedArgs :42
 // {
 static void StringChangedArgs_build(uType* type)
 {
     ::STRINGS[2] = uString::Const("value");
-    ::TYPES[4] = ::g::Fuse::Scripting::IEventSerializer_typeof();
+    ::TYPES[2] = ::g::Fuse::Scripting::IEventSerializer_typeof();
     type->SetBase(::g::Uno::UX::ValueChangedArgs_typeof()->MakeType(::g::Uno::String_typeof(), NULL));
     type->SetInterfaces(
         ::g::Fuse::Scripting::IScriptEvent_typeof(), offsetof(StringChangedArgs_type, interface0));
@@ -5506,32 +5903,32 @@ StringChangedArgs_type* StringChangedArgs_typeof()
     return type;
 }
 
-// public StringChangedArgs(string newValue) :324
+// public StringChangedArgs(string newValue) :44
 void StringChangedArgs__ctor_2_fn(StringChangedArgs* __this, uString* newValue)
 {
     __this->ctor_2(newValue);
 }
 
-// private void Fuse.Scripting.IScriptEvent.Serialize(Fuse.Scripting.IEventSerializer s) :326
+// private void Fuse.Scripting.IScriptEvent.Serialize(Fuse.Scripting.IEventSerializer s) :46
 void StringChangedArgs__FuseScriptingIScriptEventSerialize_fn(StringChangedArgs* __this, uObject* s)
 {
     uString* ret2;
-    ::g::Fuse::Scripting::IEventSerializer::AddString(uInterface(uPtr(s), ::TYPES[4/*Fuse.Scripting.IEventSerializer*/]), ::STRINGS[2/*"value"*/], (::g::Uno::UX::ValueChangedArgs__get_Value_fn(__this, &ret2), ret2));
+    ::g::Fuse::Scripting::IEventSerializer::AddString(uInterface(uPtr(s), ::TYPES[2/*Fuse.Scripting.IEventSerializer*/]), ::STRINGS[2/*"value"*/], (::g::Uno::UX::ValueChangedArgs__get_Value_fn(__this, &ret2), ret2));
 }
 
-// public StringChangedArgs New(string newValue) :324
+// public StringChangedArgs New(string newValue) :44
 void StringChangedArgs__New3_fn(uString* newValue, StringChangedArgs** __retval)
 {
     *__retval = StringChangedArgs::New3(newValue);
 }
 
-// public StringChangedArgs(string newValue) [instance] :324
+// public StringChangedArgs(string newValue) [instance] :44
 void StringChangedArgs::ctor_2(uString* newValue)
 {
     ::g::Uno::UX::ValueChangedArgs__ctor_1_fn(this, newValue);
 }
 
-// public StringChangedArgs New(string newValue) [static] :324
+// public StringChangedArgs New(string newValue) [static] :44
 StringChangedArgs* StringChangedArgs::New3(uString* newValue)
 {
     StringChangedArgs* obj1 = (StringChangedArgs*)uNew(StringChangedArgs_typeof());
@@ -5540,17 +5937,17 @@ StringChangedArgs* StringChangedArgs::New3(uString* newValue)
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Scripting/1.2.1/$.uno
-// --------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Scripting\1.3.0-rc2\Types.uno
+// ------------------------------------------------------------------------------
 
-// public static class Value :2182
+// public static class Value :85
 // {
 static void Value_build(uType* type)
 {
-    ::TYPES[50] = ::g::Uno::Double_typeof();
-    ::TYPES[49] = ::g::Uno::Float_typeof();
-    ::TYPES[47] = ::g::Uno::Int_typeof();
-    ::TYPES[63] = ::g::Uno::UInt_typeof();
+    ::TYPES[33] = ::g::Uno::Double_typeof();
+    ::TYPES[32] = ::g::Uno::Float_typeof();
+    ::TYPES[30] = ::g::Uno::Int_typeof();
+    ::TYPES[37] = ::g::Uno::UInt_typeof();
 }
 
 uClassType* Value_typeof()
@@ -5565,35 +5962,35 @@ uClassType* Value_typeof()
     return type;
 }
 
-// public static double ToNumber(object obj) :2184
+// public static double ToNumber(object obj) :87
 void Value__ToNumber_fn(uObject* obj, double* __retval)
 {
     *__retval = Value::ToNumber(obj);
 }
 
-// public static double ToNumber(object obj) [static] :2184
+// public static double ToNumber(object obj) [static] :87
 double Value::ToNumber(uObject* obj)
 {
-    if (uIs(obj, ::TYPES[50/*double*/]))
-        return uUnbox<double>(::TYPES[50/*double*/], obj);
+    if (uIs(obj, ::TYPES[33/*double*/]))
+        return uUnbox<double>(::TYPES[33/*double*/], obj);
 
-    if (uIs(obj, ::TYPES[49/*float*/]))
-        return (double)uUnbox<float>(::TYPES[49/*float*/], obj);
+    if (uIs(obj, ::TYPES[32/*float*/]))
+        return (double)uUnbox<float>(::TYPES[32/*float*/], obj);
 
-    if (uIs(obj, ::TYPES[47/*int*/]))
-        return (double)uUnbox<int>(::TYPES[47/*int*/], obj);
+    if (uIs(obj, ::TYPES[30/*int*/]))
+        return (double)uUnbox<int>(::TYPES[30/*int*/], obj);
 
-    if (uIs(obj, ::TYPES[63/*uint*/]))
-        return (double)uUnbox<uint32_t>(::TYPES[63/*uint*/], obj);
+    if (uIs(obj, ::TYPES[37/*uint*/]))
+        return (double)uUnbox<uint32_t>(::TYPES[37/*uint*/], obj);
 
     return 0.0;
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Scripting/1.2.1/$.uno
-// --------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Scripting\1.3.0-rc2\NativeProperty.uno
+// ---------------------------------------------------------------------------------------
 
-// public delegate TJSValue ValueConverter<T, TJSValue>(Fuse.Scripting.Context context, T originalValue) :1423
+// public delegate TJSValue ValueConverter<T, TJSValue>(Fuse.Scripting.Context context, T originalValue) :6
 uDelegateType* ValueConverter_typeof()
 {
     static uSStrong<uDelegateType*> type;

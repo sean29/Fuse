@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Nodes/1.2.1/.uno/package.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Nodes/1.3.0-rc2/.uno/package.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -16,6 +16,10 @@ struct FuseNodes_bundle : uObject
 {
     static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*> DrawHelpers4c5c39ae_;
     static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*>& DrawHelpers4c5c39ae() { return FuseNodes_bundle_typeof()->Init(), DrawHelpers4c5c39ae_; }
+    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*> DrawRectVisualizer5cbb2c45_;
+    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*>& DrawRectVisualizer5cbb2c45() { return FuseNodes_bundle_typeof()->Init(), DrawRectVisualizer5cbb2c45_; }
+    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*> DrawRectVisualizer5cbb2c46_;
+    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*>& DrawRectVisualizer5cbb2c46() { return FuseNodes_bundle_typeof()->Init(), DrawRectVisualizer5cbb2c46_; }
 };
 // }
 

@@ -1,11 +1,11 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Controls.Panels/1.2.1/layouts/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Controls.Panels/1.3.0-rc2/Layouts/ColumnLayout.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
 #include <Fuse.Layouts.Layout.h>
 namespace g{namespace Fuse{namespace Layouts{struct ColumnLayout;}}}
 namespace g{namespace Fuse{struct LayoutParams;}}
-namespace g{namespace Fuse{struct Node;}}
+namespace g{namespace Fuse{struct Visual;}}
 namespace g{namespace Uno{struct Float2;}}
 namespace g{namespace Uno{struct Float4;}}
 
@@ -13,18 +13,18 @@ namespace g{
 namespace Fuse{
 namespace Layouts{
 
-// public sealed class ColumnLayout :184
+// public sealed class ColumnLayout :28
 // {
 ::g::Fuse::Layouts::Layout_type* ColumnLayout_typeof();
-void ColumnLayout__Arrange_fn(ColumnLayout* __this, uObject* visuals, ::g::Fuse::LayoutParams* lp, bool* doArrange, ::g::Uno::Float4* padding, ::g::Uno::Float2* __retval);
-void ColumnLayout__ArrangePaddingBox_fn(ColumnLayout* __this, uObject* visuals, ::g::Uno::Float4* padding, ::g::Fuse::LayoutParams* lp);
+void ColumnLayout__Arrange_fn(ColumnLayout* __this, ::g::Fuse::Visual* container, ::g::Fuse::LayoutParams* lp, bool* doArrange, ::g::Uno::Float4* padding, ::g::Uno::Float2* __retval);
+void ColumnLayout__ArrangePaddingBox_fn(ColumnLayout* __this, ::g::Fuse::Visual* container, ::g::Uno::Float4* padding, ::g::Fuse::LayoutParams* lp);
 void ColumnLayout__get_ColumnCount_fn(ColumnLayout* __this, int* __retval);
 void ColumnLayout__set_ColumnCount_fn(ColumnLayout* __this, int* value);
 void ColumnLayout__get_ColumnSize_fn(ColumnLayout* __this, float* __retval);
 void ColumnLayout__set_ColumnSize_fn(ColumnLayout* __this, float* value);
 void ColumnLayout__get_ColumnSpacing_fn(ColumnLayout* __this, float* __retval);
 void ColumnLayout__set_ColumnSpacing_fn(ColumnLayout* __this, float* value);
-void ColumnLayout__GetContentSize_fn(ColumnLayout* __this, uObject* visuals, ::g::Fuse::LayoutParams* lp, ::g::Uno::Float2* __retval);
+void ColumnLayout__GetContentSize_fn(ColumnLayout* __this, ::g::Fuse::Visual* container, ::g::Fuse::LayoutParams* lp, ::g::Uno::Float2* __retval);
 void ColumnLayout__get_ItemSpacing_fn(ColumnLayout* __this, float* __retval);
 void ColumnLayout__set_ItemSpacing_fn(ColumnLayout* __this, float* value);
 void ColumnLayout__LeastAt_fn(ColumnLayout* __this, uArray* c, int* __retval);
@@ -45,7 +45,7 @@ struct ColumnLayout : ::g::Fuse::Layouts::Layout
     int _orientation;
     int _sizing;
 
-    ::g::Uno::Float2 Arrange(uObject* visuals, ::g::Fuse::LayoutParams lp, bool doArrange, ::g::Uno::Float4 padding);
+    ::g::Uno::Float2 Arrange(::g::Fuse::Visual* container, ::g::Fuse::LayoutParams lp, bool doArrange, ::g::Uno::Float4 padding);
     int ColumnCount();
     void ColumnCount(int value);
     float ColumnSize();

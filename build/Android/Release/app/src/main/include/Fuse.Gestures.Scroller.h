@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Controls.ScrollView/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Controls.ScrollView/1.3.0-rc2/Scroller.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -33,7 +33,7 @@ namespace g{
 namespace Fuse{
 namespace Gestures{
 
-// public sealed class Scroller :139
+// public sealed class Scroller :21
 // {
 struct Scroller_type : ::g::Fuse::Node_type
 {
@@ -78,7 +78,7 @@ struct Scroller : ::g::Fuse::Behavior
     uStrong< ::g::Fuse::Input::Gesture*> _gesture;
     bool _hasUpdated;
     static uSStrong< ::g::Fuse::Gestures::SwipeGestureHelper*> _horizontalGesture_;
-    static uSStrong< ::g::Fuse::Gestures::SwipeGestureHelper*>& _horizontalGesture() { return Scroller_typeof()->Init(), _horizontalGesture_; }
+    static uSStrong< ::g::Fuse::Gestures::SwipeGestureHelper*>& _horizontalGesture() { return _horizontalGesture_; }
     uStrong< ::g::Fuse::Visual*> _pendingBringIntoView;
     bool _pointerListening;
     ::g::Uno::Float2 _pointerPos;
@@ -94,7 +94,7 @@ struct Scroller : ::g::Fuse::Behavior
     bool _updateFirstFrame;
     uStrong< ::g::Fuse::Motion::Simulation::PointerVelocity*> _velocity;
     static uSStrong< ::g::Fuse::Gestures::SwipeGestureHelper*> _verticalGesture_;
-    static uSStrong< ::g::Fuse::Gestures::SwipeGestureHelper*>& _verticalGesture() { return Scroller_typeof()->Init(), _verticalGesture_; }
+    static uSStrong< ::g::Fuse::Gestures::SwipeGestureHelper*>& _verticalGesture() { return _verticalGesture_; }
 
     void ctor_4(bool ignore);
     void CheckLimits();

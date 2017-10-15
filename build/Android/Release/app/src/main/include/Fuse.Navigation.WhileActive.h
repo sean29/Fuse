@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Navigation/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Navigation/1.3.0-rc2/WhileNavigationTriggers.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -18,7 +18,7 @@ namespace g{
 namespace Fuse{
 namespace Navigation{
 
-// public sealed class WhileActive :5558
+// public sealed class WhileActive :137
 // {
 ::g::Fuse::Navigation::WhileNavigationTrigger_type* WhileActive_typeof();
 void WhileActive__ctor_7_fn(WhileActive* __this);

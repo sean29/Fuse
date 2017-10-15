@@ -1,4 +1,4 @@
-// This file was generated based on '.uno/ux11/AlertDetailPage.g.uno'.
+// This file was generated based on '.uno/ux13/AlertDetailPage.g.uno'.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -15,6 +15,7 @@
 #include <Fuse.Triggers.Actions.IHide.h>
 #include <Fuse.Triggers.Actions.IShow.h>
 #include <Fuse.Triggers.Actions-ea70af1f.h>
+#include <Fuse.Visual.h>
 #include <Uno.Collections.ICollection-1.h>
 #include <Uno.Collections.IEnumerable-1.h>
 #include <Uno.Collections.IList-1.h>
@@ -32,12 +33,11 @@ namespace g{struct PTBold;}
 
 namespace g{
 
-// public partial sealed class AlertDetailPage :2
+// public partial class AlertDetailPage :2
 // {
 ::g::Fuse::Controls::Panel_type* AlertDetailPage_typeof();
 void AlertDetailPage__ctor_8_fn(AlertDetailPage* __this, ::g::Fuse::Navigation::Router* router1);
 void AlertDetailPage__InitializeUX_fn(AlertDetailPage* __this);
-void AlertDetailPage__New5_fn(::g::Fuse::Navigation::Router* router1, AlertDetailPage** __retval);
 
 struct AlertDetailPage : ::g::Fuse::Controls::Page
 {
@@ -86,7 +86,6 @@ struct AlertDetailPage : ::g::Fuse::Controls::Page
 
     void ctor_8(::g::Fuse::Navigation::Router* router1);
     void InitializeUX();
-    static AlertDetailPage* New5(::g::Fuse::Navigation::Router* router1);
 };
 // }
 

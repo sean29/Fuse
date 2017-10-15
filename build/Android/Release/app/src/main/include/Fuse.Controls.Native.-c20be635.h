@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Controls.Native/1.2.1/ios/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Controls.Native/1.3.0-rc2/iOS/TextView.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -11,16 +11,14 @@ namespace Controls{
 namespace Native{
 namespace iOS{
 
-// public sealed extern class TextView :2942
+// public extern class TextView :6
 // {
 uType* TextView_typeof();
 void TextView__ctor__fn(TextView* __this);
-void TextView__New1_fn(TextView** __retval);
 
 struct TextView : uObject
 {
     void ctor_();
-    static TextView* New1();
 };
 // }
 

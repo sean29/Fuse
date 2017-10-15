@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Drawing/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Drawing/1.3.0-rc2/Colors.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -10,46 +10,46 @@ namespace g{
 namespace Fuse{
 namespace Drawing{
 
-// public static class Brushes :132
+// public static class Brushes :26
 // {
 uClassType* Brushes_typeof();
 
 struct Brushes : uObject
 {
     static uSStrong< ::g::Fuse::Drawing::StaticSolidColor*> Aqua_;
-    static uSStrong< ::g::Fuse::Drawing::StaticSolidColor*>& Aqua() { return Brushes_typeof()->Init(), Aqua_; }
+    static uSStrong< ::g::Fuse::Drawing::StaticSolidColor*>& Aqua() { return Aqua_; }
     static uSStrong< ::g::Fuse::Drawing::StaticSolidColor*> Black_;
-    static uSStrong< ::g::Fuse::Drawing::StaticSolidColor*>& Black() { return Brushes_typeof()->Init(), Black_; }
+    static uSStrong< ::g::Fuse::Drawing::StaticSolidColor*>& Black() { return Black_; }
     static uSStrong< ::g::Fuse::Drawing::StaticSolidColor*> Blue_;
-    static uSStrong< ::g::Fuse::Drawing::StaticSolidColor*>& Blue() { return Brushes_typeof()->Init(), Blue_; }
+    static uSStrong< ::g::Fuse::Drawing::StaticSolidColor*>& Blue() { return Blue_; }
     static uSStrong< ::g::Fuse::Drawing::StaticSolidColor*> Fuchsia_;
-    static uSStrong< ::g::Fuse::Drawing::StaticSolidColor*>& Fuchsia() { return Brushes_typeof()->Init(), Fuchsia_; }
+    static uSStrong< ::g::Fuse::Drawing::StaticSolidColor*>& Fuchsia() { return Fuchsia_; }
     static uSStrong< ::g::Fuse::Drawing::StaticSolidColor*> Gray_;
-    static uSStrong< ::g::Fuse::Drawing::StaticSolidColor*>& Gray() { return Brushes_typeof()->Init(), Gray_; }
+    static uSStrong< ::g::Fuse::Drawing::StaticSolidColor*>& Gray() { return Gray_; }
     static uSStrong< ::g::Fuse::Drawing::StaticSolidColor*> Green_;
-    static uSStrong< ::g::Fuse::Drawing::StaticSolidColor*>& Green() { return Brushes_typeof()->Init(), Green_; }
+    static uSStrong< ::g::Fuse::Drawing::StaticSolidColor*>& Green() { return Green_; }
     static uSStrong< ::g::Fuse::Drawing::StaticSolidColor*> Lime_;
-    static uSStrong< ::g::Fuse::Drawing::StaticSolidColor*>& Lime() { return Brushes_typeof()->Init(), Lime_; }
+    static uSStrong< ::g::Fuse::Drawing::StaticSolidColor*>& Lime() { return Lime_; }
     static uSStrong< ::g::Fuse::Drawing::StaticSolidColor*> Maroon_;
-    static uSStrong< ::g::Fuse::Drawing::StaticSolidColor*>& Maroon() { return Brushes_typeof()->Init(), Maroon_; }
+    static uSStrong< ::g::Fuse::Drawing::StaticSolidColor*>& Maroon() { return Maroon_; }
     static uSStrong< ::g::Fuse::Drawing::StaticSolidColor*> Navy_;
-    static uSStrong< ::g::Fuse::Drawing::StaticSolidColor*>& Navy() { return Brushes_typeof()->Init(), Navy_; }
+    static uSStrong< ::g::Fuse::Drawing::StaticSolidColor*>& Navy() { return Navy_; }
     static uSStrong< ::g::Fuse::Drawing::StaticSolidColor*> Olive_;
-    static uSStrong< ::g::Fuse::Drawing::StaticSolidColor*>& Olive() { return Brushes_typeof()->Init(), Olive_; }
+    static uSStrong< ::g::Fuse::Drawing::StaticSolidColor*>& Olive() { return Olive_; }
     static uSStrong< ::g::Fuse::Drawing::StaticSolidColor*> Purple_;
-    static uSStrong< ::g::Fuse::Drawing::StaticSolidColor*>& Purple() { return Brushes_typeof()->Init(), Purple_; }
+    static uSStrong< ::g::Fuse::Drawing::StaticSolidColor*>& Purple() { return Purple_; }
     static uSStrong< ::g::Fuse::Drawing::StaticSolidColor*> Red_;
-    static uSStrong< ::g::Fuse::Drawing::StaticSolidColor*>& Red() { return Brushes_typeof()->Init(), Red_; }
+    static uSStrong< ::g::Fuse::Drawing::StaticSolidColor*>& Red() { return Red_; }
     static uSStrong< ::g::Fuse::Drawing::StaticSolidColor*> Silver_;
-    static uSStrong< ::g::Fuse::Drawing::StaticSolidColor*>& Silver() { return Brushes_typeof()->Init(), Silver_; }
+    static uSStrong< ::g::Fuse::Drawing::StaticSolidColor*>& Silver() { return Silver_; }
     static uSStrong< ::g::Fuse::Drawing::StaticSolidColor*> Teal_;
-    static uSStrong< ::g::Fuse::Drawing::StaticSolidColor*>& Teal() { return Brushes_typeof()->Init(), Teal_; }
+    static uSStrong< ::g::Fuse::Drawing::StaticSolidColor*>& Teal() { return Teal_; }
     static uSStrong< ::g::Fuse::Drawing::StaticSolidColor*> Transparent_;
-    static uSStrong< ::g::Fuse::Drawing::StaticSolidColor*>& Transparent() { return Brushes_typeof()->Init(), Transparent_; }
+    static uSStrong< ::g::Fuse::Drawing::StaticSolidColor*>& Transparent() { return Transparent_; }
     static uSStrong< ::g::Fuse::Drawing::StaticSolidColor*> White_;
-    static uSStrong< ::g::Fuse::Drawing::StaticSolidColor*>& White() { return Brushes_typeof()->Init(), White_; }
+    static uSStrong< ::g::Fuse::Drawing::StaticSolidColor*>& White() { return White_; }
     static uSStrong< ::g::Fuse::Drawing::StaticSolidColor*> Yellow_;
-    static uSStrong< ::g::Fuse::Drawing::StaticSolidColor*>& Yellow() { return Brushes_typeof()->Init(), Yellow_; }
+    static uSStrong< ::g::Fuse::Drawing::StaticSolidColor*>& Yellow() { return Yellow_; }
 };
 // }
 

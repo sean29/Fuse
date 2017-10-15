@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/UnoCore/1.2.2/source/uno/ux/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/UnoCore/1.3.1/Source/Uno/UX/NameTable.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -11,11 +11,10 @@ namespace g{
 namespace Uno{
 namespace UX{
 
-// public sealed class NameTable :175
+// public sealed class NameTable :5
 // {
 uType* NameTable_typeof();
 void NameTable__ctor__fn(NameTable* __this, NameTable* parentTable, uArray* entries);
-void NameTable__get_Item_fn(NameTable* __this, uString* key, uObject** __retval);
 void NameTable__New1_fn(NameTable* parentTable, uArray* entries, NameTable** __retval);
 void NameTable__get_Objects_fn(NameTable* __this, uObject** __retval);
 void NameTable__get_Properties_fn(NameTable* __this, uObject** __retval);
@@ -29,12 +28,11 @@ struct NameTable : uObject
     uStrong<uObject*> _properties;
     uStrong<uObject*> _this;
     static uSStrong<NameTable*> Empty_;
-    static uSStrong<NameTable*>& Empty() { return NameTable_typeof()->Init(), Empty_; }
+    static uSStrong<NameTable*>& Empty() { return Empty_; }
     uStrong<uArray*> Entries;
     uStrong<NameTable*> ParentTable;
 
     void ctor_(NameTable* parentTable, uArray* entries);
-    uObject* Item(uString* key);
     uObject* Objects();
     uObject* Properties();
     void Properties(uObject* value);

@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Marshal/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Marshal/1.3.0-rc2/Computer.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -8,7 +8,7 @@ namespace g{namespace Fuse{struct ComputeException;}}
 namespace g{
 namespace Fuse{
 
-// public sealed class ComputeException :9
+// public sealed class ComputeException :7
 // {
 ::g::Uno::Exception_type* ComputeException_typeof();
 void ComputeException__ctor_3_fn(ComputeException* __this, uString* op, uObject* a, uObject* b);

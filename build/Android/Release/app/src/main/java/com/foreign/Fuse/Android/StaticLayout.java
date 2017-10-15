@@ -23,7 +23,7 @@ public class StaticLayout
         android.util.Log.d("emrals", (message==null ? "null" : message.toString()));
     }
 
-    public static Object Create346(final String text,final int bufStart,final int bufEnd,final Object paintHandle,final int outerWidth,final int align,final float spacingMult,final float spacingAdd,final boolean includePad,final int truncateAt,final int ellipsizedWith)
+    public static Object Create345(final String text,final int bufStart,final int bufEnd,final Object paintHandle,final int outerWidth,final int align,final float spacingMult,final float spacingAdd,final boolean includePad,final int truncateAt,final int ellipsizedWith)
     {
         // Be careful, doing stupid enum conversion
         android.text.Layout.Alignment alignment = android.text.Layout.Alignment.ALIGN_CENTER;
@@ -41,7 +41,7 @@ public class StaticLayout
         return new android.text.StaticLayout(text, bufStart, bufEnd, paint, outerWidth, alignment, spacingMult, spacingAdd, includePad, truncate, ellipsizedWith);
     }
     
-    public static Object Create1347(final String text,final Object paintHandle,final int width,final int align,final float spacingMult,final float spacingAdd,final boolean includePad)
+    public static Object Create1346(final String text,final Object paintHandle,final int width,final int align,final float spacingMult,final float spacingAdd,final boolean includePad)
     {
         // Be careful, doing stupid enum conversion
         android.text.Layout.Alignment alignment = android.text.Layout.Alignment.ALIGN_CENTER;
@@ -53,53 +53,53 @@ public class StaticLayout
         return new android.text.StaticLayout(text, paint, width, alignment, spacingMult, spacingAdd, includePad);
     }
     
-    public static void Draw1348(final Object layoutHandle,final Object canvasHandle)
+    public static void Draw1347(final Object layoutHandle,final Object canvasHandle)
     {
         ((android.text.StaticLayout)layoutHandle).draw(((android.graphics.Canvas)canvasHandle));
     }
     
-    public static float GetDesiredWidthImpl349(final String text,final Object paintHandle)
+    public static float GetDesiredWidthImpl348(final String text,final Object paintHandle)
     {
         android.text.TextPaint paint = (android.text.TextPaint)paintHandle;
         return android.text.StaticLayout.getDesiredWidth(text, paint);
     }
     
-    public static int GetEllipsizedWidth350(final Object handle)
+    public static int GetEllipsizedWidth349(final Object handle)
     {
         return ((android.text.StaticLayout)handle).getEllipsizedWidth();
     }
     
-    public static int GetHeight351(final Object handle)
+    public static int GetHeight350(final Object handle)
     {
         return ((android.text.StaticLayout)handle).getHeight();
     }
     
-    public static int GetLineBaseline1352(final Object handle,final int line)
+    public static int GetLineBaseline1351(final Object handle,final int line)
     {
         return ((android.text.StaticLayout)handle).getLineBaseline(line);
     }
     
-    public static int GetLineCount353(final Object handle)
+    public static int GetLineCount352(final Object handle)
     {
         return ((android.text.StaticLayout)handle).getLineCount();
     }
     
-    public static int GetLineEnd1354(final Object handle,final int line)
+    public static int GetLineEnd1353(final Object handle,final int line)
     {
         return ((android.text.StaticLayout)handle).getLineEnd(line);
     }
     
-    public static float GetLineLeft1355(final Object handle,final int line)
+    public static float GetLineLeft1354(final Object handle,final int line)
     {
         return ((android.text.StaticLayout)handle).getLineLeft(line);
     }
     
-    public static int GetLineStart1356(final Object handle,final int line)
+    public static int GetLineStart1355(final Object handle,final int line)
     {
         return ((android.text.StaticLayout)handle).getLineStart(line);
     }
     
-    public static int GetWidth357(final Object handle)
+    public static int GetWidth356(final Object handle)
     {
         return ((android.text.StaticLayout)handle).getWidth();
     }

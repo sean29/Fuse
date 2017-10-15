@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Triggers/1.2.1/actions/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Triggers/1.3.0-rc2/Actions/Playback.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -11,7 +11,7 @@ namespace Fuse{
 namespace Triggers{
 namespace Actions{
 
-// public sealed class Play :472
+// public sealed class Play :213
 // {
 ::g::Fuse::Triggers::Actions::TriggerAction_type* Play_typeof();
 void Play__Perform_fn(Play* __this, ::g::Fuse::Node* target);

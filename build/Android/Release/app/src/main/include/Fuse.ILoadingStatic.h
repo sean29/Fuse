@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Common/1.2.1/resources/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Common/1.3.0-rc2/Resources/ILoading.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -9,14 +9,14 @@ namespace g{namespace Uno{namespace UX{struct Selector;}}}
 namespace g{
 namespace Fuse{
 
-// internal static class ILoadingStatic :258
+// internal static class ILoadingStatic :14
 // {
 uClassType* ILoadingStatic_typeof();
 
 struct ILoadingStatic : uObject
 {
     static ::g::Uno::UX::Selector IsLoadingName_;
-    static ::g::Uno::UX::Selector& IsLoadingName() { return ILoadingStatic_typeof()->Init(), IsLoadingName_; }
+    static ::g::Uno::UX::Selector& IsLoadingName() { return IsLoadingName_; }
 };
 // }
 

@@ -21,8 +21,6 @@
 #include <Uno.Threading.Future-1.h>
 #include <Uno.Threading.Promise-1.h>
 #include <Uno.UX.Resource.h>
-static uString* STRINGS[12];
-static uType* TYPES[6];
 
 namespace g{
 
@@ -30,29 +28,15 @@ namespace g{
 // {
 static void Uploader_build(uType* type)
 {
-    ::STRINGS[0] = uString::Const("Uploader");
-    ::STRINGS[1] = uString::Const("send");
-    ::STRINGS[2] = uString::Const("image/png");
-    ::STRINGS[3] = uString::Const(".jpg");
-    ::STRINGS[4] = uString::Const(".jpeg");
-    ::STRINGS[5] = uString::Const("image/jpeg");
-    ::STRINGS[6] = uString::Const(".gif");
-    ::STRINGS[7] = uString::Const("image/gif");
-    ::STRINGS[8] = uString::Const("filename");
-    ::STRINGS[9] = uString::Const("fileformat");
-    ::STRINGS[10] = uString::Const("file");
-    ::STRINGS[11] = uString::Const("POST");
-    ::TYPES[0] = ::g::Fuse::Scripting::NativePromise_typeof()->MakeType(::g::Uno::String_typeof(), ::g::Uno::String_typeof(), NULL);
-    ::TYPES[1] = ::g::Fuse::Scripting::FutureFactory_typeof()->MakeType(::g::Uno::String_typeof(), NULL);
-    ::TYPES[2] = ::g::Uno::String_typeof();
-    ::TYPES[3] = ::g::Uno::Collections::Dictionary_typeof()->MakeType(::TYPES[2/*string*/], ::TYPES[2/*string*/], NULL);
-    ::TYPES[4] = ::g::Uno::Collections::Dictionary_typeof()->MakeType(::TYPES[2/*string*/], uObject_typeof(), NULL);
-    ::TYPES[5] = ::g::Uno::Threading::Promise_typeof()->MakeType(::TYPES[2/*string*/], NULL);
+    type->SetDependencies(
+        ::g::FormUpload_typeof(),
+        ::g::Uno::IO::Path_typeof(),
+        ::g::Uno::UX::Resource_typeof());
     type->SetInterfaces(
         ::g::Uno::IDisposable_typeof(), offsetof(::g::Fuse::Scripting::NativeModule_type, interface0),
         ::g::Fuse::Scripting::IModuleProvider_typeof(), offsetof(::g::Fuse::Scripting::NativeModule_type, interface1));
     type->SetFields(4,
-        type, (uintptr_t)&::g::Uploader::_instance_, uFieldFlagsStatic);
+        type, (uintptr_t)&Uploader::_instance_, uFieldFlagsStatic);
 }
 
 ::g::Fuse::Scripting::NativeModule_type* Uploader_typeof()
@@ -64,6 +48,7 @@ static void Uploader_build(uType* type)
     options.BaseDefinition = ::g::Fuse::Scripting::NativeModule_typeof();
     options.FieldCount = 5;
     options.InterfaceCount = 2;
+    options.DependencyCount = 3;
     options.ObjectSize = sizeof(Uploader);
     options.TypeSize = sizeof(::g::Fuse::Scripting::NativeModule_type);
     type = (::g::Fuse::Scripting::NativeModule_type*)uClassType::New("Uploader", options);
@@ -103,8 +88,8 @@ void Uploader::ctor_2()
         return;
 
     Uploader::_instance_ = this;
-    ::g::Uno::UX::Resource::SetGlobalKey(Uploader::_instance_, ::STRINGS[0/*"Uploader"*/]);
-    AddMember((::g::Fuse::Scripting::NativePromise*)::g::Fuse::Scripting::NativePromise::New1(::TYPES[0/*Fuse.Scripting.NativePromise<string, string>*/], ::STRINGS[1/*"send"*/], uDelegate::New(::TYPES[1/*Fuse.Scripting.FutureFactory<string>*/], (void*)Uploader__send_fn), NULL));
+    ::g::Uno::UX::Resource::SetGlobalKey(Uploader::_instance_, uString::Const("Uploader"));
+    AddMember((::g::Fuse::Scripting::NativePromise*)::g::Fuse::Scripting::NativePromise::New1(::g::Fuse::Scripting::NativePromise_typeof()->MakeType(::g::Uno::String_typeof(), ::g::Uno::String_typeof(), NULL), uString::Const("send"), uDelegate::New(::g::Fuse::Scripting::FutureFactory_typeof()->MakeType(::g::Uno::String_typeof(), NULL), (void*)Uploader__send_fn), NULL));
 }
 
 // public Uploader New() [static] :25
@@ -118,26 +103,26 @@ Uploader* Uploader::New2()
 // private static Uno.Threading.Future<string> send(object[] args) [static] :33
 ::g::Uno::Threading::Future1* Uploader::send(uArray* args)
 {
-    uString* path = uCast<uString*>(uPtr(args)->Strong<uObject*>(0), ::TYPES[2/*string*/]);
-    uString* uri = uCast<uString*>(args->Strong<uObject*>(1), ::TYPES[2/*string*/]);
+    uString* path = uCast<uString*>(uPtr(args)->Strong<uObject*>(0), ::g::Uno::String_typeof());
+    uString* uri = uCast<uString*>(args->Strong<uObject*>(1), ::g::Uno::String_typeof());
     uString* fileName = ::g::Uno::IO::Path::GetFileName(path);
     uString* fileExt = ::g::Uno::String::ToLower(uPtr(::g::Uno::IO::Path::GetExtension(path)));
     uArray* imageData = ::g::Uno::IO::File::ReadAllBytes(path);
-    uString* fileType = ::STRINGS[2/*"image/png"*/];
+    uString* fileType = uString::Const("image/png");
 
-    if (::g::Uno::String::op_Equality(fileExt, ::STRINGS[3/*".jpg"*/]) || ::g::Uno::String::op_Equality(fileExt, ::STRINGS[4/*".jpeg"*/]))
-        fileType = ::STRINGS[5/*"image/jpeg"*/];
-    else if (::g::Uno::String::op_Equality(fileExt, ::STRINGS[6/*".gif"*/]))
-        fileType = ::STRINGS[7/*"image/gif"*/];
+    if (::g::Uno::String::op_Equality(fileExt, uString::Const(".jpg")) || ::g::Uno::String::op_Equality(fileExt, uString::Const(".jpeg")))
+        fileType = uString::Const("image/jpeg");
+    else if (::g::Uno::String::op_Equality(fileExt, uString::Const(".gif")))
+        fileType = uString::Const("image/gif");
 
-    ::g::Uno::Collections::Dictionary* headers = (::g::Uno::Collections::Dictionary*)::g::Uno::Collections::Dictionary::New1(::TYPES[3/*Uno.Collections.Dictionary<string, string>*/]);
-    ::g::Uno::Collections::Dictionary* postParameters = (::g::Uno::Collections::Dictionary*)::g::Uno::Collections::Dictionary::New1(::TYPES[4/*Uno.Collections.Dictionary<string, object>*/]);
-    ::g::Uno::Collections::Dictionary__Add_fn(postParameters, ::STRINGS[8/*"filename"*/], fileName);
-    ::g::Uno::Collections::Dictionary__Add_fn(postParameters, ::STRINGS[9/*"fileformat"*/], fileExt);
-    ::g::Uno::Collections::Dictionary__Add_fn(postParameters, ::STRINGS[10/*"file"*/], ::g::FormUpload__FileParameter::New3(imageData, fileName, fileType));
+    ::g::Uno::Collections::Dictionary* headers = (::g::Uno::Collections::Dictionary*)::g::Uno::Collections::Dictionary::New1(::g::Uno::Collections::Dictionary_typeof()->MakeType(::g::Uno::String_typeof(), ::g::Uno::String_typeof(), NULL));
+    ::g::Uno::Collections::Dictionary* postParameters = (::g::Uno::Collections::Dictionary*)::g::Uno::Collections::Dictionary::New1(::g::Uno::Collections::Dictionary_typeof()->MakeType(::g::Uno::String_typeof(), uObject_typeof(), NULL));
+    ::g::Uno::Collections::Dictionary__Add_fn(postParameters, uString::Const("filename"), fileName);
+    ::g::Uno::Collections::Dictionary__Add_fn(postParameters, uString::Const("fileformat"), fileExt);
+    ::g::Uno::Collections::Dictionary__Add_fn(postParameters, uString::Const("file"), ::g::FormUpload__FileParameter::New3(imageData, fileName, fileType));
     uArray* formData = NULL;
-    ::g::Uno::Net::Http::HttpMessageHandlerRequest* request = ::g::FormUpload::MultipartFormDataPost(uri, ::STRINGS[11/*"POST"*/], headers, postParameters, &formData);
-    ::g::Uno::Threading::Promise* promise = (::g::Uno::Threading::Promise*)::g::Uno::Threading::Promise::New1(::TYPES[5/*Uno.Threading.Promise<string>*/]);
+    ::g::Uno::Net::Http::HttpMessageHandlerRequest* request = ::g::FormUpload::MultipartFormDataPost(uri, uString::Const("POST"), headers, postParameters, &formData);
+    ::g::Uno::Threading::Promise* promise = (::g::Uno::Threading::Promise*)::g::Uno::Threading::Promise::New1(::g::Uno::Threading::Promise_typeof()->MakeType(::g::Uno::String_typeof(), NULL));
     Uploader__ResultClosure::New1(promise, request);
     uPtr(request)->SendAsync1(formData);
     return promise;

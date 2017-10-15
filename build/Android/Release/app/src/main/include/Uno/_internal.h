@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/UnoCore/1.2.2/backends/cplusplus/Uno/_internal.h.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/UnoCore/1.3.1/Backends/CPlusPlus/Uno/_internal.h.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #include <uBase/Traits.h>

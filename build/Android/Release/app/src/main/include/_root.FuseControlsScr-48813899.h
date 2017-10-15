@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Controls.ScrollView/1.2.1/.uno/ux11/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Controls.ScrollView/1.3.0-rc2/.uno/ux13/Fuse.Controls.ScrollView.unoproj.g.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -9,7 +9,7 @@ namespace g{struct FuseControlsScrollView_accessor_Fuse_Controls_ScrollViewBase_
 
 namespace g{
 
-// internal sealed class FuseControlsScrollView_accessor_Fuse_Controls_ScrollViewBase_KeepFocusInView :142
+// internal sealed class FuseControlsScrollView_accessor_Fuse_Controls_ScrollViewBase_KeepFocusInView :1
 // {
 ::g::Uno::UX::PropertyAccessor_type* FuseControlsScrollView_accessor_Fuse_Controls_ScrollViewBase_KeepFocusInView_typeof();
 void FuseControlsScrollView_accessor_Fuse_Controls_ScrollViewBase_KeepFocusInView__ctor_1_fn(FuseControlsScrollView_accessor_Fuse_Controls_ScrollViewBase_KeepFocusInView* __this);
@@ -22,9 +22,9 @@ void FuseControlsScrollView_accessor_Fuse_Controls_ScrollViewBase_KeepFocusInVie
 struct FuseControlsScrollView_accessor_Fuse_Controls_ScrollViewBase_KeepFocusInView : ::g::Uno::UX::PropertyAccessor
 {
     static ::g::Uno::UX::Selector _name_;
-    static ::g::Uno::UX::Selector& _name() { return FuseControlsScrollView_accessor_Fuse_Controls_ScrollViewBase_KeepFocusInView_typeof()->Init(), _name_; }
+    static ::g::Uno::UX::Selector& _name() { return _name_; }
     static uSStrong< ::g::Uno::UX::PropertyAccessor*> Singleton_;
-    static uSStrong< ::g::Uno::UX::PropertyAccessor*>& Singleton() { return FuseControlsScrollView_accessor_Fuse_Controls_ScrollViewBase_KeepFocusInView_typeof()->Init(), Singleton_; }
+    static uSStrong< ::g::Uno::UX::PropertyAccessor*>& Singleton() { return Singleton_; }
 
     void ctor_1();
     static FuseControlsScrollView_accessor_Fuse_Controls_ScrollViewBase_KeepFocusInView* New1();

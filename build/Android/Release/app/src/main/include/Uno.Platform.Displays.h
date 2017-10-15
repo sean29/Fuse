@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/UnoCore/1.2.2/source/uno/platform/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/UnoCore/1.3.1/Source/Uno/Platform/Displays.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -11,7 +11,7 @@ namespace g{
 namespace Uno{
 namespace Platform{
 
-// public static class Displays :1022
+// public static class Displays :10
 // {
 uClassType* Displays_typeof();
 void Displays__get_All_fn(::g::Uno::Collections::List** __retval);

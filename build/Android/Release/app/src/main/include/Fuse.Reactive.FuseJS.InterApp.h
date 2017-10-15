@@ -1,4 +1,4 @@
-// This file was generated based on '/Users/a/Library/Application Support/Fusetools/Packages/Fuse.Launcher.InterApp/1.2.1/interapp/$.uno'.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Launcher.InterApp/1.3.0-rc2/InterApp/JS.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -13,7 +13,7 @@ namespace Fuse{
 namespace Reactive{
 namespace FuseJS{
 
-// public sealed class InterApp :139
+// public sealed class InterApp :32
 // {
 ::g::Fuse::Scripting::NativeModule_type* InterApp_typeof();
 void InterApp__ctor_3_fn(InterApp* __this);

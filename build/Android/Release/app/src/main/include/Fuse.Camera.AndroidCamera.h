@@ -1,4 +1,4 @@
-// This file was generated based on '/Users/a/Library/Application Support/Fusetools/Packages/Fuse.Camera/1.2.1/android/$.uno'.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Camera/1.3.0-rc2/Android/AndroidCamera.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -11,7 +11,7 @@ namespace g{
 namespace Fuse{
 namespace Camera{
 
-// internal static extern class AndroidCamera :12
+// internal static extern class AndroidCamera :10
 // {
 uClassType* AndroidCamera_typeof();
 void AndroidCamera__TakePicture_fn(::g::Uno::Threading::Promise* p);

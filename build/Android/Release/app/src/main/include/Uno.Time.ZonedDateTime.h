@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/UnoCore/1.2.2/source/uno/time/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/UnoCore/1.3.1/Source/Uno/Time/ZonedDateTime.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -15,7 +15,7 @@ namespace g{
 namespace Uno{
 namespace Time{
 
-// public sealed class ZonedDateTime :2191
+// public sealed class ZonedDateTime :6
 // {
 uType* ZonedDateTime_typeof();
 void ZonedDateTime__ctor__fn(ZonedDateTime* __this, ::g::Uno::Time::Instant* instant, ::g::Uno::Time::DateTimeZone* zone);
@@ -26,6 +26,7 @@ void ZonedDateTime__Equals_fn(ZonedDateTime* __this, uObject* obj, bool* __retva
 void ZonedDateTime__Equals2_fn(ZonedDateTime* __this, ZonedDateTime* other, bool* __retval);
 void ZonedDateTime__GetHashCode_fn(ZonedDateTime* __this, int* __retval);
 void ZonedDateTime__get_Hour_fn(ZonedDateTime* __this, int* __retval);
+void ZonedDateTime__get_Instant_fn(ZonedDateTime* __this, ::g::Uno::Time::Instant* __retval);
 void ZonedDateTime__get_LocalDateTime_fn(ZonedDateTime* __this, ::g::Uno::Time::LocalDateTime** __retval);
 void ZonedDateTime__Minus_fn(ZonedDateTime* __this, ::g::Uno::Time::Duration* duration, ZonedDateTime** __retval);
 void ZonedDateTime__get_Minute_fn(ZonedDateTime* __this, int* __retval);
@@ -55,6 +56,7 @@ struct ZonedDateTime : uObject
     int Day();
     bool Equals2(ZonedDateTime* other);
     int Hour();
+    ::g::Uno::Time::Instant Instant();
     ::g::Uno::Time::LocalDateTime* LocalDateTime();
     ZonedDateTime* Minus(::g::Uno::Time::Duration duration);
     int Minute();

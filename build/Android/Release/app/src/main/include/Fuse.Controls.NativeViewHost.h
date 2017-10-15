@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Controls.Panels/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Controls.Panels/1.3.0-rc2/NativeViewHost.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -15,6 +15,7 @@
 #include <Fuse.Triggers.Actions.IHide.h>
 #include <Fuse.Triggers.Actions.IShow.h>
 #include <Fuse.Triggers.Actions-ea70af1f.h>
+#include <Fuse.Visual.h>
 #include <Uno.Collections.ICollection-1.h>
 #include <Uno.Collections.IEnumerable-1.h>
 #include <Uno.Collections.IList-1.h>
@@ -26,9 +27,7 @@ namespace g{namespace Fuse{namespace Drawing{struct Brush;}}}
 namespace g{namespace Fuse{namespace Elements{struct Element;}}}
 namespace g{namespace Fuse{struct DrawContext;}}
 namespace g{namespace Fuse{struct LayoutParams;}}
-namespace g{namespace Fuse{struct Visual;}}
 namespace g{namespace Fuse{struct VisualBounds;}}
-namespace g{namespace Uno{namespace Collections{struct List;}}}
 namespace g{namespace Uno{struct EventArgs;}}
 namespace g{namespace Uno{struct Float2;}}
 namespace g{namespace Uno{struct Float4x4;}}
@@ -37,11 +36,11 @@ namespace g{
 namespace Fuse{
 namespace Controls{
 
-// public sealed class NativeViewHost :1561
+// public sealed class NativeViewHost :61
 // {
 struct NativeViewHost_type : ::g::Fuse::Controls::Control_type
 {
-    ::g::Fuse::Elements::ITreeRenderer interface16;
+    ::g::Fuse::Elements::ITreeRenderer interface17;
 };
 
 NativeViewHost_type* NativeViewHost_typeof();
@@ -65,7 +64,7 @@ void NativeViewHost__FuseElementsITreeRendererRooted_fn(NativeViewHost* __this, 
 void NativeViewHost__FuseElementsITreeRendererRootingStarted_fn(NativeViewHost* __this, ::g::Fuse::Elements::Element* e);
 void NativeViewHost__FuseElementsITreeRendererTransformChanged_fn(NativeViewHost* __this, ::g::Fuse::Elements::Element* e);
 void NativeViewHost__FuseElementsITreeRendererUnrooted_fn(NativeViewHost* __this, ::g::Fuse::Elements::Element* e);
-void NativeViewHost__FuseElementsITreeRendererZOrderChanged_fn(NativeViewHost* __this, ::g::Fuse::Elements::Element* e, ::g::Uno::Collections::List* zorder);
+void NativeViewHost__FuseElementsITreeRendererZOrderChanged_fn(NativeViewHost* __this, ::g::Fuse::Elements::Element* e, uArray* zorder);
 void NativeViewHost__get_IsInGraphicsContext_fn(NativeViewHost* __this, bool* __retval);
 void NativeViewHost__New3_fn(NativeViewHost** __retval);
 void NativeViewHost__OnInvalidateVisual_fn(NativeViewHost* __this);

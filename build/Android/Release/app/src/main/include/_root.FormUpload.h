@@ -20,7 +20,7 @@ void FormUpload__PostForm_fn(uString* postUrl, uString* postMethod, uString* con
 struct FormUpload : uObject
 {
     static uSStrong< ::g::Uno::Text::Encoding*> encoding_;
-    static uSStrong< ::g::Uno::Text::Encoding*>& encoding() { return FormUpload_typeof()->Init(), encoding_; }
+    static uSStrong< ::g::Uno::Text::Encoding*>& encoding() { return encoding_; }
 
     static uArray* GetMultipartFormData(::g::Uno::Collections::Dictionary* postParameters, uString* boundary);
     static ::g::Uno::Net::Http::HttpMessageHandlerRequest* MultipartFormDataPost(uString* postUrl, uString* postMethod, ::g::Uno::Collections::Dictionary* headers, ::g::Uno::Collections::Dictionary* postParameters, uArray** formData);

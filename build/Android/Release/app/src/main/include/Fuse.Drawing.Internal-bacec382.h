@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Drawing/1.2.1/internal/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Drawing/1.3.0-rc2/Internal/BufferCollections.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -13,7 +13,7 @@ namespace Fuse{
 namespace Drawing{
 namespace Internal{
 
-// public class TypedBuffer :22
+// public class TypedBuffer :20
 // {
 uType* TypedBuffer_typeof();
 void TypedBuffer__ctor_1_fn(TypedBuffer* __this, int* typeSize1, int* initSize);

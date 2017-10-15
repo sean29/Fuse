@@ -43,23 +43,23 @@ void Device__Vendor_fn(uString** __retval);
 struct Device : ::g::Fuse::Scripting::NativeModule
 {
     static uSStrong< ::g::Uno::Threading::Promise*> _authorizePromise_;
-    static uSStrong< ::g::Uno::Threading::Promise*>& _authorizePromise() { return Device_typeof()->Init(), _authorizePromise_; }
+    static uSStrong< ::g::Uno::Threading::Promise*>& _authorizePromise() { return _authorizePromise_; }
     static uSStrong<Device*> _instance_;
-    static uSStrong<Device*>& _instance() { return Device_typeof()->Init(), _instance_; }
+    static uSStrong<Device*>& _instance() { return _instance_; }
     static uSStrong<uString*> cachedModelName_;
-    static uSStrong<uString*>& cachedModelName() { return Device_typeof()->Init(), cachedModelName_; }
+    static uSStrong<uString*>& cachedModelName() { return cachedModelName_; }
     static double cachedNumProcessorCores_;
-    static double& cachedNumProcessorCores() { return Device_typeof()->Init(), cachedNumProcessorCores_; }
+    static double& cachedNumProcessorCores() { return cachedNumProcessorCores_; }
     static uSStrong<uString*> cachedSDKVersion_;
-    static uSStrong<uString*>& cachedSDKVersion() { return Device_typeof()->Init(), cachedSDKVersion_; }
+    static uSStrong<uString*>& cachedSDKVersion() { return cachedSDKVersion_; }
     static uSStrong<uString*> cachedSystemName_;
-    static uSStrong<uString*>& cachedSystemName() { return Device_typeof()->Init(), cachedSystemName_; }
+    static uSStrong<uString*>& cachedSystemName() { return cachedSystemName_; }
     static uSStrong<uString*> cachedSystemVersion_;
-    static uSStrong<uString*>& cachedSystemVersion() { return Device_typeof()->Init(), cachedSystemVersion_; }
+    static uSStrong<uString*>& cachedSystemVersion() { return cachedSystemVersion_; }
     static uSStrong<uString*> cachedUUID_;
-    static uSStrong<uString*>& cachedUUID() { return Device_typeof()->Init(), cachedUUID_; }
+    static uSStrong<uString*>& cachedUUID() { return cachedUUID_; }
     static uSStrong<uString*> cachedVendorName_;
-    static uSStrong<uString*>& cachedVendorName() { return Device_typeof()->Init(), cachedVendorName_; }
+    static uSStrong<uString*>& cachedVendorName() { return cachedVendorName_; }
 
     void ctor_2();
     ::g::Uno::Threading::Future1* AsyncUUID(uArray* args);

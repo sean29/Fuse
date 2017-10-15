@@ -26,6 +26,7 @@
 #include <Fuse.Gestures.Scrolle-e832eba2.h>
 #include <Fuse.Gestures.Scroller.h>
 #include <Fuse.Gestures.ScrollTo.h>
+#include <Fuse.Gestures.ScrollToHow.h>
 #include <Fuse.Gestures.SetSwipeActive.h>
 #include <Fuse.Gestures.Swiped.h>
 #include <Fuse.Gestures.SwipedHow.h>
@@ -100,21 +101,21 @@
 #include <Uno.UX.Selector.h>
 #include <Uno.UX.ValueChangedArgs-1.h>
 #include <Uno.Vector.h>
-static uString* STRINGS[14];
-static uType* TYPES[25];
+static uString* STRINGS[8];
+static uType* TYPES[18];
 
 namespace g{
 namespace Fuse{
 namespace Gestures{
 
-// /usr/local/share/uno/Packages/Fuse.Gestures/1.2.1/$.uno
-// -------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Gestures\1.3.0-rc2\Clicked.uno
+// -------------------------------------------------------------------------------
 
-// public sealed class Clicked :32
+// public sealed class Clicked :30
 // {
 static void Clicked_build(uType* type)
 {
-    ::TYPES[0] = ::g::Fuse::Visual_typeof()->MakeMethod(3/*FirstChild<Fuse.Gestures.Clicked>*/, type, NULL);
+    ::TYPES[0] = ::g::Fuse::Visual_typeof()->MakeMethod(2/*FirstChild<Fuse.Gestures.Clicked>*/, type, NULL);
     ::TYPES[1] = ::g::Uno::Collections::ICollection_typeof()->MakeType(::g::Fuse::Node_typeof(), NULL);
     ::TYPES[2] = ::g::Fuse::Gestures::ClickerEventHandler_typeof();
     ::TYPES[3] = ::g::Fuse::Gestures::ClickedHandler_typeof();
@@ -127,8 +128,8 @@ static void Clicked_build(uType* type)
         ::g::Uno::Collections::IEnumerable_typeof()->MakeType(::g::Fuse::Binding_typeof(), NULL), offsetof(::g::Fuse::Triggers::Trigger_type, interface5),
         ::g::Fuse::Animations::IUnwrappedPlayerFeedback_typeof(), offsetof(::g::Fuse::Triggers::Trigger_type, interface6),
         ::g::Fuse::Animations::IBasePlayerFeedback_typeof(), offsetof(::g::Fuse::Triggers::Trigger_type, interface7));
-    type->SetFields(35,
-        ::TYPES[3/*Fuse.Gestures.ClickedHandler*/], offsetof(::g::Fuse::Gestures::Clicked, Handler1), 0);
+    type->SetFields(39,
+        ::TYPES[3/*Fuse.Gestures.ClickedHandler*/], offsetof(Clicked, Handler1), 0);
 }
 
 ::g::Fuse::Triggers::Trigger_type* Clicked_typeof()
@@ -138,7 +139,7 @@ static void Clicked_build(uType* type)
 
     uTypeOptions options;
     options.BaseDefinition = ::g::Fuse::Gestures::ClickerTrigger_typeof();
-    options.FieldCount = 36;
+    options.FieldCount = 40;
     options.InterfaceCount = 8;
     options.ObjectSize = sizeof(Clicked);
     options.TypeSize = sizeof(::g::Fuse::Triggers::Trigger_type);
@@ -168,75 +169,75 @@ static void Clicked_build(uType* type)
     return type;
 }
 
-// public generated Clicked() :32
+// public generated Clicked() :30
 void Clicked__ctor_6_fn(Clicked* __this)
 {
     __this->ctor_6();
 }
 
-// public static void AddHandler(Fuse.Visual visual, Fuse.Gestures.ClickedHandler handler) :35
+// public static void AddHandler(Fuse.Visual visual, Fuse.Gestures.ClickedHandler handler) :33
 void Clicked__AddHandler_fn(::g::Fuse::Visual* visual, uDelegate* handler)
 {
     Clicked::AddHandler(visual, handler);
 }
 
-// public generated void add_Handler(Fuse.Gestures.ClickedHandler value) :57
+// public generated void add_Handler(Fuse.Gestures.ClickedHandler value) :55
 void Clicked__add_Handler_fn(Clicked* __this, uDelegate* value)
 {
     __this->add_Handler(value);
 }
 
-// public generated void remove_Handler(Fuse.Gestures.ClickedHandler value) :57
+// public generated void remove_Handler(Fuse.Gestures.ClickedHandler value) :55
 void Clicked__remove_Handler_fn(Clicked* __this, uDelegate* value)
 {
     __this->remove_Handler(value);
 }
 
-// public generated Clicked New() :32
+// public generated Clicked New() :30
 void Clicked__New2_fn(Clicked** __retval)
 {
     *__retval = Clicked::New2();
 }
 
-// private void OnClicked(Fuse.Input.PointerEventArgs args, int clickCount) :71
+// private void OnClicked(Fuse.Input.PointerEventArgs args, int clickCount) :69
 void Clicked__OnClicked_fn(Clicked* __this, ::g::Fuse::Input::PointerEventArgs* args, int* clickCount)
 {
     __this->OnClicked(args, *clickCount);
 }
 
-// protected override sealed void OnRooted() :59
+// protected override sealed void OnRooted() :57
 void Clicked__OnRooted_fn(Clicked* __this)
 {
     ::g::Fuse::Gestures::ClickerTrigger__OnRooted_fn(__this);
     uPtr(__this->Clicker)->add_ClickedEvent(uDelegate::New(::TYPES[2/*Fuse.Gestures.ClickerEventHandler*/], (void*)Clicked__OnClicked_fn, __this));
 }
 
-// protected override sealed void OnUnrooted() :65
+// protected override sealed void OnUnrooted() :63
 void Clicked__OnUnrooted_fn(Clicked* __this)
 {
     uPtr(__this->Clicker)->remove_ClickedEvent(uDelegate::New(::TYPES[2/*Fuse.Gestures.ClickerEventHandler*/], (void*)Clicked__OnClicked_fn, __this));
     ::g::Fuse::Gestures::ClickerTrigger__OnUnrooted_fn(__this);
 }
 
-// public generated Clicked() [instance] :32
+// public generated Clicked() [instance] :30
 void Clicked::ctor_6()
 {
     ctor_5();
 }
 
-// public generated void add_Handler(Fuse.Gestures.ClickedHandler value) [instance] :57
+// public generated void add_Handler(Fuse.Gestures.ClickedHandler value) [instance] :55
 void Clicked::add_Handler(uDelegate* value)
 {
     Handler1 = uCast<uDelegate*>(::g::Uno::Delegate::Combine(Handler1, value), ::TYPES[3/*Fuse.Gestures.ClickedHandler*/]);
 }
 
-// public generated void remove_Handler(Fuse.Gestures.ClickedHandler value) [instance] :57
+// public generated void remove_Handler(Fuse.Gestures.ClickedHandler value) [instance] :55
 void Clicked::remove_Handler(uDelegate* value)
 {
     Handler1 = uCast<uDelegate*>(::g::Uno::Delegate::Remove(Handler1, value), ::TYPES[3/*Fuse.Gestures.ClickedHandler*/]);
 }
 
-// private void OnClicked(Fuse.Input.PointerEventArgs args, int clickCount) [instance] :71
+// private void OnClicked(Fuse.Input.PointerEventArgs args, int clickCount) [instance] :69
 void Clicked::OnClicked(::g::Fuse::Input::PointerEventArgs* args, int clickCount)
 {
     if (!Accept(args))
@@ -248,7 +249,7 @@ void Clicked::OnClicked(::g::Fuse::Input::PointerEventArgs* args, int clickCount
         uPtr(Handler1)->Invoke(2, this, (::g::Fuse::Gestures::ClickedArgs*)::g::Fuse::Gestures::ClickedArgs::New3(args, Parent()));
 }
 
-// public static void AddHandler(Fuse.Visual visual, Fuse.Gestures.ClickedHandler handler) [static] :35
+// public static void AddHandler(Fuse.Visual visual, Fuse.Gestures.ClickedHandler handler) [static] :33
 void Clicked::AddHandler(::g::Fuse::Visual* visual, uDelegate* handler)
 {
     Clicked* c = (Clicked*)uPtr(visual)->FirstChild(::TYPES[0/*Fuse.Visual.FirstChild<Fuse.Gestures.Clicked>*/]);
@@ -262,7 +263,7 @@ void Clicked::AddHandler(::g::Fuse::Visual* visual, uDelegate* handler)
     uPtr(c)->add_Handler(handler);
 }
 
-// public generated Clicked New() [static] :32
+// public generated Clicked New() [static] :30
 Clicked* Clicked::New2()
 {
     Clicked* obj1 = (Clicked*)uNew(Clicked_typeof());
@@ -271,10 +272,10 @@ Clicked* Clicked::New2()
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Gestures/1.2.1/$.uno
-// -------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Gestures\1.3.0-rc2\Clicked.uno
+// -------------------------------------------------------------------------------
 
-// public sealed class ClickedArgs :9
+// public sealed class ClickedArgs :7
 // {
 static void ClickedArgs_build(uType* type)
 {
@@ -300,25 +301,25 @@ static void ClickedArgs_build(uType* type)
     return type;
 }
 
-// public ClickedArgs(Fuse.Input.PointerEventArgs args, Fuse.Visual visual) :11
+// public ClickedArgs(Fuse.Input.PointerEventArgs args, Fuse.Visual visual) :9
 void ClickedArgs__ctor_4_fn(ClickedArgs* __this, ::g::Fuse::Input::PointerEventArgs* args, ::g::Fuse::Visual* visual)
 {
     __this->ctor_4(args, visual);
 }
 
-// public ClickedArgs New(Fuse.Input.PointerEventArgs args, Fuse.Visual visual) :11
+// public ClickedArgs New(Fuse.Input.PointerEventArgs args, Fuse.Visual visual) :9
 void ClickedArgs__New3_fn(::g::Fuse::Input::PointerEventArgs* args, ::g::Fuse::Visual* visual, ClickedArgs** __retval)
 {
     *__retval = ClickedArgs::New3(args, visual);
 }
 
-// public ClickedArgs(Fuse.Input.PointerEventArgs args, Fuse.Visual visual) [instance] :11
+// public ClickedArgs(Fuse.Input.PointerEventArgs args, Fuse.Visual visual) [instance] :9
 void ClickedArgs::ctor_4(::g::Fuse::Input::PointerEventArgs* args, ::g::Fuse::Visual* visual)
 {
     ctor_3(args, visual);
 }
 
-// public ClickedArgs New(Fuse.Input.PointerEventArgs args, Fuse.Visual visual) [static] :11
+// public ClickedArgs New(Fuse.Input.PointerEventArgs args, Fuse.Visual visual) [static] :9
 ClickedArgs* ClickedArgs::New3(::g::Fuse::Input::PointerEventArgs* args, ::g::Fuse::Visual* visual)
 {
     ClickedArgs* obj1 = (ClickedArgs*)uNew(ClickedArgs_typeof());
@@ -327,10 +328,10 @@ ClickedArgs* ClickedArgs::New3(::g::Fuse::Input::PointerEventArgs* args, ::g::Fu
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Gestures/1.2.1/$.uno
-// -------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Gestures\1.3.0-rc2\Clicked.uno
+// -------------------------------------------------------------------------------
 
-// public delegate void ClickedHandler(object sender, Fuse.Gestures.ClickedArgs args) :14
+// public delegate void ClickedHandler(object sender, Fuse.Gestures.ClickedArgs args) :12
 uDelegateType* ClickedHandler_typeof()
 {
     static uSStrong<uDelegateType*> type;
@@ -343,14 +344,15 @@ uDelegateType* ClickedHandler_typeof()
     return type;
 }
 
-// /usr/local/share/uno/Packages/Fuse.Gestures/1.2.1/internal/$.uno
-// ----------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Gestures\1.3.0-rc2\Internal\Clicker.uno
+// ----------------------------------------------------------------------------------------
 
-// internal sealed class Clicker :103
+// internal sealed class Clicker :101
 // {
-// static Clicker() :103
+// static generated Clicker() :101
 static void Clicker__cctor__fn(uType* __type)
 {
+    ::g::Fuse::Properties_typeof()->Init();
     Clicker::_clickerProperty_ = ::g::Fuse::Properties::CreateHandle();
 }
 
@@ -358,32 +360,34 @@ static void Clicker_build(uType* type)
 {
     ::TYPES[4] = ::g::Uno::Action_typeof();
     ::TYPES[2] = ::g::Fuse::Gestures::ClickerEventHandler_typeof();
+    type->SetDependencies(
+        ::g::Fuse::Input::Gestures_typeof());
     type->SetInterfaces(
         ::g::Fuse::Input::IGesture_typeof(), offsetof(Clicker_type, interface0));
     type->SetFields(0,
-        ::g::Uno::Int_typeof(), offsetof(::g::Fuse::Gestures::Clicker, _attachCount), 0,
-        ::g::Uno::Int_typeof(), offsetof(::g::Fuse::Gestures::Clicker, _clickCount), 0,
-        ::g::Fuse::Input::Gesture_typeof(), offsetof(::g::Fuse::Gestures::Clicker, _gesture), 0,
-        ::g::Uno::Bool_typeof(), offsetof(::g::Fuse::Gestures::Clicker, _hasUpdate), 0,
-        ::g::Uno::Bool_typeof(), offsetof(::g::Fuse::Gestures::Clicker, _hovering), 0,
-        ::g::Fuse::Input::PointerEventArgs_typeof(), offsetof(::g::Fuse::Gestures::Clicker, _lastArgs), 0,
-        ::g::Uno::Double_typeof(), offsetof(::g::Fuse::Gestures::Clicker, _lastUpTime), 0,
-        ::g::Uno::Float_typeof(), offsetof(::g::Fuse::Gestures::Clicker, _longPressTimeout), 0,
-        ::g::Uno::Float_typeof(), offsetof(::g::Fuse::Gestures::Clicker, _maxDoubleInterval), 0,
-        ::g::Uno::Float_typeof(), offsetof(::g::Fuse::Gestures::Clicker, _maxTapDistanceMoved), 0,
-        ::g::Uno::Float_typeof(), offsetof(::g::Fuse::Gestures::Clicker, _maxTapTimeHeld), 0,
-        ::g::Uno::Bool_typeof(), offsetof(::g::Fuse::Gestures::Clicker, _maybeTap), 0,
-        ::g::Uno::Float2_typeof(), offsetof(::g::Fuse::Gestures::Clicker, _pressedPosition), 0,
-        ::g::Fuse::Input::GesturePriority_typeof(), offsetof(::g::Fuse::Gestures::Clicker, _priority), 0,
-        ::g::Uno::Float2_typeof(), offsetof(::g::Fuse::Gestures::Clicker, _startCoord), 0,
-        ::g::Uno::Double_typeof(), offsetof(::g::Fuse::Gestures::Clicker, _startTime), 0,
-        ::g::Uno::Int_typeof(), offsetof(::g::Fuse::Gestures::Clicker, _tapCount), 0,
-        ::g::Fuse::Visual_typeof(), offsetof(::g::Fuse::Gestures::Clicker, _visual), 0,
-        ::TYPES[2/*Fuse.Gestures.ClickerEventHandler*/], offsetof(::g::Fuse::Gestures::Clicker, ClickedEvent1), 0,
-        ::TYPES[2/*Fuse.Gestures.ClickerEventHandler*/], offsetof(::g::Fuse::Gestures::Clicker, LongPressedEvent1), 0,
-        ::TYPES[2/*Fuse.Gestures.ClickerEventHandler*/], offsetof(::g::Fuse::Gestures::Clicker, PressingEvent1), 0,
-        ::TYPES[2/*Fuse.Gestures.ClickerEventHandler*/], offsetof(::g::Fuse::Gestures::Clicker, TappedEvent1), 0,
-        ::g::Fuse::PropertyHandle_typeof(), (uintptr_t)&::g::Fuse::Gestures::Clicker::_clickerProperty_, uFieldFlagsStatic);
+        ::g::Uno::Int_typeof(), offsetof(Clicker, _attachCount), 0,
+        ::g::Uno::Int_typeof(), offsetof(Clicker, _clickCount), 0,
+        ::g::Fuse::Input::Gesture_typeof(), offsetof(Clicker, _gesture), 0,
+        ::g::Uno::Bool_typeof(), offsetof(Clicker, _hasUpdate), 0,
+        ::g::Uno::Bool_typeof(), offsetof(Clicker, _hovering), 0,
+        ::g::Fuse::Input::PointerEventArgs_typeof(), offsetof(Clicker, _lastArgs), 0,
+        ::g::Uno::Double_typeof(), offsetof(Clicker, _lastUpTime), 0,
+        ::g::Uno::Float_typeof(), offsetof(Clicker, _longPressTimeout), 0,
+        ::g::Uno::Float_typeof(), offsetof(Clicker, _maxDoubleInterval), 0,
+        ::g::Uno::Float_typeof(), offsetof(Clicker, _maxTapDistanceMoved), 0,
+        ::g::Uno::Float_typeof(), offsetof(Clicker, _maxTapTimeHeld), 0,
+        ::g::Uno::Bool_typeof(), offsetof(Clicker, _maybeTap), 0,
+        ::g::Uno::Float2_typeof(), offsetof(Clicker, _pressedPosition), 0,
+        ::g::Fuse::Input::GesturePriority_typeof(), offsetof(Clicker, _priority), 0,
+        ::g::Uno::Float2_typeof(), offsetof(Clicker, _startCoord), 0,
+        ::g::Uno::Double_typeof(), offsetof(Clicker, _startTime), 0,
+        ::g::Uno::Int_typeof(), offsetof(Clicker, _tapCount), 0,
+        ::g::Fuse::Visual_typeof(), offsetof(Clicker, _visual), 0,
+        ::TYPES[2/*Fuse.Gestures.ClickerEventHandler*/], offsetof(Clicker, ClickedEvent1), 0,
+        ::TYPES[2/*Fuse.Gestures.ClickerEventHandler*/], offsetof(Clicker, LongPressedEvent1), 0,
+        ::TYPES[2/*Fuse.Gestures.ClickerEventHandler*/], offsetof(Clicker, PressingEvent1), 0,
+        ::TYPES[2/*Fuse.Gestures.ClickerEventHandler*/], offsetof(Clicker, TappedEvent1), 0,
+        ::g::Fuse::PropertyHandle_typeof(), (uintptr_t)&Clicker::_clickerProperty_, uFieldFlagsStatic);
 }
 
 Clicker_type* Clicker_typeof()
@@ -394,6 +398,7 @@ Clicker_type* Clicker_typeof()
     uTypeOptions options;
     options.FieldCount = 23;
     options.InterfaceCount = 1;
+    options.DependencyCount = 1;
     options.ObjectSize = sizeof(Clicker);
     options.TypeSize = sizeof(Clicker_type);
     type = (Clicker_type*)uClassType::New("Fuse.Gestures.Clicker", options);
@@ -408,43 +413,43 @@ Clicker_type* Clicker_typeof()
     return type;
 }
 
-// private Clicker(Fuse.Visual visual) :120
+// private Clicker(Fuse.Visual visual) :118
 void Clicker__ctor__fn(Clicker* __this, ::g::Fuse::Visual* visual)
 {
     __this->ctor_(visual);
 }
 
-// public static Fuse.Gestures.Clicker AttachClicker(Fuse.Visual elm, Fuse.Input.GesturePriority priority) :125
+// public static Fuse.Gestures.Clicker AttachClicker(Fuse.Visual elm, Fuse.Input.GesturePriority priority) :123
 void Clicker__AttachClicker_fn(::g::Fuse::Visual* elm, int* priority, Clicker** __retval)
 {
     *__retval = Clicker::AttachClicker(elm, *priority);
 }
 
-// public generated void add_ClickedEvent(Fuse.Gestures.ClickerEventHandler value) :106
+// public generated void add_ClickedEvent(Fuse.Gestures.ClickerEventHandler value) :104
 void Clicker__add_ClickedEvent_fn(Clicker* __this, uDelegate* value)
 {
     __this->add_ClickedEvent(value);
 }
 
-// public generated void remove_ClickedEvent(Fuse.Gestures.ClickerEventHandler value) :106
+// public generated void remove_ClickedEvent(Fuse.Gestures.ClickerEventHandler value) :104
 void Clicker__remove_ClickedEvent_fn(Clicker* __this, uDelegate* value)
 {
     __this->remove_ClickedEvent(value);
 }
 
-// public void Detach() :143
+// public void Detach() :141
 void Clicker__Detach_fn(Clicker* __this)
 {
     __this->Detach();
 }
 
-// private void DoneCapture() :290
+// private void DoneCapture() :288
 void Clicker__DoneCapture_fn(Clicker* __this)
 {
     __this->DoneCapture();
 }
 
-// private void Fuse.Input.IGesture.OnCaptureChanged(Fuse.Input.PointerEventArgs args, Fuse.Input.CaptureType how, Fuse.Input.CaptureType prev) :199
+// private void Fuse.Input.IGesture.OnCaptureChanged(Fuse.Input.PointerEventArgs args, Fuse.Input.CaptureType how, Fuse.Input.CaptureType prev) :197
 void Clicker__FuseInputIGestureOnCaptureChanged_fn(Clicker* __this, ::g::Fuse::Input::PointerEventArgs* args, int* how, int* prev)
 {
     if (::g::Uno::Delegate::op_Inequality(__this->LongPressedEvent1, NULL) && !__this->_hasUpdate)
@@ -459,7 +464,7 @@ void Clicker__FuseInputIGestureOnCaptureChanged_fn(Clicker* __this, ::g::Fuse::I
     __this->_hovering = true;
 }
 
-// private void Fuse.Input.IGesture.OnLostCapture(bool forced) :308
+// private void Fuse.Input.IGesture.OnLostCapture(bool forced) :306
 void Clicker__FuseInputIGestureOnLostCapture_fn(Clicker* __this, bool* forced)
 {
     bool forced_ = *forced;
@@ -472,7 +477,7 @@ void Clicker__FuseInputIGestureOnLostCapture_fn(Clicker* __this, bool* forced)
     }
 }
 
-// private Fuse.Input.GestureRequest Fuse.Input.IGesture.OnPointerMoved(Fuse.Input.PointerMovedArgs args) :213
+// private Fuse.Input.GestureRequest Fuse.Input.IGesture.OnPointerMoved(Fuse.Input.PointerMovedArgs args) :211
 void Clicker__FuseInputIGestureOnPointerMoved_fn(Clicker* __this, ::g::Fuse::Input::PointerMovedArgs* args, int* __retval)
 {
     float distance = ::g::Uno::Vector::Length(::g::Uno::Float2__op_Subtraction2(uPtr(args)->WindowPoint(), __this->_startCoord));
@@ -498,7 +503,7 @@ void Clicker__FuseInputIGestureOnPointerMoved_fn(Clicker* __this, ::g::Fuse::Inp
     return *__retval = 1, void();
 }
 
-// private Fuse.Input.GestureRequest Fuse.Input.IGesture.OnPointerPressed(Fuse.Input.PointerPressedArgs args) :180
+// private Fuse.Input.GestureRequest Fuse.Input.IGesture.OnPointerPressed(Fuse.Input.PointerPressedArgs args) :178
 void Clicker__FuseInputIGestureOnPointerPressed_fn(Clicker* __this, ::g::Fuse::Input::PointerPressedArgs* args, int* __retval)
 {
     __this->_lastArgs = args;
@@ -518,7 +523,7 @@ void Clicker__FuseInputIGestureOnPointerPressed_fn(Clicker* __this, ::g::Fuse::I
     return *__retval = 1, void();
 }
 
-// private Fuse.Input.GestureRequest Fuse.Input.IGesture.OnPointerReleased(Fuse.Input.PointerReleasedArgs args) :244
+// private Fuse.Input.GestureRequest Fuse.Input.IGesture.OnPointerReleased(Fuse.Input.PointerReleasedArgs args) :242
 void Clicker__FuseInputIGestureOnPointerReleased_fn(Clicker* __this, ::g::Fuse::Input::PointerReleasedArgs* args, int* __retval)
 {
     double deltaTime = uPtr(args)->Timestamp() - __this->_startTime;
@@ -554,79 +559,79 @@ void Clicker__FuseInputIGestureOnPointerReleased_fn(Clicker* __this, ::g::Fuse::
     return *__retval = 2, void();
 }
 
-// private Fuse.Input.GesturePriorityConfig Fuse.Input.IGesture.get_Priority() :320
+// private Fuse.Input.GesturePriorityConfig Fuse.Input.IGesture.get_Priority() :318
 void Clicker__FuseInputIGestureget_Priority_fn(Clicker* __this, ::g::Fuse::Input::GesturePriorityConfig* __retval)
 {
     return *__retval = ::g::Fuse::Input::GesturePriorityConfig__New1(4, 0.0f, 0), void();
 }
 
-// public generated void add_LongPressedEvent(Fuse.Gestures.ClickerEventHandler value) :107
+// public generated void add_LongPressedEvent(Fuse.Gestures.ClickerEventHandler value) :105
 void Clicker__add_LongPressedEvent_fn(Clicker* __this, uDelegate* value)
 {
     __this->add_LongPressedEvent(value);
 }
 
-// public generated void remove_LongPressedEvent(Fuse.Gestures.ClickerEventHandler value) :107
+// public generated void remove_LongPressedEvent(Fuse.Gestures.ClickerEventHandler value) :105
 void Clicker__remove_LongPressedEvent_fn(Clicker* __this, uDelegate* value)
 {
     __this->remove_LongPressedEvent(value);
 }
 
-// private bool NeedCapture() :236
+// private bool NeedCapture() :234
 void Clicker__NeedCapture_fn(Clicker* __this, bool* __retval)
 {
     *__retval = __this->NeedCapture();
 }
 
-// private Clicker New(Fuse.Visual visual) :120
+// private Clicker New(Fuse.Visual visual) :118
 void Clicker__New1_fn(::g::Fuse::Visual* visual, Clicker** __retval)
 {
     *__retval = Clicker::New1(visual);
 }
 
-// private void OnRooted() :154
+// private void OnRooted() :152
 void Clicker__OnRooted_fn(Clicker* __this)
 {
     __this->OnRooted();
 }
 
-// private void OnUnrooted() :159
+// private void OnUnrooted() :157
 void Clicker__OnUnrooted_fn(Clicker* __this)
 {
     __this->OnUnrooted();
 }
 
-// public generated void add_PressingEvent(Fuse.Gestures.ClickerEventHandler value) :108
+// public generated void add_PressingEvent(Fuse.Gestures.ClickerEventHandler value) :106
 void Clicker__add_PressingEvent_fn(Clicker* __this, uDelegate* value)
 {
     __this->add_PressingEvent(value);
 }
 
-// public generated void remove_PressingEvent(Fuse.Gestures.ClickerEventHandler value) :108
+// public generated void remove_PressingEvent(Fuse.Gestures.ClickerEventHandler value) :106
 void Clicker__remove_PressingEvent_fn(Clicker* __this, uDelegate* value)
 {
     __this->remove_PressingEvent(value);
 }
 
-// private void ReleaseUpdate() :299
+// private void ReleaseUpdate() :297
 void Clicker__ReleaseUpdate_fn(Clicker* __this)
 {
     __this->ReleaseUpdate();
 }
 
-// public generated void add_TappedEvent(Fuse.Gestures.ClickerEventHandler value) :105
+// public generated void add_TappedEvent(Fuse.Gestures.ClickerEventHandler value) :103
 void Clicker__add_TappedEvent_fn(Clicker* __this, uDelegate* value)
 {
     __this->add_TappedEvent(value);
 }
 
-// public generated void remove_TappedEvent(Fuse.Gestures.ClickerEventHandler value) :105
+// public generated void remove_TappedEvent(Fuse.Gestures.ClickerEventHandler value) :103
 void Clicker__remove_TappedEvent_fn(Clicker* __this, uDelegate* value)
 {
     __this->remove_TappedEvent(value);
 }
 
-// private void Update() :279
+// private void Update() :277
 void Clicker__Update_fn(Clicker* __this)
 {
     __this->Update();
@@ -634,7 +639,7 @@ void Clicker__Update_fn(Clicker* __this)
 
 uSStrong< ::g::Fuse::PropertyHandle*> Clicker::_clickerProperty_;
 
-// private Clicker(Fuse.Visual visual) [instance] :120
+// private Clicker(Fuse.Visual visual) [instance] :118
 void Clicker::ctor_(::g::Fuse::Visual* visual)
 {
     _maxTapDistanceMoved = 25.0f;
@@ -645,19 +650,19 @@ void Clicker::ctor_(::g::Fuse::Visual* visual)
     _visual = visual;
 }
 
-// public generated void add_ClickedEvent(Fuse.Gestures.ClickerEventHandler value) [instance] :106
+// public generated void add_ClickedEvent(Fuse.Gestures.ClickerEventHandler value) [instance] :104
 void Clicker::add_ClickedEvent(uDelegate* value)
 {
     ClickedEvent1 = uCast<uDelegate*>(::g::Uno::Delegate::Combine(ClickedEvent1, value), ::TYPES[2/*Fuse.Gestures.ClickerEventHandler*/]);
 }
 
-// public generated void remove_ClickedEvent(Fuse.Gestures.ClickerEventHandler value) [instance] :106
+// public generated void remove_ClickedEvent(Fuse.Gestures.ClickerEventHandler value) [instance] :104
 void Clicker::remove_ClickedEvent(uDelegate* value)
 {
     ClickedEvent1 = uCast<uDelegate*>(::g::Uno::Delegate::Remove(ClickedEvent1, value), ::TYPES[2/*Fuse.Gestures.ClickerEventHandler*/]);
 }
 
-// public void Detach() [instance] :143
+// public void Detach() [instance] :141
 void Clicker::Detach()
 {
     _attachCount--;
@@ -665,11 +670,11 @@ void Clicker::Detach()
     if (_attachCount == 0)
     {
         OnUnrooted();
-        uPtr(uPtr(_visual)->Properties())->Clear(Clicker::_clickerProperty());
+        uPtr(uPtr(_visual)->Properties())->Clear(Clicker::_clickerProperty_);
     }
 }
 
-// private void DoneCapture() [instance] :290
+// private void DoneCapture() [instance] :288
 void Clicker::DoneCapture()
 {
     ReleaseUpdate();
@@ -680,50 +685,50 @@ void Clicker::DoneCapture()
     _hovering = false;
 }
 
-// public generated void add_LongPressedEvent(Fuse.Gestures.ClickerEventHandler value) [instance] :107
+// public generated void add_LongPressedEvent(Fuse.Gestures.ClickerEventHandler value) [instance] :105
 void Clicker::add_LongPressedEvent(uDelegate* value)
 {
     LongPressedEvent1 = uCast<uDelegate*>(::g::Uno::Delegate::Combine(LongPressedEvent1, value), ::TYPES[2/*Fuse.Gestures.ClickerEventHandler*/]);
 }
 
-// public generated void remove_LongPressedEvent(Fuse.Gestures.ClickerEventHandler value) [instance] :107
+// public generated void remove_LongPressedEvent(Fuse.Gestures.ClickerEventHandler value) [instance] :105
 void Clicker::remove_LongPressedEvent(uDelegate* value)
 {
     LongPressedEvent1 = uCast<uDelegate*>(::g::Uno::Delegate::Remove(LongPressedEvent1, value), ::TYPES[2/*Fuse.Gestures.ClickerEventHandler*/]);
 }
 
-// private bool NeedCapture() [instance] :236
+// private bool NeedCapture() [instance] :234
 bool Clicker::NeedCapture()
 {
     return (((_maybeTap && ::g::Uno::Delegate::op_Inequality(TappedEvent1, NULL)) || ::g::Uno::Delegate::op_Inequality(ClickedEvent1, NULL)) || ::g::Uno::Delegate::op_Inequality(LongPressedEvent1, NULL)) || ::g::Uno::Delegate::op_Inequality(PressingEvent1, NULL);
 }
 
-// private void OnRooted() [instance] :154
+// private void OnRooted() [instance] :152
 void Clicker::OnRooted()
 {
     _gesture = ::g::Fuse::Input::Gestures::Add((uObject*)this, _visual, 0);
 }
 
-// private void OnUnrooted() [instance] :159
+// private void OnUnrooted() [instance] :157
 void Clicker::OnUnrooted()
 {
     uPtr(_gesture)->Dispose();
     _gesture = NULL;
 }
 
-// public generated void add_PressingEvent(Fuse.Gestures.ClickerEventHandler value) [instance] :108
+// public generated void add_PressingEvent(Fuse.Gestures.ClickerEventHandler value) [instance] :106
 void Clicker::add_PressingEvent(uDelegate* value)
 {
     PressingEvent1 = uCast<uDelegate*>(::g::Uno::Delegate::Combine(PressingEvent1, value), ::TYPES[2/*Fuse.Gestures.ClickerEventHandler*/]);
 }
 
-// public generated void remove_PressingEvent(Fuse.Gestures.ClickerEventHandler value) [instance] :108
+// public generated void remove_PressingEvent(Fuse.Gestures.ClickerEventHandler value) [instance] :106
 void Clicker::remove_PressingEvent(uDelegate* value)
 {
     PressingEvent1 = uCast<uDelegate*>(::g::Uno::Delegate::Remove(PressingEvent1, value), ::TYPES[2/*Fuse.Gestures.ClickerEventHandler*/]);
 }
 
-// private void ReleaseUpdate() [instance] :299
+// private void ReleaseUpdate() [instance] :297
 void Clicker::ReleaseUpdate()
 {
     if (_hasUpdate)
@@ -733,19 +738,19 @@ void Clicker::ReleaseUpdate()
     }
 }
 
-// public generated void add_TappedEvent(Fuse.Gestures.ClickerEventHandler value) [instance] :105
+// public generated void add_TappedEvent(Fuse.Gestures.ClickerEventHandler value) [instance] :103
 void Clicker::add_TappedEvent(uDelegate* value)
 {
     TappedEvent1 = uCast<uDelegate*>(::g::Uno::Delegate::Combine(TappedEvent1, value), ::TYPES[2/*Fuse.Gestures.ClickerEventHandler*/]);
 }
 
-// public generated void remove_TappedEvent(Fuse.Gestures.ClickerEventHandler value) [instance] :105
+// public generated void remove_TappedEvent(Fuse.Gestures.ClickerEventHandler value) [instance] :103
 void Clicker::remove_TappedEvent(uDelegate* value)
 {
     TappedEvent1 = uCast<uDelegate*>(::g::Uno::Delegate::Remove(TappedEvent1, value), ::TYPES[2/*Fuse.Gestures.ClickerEventHandler*/]);
 }
 
-// private void Update() [instance] :279
+// private void Update() [instance] :277
 void Clicker::Update()
 {
     double elapsed = ::g::Fuse::Time::FrameTime() - _startTime;
@@ -758,13 +763,12 @@ void Clicker::Update()
     }
 }
 
-// public static Fuse.Gestures.Clicker AttachClicker(Fuse.Visual elm, Fuse.Input.GesturePriority priority) [static] :125
+// public static Fuse.Gestures.Clicker AttachClicker(Fuse.Visual elm, Fuse.Input.GesturePriority priority) [static] :123
 Clicker* Clicker::AttachClicker(::g::Fuse::Visual* elm, int priority)
 {
-    Clicker_typeof()->Init();
     uObject* v;
 
-    if (uPtr(uPtr(elm)->Properties())->TryGet(Clicker::_clickerProperty(), &v))
+    if (uPtr(uPtr(elm)->Properties())->TryGet(Clicker::_clickerProperty_, &v))
     {
         Clicker* c = uAs<Clicker*>(v, Clicker_typeof());
         uPtr(c)->_priority = ::g::Uno::Math::Max8(uPtr(c)->_priority, priority);
@@ -774,12 +778,12 @@ Clicker* Clicker::AttachClicker(::g::Fuse::Visual* elm, int priority)
 
     Clicker* nc = Clicker::New1(elm);
     nc->_priority = priority;
-    uPtr(uPtr(elm)->Properties())->Set(Clicker::_clickerProperty(), nc);
+    uPtr(uPtr(elm)->Properties())->Set(Clicker::_clickerProperty_, nc);
     nc->OnRooted();
     return nc;
 }
 
-// private Clicker New(Fuse.Visual visual) [static] :120
+// private Clicker New(Fuse.Visual visual) [static] :118
 Clicker* Clicker::New1(::g::Fuse::Visual* visual)
 {
     Clicker* obj1 = (Clicker*)uNew(Clicker_typeof());
@@ -788,10 +792,10 @@ Clicker* Clicker::New1(::g::Fuse::Visual* visual)
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Gestures/1.2.1/internal/$.uno
-// ----------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Gestures\1.3.0-rc2\Internal\Clicker.uno
+// ----------------------------------------------------------------------------------------
 
-// internal delegate void ClickerEventHandler(Fuse.Input.PointerEventArgs args, int count) :11
+// internal delegate void ClickerEventHandler(Fuse.Input.PointerEventArgs args, int count) :9
 uDelegateType* ClickerEventHandler_typeof()
 {
     static uSStrong<uDelegateType*> type;
@@ -804,10 +808,10 @@ uDelegateType* ClickerEventHandler_typeof()
     return type;
 }
 
-// /usr/local/share/uno/Packages/Fuse.Gestures/1.2.1/internal/$.uno
-// ----------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Gestures\1.3.0-rc2\Internal\Clicker.uno
+// ----------------------------------------------------------------------------------------
 
-// public enum ClickerPointerIndex :13
+// public enum ClickerPointerIndex :11
 uEnumType* ClickerPointerIndex_typeof()
 {
     static uSStrong<uEnumType*> type;
@@ -820,13 +824,15 @@ uEnumType* ClickerPointerIndex_typeof()
     return type;
 }
 
-// /usr/local/share/uno/Packages/Fuse.Gestures/1.2.1/internal/$.uno
-// ----------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Gestures\1.3.0-rc2\Internal\Clicker.uno
+// ----------------------------------------------------------------------------------------
 
-// public abstract class ClickerTrigger :21
+// public abstract class ClickerTrigger :19
 // {
 static void ClickerTrigger_build(uType* type)
 {
+    type->SetDependencies(
+        ::g::Fuse::Gestures::Clicker_typeof());
     type->SetInterfaces(
         ::g::Uno::Collections::IList_typeof()->MakeType(::g::Fuse::Binding_typeof(), NULL), offsetof(::g::Fuse::Triggers::Trigger_type, interface0),
         ::g::Fuse::Scripting::IScriptObject_typeof(), offsetof(::g::Fuse::Triggers::Trigger_type, interface1),
@@ -836,10 +842,10 @@ static void ClickerTrigger_build(uType* type)
         ::g::Uno::Collections::IEnumerable_typeof()->MakeType(::g::Fuse::Binding_typeof(), NULL), offsetof(::g::Fuse::Triggers::Trigger_type, interface5),
         ::g::Fuse::Animations::IUnwrappedPlayerFeedback_typeof(), offsetof(::g::Fuse::Triggers::Trigger_type, interface6),
         ::g::Fuse::Animations::IBasePlayerFeedback_typeof(), offsetof(::g::Fuse::Triggers::Trigger_type, interface7));
-    type->SetFields(32,
-        ::g::Fuse::Input::GesturePriority_typeof(), offsetof(::g::Fuse::Gestures::ClickerTrigger, _gesturePriority), 0,
-        ::g::Fuse::Gestures::ClickerPointerIndex_typeof(), offsetof(::g::Fuse::Gestures::ClickerTrigger, _pointerIndex), 0,
-        ::g::Fuse::Gestures::Clicker_typeof(), offsetof(::g::Fuse::Gestures::ClickerTrigger, Clicker), 0);
+    type->SetFields(36,
+        ::g::Fuse::Input::GesturePriority_typeof(), offsetof(ClickerTrigger, _gesturePriority), 0,
+        ::g::Fuse::Gestures::ClickerPointerIndex_typeof(), offsetof(ClickerTrigger, _pointerIndex), 0,
+        ::g::Fuse::Gestures::Clicker_typeof(), offsetof(ClickerTrigger, Clicker), 0);
 }
 
 ::g::Fuse::Triggers::Trigger_type* ClickerTrigger_typeof()
@@ -849,8 +855,9 @@ static void ClickerTrigger_build(uType* type)
 
     uTypeOptions options;
     options.BaseDefinition = ::g::Fuse::Triggers::Trigger_typeof();
-    options.FieldCount = 35;
+    options.FieldCount = 39;
     options.InterfaceCount = 8;
+    options.DependencyCount = 1;
     options.ObjectSize = sizeof(ClickerTrigger);
     options.TypeSize = sizeof(::g::Fuse::Triggers::Trigger_type);
     type = (::g::Fuse::Triggers::Trigger_type*)uClassType::New("Fuse.Gestures.ClickerTrigger", options);
@@ -878,38 +885,38 @@ static void ClickerTrigger_build(uType* type)
     return type;
 }
 
-// protected generated ClickerTrigger() :21
+// protected generated ClickerTrigger() :19
 void ClickerTrigger__ctor_5_fn(ClickerTrigger* __this)
 {
     __this->ctor_5();
 }
 
-// protected bool Accept(Fuse.Input.PointerEventArgs args) :60
+// protected bool Accept(Fuse.Input.PointerEventArgs args) :58
 void ClickerTrigger__Accept_fn(ClickerTrigger* __this, ::g::Fuse::Input::PointerEventArgs* args, bool* __retval)
 {
     *__retval = __this->Accept(args);
 }
 
-// public Fuse.Input.GesturePriority get_GesturePriority() :56
+// public Fuse.Input.GesturePriority get_GesturePriority() :54
 void ClickerTrigger__get_GesturePriority_fn(ClickerTrigger* __this, int* __retval)
 {
     *__retval = __this->GesturePriority();
 }
 
-// public void set_GesturePriority(Fuse.Input.GesturePriority value) :57
+// public void set_GesturePriority(Fuse.Input.GesturePriority value) :55
 void ClickerTrigger__set_GesturePriority_fn(ClickerTrigger* __this, int* value)
 {
     __this->GesturePriority(*value);
 }
 
-// protected override void OnRooted() :24
+// protected override void OnRooted() :22
 void ClickerTrigger__OnRooted_fn(ClickerTrigger* __this)
 {
     ::g::Fuse::Triggers::Trigger__OnRooted_fn(__this);
     __this->Clicker = ::g::Fuse::Gestures::Clicker::AttachClicker(__this->Parent(), __this->GesturePriority());
 }
 
-// protected override void OnUnrooted() :30
+// protected override void OnUnrooted() :28
 void ClickerTrigger__OnUnrooted_fn(ClickerTrigger* __this)
 {
     uPtr(__this->Clicker)->Detach();
@@ -917,26 +924,26 @@ void ClickerTrigger__OnUnrooted_fn(ClickerTrigger* __this)
     ::g::Fuse::Triggers::Trigger__OnUnrooted_fn(__this);
 }
 
-// public Fuse.Gestures.ClickerPointerIndex get_PointerIndex() :40
+// public Fuse.Gestures.ClickerPointerIndex get_PointerIndex() :38
 void ClickerTrigger__get_PointerIndex_fn(ClickerTrigger* __this, int* __retval)
 {
     *__retval = __this->PointerIndex();
 }
 
-// public void set_PointerIndex(Fuse.Gestures.ClickerPointerIndex value) :41
+// public void set_PointerIndex(Fuse.Gestures.ClickerPointerIndex value) :39
 void ClickerTrigger__set_PointerIndex_fn(ClickerTrigger* __this, int* value)
 {
     __this->PointerIndex(*value);
 }
 
-// protected generated ClickerTrigger() [instance] :21
+// protected generated ClickerTrigger() [instance] :19
 void ClickerTrigger::ctor_5()
 {
     _gesturePriority = 4;
     ctor_4();
 }
 
-// protected bool Accept(Fuse.Input.PointerEventArgs args) [instance] :60
+// protected bool Accept(Fuse.Input.PointerEventArgs args) [instance] :58
 bool ClickerTrigger::Accept(::g::Fuse::Input::PointerEventArgs* args)
 {
     if (!IsRootingCompleted())
@@ -948,41 +955,41 @@ bool ClickerTrigger::Accept(::g::Fuse::Input::PointerEventArgs* args)
     return uPtr(args)->IsPrimary();
 }
 
-// public Fuse.Input.GesturePriority get_GesturePriority() [instance] :56
+// public Fuse.Input.GesturePriority get_GesturePriority() [instance] :54
 int ClickerTrigger::GesturePriority()
 {
     return _gesturePriority;
 }
 
-// public void set_GesturePriority(Fuse.Input.GesturePriority value) [instance] :57
+// public void set_GesturePriority(Fuse.Input.GesturePriority value) [instance] :55
 void ClickerTrigger::GesturePriority(int value)
 {
     _gesturePriority = value;
 }
 
-// public Fuse.Gestures.ClickerPointerIndex get_PointerIndex() [instance] :40
+// public Fuse.Gestures.ClickerPointerIndex get_PointerIndex() [instance] :38
 int ClickerTrigger::PointerIndex()
 {
     return _pointerIndex;
 }
 
-// public void set_PointerIndex(Fuse.Gestures.ClickerPointerIndex value) [instance] :41
+// public void set_PointerIndex(Fuse.Gestures.ClickerPointerIndex value) [instance] :39
 void ClickerTrigger::PointerIndex(int value)
 {
     _pointerIndex = value;
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Gestures/1.2.1/internal/$.uno
-// ----------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Gestures\1.3.0-rc2\Internal\Helpers.uno
+// ----------------------------------------------------------------------------------------
 
-// internal sealed class DegreeSpan :645
+// internal sealed class DegreeSpan :6
 // {
 static void DegreeSpan_build(uType* type)
 {
     type->SetFields(0,
-        ::g::Uno::Float_typeof(), offsetof(::g::Fuse::Gestures::DegreeSpan, _a), 0,
-        ::g::Uno::Float_typeof(), offsetof(::g::Fuse::Gestures::DegreeSpan, _b), 0);
+        ::g::Uno::Float_typeof(), offsetof(DegreeSpan, _a), 0,
+        ::g::Uno::Float_typeof(), offsetof(DegreeSpan, _b), 0);
 }
 
 uType* DegreeSpan_typeof()
@@ -999,32 +1006,32 @@ uType* DegreeSpan_typeof()
     return type;
 }
 
-// public DegreeSpan(float a, float b) :650
+// public DegreeSpan(float a, float b) :11
 void DegreeSpan__ctor__fn(DegreeSpan* __this, float* a, float* b)
 {
     __this->ctor_(*a, *b);
 }
 
-// public bool IsWithinBounds(float x) :656
+// public bool IsWithinBounds(float x) :17
 void DegreeSpan__IsWithinBounds_fn(DegreeSpan* __this, float* x, bool* __retval)
 {
     *__retval = __this->IsWithinBounds(*x);
 }
 
-// public DegreeSpan New(float a, float b) :650
+// public DegreeSpan New(float a, float b) :11
 void DegreeSpan__New1_fn(float* a, float* b, DegreeSpan** __retval)
 {
     *__retval = DegreeSpan::New1(*a, *b);
 }
 
-// public DegreeSpan(float a, float b) [instance] :650
+// public DegreeSpan(float a, float b) [instance] :11
 void DegreeSpan::ctor_(float a, float b)
 {
     _a = a;
     _b = b;
 }
 
-// public bool IsWithinBounds(float x) [instance] :656
+// public bool IsWithinBounds(float x) [instance] :17
 bool DegreeSpan::IsWithinBounds(float x)
 {
     float angle1 = _a;
@@ -1044,7 +1051,7 @@ bool DegreeSpan::IsWithinBounds(float x)
         return (x >= angle2) || (x <= angle2);
 }
 
-// public DegreeSpan New(float a, float b) [static] :650
+// public DegreeSpan New(float a, float b) [static] :11
 DegreeSpan* DegreeSpan::New1(float a, float b)
 {
     DegreeSpan* obj1 = (DegreeSpan*)uNew(DegreeSpan_typeof());
@@ -1053,10 +1060,10 @@ DegreeSpan* DegreeSpan::New1(float a, float b)
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Gestures/1.2.1/$.uno
-// -------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Gestures\1.3.0-rc2\WhileEdgeSwiped.uno
+// ---------------------------------------------------------------------------------------
 
-// public enum Edge :1832
+// public enum Edge :10
 uEnumType* Edge_typeof()
 {
     static uSStrong<uEnumType*> type;
@@ -1071,15 +1078,17 @@ uEnumType* Edge_typeof()
     return type;
 }
 
-// /usr/local/share/uno/Packages/Fuse.Gestures/1.2.1/$.uno
-// -------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Gestures\1.3.0-rc2\KeepInView.uno
+// ----------------------------------------------------------------------------------
 
-// public sealed class KeepFocusInView :238
+// public sealed class KeepFocusInView :106
 // {
 static void KeepFocusInView_build(uType* type)
 {
     ::TYPES[5] = ::g::Fuse::Input::FocusGainedHandler_typeof();
     ::TYPES[6] = ::g::Fuse::Input::FocusLostHandler_typeof();
+    type->SetDependencies(
+        ::g::Fuse::Input::Focus_typeof());
     type->SetInterfaces(
         ::g::Uno::Collections::IList_typeof()->MakeType(::g::Fuse::Binding_typeof(), NULL), offsetof(::g::Fuse::Node_type, interface0),
         ::g::Fuse::Scripting::IScriptObject_typeof(), offsetof(::g::Fuse::Node_type, interface1),
@@ -1087,7 +1096,7 @@ static void KeepFocusInView_build(uType* type)
         ::g::Fuse::INotifyUnrooted_typeof(), offsetof(::g::Fuse::Node_type, interface3),
         ::g::Uno::Collections::ICollection_typeof()->MakeType(::g::Fuse::Binding_typeof(), NULL), offsetof(::g::Fuse::Node_type, interface4),
         ::g::Uno::Collections::IEnumerable_typeof()->MakeType(::g::Fuse::Binding_typeof(), NULL), offsetof(::g::Fuse::Node_type, interface5));
-    type->SetFields(15);
+    type->SetFields(18);
 }
 
 ::g::Fuse::Node_type* KeepFocusInView_typeof()
@@ -1097,8 +1106,9 @@ static void KeepFocusInView_build(uType* type)
 
     uTypeOptions options;
     options.BaseDefinition = ::g::Fuse::Gestures::KeepInViewCommon_typeof();
-    options.FieldCount = 15;
+    options.FieldCount = 18;
     options.InterfaceCount = 6;
+    options.DependencyCount = 1;
     options.ObjectSize = sizeof(KeepFocusInView);
     options.TypeSize = sizeof(::g::Fuse::Node_type);
     type = (::g::Fuse::Node_type*)uClassType::New("Fuse.Gestures.KeepFocusInView", options);
@@ -1124,31 +1134,31 @@ static void KeepFocusInView_build(uType* type)
     return type;
 }
 
-// public generated KeepFocusInView() :238
+// public generated KeepFocusInView() :106
 void KeepFocusInView__ctor_4_fn(KeepFocusInView* __this)
 {
     __this->ctor_4();
 }
 
-// public generated KeepFocusInView New() :238
+// public generated KeepFocusInView New() :106
 void KeepFocusInView__New3_fn(KeepFocusInView** __retval)
 {
     *__retval = KeepFocusInView::New3();
 }
 
-// private void OnGotFocus(object s, Fuse.Input.FocusGainedArgs fga) :254
+// private void OnGotFocus(object s, Fuse.Input.FocusGainedArgs fga) :122
 void KeepFocusInView__OnGotFocus_fn(KeepFocusInView* __this, uObject* s, ::g::Fuse::Input::FocusGainedArgs* fga)
 {
     __this->OnGotFocus(s, fga);
 }
 
-// private void OnLostFocus(object s, object a) :259
+// private void OnLostFocus(object s, object a) :127
 void KeepFocusInView__OnLostFocus_fn(KeepFocusInView* __this, uObject* s, uObject* a)
 {
     __this->OnLostFocus(s, a);
 }
 
-// protected override sealed void OnRooted() :240
+// protected override sealed void OnRooted() :108
 void KeepFocusInView__OnRooted_fn(KeepFocusInView* __this)
 {
     ::g::Fuse::Gestures::KeepInViewCommon__OnRooted_fn(__this);
@@ -1156,7 +1166,7 @@ void KeepFocusInView__OnRooted_fn(KeepFocusInView* __this)
     ::g::Fuse::VisualEvent__AddHandler_fn(uPtr(::g::Fuse::Input::Focus::Lost()), __this->Parent(), uDelegate::New(::TYPES[6/*Fuse.Input.FocusLostHandler*/], (void*)KeepFocusInView__OnLostFocus_fn, __this));
 }
 
-// protected override sealed void OnUnrooted() :247
+// protected override sealed void OnUnrooted() :115
 void KeepFocusInView__OnUnrooted_fn(KeepFocusInView* __this)
 {
     ::g::Fuse::VisualEvent__RemoveHandler_fn(uPtr(::g::Fuse::Input::Focus::Gained()), __this->Parent(), uDelegate::New(::TYPES[5/*Fuse.Input.FocusGainedHandler*/], (void*)KeepFocusInView__OnGotFocus_fn, __this));
@@ -1164,25 +1174,25 @@ void KeepFocusInView__OnUnrooted_fn(KeepFocusInView* __this)
     ::g::Fuse::Gestures::KeepInViewCommon__OnUnrooted_fn(__this);
 }
 
-// public generated KeepFocusInView() [instance] :238
+// public generated KeepFocusInView() [instance] :106
 void KeepFocusInView::ctor_4()
 {
     ctor_3();
 }
 
-// private void OnGotFocus(object s, Fuse.Input.FocusGainedArgs fga) [instance] :254
+// private void OnGotFocus(object s, Fuse.Input.FocusGainedArgs fga) [instance] :122
 void KeepFocusInView::OnGotFocus(uObject* s, ::g::Fuse::Input::FocusGainedArgs* fga)
 {
     Target(::g::Fuse::Input::Focus::FocusedVisual());
 }
 
-// private void OnLostFocus(object s, object a) [instance] :259
+// private void OnLostFocus(object s, object a) [instance] :127
 void KeepFocusInView::OnLostFocus(uObject* s, uObject* a)
 {
     Target(NULL);
 }
 
-// public generated KeepFocusInView New() [static] :238
+// public generated KeepFocusInView New() [static] :106
 KeepFocusInView* KeepFocusInView::New3()
 {
     KeepFocusInView* obj1 = (KeepFocusInView*)uNew(KeepFocusInView_typeof());
@@ -1191,10 +1201,10 @@ KeepFocusInView* KeepFocusInView::New3()
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Gestures/1.2.1/$.uno
-// -------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Gestures\1.3.0-rc2\KeepInView.uno
+// ----------------------------------------------------------------------------------
 
-// public class KeepInViewCommon :140
+// public class KeepInViewCommon :8
 // {
 static void KeepInViewCommon_build(uType* type)
 {
@@ -1207,10 +1217,10 @@ static void KeepInViewCommon_build(uType* type)
         ::g::Fuse::INotifyUnrooted_typeof(), offsetof(::g::Fuse::Node_type, interface3),
         ::g::Uno::Collections::ICollection_typeof()->MakeType(::g::Fuse::Binding_typeof(), NULL), offsetof(::g::Fuse::Node_type, interface4),
         ::g::Uno::Collections::IEnumerable_typeof()->MakeType(::g::Fuse::Binding_typeof(), NULL), offsetof(::g::Fuse::Node_type, interface5));
-    type->SetFields(12,
-        ::g::Uno::Bool_typeof(), offsetof(::g::Fuse::Gestures::KeepInViewCommon, _attached), 0,
-        ::TYPES[8/*Fuse.Elements.Element*/], offsetof(::g::Fuse::Gestures::KeepInViewCommon, _rootElement), 0,
-        ::TYPES[8/*Fuse.Elements.Element*/], offsetof(::g::Fuse::Gestures::KeepInViewCommon, _target), 0);
+    type->SetFields(15,
+        ::g::Uno::Bool_typeof(), offsetof(KeepInViewCommon, _attached), 0,
+        ::TYPES[8/*Fuse.Elements.Element*/], offsetof(KeepInViewCommon, _rootElement), 0,
+        ::TYPES[8/*Fuse.Elements.Element*/], offsetof(KeepInViewCommon, _target), 0);
 }
 
 ::g::Fuse::Node_type* KeepInViewCommon_typeof()
@@ -1220,7 +1230,7 @@ static void KeepInViewCommon_build(uType* type)
 
     uTypeOptions options;
     options.BaseDefinition = ::g::Fuse::Behavior_typeof();
-    options.FieldCount = 15;
+    options.FieldCount = 18;
     options.InterfaceCount = 6;
     options.ObjectSize = sizeof(KeepInViewCommon);
     options.TypeSize = sizeof(::g::Fuse::Node_type);
@@ -1246,19 +1256,19 @@ static void KeepInViewCommon_build(uType* type)
     return type;
 }
 
-// internal KeepInViewCommon() :142
+// internal KeepInViewCommon() :10
 void KeepInViewCommon__ctor_3_fn(KeepInViewCommon* __this)
 {
     __this->ctor_3();
 }
 
-// private void AttachElement() :211
+// private void AttachElement() :79
 void KeepInViewCommon__AttachElement_fn(KeepInViewCommon* __this)
 {
     __this->AttachElement();
 }
 
-// protected override void OnRooted() :179
+// protected override void OnRooted() :47
 void KeepInViewCommon__OnRooted_fn(KeepInViewCommon* __this)
 {
     ::g::Fuse::Node__OnRooted_fn(__this);
@@ -1271,7 +1281,7 @@ void KeepInViewCommon__OnRooted_fn(KeepInViewCommon* __this)
     }
 }
 
-// protected override void OnUnrooted() :191
+// protected override void OnUnrooted() :59
 void KeepInViewCommon__OnUnrooted_fn(KeepInViewCommon* __this)
 {
     if (__this->_rootElement != NULL)
@@ -1283,37 +1293,37 @@ void KeepInViewCommon__OnUnrooted_fn(KeepInViewCommon* __this)
     ::g::Fuse::Node__OnUnrooted_fn(__this);
 }
 
-// private void ReleaseElement() :202
+// private void ReleaseElement() :70
 void KeepInViewCommon__ReleaseElement_fn(KeepInViewCommon* __this)
 {
     __this->ReleaseElement();
 }
 
-// public Fuse.Node get_Target() :148
+// public Fuse.Node get_Target() :16
 void KeepInViewCommon__get_Target_fn(KeepInViewCommon* __this, ::g::Fuse::Node** __retval)
 {
     *__retval = __this->Target();
 }
 
-// public void set_Target(Fuse.Node value) :149
+// public void set_Target(Fuse.Node value) :17
 void KeepInViewCommon__set_Target_fn(KeepInViewCommon* __this, ::g::Fuse::Node* value)
 {
     __this->Target(value);
 }
 
-// private void Update(object s, object a) :221
+// private void Update(object s, object a) :89
 void KeepInViewCommon__Update_fn(KeepInViewCommon* __this, uObject* s, uObject* a)
 {
     __this->Update(s, a);
 }
 
-// internal KeepInViewCommon() [instance] :142
+// internal KeepInViewCommon() [instance] :10
 void KeepInViewCommon::ctor_3()
 {
     ctor_2();
 }
 
-// private void AttachElement() [instance] :211
+// private void AttachElement() [instance] :79
 void KeepInViewCommon::AttachElement()
 {
     if (_target == NULL)
@@ -1324,7 +1334,7 @@ void KeepInViewCommon::AttachElement()
     Update(NULL, NULL);
 }
 
-// private void ReleaseElement() [instance] :202
+// private void ReleaseElement() [instance] :70
 void KeepInViewCommon::ReleaseElement()
 {
     if (!_attached)
@@ -1334,13 +1344,13 @@ void KeepInViewCommon::ReleaseElement()
     _attached = false;
 }
 
-// public Fuse.Node get_Target() [instance] :148
+// public Fuse.Node get_Target() [instance] :16
 ::g::Fuse::Node* KeepInViewCommon::Target()
 {
     return _target;
 }
 
-// public void set_Target(Fuse.Node value) [instance] :149
+// public void set_Target(Fuse.Node value) [instance] :17
 void KeepInViewCommon::Target(::g::Fuse::Node* value)
 {
     ::g::Fuse::Elements::Element* prev = _target;
@@ -1368,7 +1378,7 @@ void KeepInViewCommon::Target(::g::Fuse::Node* value)
         AttachElement();
 }
 
-// private void Update(object s, object a) [instance] :221
+// private void Update(object s, object a) [instance] :89
 void KeepInViewCommon::Update(uObject* s, uObject* a)
 {
     if (_target != NULL)
@@ -1376,10 +1386,10 @@ void KeepInViewCommon::Update(uObject* s, uObject* a)
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Controls.ScrollView/1.2.1/$.uno
-// ------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Controls.ScrollView\1.3.0-rc2\Scroller.uno
+// -------------------------------------------------------------------------------------------
 
-// private enum Scroller.MoveUserFlags :542
+// private enum Scroller.MoveUserFlags :418
 uEnumType* Scroller__MoveUserFlags_typeof()
 {
     static uSStrong<uEnumType*> type;
@@ -1393,38 +1403,24 @@ uEnumType* Scroller__MoveUserFlags_typeof()
     return type;
 }
 
-// /usr/local/share/uno/Packages/Fuse.Controls.ScrollView/1.2.1/$.uno
-// ------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Controls.ScrollView\1.3.0-rc2\Scroller.uno
+// -------------------------------------------------------------------------------------------
 
-// public sealed class Scroller :139
+// public sealed class Scroller :21
 // {
-// static Scroller() :139
+// static generated Scroller() :21
 static void Scroller__cctor_1_fn(uType* __type)
 {
-    Scroller::_horizontalGesture_ = ::g::Fuse::Gestures::SwipeGestureHelper::New1(1.0f, uArray::Init< ::g::Fuse::Gestures::DegreeSpan*>(::TYPES[9/*Fuse.Gestures.DegreeSpan[]*/], 2, (::g::Fuse::Gestures::DegreeSpan*)::g::Fuse::Gestures::DegreeSpan::New1(45.0f, 135.0f), (::g::Fuse::Gestures::DegreeSpan*)::g::Fuse::Gestures::DegreeSpan::New1(-45.0f, -135.0f)));
-    Scroller::_verticalGesture_ = ::g::Fuse::Gestures::SwipeGestureHelper::New1(1.0f, uArray::Init< ::g::Fuse::Gestures::DegreeSpan*>(::TYPES[9/*Fuse.Gestures.DegreeSpan[]*/], 3, (::g::Fuse::Gestures::DegreeSpan*)::g::Fuse::Gestures::DegreeSpan::New1(-45.0f, 45.0f), (::g::Fuse::Gestures::DegreeSpan*)::g::Fuse::Gestures::DegreeSpan::New1(-135.0f, -180.0f), (::g::Fuse::Gestures::DegreeSpan*)::g::Fuse::Gestures::DegreeSpan::New1(135.0f, 180.0f)));
+    Scroller::_horizontalGesture_ = ::g::Fuse::Gestures::SwipeGestureHelper::New1(1.0f, uArray::Init< ::g::Fuse::Gestures::DegreeSpan*>(::g::Fuse::Gestures::DegreeSpan_typeof()->Array(), 2, (::g::Fuse::Gestures::DegreeSpan*)::g::Fuse::Gestures::DegreeSpan::New1(45.0f, 135.0f), (::g::Fuse::Gestures::DegreeSpan*)::g::Fuse::Gestures::DegreeSpan::New1(-45.0f, -135.0f)));
+    Scroller::_verticalGesture_ = ::g::Fuse::Gestures::SwipeGestureHelper::New1(1.0f, uArray::Init< ::g::Fuse::Gestures::DegreeSpan*>(::g::Fuse::Gestures::DegreeSpan_typeof()->Array(), 3, (::g::Fuse::Gestures::DegreeSpan*)::g::Fuse::Gestures::DegreeSpan::New1(-45.0f, 45.0f), (::g::Fuse::Gestures::DegreeSpan*)::g::Fuse::Gestures::DegreeSpan::New1(-135.0f, -180.0f), (::g::Fuse::Gestures::DegreeSpan*)::g::Fuse::Gestures::DegreeSpan::New1(135.0f, 180.0f)));
 }
 
 static void Scroller_build(uType* type)
 {
-    ::STRINGS[0] = uString::Const("Scroller can only be used in a ScrollView");
-    ::STRINGS[1] = uString::Const("Invalid scroller update");
-    ::STRINGS[2] = uString::Const("/usr/local/share/uno/Packages/Fuse.Controls.ScrollView/1.2.1/$.uno");
-    ::STRINGS[3] = uString::Const("OnUpdated");
-    ::STRINGS[4] = uString::Const("inconsistent gesture state");
-    ::STRINGS[5] = uString::Const("UpdatePointerEvents");
-    ::STRINGS[6] = uString::Const("Invalid tear-down of pointer events");
-    ::STRINGS[7] = uString::Const("Scroller.DelayStart is no longer supported.");
-    ::STRINGS[8] = uString::Const("set_DelayStart");
-    ::TYPES[9] = ::g::Fuse::Gestures::DegreeSpan_typeof()->Array();
-    ::TYPES[10] = ::g::Fuse::Motion::Simulation::PointerVelocity_typeof()->MakeType(::g::Uno::Float2_typeof(), NULL);
-    ::TYPES[11] = ::g::Fuse::Motion::Simulation::Simulation_typeof();
-    ::TYPES[12] = ::g::Fuse::Motion::Simulation::BoundedRegion2D_typeof();
-    ::TYPES[4] = ::g::Uno::Action_typeof();
-    ::TYPES[13] = ::g::Fuse::Motion::Simulation::MotionSimulation_typeof()->MakeType(::g::Uno::Float2_typeof(), NULL);
-    ::TYPES[14] = ::g::Fuse::Controls::ScrollView_typeof();
-    ::TYPES[15] = ::g::Fuse::RequestBringIntoViewHandler_typeof();
-    ::TYPES[16] = ::g::Fuse::Controls::ScrollPositionChangedHandler_typeof();
+    type->SetDependencies(
+        ::g::Fuse::Diagnostics_typeof(),
+        ::g::Fuse::Input::Gestures_typeof(),
+        ::g::Uno::UX::Selector_typeof());
     type->SetInterfaces(
         ::g::Uno::Collections::IList_typeof()->MakeType(::g::Fuse::Binding_typeof(), NULL), offsetof(Scroller_type, interface0),
         ::g::Fuse::Scripting::IScriptObject_typeof(), offsetof(Scroller_type, interface1),
@@ -1434,27 +1430,27 @@ static void Scroller_build(uType* type)
         ::g::Uno::Collections::IEnumerable_typeof()->MakeType(::g::Fuse::Binding_typeof(), NULL), offsetof(Scroller_type, interface5),
         ::g::Uno::UX::IPropertyListener_typeof(), offsetof(Scroller_type, interface6),
         ::g::Fuse::Input::IGesture_typeof(), offsetof(Scroller_type, interface7));
-    type->SetFields(12,
-        ::g::Uno::Bool_typeof(), offsetof(::g::Fuse::Gestures::Scroller, _delayStart), 0,
-        ::g::Uno::Int_typeof(), offsetof(::g::Fuse::Gestures::Scroller, _down), 0,
-        ::g::Fuse::Input::Gesture_typeof(), offsetof(::g::Fuse::Gestures::Scroller, _gesture), 0,
-        ::g::Uno::Bool_typeof(), offsetof(::g::Fuse::Gestures::Scroller, _hasUpdated), 0,
-        ::g::Fuse::Visual_typeof(), offsetof(::g::Fuse::Gestures::Scroller, _pendingBringIntoView), 0,
-        ::g::Uno::Bool_typeof(), offsetof(::g::Fuse::Gestures::Scroller, _pointerListening), 0,
-        ::g::Uno::Float2_typeof(), offsetof(::g::Fuse::Gestures::Scroller, _pointerPos), 0,
-        ::g::Uno::Bool_typeof(), offsetof(::g::Fuse::Gestures::Scroller, _pressed), 0,
-        ::g::Uno::Float2_typeof(), offsetof(::g::Fuse::Gestures::Scroller, _prevPos), 0,
-        ::g::Uno::Double_typeof(), offsetof(::g::Fuse::Gestures::Scroller, _prevTime), 0,
-        ::TYPES[12/*Fuse.Motion.Simulation.BoundedRegion2D*/], offsetof(::g::Fuse::Gestures::Scroller, _region), 0,
-        ::TYPES[14/*Fuse.Controls.ScrollView*/], offsetof(::g::Fuse::Gestures::Scroller, _scrollable), 0,
-        ::g::Uno::Float_typeof(), offsetof(::g::Fuse::Gestures::Scroller, _significance), 0,
-        ::g::Uno::Float2_typeof(), offsetof(::g::Fuse::Gestures::Scroller, _softCaptureCurrent), 0,
-        ::g::Uno::Float2_typeof(), offsetof(::g::Fuse::Gestures::Scroller, _softCaptureStart), 0,
-        ::g::Uno::Float2_typeof(), offsetof(::g::Fuse::Gestures::Scroller, _startPos), 0,
-        ::g::Uno::Bool_typeof(), offsetof(::g::Fuse::Gestures::Scroller, _updateFirstFrame), 0,
-        ::TYPES[10/*Fuse.Motion.Simulation.PointerVelocity<float2>*/], offsetof(::g::Fuse::Gestures::Scroller, _velocity), 0,
-        ::g::Fuse::Gestures::SwipeGestureHelper_typeof(), (uintptr_t)&::g::Fuse::Gestures::Scroller::_horizontalGesture_, uFieldFlagsStatic,
-        ::g::Fuse::Gestures::SwipeGestureHelper_typeof(), (uintptr_t)&::g::Fuse::Gestures::Scroller::_verticalGesture_, uFieldFlagsStatic);
+    type->SetFields(15,
+        ::g::Uno::Bool_typeof(), offsetof(Scroller, _delayStart), 0,
+        ::g::Uno::Int_typeof(), offsetof(Scroller, _down), 0,
+        ::g::Fuse::Input::Gesture_typeof(), offsetof(Scroller, _gesture), 0,
+        ::g::Uno::Bool_typeof(), offsetof(Scroller, _hasUpdated), 0,
+        ::g::Fuse::Visual_typeof(), offsetof(Scroller, _pendingBringIntoView), 0,
+        ::g::Uno::Bool_typeof(), offsetof(Scroller, _pointerListening), 0,
+        ::g::Uno::Float2_typeof(), offsetof(Scroller, _pointerPos), 0,
+        ::g::Uno::Bool_typeof(), offsetof(Scroller, _pressed), 0,
+        ::g::Uno::Float2_typeof(), offsetof(Scroller, _prevPos), 0,
+        ::g::Uno::Double_typeof(), offsetof(Scroller, _prevTime), 0,
+        ::g::Fuse::Motion::Simulation::BoundedRegion2D_typeof(), offsetof(Scroller, _region), 0,
+        ::g::Fuse::Controls::ScrollView_typeof(), offsetof(Scroller, _scrollable), 0,
+        ::g::Uno::Float_typeof(), offsetof(Scroller, _significance), 0,
+        ::g::Uno::Float2_typeof(), offsetof(Scroller, _softCaptureCurrent), 0,
+        ::g::Uno::Float2_typeof(), offsetof(Scroller, _softCaptureStart), 0,
+        ::g::Uno::Float2_typeof(), offsetof(Scroller, _startPos), 0,
+        ::g::Uno::Bool_typeof(), offsetof(Scroller, _updateFirstFrame), 0,
+        ::g::Fuse::Motion::Simulation::PointerVelocity_typeof()->MakeType(::g::Uno::Float2_typeof(), NULL), offsetof(Scroller, _velocity), 0,
+        ::g::Fuse::Gestures::SwipeGestureHelper_typeof(), (uintptr_t)&Scroller::_horizontalGesture_, uFieldFlagsStatic,
+        ::g::Fuse::Gestures::SwipeGestureHelper_typeof(), (uintptr_t)&Scroller::_verticalGesture_, uFieldFlagsStatic);
 }
 
 Scroller_type* Scroller_typeof()
@@ -1464,8 +1460,9 @@ Scroller_type* Scroller_typeof()
 
     uTypeOptions options;
     options.BaseDefinition = ::g::Fuse::Behavior_typeof();
-    options.FieldCount = 32;
+    options.FieldCount = 35;
     options.InterfaceCount = 8;
+    options.DependencyCount = 3;
     options.ObjectSize = sizeof(Scroller);
     options.TypeSize = sizeof(Scroller_type);
     type = (Scroller_type*)uClassType::New("Fuse.Gestures.Scroller", options);
@@ -1498,43 +1495,43 @@ Scroller_type* Scroller_typeof()
     return type;
 }
 
-// internal Scroller(bool ignore) :142
+// internal Scroller(bool ignore) :24
 void Scroller__ctor_4_fn(Scroller* __this, bool* ignore)
 {
     __this->ctor_4(*ignore);
 }
 
-// public void CheckLimits() :434
+// public void CheckLimits() :316
 void Scroller__CheckLimits_fn(Scroller* __this)
 {
     __this->CheckLimits();
 }
 
-// private void CheckNeedUpdated([bool off]) :271
+// private void CheckNeedUpdated([bool off]) :153
 void Scroller__CheckNeedUpdated_fn(Scroller* __this, bool* off)
 {
     __this->CheckNeedUpdated(*off);
 }
 
-// public bool get_DelayStart() :163
+// public bool get_DelayStart() :45
 void Scroller__get_DelayStart_fn(Scroller* __this, bool* __retval)
 {
     *__retval = __this->DelayStart();
 }
 
-// public void set_DelayStart(bool value) :164
+// public void set_DelayStart(bool value) :46
 void Scroller__set_DelayStart_fn(Scroller* __this, bool* value)
 {
     __this->DelayStart(*value);
 }
 
-// private float2 FromWindow(float2 p) :355
+// private float2 FromWindow(float2 p) :237
 void Scroller__FromWindow_fn(Scroller* __this, ::g::Uno::Float2* p, ::g::Uno::Float2* __retval)
 {
     *__retval = __this->FromWindow(*p);
 }
 
-// private void Fuse.Input.IGesture.OnCaptureChanged(Fuse.Input.PointerEventArgs args, Fuse.Input.CaptureType how, Fuse.Input.CaptureType prev) :339
+// private void Fuse.Input.IGesture.OnCaptureChanged(Fuse.Input.PointerEventArgs args, Fuse.Input.CaptureType how, Fuse.Input.CaptureType prev) :221
 void Scroller__FuseInputIGestureOnCaptureChanged_fn(Scroller* __this, ::g::Fuse::Input::PointerEventArgs* args, int* how, int* prev)
 {
     int how_ = *how;
@@ -1547,24 +1544,24 @@ void Scroller__FuseInputIGestureOnCaptureChanged_fn(Scroller* __this, ::g::Fuse:
     __this->_prevPos = (__this->_startPos = __this->_pointerPos);
     __this->_prevTime = args->Timestamp();
     ::g::Fuse::Motion::Simulation::PointerVelocity__Reset1_fn(uPtr(__this->_velocity), uCRef(__this->FromWindow(__this->_pointerPos)), uCRef(::g::Uno::Float2__New1(0.0f)), uCRef(0.0));
-    ::g::Fuse::Motion::Simulation::BoundedRegion2D::StartUser(uInterface(uPtr(__this->_region), ::TYPES[12/*Fuse.Motion.Simulation.BoundedRegion2D*/]));
-    ::g::Fuse::Motion::Simulation::MotionSimulation::set_Position_ex(uInterface(uPtr(__this->_region), ::TYPES[13/*Fuse.Motion.Simulation.MotionSimulation<float2>*/]), uCRef(uPtr(__this->_scrollable)->ScrollPosition()));
+    ::g::Fuse::Motion::Simulation::BoundedRegion2D::StartUser(uInterface(uPtr(__this->_region), ::g::Fuse::Motion::Simulation::BoundedRegion2D_typeof()));
+    ::g::Fuse::Motion::Simulation::MotionSimulation::set_Position_ex(uInterface(uPtr(__this->_region), ::g::Fuse::Motion::Simulation::MotionSimulation_typeof()->MakeType(::g::Uno::Float2_typeof(), NULL)), uCRef(uPtr(__this->_scrollable)->ScrollPosition()));
     __this->CheckNeedUpdated(false);
 }
 
-// private void Fuse.Input.IGesture.OnLostCapture(bool forced) :360
+// private void Fuse.Input.IGesture.OnLostCapture(bool forced) :242
 void Scroller__FuseInputIGestureOnLostCapture_fn(Scroller* __this, bool* forced)
 {
     __this->StopInvalidateVisual();
     __this->_significance = 0.0f;
 
-    if ((__this->_region != NULL) && ::g::Fuse::Motion::Simulation::BoundedRegion2D::IsUser(uInterface(uPtr(__this->_region), ::TYPES[12/*Fuse.Motion.Simulation.BoundedRegion2D*/])))
-        ::g::Fuse::Motion::Simulation::BoundedRegion2D::EndUser(uInterface(uPtr(__this->_region), ::TYPES[12/*Fuse.Motion.Simulation.BoundedRegion2D*/]), ::g::Uno::Float2__New1(0.0f));
+    if ((__this->_region != NULL) && ::g::Fuse::Motion::Simulation::BoundedRegion2D::IsUser(uInterface(uPtr(__this->_region), ::g::Fuse::Motion::Simulation::BoundedRegion2D_typeof())))
+        ::g::Fuse::Motion::Simulation::BoundedRegion2D::EndUser(uInterface(uPtr(__this->_region), ::g::Fuse::Motion::Simulation::BoundedRegion2D_typeof()), ::g::Uno::Float2__New1(0.0f));
 
     __this->CheckNeedUpdated(false);
 }
 
-// private Fuse.Input.GestureRequest Fuse.Input.IGesture.OnPointerMoved(Fuse.Input.PointerMovedArgs args) :380
+// private Fuse.Input.GestureRequest Fuse.Input.IGesture.OnPointerMoved(Fuse.Input.PointerMovedArgs args) :262
 void Scroller__FuseInputIGestureOnPointerMoved_fn(Scroller* __this, ::g::Fuse::Input::PointerMovedArgs* args, int* __retval)
 {
     if (__this->_gesture == NULL)
@@ -1581,13 +1578,13 @@ void Scroller__FuseInputIGestureOnPointerMoved_fn(Scroller* __this, ::g::Fuse::I
 
         if (uPtr(__this->_scrollable)->AllowedScrollDirections() == 3)
         {
-            if (uPtr(Scroller::_horizontalGesture())->IsWithinBounds(diff))
+            if (uPtr(Scroller::_horizontalGesture_)->IsWithinBounds(diff))
                 __this->_significance = ::g::Uno::Math::Abs1(diff.X);
         }
 
         if (uPtr(__this->_scrollable)->AllowedScrollDirections() == 12)
         {
-            if (uPtr(Scroller::_verticalGesture())->IsWithinBounds(diff))
+            if (uPtr(Scroller::_verticalGesture_)->IsWithinBounds(diff))
                 __this->_significance = ::g::Uno::Math::Abs1(diff.Y);
         }
     }
@@ -1597,16 +1594,16 @@ void Scroller__FuseInputIGestureOnPointerMoved_fn(Scroller* __this, ::g::Fuse::I
     return *__retval = 1, void();
 }
 
-// private Fuse.Input.GestureRequest Fuse.Input.IGesture.OnPointerPressed(Fuse.Input.PointerPressedArgs args) :331
+// private Fuse.Input.GestureRequest Fuse.Input.IGesture.OnPointerPressed(Fuse.Input.PointerPressedArgs args) :213
 void Scroller__FuseInputIGestureOnPointerPressed_fn(Scroller* __this, ::g::Fuse::Input::PointerPressedArgs* args, int* __retval)
 {
     ::g::Uno::Float2 ret3;
     __this->StartInvalidateVisual();
-    __this->_significance = (float)((::g::Uno::Vector::Length((::g::Fuse::Motion::Simulation::MotionSimulation::get_Velocity_ex(uInterface(uPtr(__this->_region), ::TYPES[13/*Fuse.Motion.Simulation.MotionSimulation<float2>*/]), &ret3), ret3)) > 100.0f) ? 100 : 0);
+    __this->_significance = (float)((::g::Uno::Vector::Length((::g::Fuse::Motion::Simulation::MotionSimulation::get_Velocity_ex(uInterface(uPtr(__this->_region), ::g::Fuse::Motion::Simulation::MotionSimulation_typeof()->MakeType(::g::Uno::Float2_typeof(), NULL)), &ret3), ret3)) > 100.0f) ? 100 : 0);
     return *__retval = 1, void();
 }
 
-// private Fuse.Input.GestureRequest Fuse.Input.IGesture.OnPointerReleased(Fuse.Input.PointerReleasedArgs args) :414
+// private Fuse.Input.GestureRequest Fuse.Input.IGesture.OnPointerReleased(Fuse.Input.PointerReleasedArgs args) :296
 void Scroller__FuseInputIGestureOnPointerReleased_fn(Scroller* __this, ::g::Fuse::Input::PointerReleasedArgs* args, int* __retval)
 {
     ::g::Uno::Float2 ret4;
@@ -1615,76 +1612,76 @@ void Scroller__FuseInputIGestureOnPointerReleased_fn(Scroller* __this, ::g::Fuse
     if (__this->_delayStart && !uPtr(__this->_gesture)->IsHardCapture())
         return *__retval = 2, void();
 
-    if (::g::Fuse::Motion::Simulation::BoundedRegion2D::IsUser(uInterface(uPtr(__this->_region), ::TYPES[12/*Fuse.Motion.Simulation.BoundedRegion2D*/])))
+    if (::g::Fuse::Motion::Simulation::BoundedRegion2D::IsUser(uInterface(uPtr(__this->_region), ::g::Fuse::Motion::Simulation::BoundedRegion2D_typeof())))
     {
         __this->_pointerPos = uPtr(args)->WindowPoint();
         __this->MoveUser(3, args->Timestamp());
-        ::g::Fuse::Motion::Simulation::BoundedRegion2D::EndUser(uInterface(uPtr(__this->_region), ::TYPES[12/*Fuse.Motion.Simulation.BoundedRegion2D*/]), ::g::Uno::Float2__op_UnaryNegation(uPtr(__this->_scrollable)->ConstrainExtents((::g::Fuse::Motion::Simulation::PointerVelocity__get_CurrentVelocity_fn(uPtr(__this->_velocity), &ret4), ret4))));
+        ::g::Fuse::Motion::Simulation::BoundedRegion2D::EndUser(uInterface(uPtr(__this->_region), ::g::Fuse::Motion::Simulation::BoundedRegion2D_typeof()), ::g::Uno::Float2__op_UnaryNegation(uPtr(__this->_scrollable)->ConstrainExtents((::g::Fuse::Motion::Simulation::PointerVelocity__get_CurrentVelocity_fn(uPtr(__this->_velocity), &ret4), ret4))));
     }
 
     return *__retval = 2, void();
 }
 
-// private Fuse.Input.GesturePriorityConfig Fuse.Input.IGesture.get_Priority() :308
+// private Fuse.Input.GesturePriorityConfig Fuse.Input.IGesture.get_Priority() :190
 void Scroller__FuseInputIGestureget_Priority_fn(Scroller* __this, ::g::Fuse::Input::GesturePriorityConfig* __retval)
 {
     return *__retval = ::g::Fuse::Input::GesturePriorityConfig__New1((__this->_scrollable == NULL) ? 1 : uPtr(__this->_scrollable)->GesturePriority(), (float)(!__this->DelayStart() ? 100 : 0) + __this->_significance, 0), void();
 }
 
-// public void Goto(float2 position) :461
+// public void Goto(float2 position) :343
 void Scroller__Goto_fn(Scroller* __this, ::g::Uno::Float2* position)
 {
     __this->Goto(*position);
 }
 
-// private void MoveUser(Fuse.Gestures.Scroller.MoveUserFlags flags, double time) :549
+// private void MoveUser(Fuse.Gestures.Scroller.MoveUserFlags flags, double time) :425
 void Scroller__MoveUser_fn(Scroller* __this, int* flags, double* time)
 {
     __this->MoveUser(*flags, *time);
 }
 
-// internal Scroller New(bool ignore) :142
+// internal Scroller New(bool ignore) :24
 void Scroller__New3_fn(bool* ignore, Scroller** __retval)
 {
     *__retval = Scroller::New3(*ignore);
 }
 
-// private void OnRequestBringIntoView(object sender, Fuse.RequestBringIntoViewArgs args) :443
+// private void OnRequestBringIntoView(object sender, Fuse.RequestBringIntoViewArgs args) :325
 void Scroller__OnRequestBringIntoView_fn(Scroller* __this, uObject* sender, ::g::Fuse::RequestBringIntoViewArgs* args)
 {
     __this->OnRequestBringIntoView(sender, args);
 }
 
-// protected override sealed void OnRooted() :173
+// protected override sealed void OnRooted() :55
 void Scroller__OnRooted_fn(Scroller* __this)
 {
     ::g::Fuse::Node__OnRooted_fn(__this);
-    __this->_scrollable = uAs< ::g::Fuse::Controls::ScrollView*>(__this->Parent(), ::TYPES[14/*Fuse.Controls.ScrollView*/]);
+    __this->_scrollable = uAs< ::g::Fuse::Controls::ScrollView*>(__this->Parent(), ::g::Fuse::Controls::ScrollView_typeof());
 
     if (__this->_scrollable == NULL)
-        U_THROW(::g::Uno::Exception::New2(::STRINGS[0/*"Scroller ca...*/]));
+        U_THROW(::g::Uno::Exception::New2(uString::Const("Scroller can only be used in a ScrollView")));
 
     uPtr(__this->_scrollable)->AddPropertyListener((uObject*)__this);
     uPtr(__this->_scrollable)->_scroller = __this;
-    uPtr(__this->_scrollable)->add_RequestBringIntoView(uDelegate::New(::TYPES[15/*Fuse.RequestBringIntoViewHandler*/], (void*)Scroller__OnRequestBringIntoView_fn, __this));
-    uPtr(__this->_scrollable)->add_ScrollPositionChanged(uDelegate::New(::TYPES[16/*Fuse.Controls.ScrollPositionChangedHandler*/], (void*)Scroller__OnScrollPositionChanged_fn, __this));
+    uPtr(__this->_scrollable)->add_RequestBringIntoView(uDelegate::New(::g::Fuse::RequestBringIntoViewHandler_typeof(), (void*)Scroller__OnRequestBringIntoView_fn, __this));
+    uPtr(__this->_scrollable)->add_ScrollPositionChanged(uDelegate::New(::g::Fuse::Controls::ScrollPositionChangedHandler_typeof(), (void*)Scroller__OnScrollPositionChanged_fn, __this));
     __this->_region = uPtr(uPtr(__this->_scrollable)->Motion())->AcquireSimulation();
     __this->UpdatePointerEvents(false);
 }
 
-// private void OnScrollPositionChanged(object s, Fuse.Controls.ScrollPositionChangedArgs args) :522
+// private void OnScrollPositionChanged(object s, Fuse.Controls.ScrollPositionChangedArgs args) :404
 void Scroller__OnScrollPositionChanged_fn(Scroller* __this, uObject* s, ::g::Fuse::Controls::ScrollPositionChangedArgs* args)
 {
     __this->OnScrollPositionChanged(s, args);
 }
 
-// protected override sealed void OnUnrooted() :191
+// protected override sealed void OnUnrooted() :73
 void Scroller__OnUnrooted_fn(Scroller* __this)
 {
     __this->StopInvalidateVisual();
     uPtr(__this->_scrollable)->RemovePropertyListener((uObject*)__this);
-    uPtr(__this->_scrollable)->remove_RequestBringIntoView(uDelegate::New(::TYPES[15/*Fuse.RequestBringIntoViewHandler*/], (void*)Scroller__OnRequestBringIntoView_fn, __this));
-    uPtr(__this->_scrollable)->remove_ScrollPositionChanged(uDelegate::New(::TYPES[16/*Fuse.Controls.ScrollPositionChangedHandler*/], (void*)Scroller__OnScrollPositionChanged_fn, __this));
+    uPtr(__this->_scrollable)->remove_RequestBringIntoView(uDelegate::New(::g::Fuse::RequestBringIntoViewHandler_typeof(), (void*)Scroller__OnRequestBringIntoView_fn, __this));
+    uPtr(__this->_scrollable)->remove_ScrollPositionChanged(uDelegate::New(::g::Fuse::Controls::ScrollPositionChangedHandler_typeof(), (void*)Scroller__OnScrollPositionChanged_fn, __this));
     uPtr(__this->_scrollable)->_scroller = NULL;
 
     if (__this->_hasUpdated)
@@ -1705,43 +1702,43 @@ void Scroller__OnUnrooted_fn(Scroller* __this)
     ::g::Fuse::Node__OnUnrooted_fn(__this);
 }
 
-// private void OnUpdated() :490
+// private void OnUpdated() :372
 void Scroller__OnUpdated_fn(Scroller* __this)
 {
     __this->OnUpdated();
 }
 
-// public float2 get_OverflowExtent() :577
+// public float2 get_OverflowExtent() :453
 void Scroller__get_OverflowExtent_fn(Scroller* __this, ::g::Uno::Float2* __retval)
 {
     *__retval = __this->OverflowExtent();
 }
 
-// private void PerformBringIntoView() :451
+// private void PerformBringIntoView() :333
 void Scroller__PerformBringIntoView_fn(Scroller* __this)
 {
     __this->PerformBringIntoView();
 }
 
-// private bool get_ScrollableUserScroll() :233
+// private bool get_ScrollableUserScroll() :115
 void Scroller__get_ScrollableUserScroll_fn(Scroller* __this, bool* __retval)
 {
     *__retval = __this->ScrollableUserScroll();
 }
 
-// private void StartInvalidateVisual() :317
+// private void StartInvalidateVisual() :199
 void Scroller__StartInvalidateVisual_fn(Scroller* __this)
 {
     __this->StartInvalidateVisual();
 }
 
-// private void StopInvalidateVisual() :324
+// private void StopInvalidateVisual() :206
 void Scroller__StopInvalidateVisual_fn(Scroller* __this)
 {
     __this->StopInvalidateVisual();
 }
 
-// private void Uno.UX.IPropertyListener.OnPropertyChanged(Uno.UX.PropertyObject obj, Uno.UX.Selector sel) :513
+// private void Uno.UX.IPropertyListener.OnPropertyChanged(Uno.UX.PropertyObject obj, Uno.UX.Selector sel) :395
 void Scroller__UnoUXIPropertyListenerOnPropertyChanged_fn(Scroller* __this, ::g::Uno::UX::PropertyObject* obj, ::g::Uno::UX::Selector* sel)
 {
     ::g::Uno::UX::Selector sel_ = *sel;
@@ -1753,13 +1750,13 @@ void Scroller__UnoUXIPropertyListenerOnPropertyChanged_fn(Scroller* __this, ::g:
         __this->UpdatePointerEvents(false);
 }
 
-// private void UpdatePointerEvents([bool forceOff]) :238
+// private void UpdatePointerEvents([bool forceOff]) :120
 void Scroller__UpdatePointerEvents_fn(Scroller* __this, bool* forceOff)
 {
     __this->UpdatePointerEvents(*forceOff);
 }
 
-// private void UpdateScrollMax() :478
+// private void UpdateScrollMax() :360
 void Scroller__UpdateScrollMax_fn(Scroller* __this)
 {
     __this->UpdateScrollMax();
@@ -1768,28 +1765,28 @@ void Scroller__UpdateScrollMax_fn(Scroller* __this)
 uSStrong< ::g::Fuse::Gestures::SwipeGestureHelper*> Scroller::_horizontalGesture_;
 uSStrong< ::g::Fuse::Gestures::SwipeGestureHelper*> Scroller::_verticalGesture_;
 
-// internal Scroller(bool ignore) [instance] :142
+// internal Scroller(bool ignore) [instance] :24
 void Scroller::ctor_4(bool ignore)
 {
-    _velocity = ((::g::Fuse::Motion::Simulation::PointerVelocity*)::g::Fuse::Motion::Simulation::PointerVelocity::New1(::TYPES[10/*Fuse.Motion.Simulation.PointerVelocity<float2>*/]));
+    _velocity = ((::g::Fuse::Motion::Simulation::PointerVelocity*)::g::Fuse::Motion::Simulation::PointerVelocity::New1(::g::Fuse::Motion::Simulation::PointerVelocity_typeof()->MakeType(::g::Uno::Float2_typeof(), NULL)));
     _delayStart = true;
     _down = -1;
     ctor_2();
 }
 
-// public void CheckLimits() [instance] :434
+// public void CheckLimits() [instance] :316
 void Scroller::CheckLimits()
 {
     UpdateScrollMax();
 
-    if (((_region != NULL) && ::g::Fuse::Motion::Simulation::Simulation::IsStatic(uInterface(uPtr(_region), ::TYPES[11/*Fuse.Motion.Simulation.Simulation*/]))) && !::g::Fuse::Motion::Simulation::BoundedRegion2D::IsUser(uInterface(uPtr(_region), ::TYPES[12/*Fuse.Motion.Simulation.BoundedRegion2D*/])))
+    if (((_region != NULL) && ::g::Fuse::Motion::Simulation::Simulation::IsStatic(uInterface(uPtr(_region), ::g::Fuse::Motion::Simulation::Simulation_typeof()))) && !::g::Fuse::Motion::Simulation::BoundedRegion2D::IsUser(uInterface(uPtr(_region), ::g::Fuse::Motion::Simulation::BoundedRegion2D_typeof())))
         Goto(uPtr(_scrollable)->ScrollPosition());
 }
 
-// private void CheckNeedUpdated([bool off]) [instance] :271
+// private void CheckNeedUpdated([bool off]) [instance] :153
 void Scroller::CheckNeedUpdated(bool off)
 {
-    bool needUpdated = ((_region != NULL) && !::g::Fuse::Motion::Simulation::Simulation::IsStatic(uInterface(uPtr(_region), ::TYPES[11/*Fuse.Motion.Simulation.Simulation*/]))) && IsRootingStarted();
+    bool needUpdated = ((_region != NULL) && !::g::Fuse::Motion::Simulation::Simulation::IsStatic(uInterface(uPtr(_region), ::g::Fuse::Motion::Simulation::Simulation_typeof()))) && IsRootingStarted();
 
     if (needUpdated == _hasUpdated)
         return;
@@ -1807,26 +1804,26 @@ void Scroller::CheckNeedUpdated(bool off)
     }
 }
 
-// public bool get_DelayStart() [instance] :163
+// public bool get_DelayStart() [instance] :45
 bool Scroller::DelayStart()
 {
     return _delayStart;
 }
 
-// public void set_DelayStart(bool value) [instance] :164
+// public void set_DelayStart(bool value) [instance] :46
 void Scroller::DelayStart(bool value)
 {
     _delayStart = value;
-    ::g::Fuse::Diagnostics::Deprecated(::STRINGS[7/*"Scroller.De...*/], this, ::STRINGS[2/*"/usr/local/...*/], 167, ::STRINGS[8/*"set_DelaySt...*/]);
+    ::g::Fuse::Diagnostics::Deprecated(uString::Const("Scroller.DelayStart is no longer supported."), this, uString::Const("C:\\Users\\q\\AppData\\Local\\Fusetools\\Packages\\Fuse.Controls.ScrollView\\1.3.0-rc2\\Scroller.uno"), 49, uString::Const("set_DelayStart"));
 }
 
-// private float2 FromWindow(float2 p) [instance] :355
+// private float2 FromWindow(float2 p) [instance] :237
 ::g::Uno::Float2 Scroller::FromWindow(::g::Uno::Float2 p)
 {
     return uPtr(uPtr(_scrollable)->Parent())->WindowToLocal(p);
 }
 
-// public void Goto(float2 position) [instance] :461
+// public void Goto(float2 position) [instance] :343
 void Scroller::Goto(::g::Uno::Float2 position)
 {
     if (_scrollable == NULL)
@@ -1837,16 +1834,16 @@ void Scroller::Goto(::g::Uno::Float2 position)
 
     if (_region != NULL)
     {
-        if (::g::Fuse::Motion::Simulation::Simulation::IsStatic(uInterface(uPtr(_region), ::TYPES[11/*Fuse.Motion.Simulation.Simulation*/])))
-            ::g::Fuse::Motion::Simulation::MotionSimulation::set_Position_ex(uInterface(uPtr(_region), ::TYPES[13/*Fuse.Motion.Simulation.MotionSimulation<float2>*/]), uCRef(uPtr(_scrollable)->ScrollPosition()));
+        if (::g::Fuse::Motion::Simulation::Simulation::IsStatic(uInterface(uPtr(_region), ::g::Fuse::Motion::Simulation::Simulation_typeof())))
+            ::g::Fuse::Motion::Simulation::MotionSimulation::set_Position_ex(uInterface(uPtr(_region), ::g::Fuse::Motion::Simulation::MotionSimulation_typeof()->MakeType(::g::Uno::Float2_typeof(), NULL)), uCRef(uPtr(_scrollable)->ScrollPosition()));
 
-        ::g::Fuse::Motion::Simulation::BoundedRegion2D::MoveTo(uInterface(uPtr(_region), ::TYPES[12/*Fuse.Motion.Simulation.BoundedRegion2D*/]), position);
+        ::g::Fuse::Motion::Simulation::BoundedRegion2D::MoveTo(uInterface(uPtr(_region), ::g::Fuse::Motion::Simulation::BoundedRegion2D_typeof()), position);
     }
 
     CheckNeedUpdated(false);
 }
 
-// private void MoveUser(Fuse.Gestures.Scroller.MoveUserFlags flags, double time) [instance] :549
+// private void MoveUser(Fuse.Gestures.Scroller.MoveUserFlags flags, double time) [instance] :425
 void Scroller::MoveUser(int flags, double time)
 {
     ::g::Uno::Float2 diff = ::g::Uno::Float2__op_Subtraction2(FromWindow(_prevPos), FromWindow(_pointerPos));
@@ -1860,46 +1857,41 @@ void Scroller::MoveUser(int flags, double time)
 
     if ((flags & 1) == 1)
     {
-        ::g::Fuse::Motion::Simulation::MotionSimulation::set_Position_ex(uInterface(uPtr(_region), ::TYPES[13/*Fuse.Motion.Simulation.MotionSimulation<float2>*/]), uCRef(uPtr(_scrollable)->ScrollPosition()));
-        ::g::Fuse::Motion::Simulation::BoundedRegion2D::StepUser(uInterface(uPtr(_region), ::TYPES[12/*Fuse.Motion.Simulation.BoundedRegion2D*/]), diff);
+        ::g::Fuse::Motion::Simulation::MotionSimulation::set_Position_ex(uInterface(uPtr(_region), ::g::Fuse::Motion::Simulation::MotionSimulation_typeof()->MakeType(::g::Uno::Float2_typeof(), NULL)), uCRef(uPtr(_scrollable)->ScrollPosition()));
+        ::g::Fuse::Motion::Simulation::BoundedRegion2D::StepUser(uInterface(uPtr(_region), ::g::Fuse::Motion::Simulation::BoundedRegion2D_typeof()), diff);
         OnUpdated();
     }
 
     ::g::Fuse::Motion::Simulation::PointerVelocity__AddSample_fn(uPtr(_velocity), uCRef(FromWindow(_pointerPos)), uCRef((double)(float)elapsed), uCRef<int>((!((flags & 1) == 1) ? 1 : 0) | (((flags & 2) == 2) ? 2 : 0)));
 }
 
-// private void OnRequestBringIntoView(object sender, Fuse.RequestBringIntoViewArgs args) [instance] :443
+// private void OnRequestBringIntoView(object sender, Fuse.RequestBringIntoViewArgs args) [instance] :325
 void Scroller::OnRequestBringIntoView(uObject* sender, ::g::Fuse::RequestBringIntoViewArgs* args)
 {
     _pendingBringIntoView = uPtr(args)->Visual();
-    ::g::Fuse::UpdateManager::AddDeferredAction(uDelegate::New(::TYPES[4/*Uno.Action*/], (void*)Scroller__PerformBringIntoView_fn, this), 1, ::g::Fuse::LayoutPriority::Post());
+    ::g::Fuse::UpdateManager::AddDeferredAction2(uDelegate::New(::TYPES[4/*Uno.Action*/], (void*)Scroller__PerformBringIntoView_fn, this), 1, 5);
 }
 
-// private void OnScrollPositionChanged(object s, Fuse.Controls.ScrollPositionChangedArgs args) [instance] :522
+// private void OnScrollPositionChanged(object s, Fuse.Controls.ScrollPositionChangedArgs args) [instance] :404
 void Scroller::OnScrollPositionChanged(uObject* s, ::g::Fuse::Controls::ScrollPositionChangedArgs* args)
 {
     ::g::Uno::Float2 ret5;
-    ::g::Uno::Float2 ret6;
 
     if (uPtr(args)->Origin() == this)
         return;
 
-    if (uPtr(args)->IsAdjustment() && ::g::Uno::Float2__op_Inequality(uPtr(args)->ArrangeOffset(), ::g::Uno::Float2__New1(0.0f)))
-        ::g::Fuse::Motion::Simulation::MotionSimulation::set_Position_ex(uInterface(uPtr(_region), ::TYPES[13/*Fuse.Motion.Simulation.MotionSimulation<float2>*/]), uCRef(::g::Uno::Float2__op_Addition2((::g::Fuse::Motion::Simulation::MotionSimulation::get_Position_ex(uInterface(uPtr(_region), ::TYPES[13/*Fuse.Motion.Simulation.MotionSimulation<float2>*/]), &ret5), ret5), uPtr(args)->ArrangeOffset())));
-
-    if (::g::Fuse::Motion::Simulation::BoundedRegion2D::IsUser(uInterface(uPtr(_region), ::TYPES[12/*Fuse.Motion.Simulation.BoundedRegion2D*/])))
-        return;
-
-    if (!uPtr(args)->IsAdjustment())
-        ::g::Fuse::Motion::Simulation::BoundedRegion2D::Reset(uInterface(uPtr(_region), ::TYPES[12/*Fuse.Motion.Simulation.BoundedRegion2D*/]), (::g::Uno::UX::ValueChangedArgs__get_Value_fn(uPtr(args), &ret6), ret6));
+    if (uPtr(args)->IsAdjustment())
+        ::g::Fuse::Motion::Simulation::BoundedRegion2D::Adjust(uInterface(uPtr(_region), ::g::Fuse::Motion::Simulation::BoundedRegion2D_typeof()), uPtr(args)->ArrangeOffset());
+    else
+        ::g::Fuse::Motion::Simulation::BoundedRegion2D::Reset(uInterface(uPtr(_region), ::g::Fuse::Motion::Simulation::BoundedRegion2D_typeof()), (::g::Uno::UX::ValueChangedArgs__get_Value_fn(uPtr(args), &ret5), ret5));
 
     CheckNeedUpdated(true);
 }
 
-// private void OnUpdated() [instance] :490
+// private void OnUpdated() [instance] :372
 void Scroller::OnUpdated()
 {
-    ::g::Uno::Float2 ret7;
+    ::g::Uno::Float2 ret6;
 
     if (_updateFirstFrame)
     {
@@ -1909,23 +1901,23 @@ void Scroller::OnUpdated()
 
     if ((_region == NULL) || (_scrollable == NULL))
     {
-        ::g::Fuse::Diagnostics::InternalError(::STRINGS[1/*"Invalid scr...*/], NULL, ::STRINGS[2/*"/usr/local/...*/], 502, ::STRINGS[3/*"OnUpdated"*/]);
+        ::g::Fuse::Diagnostics::InternalError(uString::Const("Invalid scroller update"), NULL, uString::Const("C:\\Users\\q\\AppData\\Local\\Fusetools\\Packages\\Fuse.Controls.ScrollView\\1.3.0-rc2\\Scroller.uno"), 384, uString::Const("OnUpdated"));
         return;
     }
 
     UpdateScrollMax();
-    ::g::Fuse::Motion::Simulation::Simulation::Update(uInterface(uPtr(_region), ::TYPES[11/*Fuse.Motion.Simulation.Simulation*/]), ::g::Fuse::Time::FrameInterval());
-    uPtr(_scrollable)->SetScrollPosition1((::g::Fuse::Motion::Simulation::MotionSimulation::get_Position_ex(uInterface(uPtr(_region), ::TYPES[13/*Fuse.Motion.Simulation.MotionSimulation<float2>*/]), &ret7), ret7), (uObject*)this);
+    ::g::Fuse::Motion::Simulation::Simulation::Update(uInterface(uPtr(_region), ::g::Fuse::Motion::Simulation::Simulation_typeof()), ::g::Fuse::Time::FrameInterval());
+    uPtr(_scrollable)->SetScrollPosition1((::g::Fuse::Motion::Simulation::MotionSimulation::get_Position_ex(uInterface(uPtr(_region), ::g::Fuse::Motion::Simulation::MotionSimulation_typeof()->MakeType(::g::Uno::Float2_typeof(), NULL)), &ret6), ret6), (uObject*)this);
     CheckNeedUpdated(true);
 }
 
-// public float2 get_OverflowExtent() [instance] :577
+// public float2 get_OverflowExtent() [instance] :453
 ::g::Uno::Float2 Scroller::OverflowExtent()
 {
     return (_scrollable == NULL) ? ::g::Uno::Float2__New1(0.0f) : uPtr(uPtr(_scrollable)->Motion())->OverflowExtent();
 }
 
-// private void PerformBringIntoView() [instance] :451
+// private void PerformBringIntoView() [instance] :333
 void Scroller::PerformBringIntoView()
 {
     if ((_pendingBringIntoView == NULL) || !uPtr(_pendingBringIntoView)->IsRootingCompleted())
@@ -1936,13 +1928,13 @@ void Scroller::PerformBringIntoView()
     _pendingBringIntoView = NULL;
 }
 
-// private bool get_ScrollableUserScroll() [instance] :233
+// private bool get_ScrollableUserScroll() [instance] :115
 bool Scroller::ScrollableUserScroll()
 {
     return (_scrollable != NULL) ? uPtr(_scrollable)->UserScroll() : true;
 }
 
-// private void StartInvalidateVisual() [instance] :317
+// private void StartInvalidateVisual() [instance] :199
 void Scroller::StartInvalidateVisual()
 {
     if (!_pressed)
@@ -1951,7 +1943,7 @@ void Scroller::StartInvalidateVisual()
     _pressed = true;
 }
 
-// private void StopInvalidateVisual() [instance] :324
+// private void StopInvalidateVisual() [instance] :206
 void Scroller::StopInvalidateVisual()
 {
     if (_pressed)
@@ -1960,7 +1952,7 @@ void Scroller::StopInvalidateVisual()
     _pressed = false;
 }
 
-// private void UpdatePointerEvents([bool forceOff]) [instance] :238
+// private void UpdatePointerEvents([bool forceOff]) [instance] :120
 void Scroller::UpdatePointerEvents(bool forceOff)
 {
     bool shouldListen = (!forceOff && (_scrollable != NULL)) && ScrollableUserScroll();
@@ -1971,14 +1963,14 @@ void Scroller::UpdatePointerEvents(bool forceOff)
     if (shouldListen)
     {
         if (_gesture != NULL)
-            ::g::Fuse::Diagnostics::InternalError(::STRINGS[4/*"inconsisten...*/], NULL, ::STRINGS[2/*"/usr/local/...*/], 247, ::STRINGS[5/*"UpdatePoint...*/]);
+            ::g::Fuse::Diagnostics::InternalError(uString::Const("inconsistent gesture state"), NULL, uString::Const("C:\\Users\\q\\AppData\\Local\\Fusetools\\Packages\\Fuse.Controls.ScrollView\\1.3.0-rc2\\Scroller.uno"), 129, uString::Const("UpdatePointerEvents"));
         else
             _gesture = ::g::Fuse::Input::Gestures::Add((uObject*)this, _scrollable, 9);
     }
     else if (_scrollable != NULL)
     {
         if (_gesture == NULL)
-            ::g::Fuse::Diagnostics::InternalError(::STRINGS[4/*"inconsisten...*/], NULL, ::STRINGS[2/*"/usr/local/...*/], 254, ::STRINGS[5/*"UpdatePoint...*/]);
+            ::g::Fuse::Diagnostics::InternalError(uString::Const("inconsistent gesture state"), NULL, uString::Const("C:\\Users\\q\\AppData\\Local\\Fusetools\\Packages\\Fuse.Controls.ScrollView\\1.3.0-rc2\\Scroller.uno"), 136, uString::Const("UpdatePointerEvents"));
         else
         {
             uPtr(_gesture)->Dispose();
@@ -1986,12 +1978,12 @@ void Scroller::UpdatePointerEvents(bool forceOff)
         }
     }
     else
-        U_THROW(::g::Uno::Exception::New2(::STRINGS[6/*"Invalid tea...*/]));
+        U_THROW(::g::Uno::Exception::New2(uString::Const("Invalid tear-down of pointer events")));
 
     _pointerListening = shouldListen;
 }
 
-// private void UpdateScrollMax() [instance] :478
+// private void UpdateScrollMax() [instance] :360
 void Scroller::UpdateScrollMax()
 {
     if (_scrollable == NULL)
@@ -1999,12 +1991,12 @@ void Scroller::UpdateScrollMax()
 
     if (_region != NULL)
     {
-        ::g::Fuse::Motion::Simulation::BoundedRegion2D::MaxPosition(uInterface(uPtr(_region), ::TYPES[12/*Fuse.Motion.Simulation.BoundedRegion2D*/]), uPtr(_scrollable)->MaxScroll());
-        ::g::Fuse::Motion::Simulation::BoundedRegion2D::MinPosition(uInterface(uPtr(_region), ::TYPES[12/*Fuse.Motion.Simulation.BoundedRegion2D*/]), uPtr(_scrollable)->MinScroll());
+        ::g::Fuse::Motion::Simulation::BoundedRegion2D::MaxPosition(uInterface(uPtr(_region), ::g::Fuse::Motion::Simulation::BoundedRegion2D_typeof()), uPtr(_scrollable)->MaxScroll());
+        ::g::Fuse::Motion::Simulation::BoundedRegion2D::MinPosition(uInterface(uPtr(_region), ::g::Fuse::Motion::Simulation::BoundedRegion2D_typeof()), uPtr(_scrollable)->MinScroll());
     }
 }
 
-// internal Scroller New(bool ignore) [static] :142
+// internal Scroller New(bool ignore) [static] :24
 Scroller* Scroller::New3(bool ignore)
 {
     Scroller* obj1 = (Scroller*)uNew(Scroller_typeof());
@@ -2013,19 +2005,25 @@ Scroller* Scroller::New3(bool ignore)
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Controls.ScrollView/1.2.1/$.uno
-// ------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Controls.ScrollView\1.3.0-rc2\Scroller.Actions.uno
+// ---------------------------------------------------------------------------------------------------
 
-// public sealed class ScrollTo :52
+// public sealed class ScrollTo :56
 // {
 static void ScrollTo_build(uType* type)
 {
+    ::STRINGS[0] = uString::Const("Unabled to locate ScrollView");
+    ::STRINGS[1] = uString::Const("C:\\Users\\q\\AppData\\Local\\Fusetools\\Packages\\Fuse.Controls.ScrollView\\1.3.0-rc2\\Scroller.Actions.uno");
+    ::STRINGS[2] = uString::Const("Perform");
+    ::TYPES[9] = ::g::Fuse::Node_typeof()->MakeMethod(1/*FindByType<Fuse.Controls.ScrollView>*/, ::g::Fuse::Controls::ScrollView_typeof(), NULL);
+    type->SetDependencies(
+        ::g::Fuse::Diagnostics_typeof());
     type->SetFields(8,
-        ::g::Uno::Bool_typeof(), offsetof(::g::Fuse::Gestures::ScrollTo, _hasPosition), 0,
-        ::g::Uno::Bool_typeof(), offsetof(::g::Fuse::Gestures::ScrollTo, _hasRelativePosition), 0,
-        ::g::Uno::Float2_typeof(), offsetof(::g::Fuse::Gestures::ScrollTo, _position), 0,
-        ::g::Uno::Float2_typeof(), offsetof(::g::Fuse::Gestures::ScrollTo, _relativePosition), 0,
-        ::g::Fuse::Controls::ScrollView_typeof(), offsetof(::g::Fuse::Gestures::ScrollTo, _Target), 0);
+        ::g::Uno::Bool_typeof(), offsetof(ScrollTo, _hasRelativePosition), 0,
+        ::g::Fuse::Gestures::ScrollToHow_typeof(), offsetof(ScrollTo, _how), 0,
+        ::g::Uno::Float2_typeof(), offsetof(ScrollTo, _position), 0,
+        ::g::Uno::Float2_typeof(), offsetof(ScrollTo, _relativePosition), 0,
+        ::g::Fuse::Controls::ScrollView_typeof(), offsetof(ScrollTo, _Target), 0);
 }
 
 ::g::Fuse::Triggers::Actions::TriggerAction_type* ScrollTo_typeof()
@@ -2036,6 +2034,7 @@ static void ScrollTo_build(uType* type)
     uTypeOptions options;
     options.BaseDefinition = ::g::Fuse::Triggers::Actions::TriggerAction_typeof();
     options.FieldCount = 13;
+    options.DependencyCount = 1;
     options.ObjectSize = sizeof(ScrollTo);
     options.TypeSize = sizeof(::g::Fuse::Triggers::Actions::TriggerAction_type);
     type = (::g::Fuse::Triggers::Actions::TriggerAction_type*)uClassType::New("Fuse.Gestures.ScrollTo", options);
@@ -2044,54 +2043,103 @@ static void ScrollTo_build(uType* type)
     return type;
 }
 
-// protected override sealed void Perform(Fuse.Node target) :90
-void ScrollTo__Perform_fn(ScrollTo* __this, ::g::Fuse::Node* target)
+// public Fuse.Gestures.ScrollToHow get_How() :97
+void ScrollTo__get_How_fn(ScrollTo* __this, int* __retval)
 {
-    if (__this->Target() == NULL)
-        return;
-
-    if (__this->_hasRelativePosition)
-        uPtr(__this->Target())->Goto(::g::Uno::Float2__op_Addition2(uPtr(__this->Target())->MinScroll(), ::g::Uno::Float2__op_Multiply2(::g::Uno::Float2__op_Subtraction2(uPtr(__this->Target())->MaxScroll(), uPtr(__this->Target())->MinScroll()), __this->_relativePosition)));
-    else if (__this->_hasPosition)
-        uPtr(__this->Target())->Goto(__this->_position);
+    *__retval = __this->How();
 }
 
-// public generated Fuse.Controls.ScrollView get_Target() :55
+// public void set_How(Fuse.Gestures.ScrollToHow value) :98
+void ScrollTo__set_How_fn(ScrollTo* __this, int* value)
+{
+    __this->How(*value);
+}
+
+// protected override sealed void Perform(Fuse.Node target) :101
+void ScrollTo__Perform_fn(ScrollTo* __this, ::g::Fuse::Node* target)
+{
+    ::g::Fuse::Controls::ScrollView* ind1;
+    ind1 = __this->Target();
+    ::g::Fuse::Controls::ScrollView* scrollView = (ind1 != NULL) ? ind1 : (::g::Fuse::Controls::ScrollView*)uPtr(target)->FindByType(::TYPES[9/*Fuse.Node.FindByType<Fuse.Controls.ScrollView>*/]);
+
+    if (scrollView == NULL)
+    {
+        ::g::Fuse::Diagnostics::UserError(::STRINGS[0/*"Unabled to ...*/], __this, ::STRINGS[1/*"C:\\Users\\...*/], 106, ::STRINGS[2/*"Perform"*/], NULL);
+        return;
+    }
+
+    ::g::Uno::Float2 toPos = __this->_hasRelativePosition ? uPtr(scrollView)->RelativeToAbsolutePosition(__this->_relativePosition) : __this->_position;
+
+    if (__this->How() == 0)
+        uPtr(scrollView)->Goto(toPos);
+    else
+        uPtr(scrollView)->ScrollPosition(toPos);
+}
+
+// public generated Fuse.Controls.ScrollView get_Target() :59
 void ScrollTo__get_Target_fn(ScrollTo* __this, ::g::Fuse::Controls::ScrollView** __retval)
 {
     *__retval = __this->Target();
 }
 
-// public generated void set_Target(Fuse.Controls.ScrollView value) :55
+// public generated void set_Target(Fuse.Controls.ScrollView value) :59
 void ScrollTo__set_Target_fn(ScrollTo* __this, ::g::Fuse::Controls::ScrollView* value)
 {
     __this->Target(value);
 }
 
-// public generated Fuse.Controls.ScrollView get_Target() [instance] :55
+// public Fuse.Gestures.ScrollToHow get_How() [instance] :97
+int ScrollTo::How()
+{
+    return _how;
+}
+
+// public void set_How(Fuse.Gestures.ScrollToHow value) [instance] :98
+void ScrollTo::How(int value)
+{
+    _how = value;
+}
+
+// public generated Fuse.Controls.ScrollView get_Target() [instance] :59
 ::g::Fuse::Controls::ScrollView* ScrollTo::Target()
 {
     return _Target;
 }
 
-// public generated void set_Target(Fuse.Controls.ScrollView value) [instance] :55
+// public generated void set_Target(Fuse.Controls.ScrollView value) [instance] :59
 void ScrollTo::Target(::g::Fuse::Controls::ScrollView* value)
 {
     _Target = value;
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Gestures/1.2.1/$.uno
-// -------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Controls.ScrollView\1.3.0-rc2\Scroller.Actions.uno
+// ---------------------------------------------------------------------------------------------------
 
-// public sealed class SetSwipeActive :1298
+// public enum ScrollToHow :9
+uEnumType* ScrollToHow_typeof()
+{
+    static uSStrong<uEnumType*> type;
+    if (type != NULL) return type;
+
+    type = uEnumType::New("Fuse.Gestures.ScrollToHow", ::g::Uno::Int_typeof(), 2);
+    type->SetLiterals(
+        "Goto", 0LL,
+        "Seek", 1LL);
+    return type;
+}
+
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Gestures\1.3.0-rc2\Swipe.uno
+// -----------------------------------------------------------------------------
+
+// public sealed class SetSwipeActive :377
 // {
 static void SetSwipeActive_build(uType* type)
 {
     type->SetFields(8,
-        ::g::Uno::Bool_typeof(), offsetof(::g::Fuse::Gestures::SetSwipeActive, _Bypass), 0,
-        ::g::Fuse::Gestures::SwipeGesture_typeof(), offsetof(::g::Fuse::Gestures::SetSwipeActive, _Target), 0,
-        ::g::Uno::Bool_typeof(), offsetof(::g::Fuse::Gestures::SetSwipeActive, _Value), 0);
+        ::g::Uno::Bool_typeof(), offsetof(SetSwipeActive, _Bypass), 0,
+        ::g::Fuse::Gestures::SwipeGesture_typeof(), offsetof(SetSwipeActive, _Target), 0,
+        ::g::Uno::Bool_typeof(), offsetof(SetSwipeActive, _Value), 0);
 }
 
 ::g::Fuse::Triggers::Actions::TriggerAction_type* SetSwipeActive_typeof()
@@ -2110,94 +2158,94 @@ static void SetSwipeActive_build(uType* type)
     return type;
 }
 
-// public generated bool get_Bypass() :1307
+// public generated bool get_Bypass() :386
 void SetSwipeActive__get_Bypass_fn(SetSwipeActive* __this, bool* __retval)
 {
     *__retval = __this->Bypass();
 }
 
-// public generated void set_Bypass(bool value) :1307
+// public generated void set_Bypass(bool value) :386
 void SetSwipeActive__set_Bypass_fn(SetSwipeActive* __this, bool* value)
 {
     __this->Bypass(*value);
 }
 
-// protected override sealed void Perform(Fuse.Node target) :1309
+// protected override sealed void Perform(Fuse.Node target) :388
 void SetSwipeActive__Perform_fn(SetSwipeActive* __this, ::g::Fuse::Node* target)
 {
     if (__this->Target() != NULL)
         uPtr(__this->Target())->SetActive(__this->Value(), NULL, __this->Bypass());
 }
 
-// public generated Fuse.Gestures.SwipeGesture get_Target() :1301
+// public generated Fuse.Gestures.SwipeGesture get_Target() :380
 void SetSwipeActive__get_Target_fn(SetSwipeActive* __this, ::g::Fuse::Gestures::SwipeGesture** __retval)
 {
     *__retval = __this->Target();
 }
 
-// public generated void set_Target(Fuse.Gestures.SwipeGesture value) :1301
+// public generated void set_Target(Fuse.Gestures.SwipeGesture value) :380
 void SetSwipeActive__set_Target_fn(SetSwipeActive* __this, ::g::Fuse::Gestures::SwipeGesture* value)
 {
     __this->Target(value);
 }
 
-// public generated bool get_Value() :1304
+// public generated bool get_Value() :383
 void SetSwipeActive__get_Value_fn(SetSwipeActive* __this, bool* __retval)
 {
     *__retval = __this->Value();
 }
 
-// public generated void set_Value(bool value) :1304
+// public generated void set_Value(bool value) :383
 void SetSwipeActive__set_Value_fn(SetSwipeActive* __this, bool* value)
 {
     __this->Value(*value);
 }
 
-// public generated bool get_Bypass() [instance] :1307
+// public generated bool get_Bypass() [instance] :386
 bool SetSwipeActive::Bypass()
 {
     return _Bypass;
 }
 
-// public generated void set_Bypass(bool value) [instance] :1307
+// public generated void set_Bypass(bool value) [instance] :386
 void SetSwipeActive::Bypass(bool value)
 {
     _Bypass = value;
 }
 
-// public generated Fuse.Gestures.SwipeGesture get_Target() [instance] :1301
+// public generated Fuse.Gestures.SwipeGesture get_Target() [instance] :380
 ::g::Fuse::Gestures::SwipeGesture* SetSwipeActive::Target()
 {
     return _Target;
 }
 
-// public generated void set_Target(Fuse.Gestures.SwipeGesture value) [instance] :1301
+// public generated void set_Target(Fuse.Gestures.SwipeGesture value) [instance] :380
 void SetSwipeActive::Target(::g::Fuse::Gestures::SwipeGesture* value)
 {
     _Target = value;
 }
 
-// public generated bool get_Value() [instance] :1304
+// public generated bool get_Value() [instance] :383
 bool SetSwipeActive::Value()
 {
     return _Value;
 }
 
-// public generated void set_Value(bool value) [instance] :1304
+// public generated void set_Value(bool value) [instance] :383
 void SetSwipeActive::Value(bool value)
 {
     _Value = value;
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Gestures/1.2.1/$.uno
-// -------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Gestures\1.3.0-rc2\Swipe.uno
+// -----------------------------------------------------------------------------
 
-// public sealed class Swiped :1455
+// public sealed class Swiped :534
 // {
 static void Swiped_build(uType* type)
 {
-    ::TYPES[17] = ::g::Uno::Action2_typeof()->MakeType(::g::Uno::Bool_typeof(), ::g::Uno::Bool_typeof(), NULL);
+    ::TYPES[10] = ::g::Uno::Action2_typeof()->MakeType(::g::Uno::Bool_typeof(), ::g::Uno::Bool_typeof(), NULL);
     type->SetInterfaces(
         ::g::Uno::Collections::IList_typeof()->MakeType(::g::Fuse::Binding_typeof(), NULL), offsetof(::g::Fuse::Triggers::Trigger_type, interface0),
         ::g::Fuse::Scripting::IScriptObject_typeof(), offsetof(::g::Fuse::Triggers::Trigger_type, interface1),
@@ -2207,10 +2255,10 @@ static void Swiped_build(uType* type)
         ::g::Uno::Collections::IEnumerable_typeof()->MakeType(::g::Fuse::Binding_typeof(), NULL), offsetof(::g::Fuse::Triggers::Trigger_type, interface5),
         ::g::Fuse::Animations::IUnwrappedPlayerFeedback_typeof(), offsetof(::g::Fuse::Triggers::Trigger_type, interface6),
         ::g::Fuse::Animations::IBasePlayerFeedback_typeof(), offsetof(::g::Fuse::Triggers::Trigger_type, interface7));
-    type->SetFields(32,
-        ::g::Fuse::Gestures::SwipedHow_typeof(), offsetof(::g::Fuse::Gestures::Swiped, _how), 0,
-        ::g::Fuse::Gestures::Internal::SwipeRegion_typeof(), offsetof(::g::Fuse::Gestures::Swiped, _region), 0,
-        ::g::Fuse::Gestures::SwipeGesture_typeof(), offsetof(::g::Fuse::Gestures::Swiped, _Source), 0);
+    type->SetFields(36,
+        ::g::Fuse::Gestures::SwipedHow_typeof(), offsetof(Swiped, _how), 0,
+        ::g::Fuse::Gestures::Internal::SwipeRegion_typeof(), offsetof(Swiped, _region), 0,
+        ::g::Fuse::Gestures::SwipeGesture_typeof(), offsetof(Swiped, _Source), 0);
 }
 
 ::g::Fuse::Triggers::Trigger_type* Swiped_typeof()
@@ -2220,7 +2268,7 @@ static void Swiped_build(uType* type)
 
     uTypeOptions options;
     options.BaseDefinition = ::g::Fuse::Triggers::Trigger_typeof();
-    options.FieldCount = 35;
+    options.FieldCount = 39;
     options.InterfaceCount = 8;
     options.ObjectSize = sizeof(Swiped);
     options.TypeSize = sizeof(::g::Fuse::Triggers::Trigger_type);
@@ -2249,83 +2297,83 @@ static void Swiped_build(uType* type)
     return type;
 }
 
-// public Swiped(Fuse.Gestures.SwipeGesture source) :1461
+// public Swiped(Fuse.Gestures.SwipeGesture source) :540
 void Swiped__ctor_5_fn(Swiped* __this, ::g::Fuse::Gestures::SwipeGesture* source)
 {
     __this->ctor_5(source);
 }
 
-// public Fuse.Gestures.SwipedHow get_How() :1474
+// public Fuse.Gestures.SwipedHow get_How() :553
 void Swiped__get_How_fn(Swiped* __this, int* __retval)
 {
     *__retval = __this->How();
 }
 
-// public void set_How(Fuse.Gestures.SwipedHow value) :1475
+// public void set_How(Fuse.Gestures.SwipedHow value) :554
 void Swiped__set_How_fn(Swiped* __this, int* value)
 {
     __this->How(*value);
 }
 
-// public Swiped New(Fuse.Gestures.SwipeGesture source) :1461
+// public Swiped New(Fuse.Gestures.SwipeGesture source) :540
 void Swiped__New2_fn(::g::Fuse::Gestures::SwipeGesture* source, Swiped** __retval)
 {
     *__retval = Swiped::New2(source);
 }
 
-// protected override sealed void OnRooted() :1479
+// protected override sealed void OnRooted() :558
 void Swiped__OnRooted_fn(Swiped* __this)
 {
     ::g::Fuse::Triggers::Trigger__OnRooted_fn(__this);
     __this->_region = uPtr(__this->Source())->Region();
-    uPtr(__this->_region)->add_Swiped(uDelegate::New(::TYPES[17/*Uno.Action<bool, bool>*/], (void*)Swiped__OnSwiped_fn, __this));
+    uPtr(__this->_region)->add_Swiped(uDelegate::New(::TYPES[10/*Uno.Action<bool, bool>*/], (void*)Swiped__OnSwiped_fn, __this));
 }
 
-// private void OnSwiped(bool v, bool cancelled) :1492
+// private void OnSwiped(bool v, bool cancelled) :571
 void Swiped__OnSwiped_fn(Swiped* __this, bool* v, bool* cancelled)
 {
     __this->OnSwiped(*v, *cancelled);
 }
 
-// protected override sealed void OnUnrooted() :1486
+// protected override sealed void OnUnrooted() :565
 void Swiped__OnUnrooted_fn(Swiped* __this)
 {
-    uPtr(__this->_region)->remove_Swiped(uDelegate::New(::TYPES[17/*Uno.Action<bool, bool>*/], (void*)Swiped__OnSwiped_fn, __this));
+    uPtr(__this->_region)->remove_Swiped(uDelegate::New(::TYPES[10/*Uno.Action<bool, bool>*/], (void*)Swiped__OnSwiped_fn, __this));
     ::g::Fuse::Triggers::Trigger__OnUnrooted_fn(__this);
 }
 
-// public generated Fuse.Gestures.SwipeGesture get_Source() :1458
+// public generated Fuse.Gestures.SwipeGesture get_Source() :537
 void Swiped__get_Source_fn(Swiped* __this, ::g::Fuse::Gestures::SwipeGesture** __retval)
 {
     *__retval = __this->Source();
 }
 
-// private generated void set_Source(Fuse.Gestures.SwipeGesture value) :1458
+// private generated void set_Source(Fuse.Gestures.SwipeGesture value) :537
 void Swiped__set_Source_fn(Swiped* __this, ::g::Fuse::Gestures::SwipeGesture* value)
 {
     __this->Source(value);
 }
 
-// public Swiped(Fuse.Gestures.SwipeGesture source) [instance] :1461
+// public Swiped(Fuse.Gestures.SwipeGesture source) [instance] :540
 void Swiped::ctor_5(::g::Fuse::Gestures::SwipeGesture* source)
 {
     ctor_4();
     Source(source);
 }
 
-// public Fuse.Gestures.SwipedHow get_How() [instance] :1474
+// public Fuse.Gestures.SwipedHow get_How() [instance] :553
 int Swiped::How()
 {
     return _how;
 }
 
-// public void set_How(Fuse.Gestures.SwipedHow value) [instance] :1475
+// public void set_How(Fuse.Gestures.SwipedHow value) [instance] :554
 void Swiped::How(int value)
 {
     _how = value;
 }
 
-// private void OnSwiped(bool v, bool cancelled) [instance] :1492
+// private void OnSwiped(bool v, bool cancelled) [instance] :571
 void Swiped::OnSwiped(bool v, bool cancelled)
 {
     if (cancelled)
@@ -2343,19 +2391,19 @@ void Swiped::OnSwiped(bool v, bool cancelled)
         Pulse();
 }
 
-// public generated Fuse.Gestures.SwipeGesture get_Source() [instance] :1458
+// public generated Fuse.Gestures.SwipeGesture get_Source() [instance] :537
 ::g::Fuse::Gestures::SwipeGesture* Swiped::Source()
 {
     return _Source;
 }
 
-// private generated void set_Source(Fuse.Gestures.SwipeGesture value) [instance] :1458
+// private generated void set_Source(Fuse.Gestures.SwipeGesture value) [instance] :537
 void Swiped::Source(::g::Fuse::Gestures::SwipeGesture* value)
 {
     _Source = value;
 }
 
-// public Swiped New(Fuse.Gestures.SwipeGesture source) [static] :1461
+// public Swiped New(Fuse.Gestures.SwipeGesture source) [static] :540
 Swiped* Swiped::New2(::g::Fuse::Gestures::SwipeGesture* source)
 {
     Swiped* obj1 = (Swiped*)uNew(Swiped_typeof());
@@ -2364,10 +2412,10 @@ Swiped* Swiped::New2(::g::Fuse::Gestures::SwipeGesture* source)
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Gestures/1.2.1/$.uno
-// -------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Gestures\1.3.0-rc2\Swipe.uno
+// -----------------------------------------------------------------------------
 
-// public enum SwipedHow :1416
+// public enum SwipedHow :495
 uEnumType* SwipedHow_typeof()
 {
     static uSStrong<uEnumType*> type;
@@ -2382,10 +2430,10 @@ uEnumType* SwipedHow_typeof()
     return type;
 }
 
-// /usr/local/share/uno/Packages/Fuse.Gestures/1.2.1/$.uno
-// -------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Gestures\1.3.0-rc2\Swipe.uno
+// -----------------------------------------------------------------------------
 
-// public enum SwipeDirection :936
+// public enum SwipeDirection :15
 uEnumType* SwipeDirection_typeof()
 {
     static uSStrong<uEnumType*> type;
@@ -2400,26 +2448,31 @@ uEnumType* SwipeDirection_typeof()
     return type;
 }
 
-// /usr/local/share/uno/Packages/Fuse.Gestures/1.2.1/$.uno
-// -------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Gestures\1.3.0-rc2\Swipe.uno
+// -----------------------------------------------------------------------------
 
-// public sealed class SwipeGesture :976
+// public sealed class SwipeGesture :55
 // {
-// static SwipeGesture() :976
+// static generated SwipeGesture() :55
 static void SwipeGesture__cctor_1_fn(uType* __type)
 {
-    SwipeGesture::GesturePriorityName_ = ::g::Uno::UX::Selector__op_Implicit(::STRINGS[9/*"GesturePrio...*/]);
-    SwipeGesture::_isActiveName_ = ::g::Uno::UX::Selector__op_Implicit(::STRINGS[10/*"IsActive"*/]);
+    ::g::Uno::UX::Selector_typeof()->Init();
+    SwipeGesture::GesturePriorityName_ = ::g::Uno::UX::Selector__op_Implicit(::STRINGS[3/*"GesturePrio...*/]);
+    SwipeGesture::_isActiveName_ = ::g::Uno::UX::Selector__op_Implicit(::STRINGS[4/*"IsActive"*/]);
 }
 
 static void SwipeGesture_build(uType* type)
 {
-    ::STRINGS[9] = uString::Const("GesturePriority");
-    ::STRINGS[10] = uString::Const("IsActive");
-    ::STRINGS[11] = uString::Const("Element");
-    ::STRINGS[12] = uString::Const("/usr/local/share/uno/Packages/Fuse.Gestures/1.2.1/$.uno");
-    ::STRINGS[13] = uString::Const("OnRooted");
+    ::STRINGS[3] = uString::Const("GesturePriority");
+    ::STRINGS[4] = uString::Const("IsActive");
+    ::STRINGS[5] = uString::Const("Element");
+    ::STRINGS[6] = uString::Const("C:\\Users\\q\\AppData\\Local\\Fusetools\\Packages\\Fuse.Gestures\\1.3.0-rc2\\Swipe.uno");
+    ::STRINGS[7] = uString::Const("OnRooted");
     ::TYPES[8] = ::g::Fuse::Elements::Element_typeof();
+    type->SetDependencies(
+        ::g::Fuse::Diagnostics_typeof(),
+        ::g::Uno::UX::Selector_typeof(),
+        ::g::Fuse::Gestures::Internal::Swiper_typeof());
     type->SetInterfaces(
         ::g::Uno::Collections::IList_typeof()->MakeType(::g::Fuse::Binding_typeof(), NULL), offsetof(SwipeGesture_type, interface0),
         ::g::Fuse::Scripting::IScriptObject_typeof(), offsetof(SwipeGesture_type, interface1),
@@ -2428,15 +2481,15 @@ static void SwipeGesture_build(uType* type)
         ::g::Uno::Collections::ICollection_typeof()->MakeType(::g::Fuse::Binding_typeof(), NULL), offsetof(SwipeGesture_type, interface4),
         ::g::Uno::Collections::IEnumerable_typeof()->MakeType(::g::Fuse::Binding_typeof(), NULL), offsetof(SwipeGesture_type, interface5),
         ::g::Uno::UX::IPropertyListener_typeof(), offsetof(SwipeGesture_type, interface6));
-    type->SetFields(12,
-        ::g::Fuse::Gestures::SwipeDirection_typeof(), offsetof(::g::Fuse::Gestures::SwipeGesture, _direction), 0,
-        ::g::Fuse::Input::GesturePriority_typeof(), offsetof(::g::Fuse::Gestures::SwipeGesture, _gesturePriority), 0,
-        ::g::Uno::Bool_typeof(), offsetof(::g::Fuse::Gestures::SwipeGesture, _hasDirection), 0,
-        ::g::Fuse::Gestures::Internal::SwipeRegion_typeof(), offsetof(::g::Fuse::Gestures::SwipeGesture, _region), 0,
-        ::g::Fuse::Gestures::Internal::Swiper_typeof(), offsetof(::g::Fuse::Gestures::SwipeGesture, _swiper), 0,
-        ::g::Fuse::Gestures::SwipeType_typeof(), offsetof(::g::Fuse::Gestures::SwipeGesture, _type), 0,
-        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&::g::Fuse::Gestures::SwipeGesture::_isActiveName_, uFieldFlagsStatic,
-        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&::g::Fuse::Gestures::SwipeGesture::GesturePriorityName_, uFieldFlagsStatic);
+    type->SetFields(15,
+        ::g::Fuse::Gestures::SwipeDirection_typeof(), offsetof(SwipeGesture, _direction), 0,
+        ::g::Fuse::Input::GesturePriority_typeof(), offsetof(SwipeGesture, _gesturePriority), 0,
+        ::g::Uno::Bool_typeof(), offsetof(SwipeGesture, _hasDirection), 0,
+        ::g::Fuse::Gestures::Internal::SwipeRegion_typeof(), offsetof(SwipeGesture, _region), 0,
+        ::g::Fuse::Gestures::Internal::Swiper_typeof(), offsetof(SwipeGesture, _swiper), 0,
+        ::g::Fuse::Gestures::SwipeType_typeof(), offsetof(SwipeGesture, _type), 0,
+        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&SwipeGesture::_isActiveName_, uFieldFlagsStatic,
+        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&SwipeGesture::GesturePriorityName_, uFieldFlagsStatic);
 }
 
 SwipeGesture_type* SwipeGesture_typeof()
@@ -2446,8 +2499,9 @@ SwipeGesture_type* SwipeGesture_typeof()
 
     uTypeOptions options;
     options.BaseDefinition = ::g::Fuse::Behavior_typeof();
-    options.FieldCount = 20;
+    options.FieldCount = 23;
     options.InterfaceCount = 7;
+    options.DependencyCount = 3;
     options.ObjectSize = sizeof(SwipeGesture);
     options.TypeSize = sizeof(SwipeGesture_type);
     type = (SwipeGesture_type*)uClassType::New("Fuse.Gestures.SwipeGesture", options);
@@ -2475,67 +2529,67 @@ SwipeGesture_type* SwipeGesture_typeof()
     return type;
 }
 
-// public SwipeGesture() :978
+// public SwipeGesture() :57
 void SwipeGesture__ctor_3_fn(SwipeGesture* __this)
 {
     __this->ctor_3();
 }
 
-// public Fuse.Gestures.SwipeDirection get_Direction() :1061
+// public Fuse.Gestures.SwipeDirection get_Direction() :140
 void SwipeGesture__get_Direction_fn(SwipeGesture* __this, int* __retval)
 {
     *__retval = __this->Direction();
 }
 
-// public void set_Direction(Fuse.Gestures.SwipeDirection value) :1062
+// public void set_Direction(Fuse.Gestures.SwipeDirection value) :141
 void SwipeGesture__set_Direction_fn(SwipeGesture* __this, int* value)
 {
     __this->Direction(*value);
 }
 
-// public bool get_IsActive() :1196
+// public bool get_IsActive() :275
 void SwipeGesture__get_IsActive_fn(SwipeGesture* __this, bool* __retval)
 {
     *__retval = __this->IsActive();
 }
 
-// public void set_IsActive(bool value) :1197
+// public void set_IsActive(bool value) :276
 void SwipeGesture__set_IsActive_fn(SwipeGesture* __this, bool* value)
 {
     __this->IsActive(*value);
 }
 
-// public bool get_IsEnabled() :1129
+// public bool get_IsEnabled() :208
 void SwipeGesture__get_IsEnabled_fn(SwipeGesture* __this, bool* __retval)
 {
     *__retval = __this->IsEnabled();
 }
 
-// public void set_IsEnabled(bool value) :1130
+// public void set_IsEnabled(bool value) :209
 void SwipeGesture__set_IsEnabled_fn(SwipeGesture* __this, bool* value)
 {
     __this->IsEnabled(*value);
 }
 
-// public Fuse.Elements.Element get_LengthNode() :1112
+// public Fuse.Elements.Element get_LengthNode() :191
 void SwipeGesture__get_LengthNode_fn(SwipeGesture* __this, ::g::Fuse::Elements::Element** __retval)
 {
     *__retval = __this->LengthNode();
 }
 
-// public void set_LengthNode(Fuse.Elements.Element value) :1113
+// public void set_LengthNode(Fuse.Elements.Element value) :192
 void SwipeGesture__set_LengthNode_fn(SwipeGesture* __this, ::g::Fuse::Elements::Element* value)
 {
     __this->LengthNode(value);
 }
 
-// public SwipeGesture New() :978
+// public SwipeGesture New() :57
 void SwipeGesture__New2_fn(SwipeGesture** __retval)
 {
     *__retval = SwipeGesture::New2();
 }
 
-// protected override sealed void OnRooted() :1151
+// protected override sealed void OnRooted() :230
 void SwipeGesture__OnRooted_fn(SwipeGesture* __this)
 {
     ::g::Fuse::Node__OnRooted_fn(__this);
@@ -2543,7 +2597,7 @@ void SwipeGesture__OnRooted_fn(SwipeGesture* __this)
 
     if (element == NULL)
     {
-        ::g::Fuse::Diagnostics::UserRootError(::STRINGS[11/*"Element"*/], __this->Parent(), __this, ::STRINGS[12/*"/usr/local/...*/], 1157, ::STRINGS[13/*"OnRooted"*/]);
+        ::g::Fuse::Diagnostics::UserRootError(::STRINGS[5/*"Element"*/], __this->Parent(), __this, ::STRINGS[6/*"C:\\Users\\...*/], 236, ::STRINGS[7/*"OnRooted"*/]);
         return;
     }
 
@@ -2553,7 +2607,7 @@ void SwipeGesture__OnRooted_fn(SwipeGesture* __this)
     uPtr(__this->_region)->AddPropertyListener((uObject*)__this);
 }
 
-// protected override sealed void OnUnrooted() :1179
+// protected override sealed void OnUnrooted() :258
 void SwipeGesture__OnUnrooted_fn(SwipeGesture* __this)
 {
     uPtr(__this->_region)->RemovePropertyListener((uObject*)__this);
@@ -2568,49 +2622,49 @@ void SwipeGesture__OnUnrooted_fn(SwipeGesture* __this)
     ::g::Fuse::Node__OnUnrooted_fn(__this);
 }
 
-// internal Fuse.Gestures.Internal.SwipeRegion get_Region() :1176
+// internal Fuse.Gestures.Internal.SwipeRegion get_Region() :255
 void SwipeGesture__get_Region_fn(SwipeGesture* __this, ::g::Fuse::Gestures::Internal::SwipeRegion** __retval)
 {
     *__retval = __this->Region();
 }
 
-// internal void SetActive(bool value, Uno.UX.IPropertyListener origin, [bool bypass]) :1205
+// internal void SetActive(bool value, Uno.UX.IPropertyListener origin, [bool bypass]) :284
 void SwipeGesture__SetActive_fn(SwipeGesture* __this, bool* value, uObject* origin, bool* bypass)
 {
     __this->SetActive(*value, origin, *bypass);
 }
 
-// public void SetIsActive(bool value, Uno.UX.IPropertyListener origin) :1200
+// public void SetIsActive(bool value, Uno.UX.IPropertyListener origin) :279
 void SwipeGesture__SetIsActive_fn(SwipeGesture* __this, bool* value, uObject* origin)
 {
     __this->SetIsActive(*value, origin);
 }
 
-// public Fuse.Gestures.SwipeType get_Type() :995
+// public Fuse.Gestures.SwipeType get_Type() :74
 void SwipeGesture__get_Type_fn(SwipeGesture* __this, int* __retval)
 {
     *__retval = __this->Type();
 }
 
-// public void set_Type(Fuse.Gestures.SwipeType value) :996
+// public void set_Type(Fuse.Gestures.SwipeType value) :75
 void SwipeGesture__set_Type_fn(SwipeGesture* __this, int* value)
 {
     __this->Type(*value);
 }
 
-// private void Uno.UX.IPropertyListener.OnPropertyChanged(Uno.UX.PropertyObject obj, Uno.UX.Selector prop) :1167
+// private void Uno.UX.IPropertyListener.OnPropertyChanged(Uno.UX.PropertyObject obj, Uno.UX.Selector prop) :246
 void SwipeGesture__UnoUXIPropertyListenerOnPropertyChanged_fn(SwipeGesture* __this, ::g::Uno::UX::PropertyObject* obj, ::g::Uno::UX::Selector* prop)
 {
     ::g::Uno::UX::Selector prop_ = *prop;
 
-    if ((obj == __this->_region) && ::g::Uno::UX::Selector__op_Equality(prop_, SwipeGesture::_isActiveName()))
-        __this->OnPropertyChanged1(SwipeGesture::_isActiveName(), (uObject*)__this->_region);
+    if ((obj == __this->_region) && ::g::Uno::UX::Selector__op_Equality(prop_, SwipeGesture::_isActiveName_))
+        __this->OnPropertyChanged1(SwipeGesture::_isActiveName_, (uObject*)__this->_region);
 }
 
 ::g::Uno::UX::Selector SwipeGesture::_isActiveName_;
 ::g::Uno::UX::Selector SwipeGesture::GesturePriorityName_;
 
-// public SwipeGesture() [instance] :978
+// public SwipeGesture() [instance] :57
 void SwipeGesture::ctor_3()
 {
     _region = ::g::Fuse::Gestures::Internal::SwipeRegion::New2();
@@ -2620,13 +2674,13 @@ void SwipeGesture::ctor_3()
     Direction(0);
 }
 
-// public Fuse.Gestures.SwipeDirection get_Direction() [instance] :1061
+// public Fuse.Gestures.SwipeDirection get_Direction() [instance] :140
 int SwipeGesture::Direction()
 {
     return _direction;
 }
 
-// public void set_Direction(Fuse.Gestures.SwipeDirection value) [instance] :1062
+// public void set_Direction(Fuse.Gestures.SwipeDirection value) [instance] :141
 void SwipeGesture::Direction(int value)
 {
     _direction = value;
@@ -2662,49 +2716,49 @@ void SwipeGesture::Direction(int value)
     }
 }
 
-// public bool get_IsActive() [instance] :1196
+// public bool get_IsActive() [instance] :275
 bool SwipeGesture::IsActive()
 {
     return uPtr(_region)->IsActive();
 }
 
-// public void set_IsActive(bool value) [instance] :1197
+// public void set_IsActive(bool value) [instance] :276
 void SwipeGesture::IsActive(bool value)
 {
     SetIsActive(value, (uObject*)this);
 }
 
-// public bool get_IsEnabled() [instance] :1129
+// public bool get_IsEnabled() [instance] :208
 bool SwipeGesture::IsEnabled()
 {
     return uPtr(_region)->IsEnabled();
 }
 
-// public void set_IsEnabled(bool value) [instance] :1130
+// public void set_IsEnabled(bool value) [instance] :209
 void SwipeGesture::IsEnabled(bool value)
 {
     uPtr(_region)->IsEnabled(value);
 }
 
-// public Fuse.Elements.Element get_LengthNode() [instance] :1112
+// public Fuse.Elements.Element get_LengthNode() [instance] :191
 ::g::Fuse::Elements::Element* SwipeGesture::LengthNode()
 {
     return uPtr(_region)->LengthElement;
 }
 
-// public void set_LengthNode(Fuse.Elements.Element value) [instance] :1113
+// public void set_LengthNode(Fuse.Elements.Element value) [instance] :192
 void SwipeGesture::LengthNode(::g::Fuse::Elements::Element* value)
 {
     uPtr(_region)->LengthElement = value;
 }
 
-// internal Fuse.Gestures.Internal.SwipeRegion get_Region() [instance] :1176
+// internal Fuse.Gestures.Internal.SwipeRegion get_Region() [instance] :255
 ::g::Fuse::Gestures::Internal::SwipeRegion* SwipeGesture::Region()
 {
     return _region;
 }
 
-// internal void SetActive(bool value, Uno.UX.IPropertyListener origin, [bool bypass]) [instance] :1205
+// internal void SetActive(bool value, Uno.UX.IPropertyListener origin, [bool bypass]) [instance] :284
 void SwipeGesture::SetActive(bool value, uObject* origin, bool bypass)
 {
     if (_swiper == NULL)
@@ -2713,19 +2767,19 @@ void SwipeGesture::SetActive(bool value, uObject* origin, bool bypass)
         uPtr(_swiper)->SetActivation(_region, value, bypass);
 }
 
-// public void SetIsActive(bool value, Uno.UX.IPropertyListener origin) [instance] :1200
+// public void SetIsActive(bool value, Uno.UX.IPropertyListener origin) [instance] :279
 void SwipeGesture::SetIsActive(bool value, uObject* origin)
 {
     SetActive(value, origin, false);
 }
 
-// public Fuse.Gestures.SwipeType get_Type() [instance] :995
+// public Fuse.Gestures.SwipeType get_Type() [instance] :74
 int SwipeGesture::Type()
 {
     return _type;
 }
 
-// public void set_Type(Fuse.Gestures.SwipeType value) [instance] :996
+// public void set_Type(Fuse.Gestures.SwipeType value) [instance] :75
 void SwipeGesture::Type(int value)
 {
     _type = value;
@@ -2734,7 +2788,7 @@ void SwipeGesture::Type(int value)
     uPtr(_region)->AutoTrigger = (Type() == 2);
 }
 
-// public SwipeGesture New() [static] :978
+// public SwipeGesture New() [static] :57
 SwipeGesture* SwipeGesture::New2()
 {
     SwipeGesture* obj1 = (SwipeGesture*)uNew(SwipeGesture_typeof());
@@ -2743,16 +2797,16 @@ SwipeGesture* SwipeGesture::New2()
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Gestures/1.2.1/internal/$.uno
-// ----------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Gestures\1.3.0-rc2\Internal\Helpers.uno
+// ----------------------------------------------------------------------------------------
 
-// internal sealed class SwipeGestureHelper :684
+// internal sealed class SwipeGestureHelper :45
 // {
 static void SwipeGestureHelper_build(uType* type)
 {
     type->SetFields(0,
-        ::g::Uno::Float_typeof(), offsetof(::g::Fuse::Gestures::SwipeGestureHelper, _lengthThreshold), 0,
-        ::g::Fuse::Gestures::DegreeSpan_typeof()->Array(), offsetof(::g::Fuse::Gestures::SwipeGestureHelper, _spans), 0);
+        ::g::Uno::Float_typeof(), offsetof(SwipeGestureHelper, _lengthThreshold), 0,
+        ::g::Fuse::Gestures::DegreeSpan_typeof()->Array(), offsetof(SwipeGestureHelper, _spans), 0);
 }
 
 uType* SwipeGestureHelper_typeof()
@@ -2769,32 +2823,32 @@ uType* SwipeGestureHelper_typeof()
     return type;
 }
 
-// public SwipeGestureHelper(float lengthThreshold, Fuse.Gestures.DegreeSpan[] spans) :690
+// public SwipeGestureHelper(float lengthThreshold, Fuse.Gestures.DegreeSpan[] spans) :51
 void SwipeGestureHelper__ctor__fn(SwipeGestureHelper* __this, float* lengthThreshold, uArray* spans)
 {
     __this->ctor_(*lengthThreshold, spans);
 }
 
-// public bool IsWithinBounds(float2 vector) :696
+// public bool IsWithinBounds(float2 vector) :57
 void SwipeGestureHelper__IsWithinBounds_fn(SwipeGestureHelper* __this, ::g::Uno::Float2* vector, bool* __retval)
 {
     *__retval = __this->IsWithinBounds(*vector);
 }
 
-// public SwipeGestureHelper New(float lengthThreshold, Fuse.Gestures.DegreeSpan[] spans) :690
+// public SwipeGestureHelper New(float lengthThreshold, Fuse.Gestures.DegreeSpan[] spans) :51
 void SwipeGestureHelper__New1_fn(float* lengthThreshold, uArray* spans, SwipeGestureHelper** __retval)
 {
     *__retval = SwipeGestureHelper::New1(*lengthThreshold, spans);
 }
 
-// public SwipeGestureHelper(float lengthThreshold, Fuse.Gestures.DegreeSpan[] spans) [instance] :690
+// public SwipeGestureHelper(float lengthThreshold, Fuse.Gestures.DegreeSpan[] spans) [instance] :51
 void SwipeGestureHelper::ctor_(float lengthThreshold, uArray* spans)
 {
     _spans = spans;
     _lengthThreshold = lengthThreshold;
 }
 
-// public bool IsWithinBounds(float2 vector) [instance] :696
+// public bool IsWithinBounds(float2 vector) [instance] :57
 bool SwipeGestureHelper::IsWithinBounds(::g::Uno::Float2 vector)
 {
     float length = ::g::Uno::Vector::Length(vector);
@@ -2811,7 +2865,7 @@ bool SwipeGestureHelper::IsWithinBounds(::g::Uno::Float2 vector)
     return false;
 }
 
-// public SwipeGestureHelper New(float lengthThreshold, Fuse.Gestures.DegreeSpan[] spans) [static] :690
+// public SwipeGestureHelper New(float lengthThreshold, Fuse.Gestures.DegreeSpan[] spans) [static] :51
 SwipeGestureHelper* SwipeGestureHelper::New1(float lengthThreshold, uArray* spans)
 {
     SwipeGestureHelper* obj1 = (SwipeGestureHelper*)uNew(SwipeGestureHelper_typeof());
@@ -2820,10 +2874,10 @@ SwipeGestureHelper* SwipeGestureHelper::New1(float lengthThreshold, uArray* span
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Gestures/1.2.1/$.uno
-// -------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Gestures\1.3.0-rc2\Swipe.uno
+// -----------------------------------------------------------------------------
 
-// public enum SwipeType :945
+// public enum SwipeType :24
 uEnumType* SwipeType_typeof()
 {
     static uSStrong<uEnumType*> type;
@@ -2837,13 +2891,16 @@ uEnumType* SwipeType_typeof()
     return type;
 }
 
-// /usr/local/share/uno/Packages/Fuse.Gestures/1.2.1/$.uno
-// -------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Gestures\1.3.0-rc2\Swipe.uno
+// -----------------------------------------------------------------------------
 
-// public sealed class SwipingAnimation :1245
+// public sealed class SwipingAnimation :324
 // {
 static void SwipingAnimation_build(uType* type)
 {
+    type->SetDependencies(
+        ::g::Uno::UX::Selector_typeof(),
+        ::g::Fuse::Gestures::Internal::SwipeRegion_typeof());
     type->SetInterfaces(
         ::g::Uno::Collections::IList_typeof()->MakeType(::g::Fuse::Binding_typeof(), NULL), offsetof(SwipingAnimation_type, interface0),
         ::g::Fuse::Scripting::IScriptObject_typeof(), offsetof(SwipingAnimation_type, interface1),
@@ -2854,9 +2911,9 @@ static void SwipingAnimation_build(uType* type)
         ::g::Fuse::Animations::IUnwrappedPlayerFeedback_typeof(), offsetof(SwipingAnimation_type, interface6),
         ::g::Fuse::Animations::IBasePlayerFeedback_typeof(), offsetof(SwipingAnimation_type, interface7),
         ::g::Uno::UX::IPropertyListener_typeof(), offsetof(SwipingAnimation_type, interface8));
-    type->SetFields(32,
-        ::g::Fuse::Gestures::Internal::SwipeRegion_typeof(), offsetof(::g::Fuse::Gestures::SwipingAnimation, _region), 0,
-        ::g::Fuse::Gestures::SwipeGesture_typeof(), offsetof(::g::Fuse::Gestures::SwipingAnimation, _Source), 0);
+    type->SetFields(36,
+        ::g::Fuse::Gestures::Internal::SwipeRegion_typeof(), offsetof(SwipingAnimation, _region), 0,
+        ::g::Fuse::Gestures::SwipeGesture_typeof(), offsetof(SwipingAnimation, _Source), 0);
 }
 
 SwipingAnimation_type* SwipingAnimation_typeof()
@@ -2866,8 +2923,9 @@ SwipingAnimation_type* SwipingAnimation_typeof()
 
     uTypeOptions options;
     options.BaseDefinition = ::g::Fuse::Triggers::Trigger_typeof();
-    options.FieldCount = 34;
+    options.FieldCount = 38;
     options.InterfaceCount = 9;
+    options.DependencyCount = 2;
     options.ObjectSize = sizeof(SwipingAnimation);
     options.TypeSize = sizeof(SwipingAnimation_type);
     type = (SwipingAnimation_type*)uClassType::New("Fuse.Gestures.SwipingAnimation", options);
@@ -2896,25 +2954,25 @@ SwipingAnimation_type* SwipingAnimation_typeof()
     return type;
 }
 
-// public SwipingAnimation(Fuse.Gestures.SwipeGesture source) :1253
+// public SwipingAnimation(Fuse.Gestures.SwipeGesture source) :332
 void SwipingAnimation__ctor_5_fn(SwipingAnimation* __this, ::g::Fuse::Gestures::SwipeGesture* source)
 {
     __this->ctor_5(source);
 }
 
-// public SwipingAnimation New(Fuse.Gestures.SwipeGesture source) :1253
+// public SwipingAnimation New(Fuse.Gestures.SwipeGesture source) :332
 void SwipingAnimation__New2_fn(::g::Fuse::Gestures::SwipeGesture* source, SwipingAnimation** __retval)
 {
     *__retval = SwipingAnimation::New2(source);
 }
 
-// private void OnProgressChanged(double progress) :1278
+// private void OnProgressChanged(double progress) :357
 void SwipingAnimation__OnProgressChanged1_fn(SwipingAnimation* __this, double* progress)
 {
     __this->OnProgressChanged1(*progress);
 }
 
-// protected override sealed void OnRooted() :1258
+// protected override sealed void OnRooted() :337
 void SwipingAnimation__OnRooted_fn(SwipingAnimation* __this)
 {
     ::g::Fuse::Triggers::Trigger__OnRooted_fn(__this);
@@ -2923,63 +2981,63 @@ void SwipingAnimation__OnRooted_fn(SwipingAnimation* __this)
     __this->OnProgressChanged1(uPtr(uPtr(__this->Source())->Region())->Progress());
 }
 
-// protected override sealed void OnUnrooted() :1266
+// protected override sealed void OnUnrooted() :345
 void SwipingAnimation__OnUnrooted_fn(SwipingAnimation* __this)
 {
     uPtr(__this->_region)->RemovePropertyListener((uObject*)__this);
     ::g::Fuse::Triggers::Trigger__OnUnrooted_fn(__this);
 }
 
-// public generated Fuse.Gestures.SwipeGesture get_Source() :1248
+// public generated Fuse.Gestures.SwipeGesture get_Source() :327
 void SwipingAnimation__get_Source_fn(SwipingAnimation* __this, ::g::Fuse::Gestures::SwipeGesture** __retval)
 {
     *__retval = __this->Source();
 }
 
-// private generated void set_Source(Fuse.Gestures.SwipeGesture value) :1248
+// private generated void set_Source(Fuse.Gestures.SwipeGesture value) :327
 void SwipingAnimation__set_Source_fn(SwipingAnimation* __this, ::g::Fuse::Gestures::SwipeGesture* value)
 {
     __this->Source(value);
 }
 
-// private void Uno.UX.IPropertyListener.OnPropertyChanged(Uno.UX.PropertyObject sender, Uno.UX.Selector prop) :1272
+// private void Uno.UX.IPropertyListener.OnPropertyChanged(Uno.UX.PropertyObject sender, Uno.UX.Selector prop) :351
 void SwipingAnimation__UnoUXIPropertyListenerOnPropertyChanged_fn(SwipingAnimation* __this, ::g::Uno::UX::PropertyObject* sender, ::g::Uno::UX::Selector* prop)
 {
     ::g::Uno::UX::Selector prop_ = *prop;
 
-    if ((sender != __this->_region) || ::g::Uno::UX::Selector__op_Inequality(prop_, ::g::Fuse::Gestures::Internal::SwipeRegion::ProgressName()))
+    if ((sender != __this->_region) || ::g::Uno::UX::Selector__op_Inequality(prop_, ::g::Fuse::Gestures::Internal::SwipeRegion::ProgressName_))
         return;
 
     __this->OnProgressChanged1(uPtr(__this->_region)->Progress());
 }
 
-// public SwipingAnimation(Fuse.Gestures.SwipeGesture source) [instance] :1253
+// public SwipingAnimation(Fuse.Gestures.SwipeGesture source) [instance] :332
 void SwipingAnimation::ctor_5(::g::Fuse::Gestures::SwipeGesture* source)
 {
     ctor_4();
     Source(source);
 }
 
-// private void OnProgressChanged(double progress) [instance] :1278
+// private void OnProgressChanged(double progress) [instance] :357
 void SwipingAnimation::OnProgressChanged1(double progress)
 {
     double diff = progress - uPtr(uPtr(Source())->Region())->StableProgress();
     Seek(progress, (diff >= 0.0) ? 0 : 1);
 }
 
-// public generated Fuse.Gestures.SwipeGesture get_Source() [instance] :1248
+// public generated Fuse.Gestures.SwipeGesture get_Source() [instance] :327
 ::g::Fuse::Gestures::SwipeGesture* SwipingAnimation::Source()
 {
     return _Source;
 }
 
-// private generated void set_Source(Fuse.Gestures.SwipeGesture value) [instance] :1248
+// private generated void set_Source(Fuse.Gestures.SwipeGesture value) [instance] :327
 void SwipingAnimation::Source(::g::Fuse::Gestures::SwipeGesture* value)
 {
     _Source = value;
 }
 
-// public SwipingAnimation New(Fuse.Gestures.SwipeGesture source) [static] :1253
+// public SwipingAnimation New(Fuse.Gestures.SwipeGesture source) [static] :332
 SwipingAnimation* SwipingAnimation::New2(::g::Fuse::Gestures::SwipeGesture* source)
 {
     SwipingAnimation* obj1 = (SwipingAnimation*)uNew(SwipingAnimation_typeof());
@@ -2988,15 +3046,15 @@ SwipingAnimation* SwipingAnimation::New2(::g::Fuse::Gestures::SwipeGesture* sour
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Gestures/1.2.1/$.uno
-// -------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Gestures\1.3.0-rc2\Tapped.uno
+// ------------------------------------------------------------------------------
 
-// public sealed class Tapped :1591
+// public sealed class Tapped :35
 // {
 static void Tapped_build(uType* type)
 {
     ::TYPES[2] = ::g::Fuse::Gestures::ClickerEventHandler_typeof();
-    ::TYPES[18] = ::g::Fuse::Gestures::TappedHandler_typeof();
+    ::TYPES[11] = ::g::Fuse::Gestures::TappedHandler_typeof();
     type->SetInterfaces(
         ::g::Uno::Collections::IList_typeof()->MakeType(::g::Fuse::Binding_typeof(), NULL), offsetof(::g::Fuse::Triggers::Trigger_type, interface0),
         ::g::Fuse::Scripting::IScriptObject_typeof(), offsetof(::g::Fuse::Triggers::Trigger_type, interface1),
@@ -3006,8 +3064,8 @@ static void Tapped_build(uType* type)
         ::g::Uno::Collections::IEnumerable_typeof()->MakeType(::g::Fuse::Binding_typeof(), NULL), offsetof(::g::Fuse::Triggers::Trigger_type, interface5),
         ::g::Fuse::Animations::IUnwrappedPlayerFeedback_typeof(), offsetof(::g::Fuse::Triggers::Trigger_type, interface6),
         ::g::Fuse::Animations::IBasePlayerFeedback_typeof(), offsetof(::g::Fuse::Triggers::Trigger_type, interface7));
-    type->SetFields(35,
-        ::TYPES[18/*Fuse.Gestures.TappedHandler*/], offsetof(::g::Fuse::Gestures::Tapped, Handler1), 0);
+    type->SetFields(39,
+        ::TYPES[11/*Fuse.Gestures.TappedHandler*/], offsetof(Tapped, Handler1), 0);
 }
 
 ::g::Fuse::Triggers::Trigger_type* Tapped_typeof()
@@ -3017,7 +3075,7 @@ static void Tapped_build(uType* type)
 
     uTypeOptions options;
     options.BaseDefinition = ::g::Fuse::Gestures::ClickerTrigger_typeof();
-    options.FieldCount = 36;
+    options.FieldCount = 40;
     options.InterfaceCount = 8;
     options.ObjectSize = sizeof(Tapped);
     options.TypeSize = sizeof(::g::Fuse::Triggers::Trigger_type);
@@ -3047,88 +3105,88 @@ static void Tapped_build(uType* type)
     return type;
 }
 
-// public Tapped() :1617
+// public Tapped() :61
 void Tapped__ctor_6_fn(Tapped* __this)
 {
     __this->ctor_6();
 }
 
-// public Tapped(Fuse.Gestures.TappedHandler handler) :1619
+// public Tapped(Fuse.Gestures.TappedHandler handler) :63
 void Tapped__ctor_7_fn(Tapped* __this, uDelegate* handler)
 {
     __this->ctor_7(handler);
 }
 
-// public generated void add_Handler(Fuse.Gestures.TappedHandler value) :1615
+// public generated void add_Handler(Fuse.Gestures.TappedHandler value) :59
 void Tapped__add_Handler_fn(Tapped* __this, uDelegate* value)
 {
     __this->add_Handler(value);
 }
 
-// public generated void remove_Handler(Fuse.Gestures.TappedHandler value) :1615
+// public generated void remove_Handler(Fuse.Gestures.TappedHandler value) :59
 void Tapped__remove_Handler_fn(Tapped* __this, uDelegate* value)
 {
     __this->remove_Handler(value);
 }
 
-// public Tapped New() :1617
+// public Tapped New() :61
 void Tapped__New2_fn(Tapped** __retval)
 {
     *__retval = Tapped::New2();
 }
 
-// public Tapped New(Fuse.Gestures.TappedHandler handler) :1619
+// public Tapped New(Fuse.Gestures.TappedHandler handler) :63
 void Tapped__New3_fn(uDelegate* handler, Tapped** __retval)
 {
     *__retval = Tapped::New3(handler);
 }
 
-// protected override sealed void OnRooted() :1624
+// protected override sealed void OnRooted() :68
 void Tapped__OnRooted_fn(Tapped* __this)
 {
     ::g::Fuse::Gestures::ClickerTrigger__OnRooted_fn(__this);
     uPtr(__this->Clicker)->add_TappedEvent(uDelegate::New(::TYPES[2/*Fuse.Gestures.ClickerEventHandler*/], (void*)Tapped__OnTapped_fn, __this));
 }
 
-// private void OnTapped(Fuse.Input.PointerEventArgs args, int tapCount) :1636
+// private void OnTapped(Fuse.Input.PointerEventArgs args, int tapCount) :80
 void Tapped__OnTapped_fn(Tapped* __this, ::g::Fuse::Input::PointerEventArgs* args, int* tapCount)
 {
     __this->OnTapped(args, *tapCount);
 }
 
-// protected override sealed void OnUnrooted() :1630
+// protected override sealed void OnUnrooted() :74
 void Tapped__OnUnrooted_fn(Tapped* __this)
 {
     uPtr(__this->Clicker)->remove_TappedEvent(uDelegate::New(::TYPES[2/*Fuse.Gestures.ClickerEventHandler*/], (void*)Tapped__OnTapped_fn, __this));
     ::g::Fuse::Gestures::ClickerTrigger__OnUnrooted_fn(__this);
 }
 
-// public Tapped() [instance] :1617
+// public Tapped() [instance] :61
 void Tapped::ctor_6()
 {
     ctor_5();
 }
 
-// public Tapped(Fuse.Gestures.TappedHandler handler) [instance] :1619
+// public Tapped(Fuse.Gestures.TappedHandler handler) [instance] :63
 void Tapped::ctor_7(uDelegate* handler)
 {
     ctor_5();
     add_Handler(handler);
 }
 
-// public generated void add_Handler(Fuse.Gestures.TappedHandler value) [instance] :1615
+// public generated void add_Handler(Fuse.Gestures.TappedHandler value) [instance] :59
 void Tapped::add_Handler(uDelegate* value)
 {
-    Handler1 = uCast<uDelegate*>(::g::Uno::Delegate::Combine(Handler1, value), ::TYPES[18/*Fuse.Gestures.TappedHandler*/]);
+    Handler1 = uCast<uDelegate*>(::g::Uno::Delegate::Combine(Handler1, value), ::TYPES[11/*Fuse.Gestures.TappedHandler*/]);
 }
 
-// public generated void remove_Handler(Fuse.Gestures.TappedHandler value) [instance] :1615
+// public generated void remove_Handler(Fuse.Gestures.TappedHandler value) [instance] :59
 void Tapped::remove_Handler(uDelegate* value)
 {
-    Handler1 = uCast<uDelegate*>(::g::Uno::Delegate::Remove(Handler1, value), ::TYPES[18/*Fuse.Gestures.TappedHandler*/]);
+    Handler1 = uCast<uDelegate*>(::g::Uno::Delegate::Remove(Handler1, value), ::TYPES[11/*Fuse.Gestures.TappedHandler*/]);
 }
 
-// private void OnTapped(Fuse.Input.PointerEventArgs args, int tapCount) [instance] :1636
+// private void OnTapped(Fuse.Input.PointerEventArgs args, int tapCount) [instance] :80
 void Tapped::OnTapped(::g::Fuse::Input::PointerEventArgs* args, int tapCount)
 {
     if (!Accept(args))
@@ -3140,7 +3198,7 @@ void Tapped::OnTapped(::g::Fuse::Input::PointerEventArgs* args, int tapCount)
         uPtr(Handler1)->Invoke(2, this, (::g::Fuse::Gestures::TappedArgs*)::g::Fuse::Gestures::TappedArgs::New3(args, Parent()));
 }
 
-// public Tapped New() [static] :1617
+// public Tapped New() [static] :61
 Tapped* Tapped::New2()
 {
     Tapped* obj1 = (Tapped*)uNew(Tapped_typeof());
@@ -3148,7 +3206,7 @@ Tapped* Tapped::New2()
     return obj1;
 }
 
-// public Tapped New(Fuse.Gestures.TappedHandler handler) [static] :1619
+// public Tapped New(Fuse.Gestures.TappedHandler handler) [static] :63
 Tapped* Tapped::New3(uDelegate* handler)
 {
     Tapped* obj2 = (Tapped*)uNew(Tapped_typeof());
@@ -3157,10 +3215,10 @@ Tapped* Tapped::New3(uDelegate* handler)
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Gestures/1.2.1/$.uno
-// -------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Gestures\1.3.0-rc2\Tapped.uno
+// ------------------------------------------------------------------------------
 
-// public sealed class TappedArgs :1565
+// public sealed class TappedArgs :9
 // {
 static void TappedArgs_build(uType* type)
 {
@@ -3186,25 +3244,25 @@ static void TappedArgs_build(uType* type)
     return type;
 }
 
-// public TappedArgs(Fuse.Input.PointerEventArgs args, Fuse.Visual visual) :1567
+// public TappedArgs(Fuse.Input.PointerEventArgs args, Fuse.Visual visual) :11
 void TappedArgs__ctor_4_fn(TappedArgs* __this, ::g::Fuse::Input::PointerEventArgs* args, ::g::Fuse::Visual* visual)
 {
     __this->ctor_4(args, visual);
 }
 
-// public TappedArgs New(Fuse.Input.PointerEventArgs args, Fuse.Visual visual) :1567
+// public TappedArgs New(Fuse.Input.PointerEventArgs args, Fuse.Visual visual) :11
 void TappedArgs__New3_fn(::g::Fuse::Input::PointerEventArgs* args, ::g::Fuse::Visual* visual, TappedArgs** __retval)
 {
     *__retval = TappedArgs::New3(args, visual);
 }
 
-// public TappedArgs(Fuse.Input.PointerEventArgs args, Fuse.Visual visual) [instance] :1567
+// public TappedArgs(Fuse.Input.PointerEventArgs args, Fuse.Visual visual) [instance] :11
 void TappedArgs::ctor_4(::g::Fuse::Input::PointerEventArgs* args, ::g::Fuse::Visual* visual)
 {
     ctor_3(args, visual);
 }
 
-// public TappedArgs New(Fuse.Input.PointerEventArgs args, Fuse.Visual visual) [static] :1567
+// public TappedArgs New(Fuse.Input.PointerEventArgs args, Fuse.Visual visual) [static] :11
 TappedArgs* TappedArgs::New3(::g::Fuse::Input::PointerEventArgs* args, ::g::Fuse::Visual* visual)
 {
     TappedArgs* obj1 = (TappedArgs*)uNew(TappedArgs_typeof());
@@ -3213,10 +3271,10 @@ TappedArgs* TappedArgs::New3(::g::Fuse::Input::PointerEventArgs* args, ::g::Fuse
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Gestures/1.2.1/$.uno
-// -------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Gestures\1.3.0-rc2\Tapped.uno
+// ------------------------------------------------------------------------------
 
-// public delegate void TappedHandler(object sender, Fuse.Gestures.TappedArgs args) :1573
+// public delegate void TappedHandler(object sender, Fuse.Gestures.TappedArgs args) :17
 uDelegateType* TappedHandler_typeof()
 {
     static uSStrong<uDelegateType*> type;
@@ -3229,15 +3287,15 @@ uDelegateType* TappedHandler_typeof()
     return type;
 }
 
-// /usr/local/share/uno/Packages/Fuse.Gestures/1.2.1/$.uno
-// -------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Gestures\1.3.0-rc2\Swipe.uno
+// -----------------------------------------------------------------------------
 
-// public sealed class ToggleSwipeActive :1331
+// public sealed class ToggleSwipeActive :410
 // {
 static void ToggleSwipeActive_build(uType* type)
 {
     type->SetFields(8,
-        ::g::Fuse::Gestures::SwipeGesture_typeof(), offsetof(::g::Fuse::Gestures::ToggleSwipeActive, _Target), 0);
+        ::g::Fuse::Gestures::SwipeGesture_typeof(), offsetof(ToggleSwipeActive, _Target), 0);
 }
 
 ::g::Fuse::Triggers::Actions::TriggerAction_type* ToggleSwipeActive_typeof()
@@ -3256,52 +3314,54 @@ static void ToggleSwipeActive_build(uType* type)
     return type;
 }
 
-// protected override sealed void Perform(Fuse.Node target) :1336
+// protected override sealed void Perform(Fuse.Node target) :415
 void ToggleSwipeActive__Perform_fn(ToggleSwipeActive* __this, ::g::Fuse::Node* target)
 {
     if (__this->Target() != NULL)
         uPtr(__this->Target())->SetActive(!uPtr(__this->Target())->IsActive(), NULL, false);
 }
 
-// public generated Fuse.Gestures.SwipeGesture get_Target() :1334
+// public generated Fuse.Gestures.SwipeGesture get_Target() :413
 void ToggleSwipeActive__get_Target_fn(ToggleSwipeActive* __this, ::g::Fuse::Gestures::SwipeGesture** __retval)
 {
     *__retval = __this->Target();
 }
 
-// public generated void set_Target(Fuse.Gestures.SwipeGesture value) :1334
+// public generated void set_Target(Fuse.Gestures.SwipeGesture value) :413
 void ToggleSwipeActive__set_Target_fn(ToggleSwipeActive* __this, ::g::Fuse::Gestures::SwipeGesture* value)
 {
     __this->Target(value);
 }
 
-// public generated Fuse.Gestures.SwipeGesture get_Target() [instance] :1334
+// public generated Fuse.Gestures.SwipeGesture get_Target() [instance] :413
 ::g::Fuse::Gestures::SwipeGesture* ToggleSwipeActive::Target()
 {
     return _Target;
 }
 
-// public generated void set_Target(Fuse.Gestures.SwipeGesture value) [instance] :1334
+// public generated void set_Target(Fuse.Gestures.SwipeGesture value) [instance] :413
 void ToggleSwipeActive::Target(::g::Fuse::Gestures::SwipeGesture* value)
 {
     _Target = value;
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Gestures/1.2.1/$.uno
-// -------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Gestures\1.3.0-rc2\Pressed.uno
+// -------------------------------------------------------------------------------
 
-// public sealed class WhilePressed :671
+// public sealed class WhilePressed :49
 // {
 static void WhilePressed_build(uType* type)
 {
-    ::TYPES[19] = ::g::Fuse::Input::PointerPressedArgs_typeof();
+    ::TYPES[12] = ::g::Fuse::Input::PointerPressedArgs_typeof();
     ::TYPES[2] = ::g::Fuse::Gestures::ClickerEventHandler_typeof();
-    ::TYPES[20] = ::g::Fuse::Input::PointerEnteredHandler_typeof();
-    ::TYPES[21] = ::g::Fuse::Input::PointerLeftHandler_typeof();
-    ::TYPES[22] = ::g::Fuse::Input::PointerPressedHandler_typeof();
-    ::TYPES[23] = ::g::Fuse::Input::PointerReleasedHandler_typeof();
-    ::TYPES[24] = ::g::Uno::EventHandler_typeof();
+    ::TYPES[13] = ::g::Fuse::Input::PointerEnteredHandler_typeof();
+    ::TYPES[14] = ::g::Fuse::Input::PointerLeftHandler_typeof();
+    ::TYPES[15] = ::g::Fuse::Input::PointerPressedHandler_typeof();
+    ::TYPES[16] = ::g::Fuse::Input::PointerReleasedHandler_typeof();
+    ::TYPES[17] = ::g::Uno::EventHandler_typeof();
+    type->SetDependencies(
+        ::g::Fuse::Gestures::Clicker_typeof());
     type->SetInterfaces(
         ::g::Uno::Collections::IList_typeof()->MakeType(::g::Fuse::Binding_typeof(), NULL), offsetof(::g::Fuse::Triggers::Trigger_type, interface0),
         ::g::Fuse::Scripting::IScriptObject_typeof(), offsetof(::g::Fuse::Triggers::Trigger_type, interface1),
@@ -3311,12 +3371,12 @@ static void WhilePressed_build(uType* type)
         ::g::Uno::Collections::IEnumerable_typeof()->MakeType(::g::Fuse::Binding_typeof(), NULL), offsetof(::g::Fuse::Triggers::Trigger_type, interface5),
         ::g::Fuse::Animations::IUnwrappedPlayerFeedback_typeof(), offsetof(::g::Fuse::Triggers::Trigger_type, interface6),
         ::g::Fuse::Animations::IBasePlayerFeedback_typeof(), offsetof(::g::Fuse::Triggers::Trigger_type, interface7));
-    type->SetFields(33,
-        ::g::Uno::Bool_typeof(), offsetof(::g::Fuse::Gestures::WhilePressed, _inside), 0,
-        ::g::Uno::Platform::PointerType_typeof(), offsetof(::g::Fuse::Gestures::WhilePressed, _pointerType), 0,
-        ::g::Uno::Float2_typeof(), offsetof(::g::Fuse::Gestures::WhilePressed, _pressedPosition), 0,
-        ::g::Fuse::Gestures::Clicker_typeof(), offsetof(::g::Fuse::Gestures::WhilePressed, Clicker), 0,
-        ::g::Uno::Bool_typeof(), offsetof(::g::Fuse::Gestures::WhilePressed, _Capture), 0);
+    type->SetFields(37,
+        ::g::Uno::Bool_typeof(), offsetof(WhilePressed, _inside), 0,
+        ::g::Uno::Platform::PointerType_typeof(), offsetof(WhilePressed, _pointerType), 0,
+        ::g::Uno::Float2_typeof(), offsetof(WhilePressed, _pressedPosition), 0,
+        ::g::Fuse::Gestures::Clicker_typeof(), offsetof(WhilePressed, Clicker), 0,
+        ::g::Uno::Bool_typeof(), offsetof(WhilePressed, _Capture), 0);
 }
 
 ::g::Fuse::Triggers::Trigger_type* WhilePressed_typeof()
@@ -3326,8 +3386,9 @@ static void WhilePressed_build(uType* type)
 
     uTypeOptions options;
     options.BaseDefinition = ::g::Fuse::Triggers::WhileTrigger_typeof();
-    options.FieldCount = 38;
+    options.FieldCount = 42;
     options.InterfaceCount = 8;
+    options.DependencyCount = 1;
     options.ObjectSize = sizeof(WhilePressed);
     options.TypeSize = sizeof(::g::Fuse::Triggers::Trigger_type);
     type = (::g::Fuse::Triggers::Trigger_type*)uClassType::New("Fuse.Gestures.WhilePressed", options);
@@ -3356,55 +3417,55 @@ static void WhilePressed_build(uType* type)
     return type;
 }
 
-// public generated WhilePressed() :671
+// public generated WhilePressed() :49
 void WhilePressed__ctor_6_fn(WhilePressed* __this)
 {
     __this->ctor_6();
 }
 
-// public generated bool get_Capture() :673
+// public generated bool get_Capture() :51
 void WhilePressed__get_Capture_fn(WhilePressed* __this, bool* __retval)
 {
     *__retval = __this->Capture();
 }
 
-// public generated void set_Capture(bool value) :673
+// public generated void set_Capture(bool value) :51
 void WhilePressed__set_Capture_fn(WhilePressed* __this, bool* value)
 {
     __this->Capture(*value);
 }
 
-// private void CheckStatus(object s, object a) :777
+// private void CheckStatus(object s, object a) :155
 void WhilePressed__CheckStatus_fn(WhilePressed* __this, uObject* s, uObject* a)
 {
     __this->CheckStatus(s, a);
 }
 
-// public generated WhilePressed New() :671
+// public generated WhilePressed New() :49
 void WhilePressed__New2_fn(WhilePressed** __retval)
 {
     *__retval = WhilePressed::New2();
 }
 
-// private void OnClickerPressing(Fuse.Input.PointerEventArgs args, int count) :756
+// private void OnClickerPressing(Fuse.Input.PointerEventArgs args, int count) :134
 void WhilePressed__OnClickerPressing_fn(WhilePressed* __this, ::g::Fuse::Input::PointerEventArgs* args, int* count)
 {
     __this->OnClickerPressing(args, *count);
 }
 
-// private void OnPointerEntered(object sender, object args) :765
+// private void OnPointerEntered(object sender, object args) :143
 void WhilePressed__OnPointerEntered_fn(WhilePressed* __this, uObject* sender, uObject* args)
 {
     __this->OnPointerEntered(sender, args);
 }
 
-// private void OnPointerLeft(object sender, object args) :771
+// private void OnPointerLeft(object sender, object args) :149
 void WhilePressed__OnPointerLeft_fn(WhilePressed* __this, uObject* sender, uObject* args)
 {
     __this->OnPointerLeft(sender, args);
 }
 
-// protected override sealed void OnRooted() :714
+// protected override sealed void OnRooted() :92
 void WhilePressed__OnRooted_fn(WhilePressed* __this)
 {
     ::g::Fuse::Triggers::Trigger__OnRooted_fn(__this);
@@ -3416,18 +3477,18 @@ void WhilePressed__OnRooted_fn(WhilePressed* __this)
     }
     else
     {
-        ::g::Fuse::VisualEvent__AddHandler_fn(uPtr(::g::Fuse::Input::Pointer::Entered()), __this->Parent(), uDelegate::New(::TYPES[20/*Fuse.Input.PointerEnteredHandler*/], (void*)WhilePressed__OnPointerEntered_fn, __this));
-        ::g::Fuse::VisualEvent__AddHandler_fn(uPtr(::g::Fuse::Input::Pointer::Left()), __this->Parent(), uDelegate::New(::TYPES[21/*Fuse.Input.PointerLeftHandler*/], (void*)WhilePressed__OnPointerLeft_fn, __this));
-        ::g::Fuse::VisualEvent__AddHandler_fn(uPtr(::g::Fuse::Input::Pointer::Pressed()), __this->Parent(), uDelegate::New(::TYPES[22/*Fuse.Input.PointerPressedHandler*/], (void*)WhilePressed__CheckStatus_fn, __this));
-        ::g::Fuse::VisualEvent__AddGlobalHandler_fn(uPtr(::g::Fuse::Input::Pointer::Released()), uDelegate::New(::TYPES[23/*Fuse.Input.PointerReleasedHandler*/], (void*)WhilePressed__CheckStatus_fn, __this));
-        uPtr(__this->Parent())->add_IsContextEnabledChanged(uDelegate::New(::TYPES[24/*Uno.EventHandler*/], (void*)WhilePressed__CheckStatus_fn, __this));
+        ::g::Fuse::VisualEvent__AddHandler_fn(uPtr(::g::Fuse::Input::Pointer::Entered()), __this->Parent(), uDelegate::New(::TYPES[13/*Fuse.Input.PointerEnteredHandler*/], (void*)WhilePressed__OnPointerEntered_fn, __this));
+        ::g::Fuse::VisualEvent__AddHandler_fn(uPtr(::g::Fuse::Input::Pointer::Left()), __this->Parent(), uDelegate::New(::TYPES[14/*Fuse.Input.PointerLeftHandler*/], (void*)WhilePressed__OnPointerLeft_fn, __this));
+        ::g::Fuse::VisualEvent__AddHandler_fn(uPtr(::g::Fuse::Input::Pointer::Pressed()), __this->Parent(), uDelegate::New(::TYPES[15/*Fuse.Input.PointerPressedHandler*/], (void*)WhilePressed__CheckStatus_fn, __this));
+        ::g::Fuse::VisualEvent__AddGlobalHandler_fn(uPtr(::g::Fuse::Input::Pointer::Released()), uDelegate::New(::TYPES[16/*Fuse.Input.PointerReleasedHandler*/], (void*)WhilePressed__CheckStatus_fn, __this));
+        uPtr(__this->Parent())->add_IsContextEnabledChanged(uDelegate::New(::TYPES[17/*Uno.EventHandler*/], (void*)WhilePressed__CheckStatus_fn, __this));
         __this->_inside = false;
     }
 
     __this->SetActive(false);
 }
 
-// protected override sealed void OnUnrooted() :736
+// protected override sealed void OnUnrooted() :114
 void WhilePressed__OnUnrooted_fn(WhilePressed* __this)
 {
     if (__this->Capture())
@@ -3438,50 +3499,50 @@ void WhilePressed__OnUnrooted_fn(WhilePressed* __this)
     }
     else
     {
-        ::g::Fuse::VisualEvent__RemoveHandler_fn(uPtr(::g::Fuse::Input::Pointer::Entered()), __this->Parent(), uDelegate::New(::TYPES[20/*Fuse.Input.PointerEnteredHandler*/], (void*)WhilePressed__OnPointerEntered_fn, __this));
-        ::g::Fuse::VisualEvent__RemoveHandler_fn(uPtr(::g::Fuse::Input::Pointer::Left()), __this->Parent(), uDelegate::New(::TYPES[21/*Fuse.Input.PointerLeftHandler*/], (void*)WhilePressed__OnPointerLeft_fn, __this));
-        ::g::Fuse::VisualEvent__RemoveHandler_fn(uPtr(::g::Fuse::Input::Pointer::Pressed()), __this->Parent(), uDelegate::New(::TYPES[22/*Fuse.Input.PointerPressedHandler*/], (void*)WhilePressed__CheckStatus_fn, __this));
-        ::g::Fuse::VisualEvent__RemoveGlobalHandler_fn(uPtr(::g::Fuse::Input::Pointer::Released()), uDelegate::New(::TYPES[23/*Fuse.Input.PointerReleasedHandler*/], (void*)WhilePressed__CheckStatus_fn, __this));
-        uPtr(__this->Parent())->remove_IsContextEnabledChanged(uDelegate::New(::TYPES[24/*Uno.EventHandler*/], (void*)WhilePressed__CheckStatus_fn, __this));
+        ::g::Fuse::VisualEvent__RemoveHandler_fn(uPtr(::g::Fuse::Input::Pointer::Entered()), __this->Parent(), uDelegate::New(::TYPES[13/*Fuse.Input.PointerEnteredHandler*/], (void*)WhilePressed__OnPointerEntered_fn, __this));
+        ::g::Fuse::VisualEvent__RemoveHandler_fn(uPtr(::g::Fuse::Input::Pointer::Left()), __this->Parent(), uDelegate::New(::TYPES[14/*Fuse.Input.PointerLeftHandler*/], (void*)WhilePressed__OnPointerLeft_fn, __this));
+        ::g::Fuse::VisualEvent__RemoveHandler_fn(uPtr(::g::Fuse::Input::Pointer::Pressed()), __this->Parent(), uDelegate::New(::TYPES[15/*Fuse.Input.PointerPressedHandler*/], (void*)WhilePressed__CheckStatus_fn, __this));
+        ::g::Fuse::VisualEvent__RemoveGlobalHandler_fn(uPtr(::g::Fuse::Input::Pointer::Released()), uDelegate::New(::TYPES[16/*Fuse.Input.PointerReleasedHandler*/], (void*)WhilePressed__CheckStatus_fn, __this));
+        uPtr(__this->Parent())->remove_IsContextEnabledChanged(uDelegate::New(::TYPES[17/*Uno.EventHandler*/], (void*)WhilePressed__CheckStatus_fn, __this));
     }
 
     ::g::Fuse::Triggers::Trigger__OnUnrooted_fn(__this);
 }
 
-// public Uno.Platform.PointerType get_PointerType() :710
+// public Uno.Platform.PointerType get_PointerType() :88
 void WhilePressed__get_PointerType_fn(WhilePressed* __this, int* __retval)
 {
     *__retval = __this->PointerType();
 }
 
-// public void set_PointerType(Uno.Platform.PointerType value) :711
+// public void set_PointerType(Uno.Platform.PointerType value) :89
 void WhilePressed__set_PointerType_fn(WhilePressed* __this, int* value)
 {
     __this->PointerType(*value);
 }
 
-// public generated WhilePressed() [instance] :671
+// public generated WhilePressed() [instance] :49
 void WhilePressed::ctor_6()
 {
     ctor_5();
 }
 
-// public generated bool get_Capture() [instance] :673
+// public generated bool get_Capture() [instance] :51
 bool WhilePressed::Capture()
 {
     return _Capture;
 }
 
-// public generated void set_Capture(bool value) [instance] :673
+// public generated void set_Capture(bool value) [instance] :51
 void WhilePressed::Capture(bool value)
 {
     _Capture = value;
 }
 
-// private void CheckStatus(object s, object a) [instance] :777
+// private void CheckStatus(object s, object a) [instance] :155
 void WhilePressed::CheckStatus(uObject* s, uObject* a)
 {
-    ::g::Fuse::Input::PointerPressedArgs* ppa = uAs< ::g::Fuse::Input::PointerPressedArgs*>(a, ::TYPES[19/*Fuse.Input.PointerPressedArgs*/]);
+    ::g::Fuse::Input::PointerPressedArgs* ppa = uAs< ::g::Fuse::Input::PointerPressedArgs*>(a, ::TYPES[12/*Fuse.Input.PointerPressedArgs*/]);
 
     if (ppa != NULL)
         _pressedPosition = uPtr(Parent())->WindowToLocal(uPtr(ppa)->WindowPoint());
@@ -3489,7 +3550,7 @@ void WhilePressed::CheckStatus(uObject* s, uObject* a)
     SetActive((_inside && uPtr(Parent())->IsContextEnabled()) && ::g::Fuse::Input::Pointer::IsPressed());
 }
 
-// private void OnClickerPressing(Fuse.Input.PointerEventArgs args, int count) [instance] :756
+// private void OnClickerPressing(Fuse.Input.PointerEventArgs args, int count) [instance] :134
 void WhilePressed::OnClickerPressing(::g::Fuse::Input::PointerEventArgs* args, int count)
 {
     bool q = (PointerType() == 0) || (PointerType() == uPtr(args)->PointerType());
@@ -3499,33 +3560,33 @@ void WhilePressed::OnClickerPressing(::g::Fuse::Input::PointerEventArgs* args, i
         SetActive(on);
 }
 
-// private void OnPointerEntered(object sender, object args) [instance] :765
+// private void OnPointerEntered(object sender, object args) [instance] :143
 void WhilePressed::OnPointerEntered(uObject* sender, uObject* args)
 {
     _inside = true;
     CheckStatus(sender, args);
 }
 
-// private void OnPointerLeft(object sender, object args) [instance] :771
+// private void OnPointerLeft(object sender, object args) [instance] :149
 void WhilePressed::OnPointerLeft(uObject* sender, uObject* args)
 {
     _inside = false;
     CheckStatus(sender, args);
 }
 
-// public Uno.Platform.PointerType get_PointerType() [instance] :710
+// public Uno.Platform.PointerType get_PointerType() [instance] :88
 int WhilePressed::PointerType()
 {
     return _pointerType;
 }
 
-// public void set_PointerType(Uno.Platform.PointerType value) [instance] :711
+// public void set_PointerType(Uno.Platform.PointerType value) [instance] :89
 void WhilePressed::PointerType(int value)
 {
     _pointerType = value;
 }
 
-// public generated WhilePressed New() [static] :671
+// public generated WhilePressed New() [static] :49
 WhilePressed* WhilePressed::New2()
 {
     WhilePressed* obj1 = (WhilePressed*)uNew(WhilePressed_typeof());

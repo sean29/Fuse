@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Controls.Native/1.2.1/android/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Controls.Native/1.3.0-rc2/Android/InputDispatch.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -19,7 +19,7 @@ namespace Controls{
 namespace Native{
 namespace Android{
 
-// internal static extern class InputDispatch :606
+// internal static extern class InputDispatch :10
 // {
 uClassType* InputDispatch_typeof();
 void InputDispatch__AddListener_fn(::g::Fuse::Controls::Native::ViewHandle* viewHandle, ::g::Fuse::Visual* owner);
@@ -43,13 +43,13 @@ void InputDispatch__get_ViewVisualMap_fn(::g::Fuse::Controls::Native::Android::J
 struct InputDispatch : uObject
 {
     static uSStrong< ::g::Uno::Collections::HashSet*> _activePointers_;
-    static uSStrong< ::g::Uno::Collections::HashSet*>& _activePointers() { return InputDispatch_typeof()->Init(), _activePointers_; }
+    static uSStrong< ::g::Uno::Collections::HashSet*>& _activePointers() { return _activePointers_; }
     static uSStrong< ::g::Uno::Collections::Dictionary*> _listeners_;
-    static uSStrong< ::g::Uno::Collections::Dictionary*>& _listeners() { return InputDispatch_typeof()->Init(), _listeners_; }
+    static uSStrong< ::g::Uno::Collections::Dictionary*>& _listeners() { return _listeners_; }
     static uSStrong< ::g::Java::Object*> _touchListenerHandle_;
-    static uSStrong< ::g::Java::Object*>& _touchListenerHandle() { return InputDispatch_typeof()->Init(), _touchListenerHandle_; }
+    static uSStrong< ::g::Java::Object*>& _touchListenerHandle() { return _touchListenerHandle_; }
     static uSStrong< ::g::Fuse::Controls::Native::Android::JavaMap*> _viewVisualMap_;
-    static uSStrong< ::g::Fuse::Controls::Native::Android::JavaMap*>& _viewVisualMap() { return InputDispatch_typeof()->Init(), _viewVisualMap_; }
+    static uSStrong< ::g::Fuse::Controls::Native::Android::JavaMap*>& _viewVisualMap() { return _viewVisualMap_; }
 
     static void AddListener(::g::Fuse::Controls::Native::ViewHandle* viewHandle, ::g::Fuse::Visual* owner);
     static void AddListener1(::g::Java::Object* nativeHandle, ::g::Fuse::Visual* owner);

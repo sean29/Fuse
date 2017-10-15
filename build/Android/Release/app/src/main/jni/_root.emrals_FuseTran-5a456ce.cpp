@@ -1,4 +1,4 @@
-// This file was generated based on '.uno/ux11/emrals.unoproj.g.uno'.
+// This file was generated based on '.uno/ux13/emrals.unoproj.g.uno'.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #include <_root.emrals_FuseTran-5a456ce.h>
@@ -17,7 +17,7 @@ static void emrals_FuseTranslation_Y_Property_build(uType* type)
     ::TYPES[0] = ::g::Fuse::Translation_typeof();
     type->SetBase(::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::Float_typeof(), NULL));
     type->SetFields(1,
-        ::TYPES[0/*Fuse.Translation*/], offsetof(::g::emrals_FuseTranslation_Y_Property, _obj), uFieldFlagsWeak);
+        ::TYPES[0/*Fuse.Translation*/], offsetof(emrals_FuseTranslation_Y_Property, _obj), uFieldFlagsWeak);
 }
 
 ::g::Uno::UX::Property1_type* emrals_FuseTranslation_Y_Property_typeof()

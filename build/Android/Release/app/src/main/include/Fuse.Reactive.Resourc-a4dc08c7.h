@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Reactive.Bindings/1.2.1/subscription/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Reactive.Bindings/1.3.0-rc2/Subscription/ResourceSubscription.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -11,7 +11,7 @@ namespace g{
 namespace Fuse{
 namespace Reactive{
 
-// internal sealed class ResourceSubscription :86
+// internal sealed class ResourceSubscription :7
 // {
 struct ResourceSubscription_type : uType
 {

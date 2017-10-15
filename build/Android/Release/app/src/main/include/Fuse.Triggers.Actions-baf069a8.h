@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Triggers/1.2.1/actions/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Triggers/1.3.0-rc2/Actions/Playback.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -10,7 +10,7 @@ namespace Fuse{
 namespace Triggers{
 namespace Actions{
 
-// public abstract class PlaybackAction :300
+// public abstract class PlaybackAction :41
 // {
 ::g::Fuse::Triggers::Actions::TriggerAction_type* PlaybackAction_typeof();
 void PlaybackAction__get_Target_fn(PlaybackAction* __this, uObject** __retval);

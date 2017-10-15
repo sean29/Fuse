@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/UnoCore/1.2.2/source/uno/runtime/implementation/shaderbackends/opengl/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/UnoCore/1.3.1/Source/Uno/Runtime/Implementation/ShaderBackends/OpenGL/GLInterop.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -12,7 +12,7 @@ namespace Implementation{
 namespace ShaderBackends{
 namespace OpenGL{
 
-// public static extern class GLInterop :830
+// public static extern class GLInterop :7
 // {
 uClassType* GLInterop_typeof();
 void GLInterop__ToGLBlendEquation_fn(int* x, int* __retval);

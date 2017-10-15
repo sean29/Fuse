@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Common/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Common/1.3.0-rc2/Easing.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -9,7 +9,7 @@ namespace g{
 namespace Fuse{
 namespace Animations{
 
-// internal sealed class Easing.CubicOutImpl :698
+// internal sealed class Easing.CubicOutImpl :107
 // {
 ::g::Fuse::Animations::Easing_type* Easing__CubicOutImpl_typeof();
 void Easing__CubicOutImpl__ctor_1_fn(Easing__CubicOutImpl* __this);

@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Navigation/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Navigation/1.3.0-rc2/EdgeNavigation.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -27,7 +27,7 @@ namespace g{
 namespace Fuse{
 namespace Navigation{
 
-// public sealed class EdgeNavigation :301
+// public sealed class EdgeNavigation :20
 // {
 ::g::Fuse::Navigation::VisualNavigation_type* EdgeNavigation_typeof();
 void EdgeNavigation__ctor_4_fn(EdgeNavigation* __this);
@@ -55,7 +55,7 @@ struct EdgeNavigation : ::g::Fuse::Navigation::VisualNavigation
 {
     uStrong< ::g::Fuse::Visual*> _active;
     static uSStrong< ::g::Fuse::PropertyHandle*> _edgeHandle_;
-    static uSStrong< ::g::Fuse::PropertyHandle*>& _edgeHandle() { return EdgeNavigation_typeof()->Init(), _edgeHandle_; }
+    static uSStrong< ::g::Fuse::PropertyHandle*>& _edgeHandle() { return _edgeHandle_; }
     uStrong< ::g::Uno::Collections::List*> _mains;
     double _maxProgress;
     uStrong< ::g::Uno::Collections::Dictionary*> _swipers;

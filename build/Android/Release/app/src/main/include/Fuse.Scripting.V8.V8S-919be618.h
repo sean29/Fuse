@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Scripting.V8/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Scripting.V8/1.3.0-rc2/V8SimpleExtensions.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -12,7 +12,7 @@ namespace Fuse{
 namespace Scripting{
 namespace V8{
 
-// internal static extern class V8SimpleExtensions :1297
+// internal static extern class V8SimpleExtensions :13
 // {
 uClassType* V8SimpleExtensions_typeof();
 void V8SimpleExtensions__AsArray_fn(::JSValue** value, ::JSArray** __retval);
@@ -57,7 +57,7 @@ void V8SimpleExtensions__NewString_fn(::JSContext** context, uString* str, ::g::
 void V8SimpleExtensions__Null_fn(::JSValue** __retval);
 void V8SimpleExtensions__Release_fn(::JSContext** context);
 void V8SimpleExtensions__Release1_fn(::JSScriptException** jse, ::JSContext** context);
-void V8SimpleExtensions__Release2_fn(::JSValue** value, ::JSContext** context, ::JSValue** __retval);
+void V8SimpleExtensions__Release2_fn(::JSValue** value, ::JSContext** context);
 void V8SimpleExtensions__Retain2_fn(::JSValue** value, ::JSContext** context, ::JSValue** __retval);
 void V8SimpleExtensions__SetProperty_fn(::JSArray** arr, ::JSContext** context, int* index, ::JSValue** value, uDelegate* errorHandler);
 void V8SimpleExtensions__SetProperty1_fn(::JSObject** obj, ::JSContext** context, uString* key, ::JSValue** value, ::g::Fuse::Scripting::V8::AutoReleasePool* pool, uDelegate* errorHandler);
@@ -67,7 +67,7 @@ void V8SimpleExtensions__TryGetArrayBufferData_fn(::JSObject** obj, ::JSContext*
 struct V8SimpleExtensions : uObject
 {
     static uSStrong<uDelegate*> CilCallback_;
-    static uSStrong<uDelegate*>& CilCallback() { return V8SimpleExtensions_typeof()->Init(), CilCallback_; }
+    static uSStrong<uDelegate*>& CilCallback() { return CilCallback_; }
 
     static ::JSArray* AsArray(::JSValue* value);
     static bool AsBool(::JSValue* value);
@@ -111,7 +111,7 @@ struct V8SimpleExtensions : uObject
     static ::JSValue* Null();
     static void Release(::JSContext* context);
     static void Release1(::JSScriptException* jse, ::JSContext* context);
-    static ::JSValue* Release2(::JSValue* value, ::JSContext* context);
+    static void Release2(::JSValue* value, ::JSContext* context);
     static ::JSValue* Retain2(::JSValue* value, ::JSContext* context);
     static void SetProperty(::JSArray* arr, ::JSContext* context, int index, ::JSValue* value, uDelegate* errorHandler);
     static void SetProperty1(::JSObject* obj, ::JSContext* context, uString* key, ::JSValue* value, ::g::Fuse::Scripting::V8::AutoReleasePool pool, uDelegate* errorHandler);

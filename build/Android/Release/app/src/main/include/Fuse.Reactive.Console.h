@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Reactive.JavaScript/1.2.1/fusejs/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Reactive.JavaScript/1.3.0-rc2/FuseJS/DebugLog.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -11,7 +11,7 @@ namespace g{
 namespace Fuse{
 namespace Reactive{
 
-// internal static class Console :106
+// internal static class Console :24
 // {
 uClassType* Console_typeof();
 void Console__Dir_fn(uArray* args, uObject** __retval);

@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/UnoCore/1.2.2/source/uno/runtime/implementation/internal/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/UnoCore/1.3.1/Source/Uno/Runtime/Implementation/Internal/FormatStringItem.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -11,7 +11,7 @@ namespace Runtime{
 namespace Implementation{
 namespace Internal{
 
-// public sealed class FormatStringItem :880
+// public sealed class FormatStringItem :3
 // {
 ::g::Uno::Runtime::Implementation::Internal::FormatStringToken_type* FormatStringItem_typeof();
 void FormatStringItem__ctor_1_fn(FormatStringItem* __this, uString* lexeme);

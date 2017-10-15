@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Animations/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Animations/1.3.0-rc2/TrackAnimator.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -9,7 +9,7 @@ namespace g{
 namespace Fuse{
 namespace Animations{
 
-// internal abstract interface TrackProvider :3328
+// internal abstract interface TrackProvider :10
 // {
 uInterfaceType* TrackProvider_typeof();
 

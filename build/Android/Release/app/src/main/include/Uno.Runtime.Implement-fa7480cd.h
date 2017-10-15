@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/UnoCore/1.2.2/source/uno/runtime/implementation/shaderbackends/opengl/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/UnoCore/1.3.1/Source/Uno/Runtime/Implementation/ShaderBackends/OpenGL/GLException.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -12,7 +12,7 @@ namespace Implementation{
 namespace ShaderBackends{
 namespace OpenGL{
 
-// public sealed extern class GLException :621
+// public sealed extern class GLException :6
 // {
 ::g::Uno::Exception_type* GLException_typeof();
 void GLException__ctor_3_fn(GLException* __this, uString* message);

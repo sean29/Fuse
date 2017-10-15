@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/FuseJS/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/FuseJS/1.3.0-rc2/UserEvents.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -11,7 +11,7 @@ namespace g{namespace FuseJS{struct UserEvents;}}
 namespace g{
 namespace FuseJS{
 
-// public sealed class UserEvents :1055
+// public sealed class UserEvents :30
 // {
 ::g::Fuse::Scripting::NativeModule_type* UserEvents_typeof();
 void UserEvents__ctor_2_fn(UserEvents* __this);

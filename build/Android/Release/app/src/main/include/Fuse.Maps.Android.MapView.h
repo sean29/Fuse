@@ -1,4 +1,4 @@
-// This file was generated based on '/Users/a/Library/Application Support/Fusetools/Packages/Fuse.Maps/1.2.1/android/$.uno'.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Maps/1.3.0-rc2/Android/MapView.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -18,7 +18,7 @@ namespace Fuse{
 namespace Maps{
 namespace Android{
 
-// public sealed extern class MapView :235
+// public sealed extern class MapView :18
 // {
 struct MapView_type : ::g::Fuse::Controls::Native::Android::View_type
 {
@@ -26,7 +26,7 @@ struct MapView_type : ::g::Fuse::Controls::Native::Android::View_type
 };
 
 MapView_type* MapView_typeof();
-void MapView__ctor_8_fn(MapView* __this, ::g::Fuse::Controls::MapView* mapViewHost, ::g::Java::Object* map);
+void MapView__ctor_9_fn(MapView* __this, ::g::Fuse::Controls::MapView* mapViewHost, ::g::Java::Object* map);
 void MapView__get_AllowRotate_fn(MapView* __this, bool* __retval);
 void MapView__set_AllowRotate_fn(MapView* __this, bool* value);
 void MapView__get_AllowScroll_fn(MapView* __this, bool* __retval);
@@ -49,7 +49,7 @@ void MapView__get_Latitude_fn(MapView* __this, double* __retval);
 void MapView__get_Longitude_fn(MapView* __this, double* __retval);
 void MapView__get_Markers_fn(MapView* __this, ::g::Uno::Collections::ObservableList** __retval);
 void MapView__MoveTo_fn(MapView* __this, double* latitude, double* longitude, double* zoomlevel, double* tilt, double* orientation);
-void MapView__New4_fn(::g::Fuse::Controls::MapView* mapViewHost, ::g::Java::Object* map, MapView** __retval);
+void MapView__New5_fn(::g::Fuse::Controls::MapView* mapViewHost, ::g::Java::Object* map, MapView** __retval);
 void MapView__OnAnimationEnd_fn(MapView* __this);
 void MapView__OnAnimationStart_fn(MapView* __this);
 void MapView__OnMapReady_fn(MapView* __this);
@@ -86,7 +86,7 @@ struct MapView : ::g::Fuse::Controls::Native::Android::LeafView
     bool _IsReady;
     uStrong<uDelegate*> _OnReady;
 
-    void ctor_8(::g::Fuse::Controls::MapView* mapViewHost, ::g::Java::Object* map);
+    void ctor_9(::g::Fuse::Controls::MapView* mapViewHost, ::g::Java::Object* map);
     bool AllowRotate();
     void AllowRotate(bool value);
     bool AllowScroll();
@@ -127,7 +127,7 @@ struct MapView : ::g::Fuse::Controls::Native::Android::LeafView
     void UpdateMarkers();
     double Zoom();
     static MapView* Create(::g::Fuse::Controls::MapView* mapViewHost);
-    static MapView* New4(::g::Fuse::Controls::MapView* mapViewHost, ::g::Java::Object* map);
+    static MapView* New5(::g::Fuse::Controls::MapView* mapViewHost, ::g::Java::Object* map);
 };
 // }
 

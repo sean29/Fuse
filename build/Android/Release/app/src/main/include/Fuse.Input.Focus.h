@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Nodes/1.2.1/input/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Nodes/1.3.0-rc2/Input/Focus.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -18,7 +18,7 @@ namespace g{
 namespace Fuse{
 namespace Input{
 
-// public partial static class Focus :173
+// public partial static class Focus :24
 // {
 uClassType* Focus_typeof();
 void Focus__CanSetFocus_fn(::g::Fuse::Node* node, bool* __retval);
@@ -44,17 +44,17 @@ void Focus__SetIsFocusable_fn(::g::Fuse::Visual* n, bool* focusable);
 struct Focus : uObject
 {
     static uSStrong< ::g::Fuse::PropertyHandle*> _focusDelegatorHandle_;
-    static uSStrong< ::g::Fuse::PropertyHandle*>& _focusDelegatorHandle() { return Focus_typeof()->Init(), _focusDelegatorHandle_; }
+    static uSStrong< ::g::Fuse::PropertyHandle*>& _focusDelegatorHandle() { return _focusDelegatorHandle_; }
     static uSStrong< ::g::Fuse::Visual*> _focusedObject_;
-    static uSStrong< ::g::Fuse::Visual*>& _focusedObject() { return Focus_typeof()->Init(), _focusedObject_; }
+    static uSStrong< ::g::Fuse::Visual*>& _focusedObject() { return _focusedObject_; }
     static uSStrong< ::g::Fuse::Input::FocusGained*> _gained_;
-    static uSStrong< ::g::Fuse::Input::FocusGained*>& _gained() { return Focus_typeof()->Init(), _gained_; }
+    static uSStrong< ::g::Fuse::Input::FocusGained*>& _gained() { return _gained_; }
     static uSStrong< ::g::Fuse::Input::IsFocusableChangedEvent*> _isFoucsableChanged_;
-    static uSStrong< ::g::Fuse::Input::IsFocusableChangedEvent*>& _isFoucsableChanged() { return Focus_typeof()->Init(), _isFoucsableChanged_; }
+    static uSStrong< ::g::Fuse::Input::IsFocusableChangedEvent*>& _isFoucsableChanged() { return _isFoucsableChanged_; }
     static uSStrong< ::g::Fuse::Visual*> _lastFocusedVisual_;
-    static uSStrong< ::g::Fuse::Visual*>& _lastFocusedVisual() { return Focus_typeof()->Init(), _lastFocusedVisual_; }
+    static uSStrong< ::g::Fuse::Visual*>& _lastFocusedVisual() { return _lastFocusedVisual_; }
     static uSStrong< ::g::Fuse::Input::FocusLost*> _lost_;
-    static uSStrong< ::g::Fuse::Input::FocusLost*>& _lost() { return Focus_typeof()->Init(), _lost_; }
+    static uSStrong< ::g::Fuse::Input::FocusLost*>& _lost() { return _lost_; }
 
     static bool CanSetFocus(::g::Fuse::Node* node);
     static void ChangeFocusedVisual(::g::Fuse::Visual* node, uString* memberName);

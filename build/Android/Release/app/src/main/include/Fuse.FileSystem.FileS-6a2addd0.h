@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.FileSystem/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.FileSystem/1.3.0-rc2/FileSystemOperations.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -9,7 +9,7 @@ namespace g{
 namespace Fuse{
 namespace FileSystem{
 
-// private sealed class FileSystemOperations.Closure<T1, T2, TResult> :1325
+// private sealed class FileSystemOperations.Closure<T1, T2, TResult> :280
 // {
 uType* FileSystemOperations__Closure1_typeof();
 void FileSystemOperations__Closure1__ctor__fn(FileSystemOperations__Closure1* __this, uDelegate* del, void* arg1, void* arg2);

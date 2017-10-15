@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/UnoCore/1.2.2/source/uno/runtime/implementation/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/UnoCore/1.3.1/Source/Uno/Runtime/Implementation/GraphicsControllerImpl.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -9,7 +9,7 @@ namespace Uno{
 namespace Runtime{
 namespace Implementation{
 
-// internal struct GraphicsContextHandle :732
+// internal struct GraphicsContextHandle :12
 // {
 uStructType* GraphicsContextHandle_typeof();
 

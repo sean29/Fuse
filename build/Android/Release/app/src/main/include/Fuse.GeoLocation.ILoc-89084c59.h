@@ -1,4 +1,4 @@
-// This file was generated based on '/Users/a/Library/Application Support/Fusetools/Packages/Fuse.GeoLocation/1.2.1/$.uno'.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.GeoLocation/1.3.0-rc2/LocationProvider.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -11,7 +11,7 @@ namespace g{
 namespace Fuse{
 namespace GeoLocation{
 
-// internal abstract interface ILocationTracker :484
+// internal abstract interface ILocationTracker :7
 // {
 uInterfaceType* ILocationTracker_typeof();
 

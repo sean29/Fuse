@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Common/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Common/1.3.0-rc2/UpdateManager.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -9,7 +9,7 @@ namespace g{namespace Fuse{struct UpdateDispatcher;}}
 namespace g{
 namespace Fuse{
 
-// internal sealed class UpdateDispatcher :3575
+// internal sealed class UpdateDispatcher :137
 // {
 struct UpdateDispatcher_type : uType
 {

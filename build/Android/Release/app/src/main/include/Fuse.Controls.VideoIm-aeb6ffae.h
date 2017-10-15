@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Controls.Video/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Controls.Video/1.3.0-rc2/VideoVisual.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -18,7 +18,7 @@ namespace Fuse{
 namespace Controls{
 namespace VideoImpl{
 
-// internal sealed class Scale9Rectangle :1344
+// internal sealed class Scale9Rectangle :371
 // {
 uType* Scale9Rectangle_typeof();
 void Scale9Rectangle__ctor__fn(Scale9Rectangle* __this);
@@ -34,7 +34,7 @@ struct Scale9Rectangle : uObject
     uStrong< ::g::Uno::Graphics::VertexBuffer*> Draw_xv_e60caa7b_1_3_3;
     uStrong< ::g::Uno::Graphics::VertexBuffer*> Draw_yv_e60caa7b_1_4_6;
     static uSStrong<Scale9Rectangle*> Impl_;
-    static uSStrong<Scale9Rectangle*>& Impl() { return Scale9Rectangle_typeof()->Init(), Impl_; }
+    static uSStrong<Scale9Rectangle*>& Impl() { return Impl_; }
 
     void ctor_();
     void Draw(::g::Fuse::DrawContext* dc, ::g::Fuse::Visual* element, ::g::Uno::Float2 size, ::g::Uno::Float2 scaleTextureSize, ::g::Uno::Graphics::VideoTexture* tex, ::g::Uno::Float4 margin);

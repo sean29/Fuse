@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Navigation/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Navigation/1.3.0-rc2/VisualNavigation.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -14,12 +14,11 @@
 #include <Uno.Collections.IEnumerable-1.h>
 #include <Uno.Collections.IList-1.h>
 namespace g{namespace Fuse{namespace Navigation{struct NavigationPageState;}}}
+namespace g{namespace Fuse{namespace Navigation{struct PageData;}}}
 namespace g{namespace Fuse{namespace Navigation{struct VisualNavigation;}}}
-namespace g{namespace Fuse{namespace Navigation{struct VisualNavigation__PageData;}}}
 namespace g{namespace Fuse{namespace Scripting{struct Context;}}}
 namespace g{namespace Fuse{struct Node;}}
 namespace g{namespace Fuse{struct Visual;}}
-namespace g{namespace Uno{namespace Collections{struct Dictionary;}}}
 namespace g{namespace Uno{namespace Collections{struct List;}}}
 namespace g{namespace Uno{namespace UX{struct Selector;}}}
 
@@ -27,7 +26,7 @@ namespace g{
 namespace Fuse{
 namespace Navigation{
 
-// public interfacemodifiers class VisualNavigation :4994
+// public interfacemodifiers class VisualNavigation :11
 // {
 struct VisualNavigation_type : ::g::Fuse::Node_type
 {
@@ -55,7 +54,7 @@ void VisualNavigation__remove_ActivePageChanged_fn(VisualNavigation* __this, uDe
 void VisualNavigation__get_CanGoBack_fn(VisualNavigation* __this, bool* __retval);
 void VisualNavigation__get_CanGoForward_fn(VisualNavigation* __this, bool* __retval);
 void VisualNavigation__GetPage_fn(VisualNavigation* __this, int* index, ::g::Fuse::Visual** __retval);
-void VisualNavigation__GetPageData_fn(VisualNavigation* __this, ::g::Fuse::Visual* page, VisualNavigation__PageData** __retval);
+void VisualNavigation__GetPageData_fn(VisualNavigation* __this, ::g::Fuse::Visual* page, ::g::Fuse::Navigation::PageData** __retval);
 void VisualNavigation__GetPageIndex_fn(VisualNavigation* __this, ::g::Fuse::Visual* child, int* __retval);
 void VisualNavigation__GetPageState_fn(VisualNavigation* __this, ::g::Fuse::Visual* page, ::g::Fuse::Navigation::NavigationPageState* __retval);
 void VisualNavigation__GoBack_fn(VisualNavigation* __this);
@@ -93,7 +92,6 @@ void VisualNavigation__UpdatePages_fn(VisualNavigation* __this);
 struct VisualNavigation : ::g::Fuse::Behavior
 {
     int _navState;
-    uStrong< ::g::Uno::Collections::Dictionary*> _pageMap;
     uStrong< ::g::Uno::Collections::List*> _pages;
     static ::g::Uno::UX::Selector ActiveIndexName_;
     static ::g::Uno::UX::Selector& ActiveIndexName() { return VisualNavigation_typeof()->Init(), ActiveIndexName_; }
@@ -113,7 +111,7 @@ struct VisualNavigation : ::g::Fuse::Behavior
     bool CanGoBack() { bool __retval; return (((VisualNavigation_type*)__type)->fp_get_CanGoBack)(this, &__retval), __retval; }
     bool CanGoForward() { bool __retval; return (((VisualNavigation_type*)__type)->fp_get_CanGoForward)(this, &__retval), __retval; }
     ::g::Fuse::Visual* GetPage(int index);
-    VisualNavigation__PageData* GetPageData(::g::Fuse::Visual* page);
+    ::g::Fuse::Navigation::PageData* GetPageData(::g::Fuse::Visual* page);
     int GetPageIndex(::g::Fuse::Visual* child);
     ::g::Fuse::Navigation::NavigationPageState GetPageState(::g::Fuse::Visual* page);
     void GoBack() { (((VisualNavigation_type*)__type)->fp_GoBack)(this); }

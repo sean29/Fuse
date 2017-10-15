@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Triggers/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Triggers/1.3.0-rc2/KeyboardVisible.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -13,7 +13,7 @@ namespace g{
 namespace Fuse{
 namespace Triggers{
 
-// private sealed class WhileKeyboardVisible.RelativeToKeyboardMode :1227
+// private sealed class WhileKeyboardVisible.RelativeToKeyboardMode :88
 // {
 struct WhileKeyboardVisible__RelativeToKeyboardMode_type : uType
 {

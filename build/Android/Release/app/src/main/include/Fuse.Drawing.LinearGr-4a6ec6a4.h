@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Drawing/1.2.1/brushes/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Drawing/1.3.0-rc2/Brushes/LinearGradient.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -17,7 +17,7 @@ namespace g{
 namespace Fuse{
 namespace Drawing{
 
-// internal sealed class LinearGradientDrawable :342
+// internal sealed class LinearGradientDrawable :340
 // {
 uType* LinearGradientDrawable_typeof();
 void LinearGradientDrawable__ctor__fn(LinearGradientDrawable* __this);
@@ -33,7 +33,7 @@ struct LinearGradientDrawable : uObject
     uStrong< ::g::Uno::Graphics::VertexBuffer*> FillBuffer_TexCoord_ae3a1d65_1_1_1;
     uStrong<uArray*> FillBuffer_Vertices_ae3a1d65_1_0_9;
     static uSStrong<LinearGradientDrawable*> Singleton_;
-    static uSStrong<LinearGradientDrawable*>& Singleton() { return LinearGradientDrawable_typeof()->Init(), Singleton_; }
+    static uSStrong<LinearGradientDrawable*>& Singleton() { return Singleton_; }
 
     void ctor_();
     ::g::Uno::Float2 FillBuffer(::g::Fuse::DrawContext* dc, ::g::Fuse::Drawing::LinearGradient* lg, ::g::Uno::Graphics::Framebuffer* fb);

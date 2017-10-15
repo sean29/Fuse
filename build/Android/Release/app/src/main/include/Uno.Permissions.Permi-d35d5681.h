@@ -1,4 +1,4 @@
-// This file was generated based on '/Users/a/Library/Application Support/Fusetools/Packages/Uno.Permissions/1.2.2/$.uno'.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Uno.Permissions/1.3.1/Permissions.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -10,7 +10,7 @@ namespace g{
 namespace Uno{
 namespace Permissions{
 
-// public static extern class Permissions.Android :122
+// public static extern class Permissions.Android :120
 // {
 uClassType* Permissions__Android_typeof();
 void Permissions__Android__get_ACCESS_COARSE_LOCATION_fn(::g::Uno::Permissions::PlatformPermission* __retval);

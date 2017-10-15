@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Elements/1.2.1/drawing/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Elements/1.3.0-rc2/Drawing/Scale9Rectangle.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -18,7 +18,7 @@ namespace Fuse{
 namespace Elements{
 namespace Internal{
 
-// internal sealed class Scale9Rectangle :377
+// internal sealed class Scale9Rectangle :7
 // {
 uType* Scale9Rectangle_typeof();
 void Scale9Rectangle__ctor__fn(Scale9Rectangle* __this);
@@ -34,7 +34,7 @@ struct Scale9Rectangle : uObject
     uStrong< ::g::Uno::Graphics::VertexBuffer*> Draw_xv_42808b82_1_3_3;
     uStrong< ::g::Uno::Graphics::VertexBuffer*> Draw_yv_42808b82_1_4_6;
     static uSStrong<Scale9Rectangle*> Impl_;
-    static uSStrong<Scale9Rectangle*>& Impl() { return Scale9Rectangle_typeof()->Init(), Impl_; }
+    static uSStrong<Scale9Rectangle*>& Impl() { return Impl_; }
 
     void ctor_();
     void Draw(::g::Fuse::DrawContext* dc, ::g::Fuse::Visual* element, ::g::Uno::Float2 size, ::g::Uno::Float2 scaleTextureSize, ::g::Uno::Graphics::Texture2D* tex, ::g::Uno::Float4 color, ::g::Uno::Float4 margin);

@@ -1,8 +1,10 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Elements/1.2.1/caching/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Elements/1.3.0-rc2/Caching/ElementBatch.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
 #include <Fuse.Elements.IElemen-894a094d.h>
+#include <Fuse.Visual.h>
+#include <Uno.Collections.IEnumerable-1.h>
 #include <Uno.Graphics.VertexAt-28188a9f.h>
 #include <Uno.Object.h>
 #include <Uno.Runtime.Implement-476e2792.h>
@@ -24,17 +26,17 @@ namespace g{
 namespace Fuse{
 namespace Elements{
 
-// internal sealed class ElementBatch :1275
+// internal sealed class ElementBatch :72
 // {
 struct ElementBatch_type : uType
 {
     ::g::Fuse::Elements::IElementBatchDrawable interface0;
+    ::g::Uno::Collections::IEnumerable interface1;
 };
 
 ElementBatch_type* ElementBatch_typeof();
 void ElementBatch__ctor__fn(ElementBatch* __this, ::g::Fuse::Elements::ElementBatcher* elementBatcher, ::g::Fuse::Elements::ElementAtlas* elementAtlas);
 void ElementBatch__AddElement_fn(ElementBatch* __this, ::g::Fuse::Elements::Element* elm);
-void ElementBatch__CalcRenderBounds_fn(ElementBatch* __this, ::g::Fuse::VisualBounds** __retval);
 void ElementBatch__ConservativelySnapToCoveringIntegers_fn(::g::Uno::Rect* r, ::g::Uno::Recti* __retval);
 void ElementBatch__Dispose_fn(ElementBatch* __this);
 void ElementBatch__Draw_fn(ElementBatch* __this, ::g::Fuse::DrawContext* dc, ::g::Uno::Float4x4* localToClipTransform, ::g::Uno::Rect* scissorRectInClipSpace);
@@ -42,14 +44,17 @@ void ElementBatch__FillIndexBuffer_fn(ElementBatch* __this);
 void ElementBatch__FillVertexPositionBuffer_fn(ElementBatch* __this, ::g::Fuse::DrawContext* dc);
 void ElementBatch__FillVertexTexCoordBuffer_fn(ElementBatch* __this);
 void ElementBatch__GetCachingRect_fn(::g::Fuse::Elements::Element* elm, ::g::Uno::Recti* __retval);
+void ElementBatch__GetEnumerator_fn(ElementBatch* __this, uObject** __retval);
 void ElementBatch__init_DrawCalls_fn(ElementBatch* __this);
 void ElementBatch__InvalidateOpacity_fn(ElementBatch* __this, ::g::Fuse::Elements::Element* elm);
 void ElementBatch__InvalidateRenderBounds_fn(ElementBatch* __this, ::g::Fuse::Elements::Element* elm);
 void ElementBatch__InvalidateTransform_fn(ElementBatch* __this, ::g::Fuse::Elements::Element* elm);
 void ElementBatch__IsFull_fn(ElementBatch* __this, bool* __retval);
 void ElementBatch__New1_fn(::g::Fuse::Elements::ElementBatcher* elementBatcher, ::g::Fuse::Elements::ElementAtlas* elementAtlas, ElementBatch** __retval);
+void ElementBatch__PickVisual_fn(::g::Fuse::Elements::ElementBatchEntry* e, ::g::Fuse::Visual** __retval);
 void ElementBatch__RemoveElement_fn(ElementBatch* __this, ::g::Fuse::Elements::Element* elm);
 void ElementBatch__get_RenderBounds_fn(ElementBatch* __this, ::g::Fuse::VisualBounds** __retval);
+void ElementBatch__TryGetCachingRect_fn(::g::Fuse::Elements::Element* elm, ::g::Uno::Recti* cachingRect, bool* __retval);
 
 struct ElementBatch : uObject
 {
@@ -69,12 +74,12 @@ struct ElementBatch : uObject
 
     void ctor_(::g::Fuse::Elements::ElementBatcher* elementBatcher, ::g::Fuse::Elements::ElementAtlas* elementAtlas);
     void AddElement(::g::Fuse::Elements::Element* elm);
-    ::g::Fuse::VisualBounds* CalcRenderBounds();
     void Dispose();
     void Draw(::g::Fuse::DrawContext* dc, ::g::Uno::Float4x4 localToClipTransform, ::g::Uno::Rect scissorRectInClipSpace);
     void FillIndexBuffer();
     void FillVertexPositionBuffer(::g::Fuse::DrawContext* dc);
     void FillVertexTexCoordBuffer();
+    uObject* GetEnumerator();
     void init_DrawCalls();
     void InvalidateOpacity(::g::Fuse::Elements::Element* elm);
     void InvalidateRenderBounds(::g::Fuse::Elements::Element* elm);
@@ -85,6 +90,8 @@ struct ElementBatch : uObject
     static ::g::Uno::Recti ConservativelySnapToCoveringIntegers(::g::Uno::Rect r);
     static ::g::Uno::Recti GetCachingRect(::g::Fuse::Elements::Element* elm);
     static ElementBatch* New1(::g::Fuse::Elements::ElementBatcher* elementBatcher, ::g::Fuse::Elements::ElementAtlas* elementAtlas);
+    static ::g::Fuse::Visual* PickVisual(::g::Fuse::Elements::ElementBatchEntry* e);
+    static bool TryGetCachingRect(::g::Fuse::Elements::Element* elm, ::g::Uno::Recti* cachingRect);
 };
 // }
 

@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Gestures/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Gestures/1.3.0-rc2/Swipe.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -22,7 +22,7 @@ namespace g{
 namespace Fuse{
 namespace Gestures{
 
-// public sealed class SwipeGesture :976
+// public sealed class SwipeGesture :55
 // {
 struct SwipeGesture_type : ::g::Fuse::Node_type
 {
@@ -55,12 +55,12 @@ struct SwipeGesture : ::g::Fuse::Behavior
     int _gesturePriority;
     bool _hasDirection;
     static ::g::Uno::UX::Selector _isActiveName_;
-    static ::g::Uno::UX::Selector& _isActiveName() { return SwipeGesture_typeof()->Init(), _isActiveName_; }
+    static ::g::Uno::UX::Selector& _isActiveName() { return _isActiveName_; }
     uStrong< ::g::Fuse::Gestures::Internal::SwipeRegion*> _region;
     uStrong< ::g::Fuse::Gestures::Internal::Swiper*> _swiper;
     int _type;
     static ::g::Uno::UX::Selector GesturePriorityName_;
-    static ::g::Uno::UX::Selector& GesturePriorityName() { return SwipeGesture_typeof()->Init(), GesturePriorityName_; }
+    static ::g::Uno::UX::Selector& GesturePriorityName() { return GesturePriorityName_; }
 
     void ctor_3();
     int Direction();

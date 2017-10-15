@@ -43,10 +43,10 @@ namespace g{
 namespace Experimental{
 namespace Http{
 
-// /usr/local/share/uno/Packages/Experimental.Http/1.2.1/$.uno
-// -----------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Experimental.Http\1.3.0-rc2\BinaryLoader.uno
+// ----------------------------------------------------------------------------------------
 
-// internal sealed class BinaryLoader :10
+// internal sealed class BinaryLoader :8
 // {
 static void BinaryLoader_build(uType* type)
 {
@@ -54,8 +54,8 @@ static void BinaryLoader_build(uType* type)
     ::TYPES[1] = ::g::Uno::Byte_typeof()->Array();
     ::TYPES[2] = ::g::Experimental::Cache::ICacheWriter_typeof();
     type->SetFields(6,
-        ::g::Uno::Buffer_typeof(), offsetof(::g::Experimental::Http::BinaryLoader, _loadedCache), 0,
-        ::g::Uno::Action2_typeof()->MakeType(::g::Experimental::Http::HttpResponseHeader_typeof(), ::g::Uno::Buffer_typeof(), NULL), offsetof(::g::Experimental::Http::BinaryLoader, Callback), 0);
+        ::g::Uno::Buffer_typeof(), offsetof(BinaryLoader, _loadedCache), 0,
+        ::g::Uno::Action2_typeof()->MakeType(::g::Experimental::Http::HttpResponseHeader_typeof(), ::g::Uno::Buffer_typeof(), NULL), offsetof(BinaryLoader, Callback), 0);
 }
 
 ::g::Experimental::Http::Loader_type* BinaryLoader_typeof()
@@ -78,25 +78,25 @@ static void BinaryLoader_build(uType* type)
     return type;
 }
 
-// public generated BinaryLoader() :10
+// public generated BinaryLoader() :8
 void BinaryLoader__ctor_1_fn(BinaryLoader* __this)
 {
     __this->ctor_1();
 }
 
-// protected override sealed void CompleteLoading(Uno.Net.Http.HttpMessageHandlerRequest resp) :19
+// protected override sealed void CompleteLoading(Uno.Net.Http.HttpMessageHandlerRequest resp) :17
 void BinaryLoader__CompleteLoading_fn(BinaryLoader* __this, ::g::Uno::Net::Http::HttpMessageHandlerRequest* resp)
 {
     __this->OnBufferLoaded(uPtr(resp)->GetResponseContentByteArray());
 }
 
-// protected override sealed void LoadCacheData() :36
+// protected override sealed void LoadCacheData() :34
 void BinaryLoader__LoadCacheData_fn(BinaryLoader* __this)
 {
     uPtr(__this->Callback)->Invoke(2, (::g::Experimental::Http::HttpResponseHeader*)__this->Header(), (::g::Uno::Buffer*)__this->_loadedCache);
 }
 
-// protected override sealed bool LoadCacheRaw(Experimental.Cache.ICacheReader record) :42
+// protected override sealed bool LoadCacheRaw(Experimental.Cache.ICacheReader record) :40
 void BinaryLoader__LoadCacheRaw_fn(BinaryLoader* __this, uObject* record, bool* __retval)
 {
     int len = (int)(uPtr(::g::Experimental::Cache::ICacheReader::Stream(uInterface(uPtr(record), ::TYPES[0/*Experimental.Cache.ICacheReader*/])))->Length() - uPtr(::g::Experimental::Cache::ICacheReader::Stream(uInterface(uPtr(record), ::TYPES[0/*Experimental.Cache.ICacheReader*/])))->Position());
@@ -106,31 +106,31 @@ void BinaryLoader__LoadCacheRaw_fn(BinaryLoader* __this, uObject* record, bool* 
     return *__retval = true, void();
 }
 
-// public generated BinaryLoader New() :10
+// public generated BinaryLoader New() :8
 void BinaryLoader__New1_fn(BinaryLoader** __retval)
 {
     *__retval = BinaryLoader::New1();
 }
 
-// private void OnBufferLoaded(byte[] data) :24
+// private void OnBufferLoaded(byte[] data) :22
 void BinaryLoader__OnBufferLoaded_fn(BinaryLoader* __this, uArray* data)
 {
     __this->OnBufferLoaded(data);
 }
 
-// protected override sealed void PrepareRequest(Uno.Net.Http.HttpMessageHandlerRequest request) :14
+// protected override sealed void PrepareRequest(Uno.Net.Http.HttpMessageHandlerRequest request) :12
 void BinaryLoader__PrepareRequest_fn(BinaryLoader* __this, ::g::Uno::Net::Http::HttpMessageHandlerRequest* request)
 {
     uPtr(request)->SetResponseType(1);
 }
 
-// public generated BinaryLoader() [instance] :10
+// public generated BinaryLoader() [instance] :8
 void BinaryLoader::ctor_1()
 {
     ctor_();
 }
 
-// private void OnBufferLoaded(byte[] data) [instance] :24
+// private void OnBufferLoaded(byte[] data) [instance] :22
 void BinaryLoader::OnBufferLoaded(uArray* data)
 {
     uObject* record = OpenRecord();
@@ -144,7 +144,7 @@ void BinaryLoader::OnBufferLoaded(uArray* data)
     uPtr(Callback)->Invoke(2, (::g::Experimental::Http::HttpResponseHeader*)Header(), (::g::Uno::Buffer*)::g::Uno::Buffer::New1(data));
 }
 
-// public generated BinaryLoader New() [static] :10
+// public generated BinaryLoader New() [static] :8
 BinaryLoader* BinaryLoader::New1()
 {
     BinaryLoader* obj1 = (BinaryLoader*)uNew(BinaryLoader_typeof());
@@ -153,12 +153,12 @@ BinaryLoader* BinaryLoader::New1()
 }
 // }
 
-// /usr/local/share/uno/Packages/Experimental.Http/1.2.1/$.uno
-// -----------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Experimental.Http\1.3.0-rc2\HttpLoader.uno
+// --------------------------------------------------------------------------------------
 
-// public static class HttpLoader :521
+// public static class HttpLoader :9
 // {
-// static HttpLoader() :521
+// static generated HttpLoader() :9
 static void HttpLoader__cctor__fn(uType* __type)
 {
     HttpLoader::_maxAge_ = 86400;
@@ -170,9 +170,11 @@ static void HttpLoader_build(uType* type)
     ::STRINGS[1] = uString::Const("LoadBinary requires callback action");
     ::STRINGS[2] = uString::Const("LoadBinary requires error action");
     ::TYPES[3] = ::g::Experimental::Cache::ICache_typeof();
+    type->SetDependencies(
+        ::g::Experimental::Http::Loader_typeof());
     type->SetFields(0,
-        ::TYPES[3/*Experimental.Cache.ICache*/], (uintptr_t)&::g::Experimental::Http::HttpLoader::_cache_, uFieldFlagsStatic,
-        ::g::Uno::Int_typeof(), (uintptr_t)&::g::Experimental::Http::HttpLoader::_maxAge_, uFieldFlagsStatic);
+        ::TYPES[3/*Experimental.Cache.ICache*/], (uintptr_t)&HttpLoader::_cache_, uFieldFlagsStatic,
+        ::g::Uno::Int_typeof(), (uintptr_t)&HttpLoader::_maxAge_, uFieldFlagsStatic);
 }
 
 uClassType* HttpLoader_typeof()
@@ -182,6 +184,7 @@ uClassType* HttpLoader_typeof()
 
     uTypeOptions options;
     options.FieldCount = 2;
+    options.DependencyCount = 1;
     options.TypeSize = sizeof(uClassType);
     type = uClassType::New("Experimental.Http.HttpLoader", options);
     type->fp_build_ = HttpLoader_build;
@@ -189,25 +192,25 @@ uClassType* HttpLoader_typeof()
     return type;
 }
 
-// public static int get_CacheMaxAge() :529
+// public static int get_CacheMaxAge() :17
 void HttpLoader__get_CacheMaxAge_fn(int* __retval)
 {
     *__retval = HttpLoader::CacheMaxAge();
 }
 
-// public static void set_CacheMaxAge(int value) :530
+// public static void set_CacheMaxAge(int value) :18
 void HttpLoader__set_CacheMaxAge_fn(int* value)
 {
     HttpLoader::CacheMaxAge(*value);
 }
 
-// public static void Discard(string requestUri) :547
+// public static void Discard(string requestUri) :35
 void HttpLoader__Discard_fn(uString* requestUri)
 {
     HttpLoader::Discard(requestUri);
 }
 
-// public static void LoadBinary(string requestUri, Uno.Action<Experimental.Http.HttpResponseHeader, Uno.Buffer> callback, Uno.Action<string> error) :556
+// public static void LoadBinary(string requestUri, Uno.Action<Experimental.Http.HttpResponseHeader, Uno.Buffer> callback, Uno.Action<string> error) :44
 void HttpLoader__LoadBinary_fn(uString* requestUri, uDelegate* callback, uDelegate* error)
 {
     HttpLoader::LoadBinary(requestUri, callback, error);
@@ -216,20 +219,16 @@ void HttpLoader__LoadBinary_fn(uString* requestUri, uDelegate* callback, uDelega
 uSStrong<uObject*> HttpLoader::_cache_;
 int HttpLoader::_maxAge_;
 
-// public static void Discard(string requestUri) [static] :547
+// public static void Discard(string requestUri) [static] :35
 void HttpLoader::Discard(uString* requestUri)
 {
-    HttpLoader_typeof()->Init();
-
-    if (HttpLoader::_cache() != NULL)
-        ::g::Experimental::Cache::ICache::DeleteRecord(uInterface(uPtr(HttpLoader::_cache()), ::TYPES[3/*Experimental.Cache.ICache*/]), ::g::Experimental::Http::Loader::ConstructRecordId(::STRINGS[0/*"GET"*/], requestUri));
+    if (HttpLoader::_cache_ != NULL)
+        ::g::Experimental::Cache::ICache::DeleteRecord(uInterface(uPtr(HttpLoader::_cache_), ::TYPES[3/*Experimental.Cache.ICache*/]), ::g::Experimental::Http::Loader::ConstructRecordId(::STRINGS[0/*"GET"*/], requestUri));
 }
 
-// public static void LoadBinary(string requestUri, Uno.Action<Experimental.Http.HttpResponseHeader, Uno.Buffer> callback, Uno.Action<string> error) [static] :556
+// public static void LoadBinary(string requestUri, Uno.Action<Experimental.Http.HttpResponseHeader, Uno.Buffer> callback, Uno.Action<string> error) [static] :44
 void HttpLoader::LoadBinary(uString* requestUri, uDelegate* callback, uDelegate* error)
 {
-    HttpLoader_typeof()->Init();
-
     if (::g::Uno::Delegate::op_Equality(callback, NULL))
         U_THROW(::g::Uno::Exception::New2(::STRINGS[1/*"LoadBinary ...*/]));
 
@@ -241,29 +240,27 @@ void HttpLoader::LoadBinary(uString* requestUri, uDelegate* callback, uDelegate*
     bl->Method = ::STRINGS[0/*"GET"*/];
     bl->Callback = callback;
     bl->ErrorCallback = error;
-    bl->Cache = HttpLoader::_cache();
+    bl->Cache = HttpLoader::_cache_;
     bl->Initiate();
 }
 
-// public static int get_CacheMaxAge() [static] :529
+// public static int get_CacheMaxAge() [static] :17
 int HttpLoader::CacheMaxAge()
 {
-    HttpLoader_typeof()->Init();
-    return HttpLoader::_maxAge();
+    return HttpLoader::_maxAge_;
 }
 
-// public static void set_CacheMaxAge(int value) [static] :530
+// public static void set_CacheMaxAge(int value) [static] :18
 void HttpLoader::CacheMaxAge(int value)
 {
-    HttpLoader_typeof()->Init();
-    HttpLoader::_maxAge() = value;
+    HttpLoader::_maxAge_ = value;
 }
 // }
 
-// /usr/local/share/uno/Packages/Experimental.Http/1.2.1/$.uno
-// -----------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Experimental.Http\1.3.0-rc2\HttpResponseHeader.uno
+// ----------------------------------------------------------------------------------------------
 
-// public sealed class HttpResponseHeader :602
+// public sealed class HttpResponseHeader :7
 // {
 static void HttpResponseHeader_build(uType* type)
 {
@@ -272,9 +269,9 @@ static void HttpResponseHeader_build(uType* type)
     ::TYPES[5] = ::g::Uno::Collections::Dictionary__Enumerator_typeof()->MakeType(::g::Uno::String_typeof(), ::g::Uno::String_typeof(), NULL);
     ::TYPES[6] = ::g::Uno::Collections::KeyValuePair_typeof()->MakeType(::g::Uno::String_typeof(), ::g::Uno::String_typeof(), NULL);
     type->SetFields(0,
-        ::TYPES[4/*Uno.Collections.Dictionary<string, string>*/], offsetof(::g::Experimental::Http::HttpResponseHeader, _Headers), 0,
-        ::g::Uno::String_typeof(), offsetof(::g::Experimental::Http::HttpResponseHeader, _ReasonPhrase), 0,
-        ::g::Uno::Int_typeof(), offsetof(::g::Experimental::Http::HttpResponseHeader, _StatusCode), 0);
+        ::TYPES[4/*Uno.Collections.Dictionary<string, string>*/], offsetof(HttpResponseHeader, _Headers), 0,
+        ::g::Uno::String_typeof(), offsetof(HttpResponseHeader, _ReasonPhrase), 0,
+        ::g::Uno::Int_typeof(), offsetof(HttpResponseHeader, _StatusCode), 0);
 }
 
 uType* HttpResponseHeader_typeof()
@@ -292,114 +289,114 @@ uType* HttpResponseHeader_typeof()
     return type;
 }
 
-// public generated HttpResponseHeader() :602
+// public generated HttpResponseHeader() :7
 void HttpResponseHeader__ctor__fn(HttpResponseHeader* __this)
 {
     __this->ctor_();
 }
 
-// public generated Uno.Collections.Dictionary<string, string> get_Headers() :607
+// public generated Uno.Collections.Dictionary<string, string> get_Headers() :12
 void HttpResponseHeader__get_Headers_fn(HttpResponseHeader* __this, ::g::Uno::Collections::Dictionary** __retval)
 {
     *__retval = __this->Headers();
 }
 
-// internal generated void set_Headers(Uno.Collections.Dictionary<string, string> value) :607
+// internal generated void set_Headers(Uno.Collections.Dictionary<string, string> value) :12
 void HttpResponseHeader__set_Headers_fn(HttpResponseHeader* __this, ::g::Uno::Collections::Dictionary* value)
 {
     __this->Headers(value);
 }
 
-// public generated HttpResponseHeader New() :602
+// public generated HttpResponseHeader New() :7
 void HttpResponseHeader__New1_fn(HttpResponseHeader** __retval)
 {
     *__retval = HttpResponseHeader::New1();
 }
 
-// internal static Experimental.Http.HttpResponseHeader Read(Uno.IO.BinaryReader r) :632
+// internal static Experimental.Http.HttpResponseHeader Read(Uno.IO.BinaryReader r) :37
 void HttpResponseHeader__Read_fn(::g::Uno::IO::BinaryReader* r, HttpResponseHeader** __retval)
 {
     *__retval = HttpResponseHeader::Read(r);
 }
 
-// public generated string get_ReasonPhrase() :605
+// public generated string get_ReasonPhrase() :10
 void HttpResponseHeader__get_ReasonPhrase_fn(HttpResponseHeader* __this, uString** __retval)
 {
     *__retval = __this->ReasonPhrase();
 }
 
-// internal generated void set_ReasonPhrase(string value) :605
+// internal generated void set_ReasonPhrase(string value) :10
 void HttpResponseHeader__set_ReasonPhrase_fn(HttpResponseHeader* __this, uString* value)
 {
     __this->ReasonPhrase(value);
 }
 
-// public generated int get_StatusCode() :604
+// public generated int get_StatusCode() :9
 void HttpResponseHeader__get_StatusCode_fn(HttpResponseHeader* __this, int* __retval)
 {
     *__retval = __this->StatusCode();
 }
 
-// internal generated void set_StatusCode(int value) :604
+// internal generated void set_StatusCode(int value) :9
 void HttpResponseHeader__set_StatusCode_fn(HttpResponseHeader* __this, int* value)
 {
     __this->StatusCode(*value);
 }
 
-// internal void Write(Uno.IO.BinaryWriter w) :617
+// internal void Write(Uno.IO.BinaryWriter w) :22
 void HttpResponseHeader__Write_fn(HttpResponseHeader* __this, ::g::Uno::IO::BinaryWriter* w)
 {
     __this->Write(w);
 }
 
-// private void WriteSafe(Uno.IO.BinaryWriter w, string s) :609
+// private void WriteSafe(Uno.IO.BinaryWriter w, string s) :14
 void HttpResponseHeader__WriteSafe_fn(HttpResponseHeader* __this, ::g::Uno::IO::BinaryWriter* w, uString* s)
 {
     __this->WriteSafe(w, s);
 }
 
-// public generated HttpResponseHeader() [instance] :602
+// public generated HttpResponseHeader() [instance] :7
 void HttpResponseHeader::ctor_()
 {
 }
 
-// public generated Uno.Collections.Dictionary<string, string> get_Headers() [instance] :607
+// public generated Uno.Collections.Dictionary<string, string> get_Headers() [instance] :12
 ::g::Uno::Collections::Dictionary* HttpResponseHeader::Headers()
 {
     return _Headers;
 }
 
-// internal generated void set_Headers(Uno.Collections.Dictionary<string, string> value) [instance] :607
+// internal generated void set_Headers(Uno.Collections.Dictionary<string, string> value) [instance] :12
 void HttpResponseHeader::Headers(::g::Uno::Collections::Dictionary* value)
 {
     _Headers = value;
 }
 
-// public generated string get_ReasonPhrase() [instance] :605
+// public generated string get_ReasonPhrase() [instance] :10
 uString* HttpResponseHeader::ReasonPhrase()
 {
     return _ReasonPhrase;
 }
 
-// internal generated void set_ReasonPhrase(string value) [instance] :605
+// internal generated void set_ReasonPhrase(string value) [instance] :10
 void HttpResponseHeader::ReasonPhrase(uString* value)
 {
     _ReasonPhrase = value;
 }
 
-// public generated int get_StatusCode() [instance] :604
+// public generated int get_StatusCode() [instance] :9
 int HttpResponseHeader::StatusCode()
 {
     return _StatusCode;
 }
 
-// internal generated void set_StatusCode(int value) [instance] :604
+// internal generated void set_StatusCode(int value) [instance] :9
 void HttpResponseHeader::StatusCode(int value)
 {
     _StatusCode = value;
 }
 
-// internal void Write(Uno.IO.BinaryWriter w) [instance] :617
+// internal void Write(Uno.IO.BinaryWriter w) [instance] :22
 void HttpResponseHeader::Write(::g::Uno::IO::BinaryWriter* w)
 {
     ::g::Uno::Collections::Dictionary__Enumerator<uStrong<uString*>, uStrong<uString*> > ret3;
@@ -407,16 +404,26 @@ void HttpResponseHeader::Write(::g::Uno::IO::BinaryWriter* w)
     WriteSafe(w, ReasonPhrase());
     int c = uPtr(Headers())->Count();
     w->Write13(c);
+    ::g::Uno::Collections::Dictionary__Enumerator<uStrong<uString*>, uStrong<uString*> > enum1 = (::g::Uno::Collections::Dictionary__GetEnumerator_fn(uPtr(Headers()), &ret3), ret3);
 
-    for (::g::Uno::Collections::Dictionary__Enumerator<uStrong<uString*>, uStrong<uString*> > enum1 = (::g::Uno::Collections::Dictionary__GetEnumerator_fn(uPtr(Headers()), &ret3), ret3); enum1.MoveNext(::TYPES[5/*Uno.Collections.Dictionary<string, string>.Enumerator*/]); )
     {
-        ::g::Uno::Collections::KeyValuePair<uStrong<uString*>, uStrong<uString*> > h = enum1.Current(::TYPES[5/*Uno.Collections.Dictionary<string, string>.Enumerator*/]);
-        WriteSafe(w, h.Key(::TYPES[6/*Uno.Collections.KeyValuePair<string, string>*/]));
-        WriteSafe(w, h.Value(::TYPES[6/*Uno.Collections.KeyValuePair<string, string>*/]));
+        const auto __finally_fun = [&]()
+        {
+            enum1.Dispose(::TYPES[5/*Uno.Collections.Dictionary<string, string>.Enumerator*/]);
+        };
+
+        const uFinally<decltype(__finally_fun)> __f(__finally_fun);
+
+        while (enum1.MoveNext(::TYPES[5/*Uno.Collections.Dictionary<string, string>.Enumerator*/]))
+        {
+            ::g::Uno::Collections::KeyValuePair<uStrong<uString*>, uStrong<uString*> > h = enum1.Current(::TYPES[5/*Uno.Collections.Dictionary<string, string>.Enumerator*/]);
+            WriteSafe(w, h.Key(::TYPES[6/*Uno.Collections.KeyValuePair<string, string>*/]));
+            WriteSafe(w, h.Value(::TYPES[6/*Uno.Collections.KeyValuePair<string, string>*/]));
+        }
     }
 }
 
-// private void WriteSafe(Uno.IO.BinaryWriter w, string s) [instance] :609
+// private void WriteSafe(Uno.IO.BinaryWriter w, string s) [instance] :14
 void HttpResponseHeader::WriteSafe(::g::Uno::IO::BinaryWriter* w, uString* s)
 {
     if (::g::Uno::String::op_Equality(s, NULL) || (uPtr(s)->Length() == 0))
@@ -425,7 +432,7 @@ void HttpResponseHeader::WriteSafe(::g::Uno::IO::BinaryWriter* w, uString* s)
         uPtr(w)->Write24(s);
 }
 
-// public generated HttpResponseHeader New() [static] :602
+// public generated HttpResponseHeader New() [static] :7
 HttpResponseHeader* HttpResponseHeader::New1()
 {
     HttpResponseHeader* obj2 = (HttpResponseHeader*)uNew(HttpResponseHeader_typeof());
@@ -433,7 +440,7 @@ HttpResponseHeader* HttpResponseHeader::New1()
     return obj2;
 }
 
-// internal static Experimental.Http.HttpResponseHeader Read(Uno.IO.BinaryReader r) [static] :632
+// internal static Experimental.Http.HttpResponseHeader Read(Uno.IO.BinaryReader r) [static] :37
 HttpResponseHeader* HttpResponseHeader::Read(::g::Uno::IO::BinaryReader* r)
 {
     HttpResponseHeader* h = HttpResponseHeader::New1();
@@ -453,10 +460,10 @@ HttpResponseHeader* HttpResponseHeader::Read(::g::Uno::IO::BinaryReader* r)
 }
 // }
 
-// /usr/local/share/uno/Packages/Experimental.Http/1.2.1/$.uno
-// -----------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Experimental.Http\1.3.0-rc2\Loader.uno
+// ----------------------------------------------------------------------------------
 
-// internal abstract class Loader :708
+// internal abstract class Loader :17
 // {
 static void Loader_build(uType* type)
 {
@@ -476,13 +483,16 @@ static void Loader_build(uType* type)
     ::TYPES[0] = ::g::Experimental::Cache::ICacheReader_typeof();
     ::TYPES[10] = ::g::Uno::Action2_typeof()->MakeType(::g::Uno::Net::Http::HttpMessageHandlerRequest_typeof(), ::g::Uno::String_typeof(), NULL);
     ::TYPES[11] = ::g::Uno::Action1_typeof()->MakeType(::g::Uno::Net::Http::HttpMessageHandlerRequest_typeof(), NULL);
+    type->SetDependencies(
+        ::g::Experimental::Http::Internal::DateUtil_typeof(),
+        ::g::Experimental::Http::HttpLoader_typeof());
     type->SetFields(0,
-        ::TYPES[0/*Experimental.Cache.ICacheReader*/], offsetof(::g::Experimental::Http::Loader, _cacheRecord), 0,
-        ::g::Experimental::Http::HttpResponseHeader_typeof(), offsetof(::g::Experimental::Http::Loader, _header), 0,
-        ::TYPES[3/*Experimental.Cache.ICache*/], offsetof(::g::Experimental::Http::Loader, Cache), 0,
-        ::g::Uno::Action1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(::g::Experimental::Http::Loader, ErrorCallback), 0,
-        ::g::Uno::String_typeof(), offsetof(::g::Experimental::Http::Loader, Method), 0,
-        ::g::Uno::String_typeof(), offsetof(::g::Experimental::Http::Loader, Uri), 0);
+        ::TYPES[0/*Experimental.Cache.ICacheReader*/], offsetof(Loader, _cacheRecord), 0,
+        ::g::Experimental::Http::HttpResponseHeader_typeof(), offsetof(Loader, _header), 0,
+        ::TYPES[3/*Experimental.Cache.ICache*/], offsetof(Loader, Cache), 0,
+        ::g::Uno::Action1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(Loader, ErrorCallback), 0,
+        ::g::Uno::String_typeof(), offsetof(Loader, Method), 0,
+        ::g::Uno::String_typeof(), offsetof(Loader, Uri), 0);
 }
 
 Loader_type* Loader_typeof()
@@ -492,6 +502,7 @@ Loader_type* Loader_typeof()
 
     uTypeOptions options;
     options.FieldCount = 6;
+    options.DependencyCount = 2;
     options.ObjectSize = sizeof(Loader);
     options.TypeSize = sizeof(Loader_type);
     type = (Loader_type*)uClassType::New("Experimental.Http.Loader", options);
@@ -499,90 +510,90 @@ Loader_type* Loader_typeof()
     return type;
 }
 
-// protected generated Loader() :708
+// protected generated Loader() :17
 void Loader__ctor__fn(Loader* __this)
 {
     __this->ctor_();
 }
 
-// protected void CloseRecord(Experimental.Cache.ICacheWriter record) :808
+// protected void CloseRecord(Experimental.Cache.ICacheWriter record) :117
 void Loader__CloseRecord_fn(Loader* __this, uObject* record)
 {
     __this->CloseRecord(record);
 }
 
-// public static string ConstructRecordId(string method, string uri) :789
+// public static string ConstructRecordId(string method, string uri) :98
 void Loader__ConstructRecordId_fn(uString* method, uString* uri, uString** __retval)
 {
     *__retval = Loader::ConstructRecordId(method, uri);
 }
 
-// private Uno.Collections.Dictionary<string, string> ExtractHeaders(string headers) :774
+// private Uno.Collections.Dictionary<string, string> ExtractHeaders(string headers) :83
 void Loader__ExtractHeaders_fn(Loader* __this, uString* headers, ::g::Uno::Collections::Dictionary** __retval)
 {
     *__retval = __this->ExtractHeaders(headers);
 }
 
-// protected Experimental.Http.HttpResponseHeader get_Header() :753
+// protected Experimental.Http.HttpResponseHeader get_Header() :62
 void Loader__get_Header_fn(Loader* __this, ::g::Experimental::Http::HttpResponseHeader** __retval)
 {
     *__retval = __this->Header();
 }
 
-// public void Initiate() :715
+// public void Initiate() :24
 void Loader__Initiate_fn(Loader* __this)
 {
     __this->Initiate();
 }
 
-// private bool IsExpired(Experimental.Cache.ICacheReader record) :866
+// private bool IsExpired(Experimental.Cache.ICacheReader record) :175
 void Loader__IsExpired_fn(Loader* __this, uObject* record, bool* __retval)
 {
     *__retval = __this->IsExpired(record);
 }
 
-// private bool LoadCache(Experimental.Cache.ICacheReader record) :840
+// private bool LoadCache(Experimental.Cache.ICacheReader record) :149
 void Loader__LoadCache_fn(Loader* __this, uObject* record, bool* __retval)
 {
     *__retval = __this->LoadCache(record);
 }
 
-// public void MakeRequest() :729
+// public void MakeRequest() :38
 void Loader__MakeRequest_fn(Loader* __this)
 {
     __this->MakeRequest();
 }
 
-// public void OnCacheReady(Experimental.Cache.ICacheReader record) :824
+// public void OnCacheReady(Experimental.Cache.ICacheReader record) :133
 void Loader__OnCacheReady_fn(Loader* __this, uObject* record)
 {
     __this->OnCacheReady(record);
 }
 
-// public void OnError(Uno.Net.Http.HttpMessageHandlerRequest msg, string reason) :818
+// public void OnError(Uno.Net.Http.HttpMessageHandlerRequest msg, string reason) :127
 void Loader__OnError_fn(Loader* __this, ::g::Uno::Net::Http::HttpMessageHandlerRequest* msg, uString* reason)
 {
     __this->OnError(msg, reason);
 }
 
-// public void OnLoaded(Uno.Net.Http.HttpMessageHandlerRequest resp) :756
+// public void OnLoaded(Uno.Net.Http.HttpMessageHandlerRequest resp) :65
 void Loader__OnLoaded_fn(Loader* __this, ::g::Uno::Net::Http::HttpMessageHandlerRequest* resp)
 {
     __this->OnLoaded(resp);
 }
 
-// protected Experimental.Cache.ICacheWriter OpenRecord() :794
+// protected Experimental.Cache.ICacheWriter OpenRecord() :103
 void Loader__OpenRecord_fn(Loader* __this, uObject** __retval)
 {
     *__retval = __this->OpenRecord();
 }
 
-// protected generated Loader() [instance] :708
+// protected generated Loader() [instance] :17
 void Loader::ctor_()
 {
 }
 
-// protected void CloseRecord(Experimental.Cache.ICacheWriter record) [instance] :808
+// protected void CloseRecord(Experimental.Cache.ICacheWriter record) [instance] :117
 void Loader::CloseRecord(uObject* record)
 {
     bool ret4;
@@ -595,7 +606,7 @@ void Loader::CloseRecord(uObject* record)
     ::g::Experimental::Cache::ICacheWriter::Close(uInterface(record, ::TYPES[2/*Experimental.Cache.ICacheWriter*/]));
 }
 
-// private Uno.Collections.Dictionary<string, string> ExtractHeaders(string headers) [instance] :774
+// private Uno.Collections.Dictionary<string, string> ExtractHeaders(string headers) [instance] :83
 ::g::Uno::Collections::Dictionary* Loader::ExtractHeaders(uString* headers)
 {
     uArray* array1;
@@ -610,7 +621,7 @@ void Loader::CloseRecord(uObject* record)
         if (!::g::Uno::String::IsNullOrEmpty(::g::Uno::String::Trim(uPtr(header))))
         {
             uArray* arr = ::g::Uno::String::Split(uPtr(header), uArray::Init<int>(::TYPES[7/*char[]*/], 1, ':'));
-            uString* actualValue = (uPtr(arr)->Length() > 1) ? (uString*)::g::Uno::String::Trim(uPtr(::g::Uno::String::Substring(header, ::g::Uno::String::IndexOf1(header, ::STRINGS[8/*":"*/], 0) + 1))) : (uString*)::g::Uno::String::Empty();
+            uString* actualValue = (uPtr(arr)->Length() > 1) ? (uString*)::g::Uno::String::Trim(uPtr(::g::Uno::String::Substring(header, ::g::Uno::String::IndexOf1(header, ::STRINGS[8/*":"*/], 0) + 1))) : (uString*)::g::Uno::String::Empty_;
             ::g::Uno::Collections::Dictionary__Add_fn(uPtr(res), ::g::Uno::String::ToLower(uPtr(::g::Uno::String::Trim(uPtr(arr->Strong<uString*>(0))))), actualValue);
         }
     }
@@ -618,13 +629,13 @@ void Loader::CloseRecord(uObject* record)
     return res;
 }
 
-// protected Experimental.Http.HttpResponseHeader get_Header() [instance] :753
+// protected Experimental.Http.HttpResponseHeader get_Header() [instance] :62
 ::g::Experimental::Http::HttpResponseHeader* Loader::Header()
 {
     return _header;
 }
 
-// public void Initiate() [instance] :715
+// public void Initiate() [instance] :24
 void Loader::Initiate()
 {
     if (Cache != NULL)
@@ -638,7 +649,7 @@ void Loader::Initiate()
         MakeRequest();
 }
 
-// private bool IsExpired(Experimental.Cache.ICacheReader record) [instance] :866
+// private bool IsExpired(Experimental.Cache.ICacheReader record) [instance] :175
 bool Loader::IsExpired(uObject* record)
 {
     try
@@ -663,7 +674,7 @@ bool Loader::IsExpired(uObject* record)
     }
 }
 
-// private bool LoadCache(Experimental.Cache.ICacheReader record) [instance] :840
+// private bool LoadCache(Experimental.Cache.ICacheReader record) [instance] :149
 bool Loader::LoadCache(uObject* record)
 {
     ::g::Uno::IO::Stream* stream = ::g::Experimental::Cache::ICacheReader::Stream(uInterface(uPtr(record), ::TYPES[0/*Experimental.Cache.ICacheReader*/]));
@@ -687,7 +698,7 @@ bool Loader::LoadCache(uObject* record)
     return true;
 }
 
-// public void MakeRequest() [instance] :729
+// public void MakeRequest() [instance] :38
 void Loader::MakeRequest()
 {
     if (::g::Experimental::Http::LoaderConst::Handler_ == NULL)
@@ -709,7 +720,7 @@ void Loader::MakeRequest()
     request->SendAsync();
 }
 
-// public void OnCacheReady(Experimental.Cache.ICacheReader record) [instance] :824
+// public void OnCacheReady(Experimental.Cache.ICacheReader record) [instance] :133
 void Loader::OnCacheReady(uObject* record)
 {
     _cacheRecord = record;
@@ -727,13 +738,13 @@ void Loader::OnCacheReady(uObject* record)
     }
 }
 
-// public void OnError(Uno.Net.Http.HttpMessageHandlerRequest msg, string reason) [instance] :818
+// public void OnError(Uno.Net.Http.HttpMessageHandlerRequest msg, string reason) [instance] :127
 void Loader::OnError(::g::Uno::Net::Http::HttpMessageHandlerRequest* msg, uString* reason)
 {
     uPtr(ErrorCallback)->InvokeVoid(reason);
 }
 
-// public void OnLoaded(Uno.Net.Http.HttpMessageHandlerRequest resp) [instance] :756
+// public void OnLoaded(Uno.Net.Http.HttpMessageHandlerRequest resp) [instance] :65
 void Loader::OnLoaded(::g::Uno::Net::Http::HttpMessageHandlerRequest* resp)
 {
     if ((_cacheRecord != NULL) && (uPtr(resp)->GetResponseStatus() == 304))
@@ -748,7 +759,7 @@ void Loader::OnLoaded(::g::Uno::Net::Http::HttpMessageHandlerRequest* resp)
     CompleteLoading(resp);
 }
 
-// protected Experimental.Cache.ICacheWriter OpenRecord() [instance] :794
+// protected Experimental.Cache.ICacheWriter OpenRecord() [instance] :103
 uObject* Loader::OpenRecord()
 {
     if ((Cache == NULL) || ::g::Uno::String::op_Inequality(Method, ::STRINGS[0/*"GET"*/]))
@@ -761,22 +772,22 @@ uObject* Loader::OpenRecord()
     return record;
 }
 
-// public static string ConstructRecordId(string method, string uri) [static] :789
+// public static string ConstructRecordId(string method, string uri) [static] :98
 uString* Loader::ConstructRecordId(uString* method, uString* uri)
 {
     return ::g::Uno::String::op_Addition2(::g::Uno::String::op_Addition2(method, ::STRINGS[7/*" "*/]), uri);
 }
 // }
 
-// /usr/local/share/uno/Packages/Experimental.Http/1.2.1/$.uno
-// -----------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Experimental.Http\1.3.0-rc2\Loader.uno
+// ----------------------------------------------------------------------------------
 
-// internal static class LoaderConst :701
+// internal static class LoaderConst :10
 // {
 static void LoaderConst_build(uType* type)
 {
     type->SetFields(0,
-        ::g::Uno::Net::Http::HttpMessageHandler_typeof(), (uintptr_t)&::g::Experimental::Http::LoaderConst::Handler_, uFieldFlagsStatic);
+        ::g::Uno::Net::Http::HttpMessageHandler_typeof(), (uintptr_t)&LoaderConst::Handler_, uFieldFlagsStatic);
 }
 
 uClassType* LoaderConst_typeof()
@@ -795,18 +806,18 @@ uClassType* LoaderConst_typeof()
 uSStrong< ::g::Uno::Net::Http::HttpMessageHandler*> LoaderConst::Handler_;
 // }
 
-// /usr/local/share/uno/Packages/Experimental.Http/1.2.1/$.uno
-// -----------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Experimental.Http\1.3.0-rc2\TextLoader.uno
+// --------------------------------------------------------------------------------------
 
-// internal sealed class TextLoader :1157
+// internal sealed class TextLoader :8
 // {
 static void TextLoader_build(uType* type)
 {
     ::TYPES[0] = ::g::Experimental::Cache::ICacheReader_typeof();
     ::TYPES[2] = ::g::Experimental::Cache::ICacheWriter_typeof();
     type->SetFields(6,
-        ::g::Uno::String_typeof(), offsetof(::g::Experimental::Http::TextLoader, _loadedCache), 0,
-        ::g::Uno::Action2_typeof()->MakeType(::g::Experimental::Http::HttpResponseHeader_typeof(), ::g::Uno::String_typeof(), NULL), offsetof(::g::Experimental::Http::TextLoader, Callback), 0);
+        ::g::Uno::String_typeof(), offsetof(TextLoader, _loadedCache), 0,
+        ::g::Uno::Action2_typeof()->MakeType(::g::Experimental::Http::HttpResponseHeader_typeof(), ::g::Uno::String_typeof(), NULL), offsetof(TextLoader, Callback), 0);
 }
 
 ::g::Experimental::Http::Loader_type* TextLoader_typeof()
@@ -828,19 +839,19 @@ static void TextLoader_build(uType* type)
     return type;
 }
 
-// protected override sealed void CompleteLoading(Uno.Net.Http.HttpMessageHandlerRequest resp) :1166
+// protected override sealed void CompleteLoading(Uno.Net.Http.HttpMessageHandlerRequest resp) :17
 void TextLoader__CompleteLoading_fn(TextLoader* __this, ::g::Uno::Net::Http::HttpMessageHandlerRequest* resp)
 {
     __this->OnBufferLoaded(uPtr(resp)->GetResponseContentString());
 }
 
-// protected override sealed void LoadCacheData() :1184
+// protected override sealed void LoadCacheData() :35
 void TextLoader__LoadCacheData_fn(TextLoader* __this)
 {
     uPtr(__this->Callback)->Invoke(2, (::g::Experimental::Http::HttpResponseHeader*)__this->Header(), (uString*)__this->_loadedCache);
 }
 
-// protected override sealed bool LoadCacheRaw(Experimental.Cache.ICacheReader record) :1190
+// protected override sealed bool LoadCacheRaw(Experimental.Cache.ICacheReader record) :41
 void TextLoader__LoadCacheRaw_fn(TextLoader* __this, uObject* record, bool* __retval)
 {
     ::g::Uno::IO::StreamReader* reader = ::g::Uno::IO::StreamReader::New1(::g::Experimental::Cache::ICacheReader::Stream(uInterface(uPtr(record), ::TYPES[0/*Experimental.Cache.ICacheReader*/])));
@@ -848,19 +859,19 @@ void TextLoader__LoadCacheRaw_fn(TextLoader* __this, uObject* record, bool* __re
     return *__retval = true, void();
 }
 
-// private void OnBufferLoaded(string data) :1171
+// private void OnBufferLoaded(string data) :22
 void TextLoader__OnBufferLoaded_fn(TextLoader* __this, uString* data)
 {
     __this->OnBufferLoaded(data);
 }
 
-// protected override sealed void PrepareRequest(Uno.Net.Http.HttpMessageHandlerRequest request) :1161
+// protected override sealed void PrepareRequest(Uno.Net.Http.HttpMessageHandlerRequest request) :12
 void TextLoader__PrepareRequest_fn(TextLoader* __this, ::g::Uno::Net::Http::HttpMessageHandlerRequest* request)
 {
     uPtr(request)->SetResponseType(0);
 }
 
-// private void OnBufferLoaded(string data) [instance] :1171
+// private void OnBufferLoaded(string data) [instance] :22
 void TextLoader::OnBufferLoaded(uString* data)
 {
     uObject* record = OpenRecord();

@@ -1,4 +1,4 @@
-// This file was generated based on '.uno/ux11/SelectableRectangle.g.uno'.
+// This file was generated based on '.uno/ux13/SelectableRectangle.g.uno'.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -16,6 +16,7 @@
 #include <Fuse.Triggers.Actions.IHide.h>
 #include <Fuse.Triggers.Actions.IShow.h>
 #include <Fuse.Triggers.Actions-ea70af1f.h>
+#include <Fuse.Visual.h>
 #include <Uno.Collections.ICollection-1.h>
 #include <Uno.Collections.IEnumerable-1.h>
 #include <Uno.Collections.IList-1.h>
@@ -23,7 +24,6 @@
 #include <Uno.UX.IPropertyListener.h>
 namespace g{namespace Fuse{namespace Drawing{struct SolidColor;}}}
 namespace g{namespace Fuse{namespace Drawing{struct Stroke;}}}
-namespace g{namespace Uno{namespace UX{struct NameTable;}}}
 namespace g{namespace Uno{namespace UX{struct Property1;}}}
 namespace g{namespace Uno{namespace UX{struct Selector;}}}
 namespace g{struct SelectableRectangle;}
@@ -42,21 +42,15 @@ void SelectableRectangle__SetID_fn(SelectableRectangle* __this, uString* value, 
 
 struct SelectableRectangle : ::g::Fuse::Controls::Rectangle
 {
-    uStrong< ::g::Uno::UX::NameTable*> __g_nametable1;
-    static uSStrong<uArray*> __g_static_nametable1_;
-    static uSStrong<uArray*>& __g_static_nametable1() { return SelectableRectangle_typeof()->Init(), __g_static_nametable1_; }
     static ::g::Uno::UX::Selector __selector0_;
     static ::g::Uno::UX::Selector& __selector0() { return SelectableRectangle_typeof()->Init(), __selector0_; }
     static ::g::Uno::UX::Selector __selector1_;
     static ::g::Uno::UX::Selector& __selector1() { return SelectableRectangle_typeof()->Init(), __selector1_; }
-    static ::g::Uno::UX::Selector __selector2_;
-    static ::g::Uno::UX::Selector& __selector2() { return SelectableRectangle_typeof()->Init(), __selector2_; }
     uStrong<uString*> _field_ID;
     uStrong< ::g::Fuse::Drawing::Stroke*> rectStroke;
     uStrong< ::g::Fuse::Drawing::SolidColor*> rectStrokeColor;
     uStrong< ::g::Uno::UX::Property1*> rectStrokeColor_Color_inst;
     uStrong< ::g::Uno::UX::Property1*> temp_Value_inst;
-    uStrong< ::g::Uno::UX::Property1*> this_ID_inst;
 
     void ctor_8();
     uString* ID();

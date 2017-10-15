@@ -16,8 +16,8 @@ namespace Uno{
 namespace Data{
 namespace Json{
 
-// /usr/local/share/uno/Packages/Uno.Data.Json/1.0.1/source/$.uno
-// --------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Uno.Data.Json\1.0.1\source\$.uno
+// ----------------------------------------------------------------------------
 
 // public static class JsonWriter :280
 // {

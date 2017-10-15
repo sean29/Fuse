@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Drawing.Primitives/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Drawing.Primitives/1.3.0-rc2/Rectangle.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -23,7 +23,7 @@ namespace Fuse{
 namespace Drawing{
 namespace Primitives{
 
-// public sealed class Rectangle :231
+// public sealed class Rectangle :67
 // {
 uType* Rectangle_typeof();
 void Rectangle__ctor__fn(Rectangle* __this);
@@ -63,7 +63,7 @@ struct Rectangle : uObject
     uStrong<uArray*> _uniforms;
     ::g::Uno::Graphics::VertexAttributeInfo _vertexInfo;
     static uSStrong<Rectangle*> Singleton_;
-    static uSStrong<Rectangle*>& Singleton() { return Rectangle_typeof()->Init(), Singleton_; }
+    static uSStrong<Rectangle*>& Singleton() { return Singleton_; }
 
     void ctor_();
     uArray* add(uArray* a, uArray* b);

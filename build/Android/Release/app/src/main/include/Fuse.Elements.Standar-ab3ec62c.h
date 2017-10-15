@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Elements/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Elements/1.3.0-rc2/BoxSizing.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -13,7 +13,7 @@ namespace g{
 namespace Fuse{
 namespace Elements{
 
-// internal sealed class StandardBoxSizing :410
+// internal sealed class StandardBoxSizing :259
 // {
 ::g::Fuse::Elements::BoxSizing_type* StandardBoxSizing_typeof();
 void StandardBoxSizing__ctor_1_fn(StandardBoxSizing* __this);
@@ -29,7 +29,7 @@ struct StandardBoxSizing : ::g::Fuse::Elements::BoxSizing
     bool ImplicitMax;
     float pixelEpsilon;
     static uSStrong<StandardBoxSizing*> Singleton_;
-    static uSStrong<StandardBoxSizing*>& Singleton() { return StandardBoxSizing_typeof()->Init(), Singleton_; }
+    static uSStrong<StandardBoxSizing*>& Singleton() { return Singleton_; }
 
     void ctor_1();
     ::g::Uno::Float2 SnapUp(::g::Fuse::Elements::Element* element, ::g::Uno::Float2 p);

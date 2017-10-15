@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Android.TextRenderer/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Android.TextRenderer/1.3.0-rc2/TextRenderer.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -13,7 +13,7 @@ namespace g{
 namespace Fuse{
 namespace Android{
 
-// internal sealed extern class TextControlLayout :17
+// internal sealed extern class TextControlLayout :15
 // {
 uType* TextControlLayout_typeof();
 void TextControlLayout__ctor__fn(TextControlLayout* __this);

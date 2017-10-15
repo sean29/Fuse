@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Controls.ScrollView/1.2.1/triggers/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Controls.ScrollView/1.3.0-rc2/Triggers/ScrollingAnimation.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -22,7 +22,7 @@ namespace g{
 namespace Fuse{
 namespace Triggers{
 
-// public class ScrollingAnimation :410
+// public class ScrollingAnimation :47
 // {
 struct ScrollingAnimation_type : ::g::Fuse::Triggers::Trigger_type
 {
@@ -55,7 +55,7 @@ struct ScrollingAnimation : ::g::Fuse::Triggers::Trigger
     uStrong< ::g::Fuse::Controls::ScrollView*> _scrollable;
     int _scrollDirections;
     static ::g::Uno::UX::Selector _scrollPositionName_;
-    static ::g::Uno::UX::Selector& _scrollPositionName() { return ScrollingAnimation_typeof()->Init(), _scrollPositionName_; }
+    static ::g::Uno::UX::Selector& _scrollPositionName() { return _scrollPositionName_; }
     float _to;
     bool _Inverse;
 

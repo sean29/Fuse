@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Elements/1.2.1/caching/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Elements/1.3.0-rc2/Caching/ElementAtlasPool.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -10,7 +10,7 @@ namespace g{
 namespace Fuse{
 namespace Elements{
 
-// internal static class DisplayHelpers :427
+// internal static class DisplayHelpers :89
 // {
 uClassType* DisplayHelpers_typeof();
 void DisplayHelpers__get_DisplaySizeHint_fn(::g::Uno::Int2* __retval);

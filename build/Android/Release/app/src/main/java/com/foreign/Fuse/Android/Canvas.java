@@ -23,12 +23,12 @@ public class Canvas
         android.util.Log.d("emrals", (message==null ? "null" : message.toString()));
     }
 
-    public static Object Create343(final Object bitmapHandle)
+    public static Object Create342(final Object bitmapHandle)
     {
         return new android.graphics.Canvas(((android.graphics.Bitmap)bitmapHandle));
     }
     
-    public static void Translate1344(final Object handle,final float dx,final float dy)
+    public static void Translate1343(final Object handle,final float dx,final float dy)
     {
         ((android.graphics.Canvas)handle).translate(dx, dy);
     }

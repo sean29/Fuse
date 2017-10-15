@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/UnoCore/1.2.2/source/uno/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/UnoCore/1.3.1/Source/Uno/Type.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -7,7 +7,7 @@
 namespace g{
 namespace Uno{
 
-// public sealed class Type :7839
+// public sealed class Type :23
 // {
 uType* Type_typeof();
 void Type__get_BaseType_fn(uType* __this, uType** __retval);
@@ -27,7 +27,7 @@ void Type__ToString_fn(uType* __this, uString** __retval);
 struct Type
 {
     static uSStrong<uArray*> EmptyTypes_;
-    static uSStrong<uArray*>& EmptyTypes() { return Type_typeof()->Init(), EmptyTypes_; }
+    static uSStrong<uArray*>& EmptyTypes() { return EmptyTypes_; }
 
     static uType* BaseType(uType* __this);
     static uString* FullName(uType* __this);

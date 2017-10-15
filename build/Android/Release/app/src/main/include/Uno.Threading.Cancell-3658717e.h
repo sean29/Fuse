@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Uno.Threading/1.2.2/tasks/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Uno.Threading/1.3.1/Tasks/Tasks.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -9,7 +9,7 @@ namespace g{
 namespace Uno{
 namespace Threading{
 
-// internal sealed class CancellationToken :35
+// internal sealed class CancellationToken :33
 // {
 uType* CancellationToken_typeof();
 void CancellationToken__ctor__fn(CancellationToken* __this);

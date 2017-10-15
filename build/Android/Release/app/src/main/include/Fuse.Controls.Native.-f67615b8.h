@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Controls.Native/1.2.1/android/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Controls.Native/1.3.0-rc2/Android/TextEdit.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -16,18 +16,18 @@ namespace Controls{
 namespace Native{
 namespace Android{
 
-// public sealed extern class TextEdit :1642
+// public sealed extern class TextEdit :7
 // {
 ::g::Fuse::Controls::Native::Android::TextInput_type* TextEdit_typeof();
-void TextEdit__ctor_11_fn(TextEdit* __this, uObject* host, bool* isMultiline);
+void TextEdit__ctor_12_fn(TextEdit* __this, uObject* host, bool* isMultiline);
 void TextEdit__MakeItPlain_fn(::g::Java::Object* handle);
-void TextEdit__New7_fn(uObject* host, bool* isMultiline, TextEdit** __retval);
+void TextEdit__New8_fn(uObject* host, bool* isMultiline, TextEdit** __retval);
 
 struct TextEdit : ::g::Fuse::Controls::Native::Android::TextInput
 {
-    void ctor_11(uObject* host, bool isMultiline);
+    void ctor_12(uObject* host, bool isMultiline);
     static void MakeItPlain(::g::Java::Object* handle);
-    static TextEdit* New7(uObject* host, bool isMultiline);
+    static TextEdit* New8(uObject* host, bool isMultiline);
 };
 // }
 

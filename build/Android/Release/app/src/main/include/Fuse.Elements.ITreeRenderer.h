@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Elements/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Elements/1.3.0-rc2/Element.ITreeRenderer.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -7,14 +7,13 @@ namespace g{namespace Fuse{namespace Drawing{struct Brush;}}}
 namespace g{namespace Fuse{namespace Elements{struct Element;}}}
 namespace g{namespace Fuse{struct LayoutParams;}}
 namespace g{namespace Fuse{struct Visual;}}
-namespace g{namespace Uno{namespace Collections{struct List;}}}
 namespace g{namespace Uno{struct Float2;}}
 
 namespace g{
 namespace Fuse{
 namespace Elements{
 
-// public abstract interface ITreeRenderer :1221
+// public abstract interface ITreeRenderer :9
 // {
 uInterfaceType* ITreeRenderer_typeof();
 
@@ -32,7 +31,7 @@ struct ITreeRenderer
     void(*fp_RootingStarted)(uObject*, ::g::Fuse::Elements::Element*);
     void(*fp_TransformChanged)(uObject*, ::g::Fuse::Elements::Element*);
     void(*fp_Unrooted)(uObject*, ::g::Fuse::Elements::Element*);
-    void(*fp_ZOrderChanged)(uObject*, ::g::Fuse::Elements::Element*, ::g::Uno::Collections::List*);
+    void(*fp_ZOrderChanged)(uObject*, ::g::Fuse::Elements::Element*, uArray*);
     static void BackgroundChanged(const uInterface& __this, ::g::Fuse::Elements::Element* e, ::g::Fuse::Drawing::Brush* background) { __this.VTable<ITreeRenderer>()->fp_BackgroundChanged(__this, e, background); }
     static void ClipToBoundsChanged(const uInterface& __this, ::g::Fuse::Elements::Element* e, bool clipToBounds) { __this.VTable<ITreeRenderer>()->fp_ClipToBoundsChanged(__this, e, &clipToBounds); }
     static void HitTestModeChanged(const uInterface& __this, ::g::Fuse::Elements::Element* e, bool enabled) { __this.VTable<ITreeRenderer>()->fp_HitTestModeChanged(__this, e, &enabled); }
@@ -45,7 +44,7 @@ struct ITreeRenderer
     static void RootingStarted(const uInterface& __this, ::g::Fuse::Elements::Element* e) { __this.VTable<ITreeRenderer>()->fp_RootingStarted(__this, e); }
     static void TransformChanged(const uInterface& __this, ::g::Fuse::Elements::Element* e) { __this.VTable<ITreeRenderer>()->fp_TransformChanged(__this, e); }
     static void Unrooted(const uInterface& __this, ::g::Fuse::Elements::Element* e) { __this.VTable<ITreeRenderer>()->fp_Unrooted(__this, e); }
-    static void ZOrderChanged(const uInterface& __this, ::g::Fuse::Elements::Element* e, ::g::Uno::Collections::List* zorder) { __this.VTable<ITreeRenderer>()->fp_ZOrderChanged(__this, e, zorder); }
+    static void ZOrderChanged(const uInterface& __this, ::g::Fuse::Elements::Element* e, uArray* zorder) { __this.VTable<ITreeRenderer>()->fp_ZOrderChanged(__this, e, zorder); }
 };
 
 }}} // ::g::Fuse::Elements

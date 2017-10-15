@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Scripting/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Scripting/1.3.0-rc2/NativeModule.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -15,7 +15,7 @@ namespace g{
 namespace Fuse{
 namespace Scripting{
 
-// public class NativeModule :1223
+// public class NativeModule :6
 // {
 struct NativeModule_type : ::g::Fuse::Scripting::Module_type
 {

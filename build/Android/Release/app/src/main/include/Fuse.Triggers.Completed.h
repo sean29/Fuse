@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Triggers/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Triggers/1.3.0-rc2/Completed.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -20,7 +20,7 @@ namespace g{
 namespace Fuse{
 namespace Triggers{
 
-// public partial sealed class Completed :644
+// public partial sealed class Completed :38
 // {
 ::g::Fuse::Triggers::Trigger_type* Completed_typeof();
 void Completed__get_Activation_fn(Completed* __this, int* __retval);

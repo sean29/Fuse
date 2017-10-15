@@ -1,4 +1,4 @@
-// This file was generated based on '/Users/a/Library/Application Support/Fusetools/Packages/Fuse.GeoLocation/1.2.1/$.uno'.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.GeoLocation/1.3.0-rc2/LocationProvider.BufferedCalls.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -8,7 +8,7 @@ namespace g{
 namespace Fuse{
 namespace GeoLocation{
 
-// private abstract interface LocationTracker.BufferedCall :425
+// private abstract interface LocationTracker.BufferedCall :8
 // {
 uInterfaceType* LocationTracker__BufferedCall_typeof();
 

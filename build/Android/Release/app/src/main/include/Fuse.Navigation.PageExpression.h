@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Navigation/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Navigation/1.3.0-rc2/PageBinding.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -10,7 +10,7 @@ namespace g{
 namespace Fuse{
 namespace Navigation{
 
-// public sealed class PageExpression :1615
+// public sealed class PageExpression :15
 // {
 ::g::Fuse::Reactive::Expression_type* PageExpression_typeof();
 void PageExpression__get_Key_fn(PageExpression* __this, uString** __retval);

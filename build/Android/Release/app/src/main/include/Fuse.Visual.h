@@ -1,10 +1,9 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Nodes/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Nodes/1.3.0-rc2/Visual.BeginRemove.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
 #include <Fuse.Binding.h>
 #include <Fuse.INotifyUnrooted.h>
-#include <Fuse.Internal.MiniList-1.h>
 #include <Fuse.IProperties.h>
 #include <Fuse.ITemplateSource.h>
 #include <Fuse.LayoutParams.h>
@@ -32,6 +31,7 @@ namespace g{namespace Fuse{struct PropertyHandle;}}
 namespace g{namespace Fuse{struct Transform;}}
 namespace g{namespace Fuse{struct Visual;}}
 namespace g{namespace Fuse{struct Visual__ParameterProperty;}}
+namespace g{namespace Fuse{struct Visual__SafeIterator;}}
 namespace g{namespace Fuse{struct VisualBounds;}}
 namespace g{namespace Uno{namespace Collections{struct Dictionary;}}}
 namespace g{namespace Uno{namespace Collections{struct List;}}}
@@ -47,15 +47,16 @@ namespace g{namespace Uno{struct Rect;}}
 namespace g{
 namespace Fuse{
 
-// public interfacemodifiers class Visual :5546
+// public interfacemodifiers class Visual :61
 // {
 struct Visual_type : ::g::Fuse::Node_type
 {
     ::g::Uno::Collections::IList interface6;
     ::g::Uno::UX::IPropertyListener interface7;
     ::g::Fuse::ITemplateSource interface8;
-    ::g::Uno::Collections::ICollection interface9;
-    ::g::Uno::Collections::IEnumerable interface10;
+    ::g::Uno::Collections::IEnumerable interface9;
+    ::g::Uno::Collections::ICollection interface10;
+    ::g::Uno::Collections::IEnumerable interface11;
     void(*fp_get_AbsoluteViewportOrigin)(::g::Fuse::Visual*, ::g::Uno::Float2*);
     void(*fp_get_CanAdjustMarginBox)(::g::Fuse::Visual*, bool*);
     void(*fp_Draw)(::g::Fuse::Visual*, ::g::Fuse::DrawContext*);
@@ -111,7 +112,7 @@ void Visual__AddParameterChangedListener_fn(Visual* __this, ::g::Fuse::Scripting
 void Visual__AdjustMarginBoxPosition_fn(Visual* __this, ::g::Uno::Float2* position);
 void Visual__get_AreChildrenFlat_fn(Visual* __this, bool* __retval);
 void Visual__ArrangeMarginBox_fn(Visual* __this, ::g::Uno::Float2* position, ::g::Fuse::LayoutParams* lp, ::g::Uno::Float2* __retval);
-void Visual__AssignZOrder_fn(uObject* nodes);
+void Visual__AssignNaturalZOrder_fn(Visual* __this);
 void Visual__BeginInteraction_fn(Visual* __this, uObject* id, uDelegate* cancelled);
 void Visual__BeginRemoveChild_fn(Visual* __this, ::g::Fuse::Node* n, uDelegate* then);
 void Visual__BeginRemoveVisual_fn(Visual* __this, Visual* child, uDelegate* then);
@@ -126,40 +127,49 @@ void Visual__get_CanAdjustMarginBox_fn(Visual* __this, bool* __retval);
 void Visual__CancelInteractions_fn(Visual* __this, int* how);
 void Visual__CancelPendingRemove_fn(Visual* __this);
 void Visual__CheckWorldTransformVersion_fn(Visual* __this);
+void Visual__get_ChildCount_fn(Visual* __this, int* __retval);
 void Visual__get_Children_fn(Visual* __this, uObject** __retval);
+void Visual__Children_Add_fn(Visual* __this, ::g::Fuse::Node* n);
+void Visual__Children_Clear_fn(Visual* __this);
+void Visual__Children_Contains_fn(Visual* __this, ::g::Fuse::Node* n, bool* __retval);
+void Visual__Children_GetCachedArray_fn(Visual* __this, uArray** __retval);
+void Visual__Children_GetEnumerator_fn(Visual* __this, uObject** __retval);
+void Visual__Children_Insert_fn(Visual* __this, int* index, ::g::Fuse::Node* newNode);
+void Visual__Children_InsertAfter_fn(Visual* __this, ::g::Fuse::Node* preceeder, ::g::Fuse::Node* newNode);
+void Visual__Children_Invalidate_fn(Visual* __this);
+void Visual__Children_ItemAt_fn(Visual* __this, int* index, ::g::Fuse::Node** __retval);
+void Visual__Children_ItemBefore_fn(Visual* __this, int* index, ::g::Fuse::Node** __retval);
+void Visual__Children_MakeOrphan_fn(Visual* __this, ::g::Fuse::Node* child);
+void Visual__Children_MakeParent_fn(Visual* __this, Visual* parent, ::g::Fuse::Node* child);
+void Visual__Children_Remove_fn(Visual* __this, ::g::Fuse::Node* n, bool* __retval);
 void Visual__Clear_fn(Visual* __this, int* p);
 void Visual__Clear1_fn(Visual* __this, int* p);
 void Visual__ClearBit_fn(Visual* __this, int* p);
 void Visual__ClearBit1_fn(Visual* __this, int* p);
 void Visual__ClearBit2_fn(Visual* __this, int* nb);
+void Visual__ComputeZOrder_fn(Visual* __this, uArray** __retval);
 void Visual__ConcludePendingRemove_fn(Visual* __this);
 void Visual__DecrementWTIListener_fn(Visual* __this);
 void Visual__get_DrawCost_fn(Visual* __this, double* __retval);
 void Visual__DrawLocalRect_fn(Visual* __this, ::g::Fuse::DrawContext* dc, ::g::Uno::Rect* rect, float* lineWidth, ::g::Uno::Float4* color, ::g::Uno::Float4x4* localToClipTransform);
 void Visual__DrawLocalSelectionRect_fn(Visual* __this, ::g::Fuse::DrawContext* dc, ::g::Uno::Rect* rect);
 void Visual__DrawSelection_fn(Visual* __this, ::g::Fuse::DrawContext* dc);
-void Visual__EmitZOrderChanged_fn(Visual* __this);
 void Visual__EndInteraction_fn(Visual* __this, uObject* id);
-void Visual__EnsureSortedZOrder_fn(Visual* __this);
-void Visual__EnsureZOrder_fn(Visual* __this);
 void Visual__Find_fn(Visual* __this, uType* __type, int* p, ::g::Fuse::FastProperty1Link1** __retval);
 void Visual__Find1_fn(Visual* __this, uType* __type, int* p, ::g::Fuse::FastProperty2Link1** __retval);
-void Visual__FindByType_fn(Visual* __this, uType* __type, Visual** __retval);
 void Visual__FindPrevious_fn(Visual* __this, int* p, ::g::Fuse::FastProperty1Link** __retval);
 void Visual__FindPrevious1_fn(Visual* __this, int* p, ::g::Fuse::FastProperty2Link** __retval);
 void Visual__FindTemplate_fn(Visual* __this, uString* key, ::g::Uno::UX::Template** __retval);
 void Visual__FindViewport_fn(Visual* __this, uObject** __retval);
 void Visual__FirstChild_fn(Visual* __this, uType* __type, ::g::Fuse::Node** __retval);
-void Visual__get_FirstVisualChild_fn(Visual* __this, Visual** __retval);
 void Visual__Get_fn(Visual* __this, uType* __type, int* p, void* defaultValue, uTRef __retval);
 void Visual__Get1_fn(Visual* __this, uType* __type, int* p, void* defaultValue, uTRef __retval);
+void Visual__GetCachedZOrder_fn(Visual* __this, uArray** __retval);
 void Visual__GetHitWindowPoint_fn(Visual* __this, ::g::Uno::Float2* windowPoint, Visual** __retval);
 void Visual__GetMarginSize_fn(Visual* __this, ::g::Fuse::LayoutParams* lp, ::g::Uno::Float2* __retval);
-void Visual__GetNearestAncestorOfType_fn(Visual* __this, uType* __type, Visual** __retval);
 void Visual__getParameterProperty_fn(Visual* v, ::g::Uno::UX::Property1** __retval);
 void Visual__GetTransformTo_fn(Visual* __this, Visual* other, ::g::Uno::Float4x4* __retval);
 void Visual__GetTransformToAncestor_fn(Visual* __this, Visual* ancestor, ::g::Uno::Float4x4* __retval);
-void Visual__GetZOrderChild_fn(Visual* __this, int* index, Visual** __retval);
 void Visual__HasBit_fn(Visual* __this, int* p, bool* __retval);
 void Visual__HasBit1_fn(Visual* __this, int* p, bool* __retval);
 void Visual__HasBit2_fn(Visual* __this, int* nb, bool* __retval);
@@ -178,14 +188,13 @@ void Visual__IfSnap_fn(Visual* __this, ::g::Uno::Float2* p, ::g::Uno::Float2* __
 void Visual__IfSnapDown_fn(Visual* __this, ::g::Uno::Float2* p, ::g::Uno::Float2* __retval);
 void Visual__IfSnapUp_fn(Visual* __this, ::g::Uno::Float2* p, ::g::Uno::Float2* __retval);
 void Visual__IncrementWTIListener_fn(Visual* __this);
-void Visual__IndexOf_fn(Visual* __this, ::g::Fuse::Node* item, int* __retval);
 void Visual__Insert1_fn(Visual* __this, int* index, ::g::Fuse::Node* item);
 void Visual__Insert2_fn(Visual* __this, uType* __type, int* p, void* value);
 void Visual__Insert3_fn(Visual* __this, uType* __type, int* p, void* value);
 void Visual__InsertCleanup_fn(Visual* __this, ::g::Fuse::Node* item);
-void Visual__InsertNodes_fn(Visual* __this, int* index, uObject* items);
-void Visual__InsertNodesImpl_fn(Visual* __this, int* index, uObject* items, bool* allowMove);
-void Visual__InsertOrMoveNodes_fn(Visual* __this, int* index, uObject* items);
+void Visual__InsertNodesAfter_fn(Visual* __this, ::g::Fuse::Node* preceeder, uObject* items);
+void Visual__InsertNodesAfterImpl_fn(Visual* __this, ::g::Fuse::Node* preceeder, uObject* items, bool* allowMove);
+void Visual__InsertOrMoveNodesAfter_fn(Visual* __this, ::g::Fuse::Node* preceeder, uObject* items);
 void Visual__get_InternLocalTransformInternal_fn(Visual* __this, ::g::Fuse::FastMatrix** __retval);
 void Visual__InternSnap_fn(Visual* __this, ::g::Uno::Float2* p, ::g::Uno::Float2* __retval);
 void Visual__InternSnapUp_fn(Visual* __this, ::g::Uno::Float2* p, ::g::Uno::Float2* __retval);
@@ -213,6 +222,7 @@ void Visual__IsMarginBoxDependent_fn(Visual* __this, Visual* child, int* __retva
 void Visual__get_IsVisible_fn(Visual* __this, bool* __retval);
 void Visual__add_IsVisibleChanged_fn(Visual* __this, uDelegate* value);
 void Visual__remove_IsVisibleChanged_fn(Visual* __this, uDelegate* value);
+void Visual__LastChild_fn(Visual* __this, uType* __type, ::g::Fuse::Node** __retval);
 void Visual__get_Layer_fn(Visual* __this, int* __retval);
 void Visual__set_Layer_fn(Visual* __this, int* value);
 void Visual__get_LayoutRole_fn(Visual* __this, int* __retval);
@@ -232,7 +242,6 @@ void Visual__OnChildMoved_fn(Visual* __this, ::g::Fuse::Node* elm);
 void Visual__OnChildRemoved_fn(Visual* __this, ::g::Fuse::Node* elm);
 void Visual__OnHitTest_fn(Visual* __this, ::g::Fuse::HitTestContext* htc);
 void Visual__OnInteractionsChanged_fn(Visual* __this);
-void Visual__OnInvalidateChildZOffset_fn(Visual* __this, Visual* child);
 void Visual__OnInvalidateLayout_fn(Visual* __this);
 void Visual__OnInvalidateRenderBounds_fn(Visual* __this, bool* __retval);
 void Visual__OnInvalidateVisual_fn(Visual* __this);
@@ -254,7 +263,6 @@ void Visual__OnTransformAdded_fn(Visual* __this, ::g::Fuse::Transform* t);
 void Visual__OnTransformRemoved_fn(Visual* __this, ::g::Fuse::Transform* t);
 void Visual__OnUnrooted_fn(Visual* __this);
 void Visual__OnVisualAdded_fn(Visual* __this, Visual* v);
-void Visual__OnVisualMoved_fn(Visual* __this, Visual* v);
 void Visual__OnVisualRemoved_fn(Visual* __this, Visual* v);
 void Visual__OnZOrderInvalidated_fn(Visual* __this);
 void Visual__get_Parameter_fn(Visual* __this, uString** __retval);
@@ -289,12 +297,12 @@ void Visual__SetBit1_fn(Visual* __this, int* p, bool* value);
 void Visual__SetBit2_fn(Visual* __this, int* p);
 void Visual__SetBit3_fn(Visual* __this, int* p, bool* value);
 void Visual__SetBit4_fn(Visual* __this, int* nb);
+void Visual__get_ShouldRootChildren_fn(Visual* __this, bool* __retval);
 void Visual__Snap_fn(Visual* __this, ::g::Uno::Float2* p, ::g::Uno::Float2* __retval);
 void Visual__SnapDown_fn(Visual* __this, ::g::Uno::Float2* p, ::g::Uno::Float2* __retval);
 void Visual__get_SnapToPixels_fn(Visual* __this, bool* __retval);
 void Visual__set_SnapToPixels_fn(Visual* __this, bool* value);
 void Visual__SnapUp_fn(Visual* __this, ::g::Uno::Float2* p, ::g::Uno::Float2* __retval);
-void Visual__SoftInvalidateZOrder_fn(Visual* __this, bool* force);
 void Visual__get_Templates_fn(Visual* __this, uObject** __retval);
 void Visual__TryGetResource_fn(Visual* __this, uString* key, uDelegate* acceptor, uObject** resource, bool* __retval);
 void Visual__TryParentToLocal_fn(Visual* __this, ::g::Uno::Float2* parentPoint, ::g::Uno::Float2* result, bool* __retval);
@@ -302,6 +310,7 @@ void Visual__UnoCollectionsICollectionFuseNodeClear_fn(Visual* __this);
 void Visual__UnoCollectionsICollectionFuseNodeContains_fn(Visual* __this, ::g::Fuse::Node* item, bool* __retval);
 void Visual__UnoCollectionsICollectionFuseNodeget_Count_fn(Visual* __this, int* __retval);
 void Visual__UnoCollectionsIEnumerableFuseNodeGetEnumerator_fn(Visual* __this, uObject** __retval);
+void Visual__UnoCollectionsIEnumerableFuseVisualGetEnumerator_fn(Visual* __this, uObject** __retval);
 void Visual__UnoCollectionsIListFuseNodeget_Item_fn(Visual* __this, int* index, ::g::Fuse::Node** __retval);
 void Visual__UnoCollectionsIListFuseNodeRemoveAt_fn(Visual* __this, int* index);
 void Visual__UnrootResources_fn(Visual* __this);
@@ -314,6 +323,8 @@ void Visual__get_ViewHandle_fn(Visual* __this, ::g::Fuse::Controls::Native::View
 void Visual__set_ViewHandle_fn(Visual* __this, ::g::Fuse::Controls::Native::ViewHandle* value);
 void Visual__get_Viewport_fn(Visual* __this, uObject** __retval);
 void Visual__VisitSubtree_fn(Visual* __this, uDelegate* action);
+void Visual__get_VisualChildCount_fn(Visual* __this, int* __retval);
+void Visual__get_VisualChildren_fn(Visual* __this, uObject** __retval);
 void Visual__get_VisualContext_fn(Visual* __this, int* __retval);
 void Visual__WindowToLocal_fn(Visual* __this, ::g::Uno::Float2* windowCoord, ::g::Uno::Float2* __retval);
 void Visual__get_WorldTransform_fn(Visual* __this, ::g::Uno::Float4x4* __retval);
@@ -325,11 +336,7 @@ void Visual__WTIRooted_fn(Visual* __this);
 void Visual__WTIUnrooted_fn(Visual* __this);
 void Visual__get_ZOffset_fn(Visual* __this, float* __retval);
 void Visual__set_ZOffset_fn(Visual* __this, float* value);
-void Visual__get_ZOrder_fn(Visual* __this, ::g::Uno::Collections::List** __retval);
-void Visual__add_ZOrderChanged_fn(Visual* __this, uDelegate* value);
-void Visual__remove_ZOrderChanged_fn(Visual* __this, uDelegate* value);
-void Visual__get_ZOrderChildCount_fn(Visual* __this, int* __retval);
-void Visual__ZOrderComparator_fn(Visual* __this, Visual* a, Visual* b, int* __retval);
+void Visual__ZOrderComparator_fn(Visual* a, Visual* b, int* __retval);
 
 struct Visual : ::g::Fuse::Node
 {
@@ -337,13 +344,17 @@ struct Visual : ::g::Fuse::Node
     ::g::Uno::Float2 _ambMargin;
     ::g::Uno::Float2 _ambPosition;
     ::g::Uno::Float2 _cachedRenderTargetSize;
-    ::g::Fuse::Internal::MiniList _children;
+    uStrong<uArray*> _cachedZOrder;
+    int _childCount;
+    bool _childrenShouldRoot;
     double _drawCost;
+    static uSStrong<uArray*> _emptyVisuals_;
+    static uSStrong<uArray*>& _emptyVisuals() { return Visual_typeof()->Init(), _emptyVisuals_; }
     uStrong< ::g::Fuse::FastProperty1Link*> _fastProperties1;
     uStrong< ::g::Fuse::FastProperty2Link*> _fastProperties2;
     int _fastPropertyBits1;
     int _fastPropertyBits2;
-    int _firstNonUnderlay;
+    uStrong< ::g::Fuse::Node*> _firstChild;
     uStrong<Visual*> _focusDelegate;
     bool _hasMarginBox;
     uStrong< ::g::Fuse::VisualBounds*> _hitTestBoundsCache;
@@ -357,6 +368,7 @@ struct Visual : ::g::Fuse::Node
     bool _isVisibleCached;
     static uSStrong< ::g::Fuse::PropertyHandle*> _isVisibleChangedHandle_;
     static uSStrong< ::g::Fuse::PropertyHandle*>& _isVisibleChangedHandle() { return Visual_typeof()->Init(), _isVisibleChangedHandle_; }
+    uStrong< ::g::Fuse::Node*> _lastChild;
     int _lastInvalidate;
     static uSStrong< ::g::Fuse::PropertyHandle*> _layerProperty_;
     static uSStrong< ::g::Fuse::PropertyHandle*>& _layerProperty() { return Visual_typeof()->Init(), _layerProperty_; }
@@ -365,8 +377,8 @@ struct Visual : ::g::Fuse::Node
     static uSStrong< ::g::Fuse::PropertyHandle*>& _layoutRoleProperty() { return Visual_typeof()->Init(), _layoutRoleProperty_; }
     uStrong< ::g::Fuse::FastMatrix*> _localTransform;
     uStrong< ::g::Fuse::FastMatrix*> _localTransformInverse;
+    int _naturalZOrder;
     int _nodebits;
-    bool _nodeZOrders;
     int _observerCount;
     uStrong<uString*> _parameter;
     static uSStrong< ::g::Fuse::PropertyHandle*> _parameterChangedHandle_;
@@ -378,27 +390,28 @@ struct Visual : ::g::Fuse::Node
     static bool& _performingLayout() { return Visual_typeof()->Init(), _performingLayout_; }
     static uSStrong< ::g::Fuse::PropertyHandle*> _resourcesHandle_;
     static uSStrong< ::g::Fuse::PropertyHandle*>& _resourcesHandle() { return Visual_typeof()->Init(), _resourcesHandle_; }
-    bool _sortedZOrder;
+    uStrong<Visual__SafeIterator*> _safeIterator;
     ::g::Fuse::TemplateSourceImpl _templates;
+    int _thisID;
+    static int _thisIDEnumerator_;
+    static int& _thisIDEnumerator() { return Visual_typeof()->Init(), _thisIDEnumerator_; }
     int _transformCount;
     uStrong<uObject*> _viewport;
+    int _visualChildCount;
     uStrong< ::g::Fuse::FastMatrix*> _worldTransform;
     uStrong< ::g::Fuse::FastMatrix*> _worldTransformInverse;
     int _worldTransformVersion;
     int _wtiListeners;
     bool _wtiRooted;
     float _zOffset;
-    uStrong< ::g::Uno::Collections::List*> _zOrder;
+    bool _zOrderFixed;
+    uStrong<uArray*> Children_cachedArray;
     static ::g::Uno::UX::Selector ParameterName_;
     static ::g::Uno::UX::Selector& ParameterName() { return Visual_typeof()->Init(), ParameterName_; }
-    int ZLayer;
-    bool ZOffsetFixed;
-    int ZOffsetNatural;
     uStrong< ::g::Fuse::Controls::Native::ViewHandle*> _ViewHandle;
     uStrong<uDelegate*> _worldTransformInvalidated1;
     uStrong<uDelegate*> IsInteractingChanged1;
     uStrong<uDelegate*> RequestBringIntoView1;
-    uStrong<uDelegate*> ZOrderChanged1;
 
     void ctor_2();
     bool _areChildrenFlat();
@@ -420,6 +433,7 @@ struct Visual : ::g::Fuse::Node
     void AdjustMarginBoxPosition(::g::Uno::Float2 position);
     bool AreChildrenFlat();
     ::g::Uno::Float2 ArrangeMarginBox(::g::Uno::Float2 position, ::g::Fuse::LayoutParams lp);
+    void AssignNaturalZOrder();
     void BeginInteraction(uObject* id, uDelegate* cancelled);
     void BeginRemoveChild(::g::Fuse::Node* n, uDelegate* then);
     void BeginRemoveVisual(Visual* child, uDelegate* then);
@@ -433,12 +447,27 @@ struct Visual : ::g::Fuse::Node
     void CancelInteractions(int how);
     void CancelPendingRemove();
     void CheckWorldTransformVersion();
+    int ChildCount();
     uObject* Children();
+    void Children_Add(::g::Fuse::Node* n);
+    void Children_Clear();
+    bool Children_Contains(::g::Fuse::Node* n);
+    uArray* Children_GetCachedArray();
+    uObject* Children_GetEnumerator();
+    void Children_Insert(int index, ::g::Fuse::Node* newNode);
+    void Children_InsertAfter(::g::Fuse::Node* preceeder, ::g::Fuse::Node* newNode);
+    void Children_Invalidate();
+    ::g::Fuse::Node* Children_ItemAt(int index);
+    ::g::Fuse::Node* Children_ItemBefore(int index);
+    void Children_MakeOrphan(::g::Fuse::Node* child);
+    void Children_MakeParent(Visual* parent, ::g::Fuse::Node* child);
+    bool Children_Remove(::g::Fuse::Node* n);
     void Clear(int p);
     void Clear1(int p);
     void ClearBit(int p);
     void ClearBit1(int p);
     void ClearBit2(int nb);
+    uArray* ComputeZOrder();
     void ConcludePendingRemove();
     void DecrementWTIListener();
     void Draw(::g::Fuse::DrawContext* dc) { (((Visual_type*)__type)->fp_Draw)(this, dc); }
@@ -446,29 +475,23 @@ struct Visual : ::g::Fuse::Node
     void DrawLocalRect(::g::Fuse::DrawContext* dc, ::g::Uno::Rect rect, float lineWidth, ::g::Uno::Float4 color, ::g::Uno::Float4x4 localToClipTransform);
     void DrawLocalSelectionRect(::g::Fuse::DrawContext* dc, ::g::Uno::Rect rect);
     void DrawSelection(::g::Fuse::DrawContext* dc) { (((Visual_type*)__type)->fp_DrawSelection)(this, dc); }
-    void EmitZOrderChanged();
     void EndInteraction(uObject* id);
-    void EnsureSortedZOrder();
-    void EnsureZOrder();
     ::g::Fuse::FastProperty1Link1* Find(uType* __type, int p);
     ::g::Fuse::FastProperty2Link1* Find1(uType* __type, int p);
-    Visual* FindByType(uType* __type);
     ::g::Fuse::FastProperty1Link* FindPrevious(int p);
     ::g::Fuse::FastProperty2Link* FindPrevious1(int p);
     ::g::Uno::UX::Template* FindTemplate(uString* key);
     uObject* FindViewport();
     ::g::Fuse::Node* FirstChild(uType* __type);
-    Visual* FirstVisualChild();
     template<class T>
     T Get(uType* __type, int p, T defaultValue) { T __retval; return Visual__Get_fn(this, __type, &p, uConstrain(__type->U(0), defaultValue), &__retval), __retval; }
     template<class T>
     T Get1(uType* __type, int p, T defaultValue) { T __retval; return Visual__Get1_fn(this, __type, &p, uConstrain(__type->U(0), defaultValue), &__retval), __retval; }
+    uArray* GetCachedZOrder();
     Visual* GetHitWindowPoint(::g::Uno::Float2 windowPoint);
     ::g::Uno::Float2 GetMarginSize(::g::Fuse::LayoutParams lp);
-    Visual* GetNearestAncestorOfType(uType* __type);
     ::g::Uno::Float4x4 GetTransformTo(Visual* other);
     ::g::Uno::Float4x4 GetTransformToAncestor(Visual* ancestor);
-    Visual* GetZOrderChild(int index);
     bool HasBit(int p);
     bool HasBit1(int p);
     bool HasBit2(int nb);
@@ -487,16 +510,15 @@ struct Visual : ::g::Fuse::Node
     ::g::Uno::Float2 IfSnapDown(::g::Uno::Float2 p);
     ::g::Uno::Float2 IfSnapUp(::g::Uno::Float2 p);
     void IncrementWTIListener();
-    int IndexOf(::g::Fuse::Node* item);
     void Insert1(int index, ::g::Fuse::Node* item);
     template<class T>
     void Insert2(uType* __type, int p, T value) { Visual__Insert2_fn(this, __type, &p, uConstrain(__type->U(0), value)); }
     template<class T>
     void Insert3(uType* __type, int p, T value) { Visual__Insert3_fn(this, __type, &p, uConstrain(__type->U(0), value)); }
     void InsertCleanup(::g::Fuse::Node* item);
-    void InsertNodes(int index, uObject* items);
-    void InsertNodesImpl(int index, uObject* items, bool allowMove);
-    void InsertOrMoveNodes(int index, uObject* items);
+    void InsertNodesAfter(::g::Fuse::Node* preceeder, uObject* items);
+    void InsertNodesAfterImpl(::g::Fuse::Node* preceeder, uObject* items, bool allowMove);
+    void InsertOrMoveNodesAfter(::g::Fuse::Node* preceeder, uObject* items);
     ::g::Fuse::FastMatrix* InternLocalTransformInternal();
     ::g::Uno::Float2 InternSnap(::g::Uno::Float2 p);
     ::g::Uno::Float2 InternSnapUp(::g::Uno::Float2 p);
@@ -524,6 +546,7 @@ struct Visual : ::g::Fuse::Node
     bool IsVisible();
     void add_IsVisibleChanged(uDelegate* value);
     void remove_IsVisibleChanged(uDelegate* value);
+    ::g::Fuse::Node* LastChild(uType* __type);
     int Layer();
     void Layer(int value);
     int LayoutRole();
@@ -543,7 +566,6 @@ struct Visual : ::g::Fuse::Node
     void OnChildRemoved(::g::Fuse::Node* elm) { (((Visual_type*)__type)->fp_OnChildRemoved)(this, elm); }
     void OnHitTest(::g::Fuse::HitTestContext* htc) { (((Visual_type*)__type)->fp_OnHitTest)(this, htc); }
     void OnInteractionsChanged();
-    void OnInvalidateChildZOffset(Visual* child);
     void OnInvalidateLayout() { (((Visual_type*)__type)->fp_OnInvalidateLayout)(this); }
     bool OnInvalidateRenderBounds() { bool __retval; return (((Visual_type*)__type)->fp_OnInvalidateRenderBounds)(this, &__retval), __retval; }
     void OnInvalidateVisual() { (((Visual_type*)__type)->fp_OnInvalidateVisual)(this); }
@@ -562,7 +584,6 @@ struct Visual : ::g::Fuse::Node
     void OnTransformAdded(::g::Fuse::Transform* t);
     void OnTransformRemoved(::g::Fuse::Transform* t);
     void OnVisualAdded(Visual* v);
-    void OnVisualMoved(Visual* v);
     void OnVisualRemoved(Visual* v);
     void OnZOrderInvalidated() { (((Visual_type*)__type)->fp_OnZOrderInvalidated)(this); }
     uString* Parameter();
@@ -599,12 +620,12 @@ struct Visual : ::g::Fuse::Node
     void SetBit2(int p);
     void SetBit3(int p, bool value);
     void SetBit4(int nb);
+    bool ShouldRootChildren();
     ::g::Uno::Float2 Snap(::g::Uno::Float2 p);
     ::g::Uno::Float2 SnapDown(::g::Uno::Float2 p);
     bool SnapToPixels();
     void SnapToPixels(bool value);
     ::g::Uno::Float2 SnapUp(::g::Uno::Float2 p);
-    void SoftInvalidateZOrder(bool force);
     uObject* Templates();
     bool TryParentToLocal(::g::Uno::Float2 parentPoint, ::g::Uno::Float2* result);
     void UnrootResources();
@@ -616,6 +637,8 @@ struct Visual : ::g::Fuse::Node
     ::g::Fuse::Controls::Native::ViewHandle* ViewHandle();
     void ViewHandle(::g::Fuse::Controls::Native::ViewHandle* value);
     uObject* Viewport();
+    int VisualChildCount();
+    uObject* VisualChildren();
     int VisualContext() { int __retval; return (((Visual_type*)__type)->fp_get_VisualContext)(this, &__retval), __retval; }
     ::g::Uno::Float2 WindowToLocal(::g::Uno::Float2 windowCoord);
     ::g::Uno::Float4x4 WorldTransform();
@@ -627,12 +650,6 @@ struct Visual : ::g::Fuse::Node
     void WTIUnrooted();
     float ZOffset();
     void ZOffset(float value);
-    ::g::Uno::Collections::List* ZOrder();
-    void add_ZOrderChanged(uDelegate* value);
-    void remove_ZOrderChanged(uDelegate* value);
-    int ZOrderChildCount();
-    int ZOrderComparator(Visual* a, Visual* b);
-    static void AssignZOrder(uObject* nodes);
     static void bringIntoView(::g::Fuse::Scripting::Context* c, Visual* n, uArray* args);
     static void DrawSelection(Visual* __this, ::g::Fuse::DrawContext* dc) { Visual__DrawSelection_fn(__this, dc); }
     static ::g::Uno::Float2 GetMarginSize(Visual* __this, ::g::Fuse::LayoutParams lp);
@@ -659,6 +676,7 @@ struct Visual : ::g::Fuse::Node
     static void PrependImplicitTransform(Visual* __this, ::g::Fuse::FastMatrix* m) { Visual__PrependImplicitTransform_fn(__this, m); }
     static void PrependInverseTransformOrigin(Visual* __this, ::g::Fuse::FastMatrix* m) { Visual__PrependInverseTransformOrigin_fn(__this, m); }
     static void PrependTransformOrigin(Visual* __this, ::g::Fuse::FastMatrix* m) { Visual__PrependTransformOrigin_fn(__this, m); }
+    static int ZOrderComparator(Visual* a, Visual* b);
     static ::g::Uno::Float2 AbsoluteViewportOrigin(Visual* __this);
     static bool CanAdjustMarginBox(Visual* __this) { bool __retval; return Visual__get_CanAdjustMarginBox_fn(__this, &__retval), __retval; }
     static ::g::Fuse::VisualBounds* HitTestChildrenBounds(Visual* __this) { ::g::Fuse::VisualBounds* __retval; return Visual__get_HitTestChildrenBounds_fn(__this, &__retval), __retval; }

@@ -1,4 +1,4 @@
-// This file was generated based on '/Users/a/Library/Application Support/Fusetools/Packages/Uno.Permissions/1.2.2/$.uno'.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Uno.Permissions/1.3.1/Permissions.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -9,7 +9,7 @@ namespace g{
 namespace Uno{
 namespace Permissions{
 
-// public struct PlatformPermission :11
+// public struct PlatformPermission :9
 // {
 uStructType* PlatformPermission_typeof();
 void PlatformPermission__ctor__fn(PlatformPermission* __this, uString* name);

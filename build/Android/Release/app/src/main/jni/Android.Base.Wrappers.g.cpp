@@ -80,10 +80,10 @@ namespace Android{
 namespace Base{
 namespace Wrappers{
 
-// /usr/local/share/uno/Packages/UnoCore/1.2.2/targets/android/uno/base/$.uno
-// --------------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\UnoCore\1.3.1\Targets\Android\Uno\Base\Wrappers.uno
+// -----------------------------------------------------------------------------------------------
 
-// public abstract extern interface IJWrapper :1122
+// public abstract extern interface IJWrapper :20
 // {
 uInterfaceType* IJWrapper_typeof()
 {
@@ -95,16 +95,18 @@ uInterfaceType* IJWrapper_typeof()
 }
 // }
 
-// /usr/local/share/uno/Packages/UnoCore/1.2.2/targets/android/uno/base/$.uno
-// --------------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\UnoCore\1.3.1\Targets\Android\Uno\Base\Wrappers.uno
+// -----------------------------------------------------------------------------------------------
 
-// public static extern class JavaObjectHelper :1241
+// public static extern class JavaObjectHelper :139
 // {
 static void JavaObjectHelper_build(uType* type)
 {
     ::STRINGS[0] = uString::Const("JObjectToJWrapper: Unknown unoRef detected: >");
     ::STRINGS[1] = uString::Const("<");
     ::TYPES[0] = ::g::Uno::Type_typeof();
+    type->SetDependencies(
+        ::g::Android::Base::JNI_typeof());
 }
 
 uClassType* JavaObjectHelper_typeof()
@@ -113,19 +115,20 @@ uClassType* JavaObjectHelper_typeof()
     if (type != NULL) return type;
 
     uTypeOptions options;
+    options.DependencyCount = 1;
     options.TypeSize = sizeof(uClassType);
     type = uClassType::New("Android.Base.Wrappers.JavaObjectHelper", options);
     type->fp_build_ = JavaObjectHelper_build;
     return type;
 }
 
-// public static Android.Base.Wrappers.IJWrapper JObjectToJWrapper(Android.Base.Primitives.ujobject tmpRes, bool stackArg) :1244
+// public static Android.Base.Wrappers.IJWrapper JObjectToJWrapper(Android.Base.Primitives.ujobject tmpRes, bool stackArg) :142
 void JavaObjectHelper__JObjectToJWrapper_fn(jobject* tmpRes, bool* stackArg, uObject** __retval)
 {
     *__retval = JavaObjectHelper::JObjectToJWrapper(*tmpRes, *stackArg);
 }
 
-// public static Android.Base.Wrappers.IJWrapper JObjectToJWrapper(Android.Base.Primitives.ujobject tmpRes, bool stackArg) [static] :1244
+// public static Android.Base.Wrappers.IJWrapper JObjectToJWrapper(Android.Base.Primitives.ujobject tmpRes, bool stackArg) [static] :142
 uObject* JavaObjectHelper::JObjectToJWrapper(jobject tmpRes, bool stackArg)
 {
     ::g::Android::Base::JNI::CheckException();
@@ -150,12 +153,12 @@ uObject* JavaObjectHelper::JObjectToJWrapper(jobject tmpRes, bool stackArg)
 }
 // }
 
-// /usr/local/share/uno/Packages/UnoCore/1.2.2/targets/android/uno/base/$.uno
-// --------------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\UnoCore\1.3.1\Targets\Android\Uno\Base\Wrappers.uno
+// -----------------------------------------------------------------------------------------------
 
-// public extern class JWrapper :1129
+// public extern class JWrapper :27
 // {
-// ~JWrapper() :1169
+// ~JWrapper() :67
 static void JWrapper__Finalize_fn(JWrapper* __this)
 {
     __this->Dispose(false);
@@ -163,14 +166,17 @@ static void JWrapper__Finalize_fn(JWrapper* __this)
 
 static void JWrapper_build(uType* type)
 {
+    type->SetDependencies(
+        ::g::Android::Base::Types::Bridge_typeof(),
+        ::g::Android::Base::JNI_typeof());
     type->SetInterfaces(
         ::g::Android::Base::Wrappers::IJWrapper_typeof(), offsetof(JWrapper_type, interface0),
         ::g::Uno::IDisposable_typeof(), offsetof(JWrapper_type, interface1));
     type->SetFields(0,
-        ::g::Android::Base::Primitives::ujobject_typeof(), offsetof(::g::Android::Base::Wrappers::JWrapper, _javaObject), 0,
-        ::g::Uno::Bool_typeof(), offsetof(::g::Android::Base::Wrappers::JWrapper, _subclassed), 0,
-        ::g::Android::Base::Primitives::uweakptr_typeof(), offsetof(::g::Android::Base::Wrappers::JWrapper, _weakptr), 0,
-        ::g::Uno::Bool_typeof(), offsetof(::g::Android::Base::Wrappers::JWrapper, disposed), 0);
+        ::g::Android::Base::Primitives::ujobject_typeof(), offsetof(JWrapper, _javaObject), 0,
+        ::g::Uno::Bool_typeof(), offsetof(JWrapper, _subclassed), 0,
+        ::g::Android::Base::Primitives::uweakptr_typeof(), offsetof(JWrapper, _weakptr), 0,
+        ::g::Uno::Bool_typeof(), offsetof(JWrapper, disposed), 0);
 }
 
 JWrapper_type* JWrapper_typeof()
@@ -182,6 +188,7 @@ JWrapper_type* JWrapper_typeof()
     options.BaseDefinition = ::g::Java::Object_typeof();
     options.FieldCount = 4;
     options.InterfaceCount = 2;
+    options.DependencyCount = 2;
     options.ObjectSize = sizeof(JWrapper);
     options.TypeSize = sizeof(JWrapper_type);
     type = (JWrapper_type*)uClassType::New("Android.Base.Wrappers.JWrapper", options);
@@ -193,79 +200,79 @@ JWrapper_type* JWrapper_typeof()
     return type;
 }
 
-// public JWrapper(Android.Base.Primitives.ujobject obj, Uno.Type typePtr, bool typeHasFallbackClass, bool resolveType) :1159
+// public JWrapper(Android.Base.Primitives.ujobject obj, Uno.Type typePtr, bool typeHasFallbackClass, bool resolveType) :57
 void JWrapper__ctor_1_fn(JWrapper* __this, jobject* obj, uType* typePtr, bool* typeHasFallbackClass, bool* resolveType)
 {
     __this->ctor_1(*obj, typePtr, *typeHasFallbackClass, *resolveType);
 }
 
-// public JWrapper(Android.Base.Primitives.ujobject obj, Uno.Type typePtr, bool typeHasFallbackClass, bool resolveType, bool stackArg) :1162
+// public JWrapper(Android.Base.Primitives.ujobject obj, Uno.Type typePtr, bool typeHasFallbackClass, bool resolveType, bool stackArg) :60
 void JWrapper__ctor_2_fn(JWrapper* __this, jobject* obj, uType* typePtr, bool* typeHasFallbackClass, bool* resolveType, bool* stackArg)
 {
     __this->ctor_2(*obj, typePtr, *typeHasFallbackClass, *resolveType, *stackArg);
 }
 
-// protected extern void _DisposeJavaObject() :1217
+// protected extern void _DisposeJavaObject() :115
 void JWrapper___DisposeJavaObject_fn(JWrapper* __this)
 {
     __this->_DisposeJavaObject();
 }
 
-// public Android.Base.Primitives.ujobject _GetJavaObject() :1189
+// public Android.Base.Primitives.ujobject _GetJavaObject() :87
 void JWrapper___GetJavaObject_fn(JWrapper* __this, jobject* __retval)
 {
     *__retval = __this->_GetJavaObject();
 }
 
-// public bool _IsSubclassed() :1194
+// public bool _IsSubclassed() :92
 void JWrapper___IsSubclassed_fn(JWrapper* __this, bool* __retval)
 {
     *__retval = __this->_IsSubclassed();
 }
 
-// protected void Dispose(bool disposing) :1204
+// protected void Dispose(bool disposing) :102
 void JWrapper__Dispose_fn(JWrapper* __this, bool* disposing)
 {
     __this->Dispose(*disposing);
 }
 
-// public JWrapper New(Android.Base.Primitives.ujobject obj, Uno.Type typePtr, bool typeHasFallbackClass, bool resolveType) :1159
+// public JWrapper New(Android.Base.Primitives.ujobject obj, Uno.Type typePtr, bool typeHasFallbackClass, bool resolveType) :57
 void JWrapper__New1_fn(jobject* obj, uType* typePtr, bool* typeHasFallbackClass, bool* resolveType, JWrapper** __retval)
 {
     *__retval = JWrapper::New1(*obj, typePtr, *typeHasFallbackClass, *resolveType);
 }
 
-// public JWrapper New(Android.Base.Primitives.ujobject obj, Uno.Type typePtr, bool typeHasFallbackClass, bool resolveType, bool stackArg) :1162
+// public JWrapper New(Android.Base.Primitives.ujobject obj, Uno.Type typePtr, bool typeHasFallbackClass, bool resolveType, bool stackArg) :60
 void JWrapper__New2_fn(jobject* obj, uType* typePtr, bool* typeHasFallbackClass, bool* resolveType, bool* stackArg, JWrapper** __retval)
 {
     *__retval = JWrapper::New2(*obj, typePtr, *typeHasFallbackClass, *resolveType, *stackArg);
 }
 
-// private void SetInternalObj(Android.Base.Primitives.ujobject obj, bool stackArg) :1142
+// private void SetInternalObj(Android.Base.Primitives.ujobject obj, bool stackArg) :40
 void JWrapper__SetInternalObj_fn(JWrapper* __this, jobject* obj, bool* stackArg)
 {
     __this->SetInternalObj(*obj, *stackArg);
 }
 
-// private void Uno.IDisposable.Dispose() :1199
+// private void Uno.IDisposable.Dispose() :97
 void JWrapper__UnoIDisposableDispose_fn(JWrapper* __this)
 {
     __this->Dispose(true);
 }
 
-// public static Android.Base.Wrappers.JWrapper Wrap(Android.Base.Primitives.ujobject obj, [bool resolveType], [bool typeHasFallbackClass]) :1174
+// public static Android.Base.Wrappers.JWrapper Wrap(Android.Base.Primitives.ujobject obj, [bool resolveType], [bool typeHasFallbackClass]) :72
 void JWrapper__Wrap_fn(jobject* obj, bool* resolveType, bool* typeHasFallbackClass, JWrapper** __retval)
 {
     *__retval = JWrapper::Wrap(*obj, *resolveType, *typeHasFallbackClass);
 }
 
-// public JWrapper(Android.Base.Primitives.ujobject obj, Uno.Type typePtr, bool typeHasFallbackClass, bool resolveType) [instance] :1159
+// public JWrapper(Android.Base.Primitives.ujobject obj, Uno.Type typePtr, bool typeHasFallbackClass, bool resolveType) [instance] :57
 void JWrapper::ctor_1(jobject obj, uType* typePtr, bool typeHasFallbackClass, bool resolveType)
 {
     ctor_2(obj, typePtr, typeHasFallbackClass, resolveType, false);
 }
 
-// public JWrapper(Android.Base.Primitives.ujobject obj, Uno.Type typePtr, bool typeHasFallbackClass, bool resolveType, bool stackArg) [instance] :1162
+// public JWrapper(Android.Base.Primitives.ujobject obj, Uno.Type typePtr, bool typeHasFallbackClass, bool resolveType, bool stackArg) [instance] :60
 void JWrapper::ctor_2(jobject obj, uType* typePtr, bool typeHasFallbackClass, bool resolveType, bool stackArg)
 {
     ctor_();
@@ -274,7 +281,7 @@ void JWrapper::ctor_2(jobject obj, uType* typePtr, bool typeHasFallbackClass, bo
     SetInternalObj(obj, stackArg);
 }
 
-// protected extern void _DisposeJavaObject() [instance] :1217
+// protected extern void _DisposeJavaObject() [instance] :115
 void JWrapper::_DisposeJavaObject()
 {
     if (!this->_javaObject) return;
@@ -282,19 +289,19 @@ void JWrapper::_DisposeJavaObject()
     this->_javaObject = 0;
 }
 
-// public Android.Base.Primitives.ujobject _GetJavaObject() [instance] :1189
+// public Android.Base.Primitives.ujobject _GetJavaObject() [instance] :87
 jobject JWrapper::_GetJavaObject()
 {
     return _javaObject;
 }
 
-// public bool _IsSubclassed() [instance] :1194
+// public bool _IsSubclassed() [instance] :92
 bool JWrapper::_IsSubclassed()
 {
     return _subclassed;
 }
 
-// protected void Dispose(bool disposing) [instance] :1204
+// protected void Dispose(bool disposing) [instance] :102
 void JWrapper::Dispose(bool disposing)
 {
     bool disposing_ = disposing;
@@ -308,7 +315,7 @@ void JWrapper::Dispose(bool disposing)
     }
 }
 
-// private void SetInternalObj(Android.Base.Primitives.ujobject obj, bool stackArg) [instance] :1142
+// private void SetInternalObj(Android.Base.Primitives.ujobject obj, bool stackArg) [instance] :40
 void JWrapper::SetInternalObj(jobject obj, bool stackArg)
 {
     if (!__JWrapper_Callbacks_Registered)
@@ -332,7 +339,7 @@ void JWrapper::SetInternalObj(jobject obj, bool stackArg)
     }
 }
 
-// public JWrapper New(Android.Base.Primitives.ujobject obj, Uno.Type typePtr, bool typeHasFallbackClass, bool resolveType) [static] :1159
+// public JWrapper New(Android.Base.Primitives.ujobject obj, Uno.Type typePtr, bool typeHasFallbackClass, bool resolveType) [static] :57
 JWrapper* JWrapper::New1(jobject obj, uType* typePtr, bool typeHasFallbackClass, bool resolveType)
 {
     JWrapper* obj1 = (JWrapper*)uNew(JWrapper_typeof());
@@ -340,7 +347,7 @@ JWrapper* JWrapper::New1(jobject obj, uType* typePtr, bool typeHasFallbackClass,
     return obj1;
 }
 
-// public JWrapper New(Android.Base.Primitives.ujobject obj, Uno.Type typePtr, bool typeHasFallbackClass, bool resolveType, bool stackArg) [static] :1162
+// public JWrapper New(Android.Base.Primitives.ujobject obj, Uno.Type typePtr, bool typeHasFallbackClass, bool resolveType, bool stackArg) [static] :60
 JWrapper* JWrapper::New2(jobject obj, uType* typePtr, bool typeHasFallbackClass, bool resolveType, bool stackArg)
 {
     JWrapper* obj2 = (JWrapper*)uNew(JWrapper_typeof());
@@ -348,7 +355,7 @@ JWrapper* JWrapper::New2(jobject obj, uType* typePtr, bool typeHasFallbackClass,
     return obj2;
 }
 
-// public static Android.Base.Wrappers.JWrapper Wrap(Android.Base.Primitives.ujobject obj, [bool resolveType], [bool typeHasFallbackClass]) [static] :1174
+// public static Android.Base.Wrappers.JWrapper Wrap(Android.Base.Primitives.ujobject obj, [bool resolveType], [bool typeHasFallbackClass]) [static] :72
 JWrapper* JWrapper::Wrap(jobject obj, bool resolveType, bool typeHasFallbackClass)
 {
     return JWrapper::New1(obj, NULL, typeHasFallbackClass, resolveType);

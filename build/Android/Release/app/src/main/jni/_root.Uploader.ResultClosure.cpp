@@ -22,7 +22,7 @@ static void Uploader__ResultClosure_build(uType* type)
     ::TYPES[0] = ::g::Uno::Action1_typeof()->MakeType(::g::Uno::Net::Http::HttpMessageHandlerRequest_typeof(), NULL);
     ::TYPES[1] = ::g::Uno::Action2_typeof()->MakeType(::g::Uno::Net::Http::HttpMessageHandlerRequest_typeof(), ::g::Uno::String_typeof(), NULL);
     type->SetFields(0,
-        ::g::Uno::Threading::Promise_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(::g::Uploader__ResultClosure, _promise), 0);
+        ::g::Uno::Threading::Promise_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(Uploader__ResultClosure, _promise), 0);
 }
 
 uType* Uploader__ResultClosure_typeof()

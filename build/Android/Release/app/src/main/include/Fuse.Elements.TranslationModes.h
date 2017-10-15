@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Elements/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Elements/1.3.0-rc2/Transforms.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -9,20 +9,20 @@ namespace g{
 namespace Fuse{
 namespace Elements{
 
-// public static class TranslationModes :3562
+// public static class TranslationModes :8
 // {
 uClassType* TranslationModes_typeof();
 
 struct TranslationModes : uObject
 {
     static uSStrong<uObject*> PositionOffset_;
-    static uSStrong<uObject*>& PositionOffset() { return TranslationModes_typeof()->Init(), PositionOffset_; }
+    static uSStrong<uObject*>& PositionOffset() { return PositionOffset_; }
     static uSStrong<uObject*> Size_;
-    static uSStrong<uObject*>& Size() { return TranslationModes_typeof()->Init(), Size_; }
+    static uSStrong<uObject*>& Size() { return Size_; }
     static uSStrong<uObject*> SizeFactor_;
-    static uSStrong<uObject*>& SizeFactor() { return TranslationModes_typeof()->Init(), SizeFactor_; }
+    static uSStrong<uObject*>& SizeFactor() { return SizeFactor_; }
     static uSStrong<uObject*> TransformOriginOffset_;
-    static uSStrong<uObject*>& TransformOriginOffset() { return TranslationModes_typeof()->Init(), TransformOriginOffset_; }
+    static uSStrong<uObject*>& TransformOriginOffset() { return TransformOriginOffset_; }
 };
 // }
 

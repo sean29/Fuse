@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Controls.Primitives/1.2.1/shapes/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Controls.Primitives/1.3.0-rc2/Shapes/Shape.Resources.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -16,6 +16,7 @@
 #include <Fuse.Triggers.Actions.IHide.h>
 #include <Fuse.Triggers.Actions.IShow.h>
 #include <Fuse.Triggers.Actions-ea70af1f.h>
+#include <Fuse.Visual.h>
 #include <Uno.Collections.ICollection-1.h>
 #include <Uno.Collections.IEnumerable-1.h>
 #include <Uno.Collections.IList-1.h>
@@ -45,12 +46,12 @@ namespace g{
 namespace Fuse{
 namespace Controls{
 
-// public interfacemodifiers class Shape :1613
+// public interfacemodifiers class Shape :17
 // {
 struct Shape_type : ::g::Fuse::Controls::Control_type
 {
-    ::g::Fuse::Drawing::ISurfaceDrawable interface16;
-    ::g::Fuse::Drawing::IDrawObjectWatcherFeedback interface17;
+    ::g::Fuse::Drawing::ISurfaceDrawable interface17;
+    ::g::Fuse::Drawing::IDrawObjectWatcherFeedback interface18;
     void(*fp_CalcShapeExtents)(::g::Fuse::Controls::Shape*, ::g::Uno::Rect*);
     void(*fp_CreateSurfacePath)(::g::Fuse::Controls::Shape*, ::g::Fuse::Drawing::Surface*, ::g::Fuse::Drawing::SurfacePath**);
     void(*fp_DrawFill)(::g::Fuse::Controls::Shape*, ::g::Fuse::DrawContext*, ::g::Fuse::Drawing::Brush*);
@@ -126,10 +127,10 @@ struct Shape : ::g::Fuse::Controls::LayoutControl
 {
     uStrong< ::g::Uno::Collections::RootableList*> _fills;
     static uSStrong< ::g::Fuse::PropertyHandle*> _loadingResourcesHandle_;
-    static uSStrong< ::g::Fuse::PropertyHandle*>& _loadingResourcesHandle() { return Shape_typeof()->Init(), _loadingResourcesHandle_; }
+    static uSStrong< ::g::Fuse::PropertyHandle*>& _loadingResourcesHandle() { return _loadingResourcesHandle_; }
     uStrong< ::g::Fuse::Triggers::BusyTask*> _loadingResourceTask;
     static ::g::Uno::UX::Selector _offsetName_;
-    static ::g::Uno::UX::Selector& _offsetName() { return Shape_typeof()->Init(), _offsetName_; }
+    static ::g::Uno::UX::Selector& _offsetName() { return _offsetName_; }
     float _smoothness;
     uStrong< ::g::Uno::Collections::RootableList*> _strokes;
     uStrong< ::g::Fuse::Drawing::Surface*> _surface1;
@@ -137,9 +138,9 @@ struct Shape : ::g::Fuse::Controls::LayoutControl
     bool _surfacePathDirty;
     uStrong< ::g::Fuse::Drawing::DrawObjectWatcher*> _watcher;
     static ::g::Uno::UX::Selector _widthName_;
-    static ::g::Uno::UX::Selector& _widthName() { return Shape_typeof()->Init(), _widthName_; }
+    static ::g::Uno::UX::Selector& _widthName() { return _widthName_; }
     static ::g::Uno::UX::Selector ColorPropertyName_;
-    static ::g::Uno::UX::Selector& ColorPropertyName() { return Shape_typeof()->Init(), ColorPropertyName_; }
+    static ::g::Uno::UX::Selector& ColorPropertyName() { return ColorPropertyName_; }
 
     void ctor_6();
     void AddLoadingResource(::g::Uno::UX::PropertyObject* res);

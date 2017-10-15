@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/UnoCore/1.2.2/source/uno/runtime/implementation/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/UnoCore/1.3.1/Source/Uno/Runtime/Implementation/BufferImpl.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -10,7 +10,7 @@ namespace Uno{
 namespace Runtime{
 namespace Implementation{
 
-// public static class BufferImpl :181
+// public static class BufferImpl :7
 // {
 uClassType* BufferImpl_typeof();
 void BufferImpl__GetInt_fn(uArray* buffer, int* offset, bool* littleEndian, int* __retval);

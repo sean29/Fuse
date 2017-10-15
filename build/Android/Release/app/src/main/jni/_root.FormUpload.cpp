@@ -18,51 +18,22 @@
 #include <Uno.String.h>
 #include <Uno.Text.Encoding.h>
 #include <Uno.Text.Utf8.h>
-static uString* STRINGS[10];
-static uType* TYPES[8];
 
 namespace g{
 
 // public static class FormUpload :115
 // {
-// static FormUpload() :115
+// static generated FormUpload() :115
 static void FormUpload__cctor__fn(uType* __type)
 {
+    ::g::Uno::Text::Encoding_typeof()->Init();
     FormUpload::encoding_ = ::g::Uno::Text::Encoding::UTF8();
 }
 
 static void FormUpload_build(uType* type)
 {
-    ::STRINGS[0] = uString::Const("\r\n"
-        "");
-    ::STRINGS[1] = uString::Const("--{0}\r\n"
-        "Content-Disposition: form-data; name=\"{1}\"; filename=\"{2}\"\r\n"
-        "Content-Type: {3}\r\n"
-        "\r\n"
-        "");
-    ::STRINGS[2] = uString::Const("application/octet-stream");
-    ::STRINGS[3] = uString::Const("--{0}\r\n"
-        "Content-Disposition: form-data; name=\"{1}\"\r\n"
-        "\r\n"
-        "{2}");
-    ::STRINGS[4] = uString::Const("\r\n"
-        "--");
-    ::STRINGS[5] = uString::Const("--\r\n"
-        "");
-    ::STRINGS[6] = uString::Const("----------1111");
-    ::STRINGS[7] = uString::Const("multipart/form-data; boundary=");
-    ::STRINGS[8] = uString::Const("Content-Type");
-    ::STRINGS[9] = uString::Const("Content-Length");
-    ::TYPES[0] = ::g::Uno::Collections::Dictionary__Enumerator_typeof()->MakeType(::g::Uno::String_typeof(), uObject_typeof(), NULL);
-    ::TYPES[1] = FormUpload__FileParameter_typeof();
-    ::TYPES[2] = ::g::Uno::Collections::KeyValuePair_typeof()->MakeType(::g::Uno::String_typeof(), uObject_typeof(), NULL);
-    ::TYPES[3] = uObject_typeof()->Array();
-    ::TYPES[4] = ::g::Uno::Byte_typeof()->Array();
-    ::TYPES[5] = ::g::Uno::Collections::Dictionary__Enumerator_typeof()->MakeType(::g::Uno::String_typeof(), ::g::Uno::String_typeof(), NULL);
-    ::TYPES[6] = ::g::Uno::Collections::KeyValuePair_typeof()->MakeType(::g::Uno::String_typeof(), ::g::Uno::String_typeof(), NULL);
-    ::TYPES[7] = ::g::Uno::Int_typeof();
     type->SetFields(0,
-        ::g::Uno::Text::Encoding_typeof(), (uintptr_t)&::g::FormUpload::encoding_, uFieldFlagsStatic);
+        ::g::Uno::Text::Encoding_typeof(), (uintptr_t)&FormUpload::encoding_, uFieldFlagsStatic);
 }
 
 uClassType* FormUpload_typeof()
@@ -102,46 +73,65 @@ uSStrong< ::g::Uno::Text::Encoding*> FormUpload::encoding_;
 // private static byte[] GetMultipartFormData(Uno.Collections.Dictionary<string, object> postParameters, string boundary) [static] :164
 uArray* FormUpload::GetMultipartFormData(::g::Uno::Collections::Dictionary* postParameters, uString* boundary)
 {
-    FormUpload_typeof()->Init();
     uString* ind3;
     uString* ind4;
     ::g::Uno::Collections::Dictionary__Enumerator<uStrong<uString*>, uStrong<uObject*> > ret5;
     ::g::Uno::IO::Stream* formDataStream = ::g::Uno::IO::MemoryStream::New1();
     bool needsCLRF = false;
+    ::g::Uno::Collections::Dictionary__Enumerator<uStrong<uString*>, uStrong<uObject*> > enum2 = (::g::Uno::Collections::Dictionary__GetEnumerator_fn(uPtr(postParameters), &ret5), ret5);
 
-    for (::g::Uno::Collections::Dictionary__Enumerator<uStrong<uString*>, uStrong<uObject*> > enum2 = (::g::Uno::Collections::Dictionary__GetEnumerator_fn(uPtr(postParameters), &ret5), ret5); enum2.MoveNext(::TYPES[0/*Uno.Collections.Dictionary<string, object>.Enumerator*/]); )
     {
-        ::g::Uno::Collections::KeyValuePair<uStrong<uString*>, uStrong<uObject*> > param = enum2.Current(::TYPES[0/*Uno.Collections.Dictionary<string, object>.Enumerator*/]);
-
-        if (needsCLRF)
+        const auto __finally_fun = [&]()
         {
-            uArray* bytes = ::g::Uno::Text::Utf8::GetBytes(::STRINGS[0/*"\r\n"*/]);
-            uPtr(formDataStream)->Write(bytes, 0, uPtr(bytes)->Length());
-        }
+            enum2.Dispose(::g::Uno::Collections::Dictionary__Enumerator_typeof()->MakeType(::g::Uno::String_typeof(), uObject_typeof(), NULL));
+        };
 
-        needsCLRF = true;
+        const uFinally<decltype(__finally_fun)> __f(__finally_fun);
 
-        if (uIs((uObject*)param.Value(::TYPES[2/*Uno.Collections.KeyValuePair<string, object>*/]), ::TYPES[1/*FormUpload.FileParameter*/]))
+        while (enum2.MoveNext(::g::Uno::Collections::Dictionary__Enumerator_typeof()->MakeType(::g::Uno::String_typeof(), uObject_typeof(), NULL)))
         {
-            FormUpload__FileParameter* fileToUpload = uCast<FormUpload__FileParameter*>(param.Value(::TYPES[2/*Uno.Collections.KeyValuePair<string, object>*/]), ::TYPES[1/*FormUpload.FileParameter*/]);
-            uString* header = ::g::Uno::String::Format(::STRINGS[1/*"--{0}\r\nCo...*/], uArray::Init<uObject*>(::TYPES[3/*object[]*/], 4, boundary, (uString*)param.Key(::TYPES[2/*Uno.Collections.KeyValuePair<string, object>*/]), (ind3 = uPtr(fileToUpload)->FileName(), (ind3 != NULL) ? ind3 : (uString*)param.Key(::TYPES[2/*Uno.Collections.KeyValuePair<string, object>*/])), (ind4 = uPtr(fileToUpload)->ContentType(), (ind4 != NULL) ? ind4 : ::STRINGS[2/*"application...*/])));
-            uArray* bytes1 = ::g::Uno::Text::Utf8::GetBytes(header);
-            uPtr(formDataStream)->Write(bytes1, 0, uPtr(bytes1)->Length());
-            formDataStream->Write(fileToUpload->File(), 0, uPtr(fileToUpload->File())->Length());
-        }
-        else
-        {
-            uString* postData = ::g::Uno::String::Format(::STRINGS[3/*"--{0}\r\nCo...*/], uArray::Init<uObject*>(::TYPES[3/*object[]*/], 3, boundary, (uString*)param.Key(::TYPES[2/*Uno.Collections.KeyValuePair<string, object>*/]), (uObject*)param.Value(::TYPES[2/*Uno.Collections.KeyValuePair<string, object>*/])));
-            uArray* bytes2 = ::g::Uno::Text::Utf8::GetBytes(postData);
-            uPtr(formDataStream)->Write(bytes2, 0, uPtr(bytes2)->Length());
+            ::g::Uno::Collections::KeyValuePair<uStrong<uString*>, uStrong<uObject*> > param = enum2.Current(::g::Uno::Collections::Dictionary__Enumerator_typeof()->MakeType(::g::Uno::String_typeof(), uObject_typeof(), NULL));
+
+            if (needsCLRF)
+            {
+                uArray* bytes = ::g::Uno::Text::Utf8::GetBytes(uString::Const("\r\n"
+                    ""));
+                uPtr(formDataStream)->Write(bytes, 0, uPtr(bytes)->Length());
+            }
+
+            needsCLRF = true;
+
+            if (uIs((uObject*)param.Value(::g::Uno::Collections::KeyValuePair_typeof()->MakeType(::g::Uno::String_typeof(), uObject_typeof(), NULL)), FormUpload__FileParameter_typeof()))
+            {
+                FormUpload__FileParameter* fileToUpload = uCast<FormUpload__FileParameter*>(param.Value(::g::Uno::Collections::KeyValuePair_typeof()->MakeType(::g::Uno::String_typeof(), uObject_typeof(), NULL)), FormUpload__FileParameter_typeof());
+                uString* header = ::g::Uno::String::Format(uString::Const("--{0}\r\n"
+                    "Content-Disposition: form-data; name=\"{1}\"; filename=\"{2}\"\r\n"
+                    "Content-Type: {3}\r\n"
+                    "\r\n"
+                    ""), uArray::Init<uObject*>(uObject_typeof()->Array(), 4, boundary, (uString*)param.Key(::g::Uno::Collections::KeyValuePair_typeof()->MakeType(::g::Uno::String_typeof(), uObject_typeof(), NULL)), (ind3 = uPtr(fileToUpload)->FileName(), (ind3 != NULL) ? ind3 : (uString*)param.Key(::g::Uno::Collections::KeyValuePair_typeof()->MakeType(::g::Uno::String_typeof(), uObject_typeof(), NULL))), (ind4 = uPtr(fileToUpload)->ContentType(), (ind4 != NULL) ? ind4 : uString::Const("application/octet-stream"))));
+                uArray* bytes1 = ::g::Uno::Text::Utf8::GetBytes(header);
+                uPtr(formDataStream)->Write(bytes1, 0, uPtr(bytes1)->Length());
+                formDataStream->Write(fileToUpload->File(), 0, uPtr(fileToUpload->File())->Length());
+            }
+            else
+            {
+                uString* postData = ::g::Uno::String::Format(uString::Const("--{0}\r\n"
+                    "Content-Disposition: form-data; name=\"{1}\"\r\n"
+                    "\r\n"
+                    "{2}"), uArray::Init<uObject*>(uObject_typeof()->Array(), 3, boundary, (uString*)param.Key(::g::Uno::Collections::KeyValuePair_typeof()->MakeType(::g::Uno::String_typeof(), uObject_typeof(), NULL)), (uObject*)param.Value(::g::Uno::Collections::KeyValuePair_typeof()->MakeType(::g::Uno::String_typeof(), uObject_typeof(), NULL))));
+                uArray* bytes2 = ::g::Uno::Text::Utf8::GetBytes(postData);
+                uPtr(formDataStream)->Write(bytes2, 0, uPtr(bytes2)->Length());
+            }
         }
     }
 
-    uString* footer = ::g::Uno::String::op_Addition2(::g::Uno::String::op_Addition2(::STRINGS[4/*"\r\n--"*/], boundary), ::STRINGS[5/*"--\r\n"*/]);
+    uString* footer = ::g::Uno::String::op_Addition2(::g::Uno::String::op_Addition2(uString::Const("\r\n"
+        "--"), boundary), uString::Const("--\r\n"
+        ""));
     uArray* fbytes = ::g::Uno::Text::Utf8::GetBytes(footer);
     formDataStream->Write(fbytes, 0, uPtr(fbytes)->Length());
     formDataStream->Position(0LL);
-    uArray* formData = uArray::New(::TYPES[4/*byte[]*/], (int)formDataStream->Length());
+    uArray* formData = uArray::New(::g::Uno::Byte_typeof()->Array(), (int)formDataStream->Length());
     formDataStream->Read(formData, 0, formData->Length());
     formDataStream->Close();
     return formData;
@@ -150,9 +140,8 @@ uArray* FormUpload::GetMultipartFormData(::g::Uno::Collections::Dictionary* post
 // public static Uno.Net.Http.HttpMessageHandlerRequest MultipartFormDataPost(string postUrl, string postMethod, Uno.Collections.Dictionary<string, string> headers, Uno.Collections.Dictionary<string, object> postParameters, byte[]& formData) [static] :118
 ::g::Uno::Net::Http::HttpMessageHandlerRequest* FormUpload::MultipartFormDataPost(uString* postUrl, uString* postMethod, ::g::Uno::Collections::Dictionary* headers, ::g::Uno::Collections::Dictionary* postParameters, uArray** formData)
 {
-    FormUpload_typeof()->Init();
-    uString* formDataBoundary = ::g::Uno::String::Format(::STRINGS[6/*"----------1...*/], uArray::New(::TYPES[3/*object[]*/], 0));
-    uString* contentType = ::g::Uno::String::op_Addition2(::STRINGS[7/*"multipart/f...*/], formDataBoundary);
+    uString* formDataBoundary = ::g::Uno::String::Format(uString::Const("----------1111"), uArray::New(uObject_typeof()->Array(), 0));
+    uString* contentType = ::g::Uno::String::op_Addition2(uString::Const("multipart/form-data; boundary="), formDataBoundary);
     *formData = FormUpload::GetMultipartFormData(postParameters, formDataBoundary);
     return FormUpload::PostForm(postUrl, postMethod, contentType, headers, *formData);
 }
@@ -160,7 +149,6 @@ uArray* FormUpload::GetMultipartFormData(::g::Uno::Collections::Dictionary* post
 // private static Uno.Net.Http.HttpMessageHandlerRequest PostForm(string postUrl, string postMethod, string contentType, Uno.Collections.Dictionary<string, string> headers, byte[] formData) [static] :127
 ::g::Uno::Net::Http::HttpMessageHandlerRequest* FormUpload::PostForm(uString* postUrl, uString* postMethod, uString* contentType, ::g::Uno::Collections::Dictionary* headers, uArray* formData)
 {
-    FormUpload_typeof()->Init();
     ::g::Uno::Collections::Dictionary__Enumerator<uStrong<uString*>, uStrong<uString*> > ret6;
     ::g::Uno::Net::Http::HttpMessageHandler* client = ::g::Uno::Net::Http::HttpMessageHandler::New1();
     ::g::Uno::Net::Http::HttpMessageHandlerRequest* request = client->CreateRequest(postMethod, postUrl);
@@ -168,14 +156,25 @@ uArray* FormUpload::GetMultipartFormData(::g::Uno::Collections::Dictionary* post
     if (request == NULL)
         return request;
 
-    for (::g::Uno::Collections::Dictionary__Enumerator<uStrong<uString*>, uStrong<uString*> > enum1 = (::g::Uno::Collections::Dictionary__GetEnumerator_fn(uPtr(headers), &ret6), ret6); enum1.MoveNext(::TYPES[5/*Uno.Collections.Dictionary<string, string>.Enumerator*/]); )
+    ::g::Uno::Collections::Dictionary__Enumerator<uStrong<uString*>, uStrong<uString*> > enum1 = (::g::Uno::Collections::Dictionary__GetEnumerator_fn(uPtr(headers), &ret6), ret6);
+
     {
-        ::g::Uno::Collections::KeyValuePair<uStrong<uString*>, uStrong<uString*> > header = enum1.Current(::TYPES[5/*Uno.Collections.Dictionary<string, string>.Enumerator*/]);
-        uPtr(request)->SetHeader(header.Key(::TYPES[6/*Uno.Collections.KeyValuePair<string, string>*/]), header.Value(::TYPES[6/*Uno.Collections.KeyValuePair<string, string>*/]));
+        const auto __finally_fun = [&]()
+        {
+            enum1.Dispose(::g::Uno::Collections::Dictionary__Enumerator_typeof()->MakeType(::g::Uno::String_typeof(), ::g::Uno::String_typeof(), NULL));
+        };
+
+        const uFinally<decltype(__finally_fun)> __f(__finally_fun);
+
+        while (enum1.MoveNext(::g::Uno::Collections::Dictionary__Enumerator_typeof()->MakeType(::g::Uno::String_typeof(), ::g::Uno::String_typeof(), NULL)))
+        {
+            ::g::Uno::Collections::KeyValuePair<uStrong<uString*>, uStrong<uString*> > header = enum1.Current(::g::Uno::Collections::Dictionary__Enumerator_typeof()->MakeType(::g::Uno::String_typeof(), ::g::Uno::String_typeof(), NULL));
+            uPtr(request)->SetHeader(header.Key(::g::Uno::Collections::KeyValuePair_typeof()->MakeType(::g::Uno::String_typeof(), ::g::Uno::String_typeof(), NULL)), header.Value(::g::Uno::Collections::KeyValuePair_typeof()->MakeType(::g::Uno::String_typeof(), ::g::Uno::String_typeof(), NULL)));
+        }
     }
 
-    uPtr(request)->SetHeader(::STRINGS[8/*"Content-Type"*/], contentType);
-    request->SetHeader(::STRINGS[9/*"Content-Len...*/], ::g::Uno::Int::ToString(uPtr(formData)->Length(), ::TYPES[7/*int*/]));
+    uPtr(request)->SetHeader(uString::Const("Content-Type"), contentType);
+    request->SetHeader(uString::Const("Content-Length"), ::g::Uno::Int::ToString(uPtr(formData)->Length(), ::g::Uno::Int_typeof()));
     return request;
 }
 // }

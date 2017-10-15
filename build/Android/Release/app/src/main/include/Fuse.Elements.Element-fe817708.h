@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Elements/1.2.1/caching/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Elements/1.3.0-rc2/Caching/ElementAtlasPool.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -14,7 +14,7 @@ namespace g{
 namespace Fuse{
 namespace Elements{
 
-// internal static class ElementAtlasFramebufferPool :445
+// internal static class ElementAtlasFramebufferPool :107
 // {
 uClassType* ElementAtlasFramebufferPool_typeof();
 void ElementAtlasFramebufferPool__add_AtlasSizeChanged_fn(uDelegate* value);

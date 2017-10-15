@@ -1,4 +1,4 @@
-// This file was generated based on '.uno/ux11/AlertDetailPage.g.uno'.
+// This file was generated based on '.uno/ux13/AlertDetailPage.g.uno'.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #include <_root.AlertDetailPage.h>
@@ -47,7 +47,6 @@
 #include <Fuse.Triggers.Actions-fcab7e57.h>
 #include <Fuse.Triggers.Trigger.h>
 #include <Fuse.Triggers.WhileTrue.h>
-#include <Fuse.Visual.h>
 #include <Uno.Float.h>
 #include <Uno.Float4.h>
 #include <Uno.Int.h>
@@ -68,11 +67,13 @@ static uType* TYPES[8];
 
 namespace g{
 
-// public partial sealed class AlertDetailPage :2
+// public partial class AlertDetailPage :2
 // {
 // static AlertDetailPage() :41
 static void AlertDetailPage__cctor_4_fn(uType* __type)
 {
+    ::g::Uno::UX::Selector_typeof()->Init();
+    ::g::Uno::UX::Resource_typeof()->Init();
     AlertDetailPage::__g_static_nametable1_ = uArray::Init<uString*>(::TYPES[0/*string[]*/], 12, ::STRINGS[0/*"router"*/], ::STRINGS[1/*"temp_eb7"*/], ::STRINGS[2/*"AddEmralsPo...*/], ::STRINGS[3/*"Revealed"*/], ::STRINGS[4/*"emrals_value1"*/], ::STRINGS[5/*"temp_eb8"*/], ::STRINGS[6/*"emrals_value5"*/], ::STRINGS[7/*"temp_eb9"*/], ::STRINGS[8/*"emrals_valu...*/], ::STRINGS[9/*"temp_eb10"*/], ::STRINGS[10/*"temp_eb11"*/], ::STRINGS[11/*"temp_eb12"*/]);
     AlertDetailPage::__selector0_ = ::g::Uno::UX::Selector__op_Implicit(::STRINGS[12/*"Value"*/]);
     AlertDetailPage::__selector1_ = ::g::Uno::UX::Selector__op_Implicit(::STRINGS[13/*"Url"*/]);
@@ -82,7 +83,7 @@ static void AlertDetailPage__cctor_4_fn(uType* __type)
     AlertDetailPage::__selector5_ = ::g::Uno::UX::Selector__op_Implicit(::STRINGS[4/*"emrals_value1"*/]);
     AlertDetailPage::__selector6_ = ::g::Uno::UX::Selector__op_Implicit(::STRINGS[6/*"emrals_value5"*/]);
     AlertDetailPage::__selector7_ = ::g::Uno::UX::Selector__op_Implicit(::STRINGS[8/*"emrals_valu...*/]);
-    AlertDetailPage::Head_ = ::g::Fuse::Font::New2(::g::Uno::UX::BundleFileSource::New1(::g::emrals_bundle::PTserif96051ccc()));
+    AlertDetailPage::Head_ = ::g::Fuse::Font::New2(::g::Uno::UX::BundleFileSource::New1(::g::emrals_bundle::PTserif7f97d4b3()));
     ::g::Uno::UX::Resource::SetGlobalKey(AlertDetailPage::Head_, ::STRINGS[15/*"Head"*/]);
 }
 
@@ -139,6 +140,8 @@ static void AlertDetailPage_build(uType* type)
     ::TYPES[5] = ::g::Uno::Collections::ICollection_typeof()->MakeType(::g::Fuse::Triggers::Actions::TriggerAction_typeof(), NULL);
     ::TYPES[6] = ::g::Uno::Collections::ICollection_typeof()->MakeType(::g::Fuse::Animations::Animator_typeof(), NULL);
     ::TYPES[7] = ::g::Uno::Collections::ICollection_typeof()->MakeType(uObject_typeof(), NULL);
+    type->SetDependencies(
+        ::g::Fuse::Controls::Grid_typeof());
     type->SetInterfaces(
         ::g::Uno::Collections::IList_typeof()->MakeType(::g::Fuse::Binding_typeof(), NULL), offsetof(::g::Fuse::Controls::Panel_type, interface0),
         ::g::Fuse::Scripting::IScriptObject_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface1),
@@ -149,47 +152,48 @@ static void AlertDetailPage_build(uType* type)
         ::g::Uno::Collections::IList_typeof()->MakeType(::g::Fuse::Node_typeof(), NULL), offsetof(::g::Fuse::Controls::Panel_type, interface6),
         ::g::Uno::UX::IPropertyListener_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface7),
         ::g::Fuse::ITemplateSource_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface8),
-        ::TYPES[2/*Uno.Collections.ICollection<Fuse.Node>*/], offsetof(::g::Fuse::Controls::Panel_type, interface9),
-        ::g::Uno::Collections::IEnumerable_typeof()->MakeType(::g::Fuse::Node_typeof(), NULL), offsetof(::g::Fuse::Controls::Panel_type, interface10),
-        ::g::Fuse::Triggers::Actions::IShow_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface11),
-        ::g::Fuse::Triggers::Actions::IHide_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface12),
-        ::g::Fuse::Triggers::Actions::ICollapse_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface13),
-        ::g::Fuse::IActualPlacement_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface14),
-        ::g::Fuse::Animations::IResize_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface15),
-        ::g::Fuse::Drawing::ISurfaceDrawable_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface16));
-    type->SetFields(111,
-        ::g::Uno::UX::NameTable_typeof(), offsetof(::g::AlertDetailPage, __g_nametable1), 0,
-        ::g::Fuse::Controls::Panel_typeof(), offsetof(::g::AlertDetailPage, AddEmralsPopUp2), 0,
-        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Fuse::Elements::Visibility_typeof(), NULL), offsetof(::g::AlertDetailPage, AddEmralsPopUp2_Visibility_inst), 0,
-        ::g::PTBold_typeof(), offsetof(::g::AlertDetailPage, emrals_value1), 0,
-        ::g::PTBold_typeof(), offsetof(::g::AlertDetailPage, emrals_value10), 0,
-        ::g::PTBold_typeof(), offsetof(::g::AlertDetailPage, emrals_value5), 0,
-        ::g::Fuse::Triggers::WhileTrue_typeof(), offsetof(::g::AlertDetailPage, Revealed), 0,
-        ::g::Fuse::Navigation::Router_typeof(), offsetof(::g::AlertDetailPage, router), 0,
-        ::g::Fuse::Reactive::EventBinding_typeof(), offsetof(::g::AlertDetailPage, temp_eb10), 0,
-        ::g::Fuse::Reactive::EventBinding_typeof(), offsetof(::g::AlertDetailPage, temp_eb11), 0,
-        ::g::Fuse::Reactive::EventBinding_typeof(), offsetof(::g::AlertDetailPage, temp_eb12), 0,
-        ::g::Fuse::Reactive::EventBinding_typeof(), offsetof(::g::AlertDetailPage, temp_eb7), 0,
-        ::g::Fuse::Reactive::EventBinding_typeof(), offsetof(::g::AlertDetailPage, temp_eb8), 0,
-        ::g::Fuse::Reactive::EventBinding_typeof(), offsetof(::g::AlertDetailPage, temp_eb9), 0,
-        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(::g::AlertDetailPage, temp_Value_inst), 0,
-        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(::g::AlertDetailPage, temp1_Value_inst), 0,
-        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(::g::AlertDetailPage, temp2_Url_inst), 0,
-        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(::g::AlertDetailPage, temp3_Value_inst), 0,
-        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(::g::AlertDetailPage, temp4_Value_inst), 0,
-        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(::g::AlertDetailPage, temp5_Value_inst), 0,
-        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(::g::AlertDetailPage, temp6_Value_inst), 0,
-        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(::g::AlertDetailPage, temp7_Url_inst), 0,
-        ::TYPES[0/*string[]*/], (uintptr_t)&::g::AlertDetailPage::__g_static_nametable1_, uFieldFlagsStatic,
-        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&::g::AlertDetailPage::__selector0_, uFieldFlagsStatic,
-        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&::g::AlertDetailPage::__selector1_, uFieldFlagsStatic,
-        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&::g::AlertDetailPage::__selector2_, uFieldFlagsStatic,
-        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&::g::AlertDetailPage::__selector3_, uFieldFlagsStatic,
-        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&::g::AlertDetailPage::__selector4_, uFieldFlagsStatic,
-        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&::g::AlertDetailPage::__selector5_, uFieldFlagsStatic,
-        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&::g::AlertDetailPage::__selector6_, uFieldFlagsStatic,
-        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&::g::AlertDetailPage::__selector7_, uFieldFlagsStatic,
-        ::g::Fuse::Font_typeof(), (uintptr_t)&::g::AlertDetailPage::Head_, uFieldFlagsStatic);
+        ::g::Uno::Collections::IEnumerable_typeof()->MakeType(::g::Fuse::Visual_typeof(), NULL), offsetof(::g::Fuse::Controls::Panel_type, interface9),
+        ::TYPES[2/*Uno.Collections.ICollection<Fuse.Node>*/], offsetof(::g::Fuse::Controls::Panel_type, interface10),
+        ::g::Uno::Collections::IEnumerable_typeof()->MakeType(::g::Fuse::Node_typeof(), NULL), offsetof(::g::Fuse::Controls::Panel_type, interface11),
+        ::g::Fuse::Triggers::Actions::IShow_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface12),
+        ::g::Fuse::Triggers::Actions::IHide_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface13),
+        ::g::Fuse::Triggers::Actions::ICollapse_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface14),
+        ::g::Fuse::IActualPlacement_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface15),
+        ::g::Fuse::Animations::IResize_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface16),
+        ::g::Fuse::Drawing::ISurfaceDrawable_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface17));
+    type->SetFields(117,
+        ::g::Uno::UX::NameTable_typeof(), offsetof(AlertDetailPage, __g_nametable1), 0,
+        ::g::Fuse::Controls::Panel_typeof(), offsetof(AlertDetailPage, AddEmralsPopUp2), 0,
+        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Fuse::Elements::Visibility_typeof(), NULL), offsetof(AlertDetailPage, AddEmralsPopUp2_Visibility_inst), 0,
+        ::g::PTBold_typeof(), offsetof(AlertDetailPage, emrals_value1), 0,
+        ::g::PTBold_typeof(), offsetof(AlertDetailPage, emrals_value10), 0,
+        ::g::PTBold_typeof(), offsetof(AlertDetailPage, emrals_value5), 0,
+        ::g::Fuse::Triggers::WhileTrue_typeof(), offsetof(AlertDetailPage, Revealed), 0,
+        ::g::Fuse::Navigation::Router_typeof(), offsetof(AlertDetailPage, router), 0,
+        ::g::Fuse::Reactive::EventBinding_typeof(), offsetof(AlertDetailPage, temp_eb10), 0,
+        ::g::Fuse::Reactive::EventBinding_typeof(), offsetof(AlertDetailPage, temp_eb11), 0,
+        ::g::Fuse::Reactive::EventBinding_typeof(), offsetof(AlertDetailPage, temp_eb12), 0,
+        ::g::Fuse::Reactive::EventBinding_typeof(), offsetof(AlertDetailPage, temp_eb7), 0,
+        ::g::Fuse::Reactive::EventBinding_typeof(), offsetof(AlertDetailPage, temp_eb8), 0,
+        ::g::Fuse::Reactive::EventBinding_typeof(), offsetof(AlertDetailPage, temp_eb9), 0,
+        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(AlertDetailPage, temp_Value_inst), 0,
+        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(AlertDetailPage, temp1_Value_inst), 0,
+        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(AlertDetailPage, temp2_Url_inst), 0,
+        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(AlertDetailPage, temp3_Value_inst), 0,
+        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(AlertDetailPage, temp4_Value_inst), 0,
+        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(AlertDetailPage, temp5_Value_inst), 0,
+        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(AlertDetailPage, temp6_Value_inst), 0,
+        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(AlertDetailPage, temp7_Url_inst), 0,
+        ::TYPES[0/*string[]*/], (uintptr_t)&AlertDetailPage::__g_static_nametable1_, uFieldFlagsStatic,
+        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&AlertDetailPage::__selector0_, uFieldFlagsStatic,
+        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&AlertDetailPage::__selector1_, uFieldFlagsStatic,
+        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&AlertDetailPage::__selector2_, uFieldFlagsStatic,
+        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&AlertDetailPage::__selector3_, uFieldFlagsStatic,
+        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&AlertDetailPage::__selector4_, uFieldFlagsStatic,
+        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&AlertDetailPage::__selector5_, uFieldFlagsStatic,
+        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&AlertDetailPage::__selector6_, uFieldFlagsStatic,
+        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&AlertDetailPage::__selector7_, uFieldFlagsStatic,
+        ::g::Fuse::Font_typeof(), (uintptr_t)&AlertDetailPage::Head_, uFieldFlagsStatic);
 }
 
 ::g::Fuse::Controls::Panel_type* AlertDetailPage_typeof()
@@ -199,34 +203,36 @@ static void AlertDetailPage_build(uType* type)
 
     uTypeOptions options;
     options.BaseDefinition = ::g::Fuse::Controls::Page_typeof();
-    options.FieldCount = 143;
-    options.InterfaceCount = 17;
+    options.FieldCount = 149;
+    options.InterfaceCount = 18;
+    options.DependencyCount = 1;
     options.ObjectSize = sizeof(AlertDetailPage);
     options.TypeSize = sizeof(::g::Fuse::Controls::Panel_type);
     type = (::g::Fuse::Controls::Panel_type*)uClassType::New("AlertDetailPage", options);
     type->fp_build_ = AlertDetailPage_build;
     type->fp_cctor_ = AlertDetailPage__cctor_4_fn;
-    type->interface16.fp_Draw = (void(*)(uObject*, ::g::Fuse::Drawing::Surface*))::g::Fuse::Controls::Panel__FuseDrawingISurfaceDrawableDraw_fn;
-    type->interface16.fp_get_IsPrimary = (void(*)(uObject*, bool*))::g::Fuse::Controls::Panel__FuseDrawingISurfaceDrawableget_IsPrimary_fn;
-    type->interface16.fp_get_ElementSize = (void(*)(uObject*, ::g::Uno::Float2*))::g::Fuse::Controls::Panel__FuseDrawingISurfaceDrawableget_ElementSize_fn;
-    type->interface11.fp_Show = (void(*)(uObject*))::g::Fuse::Elements::Element__FuseTriggersActionsIShowShow_fn;
-    type->interface13.fp_Collapse = (void(*)(uObject*))::g::Fuse::Elements::Element__FuseTriggersActionsICollapseCollapse_fn;
-    type->interface12.fp_Hide = (void(*)(uObject*))::g::Fuse::Elements::Element__FuseTriggersActionsIHideHide_fn;
-    type->interface15.fp_SetSize = (void(*)(uObject*, ::g::Uno::Float2*))::g::Fuse::Elements::Element__FuseAnimationsIResizeSetSize_fn;
-    type->interface14.fp_get_ActualSize = (void(*)(uObject*, ::g::Uno::Float3*))::g::Fuse::Elements::Element__FuseIActualPlacementget_ActualSize_fn;
-    type->interface14.fp_add_Placed = (void(*)(uObject*, uDelegate*))::g::Fuse::Elements::Element__add_Placed_fn;
-    type->interface14.fp_remove_Placed = (void(*)(uObject*, uDelegate*))::g::Fuse::Elements::Element__remove_Placed_fn;
-    type->interface9.fp_Clear = (void(*)(uObject*))::g::Fuse::Visual__UnoCollectionsICollectionFuseNodeClear_fn;
-    type->interface9.fp_Contains = (void(*)(uObject*, void*, bool*))::g::Fuse::Visual__UnoCollectionsICollectionFuseNodeContains_fn;
+    type->interface17.fp_Draw = (void(*)(uObject*, ::g::Fuse::Drawing::Surface*))::g::Fuse::Controls::Panel__FuseDrawingISurfaceDrawableDraw_fn;
+    type->interface17.fp_get_IsPrimary = (void(*)(uObject*, bool*))::g::Fuse::Controls::Panel__FuseDrawingISurfaceDrawableget_IsPrimary_fn;
+    type->interface17.fp_get_ElementSize = (void(*)(uObject*, ::g::Uno::Float2*))::g::Fuse::Controls::Panel__FuseDrawingISurfaceDrawableget_ElementSize_fn;
+    type->interface12.fp_Show = (void(*)(uObject*))::g::Fuse::Elements::Element__FuseTriggersActionsIShowShow_fn;
+    type->interface14.fp_Collapse = (void(*)(uObject*))::g::Fuse::Elements::Element__FuseTriggersActionsICollapseCollapse_fn;
+    type->interface13.fp_Hide = (void(*)(uObject*))::g::Fuse::Elements::Element__FuseTriggersActionsIHideHide_fn;
+    type->interface16.fp_SetSize = (void(*)(uObject*, ::g::Uno::Float2*))::g::Fuse::Elements::Element__FuseAnimationsIResizeSetSize_fn;
+    type->interface15.fp_get_ActualSize = (void(*)(uObject*, ::g::Uno::Float3*))::g::Fuse::Elements::Element__FuseIActualPlacementget_ActualSize_fn;
+    type->interface15.fp_add_Placed = (void(*)(uObject*, uDelegate*))::g::Fuse::Elements::Element__add_Placed_fn;
+    type->interface15.fp_remove_Placed = (void(*)(uObject*, uDelegate*))::g::Fuse::Elements::Element__remove_Placed_fn;
+    type->interface9.fp_GetEnumerator = (void(*)(uObject*, uObject**))::g::Fuse::Visual__UnoCollectionsIEnumerableFuseVisualGetEnumerator_fn;
+    type->interface10.fp_Clear = (void(*)(uObject*))::g::Fuse::Visual__UnoCollectionsICollectionFuseNodeClear_fn;
+    type->interface10.fp_Contains = (void(*)(uObject*, void*, bool*))::g::Fuse::Visual__UnoCollectionsICollectionFuseNodeContains_fn;
     type->interface6.fp_RemoveAt = (void(*)(uObject*, int*))::g::Fuse::Visual__UnoCollectionsIListFuseNodeRemoveAt_fn;
-    type->interface10.fp_GetEnumerator = (void(*)(uObject*, uObject**))::g::Fuse::Visual__UnoCollectionsIEnumerableFuseNodeGetEnumerator_fn;
-    type->interface9.fp_get_Count = (void(*)(uObject*, int*))::g::Fuse::Visual__UnoCollectionsICollectionFuseNodeget_Count_fn;
+    type->interface11.fp_GetEnumerator = (void(*)(uObject*, uObject**))::g::Fuse::Visual__UnoCollectionsIEnumerableFuseNodeGetEnumerator_fn;
+    type->interface10.fp_get_Count = (void(*)(uObject*, int*))::g::Fuse::Visual__UnoCollectionsICollectionFuseNodeget_Count_fn;
     type->interface6.fp_get_Item = (void(*)(uObject*, int*, uTRef))::g::Fuse::Visual__UnoCollectionsIListFuseNodeget_Item_fn;
     type->interface6.fp_Insert = (void(*)(uObject*, int*, void*))::g::Fuse::Visual__Insert1_fn;
     type->interface7.fp_OnPropertyChanged = (void(*)(uObject*, ::g::Uno::UX::PropertyObject*, ::g::Uno::UX::Selector*))::g::Fuse::Controls::Control__OnPropertyChanged2_fn;
     type->interface8.fp_FindTemplate = (void(*)(uObject*, uString*, ::g::Uno::UX::Template**))::g::Fuse::Visual__FindTemplate_fn;
-    type->interface9.fp_Add = (void(*)(uObject*, void*))::g::Fuse::Visual__Add1_fn;
-    type->interface9.fp_Remove = (void(*)(uObject*, void*, bool*))::g::Fuse::Visual__Remove1_fn;
+    type->interface10.fp_Add = (void(*)(uObject*, void*))::g::Fuse::Visual__Add1_fn;
+    type->interface10.fp_Remove = (void(*)(uObject*, void*, bool*))::g::Fuse::Visual__Remove1_fn;
     type->interface4.fp_Clear = (void(*)(uObject*))::g::Fuse::Node__UnoCollectionsICollectionFuseBindingClear_fn;
     type->interface4.fp_Contains = (void(*)(uObject*, void*, bool*))::g::Fuse::Node__UnoCollectionsICollectionFuseBindingContains_fn;
     type->interface0.fp_RemoveAt = (void(*)(uObject*, int*))::g::Fuse::Node__UnoCollectionsIListFuseBindingRemoveAt_fn;
@@ -257,12 +263,6 @@ void AlertDetailPage__InitializeUX_fn(AlertDetailPage* __this)
     __this->InitializeUX();
 }
 
-// public AlertDetailPage New(Fuse.Navigation.Router router) :47
-void AlertDetailPage__New5_fn(::g::Fuse::Navigation::Router* router1, AlertDetailPage** __retval)
-{
-    *__retval = AlertDetailPage::New5(router1);
-}
-
 uSStrong<uArray*> AlertDetailPage::__g_static_nametable1_;
 ::g::Uno::UX::Selector AlertDetailPage::__selector0_;
 ::g::Uno::UX::Selector AlertDetailPage::__selector1_;
@@ -285,60 +285,60 @@ void AlertDetailPage::ctor_8(::g::Fuse::Navigation::Router* router1)
 // private void InitializeUX() [instance] :53
 void AlertDetailPage::InitializeUX()
 {
-    __g_nametable1 = ::g::Uno::UX::NameTable::New1(NULL, AlertDetailPage::__g_static_nametable1());
+    __g_nametable1 = ::g::Uno::UX::NameTable::New1(NULL, AlertDetailPage::__g_static_nametable1_);
     ::g::Fuse::Reactive::Data* temp8 = ::g::Fuse::Reactive::Data::New1(::STRINGS[16/*"back"*/]);
     uString* temp9 = ::STRINGS[17/*"DIRT ALERT "*/];
     ::g::Fuse::Reactive::Constant* temp10 = ::g::Fuse::Reactive::Constant::New1(temp9);
     ::g::Fuse::Reactive::Data* temp11 = ::g::Fuse::Reactive::Data::New1(::STRINGS[18/*"id"*/]);
     ::g::PTreal* temp = ::g::PTreal::New4();
-    temp_Value_inst = ::g::emrals_FuseControlsTextControl_Value_Property::New1(temp, AlertDetailPage::__selector0());
+    temp_Value_inst = ::g::emrals_FuseControlsTextControl_Value_Property::New1(temp, AlertDetailPage::__selector0_);
     ::g::Fuse::Reactive::Add* temp12 = ::g::Fuse::Reactive::Add::New1(temp10, temp11);
     ::g::Fuse::Controls::Text* temp1 = ::g::Fuse::Controls::Text::New3();
-    temp1_Value_inst = ::g::emrals_FuseControlsTextControl_Value_Property::New1(temp1, AlertDetailPage::__selector0());
+    temp1_Value_inst = ::g::emrals_FuseControlsTextControl_Value_Property::New1(temp1, AlertDetailPage::__selector0_);
     ::g::Fuse::Reactive::Data* temp13 = ::g::Fuse::Reactive::Data::New1(::STRINGS[19/*"title"*/]);
     ::g::Fuse::Controls::Image* temp2 = ::g::Fuse::Controls::Image::New3();
-    temp2_Url_inst = ::g::emrals_FuseControlsImage_Url_Property::New1(temp2, AlertDetailPage::__selector1());
+    temp2_Url_inst = ::g::emrals_FuseControlsImage_Url_Property::New1(temp2, AlertDetailPage::__selector1_);
     ::g::Fuse::Reactive::Data* temp14 = ::g::Fuse::Reactive::Data::New1(::STRINGS[20/*"thumbnail"*/]);
     ::g::PTreal* temp3 = ::g::PTreal::New4();
-    temp3_Value_inst = ::g::emrals_FuseControlsTextControl_Value_Property::New1(temp3, AlertDetailPage::__selector0());
+    temp3_Value_inst = ::g::emrals_FuseControlsTextControl_Value_Property::New1(temp3, AlertDetailPage::__selector0_);
     ::g::Fuse::Reactive::Data* temp15 = ::g::Fuse::Reactive::Data::New1(::STRINGS[21/*"emrals"*/]);
     AddEmralsPopUp2 = ::g::Fuse::Controls::Panel::New3();
-    AddEmralsPopUp2_Visibility_inst = ::g::emrals_FuseElementsElement_Visibility_Property::New1(AddEmralsPopUp2, AlertDetailPage::__selector2());
+    AddEmralsPopUp2_Visibility_inst = ::g::emrals_FuseElementsElement_Visibility_Property::New1(AddEmralsPopUp2, AlertDetailPage::__selector2_);
     ::g::Fuse::Reactive::Data* temp16 = ::g::Fuse::Reactive::Data::New1(::STRINGS[22/*"detail_add_...*/]);
     ::g::Fuse::Reactive::Data* temp17 = ::g::Fuse::Reactive::Data::New1(::STRINGS[23/*"detail_add_...*/]);
     ::g::Fuse::Reactive::Data* temp18 = ::g::Fuse::Reactive::Data::New1(::STRINGS[24/*"detail_add_...*/]);
     ::g::Fuse::Reactive::Data* temp19 = ::g::Fuse::Reactive::Data::New1(::STRINGS[25/*"emrals_popu...*/]);
     ::g::Dog* temp4 = ::g::Dog::New4();
-    temp4_Value_inst = ::g::emrals_FuseControlsTextControl_Value_Property::New1(temp4, AlertDetailPage::__selector0());
+    temp4_Value_inst = ::g::emrals_FuseControlsTextControl_Value_Property::New1(temp4, AlertDetailPage::__selector0_);
     ::g::Fuse::Reactive::Data* temp20 = ::g::Fuse::Reactive::Data::New1(::STRINGS[26/*"views"*/]);
     ::g::Dog* temp5 = ::g::Dog::New4();
-    temp5_Value_inst = ::g::emrals_FuseControlsTextControl_Value_Property::New1(temp5, AlertDetailPage::__selector0());
+    temp5_Value_inst = ::g::emrals_FuseControlsTextControl_Value_Property::New1(temp5, AlertDetailPage::__selector0_);
     ::g::Fuse::Reactive::Data* temp21 = ::g::Fuse::Reactive::Data::New1(::STRINGS[27/*"poster_user...*/]);
     ::g::Dog* temp6 = ::g::Dog::New4();
-    temp6_Value_inst = ::g::emrals_FuseControlsTextControl_Value_Property::New1(temp6, AlertDetailPage::__selector0());
+    temp6_Value_inst = ::g::emrals_FuseControlsTextControl_Value_Property::New1(temp6, AlertDetailPage::__selector0_);
     ::g::Fuse::Reactive::Data* temp22 = ::g::Fuse::Reactive::Data::New1(::STRINGS[28/*"created_nat...*/]);
     ::g::Fuse::Controls::Image* temp7 = ::g::Fuse::Controls::Image::New3();
-    temp7_Url_inst = ::g::emrals_FuseControlsImage_Url_Property::New1(temp7, AlertDetailPage::__selector1());
+    temp7_Url_inst = ::g::emrals_FuseControlsImage_Url_Property::New1(temp7, AlertDetailPage::__selector1_);
     ::g::Fuse::Reactive::Data* temp23 = ::g::Fuse::Reactive::Data::New1(::STRINGS[29/*"google_url"*/]);
     ::g::Fuse::Reactive::Data* temp24 = ::g::Fuse::Reactive::Data::New1(::STRINGS[30/*"load_map"*/]);
     ::g::Fuse::Reactive::Data* temp25 = ::g::Fuse::Reactive::Data::New1(::STRINGS[31/*"takePicture...*/]);
     ::g::Fuse::Reactive::JavaScript* temp26 = ::g::Fuse::Reactive::JavaScript::New2(__g_nametable1);
     ::g::Fuse::Controls::StackPanel* temp27 = ::g::Fuse::Controls::StackPanel::New4();
     ::g::Fuse::Controls::Text* temp28 = ::g::Fuse::Controls::Text::New3();
-    temp_eb7 = ::g::Fuse::Reactive::EventBinding::New1((uObject*)temp8, __g_nametable1);
-    ::g::Fuse::Reactive::DataBinding* temp29 = ::g::Fuse::Reactive::DataBinding::New1(temp_Value_inst, (uObject*)temp12, __g_nametable1, 3);
+    temp_eb7 = ::g::Fuse::Reactive::EventBinding::New1((uObject*)temp8);
+    ::g::Fuse::Reactive::DataBinding* temp29 = ::g::Fuse::Reactive::DataBinding::New1(temp_Value_inst, (uObject*)temp12, 3);
     ::g::Fuse::Drawing::StaticSolidColor* temp30 = ::g::Fuse::Drawing::StaticSolidColor::New2(::g::Uno::Float4__New2(1.0f, 1.0f, 1.0f, 1.0f));
     ::g::Fuse::Controls::StackPanel* temp31 = ::g::Fuse::Controls::StackPanel::New4();
     ::g::Fuse::Controls::Panel* temp32 = ::g::Fuse::Controls::Panel::New3();
     ::g::Fuse::Controls::Rectangle* temp33 = ::g::Fuse::Controls::Rectangle::New3();
-    ::g::Fuse::Reactive::DataBinding* temp34 = ::g::Fuse::Reactive::DataBinding::New1(temp1_Value_inst, (uObject*)temp13, __g_nametable1, 3);
+    ::g::Fuse::Reactive::DataBinding* temp34 = ::g::Fuse::Reactive::DataBinding::New1(temp1_Value_inst, (uObject*)temp13, 3);
     ::g::Fuse::Controls::Rectangle* temp35 = ::g::Fuse::Controls::Rectangle::New3();
     ::g::Horse* temp36 = ::g::Horse::New4();
     ::g::Fuse::Controls::Rectangle* temp37 = ::g::Fuse::Controls::Rectangle::New3();
-    ::g::Fuse::Reactive::DataBinding* temp38 = ::g::Fuse::Reactive::DataBinding::New1(temp2_Url_inst, (uObject*)temp14, __g_nametable1, 3);
+    ::g::Fuse::Reactive::DataBinding* temp38 = ::g::Fuse::Reactive::DataBinding::New1(temp2_Url_inst, (uObject*)temp14, 3);
     ::g::Fuse::Controls::StackPanel* temp39 = ::g::Fuse::Controls::StackPanel::New4();
     ::g::Fuse::Controls::Image* temp40 = ::g::Fuse::Controls::Image::New3();
-    ::g::Fuse::Reactive::DataBinding* temp41 = ::g::Fuse::Reactive::DataBinding::New1(temp3_Value_inst, (uObject*)temp15, __g_nametable1, 3);
+    ::g::Fuse::Reactive::DataBinding* temp41 = ::g::Fuse::Reactive::DataBinding::New1(temp3_Value_inst, (uObject*)temp15, 3);
     ::g::Fuse::Controls::Image* temp42 = ::g::Fuse::Controls::Image::New3();
     ::g::Fuse::Gestures::Clicked* temp43 = ::g::Fuse::Gestures::Clicked::New2();
     ::g::Fuse::Triggers::Actions::Toggle* temp44 = ::g::Fuse::Triggers::Actions::Toggle::New2();
@@ -348,32 +348,32 @@ void AlertDetailPage::InitializeUX()
     ::g::Fuse::Controls::StackPanel* temp47 = ::g::Fuse::Controls::StackPanel::New4();
     ::g::Fuse::Controls::Rectangle* temp48 = ::g::Fuse::Controls::Rectangle::New3();
     emrals_value1 = ::g::PTBold::New4();
-    temp_eb8 = ::g::Fuse::Reactive::EventBinding::New1((uObject*)temp16, __g_nametable1);
+    temp_eb8 = ::g::Fuse::Reactive::EventBinding::New1((uObject*)temp16);
     ::g::Fuse::Controls::Rectangle* temp49 = ::g::Fuse::Controls::Rectangle::New3();
     emrals_value5 = ::g::PTBold::New4();
-    temp_eb9 = ::g::Fuse::Reactive::EventBinding::New1((uObject*)temp17, __g_nametable1);
+    temp_eb9 = ::g::Fuse::Reactive::EventBinding::New1((uObject*)temp17);
     ::g::Fuse::Controls::Rectangle* temp50 = ::g::Fuse::Controls::Rectangle::New3();
     emrals_value10 = ::g::PTBold::New4();
-    temp_eb10 = ::g::Fuse::Reactive::EventBinding::New1((uObject*)temp18, __g_nametable1);
+    temp_eb10 = ::g::Fuse::Reactive::EventBinding::New1((uObject*)temp18);
     ::g::Fuse::Controls::Rectangle* temp51 = ::g::Fuse::Controls::Rectangle::New3();
-    ::g::Fuse::Reactive::DataBinding* temp52 = ::g::Fuse::Reactive::DataBinding::New1(AddEmralsPopUp2_Visibility_inst, (uObject*)temp19, __g_nametable1, 3);
+    ::g::Fuse::Reactive::DataBinding* temp52 = ::g::Fuse::Reactive::DataBinding::New1(AddEmralsPopUp2_Visibility_inst, (uObject*)temp19, 3);
     ::g::Fuse::Controls::Panel* temp53 = ::g::Fuse::Controls::Panel::New3();
     ::g::Fuse::Controls::Grid* temp54 = ::g::Fuse::Controls::Grid::New4();
     ::g::Mouse* temp55 = ::g::Mouse::New4();
-    ::g::Fuse::Reactive::DataBinding* temp56 = ::g::Fuse::Reactive::DataBinding::New1(temp4_Value_inst, (uObject*)temp20, __g_nametable1, 3);
+    ::g::Fuse::Reactive::DataBinding* temp56 = ::g::Fuse::Reactive::DataBinding::New1(temp4_Value_inst, (uObject*)temp20, 3);
     ::g::Mouse* temp57 = ::g::Mouse::New4();
-    ::g::Fuse::Reactive::DataBinding* temp58 = ::g::Fuse::Reactive::DataBinding::New1(temp5_Value_inst, (uObject*)temp21, __g_nametable1, 3);
+    ::g::Fuse::Reactive::DataBinding* temp58 = ::g::Fuse::Reactive::DataBinding::New1(temp5_Value_inst, (uObject*)temp21, 3);
     ::g::Mouse* temp59 = ::g::Mouse::New4();
-    ::g::Fuse::Reactive::DataBinding* temp60 = ::g::Fuse::Reactive::DataBinding::New1(temp6_Value_inst, (uObject*)temp22, __g_nametable1, 3);
+    ::g::Fuse::Reactive::DataBinding* temp60 = ::g::Fuse::Reactive::DataBinding::New1(temp6_Value_inst, (uObject*)temp22, 3);
     ::g::Fuse::Drawing::StaticSolidColor* temp61 = ::g::Fuse::Drawing::StaticSolidColor::New2(::g::Uno::Float4__New2(0.9607843f, 0.9607843f, 0.9607843f, 1.0f));
-    ::g::Fuse::Reactive::DataBinding* temp62 = ::g::Fuse::Reactive::DataBinding::New1(temp7_Url_inst, (uObject*)temp23, __g_nametable1, 3);
-    temp_eb11 = ::g::Fuse::Reactive::EventBinding::New1((uObject*)temp24, __g_nametable1);
+    ::g::Fuse::Reactive::DataBinding* temp62 = ::g::Fuse::Reactive::DataBinding::New1(temp7_Url_inst, (uObject*)temp23, 3);
+    temp_eb11 = ::g::Fuse::Reactive::EventBinding::New1((uObject*)temp24);
     ::g::Fuse::Controls::Rectangle* temp63 = ::g::Fuse::Controls::Rectangle::New3();
     ::g::Fuse::Controls::Text* temp64 = ::g::Fuse::Controls::Text::New3();
-    temp_eb12 = ::g::Fuse::Reactive::EventBinding::New1((uObject*)temp25, __g_nametable1);
+    temp_eb12 = ::g::Fuse::Reactive::EventBinding::New1((uObject*)temp25);
     temp26->LineNumber(3);
     temp26->FileName(::STRINGS[32/*"Pages/Alert...*/]);
-    temp26->File(::g::Uno::UX::BundleFileSource::New1(::g::emrals_bundle::AlertDetailPage531d39e3()));
+    temp26->File(::g::Uno::UX::BundleFileSource::New1(::g::emrals_bundle::AlertDetailPage99914a56()));
     temp27->Height(::g::Uno::UX::Size__New1(45.0f, 1));
     temp27->Y(::g::Uno::UX::Size__New1(0.0f, 1));
     temp27->Background(temp30);
@@ -429,21 +429,21 @@ void AlertDetailPage::InitializeUX()
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(temp39->Children()), ::TYPES[2/*Uno.Collections.ICollection<Fuse.Node>*/]), temp42);
     temp40->Height(::g::Uno::UX::Size__New1(24.0f, 1));
     temp40->Margin(::g::Uno::Float4__New2(0.0f, 5.0f, 5.0f, 0.0f));
-    temp40->File(::g::Uno::UX::BundleFileSource::New1(::g::emrals_bundle::greene8340a685()));
+    temp40->File(::g::Uno::UX::BundleFileSource::New1(::g::emrals_bundle::greeneea7c8b83()));
     temp3->FontSize(22.0f);
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(temp3->Bindings()), ::TYPES[4/*Uno.Collections.ICollection<Fuse.Binding>*/]), temp41);
     temp42->Margin(::g::Uno::Float4__New2(20.0f, 0.0f, 0.0f, 0.0f));
-    temp42->File(::g::Uno::UX::BundleFileSource::New1(::g::emrals_bundle::pluseb063ee5()));
+    temp42->File(::g::Uno::UX::BundleFileSource::New1(::g::emrals_bundle::plusdc5300cb()));
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(temp42->Children()), ::TYPES[2/*Uno.Collections.ICollection<Fuse.Node>*/]), temp43);
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(temp43->Actions()), ::TYPES[5/*Uno.Collections.ICollection<Fuse.Triggers.Actions.TriggerAction>*/]), temp44);
     temp44->Target((uObject*)Revealed);
-    uPtr(AddEmralsPopUp2)->Name(AlertDetailPage::__selector3());
+    uPtr(AddEmralsPopUp2)->Name(AlertDetailPage::__selector3_);
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(uPtr(AddEmralsPopUp2)->Children()), ::TYPES[2/*Uno.Collections.ICollection<Fuse.Node>*/]), Revealed);
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(uPtr(AddEmralsPopUp2)->Children()), ::TYPES[2/*Uno.Collections.ICollection<Fuse.Node>*/]), temp46);
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(uPtr(AddEmralsPopUp2)->Children()), ::TYPES[2/*Uno.Collections.ICollection<Fuse.Node>*/]), temp47);
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(uPtr(AddEmralsPopUp2)->Children()), ::TYPES[2/*Uno.Collections.ICollection<Fuse.Node>*/]), temp51);
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(uPtr(AddEmralsPopUp2)->Bindings()), ::TYPES[4/*Uno.Collections.ICollection<Fuse.Binding>*/]), temp52);
-    uPtr(Revealed)->Name(AlertDetailPage::__selector4());
+    uPtr(Revealed)->Name(AlertDetailPage::__selector4_);
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(uPtr(Revealed)->Animators()), ::TYPES[6/*Uno.Collections.ICollection<Fuse.Animations.Animator>*/]), temp45);
     ::g::Fuse::Animations::Change__set_Value_fn(temp45, uCRef<int>(0));
     temp46->Value(::STRINGS[35/*"ADD EMRALS"*/]);
@@ -468,7 +468,7 @@ void AlertDetailPage::InitializeUX()
     uPtr(emrals_value1)->Value(::STRINGS[36/*"$1"*/]);
     uPtr(emrals_value1)->FontSize(24.0f);
     uPtr(emrals_value1)->Alignment(10);
-    uPtr(emrals_value1)->Name(AlertDetailPage::__selector5());
+    uPtr(emrals_value1)->Name(AlertDetailPage::__selector5_);
     temp49->CornerRadius(::g::Uno::Float4__New2(3.0f, 3.0f, 3.0f, 3.0f));
     temp49->Color(::g::Uno::Float4__New2(1.0f, 1.0f, 1.0f, 1.0f));
     temp49->StrokeColor(::g::Uno::Float4__New2(0.5411765f, 0.7215686f, 0.2784314f, 1.0f));
@@ -482,7 +482,7 @@ void AlertDetailPage::InitializeUX()
     uPtr(emrals_value5)->Value(::STRINGS[37/*"$5"*/]);
     uPtr(emrals_value5)->FontSize(24.0f);
     uPtr(emrals_value5)->Alignment(10);
-    uPtr(emrals_value5)->Name(AlertDetailPage::__selector6());
+    uPtr(emrals_value5)->Name(AlertDetailPage::__selector6_);
     temp50->CornerRadius(::g::Uno::Float4__New2(3.0f, 3.0f, 3.0f, 3.0f));
     temp50->Color(::g::Uno::Float4__New2(1.0f, 1.0f, 1.0f, 1.0f));
     temp50->StrokeColor(::g::Uno::Float4__New2(0.5411765f, 0.7215686f, 0.2784314f, 1.0f));
@@ -496,7 +496,7 @@ void AlertDetailPage::InitializeUX()
     uPtr(emrals_value10)->Value(::STRINGS[38/*"$10"*/]);
     uPtr(emrals_value10)->FontSize(24.0f);
     uPtr(emrals_value10)->Alignment(10);
-    uPtr(emrals_value10)->Name(AlertDetailPage::__selector7());
+    uPtr(emrals_value10)->Name(AlertDetailPage::__selector7_);
     temp51->CornerRadius(::g::Uno::Float4__New2(5.0f, 5.0f, 5.0f, 5.0f));
     temp51->Color(::g::Uno::Float4__New2(0.5411765f, 0.7215686f, 0.2784314f, 1.0f));
     temp51->Width(::g::Uno::UX::Size__New1(175.0f, 1));
@@ -589,14 +589,6 @@ void AlertDetailPage::InitializeUX()
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(Children()), ::TYPES[2/*Uno.Collections.ICollection<Fuse.Node>*/]), temp27);
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(Children()), ::TYPES[2/*Uno.Collections.ICollection<Fuse.Node>*/]), temp31);
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(Children()), ::TYPES[2/*Uno.Collections.ICollection<Fuse.Node>*/]), temp53);
-}
-
-// public AlertDetailPage New(Fuse.Navigation.Router router) [static] :47
-AlertDetailPage* AlertDetailPage::New5(::g::Fuse::Navigation::Router* router1)
-{
-    AlertDetailPage* obj1 = (AlertDetailPage*)uNew(AlertDetailPage_typeof());
-    obj1->ctor_8(router1);
-    return obj1;
 }
 // }
 

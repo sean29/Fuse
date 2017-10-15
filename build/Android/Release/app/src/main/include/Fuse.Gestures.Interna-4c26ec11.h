@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Gestures/1.2.1/internal/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Gestures/1.3.0-rc2/Internal/EdgeSwiper.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -17,7 +17,7 @@ namespace Fuse{
 namespace Gestures{
 namespace Internal{
 
-// internal sealed class EdgeSwiper :343
+// internal sealed class EdgeSwiper :10
 // {
 uType* EdgeSwiper_typeof();
 void EdgeSwiper__ctor__fn(EdgeSwiper* __this);
@@ -58,7 +58,7 @@ struct EdgeSwiper : uObject
     bool _hasUpdated;
     bool _isHardCapture;
     static uSStrong< ::g::Fuse::Gestures::SwipeGestureHelper*> _leftRightSwipe_;
-    static uSStrong< ::g::Fuse::Gestures::SwipeGestureHelper*>& _leftRightSwipe() { return EdgeSwiper_typeof()->Init(), _leftRightSwipe_; }
+    static uSStrong< ::g::Fuse::Gestures::SwipeGestureHelper*>& _leftRightSwipe() { return _leftRightSwipe_; }
     uStrong<uObject*> _pointBody1D;
     ::g::Uno::Float2 _previousCoord;
     double _prevTime;
@@ -67,7 +67,7 @@ struct EdgeSwiper : uObject
     double _startProgress;
     uStrong< ::g::Fuse::Elements::Element*> _target;
     static uSStrong< ::g::Fuse::Gestures::SwipeGestureHelper*> _upDownSwipe_;
-    static uSStrong< ::g::Fuse::Gestures::SwipeGestureHelper*>& _upDownSwipe() { return EdgeSwiper_typeof()->Init(), _upDownSwipe_; }
+    static uSStrong< ::g::Fuse::Gestures::SwipeGestureHelper*>& _upDownSwipe() { return _upDownSwipe_; }
     uStrong< ::g::Fuse::Motion::Simulation::PointerVelocity*> _velocity;
     float _velocityThreshold;
     uStrong<uDelegate*> ProgressChanged1;

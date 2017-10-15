@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Controls/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Controls/1.3.0-rc2/Control.Background.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -16,7 +16,7 @@ namespace Fuse{
 namespace Internal{
 namespace Drawing{
 
-// internal sealed class SolidRectangle :134
+// internal sealed class SolidRectangle :133
 // {
 uType* SolidRectangle_typeof();
 void SolidRectangle__ctor__fn(SolidRectangle* __this);
@@ -37,7 +37,7 @@ struct SolidRectangle : uObject
     uStrong< ::g::Uno::Graphics::VertexBuffer*> DrawElement_VertexData_b4859fb9_7_2_1;
     uStrong< ::g::Uno::Graphics::VertexBuffer*> DrawElement_VertexData_c5598fc3_7_2_1;
     static uSStrong<SolidRectangle*> Impl_;
-    static uSStrong<SolidRectangle*>& Impl() { return SolidRectangle_typeof()->Init(), Impl_; }
+    static uSStrong<SolidRectangle*>& Impl() { return Impl_; }
 
     void ctor_();
     void DrawElement(::g::Fuse::DrawContext* dc, ::g::Fuse::Elements::Element* element, ::g::Fuse::Drawing::Brush* brush, float opacity);

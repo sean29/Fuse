@@ -1,4 +1,4 @@
-// This file was generated based on '/Users/a/Library/Application Support/Fusetools/Packages/Android.ActivityUtils/1.2.1/$.uno'.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Android.ActivityUtils/1.3.0-rc2/ActivityUtils.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -7,7 +7,7 @@
 namespace g{
 namespace Android{
 
-// public extern delegate void ActivityResultCallback(int resultCode, Java.Object intent, object info) :11
+// public extern delegate void ActivityResultCallback(int resultCode, Java.Object intent, object info) :9
 uDelegateType* ActivityResultCallback_typeof();
 
 }} // ::g::Android

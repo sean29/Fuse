@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/UnoCore/1.2.2/source/uno/compiler/exporttargetinterop/foreign/android/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/UnoCore/1.3.1/Source/Uno/Compiler/ExportTargetInterop/Foreign/Android/Object.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -8,7 +8,7 @@ namespace g{namespace Java{struct Object;}}
 namespace g{
 namespace Java{
 
-// public abstract extern class Object :288
+// public abstract extern class Object :5
 // {
 uType* Object_typeof();
 void Object__ctor__fn(Object* __this);

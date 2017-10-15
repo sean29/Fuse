@@ -28,7 +28,7 @@ public class AndroidCall
         android.util.Log.d("emrals", (message==null ? "null" : message.toString()));
     }
 
-    public static String get__actionCall428()
+    public static String get__actionCall427()
     {
         return Intent.ACTION_CALL;
     }

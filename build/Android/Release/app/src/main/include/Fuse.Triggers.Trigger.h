@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Triggers/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Triggers/1.3.0-rc2/Trigger.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -24,7 +24,7 @@ namespace g{
 namespace Fuse{
 namespace Triggers{
 
-// public abstract class Trigger :2667
+// public abstract class Trigger :77
 // {
 struct Trigger_type : ::g::Fuse::Node_type
 {
@@ -85,6 +85,7 @@ void Trigger__get_ShouldIgnore_fn(Trigger* __this, bool* __retval);
 void Trigger__Start_fn(Trigger* __this);
 void Trigger__Stop_fn(Trigger* __this, bool* force);
 void Trigger__StopAction_fn(Trigger* __this);
+void Trigger__UnrootActions_fn(Trigger* __this);
 void Trigger__WhatDirection_fn(Trigger* __this, double* diff, bool* animating, int* __retval);
 
 struct Trigger : ::g::Fuse::NodeGroupBase
@@ -92,18 +93,21 @@ struct Trigger : ::g::Fuse::NodeGroupBase
     uStrong< ::g::Uno::Collections::List*> _actions;
     uStrong< ::g::Fuse::Animations::TriggerAnimation*> _animation;
     uStrong< ::g::Fuse::Animations::TriggerAnimationState*> _animState;
+    int _bypass;
     uStrong<uDelegate*> _doneAction;
     bool _doneOn;
     bool _isStarted;
     int _lastPlayState;
+    int _noLayoutFrame;
     int _rootCaptureIndex1;
     int _rootPlayState;
     double _rootProgress;
     bool _startAtZero;
     bool _suppressPropertyChangedProgress;
+    static bool _warnBypass_;
+    static bool& _warnBypass() { return _warnBypass_; }
     static ::g::Uno::UX::Selector ProgressName_;
-    static ::g::Uno::UX::Selector& ProgressName() { return Trigger_typeof()->Init(), ProgressName_; }
-    int _Bypass;
+    static ::g::Uno::UX::Selector& ProgressName() { return ProgressName_; }
 
     void ctor_4();
     uObject* Actions();
@@ -150,6 +154,7 @@ struct Trigger : ::g::Fuse::NodeGroupBase
     void Start();
     void Stop(bool force);
     void StopAction();
+    void UnrootActions();
     int WhatDirection(double diff, bool animating);
     static void OnPlayStateChanged(Trigger* __this, int state) { Trigger__OnPlayStateChanged_fn(__this, &state); }
     static void OnProgressChanged(Trigger* __this) { Trigger__OnProgressChanged_fn(__this); }

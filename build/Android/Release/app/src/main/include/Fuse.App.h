@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Android/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Android/1.3.0-rc2/AndroidApp.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -14,7 +14,7 @@ namespace g{namespace Uno{namespace Platform{struct TimerEventArgs;}}}
 namespace g{
 namespace Fuse{
 
-// public abstract extern class App :157
+// public abstract extern class App :13
 // {
 ::g::Fuse::AppBase_type* App_typeof();
 void App__ctor_3_fn(App* __this);

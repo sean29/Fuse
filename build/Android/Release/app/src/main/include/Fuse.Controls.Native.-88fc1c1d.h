@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Controls.Native/1.2.1/android/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Controls.Native/1.3.0-rc2/Android/InputDispatch.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -14,7 +14,7 @@ namespace Controls{
 namespace Native{
 namespace Android{
 
-// public sealed extern class MotionEvent :879
+// public sealed extern class MotionEvent :283
 // {
 uType* MotionEvent_typeof();
 void MotionEvent__ctor__fn(MotionEvent* __this, ::g::Java::Object* handle);
@@ -46,7 +46,7 @@ struct MotionEvent : uObject
 {
     uStrong< ::g::Java::Object*> _handle;
     static uSStrong<uArray*> _locationOnScreen_;
-    static uSStrong<uArray*>& _locationOnScreen() { return MotionEvent_typeof()->Init(), _locationOnScreen_; }
+    static uSStrong<uArray*>& _locationOnScreen() { return _locationOnScreen_; }
 
     void ctor_(::g::Java::Object* handle);
     int Action();

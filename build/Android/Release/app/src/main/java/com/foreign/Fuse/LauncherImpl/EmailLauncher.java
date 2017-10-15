@@ -28,7 +28,7 @@ public class EmailLauncher
         android.util.Log.d("emrals", (message==null ? "null" : message.toString()));
     }
 
-    public static String get__actionSendTo429()
+    public static String get__actionSendTo428()
     {
         return Intent.ACTION_SENDTO;
     }

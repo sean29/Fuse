@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/UnoCore/1.2.2/targets/android/uno/base/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/UnoCore/1.3.1/Targets/Android/Uno/Base/Bootstrapper.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -8,7 +8,7 @@ namespace g{namespace Android{struct Bootstrapper;}}
 namespace g{
 namespace Android{
 
-// internal static extern class Bootstrapper :11
+// internal static extern class Bootstrapper :9
 // {
 uClassType* Bootstrapper_typeof();
 void Bootstrapper___RegisterTypes_fn();

@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Drawing/1.2.1/brushes/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Drawing/1.3.0-rc2/Brushes/LinearGradient.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -8,7 +8,7 @@ namespace g{
 namespace Fuse{
 namespace Drawing{
 
-// public enum LinearGradientInterpolation :59
+// public enum LinearGradientInterpolation :57
 uEnumType* LinearGradientInterpolation_typeof();
 
 }}} // ::g::Fuse::Drawing

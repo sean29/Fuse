@@ -1,4 +1,4 @@
-// This file was generated based on '/Users/a/Library/Application Support/Fusetools/Packages/Fuse.GeoLocation/1.2.1/android/$.uno'.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.GeoLocation/1.3.0-rc2/Android/PromiseListener.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -12,7 +12,7 @@ namespace g{
 namespace Fuse{
 namespace GeoLocation{
 
-// internal sealed extern class PromiseListener :285
+// internal sealed extern class PromiseListener :8
 // {
 uType* PromiseListener_typeof();
 void PromiseListener__ctor__fn(PromiseListener* __this, ::g::Java::Object* locationManagerHandle, double* timeout, ::g::Uno::Threading::Promise* promise);

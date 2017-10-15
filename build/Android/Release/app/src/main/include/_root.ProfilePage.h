@@ -1,4 +1,4 @@
-// This file was generated based on '.uno/ux11/ProfilePage.g.uno'.
+// This file was generated based on '.uno/ux13/ProfilePage.g.uno'.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -15,31 +15,27 @@
 #include <Fuse.Triggers.Actions.IHide.h>
 #include <Fuse.Triggers.Actions.IShow.h>
 #include <Fuse.Triggers.Actions-ea70af1f.h>
+#include <Fuse.Visual.h>
 #include <Uno.Collections.ICollection-1.h>
 #include <Uno.Collections.IEnumerable-1.h>
 #include <Uno.Collections.IList-1.h>
 #include <Uno.UX.IPropertyListener.h>
 namespace g{namespace Fuse{namespace Navigation{struct Router;}}}
 namespace g{namespace Fuse{namespace Reactive{struct EventBinding;}}}
-namespace g{namespace Uno{namespace UX{struct NameTable;}}}
 namespace g{namespace Uno{namespace UX{struct Property1;}}}
 namespace g{namespace Uno{namespace UX{struct Selector;}}}
 namespace g{struct ProfilePage;}
 
 namespace g{
 
-// public partial sealed class ProfilePage :2
+// public partial class ProfilePage :2
 // {
 ::g::Fuse::Controls::Panel_type* ProfilePage_typeof();
 void ProfilePage__ctor_8_fn(ProfilePage* __this, ::g::Fuse::Navigation::Router* router1);
 void ProfilePage__InitializeUX_fn(ProfilePage* __this);
-void ProfilePage__New5_fn(::g::Fuse::Navigation::Router* router1, ProfilePage** __retval);
 
 struct ProfilePage : ::g::Fuse::Controls::Page
 {
-    uStrong< ::g::Uno::UX::NameTable*> __g_nametable1;
-    static uSStrong<uArray*> __g_static_nametable1_;
-    static uSStrong<uArray*>& __g_static_nametable1() { return ProfilePage_typeof()->Init(), __g_static_nametable1_; }
     static ::g::Uno::UX::Selector __selector0_;
     static ::g::Uno::UX::Selector& __selector0() { return ProfilePage_typeof()->Init(), __selector0_; }
     static ::g::Uno::UX::Selector __selector1_;
@@ -57,7 +53,6 @@ struct ProfilePage : ::g::Fuse::Controls::Page
 
     void ctor_8(::g::Fuse::Navigation::Router* router1);
     void InitializeUX();
-    static ProfilePage* New5(::g::Fuse::Navigation::Router* router1);
 };
 // }
 

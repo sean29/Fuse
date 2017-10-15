@@ -1,4 +1,4 @@
-// This file was generated based on '.uno/ux11/MapsPage.g.uno'.
+// This file was generated based on '.uno/ux13/MapsPage.g.uno'.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -15,6 +15,7 @@
 #include <Fuse.Triggers.Actions.IHide.h>
 #include <Fuse.Triggers.Actions.IShow.h>
 #include <Fuse.Triggers.Actions-ea70af1f.h>
+#include <Fuse.Visual.h>
 #include <Uno.Collections.ICollection-1.h>
 #include <Uno.Collections.IEnumerable-1.h>
 #include <Uno.Collections.IList-1.h>
@@ -29,12 +30,11 @@ namespace g{struct MapsPage;}
 
 namespace g{
 
-// public partial sealed class MapsPage :2
+// public partial class MapsPage :2
 // {
 ::g::Fuse::Controls::Panel_type* MapsPage_typeof();
 void MapsPage__ctor_8_fn(MapsPage* __this, ::g::Fuse::Navigation::Router* router1);
 void MapsPage__InitializeUX_fn(MapsPage* __this);
-void MapsPage__New5_fn(::g::Fuse::Navigation::Router* router1, MapsPage** __retval);
 
 struct MapsPage : ::g::Fuse::Controls::Page
 {
@@ -66,7 +66,6 @@ struct MapsPage : ::g::Fuse::Controls::Page
 
     void ctor_8(::g::Fuse::Navigation::Router* router1);
     void InitializeUX();
-    static MapsPage* New5(::g::Fuse::Navigation::Router* router1);
 };
 // }
 

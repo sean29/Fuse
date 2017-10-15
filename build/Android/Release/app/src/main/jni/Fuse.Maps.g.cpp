@@ -22,18 +22,18 @@ namespace g{
 namespace Fuse{
 namespace Maps{
 
-// /Users/a/Library/Application Support/Fusetools/Packages/Fuse.Maps/1.2.1/$.uno
-// -----------------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Maps\1.3.0-rc2\MarkerIconCache.uno
+// -----------------------------------------------------------------------------------
 
-// internal sealed class MarkerIconCache :952
+// internal sealed class MarkerIconCache :7
 // {
 static void MarkerIconCache_build(uType* type)
 {
     ::STRINGS[0] = uString::Const("marker_");
     ::TYPES[0] = ::g::Uno::Collections::Dictionary_typeof()->MakeType(::g::Uno::String_typeof(), ::g::Fuse::Maps::MarkerSource_typeof(), NULL);
     type->SetFields(0,
-        ::TYPES[0/*Uno.Collections.Dictionary<string, Fuse.Maps.MarkerSource>*/], offsetof(::g::Fuse::Maps::MarkerIconCache, _cache), 0,
-        ::g::Uno::Action_typeof(), offsetof(::g::Fuse::Maps::MarkerIconCache, _changeHandler), 0);
+        ::TYPES[0/*Uno.Collections.Dictionary<string, Fuse.Maps.MarkerSource>*/], offsetof(MarkerIconCache, _cache), 0,
+        ::g::Uno::Action_typeof(), offsetof(MarkerIconCache, _changeHandler), 0);
 }
 
 uType* MarkerIconCache_typeof()
@@ -50,44 +50,44 @@ uType* MarkerIconCache_typeof()
     return type;
 }
 
-// public MarkerIconCache(Uno.Action changeHandler) :957
+// public MarkerIconCache(Uno.Action changeHandler) :12
 void MarkerIconCache__ctor__fn(MarkerIconCache* __this, uDelegate* changeHandler)
 {
     __this->ctor_(changeHandler);
 }
 
-// public string Get(Uno.UX.FileSource src) :963
+// public string Get(Uno.UX.FileSource src) :18
 void MarkerIconCache__Get_fn(MarkerIconCache* __this, ::g::Uno::UX::FileSource* src, uString** __retval)
 {
     *__retval = __this->Get(src);
 }
 
-// internal static string MakeKey(Uno.UX.FileSource src) :980
+// internal static string MakeKey(Uno.UX.FileSource src) :35
 void MarkerIconCache__MakeKey_fn(::g::Uno::UX::FileSource* src, uString** __retval)
 {
     *__retval = MarkerIconCache::MakeKey(src);
 }
 
-// public MarkerIconCache New(Uno.Action changeHandler) :957
+// public MarkerIconCache New(Uno.Action changeHandler) :12
 void MarkerIconCache__New1_fn(uDelegate* changeHandler, MarkerIconCache** __retval)
 {
     *__retval = MarkerIconCache::New1(changeHandler);
 }
 
-// internal void OnChanged() :974
+// internal void OnChanged() :29
 void MarkerIconCache__OnChanged_fn(MarkerIconCache* __this)
 {
     __this->OnChanged();
 }
 
-// public MarkerIconCache(Uno.Action changeHandler) [instance] :957
+// public MarkerIconCache(Uno.Action changeHandler) [instance] :12
 void MarkerIconCache::ctor_(uDelegate* changeHandler)
 {
     _cache = ((::g::Uno::Collections::Dictionary*)::g::Uno::Collections::Dictionary::New1(::TYPES[0/*Uno.Collections.Dictionary<string, Fuse.Maps.MarkerSource>*/]));
     _changeHandler = changeHandler;
 }
 
-// public string Get(Uno.UX.FileSource src) [instance] :963
+// public string Get(Uno.UX.FileSource src) [instance] :18
 uString* MarkerIconCache::Get(::g::Uno::UX::FileSource* src)
 {
     bool ret2;
@@ -106,20 +106,20 @@ uString* MarkerIconCache::Get(::g::Uno::UX::FileSource* src)
     return markerSource->Path();
 }
 
-// internal void OnChanged() [instance] :974
+// internal void OnChanged() [instance] :29
 void MarkerIconCache::OnChanged()
 {
     if (::g::Uno::Delegate::op_Inequality(_changeHandler, NULL))
         uPtr(_changeHandler)->InvokeVoid();
 }
 
-// internal static string MakeKey(Uno.UX.FileSource src) [static] :980
+// internal static string MakeKey(Uno.UX.FileSource src) [static] :35
 uString* MarkerIconCache::MakeKey(::g::Uno::UX::FileSource* src)
 {
     return ::g::Uno::String::op_Addition2(::STRINGS[0/*"marker_"*/], ::g::Uno::String::Replace(uPtr(uPtr(src)->Name), '/', '_'));
 }
 
-// public MarkerIconCache New(Uno.Action changeHandler) [static] :957
+// public MarkerIconCache New(Uno.Action changeHandler) [static] :12
 MarkerIconCache* MarkerIconCache::New1(uDelegate* changeHandler)
 {
     MarkerIconCache* obj1 = (MarkerIconCache*)uNew(MarkerIconCache_typeof());
@@ -128,12 +128,12 @@ MarkerIconCache* MarkerIconCache::New1(uDelegate* changeHandler)
 }
 // }
 
-// /Users/a/Library/Application Support/Fusetools/Packages/Fuse.Maps/1.2.1/$.uno
-// -----------------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Maps\1.3.0-rc2\MarkerIconCache.uno
+// -----------------------------------------------------------------------------------
 
-// internal sealed class MarkerSource :986
+// internal sealed class MarkerSource :41
 // {
-// ~MarkerSource() :1016
+// ~MarkerSource() :71
 static void MarkerSource__Finalize_fn(MarkerSource* __this)
 {
     uPtr(__this->_src)->remove_DataChanged(uDelegate::New(::TYPES[1/*Uno.EventHandler<Uno.EventArgs>*/], (void*)MarkerSource__OnDataChanged_fn, __this));
@@ -142,12 +142,14 @@ static void MarkerSource__Finalize_fn(MarkerSource* __this)
 static void MarkerSource_build(uType* type)
 {
     ::TYPES[1] = ::g::Uno::EventHandler1_typeof()->MakeType(::g::Uno::EventArgs_typeof(), NULL);
+    type->SetDependencies(
+        ::g::Fuse::ImageTools::ImageTools_typeof());
     type->SetFields(0,
-        ::g::Fuse::Maps::MarkerIconCache_typeof(), offsetof(::g::Fuse::Maps::MarkerSource, _cache), 0,
-        ::g::Uno::String_typeof(), offsetof(::g::Fuse::Maps::MarkerSource, _path), 0,
-        ::g::Uno::UX::FileSource_typeof(), offsetof(::g::Fuse::Maps::MarkerSource, _src), 0,
-        ::g::Uno::Bool_typeof(), offsetof(::g::Fuse::Maps::MarkerSource, dirty), 0,
-        ::g::Uno::String_typeof(), offsetof(::g::Fuse::Maps::MarkerSource, _Name), 0);
+        ::g::Fuse::Maps::MarkerIconCache_typeof(), offsetof(MarkerSource, _cache), 0,
+        ::g::Uno::String_typeof(), offsetof(MarkerSource, _path), 0,
+        ::g::Uno::UX::FileSource_typeof(), offsetof(MarkerSource, _src), 0,
+        ::g::Uno::Bool_typeof(), offsetof(MarkerSource, dirty), 0,
+        ::g::Uno::String_typeof(), offsetof(MarkerSource, _Name), 0);
 }
 
 uType* MarkerSource_typeof()
@@ -157,6 +159,7 @@ uType* MarkerSource_typeof()
 
     uTypeOptions options;
     options.FieldCount = 5;
+    options.DependencyCount = 1;
     options.ObjectSize = sizeof(MarkerSource);
     options.TypeSize = sizeof(uType);
     type = uClassType::New("Fuse.Maps.MarkerSource", options);
@@ -165,43 +168,43 @@ uType* MarkerSource_typeof()
     return type;
 }
 
-// public MarkerSource(string name, Uno.UX.FileSource input, Fuse.Maps.MarkerIconCache cache) :1007
+// public MarkerSource(string name, Uno.UX.FileSource input, Fuse.Maps.MarkerIconCache cache) :62
 void MarkerSource__ctor__fn(MarkerSource* __this, uString* name, ::g::Uno::UX::FileSource* input, ::g::Fuse::Maps::MarkerIconCache* cache)
 {
     __this->ctor_(name, input, cache);
 }
 
-// public generated string get_Name() :1004
+// public generated string get_Name() :59
 void MarkerSource__get_Name_fn(MarkerSource* __this, uString** __retval)
 {
     *__retval = __this->Name();
 }
 
-// private generated void set_Name(string value) :1004
+// private generated void set_Name(string value) :59
 void MarkerSource__set_Name_fn(MarkerSource* __this, uString* value)
 {
     __this->Name(value);
 }
 
-// public MarkerSource New(string name, Uno.UX.FileSource input, Fuse.Maps.MarkerIconCache cache) :1007
+// public MarkerSource New(string name, Uno.UX.FileSource input, Fuse.Maps.MarkerIconCache cache) :62
 void MarkerSource__New1_fn(uString* name, ::g::Uno::UX::FileSource* input, ::g::Fuse::Maps::MarkerIconCache* cache, MarkerSource** __retval)
 {
     *__retval = MarkerSource::New1(name, input, cache);
 }
 
-// private void OnDataChanged(object sender, Uno.EventArgs args) :1021
+// private void OnDataChanged(object sender, Uno.EventArgs args) :76
 void MarkerSource__OnDataChanged_fn(MarkerSource* __this, uObject* sender, ::g::Uno::EventArgs* args)
 {
     __this->OnDataChanged(sender, args);
 }
 
-// public string get_Path() :994
+// public string get_Path() :49
 void MarkerSource__get_Path_fn(MarkerSource* __this, uString** __retval)
 {
     *__retval = __this->Path();
 }
 
-// public MarkerSource(string name, Uno.UX.FileSource input, Fuse.Maps.MarkerIconCache cache) [instance] :1007
+// public MarkerSource(string name, Uno.UX.FileSource input, Fuse.Maps.MarkerIconCache cache) [instance] :62
 void MarkerSource::ctor_(uString* name, ::g::Uno::UX::FileSource* input, ::g::Fuse::Maps::MarkerIconCache* cache)
 {
     dirty = true;
@@ -211,26 +214,26 @@ void MarkerSource::ctor_(uString* name, ::g::Uno::UX::FileSource* input, ::g::Fu
     Name(name);
 }
 
-// public generated string get_Name() [instance] :1004
+// public generated string get_Name() [instance] :59
 uString* MarkerSource::Name()
 {
     return _Name;
 }
 
-// private generated void set_Name(string value) [instance] :1004
+// private generated void set_Name(string value) [instance] :59
 void MarkerSource::Name(uString* value)
 {
     _Name = value;
 }
 
-// private void OnDataChanged(object sender, Uno.EventArgs args) [instance] :1021
+// private void OnDataChanged(object sender, Uno.EventArgs args) [instance] :76
 void MarkerSource::OnDataChanged(uObject* sender, ::g::Uno::EventArgs* args)
 {
     dirty = true;
     uPtr(_cache)->OnChanged();
 }
 
-// public string get_Path() [instance] :994
+// public string get_Path() [instance] :49
 uString* MarkerSource::Path()
 {
     if (!dirty)
@@ -242,7 +245,7 @@ uString* MarkerSource::Path()
     return _path = image->Path();
 }
 
-// public MarkerSource New(string name, Uno.UX.FileSource input, Fuse.Maps.MarkerIconCache cache) [static] :1007
+// public MarkerSource New(string name, Uno.UX.FileSource input, Fuse.Maps.MarkerIconCache cache) [static] :62
 MarkerSource* MarkerSource::New1(uString* name, ::g::Uno::UX::FileSource* input, ::g::Fuse::Maps::MarkerIconCache* cache)
 {
     MarkerSource* obj1 = (MarkerSource*)uNew(MarkerSource_typeof());

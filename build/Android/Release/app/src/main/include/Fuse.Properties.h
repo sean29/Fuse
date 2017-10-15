@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Common/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Common/1.3.0-rc2/Properties.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -9,7 +9,7 @@ namespace g{namespace Fuse{struct PropertyHandle;}}
 namespace g{
 namespace Fuse{
 
-// public sealed class Properties :2999
+// public sealed class Properties :15
 // {
 uType* Properties_typeof();
 void Properties__ctor__fn(Properties* __this);
@@ -32,7 +32,7 @@ struct Properties : uObject
     uStrong<Properties*> _next;
     uStrong<uObject*> _value;
     static uSStrong<uObject*> NoValue_;
-    static uSStrong<uObject*>& NoValue() { return Properties_typeof()->Init(), NoValue_; }
+    static uSStrong<uObject*>& NoValue() { return NoValue_; }
 
     void ctor_();
     void AddToList(::g::Fuse::PropertyHandle* handle, uObject* val);

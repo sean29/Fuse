@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/UnoCore/1.2.2/source/uno/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/UnoCore/1.3.1/Source/Uno/Short.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -7,7 +7,7 @@
 namespace g{
 namespace Uno{
 
-// public intrinsic struct Short :6452
+// public intrinsic struct Short :12
 // {
 uStructType* Short_typeof();
 void Short__Equals_fn(int16_t* __this, uType* __type, uObject* o, bool* __retval);

@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Elements/1.2.1/triggers/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Elements/1.3.0-rc2/Triggers/LayoutAnimation.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -17,7 +17,7 @@ namespace g{
 namespace Fuse{
 namespace Triggers{
 
-// public static class LayoutTransition :26
+// public static class LayoutTransition :24
 // {
 uClassType* LayoutTransition_typeof();
 void LayoutTransition__GetPositionChange_fn(::g::Fuse::Node* n, ::g::Uno::Float2* oldPos, ::g::Uno::Float2* newPos, bool* __retval);
@@ -31,25 +31,25 @@ void LayoutTransition__get_Transitioned_fn(::g::Fuse::VisualEvent** __retval);
 struct LayoutTransition : uObject
 {
     static uSStrong< ::g::Fuse::PropertyHandle*> _positionChange_;
-    static uSStrong< ::g::Fuse::PropertyHandle*>& _positionChange() { return LayoutTransition_typeof()->Init(), _positionChange_; }
+    static uSStrong< ::g::Fuse::PropertyHandle*>& _positionChange() { return _positionChange_; }
     static uSStrong< ::g::Fuse::PropertyHandle*> _sizeChange_;
-    static uSStrong< ::g::Fuse::PropertyHandle*>& _sizeChange() { return LayoutTransition_typeof()->Init(), _sizeChange_; }
+    static uSStrong< ::g::Fuse::PropertyHandle*>& _sizeChange() { return _sizeChange_; }
     static uSStrong< ::g::Fuse::Triggers::LayoutTransitioned*> _transitioned_;
-    static uSStrong< ::g::Fuse::Triggers::LayoutTransitioned*>& _transitioned() { return LayoutTransition_typeof()->Init(), _transitioned_; }
+    static uSStrong< ::g::Fuse::Triggers::LayoutTransitioned*>& _transitioned() { return _transitioned_; }
     static uSStrong< ::g::Fuse::PropertyHandle*> _worldPositionChange_;
-    static uSStrong< ::g::Fuse::PropertyHandle*>& _worldPositionChange() { return LayoutTransition_typeof()->Init(), _worldPositionChange_; }
+    static uSStrong< ::g::Fuse::PropertyHandle*>& _worldPositionChange() { return _worldPositionChange_; }
     static uSStrong<uObject*> PositionChange_;
-    static uSStrong<uObject*>& PositionChange() { return LayoutTransition_typeof()->Init(), PositionChange_; }
+    static uSStrong<uObject*>& PositionChange() { return PositionChange_; }
     static uSStrong<uObject*> PositionLayoutChange_;
-    static uSStrong<uObject*>& PositionLayoutChange() { return LayoutTransition_typeof()->Init(), PositionLayoutChange_; }
+    static uSStrong<uObject*>& PositionLayoutChange() { return PositionLayoutChange_; }
     static uSStrong<uObject*> ResizeSizeChange_;
-    static uSStrong<uObject*>& ResizeSizeChange() { return LayoutTransition_typeof()->Init(), ResizeSizeChange_; }
+    static uSStrong<uObject*>& ResizeSizeChange() { return ResizeSizeChange_; }
     static uSStrong<uObject*> ScalingSizeChange_;
-    static uSStrong<uObject*>& ScalingSizeChange() { return LayoutTransition_typeof()->Init(), ScalingSizeChange_; }
+    static uSStrong<uObject*>& ScalingSizeChange() { return ScalingSizeChange_; }
     static uSStrong<uObject*> SizeLayoutChange_;
-    static uSStrong<uObject*>& SizeLayoutChange() { return LayoutTransition_typeof()->Init(), SizeLayoutChange_; }
+    static uSStrong<uObject*>& SizeLayoutChange() { return SizeLayoutChange_; }
     static uSStrong<uObject*> WorldPositionChange_;
-    static uSStrong<uObject*>& WorldPositionChange() { return LayoutTransition_typeof()->Init(), WorldPositionChange_; }
+    static uSStrong<uObject*>& WorldPositionChange() { return WorldPositionChange_; }
 
     static bool GetPositionChange(::g::Fuse::Node* n, ::g::Uno::Float2* oldPos, ::g::Uno::Float2* newPos);
     static bool GetSizeChange(::g::Fuse::Node* n, ::g::Uno::Float2* oldSize, ::g::Uno::Float2* newSize);

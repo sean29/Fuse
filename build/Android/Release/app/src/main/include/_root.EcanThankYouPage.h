@@ -1,4 +1,4 @@
-// This file was generated based on '.uno/ux11/EcanThankYouPage.g.uno'.
+// This file was generated based on '.uno/ux13/EcanThankYouPage.g.uno'.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -15,6 +15,7 @@
 #include <Fuse.Triggers.Actions.IHide.h>
 #include <Fuse.Triggers.Actions.IShow.h>
 #include <Fuse.Triggers.Actions-ea70af1f.h>
+#include <Fuse.Visual.h>
 #include <Uno.Collections.ICollection-1.h>
 #include <Uno.Collections.IEnumerable-1.h>
 #include <Uno.Collections.IList-1.h>
@@ -28,12 +29,11 @@ namespace g{struct EcanThankYouPage;}
 
 namespace g{
 
-// public partial sealed class EcanThankYouPage :2
+// public partial class EcanThankYouPage :2
 // {
 ::g::Fuse::Controls::Panel_type* EcanThankYouPage_typeof();
 void EcanThankYouPage__ctor_8_fn(EcanThankYouPage* __this, ::g::Fuse::Navigation::Router* router1);
 void EcanThankYouPage__InitializeUX_fn(EcanThankYouPage* __this);
-void EcanThankYouPage__New5_fn(::g::Fuse::Navigation::Router* router1, EcanThankYouPage** __retval);
 
 struct EcanThankYouPage : ::g::Fuse::Controls::Page
 {
@@ -43,14 +43,13 @@ struct EcanThankYouPage : ::g::Fuse::Controls::Page
     static ::g::Uno::UX::Selector __selector0_;
     static ::g::Uno::UX::Selector& __selector0() { return EcanThankYouPage_typeof()->Init(), __selector0_; }
     uStrong< ::g::Fuse::Navigation::Router*> router;
-    uStrong< ::g::Fuse::Reactive::EventBinding*> temp_eb33;
     uStrong< ::g::Fuse::Reactive::EventBinding*> temp_eb34;
     uStrong< ::g::Fuse::Reactive::EventBinding*> temp_eb35;
+    uStrong< ::g::Fuse::Reactive::EventBinding*> temp_eb36;
     uStrong< ::g::Uno::UX::Property1*> temp_Value_inst;
 
     void ctor_8(::g::Fuse::Navigation::Router* router1);
     void InitializeUX();
-    static EcanThankYouPage* New5(::g::Fuse::Navigation::Router* router1);
 };
 // }
 

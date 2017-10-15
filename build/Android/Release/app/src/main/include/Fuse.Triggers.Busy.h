@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Triggers/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Triggers/1.3.0-rc2/Busy.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -19,7 +19,7 @@ namespace g{
 namespace Fuse{
 namespace Triggers{
 
-// public partial sealed class Busy :137
+// public partial sealed class Busy :66
 // {
 ::g::Fuse::Node_type* Busy_typeof();
 void Busy__ctor_3_fn(Busy* __this);

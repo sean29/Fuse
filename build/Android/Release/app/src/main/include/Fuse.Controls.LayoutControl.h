@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Controls.Panels/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Controls.Panels/1.3.0-rc2/LayoutControl.Canvas.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -14,6 +14,7 @@
 #include <Fuse.Triggers.Actions.IHide.h>
 #include <Fuse.Triggers.Actions.IShow.h>
 #include <Fuse.Triggers.Actions-ea70af1f.h>
+#include <Fuse.Visual.h>
 #include <Uno.Collections.ICollection-1.h>
 #include <Uno.Collections.IEnumerable-1.h>
 #include <Uno.Collections.IList-1.h>
@@ -24,14 +25,13 @@ namespace g{namespace Fuse{namespace Drawing{struct Surface;}}}
 namespace g{namespace Fuse{namespace Layouts{struct Layout;}}}
 namespace g{namespace Fuse{struct DrawContext;}}
 namespace g{namespace Fuse{struct LayoutParams;}}
-namespace g{namespace Fuse{struct Visual;}}
 namespace g{namespace Uno{struct Float2;}}
 
 namespace g{
 namespace Fuse{
 namespace Controls{
 
-// public partial class LayoutControl :992
+// public partial class LayoutControl :62
 // {
 ::g::Fuse::Controls::Control_type* LayoutControl_typeof();
 void LayoutControl__ctor_5_fn(LayoutControl* __this);

@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Marshal/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Marshal/1.3.0-rc2/FileSourceConverter.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -9,7 +9,7 @@ namespace g{namespace Fuse{struct FileSourceConverter;}}
 namespace g{
 namespace Fuse{
 
-// internal sealed class FileSourceConverter :147
+// internal sealed class FileSourceConverter :8
 // {
 struct FileSourceConverter_type : uType
 {

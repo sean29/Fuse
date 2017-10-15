@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Common/1.2.1/resources/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Common/1.3.0-rc2/Resources/SystemFileSource.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -10,7 +10,7 @@ namespace g{
 namespace Fuse{
 namespace Resources{
 
-// internal sealed class SystemFileSource :420
+// internal sealed class SystemFileSource :6
 // {
 ::g::Uno::UX::FileSource_type* SystemFileSource_typeof();
 void SystemFileSource__ctor_1_fn(SystemFileSource* __this, uString* file);

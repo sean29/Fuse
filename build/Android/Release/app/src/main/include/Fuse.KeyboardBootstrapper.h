@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Nodes/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Nodes/1.3.0-rc2/KeyboardBootstrapper.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -9,7 +9,7 @@ namespace g{namespace Uno{namespace Platform{struct KeyEventArgs;}}}
 namespace g{
 namespace Fuse{
 
-// internal sealed class KeyboardBootstrapper :1494
+// internal sealed class KeyboardBootstrapper :10
 // {
 uType* KeyboardBootstrapper_typeof();
 void KeyboardBootstrapper__OnKeyPressed_fn(uObject* sender, ::g::Uno::Platform::KeyEventArgs* args);

@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Uno.Threading/1.2.2/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Uno.Threading/1.3.1/IDispatcher.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -9,7 +9,7 @@ namespace g{
 namespace Uno{
 namespace Threading{
 
-// private sealed class IDispatcherExtensions.Arg1InvokeFunc<T, TResult> :587
+// private sealed class IDispatcherExtensions.Arg1InvokeFunc<T, TResult> :99
 // {
 uType* IDispatcherExtensions__Arg1InvokeFunc_typeof();
 void IDispatcherExtensions__Arg1InvokeFunc__ctor__fn(IDispatcherExtensions__Arg1InvokeFunc* __this, uDelegate* action, void* arg);

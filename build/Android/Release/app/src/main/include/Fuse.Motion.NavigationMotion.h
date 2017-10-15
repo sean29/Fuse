@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Motion/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Motion/1.3.0-rc2/MotionConfig.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -9,7 +9,7 @@ namespace g{
 namespace Fuse{
 namespace Motion{
 
-// public sealed class NavigationMotion :194
+// public sealed class NavigationMotion :192
 // {
 uType* NavigationMotion_typeof();
 void NavigationMotion__ctor_1_fn(NavigationMotion* __this);

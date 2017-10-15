@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Controls.Native/1.2.1/android/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Controls.Native/1.3.0-rc2/Android/Rectangle.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -17,7 +17,7 @@ namespace Controls{
 namespace Native{
 namespace Android{
 
-// internal sealed extern class Rectangle :1082
+// internal sealed extern class Rectangle :9
 // {
 struct Rectangle_type : ::g::Fuse::Controls::Native::Android::Shape_type
 {
@@ -25,9 +25,9 @@ struct Rectangle_type : ::g::Fuse::Controls::Native::Android::Shape_type
 };
 
 Rectangle_type* Rectangle_typeof();
-void Rectangle__ctor_7_fn(Rectangle* __this);
+void Rectangle__ctor_8_fn(Rectangle* __this);
 void Rectangle__FuseControlsNativeIRectangleViewset_CornerRadius_fn(Rectangle* __this, ::g::Uno::Float4* value);
-void Rectangle__New4_fn(Rectangle** __retval);
+void Rectangle__New5_fn(Rectangle** __retval);
 void Rectangle__UpdateShapeDrawable_fn(Rectangle* __this, ::g::Java::Object* handle, float* pixelsPerPoint);
 void Rectangle__UpdateShapeDrawable1_fn(Rectangle* __this, ::g::Java::Object* handle, float* x, float* y, float* z, float* w);
 
@@ -35,9 +35,9 @@ struct Rectangle : ::g::Fuse::Controls::Native::Android::Shape
 {
     ::g::Uno::Float4 _cornerRadius;
 
-    void ctor_7();
+    void ctor_8();
     void UpdateShapeDrawable1(::g::Java::Object* handle, float x, float y, float z, float w);
-    static Rectangle* New4();
+    static Rectangle* New5();
 };
 // }
 

@@ -27,13 +27,13 @@ void QreaderImpl__ScannerImpl_fn();
 struct QreaderImpl : uObject
 {
     static uSStrong< ::g::Java::Object*> _intentListener_;
-    static uSStrong< ::g::Java::Object*>& _intentListener() { return QreaderImpl_typeof()->Init(), _intentListener_; }
+    static uSStrong< ::g::Java::Object*>& _intentListener() { return _intentListener_; }
     static int RC_BARCODE_CAPTURE_;
-    static int& RC_BARCODE_CAPTURE() { return QreaderImpl_typeof()->Init(), RC_BARCODE_CAPTURE_; }
+    static int& RC_BARCODE_CAPTURE() { return RC_BARCODE_CAPTURE_; }
     static uSStrong< ::g::Uno::Threading::Promise*> _FutureResult_;
-    static uSStrong< ::g::Uno::Threading::Promise*>& _FutureResult() { return QreaderImpl_typeof()->Init(), _FutureResult_; }
+    static uSStrong< ::g::Uno::Threading::Promise*>& _FutureResult() { return _FutureResult_; }
     static bool _InProgress_;
-    static bool& _InProgress() { return QreaderImpl_typeof()->Init(), _InProgress_; }
+    static bool& _InProgress() { return _InProgress_; }
 
     static void Cancelled();
     static ::g::Java::Object* Init();

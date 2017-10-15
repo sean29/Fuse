@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Triggers/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Triggers/1.3.0-rc2/WhileValue.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -21,7 +21,7 @@ namespace g{
 namespace Fuse{
 namespace Triggers{
 
-// public abstract class WhileValue<T> :4213
+// public abstract class WhileValue<T> :11
 // {
 struct WhileValue_type : ::g::Fuse::Triggers::Trigger_type
 {
@@ -38,6 +38,7 @@ void WhileValue__OnValueChanged_fn(WhileValue* __this, uObject* s, ::g::Uno::UX:
 void WhileValue__Pulse1_fn(WhileValue* __this);
 void WhileValue__get_Source_fn(WhileValue* __this, uObject** __retval);
 void WhileValue__set_Source_fn(WhileValue* __this, uObject* value);
+void WhileValue__UpdateState_fn(WhileValue* __this);
 void WhileValue__get_Value_fn(WhileValue* __this, uTRef __retval);
 void WhileValue__set_Value_fn(WhileValue* __this, void* value);
 void WhileValue__add_ValueChanged_fn(WhileValue* __this, uDelegate* value);
@@ -48,7 +49,7 @@ struct WhileValue : ::g::Fuse::Triggers::WhileTrigger
     bool _hasValue;
     uStrong<uObject*> _obj;
     uStrong<uObject*> _source;
-    uTField _value() { return __type->Field(this, 36); }
+    uTField _value() { return __type->Field(this, 40); }
     uStrong<uDelegate*> ValueChanged1;
 
     void ctor_6();
@@ -57,6 +58,7 @@ struct WhileValue : ::g::Fuse::Triggers::WhileTrigger
     void Pulse1();
     uObject* Source();
     void Source(uObject* value);
+    void UpdateState();
     template<class T>
     T Value() { T __retval; return WhileValue__get_Value_fn(this, &__retval), __retval; }
     template<class T>

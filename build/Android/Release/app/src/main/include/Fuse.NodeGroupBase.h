@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Nodes/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Nodes/1.3.0-rc2/NodeGroup.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -19,7 +19,7 @@ namespace g{namespace Uno{namespace UX{struct Resource;}}}
 namespace g{
 namespace Fuse{
 
-// public abstract class NodeGroupBase :3140
+// public abstract class NodeGroupBase :16
 // {
 ::g::Fuse::Node_type* NodeGroupBase_typeof();
 void NodeGroupBase__ctor_3_fn(NodeGroupBase* __this, int* flags);

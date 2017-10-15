@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Triggers/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Triggers/1.3.0-rc2/Deferred.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -10,7 +10,7 @@ namespace g{namespace Uno{struct Float2;}}
 namespace g{
 namespace Fuse{
 
-// internal static class DeferredManager :855
+// internal static class DeferredManager :20
 // {
 uClassType* DeferredManager_typeof();
 void DeferredManager__AddPending_fn(uObject* d, ::g::Uno::Float2* priority);
@@ -20,13 +20,13 @@ void DeferredManager__OnUpdate_fn();
 struct DeferredManager : uObject
 {
     static uSStrong< ::g::Uno::Collections::PriorityQueue*> _pending_;
-    static uSStrong< ::g::Uno::Collections::PriorityQueue*>& _pending() { return DeferredManager_typeof()->Init(), _pending_; }
+    static uSStrong< ::g::Uno::Collections::PriorityQueue*>& _pending() { return _pending_; }
     static int _startFrame_;
-    static int& _startFrame() { return DeferredManager_typeof()->Init(), _startFrame_; }
+    static int& _startFrame() { return _startFrame_; }
     static bool _update_;
-    static bool& _update() { return DeferredManager_typeof()->Init(), _update_; }
+    static bool& _update() { return _update_; }
     static double TimeLimit_;
-    static double& TimeLimit() { return DeferredManager_typeof()->Init(), TimeLimit_; }
+    static double& TimeLimit() { return TimeLimit_; }
 
     static void AddPending(uObject* d, ::g::Uno::Float2 priority);
     static void CheckUpdate();

@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/UnoCore/1.2.2/source/uno/exceptions/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/UnoCore/1.3.1/Source/Uno/Exceptions/ArgumentException.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -8,7 +8,7 @@ namespace g{namespace Uno{struct ArgumentException;}}
 namespace g{
 namespace Uno{
 
-// public class ArgumentException :69
+// public class ArgumentException :6
 // {
 ::g::Uno::Exception_type* ArgumentException_typeof();
 void ArgumentException__ctor_3_fn(ArgumentException* __this, uString* message);

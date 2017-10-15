@@ -1,4 +1,4 @@
-// This file was generated based on '/Users/a/Library/Application Support/Fusetools/Packages/Fuse.Launcher.Maps/1.2.1/maps/$.uno'.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Launcher.Maps/1.3.0-rc2/Maps/MapsTrigger.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -11,7 +11,7 @@ namespace Fuse{
 namespace Triggers{
 namespace Actions{
 
-// public sealed class LaunchMaps :114
+// public sealed class LaunchMaps :34
 // {
 ::g::Fuse::Triggers::Actions::TriggerAction_type* LaunchMaps_typeof();
 void LaunchMaps__get_Latitude_fn(LaunchMaps* __this, uString** __retval);

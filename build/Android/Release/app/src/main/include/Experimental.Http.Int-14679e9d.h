@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Experimental.Http/1.2.1/internal/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Experimental.Http/1.3.0-rc2/Internal/DateUtil.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -10,7 +10,7 @@ namespace Experimental{
 namespace Http{
 namespace Internal{
 
-// internal static class DateUtil :7
+// internal static class DateUtil :6
 // {
 uClassType* DateUtil_typeof();
 void DateUtil__get_TimestampNow_fn(int* __retval);

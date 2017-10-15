@@ -1,4 +1,4 @@
-// This file was generated based on '/Users/a/Library/Application Support/Fusetools/Packages/Fuse.CameraRoll/1.2.1/android/$.uno'.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.CameraRoll/1.3.0-rc2/Android/AndroidCameraRoll.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -13,7 +13,7 @@ namespace g{
 namespace Fuse{
 namespace CameraRoll{
 
-// internal sealed extern class AddPicturePermissionCheckCommand :109
+// internal sealed extern class AddPicturePermissionCheckCommand :107
 // {
 uType* AddPicturePermissionCheckCommand_typeof();
 void AddPicturePermissionCheckCommand__ctor__fn(AddPicturePermissionCheckCommand* __this, ::g::Uno::Threading::Promise* p, uString* path);

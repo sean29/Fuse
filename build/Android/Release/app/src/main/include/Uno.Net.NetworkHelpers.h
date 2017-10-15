@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Uno.Net.Sockets/1.2.2/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Uno.Net.Sockets/1.3.1/NetworkHelpers.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -9,7 +9,7 @@ namespace g{
 namespace Uno{
 namespace Net{
 
-// internal sealed extern class NetworkHelpers :463
+// internal sealed extern class NetworkHelpers :8
 // {
 uType* NetworkHelpers_typeof();
 void NetworkHelpers__GetError_fn(uString** __retval);

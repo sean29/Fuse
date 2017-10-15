@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Platform/1.2.1/android/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Platform/1.3.0-rc2/Android/SystemUI.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -13,7 +13,7 @@ namespace g{
 namespace Fuse{
 namespace Platform{
 
-// public static extern class SystemUI :20
+// public static extern class SystemUI :18
 // {
 uClassType* SystemUI_typeof();
 void SystemUI___GetRootDisplaySize_fn(::g::Uno::Float2* __retval);
@@ -74,45 +74,45 @@ void SystemUI__UpdateStatusBar_fn();
 struct SystemUI : uObject
 {
     static int _bottomFrameSize_;
-    static int& _bottomFrameSize() { return SystemUI_typeof()->Init(), _bottomFrameSize_; }
+    static int& _bottomFrameSize() { return _bottomFrameSize_; }
     static ::g::Uno::Rect _frame_;
-    static ::g::Uno::Rect& _frame() { return SystemUI_typeof()->Init(), _frame_; }
+    static ::g::Uno::Rect& _frame() { return _frame_; }
     static uSStrong< ::g::Java::Object*> _keyboardListener_;
-    static uSStrong< ::g::Java::Object*>& _keyboardListener() { return SystemUI_typeof()->Init(), _keyboardListener_; }
+    static uSStrong< ::g::Java::Object*>& _keyboardListener() { return _keyboardListener_; }
     static int _systemUIState_;
-    static int& _systemUIState() { return SystemUI_typeof()->Init(), _systemUIState_; }
+    static int& _systemUIState() { return _systemUIState_; }
     static int _topFrameSize_;
-    static int& _topFrameSize() { return SystemUI_typeof()->Init(), _topFrameSize_; }
+    static int& _topFrameSize() { return _topFrameSize_; }
     static int cachedOpenSize_;
-    static int& cachedOpenSize() { return SystemUI_typeof()->Init(), cachedOpenSize_; }
+    static int& cachedOpenSize() { return cachedOpenSize_; }
     static bool firstSizing_;
-    static bool& firstSizing() { return SystemUI_typeof()->Init(), firstSizing_; }
+    static bool& firstSizing() { return firstSizing_; }
     static bool hasCachedStatusBarSize_;
-    static bool& hasCachedStatusBarSize() { return SystemUI_typeof()->Init(), hasCachedStatusBarSize_; }
+    static bool& hasCachedStatusBarSize() { return hasCachedStatusBarSize_; }
     static bool keyboardVisible_;
-    static bool& keyboardVisible() { return SystemUI_typeof()->Init(), keyboardVisible_; }
+    static bool& keyboardVisible() { return keyboardVisible_; }
     static int lastKeyboardHeight_;
-    static int& lastKeyboardHeight() { return SystemUI_typeof()->Init(), lastKeyboardHeight_; }
+    static int& lastKeyboardHeight() { return lastKeyboardHeight_; }
     static uSStrong< ::g::Java::Object*> layoutAttachedTo_;
-    static uSStrong< ::g::Java::Object*>& layoutAttachedTo() { return SystemUI_typeof()->Init(), layoutAttachedTo_; }
+    static uSStrong< ::g::Java::Object*>& layoutAttachedTo() { return layoutAttachedTo_; }
     static int realHeight_;
-    static int& realHeight() { return SystemUI_typeof()->Init(), realHeight_; }
+    static int& realHeight() { return realHeight_; }
     static int realWidth_;
-    static int& realWidth() { return SystemUI_typeof()->Init(), realWidth_; }
+    static int& realWidth() { return realWidth_; }
     static uSStrong< ::g::Java::Object*> RootLayout_;
-    static uSStrong< ::g::Java::Object*>& RootLayout() { return SystemUI_typeof()->Init(), RootLayout_; }
+    static uSStrong< ::g::Java::Object*>& RootLayout() { return RootLayout_; }
     static uSStrong< ::g::Java::Object*> SuperLayout_;
-    static uSStrong< ::g::Java::Object*>& SuperLayout() { return SystemUI_typeof()->Init(), SuperLayout_; }
+    static uSStrong< ::g::Java::Object*>& SuperLayout() { return SuperLayout_; }
     static ::g::Uno::Rect _BottomFrame_;
-    static ::g::Uno::Rect& _BottomFrame() { return SystemUI_typeof()->Init(), _BottomFrame_; }
+    static ::g::Uno::Rect& _BottomFrame() { return _BottomFrame_; }
     static float _Density_;
-    static float& _Density() { return SystemUI_typeof()->Init(), _Density_; }
+    static float& _Density() { return _Density_; }
     static uSStrong<uDelegate*> BottomFrameWillResize1_;
-    static uSStrong<uDelegate*>& BottomFrameWillResize1() { return SystemUI_typeof()->Init(), BottomFrameWillResize1_; }
+    static uSStrong<uDelegate*>& BottomFrameWillResize1() { return BottomFrameWillResize1_; }
     static uSStrong<uDelegate*> FrameChanged1_;
-    static uSStrong<uDelegate*>& FrameChanged1() { return SystemUI_typeof()->Init(), FrameChanged1_; }
+    static uSStrong<uDelegate*>& FrameChanged1() { return FrameChanged1_; }
     static uSStrong<uDelegate*> TopFrameWillResize1_;
-    static uSStrong<uDelegate*>& TopFrameWillResize1() { return SystemUI_typeof()->Init(), TopFrameWillResize1_; }
+    static uSStrong<uDelegate*>& TopFrameWillResize1() { return TopFrameWillResize1_; }
 
     static ::g::Uno::Float2 _GetRootDisplaySize();
     static void Attach(::g::Java::Object* _layout);

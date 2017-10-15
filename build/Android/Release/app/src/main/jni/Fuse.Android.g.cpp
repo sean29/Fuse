@@ -9,7 +9,8 @@
 #include <Fuse.Android.Blitter.h>
 #include <Fuse.Android.Canvas.h>
 #include <Fuse.Android.GLUtils.h>
-#include <Fuse.Android.RootGrap-9e25fcdc.h>
+#include <Fuse.Android.RootGrap-10fd8c0b.h>
+#include <Fuse.Android.RootGrap-1bc0e6b6.h>
 #include <Fuse.Android.RootGraphicsView.h>
 #include <Fuse.Android.StaticLa-888bb769.h>
 #include <Fuse.Android.StaticLayout.h>
@@ -24,7 +25,6 @@
 #include <Fuse.App.h>
 #include <Fuse.Controls.Native.-6178e8bc.h>
 #include <Fuse.Controls.Native.-88fc1c1d.h>
-#include <Fuse.Controls.Native.-ca2427b3.h>
 #include <Fuse.Controls.Native.-e502cdf1.h>
 #include <Fuse.Controls.Native.-f43d469d.h>
 #include <Fuse.Controls.Native.-f715ad8a.h>
@@ -80,16 +80,16 @@
 #include <Uno.UX.Template.h>
 #include <Uno/JNIHelper.h>
 static uString* STRINGS[6];
-static uType* TYPES[6];
+static uType* TYPES[5];
 
 namespace g{
 namespace Fuse{
 namespace Android{
 
-// /usr/local/share/uno/Packages/Fuse.Android.TextRenderer/1.2.1/internal/$.uno
-// ----------------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Android.TextRenderer\1.3.0-rc2\Internal\StaticLayout.uno
+// ---------------------------------------------------------------------------------------------------------
 
-// public enum StaticLayout.Alignment :168
+// public enum StaticLayout.Alignment :14
 uEnumType* StaticLayout__Alignment_typeof()
 {
     static uSStrong<uEnumType*> type;
@@ -103,12 +103,12 @@ uEnumType* StaticLayout__Alignment_typeof()
     return type;
 }
 
-// /usr/local/share/uno/Packages/Fuse.Android/1.2.1/$.uno
-// ------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Android\1.3.0-rc2\AppRoot.uno
+// ------------------------------------------------------------------------------
 
-// internal static extern class AppRoot :300
+// internal static extern class AppRoot :11
 // {
-// static AppRoot() :316
+// static AppRoot() :27
 static void AppRoot__cctor__fn(uType* __type)
 {
     AppRoot::_rootContainer_ = AppRoot::CreateRootView();
@@ -119,9 +119,13 @@ static void AppRoot__cctor__fn(uType* __type)
 static void AppRoot_build(uType* type)
 {
     ::TYPES[0] = ::g::Fuse::App_typeof();
+    type->SetDependencies(
+        ::g::Uno::Application_typeof(),
+        ::g::Fuse::Controls::Native::Android::InputDispatch_typeof(),
+        ::g::Fuse::Platform::SystemUI_typeof());
     type->SetFields(0,
-        ::g::Java::Object_typeof(), (uintptr_t)&::g::Fuse::Android::AppRoot::_rootContainer_, uFieldFlagsStatic,
-        ::g::Fuse::Controls::Native::ViewHandle_typeof(), (uintptr_t)&::g::Fuse::Android::AppRoot::_viewHandle_, uFieldFlagsStatic);
+        ::g::Java::Object_typeof(), (uintptr_t)&AppRoot::_rootContainer_, uFieldFlagsStatic,
+        ::g::Fuse::Controls::Native::ViewHandle_typeof(), (uintptr_t)&AppRoot::_viewHandle_, uFieldFlagsStatic);
 }
 
 uClassType* AppRoot_typeof()
@@ -131,6 +135,7 @@ uClassType* AppRoot_typeof()
 
     uTypeOptions options;
     options.FieldCount = 2;
+    options.DependencyCount = 3;
     options.TypeSize = sizeof(uClassType);
     type = uClassType::New("Fuse.Android.AppRoot", options);
     type->fp_build_ = AppRoot_build;
@@ -138,49 +143,49 @@ uClassType* AppRoot_typeof()
     return type;
 }
 
-// public static void ClearRoot(Fuse.Controls.Native.ViewHandle handle) :328
+// public static void ClearRoot(Fuse.Controls.Native.ViewHandle handle) :39
 void AppRoot__ClearRoot_fn(::g::Fuse::Controls::Native::ViewHandle* handle)
 {
     AppRoot::ClearRoot(handle);
 }
 
-// public static void ClearRoot(Java.Object handle) :334
+// public static void ClearRoot(Java.Object handle) :45
 void AppRoot__ClearRoot1_fn(::g::Java::Object* handle)
 {
     AppRoot::ClearRoot1(handle);
 }
 
-// private static Java.Object CreateRootView() :357
+// private static Java.Object CreateRootView() :68
 void AppRoot__CreateRootView_fn(::g::Java::Object** __retval)
 {
     *__retval = AppRoot::CreateRootView();
 }
 
-// private static void OnTouchEvent__(Java.Object motionEvent) :350
+// private static void OnTouchEvent__(Java.Object motionEvent) :61
 void AppRoot__OnTouchEvent___fn(::g::Java::Object* motionEvent)
 {
     AppRoot::OnTouchEvent__(motionEvent);
 }
 
-// private static void SetAppRoot(Java.Object rootView) :345
+// private static void SetAppRoot(Java.Object rootView) :56
 void AppRoot__SetAppRoot_fn(::g::Java::Object* rootView)
 {
     AppRoot::SetAppRoot(rootView);
 }
 
-// public static void SetRootView(Fuse.Controls.Native.ViewHandle handle) :323
+// public static void SetRootView(Fuse.Controls.Native.ViewHandle handle) :34
 void AppRoot__SetRootView_fn(::g::Fuse::Controls::Native::ViewHandle* handle)
 {
     AppRoot::SetRootView(handle);
 }
 
-// private static void SetRootView(Java.Object handle, Java.Object rootHandle) :340
+// private static void SetRootView(Java.Object handle, Java.Object rootHandle) :51
 void AppRoot__SetRootView1_fn(::g::Java::Object* handle, ::g::Java::Object* rootHandle)
 {
     AppRoot::SetRootView1(handle, rootHandle);
 }
 
-// public static Fuse.Controls.Native.ViewHandle get_ViewHandle() :305
+// public static Fuse.Controls.Native.ViewHandle get_ViewHandle() :16
 void AppRoot__get_ViewHandle_fn(::g::Fuse::Controls::Native::ViewHandle** __retval)
 {
     *__retval = AppRoot::ViewHandle();
@@ -189,21 +194,21 @@ void AppRoot__get_ViewHandle_fn(::g::Fuse::Controls::Native::ViewHandle** __retv
 uSStrong< ::g::Java::Object*> AppRoot::_rootContainer_;
 uSStrong< ::g::Fuse::Controls::Native::ViewHandle*> AppRoot::_viewHandle_;
 
-// public static void ClearRoot(Fuse.Controls.Native.ViewHandle handle) [static] :328
+// public static void ClearRoot(Fuse.Controls.Native.ViewHandle handle) [static] :39
 void AppRoot::ClearRoot(::g::Fuse::Controls::Native::ViewHandle* handle)
 {
     AppRoot_typeof()->Init();
-    AppRoot::ClearRoot1(AppRoot::_rootContainer());
+    AppRoot::ClearRoot1(AppRoot::_rootContainer_);
 }
 
-// public static void ClearRoot(Java.Object handle) [static] :334
+// public static void ClearRoot(Java.Object handle) [static] :45
 void AppRoot::ClearRoot1(::g::Java::Object* handle)
 {
     AppRoot_typeof()->Init();
     {
         INIT_JNI;
         jclass __cls = JniHelper::GetNativeExternClass();
-        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "ClearRoot1336", "(Ljava/lang/Object;)V");
+        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "ClearRoot1335", "(Ljava/lang/Object;)V");
         ::g::Java::Object* _uhandle=handle;
         jobject _handle = (_uhandle==NULL ? NULL : U_JNIVAR->NewLocalRef(::g::Android::Base::Wrappers::IJWrapper::_GetJavaObject(uInterface((uObject*)_uhandle, ::g::Android::Base::Wrappers::IJWrapper_typeof()))));
         U_JNIVAR->CallStaticVoidMethod(__cls,__mtd,_handle);
@@ -215,14 +220,14 @@ void AppRoot::ClearRoot1(::g::Java::Object* handle)
     
 }
 
-// private static Java.Object CreateRootView() [static] :357
+// private static Java.Object CreateRootView() [static] :68
 ::g::Java::Object* AppRoot::CreateRootView()
 {
     AppRoot_typeof()->Init();
     {
         INIT_JNI;
         jclass __cls = JniHelper::GetNativeExternClass();
-        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "CreateRootView337", "()Ljava/lang/Object;");
+        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "CreateRootView336", "()Ljava/lang/Object;");
         jobject __jresult = U_JNIVAR->CallStaticObjectMethod(__cls,__mtd);
         ::g::Java::Object* __result = (::g::Java::Object*)::g::Android::Base::Wrappers::JavaObjectHelper::JObjectToJWrapper(__jresult, false);
         ::g::Android::Base::JNI::CheckException();
@@ -231,36 +236,36 @@ void AppRoot::ClearRoot1(::g::Java::Object* handle)
     
 }
 
-// private static void OnTouchEvent__(Java.Object motionEvent) [static] :350
+// private static void OnTouchEvent__(Java.Object motionEvent) [static] :61
 void AppRoot::OnTouchEvent__(::g::Java::Object* motionEvent)
 {
     AppRoot_typeof()->Init();
     ::g::Fuse::Visual* root = uPtr(uCast< ::g::Fuse::App*>(::g::Uno::Application::Current1(), ::TYPES[0/*Fuse.App*/]))->ChildrenVisual();
-    ::g::Fuse::Controls::Native::Android::InputDispatch::RaiseEvent(root, AppRoot::_rootContainer(), ::g::Fuse::Controls::Native::Android::MotionEvent::New1(motionEvent));
+    ::g::Fuse::Controls::Native::Android::InputDispatch::RaiseEvent(root, AppRoot::_rootContainer_, ::g::Fuse::Controls::Native::Android::MotionEvent::New1(motionEvent));
 }
 
-// private static void SetAppRoot(Java.Object rootView) [static] :345
+// private static void SetAppRoot(Java.Object rootView) [static] :56
 void AppRoot::SetAppRoot(::g::Java::Object* rootView)
 {
     AppRoot_typeof()->Init();
     ::g::Fuse::Platform::SystemUI::RootView(rootView);
 }
 
-// public static void SetRootView(Fuse.Controls.Native.ViewHandle handle) [static] :323
+// public static void SetRootView(Fuse.Controls.Native.ViewHandle handle) [static] :34
 void AppRoot::SetRootView(::g::Fuse::Controls::Native::ViewHandle* handle)
 {
     AppRoot_typeof()->Init();
-    AppRoot::SetRootView1(AppRoot::_rootContainer(), uPtr(handle)->NativeHandle);
+    AppRoot::SetRootView1(AppRoot::_rootContainer_, uPtr(handle)->NativeHandle);
 }
 
-// private static void SetRootView(Java.Object handle, Java.Object rootHandle) [static] :340
+// private static void SetRootView(Java.Object handle, Java.Object rootHandle) [static] :51
 void AppRoot::SetRootView1(::g::Java::Object* handle, ::g::Java::Object* rootHandle)
 {
     AppRoot_typeof()->Init();
     {
         INIT_JNI;
         jclass __cls = JniHelper::GetNativeExternClass();
-        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "SetRootView1339", "(Ljava/lang/Object;Ljava/lang/Object;)V");
+        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "SetRootView1338", "(Ljava/lang/Object;Ljava/lang/Object;)V");
         ::g::Java::Object* _uhandle=handle;
         jobject _handle = (_uhandle==NULL ? NULL : U_JNIVAR->NewLocalRef(::g::Android::Base::Wrappers::IJWrapper::_GetJavaObject(uInterface((uObject*)_uhandle, ::g::Android::Base::Wrappers::IJWrapper_typeof()))));
         ::g::Java::Object* _urootHandle=rootHandle;
@@ -275,28 +280,28 @@ void AppRoot::SetRootView1(::g::Java::Object* handle, ::g::Java::Object* rootHan
     
 }
 
-// public static Fuse.Controls.Native.ViewHandle get_ViewHandle() [static] :305
+// public static Fuse.Controls.Native.ViewHandle get_ViewHandle() [static] :16
 ::g::Fuse::Controls::Native::ViewHandle* AppRoot::ViewHandle()
 {
     AppRoot_typeof()->Init();
-    return AppRoot::_viewHandle();
+    return AppRoot::_viewHandle_;
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Android.TextRenderer/1.2.1/$.uno
-// -------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Android.TextRenderer\1.3.0-rc2\TextRenderer.uno
+// ------------------------------------------------------------------------------------------------
 
-// private sealed class TextRenderer.BackgroundRender :283
+// private sealed class TextRenderer.BackgroundRender :281
 // {
 static void TextRenderer__BackgroundRender_build(uType* type)
 {
     ::TYPES[1] = ::g::Uno::Action_typeof();
     type->SetFields(0,
-        ::g::Fuse::Android::StaticLayout_typeof(), offsetof(::g::Fuse::Android::TextRenderer__BackgroundRender, _layout), 0,
-        ::g::Uno::Recti_typeof(), offsetof(::g::Fuse::Android::TextRenderer__BackgroundRender, _pixelBounds), 0,
-        ::g::Uno::Graphics::Texture2D_typeof(), offsetof(::g::Fuse::Android::TextRenderer__BackgroundRender, _result), 0,
-        ::g::Fuse::Android::TextRenderer_typeof(), offsetof(::g::Fuse::Android::TextRenderer__BackgroundRender, _textRenderer), 0,
-        ::g::Uno::ULong_typeof(), offsetof(::g::Fuse::Android::TextRenderer__BackgroundRender, _textureVersion), 0);
+        ::g::Fuse::Android::StaticLayout_typeof(), offsetof(TextRenderer__BackgroundRender, _layout), 0,
+        ::g::Uno::Recti_typeof(), offsetof(TextRenderer__BackgroundRender, _pixelBounds), 0,
+        ::g::Uno::Graphics::Texture2D_typeof(), offsetof(TextRenderer__BackgroundRender, _result), 0,
+        ::g::Fuse::Android::TextRenderer_typeof(), offsetof(TextRenderer__BackgroundRender, _textRenderer), 0,
+        ::g::Uno::ULong_typeof(), offsetof(TextRenderer__BackgroundRender, _textureVersion), 0);
 }
 
 uType* TextRenderer__BackgroundRender_typeof()
@@ -313,31 +318,31 @@ uType* TextRenderer__BackgroundRender_typeof()
     return type;
 }
 
-// public BackgroundRender(Fuse.Android.TextRenderer textRenderer, ulong textureVersion, Fuse.Android.StaticLayout layout, Uno.Recti pixelBounds) :291
+// public BackgroundRender(Fuse.Android.TextRenderer textRenderer, ulong textureVersion, Fuse.Android.StaticLayout layout, Uno.Recti pixelBounds) :289
 void TextRenderer__BackgroundRender__ctor__fn(TextRenderer__BackgroundRender* __this, ::g::Fuse::Android::TextRenderer* textRenderer, uint64_t* textureVersion, ::g::Fuse::Android::StaticLayout* layout, ::g::Uno::Recti* pixelBounds)
 {
     __this->ctor_(textRenderer, *textureVersion, layout, *pixelBounds);
 }
 
-// private void DoneCallback() :309
+// private void DoneCallback() :307
 void TextRenderer__BackgroundRender__DoneCallback_fn(TextRenderer__BackgroundRender* __this)
 {
     __this->DoneCallback();
 }
 
-// public BackgroundRender New(Fuse.Android.TextRenderer textRenderer, ulong textureVersion, Fuse.Android.StaticLayout layout, Uno.Recti pixelBounds) :291
+// public BackgroundRender New(Fuse.Android.TextRenderer textRenderer, ulong textureVersion, Fuse.Android.StaticLayout layout, Uno.Recti pixelBounds) :289
 void TextRenderer__BackgroundRender__New1_fn(::g::Fuse::Android::TextRenderer* textRenderer, uint64_t* textureVersion, ::g::Fuse::Android::StaticLayout* layout, ::g::Uno::Recti* pixelBounds, TextRenderer__BackgroundRender** __retval)
 {
     *__retval = TextRenderer__BackgroundRender::New1(textRenderer, *textureVersion, layout, *pixelBounds);
 }
 
-// public void UpdateTextureAsync() :299
+// public void UpdateTextureAsync() :297
 void TextRenderer__BackgroundRender__UpdateTextureAsync_fn(TextRenderer__BackgroundRender* __this)
 {
     __this->UpdateTextureAsync();
 }
 
-// public BackgroundRender(Fuse.Android.TextRenderer textRenderer, ulong textureVersion, Fuse.Android.StaticLayout layout, Uno.Recti pixelBounds) [instance] :291
+// public BackgroundRender(Fuse.Android.TextRenderer textRenderer, ulong textureVersion, Fuse.Android.StaticLayout layout, Uno.Recti pixelBounds) [instance] :289
 void TextRenderer__BackgroundRender::ctor_(::g::Fuse::Android::TextRenderer* textRenderer, uint64_t textureVersion, ::g::Fuse::Android::StaticLayout* layout, ::g::Uno::Recti pixelBounds)
 {
     _textRenderer = textRenderer;
@@ -346,7 +351,7 @@ void TextRenderer__BackgroundRender::ctor_(::g::Fuse::Android::TextRenderer* tex
     _pixelBounds = pixelBounds;
 }
 
-// private void DoneCallback() [instance] :309
+// private void DoneCallback() [instance] :307
 void TextRenderer__BackgroundRender::DoneCallback()
 {
     if (_textureVersion == uPtr(_textRenderer)->_wantedVersion)
@@ -358,7 +363,7 @@ void TextRenderer__BackgroundRender::DoneCallback()
         uPtr(_result)->Dispose();
 }
 
-// public void UpdateTextureAsync() [instance] :299
+// public void UpdateTextureAsync() [instance] :297
 void TextRenderer__BackgroundRender::UpdateTextureAsync()
 {
     _result = uPtr(_textRenderer)->UpdateTexture(_layout, _pixelBounds);
@@ -366,7 +371,7 @@ void TextRenderer__BackgroundRender::UpdateTextureAsync()
     ::g::Fuse::UpdateManager::PostAction(uDelegate::New(::TYPES[1/*Uno.Action*/], (void*)TextRenderer__BackgroundRender__DoneCallback_fn, this));
 }
 
-// public BackgroundRender New(Fuse.Android.TextRenderer textRenderer, ulong textureVersion, Fuse.Android.StaticLayout layout, Uno.Recti pixelBounds) [static] :291
+// public BackgroundRender New(Fuse.Android.TextRenderer textRenderer, ulong textureVersion, Fuse.Android.StaticLayout layout, Uno.Recti pixelBounds) [static] :289
 TextRenderer__BackgroundRender* TextRenderer__BackgroundRender::New1(::g::Fuse::Android::TextRenderer* textRenderer, uint64_t textureVersion, ::g::Fuse::Android::StaticLayout* layout, ::g::Uno::Recti pixelBounds)
 {
     TextRenderer__BackgroundRender* obj1 = (TextRenderer__BackgroundRender*)uNew(TextRenderer__BackgroundRender_typeof());
@@ -375,18 +380,20 @@ TextRenderer__BackgroundRender* TextRenderer__BackgroundRender::New1(::g::Fuse::
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Android.TextRenderer/1.2.1/internal/$.uno
-// ----------------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Android.TextRenderer\1.3.0-rc2\Internal\Bitmap.uno
+// ---------------------------------------------------------------------------------------------------
 
-// internal sealed extern class Bitmap :14
+// internal sealed extern class Bitmap :12
 // {
 static void Bitmap_build(uType* type)
 {
+    type->SetDependencies(
+        ::g::Uno::Color_typeof());
     type->SetInterfaces(
         ::g::Uno::IDisposable_typeof(), offsetof(Bitmap_type, interface0));
     type->SetFields(0,
-        ::g::Java::Object_typeof(), offsetof(::g::Fuse::Android::Bitmap, _handle), 0,
-        ::g::Uno::Bool_typeof(), offsetof(::g::Fuse::Android::Bitmap, _isDisposed), 0);
+        ::g::Java::Object_typeof(), offsetof(Bitmap, _handle), 0,
+        ::g::Uno::Bool_typeof(), offsetof(Bitmap, _isDisposed), 0);
 }
 
 Bitmap_type* Bitmap_typeof()
@@ -397,6 +404,7 @@ Bitmap_type* Bitmap_typeof()
     uTypeOptions options;
     options.FieldCount = 2;
     options.InterfaceCount = 1;
+    options.DependencyCount = 1;
     options.ObjectSize = sizeof(Bitmap);
     options.TypeSize = sizeof(Bitmap_type);
     type = (Bitmap_type*)uClassType::New("Fuse.Android.Bitmap", options);
@@ -405,73 +413,73 @@ Bitmap_type* Bitmap_typeof()
     return type;
 }
 
-// public Bitmap(Java.Object handle) :23
+// public Bitmap(Java.Object handle) :21
 void Bitmap__ctor__fn(Bitmap* __this, ::g::Java::Object* handle)
 {
     __this->ctor_(handle);
 }
 
-// public static Fuse.Android.Bitmap CreateBitmapARGB8888(int width, int height) :33
+// public static Fuse.Android.Bitmap CreateBitmapARGB8888(int width, int height) :31
 void Bitmap__CreateBitmapARGB8888_fn(int* width, int* height, Bitmap** __retval)
 {
     *__retval = Bitmap::CreateBitmapARGB8888(*width, *height);
 }
 
-// private static Java.Object CreateBitmapARGB8888Impl(int width, int height) :60
+// private static Java.Object CreateBitmapARGB8888Impl(int width, int height) :58
 void Bitmap__CreateBitmapARGB8888Impl_fn(int* width, int* height, ::g::Java::Object** __retval)
 {
     *__retval = Bitmap::CreateBitmapARGB8888Impl(*width, *height);
 }
 
-// public void Dispose() :44
+// public void Dispose() :42
 void Bitmap__Dispose_fn(Bitmap* __this)
 {
     __this->Dispose();
 }
 
-// public void EraseColor(float4 color) :28
+// public void EraseColor(float4 color) :26
 void Bitmap__EraseColor_fn(Bitmap* __this, ::g::Uno::Float4* color)
 {
     __this->EraseColor(*color);
 }
 
-// private static void EraseColor(Java.Object handle, int color) :66
+// private static void EraseColor(Java.Object handle, int color) :64
 void Bitmap__EraseColor1_fn(::g::Java::Object* handle, int* color)
 {
     Bitmap::EraseColor1(handle, *color);
 }
 
-// public Java.Object get_Handle() :18
+// public Java.Object get_Handle() :16
 void Bitmap__get_Handle_fn(Bitmap* __this, ::g::Java::Object** __retval)
 {
     *__retval = __this->Handle();
 }
 
-// public Bitmap New(Java.Object handle) :23
+// public Bitmap New(Java.Object handle) :21
 void Bitmap__New1_fn(::g::Java::Object* handle, Bitmap** __retval)
 {
     *__retval = Bitmap::New1(handle);
 }
 
-// public void Recycle() :38
+// public void Recycle() :36
 void Bitmap__Recycle_fn(Bitmap* __this)
 {
     __this->Recycle();
 }
 
-// private static void Recycle(Java.Object handle) :54
+// private static void Recycle(Java.Object handle) :52
 void Bitmap__Recycle1_fn(::g::Java::Object* handle)
 {
     Bitmap::Recycle1(handle);
 }
 
-// public Bitmap(Java.Object handle) [instance] :23
+// public Bitmap(Java.Object handle) [instance] :21
 void Bitmap::ctor_(::g::Java::Object* handle)
 {
     _handle = handle;
 }
 
-// public void Dispose() [instance] :44
+// public void Dispose() [instance] :42
 void Bitmap::Dispose()
 {
     if (!_isDisposed)
@@ -481,37 +489,37 @@ void Bitmap::Dispose()
     }
 }
 
-// public void EraseColor(float4 color) [instance] :28
+// public void EraseColor(float4 color) [instance] :26
 void Bitmap::EraseColor(::g::Uno::Float4 color)
 {
     Bitmap::EraseColor1(Handle(), (int)::g::Uno::Color::ToArgb(color));
 }
 
-// public Java.Object get_Handle() [instance] :18
+// public Java.Object get_Handle() [instance] :16
 ::g::Java::Object* Bitmap::Handle()
 {
     return _handle;
 }
 
-// public void Recycle() [instance] :38
+// public void Recycle() [instance] :36
 void Bitmap::Recycle()
 {
     Bitmap::Recycle1(Handle());
 }
 
-// public static Fuse.Android.Bitmap CreateBitmapARGB8888(int width, int height) [static] :33
+// public static Fuse.Android.Bitmap CreateBitmapARGB8888(int width, int height) [static] :31
 Bitmap* Bitmap::CreateBitmapARGB8888(int width, int height)
 {
     return Bitmap::New1(Bitmap::CreateBitmapARGB8888Impl(width, height));
 }
 
-// private static Java.Object CreateBitmapARGB8888Impl(int width, int height) [static] :60
+// private static Java.Object CreateBitmapARGB8888Impl(int width, int height) [static] :58
 ::g::Java::Object* Bitmap::CreateBitmapARGB8888Impl(int width, int height)
 {
     {
         INIT_JNI;
         jclass __cls = JniHelper::GetNativeExternClass();
-        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "CreateBitmapARGB8888Impl340", "(II)Ljava/lang/Object;");
+        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "CreateBitmapARGB8888Impl339", "(II)Ljava/lang/Object;");
         int _uwidth=width;
         jint _width = (jint)_uwidth;
         int _uheight=height;
@@ -526,13 +534,13 @@ Bitmap* Bitmap::CreateBitmapARGB8888(int width, int height)
     
 }
 
-// private static void EraseColor(Java.Object handle, int color) [static] :66
+// private static void EraseColor(Java.Object handle, int color) [static] :64
 void Bitmap::EraseColor1(::g::Java::Object* handle, int color)
 {
     {
         INIT_JNI;
         jclass __cls = JniHelper::GetNativeExternClass();
-        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "EraseColor1341", "(Ljava/lang/Object;I)V");
+        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "EraseColor1340", "(Ljava/lang/Object;I)V");
         ::g::Java::Object* _uhandle=handle;
         jobject _handle = (_uhandle==NULL ? NULL : U_JNIVAR->NewLocalRef(::g::Android::Base::Wrappers::IJWrapper::_GetJavaObject(uInterface((uObject*)_uhandle, ::g::Android::Base::Wrappers::IJWrapper_typeof()))));
         int _ucolor=color;
@@ -547,7 +555,7 @@ void Bitmap::EraseColor1(::g::Java::Object* handle, int color)
     
 }
 
-// public Bitmap New(Java.Object handle) [static] :23
+// public Bitmap New(Java.Object handle) [static] :21
 Bitmap* Bitmap::New1(::g::Java::Object* handle)
 {
     Bitmap* obj1 = (Bitmap*)uNew(Bitmap_typeof());
@@ -555,13 +563,13 @@ Bitmap* Bitmap::New1(::g::Java::Object* handle)
     return obj1;
 }
 
-// private static void Recycle(Java.Object handle) [static] :54
+// private static void Recycle(Java.Object handle) [static] :52
 void Bitmap::Recycle1(::g::Java::Object* handle)
 {
     {
         INIT_JNI;
         jclass __cls = JniHelper::GetNativeExternClass();
-        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "Recycle1342", "(Ljava/lang/Object;)V");
+        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "Recycle1341", "(Ljava/lang/Object;)V");
         ::g::Java::Object* _uhandle=handle;
         jobject _handle = (_uhandle==NULL ? NULL : U_JNIVAR->NewLocalRef(::g::Android::Base::Wrappers::IJWrapper::_GetJavaObject(uInterface((uObject*)_uhandle, ::g::Android::Base::Wrappers::IJWrapper_typeof()))));
         U_JNIVAR->CallStaticVoidMethod(__cls,__mtd,_handle);
@@ -574,12 +582,12 @@ void Bitmap::Recycle1(::g::Java::Object* handle)
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Android.TextRenderer/1.2.1/$.uno
-// -------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Android.TextRenderer\1.3.0-rc2\TextRenderer.uno
+// ------------------------------------------------------------------------------------------------
 
-// internal sealed class Blitter :353
+// internal sealed class Blitter :351
 // {
-// static Blitter() :353
+// static generated Blitter() :351
 static void Blitter__cctor__fn(uType* __type)
 {
     Blitter::Singleton_ = Blitter::New1();
@@ -589,10 +597,10 @@ static void Blitter_build(uType* type)
 {
     ::TYPES[2] = ::g::Uno::Float2_typeof()->Array();
     type->SetFields(0,
-        ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLDrawCall_typeof(), offsetof(::g::Fuse::Android::Blitter, _draw_67760dd9), 0,
-        ::g::Uno::Graphics::VertexBuffer_typeof(), offsetof(::g::Fuse::Android::Blitter, Blit_v_67760dd9_3_4_1), 0,
-        ::TYPES[2/*float2[]*/], offsetof(::g::Fuse::Android::Blitter, Blit_verts_67760dd9_3_3_5), 0,
-        type, (uintptr_t)&::g::Fuse::Android::Blitter::Singleton_, uFieldFlagsStatic);
+        ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLDrawCall_typeof(), offsetof(Blitter, _draw_67760dd9), 0,
+        ::g::Uno::Graphics::VertexBuffer_typeof(), offsetof(Blitter, Blit_v_67760dd9_3_4_1), 0,
+        ::TYPES[2/*float2[]*/], offsetof(Blitter, Blit_verts_67760dd9_3_3_5), 0,
+        type, (uintptr_t)&Blitter::Singleton_, uFieldFlagsStatic);
 }
 
 uType* Blitter_typeof()
@@ -611,25 +619,25 @@ uType* Blitter_typeof()
     return type;
 }
 
-// public generated Blitter() :353
+// public generated Blitter() :351
 void Blitter__ctor__fn(Blitter* __this)
 {
     __this->ctor_();
 }
 
-// public void Blit(texture2D vt, float2 pos, float2 size, float4x4 localToClipTransform) :357
+// public void Blit(texture2D vt, float2 pos, float2 size, float4x4 localToClipTransform) :355
 void Blitter__Blit_fn(Blitter* __this, ::g::Uno::Graphics::Texture2D* vt, ::g::Uno::Float2* pos, ::g::Uno::Float2* size, ::g::Uno::Float4x4* localToClipTransform)
 {
     __this->Blit(vt, *pos, *size, *localToClipTransform);
 }
 
-// private generated void init_DrawCalls() :353
+// private generated void init_DrawCalls() :351
 void Blitter__init_DrawCalls_fn(Blitter* __this)
 {
     __this->init_DrawCalls();
 }
 
-// public generated Blitter New() :353
+// public generated Blitter New() :351
 void Blitter__New1_fn(Blitter** __retval)
 {
     *__retval = Blitter::New1();
@@ -637,13 +645,13 @@ void Blitter__New1_fn(Blitter** __retval)
 
 uSStrong<Blitter*> Blitter::Singleton_;
 
-// public generated Blitter() [instance] :353
+// public generated Blitter() [instance] :351
 void Blitter::ctor_()
 {
     init_DrawCalls();
 }
 
-// public void Blit(texture2D vt, float2 pos, float2 size, float4x4 localToClipTransform) [instance] :357
+// public void Blit(texture2D vt, float2 pos, float2 size, float4x4 localToClipTransform) [instance] :355
 void Blitter::Blit(::g::Uno::Graphics::Texture2D* vt, ::g::Uno::Float2 pos, ::g::Uno::Float2 size, ::g::Uno::Float4x4 localToClipTransform)
 {
     _draw_67760dd9.BlendEnabled(true);
@@ -660,7 +668,7 @@ void Blitter::Blit(::g::Uno::Graphics::Texture2D* vt, ::g::Uno::Float2 pos, ::g:
     _draw_67760dd9.DrawArrays(uPtr(Blit_verts_67760dd9_3_3_5)->Length());
 }
 
-// private generated void init_DrawCalls() [instance] :353
+// private generated void init_DrawCalls() [instance] :351
 void Blitter::init_DrawCalls()
 {
     uArray* verts_67760dd9_3_3_0 = uArray::Init< ::g::Uno::Float2>(::TYPES[2/*float2[]*/], 6, ::g::Uno::Float2__New2(0.0f, 0.0f), ::g::Uno::Float2__New2(1.0f, 0.0f), ::g::Uno::Float2__New2(1.0f, 1.0f), ::g::Uno::Float2__New2(0.0f, 0.0f), ::g::Uno::Float2__New2(1.0f, 1.0f), ::g::Uno::Float2__New2(0.0f, 1.0f));
@@ -669,7 +677,7 @@ void Blitter::init_DrawCalls()
     _draw_67760dd9 = ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLDrawCall__New1(::g::FuseAndroidTextRenderer_bundle::Blitter83cfc6f0());
 }
 
-// public generated Blitter New() [static] :353
+// public generated Blitter New() [static] :351
 Blitter* Blitter::New1()
 {
     Blitter* obj1 = (Blitter*)uNew(Blitter_typeof());
@@ -678,15 +686,15 @@ Blitter* Blitter::New1()
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Android.TextRenderer/1.2.1/internal/$.uno
-// ----------------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Android.TextRenderer\1.3.0-rc2\Internal\Canvas.uno
+// ---------------------------------------------------------------------------------------------------
 
-// internal sealed extern class Canvas :88
+// internal sealed extern class Canvas :12
 // {
 static void Canvas_build(uType* type)
 {
     type->SetFields(0,
-        ::g::Java::Object_typeof(), offsetof(::g::Fuse::Android::Canvas, _handle), 0);
+        ::g::Java::Object_typeof(), offsetof(Canvas, _handle), 0);
 }
 
 uType* Canvas_typeof()
@@ -703,79 +711,79 @@ uType* Canvas_typeof()
     return type;
 }
 
-// public Canvas(Fuse.Android.Bitmap bitmap) :102
+// public Canvas(Fuse.Android.Bitmap bitmap) :26
 void Canvas__ctor__fn(Canvas* __this, ::g::Fuse::Android::Bitmap* bitmap)
 {
     __this->ctor_(bitmap);
 }
 
-// public Canvas(Java.Object handle) :97
+// public Canvas(Java.Object handle) :21
 void Canvas__ctor_1_fn(Canvas* __this, ::g::Java::Object* handle)
 {
     __this->ctor_1(handle);
 }
 
-// private static Java.Object Create(Java.Object bitmapHandle) :116
+// private static Java.Object Create(Java.Object bitmapHandle) :40
 void Canvas__Create_fn(::g::Java::Object* bitmapHandle, ::g::Java::Object** __retval)
 {
     *__retval = Canvas::Create(bitmapHandle);
 }
 
-// public Java.Object get_Handle() :92
+// public Java.Object get_Handle() :16
 void Canvas__get_Handle_fn(Canvas* __this, ::g::Java::Object** __retval)
 {
     *__retval = __this->Handle();
 }
 
-// public Canvas New(Fuse.Android.Bitmap bitmap) :102
+// public Canvas New(Fuse.Android.Bitmap bitmap) :26
 void Canvas__New1_fn(::g::Fuse::Android::Bitmap* bitmap, Canvas** __retval)
 {
     *__retval = Canvas::New1(bitmap);
 }
 
-// public void Translate(float dx, float dy) :104
+// public void Translate(float dx, float dy) :28
 void Canvas__Translate_fn(Canvas* __this, float* dx, float* dy)
 {
     __this->Translate(*dx, *dy);
 }
 
-// private static void Translate(Java.Object handle, float dx, float dy) :110
+// private static void Translate(Java.Object handle, float dx, float dy) :34
 void Canvas__Translate1_fn(::g::Java::Object* handle, float* dx, float* dy)
 {
     Canvas::Translate1(handle, *dx, *dy);
 }
 
-// public Canvas(Fuse.Android.Bitmap bitmap) [instance] :102
+// public Canvas(Fuse.Android.Bitmap bitmap) [instance] :26
 void Canvas::ctor_(::g::Fuse::Android::Bitmap* bitmap)
 {
     ctor_1(Canvas::Create(uPtr(bitmap)->Handle()));
 }
 
-// public Canvas(Java.Object handle) [instance] :97
+// public Canvas(Java.Object handle) [instance] :21
 void Canvas::ctor_1(::g::Java::Object* handle)
 {
     _handle = handle;
 }
 
-// public Java.Object get_Handle() [instance] :92
+// public Java.Object get_Handle() [instance] :16
 ::g::Java::Object* Canvas::Handle()
 {
     return _handle;
 }
 
-// public void Translate(float dx, float dy) [instance] :104
+// public void Translate(float dx, float dy) [instance] :28
 void Canvas::Translate(float dx, float dy)
 {
     Canvas::Translate1(Handle(), dx, dy);
 }
 
-// private static Java.Object Create(Java.Object bitmapHandle) [static] :116
+// private static Java.Object Create(Java.Object bitmapHandle) [static] :40
 ::g::Java::Object* Canvas::Create(::g::Java::Object* bitmapHandle)
 {
     {
         INIT_JNI;
         jclass __cls = JniHelper::GetNativeExternClass();
-        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "Create343", "(Ljava/lang/Object;)Ljava/lang/Object;");
+        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "Create342", "(Ljava/lang/Object;)Ljava/lang/Object;");
         ::g::Java::Object* _ubitmapHandle=bitmapHandle;
         jobject _bitmapHandle = (_ubitmapHandle==NULL ? NULL : U_JNIVAR->NewLocalRef(::g::Android::Base::Wrappers::IJWrapper::_GetJavaObject(uInterface((uObject*)_ubitmapHandle, ::g::Android::Base::Wrappers::IJWrapper_typeof()))));
         jobject __jresult = U_JNIVAR->CallStaticObjectMethod(__cls,__mtd,_bitmapHandle);
@@ -787,7 +795,7 @@ void Canvas::Translate(float dx, float dy)
     
 }
 
-// public Canvas New(Fuse.Android.Bitmap bitmap) [static] :102
+// public Canvas New(Fuse.Android.Bitmap bitmap) [static] :26
 Canvas* Canvas::New1(::g::Fuse::Android::Bitmap* bitmap)
 {
     Canvas* obj2 = (Canvas*)uNew(Canvas_typeof());
@@ -795,13 +803,13 @@ Canvas* Canvas::New1(::g::Fuse::Android::Bitmap* bitmap)
     return obj2;
 }
 
-// private static void Translate(Java.Object handle, float dx, float dy) [static] :110
+// private static void Translate(Java.Object handle, float dx, float dy) [static] :34
 void Canvas::Translate1(::g::Java::Object* handle, float dx, float dy)
 {
     {
         INIT_JNI;
         jclass __cls = JniHelper::GetNativeExternClass();
-        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "Translate1344", "(Ljava/lang/Object;FF)V");
+        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "Translate1343", "(Ljava/lang/Object;FF)V");
         ::g::Java::Object* _uhandle=handle;
         jobject _handle = (_uhandle==NULL ? NULL : U_JNIVAR->NewLocalRef(::g::Android::Base::Wrappers::IJWrapper::_GetJavaObject(uInterface((uObject*)_uhandle, ::g::Android::Base::Wrappers::IJWrapper_typeof()))));
         float _udx=dx;
@@ -820,10 +828,72 @@ void Canvas::Translate1(::g::Java::Object* handle, float dx, float dy)
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Android.TextRenderer/1.2.1/internal/$.uno
-// ----------------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Android\1.3.0-rc2\.uno\ux13\Fuse.Android.RootGraphicsView.g.uno
+// ----------------------------------------------------------------------------------------------------------------
 
-// internal sealed extern class GLUtils :137
+// internal sealed class RootGraphicsView.Template1.Factory1 :10
+// {
+static void RootGraphicsView__Template1__Factory1_build(uType* type)
+{
+    ::STRINGS[0] = uString::Const("AndroidAppearance");
+    type->SetFields(2,
+        ::g::Fuse::Android::RootGraphicsView_typeof(), offsetof(RootGraphicsView__Template1__Factory1, __parent1), uFieldFlagsWeak);
+}
+
+::g::Uno::UX::Template_type* RootGraphicsView__Template1__Factory1_typeof()
+{
+    static uSStrong< ::g::Uno::UX::Template_type*> type;
+    if (type != NULL) return type;
+
+    uTypeOptions options;
+    options.BaseDefinition = ::g::Uno::UX::Template_typeof();
+    options.FieldCount = 3;
+    options.ObjectSize = sizeof(RootGraphicsView__Template1__Factory1);
+    options.TypeSize = sizeof(::g::Uno::UX::Template_type);
+    type = (::g::Uno::UX::Template_type*)uClassType::New("Fuse.Android.RootGraphicsView.Template1.Factory1", options);
+    type->fp_build_ = RootGraphicsView__Template1__Factory1_build;
+    type->fp_New1 = (void(*)(::g::Uno::UX::Template*, uObject**))RootGraphicsView__Template1__Factory1__New1_fn;
+    return type;
+}
+
+// public Factory1(Fuse.Android.RootGraphicsView parent) :13
+void RootGraphicsView__Template1__Factory1__ctor_1_fn(RootGraphicsView__Template1__Factory1* __this, ::g::Fuse::Android::RootGraphicsView* parent)
+{
+    __this->ctor_1(parent);
+}
+
+// public override sealed object New() :17
+void RootGraphicsView__Template1__Factory1__New1_fn(RootGraphicsView__Template1__Factory1* __this, uObject** __retval)
+{
+    return *__retval = ::g::Fuse::Android::RootGraphicsView__Template1::New6(__this->__parent1), void();
+}
+
+// public Factory1 New(Fuse.Android.RootGraphicsView parent) :13
+void RootGraphicsView__Template1__Factory1__New2_fn(::g::Fuse::Android::RootGraphicsView* parent, RootGraphicsView__Template1__Factory1** __retval)
+{
+    *__retval = RootGraphicsView__Template1__Factory1::New2(parent);
+}
+
+// public Factory1(Fuse.Android.RootGraphicsView parent) [instance] :13
+void RootGraphicsView__Template1__Factory1::ctor_1(::g::Fuse::Android::RootGraphicsView* parent)
+{
+    ctor_(::STRINGS[0/*"AndroidAppe...*/], false);
+    __parent1 = parent;
+}
+
+// public Factory1 New(Fuse.Android.RootGraphicsView parent) [static] :13
+RootGraphicsView__Template1__Factory1* RootGraphicsView__Template1__Factory1::New2(::g::Fuse::Android::RootGraphicsView* parent)
+{
+    RootGraphicsView__Template1__Factory1* obj1 = (RootGraphicsView__Template1__Factory1*)uNew(RootGraphicsView__Template1__Factory1_typeof());
+    obj1->ctor_1(parent);
+    return obj1;
+}
+// }
+
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Android.TextRenderer\1.3.0-rc2\Internal\GLUtils.uno
+// ----------------------------------------------------------------------------------------------------
+
+// internal sealed extern class GLUtils :12
 // {
 static void GLUtils_build(uType* type)
 {
@@ -842,25 +912,25 @@ uType* GLUtils_typeof()
     return type;
 }
 
-// private static void TexImage2D(int target, int level, Java.Object bitmap, int border) :145
+// private static void TexImage2D(int target, int level, Java.Object bitmap, int border) :20
 void GLUtils__TexImage2D_fn(int* target, int* level, ::g::Java::Object* bitmap, int* border)
 {
     GLUtils::TexImage2D(*target, *level, bitmap, *border);
 }
 
-// public static void TexImage2D(OpenGL.GLTextureTarget target, int level, Fuse.Android.Bitmap bitmap, int border) :139
+// public static void TexImage2D(OpenGL.GLTextureTarget target, int level, Fuse.Android.Bitmap bitmap, int border) :14
 void GLUtils__TexImage2D1_fn(int* target, int* level, ::g::Fuse::Android::Bitmap* bitmap, int* border)
 {
     GLUtils::TexImage2D1(*target, *level, bitmap, *border);
 }
 
-// private static void TexImage2D(int target, int level, Java.Object bitmap, int border) [static] :145
+// private static void TexImage2D(int target, int level, Java.Object bitmap, int border) [static] :20
 void GLUtils::TexImage2D(int target, int level, ::g::Java::Object* bitmap, int border)
 {
     {
         INIT_JNI;
         jclass __cls = JniHelper::GetNativeExternClass();
-        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "TexImage2D345", "(IILjava/lang/Object;I)V");
+        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "TexImage2D344", "(IILjava/lang/Object;I)V");
         int _utarget=target;
         jint _target = (jint)_utarget;
         int _ulevel=level;
@@ -881,26 +951,25 @@ void GLUtils::TexImage2D(int target, int level, ::g::Java::Object* bitmap, int b
     
 }
 
-// public static void TexImage2D(OpenGL.GLTextureTarget target, int level, Fuse.Android.Bitmap bitmap, int border) [static] :139
+// public static void TexImage2D(OpenGL.GLTextureTarget target, int level, Fuse.Android.Bitmap bitmap, int border) [static] :14
 void GLUtils::TexImage2D1(int target, int level, ::g::Fuse::Android::Bitmap* bitmap, int border)
 {
     GLUtils::TexImage2D(target, level, uPtr(bitmap)->Handle(), border);
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Android/1.2.1/.uno/ux11/$.uno
-// ----------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Android\1.3.0-rc2\.uno\ux13\Fuse.Android.RootGraphicsView.g.uno
+// ----------------------------------------------------------------------------------------------------------------
 
-// public partial sealed class RootGraphicsView :6
+// public partial sealed class RootGraphicsView :4
 // {
-// static RootGraphicsView() :27
+// static RootGraphicsView() :36
 static void RootGraphicsView__cctor_4_fn(uType* __type)
 {
 }
 
 static void RootGraphicsView_build(uType* type)
 {
-    ::TYPES[3] = ::g::Uno::Collections::ICollection_typeof()->MakeType(::g::Uno::UX::Template_typeof(), NULL);
     type->SetInterfaces(
         ::g::Uno::Collections::IList_typeof()->MakeType(::g::Fuse::Binding_typeof(), NULL), offsetof(::g::Fuse::Controls::GraphicsView_type, interface0),
         ::g::Fuse::Scripting::IScriptObject_typeof(), offsetof(::g::Fuse::Controls::GraphicsView_type, interface1),
@@ -911,19 +980,20 @@ static void RootGraphicsView_build(uType* type)
         ::g::Uno::Collections::IList_typeof()->MakeType(::g::Fuse::Node_typeof(), NULL), offsetof(::g::Fuse::Controls::GraphicsView_type, interface6),
         ::g::Uno::UX::IPropertyListener_typeof(), offsetof(::g::Fuse::Controls::GraphicsView_type, interface7),
         ::g::Fuse::ITemplateSource_typeof(), offsetof(::g::Fuse::Controls::GraphicsView_type, interface8),
-        ::g::Uno::Collections::ICollection_typeof()->MakeType(::g::Fuse::Node_typeof(), NULL), offsetof(::g::Fuse::Controls::GraphicsView_type, interface9),
-        ::g::Uno::Collections::IEnumerable_typeof()->MakeType(::g::Fuse::Node_typeof(), NULL), offsetof(::g::Fuse::Controls::GraphicsView_type, interface10),
-        ::g::Fuse::Triggers::Actions::IShow_typeof(), offsetof(::g::Fuse::Controls::GraphicsView_type, interface11),
-        ::g::Fuse::Triggers::Actions::IHide_typeof(), offsetof(::g::Fuse::Controls::GraphicsView_type, interface12),
-        ::g::Fuse::Triggers::Actions::ICollapse_typeof(), offsetof(::g::Fuse::Controls::GraphicsView_type, interface13),
-        ::g::Fuse::IActualPlacement_typeof(), offsetof(::g::Fuse::Controls::GraphicsView_type, interface14),
-        ::g::Fuse::Animations::IResize_typeof(), offsetof(::g::Fuse::Controls::GraphicsView_type, interface15),
-        ::g::Fuse::IViewport_typeof(), offsetof(::g::Fuse::Controls::GraphicsView_type, interface16),
-        ::g::Fuse::IRenderViewport_typeof(), offsetof(::g::Fuse::Controls::GraphicsView_type, interface17),
-        ::g::Fuse::Elements::ITreeRenderer_typeof(), offsetof(::g::Fuse::Controls::GraphicsView_type, interface18),
-        ::g::Fuse::Controls::IProxyHost_typeof(), offsetof(::g::Fuse::Controls::GraphicsView_type, interface19),
-        ::g::Fuse::ICommonViewport_typeof(), offsetof(::g::Fuse::Controls::GraphicsView_type, interface20));
-    type->SetFields(105);
+        ::g::Uno::Collections::IEnumerable_typeof()->MakeType(::g::Fuse::Visual_typeof(), NULL), offsetof(::g::Fuse::Controls::GraphicsView_type, interface9),
+        ::g::Uno::Collections::ICollection_typeof()->MakeType(::g::Fuse::Node_typeof(), NULL), offsetof(::g::Fuse::Controls::GraphicsView_type, interface10),
+        ::g::Uno::Collections::IEnumerable_typeof()->MakeType(::g::Fuse::Node_typeof(), NULL), offsetof(::g::Fuse::Controls::GraphicsView_type, interface11),
+        ::g::Fuse::Triggers::Actions::IShow_typeof(), offsetof(::g::Fuse::Controls::GraphicsView_type, interface12),
+        ::g::Fuse::Triggers::Actions::IHide_typeof(), offsetof(::g::Fuse::Controls::GraphicsView_type, interface13),
+        ::g::Fuse::Triggers::Actions::ICollapse_typeof(), offsetof(::g::Fuse::Controls::GraphicsView_type, interface14),
+        ::g::Fuse::IActualPlacement_typeof(), offsetof(::g::Fuse::Controls::GraphicsView_type, interface15),
+        ::g::Fuse::Animations::IResize_typeof(), offsetof(::g::Fuse::Controls::GraphicsView_type, interface16),
+        ::g::Fuse::IViewport_typeof(), offsetof(::g::Fuse::Controls::GraphicsView_type, interface17),
+        ::g::Fuse::IRenderViewport_typeof(), offsetof(::g::Fuse::Controls::GraphicsView_type, interface18),
+        ::g::Fuse::Elements::ITreeRenderer_typeof(), offsetof(::g::Fuse::Controls::GraphicsView_type, interface19),
+        ::g::Fuse::Controls::IProxyHost_typeof(), offsetof(::g::Fuse::Controls::GraphicsView_type, interface20),
+        ::g::Fuse::ICommonViewport_typeof(), offsetof(::g::Fuse::Controls::GraphicsView_type, interface21));
+    type->SetFields(111);
 }
 
 ::g::Fuse::Controls::GraphicsView_type* RootGraphicsView_typeof()
@@ -933,53 +1003,54 @@ static void RootGraphicsView_build(uType* type)
 
     uTypeOptions options;
     options.BaseDefinition = ::g::Fuse::Controls::GraphicsView_typeof();
-    options.FieldCount = 105;
-    options.InterfaceCount = 21;
+    options.FieldCount = 111;
+    options.InterfaceCount = 22;
     options.ObjectSize = sizeof(RootGraphicsView);
     options.TypeSize = sizeof(::g::Fuse::Controls::GraphicsView_type);
     type = (::g::Fuse::Controls::GraphicsView_type*)uClassType::New("Fuse.Android.RootGraphicsView", options);
     type->fp_build_ = RootGraphicsView_build;
     type->fp_ctor_ = (void*)RootGraphicsView__New4_fn;
     type->fp_cctor_ = RootGraphicsView__cctor_4_fn;
-    type->interface19.fp_Insert = (void(*)(uObject*, ::g::Fuse::Controls::Native::ViewHandle*))::g::Fuse::Controls::GraphicsView__FuseControlsIProxyHostInsert_fn;
-    type->interface19.fp_Remove = (void(*)(uObject*, ::g::Fuse::Controls::Native::ViewHandle*))::g::Fuse::Controls::GraphicsView__FuseControlsIProxyHostRemove_fn;
-    type->interface18.fp_RootingStarted = (void(*)(uObject*, ::g::Fuse::Elements::Element*))::g::Fuse::Controls::GraphicsView__FuseElementsITreeRendererRootingStarted_fn;
-    type->interface18.fp_Rooted = (void(*)(uObject*, ::g::Fuse::Elements::Element*))::g::Fuse::Controls::GraphicsView__FuseElementsITreeRendererRooted_fn;
-    type->interface18.fp_Unrooted = (void(*)(uObject*, ::g::Fuse::Elements::Element*))::g::Fuse::Controls::GraphicsView__FuseElementsITreeRendererUnrooted_fn;
-    type->interface18.fp_BackgroundChanged = (void(*)(uObject*, ::g::Fuse::Elements::Element*, ::g::Fuse::Drawing::Brush*))::g::Fuse::Controls::GraphicsView__FuseElementsITreeRendererBackgroundChanged_fn;
-    type->interface18.fp_TransformChanged = (void(*)(uObject*, ::g::Fuse::Elements::Element*))::g::Fuse::Controls::GraphicsView__FuseElementsITreeRendererTransformChanged_fn;
-    type->interface18.fp_Placed = (void(*)(uObject*, ::g::Fuse::Elements::Element*))::g::Fuse::Controls::GraphicsView__FuseElementsITreeRendererPlaced_fn;
-    type->interface18.fp_IsVisibleChanged = (void(*)(uObject*, ::g::Fuse::Elements::Element*, bool*))::g::Fuse::Controls::GraphicsView__FuseElementsITreeRendererIsVisibleChanged_fn;
-    type->interface18.fp_IsEnabledChanged = (void(*)(uObject*, ::g::Fuse::Elements::Element*, bool*))::g::Fuse::Controls::GraphicsView__FuseElementsITreeRendererIsEnabledChanged_fn;
-    type->interface18.fp_OpacityChanged = (void(*)(uObject*, ::g::Fuse::Elements::Element*, float*))::g::Fuse::Controls::GraphicsView__FuseElementsITreeRendererOpacityChanged_fn;
-    type->interface18.fp_ClipToBoundsChanged = (void(*)(uObject*, ::g::Fuse::Elements::Element*, bool*))::g::Fuse::Controls::GraphicsView__FuseElementsITreeRendererClipToBoundsChanged_fn;
-    type->interface18.fp_HitTestModeChanged = (void(*)(uObject*, ::g::Fuse::Elements::Element*, bool*))::g::Fuse::Controls::GraphicsView__FuseElementsITreeRendererHitTestModeChanged_fn;
-    type->interface18.fp_ZOrderChanged = (void(*)(uObject*, ::g::Fuse::Elements::Element*, ::g::Uno::Collections::List*))::g::Fuse::Controls::GraphicsView__FuseElementsITreeRendererZOrderChanged_fn;
-    type->interface18.fp_Measure = (void(*)(uObject*, ::g::Fuse::Elements::Element*, ::g::Fuse::LayoutParams*, ::g::Uno::Float2*, bool*))::g::Fuse::Controls::GraphicsView__FuseElementsITreeRendererMeasure_fn;
-    type->interface19.fp_get_WorldTransformInverse = (void(*)(uObject*, ::g::Uno::Float4x4*))::g::Fuse::Controls::GraphicsView__FuseControlsIProxyHostget_WorldTransformInverse_fn;
-    type->interface16.fp_PointToWorldRay = (void(*)(uObject*, ::g::Uno::Float2*, ::g::Fuse::Ray*))::g::Fuse::Controls::GraphicsView__PointToWorldRay_fn;
-    type->interface16.fp_WorldToLocalRay = (void(*)(uObject*, uObject*, ::g::Fuse::Ray*, ::g::Fuse::Visual*, ::g::Fuse::Ray*))::g::Fuse::Controls::GraphicsView__WorldToLocalRay_fn;
-    type->interface17.fp_get_ViewProjectionTransform = (void(*)(uObject*, ::g::Uno::Float4x4*))::g::Fuse::Controls::GraphicsView__get_ViewProjectionTransform_fn;
-    type->interface20.fp_get_PixelsPerPoint = (void(*)(uObject*, float*))::g::Fuse::Controls::GraphicsView__get_PixelsPerPoint_fn;
-    type->interface20.fp_get_Size = (void(*)(uObject*, ::g::Uno::Float2*))::g::Fuse::Controls::GraphicsView__get_Size_fn;
-    type->interface11.fp_Show = (void(*)(uObject*))::g::Fuse::Elements::Element__FuseTriggersActionsIShowShow_fn;
-    type->interface13.fp_Collapse = (void(*)(uObject*))::g::Fuse::Elements::Element__FuseTriggersActionsICollapseCollapse_fn;
-    type->interface12.fp_Hide = (void(*)(uObject*))::g::Fuse::Elements::Element__FuseTriggersActionsIHideHide_fn;
-    type->interface15.fp_SetSize = (void(*)(uObject*, ::g::Uno::Float2*))::g::Fuse::Elements::Element__FuseAnimationsIResizeSetSize_fn;
-    type->interface14.fp_get_ActualSize = (void(*)(uObject*, ::g::Uno::Float3*))::g::Fuse::Elements::Element__FuseIActualPlacementget_ActualSize_fn;
-    type->interface14.fp_add_Placed = (void(*)(uObject*, uDelegate*))::g::Fuse::Elements::Element__add_Placed_fn;
-    type->interface14.fp_remove_Placed = (void(*)(uObject*, uDelegate*))::g::Fuse::Elements::Element__remove_Placed_fn;
-    type->interface9.fp_Clear = (void(*)(uObject*))::g::Fuse::Visual__UnoCollectionsICollectionFuseNodeClear_fn;
-    type->interface9.fp_Contains = (void(*)(uObject*, void*, bool*))::g::Fuse::Visual__UnoCollectionsICollectionFuseNodeContains_fn;
+    type->interface20.fp_Insert = (void(*)(uObject*, ::g::Fuse::Controls::Native::ViewHandle*))::g::Fuse::Controls::GraphicsView__FuseControlsIProxyHostInsert_fn;
+    type->interface20.fp_Remove = (void(*)(uObject*, ::g::Fuse::Controls::Native::ViewHandle*))::g::Fuse::Controls::GraphicsView__FuseControlsIProxyHostRemove_fn;
+    type->interface19.fp_RootingStarted = (void(*)(uObject*, ::g::Fuse::Elements::Element*))::g::Fuse::Controls::GraphicsView__FuseElementsITreeRendererRootingStarted_fn;
+    type->interface19.fp_Rooted = (void(*)(uObject*, ::g::Fuse::Elements::Element*))::g::Fuse::Controls::GraphicsView__FuseElementsITreeRendererRooted_fn;
+    type->interface19.fp_Unrooted = (void(*)(uObject*, ::g::Fuse::Elements::Element*))::g::Fuse::Controls::GraphicsView__FuseElementsITreeRendererUnrooted_fn;
+    type->interface19.fp_BackgroundChanged = (void(*)(uObject*, ::g::Fuse::Elements::Element*, ::g::Fuse::Drawing::Brush*))::g::Fuse::Controls::GraphicsView__FuseElementsITreeRendererBackgroundChanged_fn;
+    type->interface19.fp_TransformChanged = (void(*)(uObject*, ::g::Fuse::Elements::Element*))::g::Fuse::Controls::GraphicsView__FuseElementsITreeRendererTransformChanged_fn;
+    type->interface19.fp_Placed = (void(*)(uObject*, ::g::Fuse::Elements::Element*))::g::Fuse::Controls::GraphicsView__FuseElementsITreeRendererPlaced_fn;
+    type->interface19.fp_IsVisibleChanged = (void(*)(uObject*, ::g::Fuse::Elements::Element*, bool*))::g::Fuse::Controls::GraphicsView__FuseElementsITreeRendererIsVisibleChanged_fn;
+    type->interface19.fp_IsEnabledChanged = (void(*)(uObject*, ::g::Fuse::Elements::Element*, bool*))::g::Fuse::Controls::GraphicsView__FuseElementsITreeRendererIsEnabledChanged_fn;
+    type->interface19.fp_OpacityChanged = (void(*)(uObject*, ::g::Fuse::Elements::Element*, float*))::g::Fuse::Controls::GraphicsView__FuseElementsITreeRendererOpacityChanged_fn;
+    type->interface19.fp_ClipToBoundsChanged = (void(*)(uObject*, ::g::Fuse::Elements::Element*, bool*))::g::Fuse::Controls::GraphicsView__FuseElementsITreeRendererClipToBoundsChanged_fn;
+    type->interface19.fp_HitTestModeChanged = (void(*)(uObject*, ::g::Fuse::Elements::Element*, bool*))::g::Fuse::Controls::GraphicsView__FuseElementsITreeRendererHitTestModeChanged_fn;
+    type->interface19.fp_ZOrderChanged = (void(*)(uObject*, ::g::Fuse::Elements::Element*, uArray*))::g::Fuse::Controls::GraphicsView__FuseElementsITreeRendererZOrderChanged_fn;
+    type->interface19.fp_Measure = (void(*)(uObject*, ::g::Fuse::Elements::Element*, ::g::Fuse::LayoutParams*, ::g::Uno::Float2*, bool*))::g::Fuse::Controls::GraphicsView__FuseElementsITreeRendererMeasure_fn;
+    type->interface20.fp_get_WorldTransformInverse = (void(*)(uObject*, ::g::Uno::Float4x4*))::g::Fuse::Controls::GraphicsView__FuseControlsIProxyHostget_WorldTransformInverse_fn;
+    type->interface17.fp_PointToWorldRay = (void(*)(uObject*, ::g::Uno::Float2*, ::g::Fuse::Ray*))::g::Fuse::Controls::GraphicsView__PointToWorldRay_fn;
+    type->interface17.fp_WorldToLocalRay = (void(*)(uObject*, uObject*, ::g::Fuse::Ray*, ::g::Fuse::Visual*, ::g::Fuse::Ray*))::g::Fuse::Controls::GraphicsView__WorldToLocalRay_fn;
+    type->interface18.fp_get_ViewProjectionTransform = (void(*)(uObject*, ::g::Uno::Float4x4*))::g::Fuse::Controls::GraphicsView__get_ViewProjectionTransform_fn;
+    type->interface21.fp_get_PixelsPerPoint = (void(*)(uObject*, float*))::g::Fuse::Controls::GraphicsView__get_PixelsPerPoint_fn;
+    type->interface21.fp_get_Size = (void(*)(uObject*, ::g::Uno::Float2*))::g::Fuse::Controls::GraphicsView__get_Size_fn;
+    type->interface12.fp_Show = (void(*)(uObject*))::g::Fuse::Elements::Element__FuseTriggersActionsIShowShow_fn;
+    type->interface14.fp_Collapse = (void(*)(uObject*))::g::Fuse::Elements::Element__FuseTriggersActionsICollapseCollapse_fn;
+    type->interface13.fp_Hide = (void(*)(uObject*))::g::Fuse::Elements::Element__FuseTriggersActionsIHideHide_fn;
+    type->interface16.fp_SetSize = (void(*)(uObject*, ::g::Uno::Float2*))::g::Fuse::Elements::Element__FuseAnimationsIResizeSetSize_fn;
+    type->interface15.fp_get_ActualSize = (void(*)(uObject*, ::g::Uno::Float3*))::g::Fuse::Elements::Element__FuseIActualPlacementget_ActualSize_fn;
+    type->interface15.fp_add_Placed = (void(*)(uObject*, uDelegate*))::g::Fuse::Elements::Element__add_Placed_fn;
+    type->interface15.fp_remove_Placed = (void(*)(uObject*, uDelegate*))::g::Fuse::Elements::Element__remove_Placed_fn;
+    type->interface9.fp_GetEnumerator = (void(*)(uObject*, uObject**))::g::Fuse::Visual__UnoCollectionsIEnumerableFuseVisualGetEnumerator_fn;
+    type->interface10.fp_Clear = (void(*)(uObject*))::g::Fuse::Visual__UnoCollectionsICollectionFuseNodeClear_fn;
+    type->interface10.fp_Contains = (void(*)(uObject*, void*, bool*))::g::Fuse::Visual__UnoCollectionsICollectionFuseNodeContains_fn;
     type->interface6.fp_RemoveAt = (void(*)(uObject*, int*))::g::Fuse::Visual__UnoCollectionsIListFuseNodeRemoveAt_fn;
-    type->interface10.fp_GetEnumerator = (void(*)(uObject*, uObject**))::g::Fuse::Visual__UnoCollectionsIEnumerableFuseNodeGetEnumerator_fn;
-    type->interface9.fp_get_Count = (void(*)(uObject*, int*))::g::Fuse::Visual__UnoCollectionsICollectionFuseNodeget_Count_fn;
+    type->interface11.fp_GetEnumerator = (void(*)(uObject*, uObject**))::g::Fuse::Visual__UnoCollectionsIEnumerableFuseNodeGetEnumerator_fn;
+    type->interface10.fp_get_Count = (void(*)(uObject*, int*))::g::Fuse::Visual__UnoCollectionsICollectionFuseNodeget_Count_fn;
     type->interface6.fp_get_Item = (void(*)(uObject*, int*, uTRef))::g::Fuse::Visual__UnoCollectionsIListFuseNodeget_Item_fn;
     type->interface6.fp_Insert = (void(*)(uObject*, int*, void*))::g::Fuse::Visual__Insert1_fn;
     type->interface7.fp_OnPropertyChanged = (void(*)(uObject*, ::g::Uno::UX::PropertyObject*, ::g::Uno::UX::Selector*))::g::Fuse::Controls::Control__OnPropertyChanged2_fn;
     type->interface8.fp_FindTemplate = (void(*)(uObject*, uString*, ::g::Uno::UX::Template**))::g::Fuse::Visual__FindTemplate_fn;
-    type->interface9.fp_Add = (void(*)(uObject*, void*))::g::Fuse::Visual__Add1_fn;
-    type->interface9.fp_Remove = (void(*)(uObject*, void*, bool*))::g::Fuse::Visual__Remove1_fn;
+    type->interface10.fp_Add = (void(*)(uObject*, void*))::g::Fuse::Visual__Add1_fn;
+    type->interface10.fp_Remove = (void(*)(uObject*, void*, bool*))::g::Fuse::Visual__Remove1_fn;
     type->interface4.fp_Clear = (void(*)(uObject*))::g::Fuse::Node__UnoCollectionsICollectionFuseBindingClear_fn;
     type->interface4.fp_Contains = (void(*)(uObject*, void*, bool*))::g::Fuse::Node__UnoCollectionsICollectionFuseBindingContains_fn;
     type->interface0.fp_RemoveAt = (void(*)(uObject*, int*))::g::Fuse::Node__UnoCollectionsIListFuseBindingRemoveAt_fn;
@@ -998,39 +1069,39 @@ static void RootGraphicsView_build(uType* type)
     return type;
 }
 
-// public RootGraphicsView() :31
+// public RootGraphicsView() :40
 void RootGraphicsView__ctor_7_fn(RootGraphicsView* __this)
 {
     __this->ctor_7();
 }
 
-// private void InitializeUX() :35
+// private void InitializeUX() :44
 void RootGraphicsView__InitializeUX1_fn(RootGraphicsView* __this)
 {
     __this->InitializeUX1();
 }
 
-// public RootGraphicsView New() :31
+// public RootGraphicsView New() :40
 void RootGraphicsView__New4_fn(RootGraphicsView** __retval)
 {
     *__retval = RootGraphicsView::New4();
 }
 
-// public RootGraphicsView() [instance] :31
+// public RootGraphicsView() [instance] :40
 void RootGraphicsView::ctor_7()
 {
     ctor_6();
     InitializeUX1();
 }
 
-// private void InitializeUX() [instance] :35
+// private void InitializeUX() [instance] :44
 void RootGraphicsView::InitializeUX1()
 {
-    RootGraphicsView__Template* AndroidAppearance = RootGraphicsView__Template::New2(this, this);
-    ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(Templates()), ::TYPES[3/*Uno.Collections.ICollection<Uno.UX.Template>*/]), AndroidAppearance);
+    RootGraphicsView__Template1__Factory1* AndroidAppearance = RootGraphicsView__Template1__Factory1::New2(this);
+    ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(Templates()), ::g::Uno::Collections::ICollection_typeof()->MakeType(::g::Uno::UX::Template_typeof(), NULL)), AndroidAppearance);
 }
 
-// public RootGraphicsView New() [static] :31
+// public RootGraphicsView New() [static] :40
 RootGraphicsView* RootGraphicsView::New4()
 {
     RootGraphicsView* obj1 = (RootGraphicsView*)uNew(RootGraphicsView_typeof());
@@ -1039,16 +1110,15 @@ RootGraphicsView* RootGraphicsView::New4()
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Android.TextRenderer/1.2.1/internal/$.uno
-// ----------------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Android.TextRenderer\1.3.0-rc2\Internal\StaticLayout.uno
+// ---------------------------------------------------------------------------------------------------------
 
-// internal sealed extern class StaticLayout :166
+// internal sealed extern class StaticLayout :12
 // {
 static void StaticLayout_build(uType* type)
 {
-    ::STRINGS[0] = uString::Const("");
     type->SetFields(0,
-        ::g::Java::Object_typeof(), offsetof(::g::Fuse::Android::StaticLayout, _handle), 0);
+        ::g::Java::Object_typeof(), offsetof(StaticLayout, _handle), 0);
 }
 
 uType* StaticLayout_typeof()
@@ -1065,241 +1135,241 @@ uType* StaticLayout_typeof()
     return type;
 }
 
-// public StaticLayout(Java.Object handle) :182
+// public StaticLayout(Java.Object handle) :28
 void StaticLayout__ctor__fn(StaticLayout* __this, ::g::Java::Object* handle)
 {
     __this->ctor_(handle);
 }
 
-// public StaticLayout(string text, Fuse.Android.TextPaint paint, int width, Fuse.Android.StaticLayout.Alignment align, float spacingMult, float spacingAdd, bool includePad) :187
+// public StaticLayout(string text, Fuse.Android.TextPaint paint, int width, Fuse.Android.StaticLayout.Alignment align, float spacingMult, float spacingAdd, bool includePad) :33
 void StaticLayout__ctor_1_fn(StaticLayout* __this, uString* text, ::g::Fuse::Android::TextPaint* paint, int* width, int* align, float* spacingMult, float* spacingAdd, bool* includePad)
 {
     __this->ctor_1(text, paint, *width, *align, *spacingMult, *spacingAdd, *includePad);
 }
 
-// public StaticLayout(string text, int bufStart, int bufEnd, Fuse.Android.TextPaint paint, int outerWidth, Fuse.Android.StaticLayout.Alignment align, float spacingMult, float spacingAdd, bool includePad, Fuse.Android.TextUtils.TruncateAt truncateAt, int ellipsizedWith) :198
+// public StaticLayout(string text, int bufStart, int bufEnd, Fuse.Android.TextPaint paint, int outerWidth, Fuse.Android.StaticLayout.Alignment align, float spacingMult, float spacingAdd, bool includePad, Fuse.Android.TextUtils.TruncateAt truncateAt, int ellipsizedWith) :44
 void StaticLayout__ctor_2_fn(StaticLayout* __this, uString* text, int* bufStart, int* bufEnd, ::g::Fuse::Android::TextPaint* paint, int* outerWidth, int* align, float* spacingMult, float* spacingAdd, bool* includePad, int* truncateAt, int* ellipsizedWith)
 {
     __this->ctor_2(text, *bufStart, *bufEnd, paint, *outerWidth, *align, *spacingMult, *spacingAdd, *includePad, *truncateAt, *ellipsizedWith);
 }
 
-// private static Java.Object Create(string text, int bufStart, int bufEnd, Java.Object paintHandle, int outerWidth, int align, float spacingMult, float spacingAdd, bool includePad, int truncateAt, int ellipsizedWith) :345
+// private static Java.Object Create(string text, int bufStart, int bufEnd, Java.Object paintHandle, int outerWidth, int align, float spacingMult, float spacingAdd, bool includePad, int truncateAt, int ellipsizedWith) :191
 void StaticLayout__Create_fn(uString* text, int* bufStart, int* bufEnd, ::g::Java::Object* paintHandle, int* outerWidth, int* align, float* spacingMult, float* spacingAdd, bool* includePad, int* truncateAt, int* ellipsizedWith, ::g::Java::Object** __retval)
 {
     *__retval = StaticLayout::Create(text, *bufStart, *bufEnd, paintHandle, *outerWidth, *align, *spacingMult, *spacingAdd, *includePad, *truncateAt, *ellipsizedWith);
 }
 
-// private static Java.Object Create(string text, Java.Object paintHandle, int width, int align, float spacingMult, float spacingAdd, bool includePad) :325
+// private static Java.Object Create(string text, Java.Object paintHandle, int width, int align, float spacingMult, float spacingAdd, bool includePad) :171
 void StaticLayout__Create1_fn(uString* text, ::g::Java::Object* paintHandle, int* width, int* align, float* spacingMult, float* spacingAdd, bool* includePad, ::g::Java::Object** __retval)
 {
     *__retval = StaticLayout::Create1(text, paintHandle, *width, *align, *spacingMult, *spacingAdd, *includePad);
 }
 
-// public void Draw(Fuse.Android.Canvas canvas) :258
+// public void Draw(Fuse.Android.Canvas canvas) :104
 void StaticLayout__Draw_fn(StaticLayout* __this, ::g::Fuse::Android::Canvas* canvas)
 {
     __this->Draw(canvas);
 }
 
-// private static void Draw(Java.Object layoutHandle, Java.Object canvasHandle) :264
+// private static void Draw(Java.Object layoutHandle, Java.Object canvasHandle) :110
 void StaticLayout__Draw1_fn(::g::Java::Object* layoutHandle, ::g::Java::Object* canvasHandle)
 {
     StaticLayout::Draw1(layoutHandle, canvasHandle);
 }
 
-// public int get_EllipsizedWidth() :225
+// public int get_EllipsizedWidth() :71
 void StaticLayout__get_EllipsizedWidth_fn(StaticLayout* __this, int* __retval)
 {
     *__retval = __this->EllipsizedWidth();
 }
 
-// public static float GetDesiredWidth(string text, Fuse.Android.TextPaint paint) :213
+// public static float GetDesiredWidth(string text, Fuse.Android.TextPaint paint) :59
 void StaticLayout__GetDesiredWidth_fn(uString* text, ::g::Fuse::Android::TextPaint* paint, float* __retval)
 {
     *__retval = StaticLayout::GetDesiredWidth(text, paint);
 }
 
-// private static float GetDesiredWidthImpl(string text, Java.Object paintHandle) :312
+// private static float GetDesiredWidthImpl(string text, Java.Object paintHandle) :158
 void StaticLayout__GetDesiredWidthImpl_fn(uString* text, ::g::Java::Object* paintHandle, float* __retval)
 {
     *__retval = StaticLayout::GetDesiredWidthImpl(text, paintHandle);
 }
 
-// private static int GetEllipsizedWidth(Java.Object handle) :282
+// private static int GetEllipsizedWidth(Java.Object handle) :128
 void StaticLayout__GetEllipsizedWidth_fn(::g::Java::Object* handle, int* __retval)
 {
     *__retval = StaticLayout::GetEllipsizedWidth(handle);
 }
 
-// private static int GetHeight(Java.Object handle) :270
+// private static int GetHeight(Java.Object handle) :116
 void StaticLayout__GetHeight_fn(::g::Java::Object* handle, int* __retval)
 {
     *__retval = StaticLayout::GetHeight(handle);
 }
 
-// public int GetLineBaseline(int line) :253
+// public int GetLineBaseline(int line) :99
 void StaticLayout__GetLineBaseline_fn(StaticLayout* __this, int* line, int* __retval)
 {
     *__retval = __this->GetLineBaseline(*line);
 }
 
-// private static int GetLineBaseline(Java.Object handle, int line) :288
+// private static int GetLineBaseline(Java.Object handle, int line) :134
 void StaticLayout__GetLineBaseline1_fn(::g::Java::Object* handle, int* line, int* __retval)
 {
     *__retval = StaticLayout::GetLineBaseline1(handle, *line);
 }
 
-// private static int GetLineCount(Java.Object handle) :319
+// private static int GetLineCount(Java.Object handle) :165
 void StaticLayout__GetLineCount_fn(::g::Java::Object* handle, int* __retval)
 {
     *__retval = StaticLayout::GetLineCount(handle);
 }
 
-// public int GetLineEnd(int line) :243
+// public int GetLineEnd(int line) :89
 void StaticLayout__GetLineEnd_fn(StaticLayout* __this, int* line, int* __retval)
 {
     *__retval = __this->GetLineEnd(*line);
 }
 
-// private static int GetLineEnd(Java.Object handle, int line) :306
+// private static int GetLineEnd(Java.Object handle, int line) :152
 void StaticLayout__GetLineEnd1_fn(::g::Java::Object* handle, int* line, int* __retval)
 {
     *__retval = StaticLayout::GetLineEnd1(handle, *line);
 }
 
-// public float GetLineLeft(int line) :248
+// public float GetLineLeft(int line) :94
 void StaticLayout__GetLineLeft_fn(StaticLayout* __this, int* line, float* __retval)
 {
     *__retval = __this->GetLineLeft(*line);
 }
 
-// private static float GetLineLeft(Java.Object handle, int line) :294
+// private static float GetLineLeft(Java.Object handle, int line) :140
 void StaticLayout__GetLineLeft1_fn(::g::Java::Object* handle, int* line, float* __retval)
 {
     *__retval = StaticLayout::GetLineLeft1(handle, *line);
 }
 
-// public int GetLineStart(int line) :238
+// public int GetLineStart(int line) :84
 void StaticLayout__GetLineStart_fn(StaticLayout* __this, int* line, int* __retval)
 {
     *__retval = __this->GetLineStart(*line);
 }
 
-// private static int GetLineStart(Java.Object handle, int line) :300
+// private static int GetLineStart(Java.Object handle, int line) :146
 void StaticLayout__GetLineStart1_fn(::g::Java::Object* handle, int* line, int* __retval)
 {
     *__retval = StaticLayout::GetLineStart1(handle, *line);
 }
 
-// public Java.Object get_Handle() :177
+// public Java.Object get_Handle() :23
 void StaticLayout__get_Handle_fn(StaticLayout* __this, ::g::Java::Object** __retval)
 {
     *__retval = __this->Handle();
 }
 
-// public int get_Height() :230
+// public int get_Height() :76
 void StaticLayout__get_Height_fn(StaticLayout* __this, int* __retval)
 {
     *__retval = __this->Height();
 }
 
-// public int get_LineCount() :220
+// public int get_LineCount() :66
 void StaticLayout__get_LineCount_fn(StaticLayout* __this, int* __retval)
 {
     *__retval = __this->LineCount();
 }
 
-// public StaticLayout New(string text, Fuse.Android.TextPaint paint, int width, Fuse.Android.StaticLayout.Alignment align, float spacingMult, float spacingAdd, bool includePad) :187
+// public StaticLayout New(string text, Fuse.Android.TextPaint paint, int width, Fuse.Android.StaticLayout.Alignment align, float spacingMult, float spacingAdd, bool includePad) :33
 void StaticLayout__New2_fn(uString* text, ::g::Fuse::Android::TextPaint* paint, int* width, int* align, float* spacingMult, float* spacingAdd, bool* includePad, StaticLayout** __retval)
 {
     *__retval = StaticLayout::New2(text, paint, *width, *align, *spacingMult, *spacingAdd, *includePad);
 }
 
-// public StaticLayout New(string text, int bufStart, int bufEnd, Fuse.Android.TextPaint paint, int outerWidth, Fuse.Android.StaticLayout.Alignment align, float spacingMult, float spacingAdd, bool includePad, Fuse.Android.TextUtils.TruncateAt truncateAt, int ellipsizedWith) :198
+// public StaticLayout New(string text, int bufStart, int bufEnd, Fuse.Android.TextPaint paint, int outerWidth, Fuse.Android.StaticLayout.Alignment align, float spacingMult, float spacingAdd, bool includePad, Fuse.Android.TextUtils.TruncateAt truncateAt, int ellipsizedWith) :44
 void StaticLayout__New3_fn(uString* text, int* bufStart, int* bufEnd, ::g::Fuse::Android::TextPaint* paint, int* outerWidth, int* align, float* spacingMult, float* spacingAdd, bool* includePad, int* truncateAt, int* ellipsizedWith, StaticLayout** __retval)
 {
     *__retval = StaticLayout::New3(text, *bufStart, *bufEnd, paint, *outerWidth, *align, *spacingMult, *spacingAdd, *includePad, *truncateAt, *ellipsizedWith);
 }
 
-// public StaticLayout(Java.Object handle) [instance] :182
+// public StaticLayout(Java.Object handle) [instance] :28
 void StaticLayout::ctor_(::g::Java::Object* handle)
 {
     _handle = handle;
 }
 
-// public StaticLayout(string text, Fuse.Android.TextPaint paint, int width, Fuse.Android.StaticLayout.Alignment align, float spacingMult, float spacingAdd, bool includePad) [instance] :187
+// public StaticLayout(string text, Fuse.Android.TextPaint paint, int width, Fuse.Android.StaticLayout.Alignment align, float spacingMult, float spacingAdd, bool includePad) [instance] :33
 void StaticLayout::ctor_1(uString* text, ::g::Fuse::Android::TextPaint* paint, int width, int align, float spacingMult, float spacingAdd, bool includePad)
 {
     ctor_(StaticLayout::Create1(text, uPtr(paint)->Handle(), width, align, spacingMult, spacingAdd, includePad));
 }
 
-// public StaticLayout(string text, int bufStart, int bufEnd, Fuse.Android.TextPaint paint, int outerWidth, Fuse.Android.StaticLayout.Alignment align, float spacingMult, float spacingAdd, bool includePad, Fuse.Android.TextUtils.TruncateAt truncateAt, int ellipsizedWith) [instance] :198
+// public StaticLayout(string text, int bufStart, int bufEnd, Fuse.Android.TextPaint paint, int outerWidth, Fuse.Android.StaticLayout.Alignment align, float spacingMult, float spacingAdd, bool includePad, Fuse.Android.TextUtils.TruncateAt truncateAt, int ellipsizedWith) [instance] :44
 void StaticLayout::ctor_2(uString* text, int bufStart, int bufEnd, ::g::Fuse::Android::TextPaint* paint, int outerWidth, int align, float spacingMult, float spacingAdd, bool includePad, int truncateAt, int ellipsizedWith)
 {
     ctor_(StaticLayout::Create(text, bufStart, bufEnd, uPtr(paint)->Handle(), outerWidth, align, spacingMult, spacingAdd, includePad, truncateAt, ellipsizedWith));
 }
 
-// public void Draw(Fuse.Android.Canvas canvas) [instance] :258
+// public void Draw(Fuse.Android.Canvas canvas) [instance] :104
 void StaticLayout::Draw(::g::Fuse::Android::Canvas* canvas)
 {
     StaticLayout::Draw1(Handle(), uPtr(canvas)->Handle());
 }
 
-// public int get_EllipsizedWidth() [instance] :225
+// public int get_EllipsizedWidth() [instance] :71
 int StaticLayout::EllipsizedWidth()
 {
     return StaticLayout::GetEllipsizedWidth(Handle());
 }
 
-// public int GetLineBaseline(int line) [instance] :253
+// public int GetLineBaseline(int line) [instance] :99
 int StaticLayout::GetLineBaseline(int line)
 {
     return StaticLayout::GetLineBaseline1(Handle(), line);
 }
 
-// public int GetLineEnd(int line) [instance] :243
+// public int GetLineEnd(int line) [instance] :89
 int StaticLayout::GetLineEnd(int line)
 {
     return StaticLayout::GetLineEnd1(Handle(), line);
 }
 
-// public float GetLineLeft(int line) [instance] :248
+// public float GetLineLeft(int line) [instance] :94
 float StaticLayout::GetLineLeft(int line)
 {
     return StaticLayout::GetLineLeft1(Handle(), line);
 }
 
-// public int GetLineStart(int line) [instance] :238
+// public int GetLineStart(int line) [instance] :84
 int StaticLayout::GetLineStart(int line)
 {
     return StaticLayout::GetLineStart1(Handle(), line);
 }
 
-// public Java.Object get_Handle() [instance] :177
+// public Java.Object get_Handle() [instance] :23
 ::g::Java::Object* StaticLayout::Handle()
 {
     return _handle;
 }
 
-// public int get_Height() [instance] :230
+// public int get_Height() [instance] :76
 int StaticLayout::Height()
 {
     return StaticLayout::GetHeight(Handle());
 }
 
-// public int get_LineCount() [instance] :220
+// public int get_LineCount() [instance] :66
 int StaticLayout::LineCount()
 {
     return StaticLayout::GetLineCount(Handle());
 }
 
-// private static Java.Object Create(string text, int bufStart, int bufEnd, Java.Object paintHandle, int outerWidth, int align, float spacingMult, float spacingAdd, bool includePad, int truncateAt, int ellipsizedWith) [static] :345
+// private static Java.Object Create(string text, int bufStart, int bufEnd, Java.Object paintHandle, int outerWidth, int align, float spacingMult, float spacingAdd, bool includePad, int truncateAt, int ellipsizedWith) [static] :191
 ::g::Java::Object* StaticLayout::Create(uString* text, int bufStart, int bufEnd, ::g::Java::Object* paintHandle, int outerWidth, int align, float spacingMult, float spacingAdd, bool includePad, int truncateAt, int ellipsizedWith)
 {
     {
         INIT_JNI;
         jclass __cls = JniHelper::GetNativeExternClass();
-        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "Create346", "(Ljava/lang/String;IILjava/lang/Object;IIFFZII)Ljava/lang/Object;");
+        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "Create345", "(Ljava/lang/String;IILjava/lang/Object;IIFFZII)Ljava/lang/Object;");
         uString* _utext=text;
         jstring _text = JniHelper::UnoToJavaString(_utext);
         int _ubufStart=bufStart;
@@ -1341,13 +1411,13 @@ int StaticLayout::LineCount()
     
 }
 
-// private static Java.Object Create(string text, Java.Object paintHandle, int width, int align, float spacingMult, float spacingAdd, bool includePad) [static] :325
+// private static Java.Object Create(string text, Java.Object paintHandle, int width, int align, float spacingMult, float spacingAdd, bool includePad) [static] :171
 ::g::Java::Object* StaticLayout::Create1(uString* text, ::g::Java::Object* paintHandle, int width, int align, float spacingMult, float spacingAdd, bool includePad)
 {
     {
         INIT_JNI;
         jclass __cls = JniHelper::GetNativeExternClass();
-        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "Create1347", "(Ljava/lang/String;Ljava/lang/Object;IIFFZ)Ljava/lang/Object;");
+        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "Create1346", "(Ljava/lang/String;Ljava/lang/Object;IIFFZ)Ljava/lang/Object;");
         uString* _utext=text;
         jstring _text = JniHelper::UnoToJavaString(_utext);
         ::g::Java::Object* _upaintHandle=paintHandle;
@@ -1377,13 +1447,13 @@ int StaticLayout::LineCount()
     
 }
 
-// private static void Draw(Java.Object layoutHandle, Java.Object canvasHandle) [static] :264
+// private static void Draw(Java.Object layoutHandle, Java.Object canvasHandle) [static] :110
 void StaticLayout::Draw1(::g::Java::Object* layoutHandle, ::g::Java::Object* canvasHandle)
 {
     {
         INIT_JNI;
         jclass __cls = JniHelper::GetNativeExternClass();
-        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "Draw1348", "(Ljava/lang/Object;Ljava/lang/Object;)V");
+        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "Draw1347", "(Ljava/lang/Object;Ljava/lang/Object;)V");
         ::g::Java::Object* _ulayoutHandle=layoutHandle;
         jobject _layoutHandle = (_ulayoutHandle==NULL ? NULL : U_JNIVAR->NewLocalRef(::g::Android::Base::Wrappers::IJWrapper::_GetJavaObject(uInterface((uObject*)_ulayoutHandle, ::g::Android::Base::Wrappers::IJWrapper_typeof()))));
         ::g::Java::Object* _ucanvasHandle=canvasHandle;
@@ -1398,19 +1468,19 @@ void StaticLayout::Draw1(::g::Java::Object* layoutHandle, ::g::Java::Object* can
     
 }
 
-// public static float GetDesiredWidth(string text, Fuse.Android.TextPaint paint) [static] :213
+// public static float GetDesiredWidth(string text, Fuse.Android.TextPaint paint) [static] :59
 float StaticLayout::GetDesiredWidth(uString* text, ::g::Fuse::Android::TextPaint* paint)
 {
-    return StaticLayout::GetDesiredWidthImpl((text != NULL) ? text : ::STRINGS[0/*""*/], uPtr(paint)->Handle());
+    return StaticLayout::GetDesiredWidthImpl((text != NULL) ? text : ::STRINGS[5/*""*/], uPtr(paint)->Handle());
 }
 
-// private static float GetDesiredWidthImpl(string text, Java.Object paintHandle) [static] :312
+// private static float GetDesiredWidthImpl(string text, Java.Object paintHandle) [static] :158
 float StaticLayout::GetDesiredWidthImpl(uString* text, ::g::Java::Object* paintHandle)
 {
     {
         INIT_JNI;
         jclass __cls = JniHelper::GetNativeExternClass();
-        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "GetDesiredWidthImpl349", "(Ljava/lang/String;Ljava/lang/Object;)F");
+        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "GetDesiredWidthImpl348", "(Ljava/lang/String;Ljava/lang/Object;)F");
         uString* _utext=text;
         jstring _text = JniHelper::UnoToJavaString(_utext);
         ::g::Java::Object* _upaintHandle=paintHandle;
@@ -1425,13 +1495,13 @@ float StaticLayout::GetDesiredWidthImpl(uString* text, ::g::Java::Object* paintH
     
 }
 
-// private static int GetEllipsizedWidth(Java.Object handle) [static] :282
+// private static int GetEllipsizedWidth(Java.Object handle) [static] :128
 int StaticLayout::GetEllipsizedWidth(::g::Java::Object* handle)
 {
     {
         INIT_JNI;
         jclass __cls = JniHelper::GetNativeExternClass();
-        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "GetEllipsizedWidth350", "(Ljava/lang/Object;)I");
+        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "GetEllipsizedWidth349", "(Ljava/lang/Object;)I");
         ::g::Java::Object* _uhandle=handle;
         jobject _handle = (_uhandle==NULL ? NULL : U_JNIVAR->NewLocalRef(::g::Android::Base::Wrappers::IJWrapper::_GetJavaObject(uInterface((uObject*)_uhandle, ::g::Android::Base::Wrappers::IJWrapper_typeof()))));
         jint __jresult = U_JNIVAR->CallStaticIntMethod(__cls,__mtd,_handle);
@@ -1443,13 +1513,13 @@ int StaticLayout::GetEllipsizedWidth(::g::Java::Object* handle)
     
 }
 
-// private static int GetHeight(Java.Object handle) [static] :270
+// private static int GetHeight(Java.Object handle) [static] :116
 int StaticLayout::GetHeight(::g::Java::Object* handle)
 {
     {
         INIT_JNI;
         jclass __cls = JniHelper::GetNativeExternClass();
-        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "GetHeight351", "(Ljava/lang/Object;)I");
+        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "GetHeight350", "(Ljava/lang/Object;)I");
         ::g::Java::Object* _uhandle=handle;
         jobject _handle = (_uhandle==NULL ? NULL : U_JNIVAR->NewLocalRef(::g::Android::Base::Wrappers::IJWrapper::_GetJavaObject(uInterface((uObject*)_uhandle, ::g::Android::Base::Wrappers::IJWrapper_typeof()))));
         jint __jresult = U_JNIVAR->CallStaticIntMethod(__cls,__mtd,_handle);
@@ -1461,13 +1531,13 @@ int StaticLayout::GetHeight(::g::Java::Object* handle)
     
 }
 
-// private static int GetLineBaseline(Java.Object handle, int line) [static] :288
+// private static int GetLineBaseline(Java.Object handle, int line) [static] :134
 int StaticLayout::GetLineBaseline1(::g::Java::Object* handle, int line)
 {
     {
         INIT_JNI;
         jclass __cls = JniHelper::GetNativeExternClass();
-        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "GetLineBaseline1352", "(Ljava/lang/Object;I)I");
+        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "GetLineBaseline1351", "(Ljava/lang/Object;I)I");
         ::g::Java::Object* _uhandle=handle;
         jobject _handle = (_uhandle==NULL ? NULL : U_JNIVAR->NewLocalRef(::g::Android::Base::Wrappers::IJWrapper::_GetJavaObject(uInterface((uObject*)_uhandle, ::g::Android::Base::Wrappers::IJWrapper_typeof()))));
         int _uline=line;
@@ -1482,13 +1552,13 @@ int StaticLayout::GetLineBaseline1(::g::Java::Object* handle, int line)
     
 }
 
-// private static int GetLineCount(Java.Object handle) [static] :319
+// private static int GetLineCount(Java.Object handle) [static] :165
 int StaticLayout::GetLineCount(::g::Java::Object* handle)
 {
     {
         INIT_JNI;
         jclass __cls = JniHelper::GetNativeExternClass();
-        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "GetLineCount353", "(Ljava/lang/Object;)I");
+        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "GetLineCount352", "(Ljava/lang/Object;)I");
         ::g::Java::Object* _uhandle=handle;
         jobject _handle = (_uhandle==NULL ? NULL : U_JNIVAR->NewLocalRef(::g::Android::Base::Wrappers::IJWrapper::_GetJavaObject(uInterface((uObject*)_uhandle, ::g::Android::Base::Wrappers::IJWrapper_typeof()))));
         jint __jresult = U_JNIVAR->CallStaticIntMethod(__cls,__mtd,_handle);
@@ -1500,13 +1570,13 @@ int StaticLayout::GetLineCount(::g::Java::Object* handle)
     
 }
 
-// private static int GetLineEnd(Java.Object handle, int line) [static] :306
+// private static int GetLineEnd(Java.Object handle, int line) [static] :152
 int StaticLayout::GetLineEnd1(::g::Java::Object* handle, int line)
 {
     {
         INIT_JNI;
         jclass __cls = JniHelper::GetNativeExternClass();
-        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "GetLineEnd1354", "(Ljava/lang/Object;I)I");
+        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "GetLineEnd1353", "(Ljava/lang/Object;I)I");
         ::g::Java::Object* _uhandle=handle;
         jobject _handle = (_uhandle==NULL ? NULL : U_JNIVAR->NewLocalRef(::g::Android::Base::Wrappers::IJWrapper::_GetJavaObject(uInterface((uObject*)_uhandle, ::g::Android::Base::Wrappers::IJWrapper_typeof()))));
         int _uline=line;
@@ -1521,13 +1591,13 @@ int StaticLayout::GetLineEnd1(::g::Java::Object* handle, int line)
     
 }
 
-// private static float GetLineLeft(Java.Object handle, int line) [static] :294
+// private static float GetLineLeft(Java.Object handle, int line) [static] :140
 float StaticLayout::GetLineLeft1(::g::Java::Object* handle, int line)
 {
     {
         INIT_JNI;
         jclass __cls = JniHelper::GetNativeExternClass();
-        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "GetLineLeft1355", "(Ljava/lang/Object;I)F");
+        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "GetLineLeft1354", "(Ljava/lang/Object;I)F");
         ::g::Java::Object* _uhandle=handle;
         jobject _handle = (_uhandle==NULL ? NULL : U_JNIVAR->NewLocalRef(::g::Android::Base::Wrappers::IJWrapper::_GetJavaObject(uInterface((uObject*)_uhandle, ::g::Android::Base::Wrappers::IJWrapper_typeof()))));
         int _uline=line;
@@ -1542,13 +1612,13 @@ float StaticLayout::GetLineLeft1(::g::Java::Object* handle, int line)
     
 }
 
-// private static int GetLineStart(Java.Object handle, int line) [static] :300
+// private static int GetLineStart(Java.Object handle, int line) [static] :146
 int StaticLayout::GetLineStart1(::g::Java::Object* handle, int line)
 {
     {
         INIT_JNI;
         jclass __cls = JniHelper::GetNativeExternClass();
-        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "GetLineStart1356", "(Ljava/lang/Object;I)I");
+        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "GetLineStart1355", "(Ljava/lang/Object;I)I");
         ::g::Java::Object* _uhandle=handle;
         jobject _handle = (_uhandle==NULL ? NULL : U_JNIVAR->NewLocalRef(::g::Android::Base::Wrappers::IJWrapper::_GetJavaObject(uInterface((uObject*)_uhandle, ::g::Android::Base::Wrappers::IJWrapper_typeof()))));
         int _uline=line;
@@ -1563,7 +1633,7 @@ int StaticLayout::GetLineStart1(::g::Java::Object* handle, int line)
     
 }
 
-// public StaticLayout New(string text, Fuse.Android.TextPaint paint, int width, Fuse.Android.StaticLayout.Alignment align, float spacingMult, float spacingAdd, bool includePad) [static] :187
+// public StaticLayout New(string text, Fuse.Android.TextPaint paint, int width, Fuse.Android.StaticLayout.Alignment align, float spacingMult, float spacingAdd, bool includePad) [static] :33
 StaticLayout* StaticLayout::New2(uString* text, ::g::Fuse::Android::TextPaint* paint, int width, int align, float spacingMult, float spacingAdd, bool includePad)
 {
     StaticLayout* obj2 = (StaticLayout*)uNew(StaticLayout_typeof());
@@ -1571,7 +1641,7 @@ StaticLayout* StaticLayout::New2(uString* text, ::g::Fuse::Android::TextPaint* p
     return obj2;
 }
 
-// public StaticLayout New(string text, int bufStart, int bufEnd, Fuse.Android.TextPaint paint, int outerWidth, Fuse.Android.StaticLayout.Alignment align, float spacingMult, float spacingAdd, bool includePad, Fuse.Android.TextUtils.TruncateAt truncateAt, int ellipsizedWith) [static] :198
+// public StaticLayout New(string text, int bufStart, int bufEnd, Fuse.Android.TextPaint paint, int outerWidth, Fuse.Android.StaticLayout.Alignment align, float spacingMult, float spacingAdd, bool includePad, Fuse.Android.TextUtils.TruncateAt truncateAt, int ellipsizedWith) [static] :44
 StaticLayout* StaticLayout::New3(uString* text, int bufStart, int bufEnd, ::g::Fuse::Android::TextPaint* paint, int outerWidth, int align, float spacingMult, float spacingAdd, bool includePad, int truncateAt, int ellipsizedWith)
 {
     StaticLayout* obj3 = (StaticLayout*)uNew(StaticLayout_typeof());
@@ -1580,14 +1650,16 @@ StaticLayout* StaticLayout::New3(uString* text, int bufStart, int bufEnd, ::g::F
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Android/1.2.1/$.uno
-// ------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Android\1.3.0-rc2\StatusBarConfig.uno
+// --------------------------------------------------------------------------------------
 
-// public sealed class StatusBarConfig :84
+// public sealed class StatusBarConfig :82
 // {
-// static extern StatusBarConfig() :86
+// static extern StatusBarConfig() :84
 static void StatusBarConfig__cctor_1_fn(uType* __type)
 {
+    ::g::Fuse::Platform::SystemUI_typeof()->Init();
+    ::g::Fuse::Android::StatusBarHelper_typeof()->Init();
     StatusBarConfig::_isVisible_ = true;
     StatusBarConfig::_isVisible_ = ::g::Fuse::Platform::SystemUI::IsTopFrameVisible();
     ::g::Fuse::Android::StatusBarHelper::InstallGlobalListener();
@@ -1596,8 +1668,12 @@ static void StatusBarConfig__cctor_1_fn(uType* __type)
 static void StatusBarConfig_build(uType* type)
 {
     ::STRINGS[1] = uString::Const("StatusBarConfig.Color is only supported on Android API-level 21 and higher");
-    ::STRINGS[2] = uString::Const("/usr/local/share/uno/Packages/Fuse.Android/1.2.1/$.uno");
+    ::STRINGS[2] = uString::Const("C:\\Users\\q\\AppData\\Local\\Fusetools\\Packages\\Fuse.Android\\1.3.0-rc2\\StatusBarConfig.uno");
     ::STRINGS[3] = uString::Const("set_Color");
+    type->SetDependencies(
+        ::g::Uno::Color_typeof(),
+        ::g::Fuse::Diagnostics_typeof(),
+        ::g::Fuse::Platform::SystemUI_typeof());
     type->SetInterfaces(
         ::g::Uno::Collections::IList_typeof()->MakeType(::g::Fuse::Binding_typeof(), NULL), offsetof(::g::Fuse::Node_type, interface0),
         ::g::Fuse::Scripting::IScriptObject_typeof(), offsetof(::g::Fuse::Node_type, interface1),
@@ -1605,8 +1681,8 @@ static void StatusBarConfig_build(uType* type)
         ::g::Fuse::INotifyUnrooted_typeof(), offsetof(::g::Fuse::Node_type, interface3),
         ::g::Uno::Collections::ICollection_typeof()->MakeType(::g::Fuse::Binding_typeof(), NULL), offsetof(::g::Fuse::Node_type, interface4),
         ::g::Uno::Collections::IEnumerable_typeof()->MakeType(::g::Fuse::Binding_typeof(), NULL), offsetof(::g::Fuse::Node_type, interface5));
-    type->SetFields(12,
-        ::g::Uno::Bool_typeof(), (uintptr_t)&::g::Fuse::Android::StatusBarConfig::_isVisible_, uFieldFlagsStatic);
+    type->SetFields(15,
+        ::g::Uno::Bool_typeof(), (uintptr_t)&StatusBarConfig::_isVisible_, uFieldFlagsStatic);
 }
 
 ::g::Fuse::Node_type* StatusBarConfig_typeof()
@@ -1616,8 +1692,9 @@ static void StatusBarConfig_build(uType* type)
 
     uTypeOptions options;
     options.BaseDefinition = ::g::Fuse::Behavior_typeof();
-    options.FieldCount = 13;
+    options.FieldCount = 16;
     options.InterfaceCount = 6;
+    options.DependencyCount = 3;
     options.ObjectSize = sizeof(StatusBarConfig);
     options.TypeSize = sizeof(::g::Fuse::Node_type);
     type = (::g::Fuse::Node_type*)uClassType::New("Fuse.Android.StatusBarConfig", options);
@@ -1642,37 +1719,37 @@ static void StatusBarConfig_build(uType* type)
     return type;
 }
 
-// public generated StatusBarConfig() :84
+// public generated StatusBarConfig() :82
 void StatusBarConfig__ctor_3_fn(StatusBarConfig* __this)
 {
     __this->ctor_3();
 }
 
-// public float4 get_Color() :99
+// public float4 get_Color() :97
 void StatusBarConfig__get_Color_fn(StatusBarConfig* __this, ::g::Uno::Float4* __retval)
 {
     *__retval = __this->Color();
 }
 
-// public void set_Color(float4 value) :106
+// public void set_Color(float4 value) :104
 void StatusBarConfig__set_Color_fn(StatusBarConfig* __this, ::g::Uno::Float4* value)
 {
     __this->Color(*value);
 }
 
-// public generated StatusBarConfig New() :84
+// public generated StatusBarConfig New() :82
 void StatusBarConfig__New2_fn(StatusBarConfig** __retval)
 {
     *__retval = StatusBarConfig::New2();
 }
 
-// internal static extern bool SetStatusBarColor(float4 color) :129
+// internal static extern bool SetStatusBarColor(float4 color) :127
 void StatusBarConfig__SetStatusBarColor_fn(::g::Uno::Float4* color, bool* __retval)
 {
     *__retval = StatusBarConfig::SetStatusBarColor(*color);
 }
 
-// internal static extern void UpdateStatusBar() :134
+// internal static extern void UpdateStatusBar() :132
 void StatusBarConfig__UpdateStatusBar_fn()
 {
     StatusBarConfig::UpdateStatusBar();
@@ -1680,26 +1757,26 @@ void StatusBarConfig__UpdateStatusBar_fn()
 
 bool StatusBarConfig::_isVisible_;
 
-// public generated StatusBarConfig() [instance] :84
+// public generated StatusBarConfig() [instance] :82
 void StatusBarConfig::ctor_3()
 {
     ctor_2();
 }
 
-// public float4 get_Color() [instance] :99
+// public float4 get_Color() [instance] :97
 ::g::Uno::Float4 StatusBarConfig::Color()
 {
     return ::g::Uno::Color::FromArgb((uint32_t)::g::Fuse::Android::StatusBarHelper::GetStatusBarColor());
 }
 
-// public void set_Color(float4 value) [instance] :106
+// public void set_Color(float4 value) [instance] :104
 void StatusBarConfig::Color(::g::Uno::Float4 value)
 {
     if (!StatusBarConfig::SetStatusBarColor(value))
-        ::g::Fuse::Diagnostics::UserWarning(::STRINGS[1/*"StatusBarCo...*/], this, ::STRINGS[2/*"/usr/local/...*/], 111, ::STRINGS[3/*"set_Color"*/]);
+        ::g::Fuse::Diagnostics::UserWarning(::STRINGS[1/*"StatusBarCo...*/], this, ::STRINGS[2/*"C:\\Users\\...*/], 109, ::STRINGS[3/*"set_Color"*/]);
 }
 
-// public generated StatusBarConfig New() [static] :84
+// public generated StatusBarConfig New() [static] :82
 StatusBarConfig* StatusBarConfig::New2()
 {
     StatusBarConfig* obj1 = (StatusBarConfig*)uNew(StatusBarConfig_typeof());
@@ -1707,25 +1784,25 @@ StatusBarConfig* StatusBarConfig::New2()
     return obj1;
 }
 
-// internal static extern bool SetStatusBarColor(float4 color) [static] :129
+// internal static extern bool SetStatusBarColor(float4 color) [static] :127
 bool StatusBarConfig::SetStatusBarColor(::g::Uno::Float4 color)
 {
     StatusBarConfig_typeof()->Init();
     return ::g::Fuse::Android::StatusBarHelper::SetStatusBarColor((int)::g::Uno::Color::ToArgb(color));
 }
 
-// internal static extern void UpdateStatusBar() [static] :134
+// internal static extern void UpdateStatusBar() [static] :132
 void StatusBarConfig::UpdateStatusBar()
 {
     StatusBarConfig_typeof()->Init();
-    ::g::Fuse::Platform::SystemUI::IsTopFrameVisible(StatusBarConfig::_isVisible());
+    ::g::Fuse::Platform::SystemUI::IsTopFrameVisible(StatusBarConfig::_isVisible_);
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Android/1.2.1/$.uno
-// ------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Android\1.3.0-rc2\StatusBarConfig.uno
+// --------------------------------------------------------------------------------------
 
-// internal static extern class StatusBarHelper :17
+// internal static extern class StatusBarHelper :15
 // {
 static void StatusBarHelper_build(uType* type)
 {
@@ -1743,31 +1820,31 @@ uClassType* StatusBarHelper_typeof()
     return type;
 }
 
-// public static int GetStatusBarColor() :20
+// public static int GetStatusBarColor() :18
 void StatusBarHelper__GetStatusBarColor_fn(int* __retval)
 {
     *__retval = StatusBarHelper::GetStatusBarColor();
 }
 
-// public static void InstallGlobalListener() :44
+// public static void InstallGlobalListener() :42
 void StatusBarHelper__InstallGlobalListener_fn()
 {
     StatusBarHelper::InstallGlobalListener();
 }
 
-// public static bool SetStatusBarColor(int color) :30
+// public static bool SetStatusBarColor(int color) :28
 void StatusBarHelper__SetStatusBarColor_fn(int* color, bool* __retval)
 {
     *__retval = StatusBarHelper::SetStatusBarColor(*color);
 }
 
-// public static int GetStatusBarColor() [static] :20
+// public static int GetStatusBarColor() [static] :18
 int StatusBarHelper::GetStatusBarColor()
 {
     {
         INIT_JNI;
         jclass __cls = JniHelper::GetNativeExternClass();
-        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "GetStatusBarColor358", "()I");
+        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "GetStatusBarColor357", "()I");
         jint __jresult = U_JNIVAR->CallStaticIntMethod(__cls,__mtd);
         int __result = (int)__jresult;
         ::g::Android::Base::JNI::CheckException();
@@ -1776,13 +1853,13 @@ int StatusBarHelper::GetStatusBarColor()
     
 }
 
-// public static void InstallGlobalListener() [static] :44
+// public static void InstallGlobalListener() [static] :42
 void StatusBarHelper::InstallGlobalListener()
 {
     {
         INIT_JNI;
         jclass __cls = JniHelper::GetNativeExternClass();
-        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "InstallGlobalListener359", "()V");
+        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "InstallGlobalListener358", "()V");
         U_JNIVAR->CallStaticVoidMethod(__cls,__mtd);
         
         ::g::Android::Base::JNI::CheckException();
@@ -1791,13 +1868,13 @@ void StatusBarHelper::InstallGlobalListener()
     
 }
 
-// public static bool SetStatusBarColor(int color) [static] :30
+// public static bool SetStatusBarColor(int color) [static] :28
 bool StatusBarHelper::SetStatusBarColor(int color)
 {
     {
         INIT_JNI;
         jclass __cls = JniHelper::GetNativeExternClass();
-        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "SetStatusBarColor361", "(I)Z");
+        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "SetStatusBarColor360", "(I)Z");
         int _ucolor=color;
         jint _color = (jint)_ucolor;
         jboolean __jresult = U_JNIVAR->CallStaticBooleanMethod(__cls,__mtd,_color);
@@ -1810,93 +1887,108 @@ bool StatusBarHelper::SetStatusBarColor(int color)
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Android/1.2.1/.uno/ux11/$.uno
-// ----------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Android\1.3.0-rc2\.uno\ux13\Fuse.Android.RootGraphicsView.g.uno
+// ----------------------------------------------------------------------------------------------------------------
 
-// public partial sealed class RootGraphicsView.Template :9
+// private sealed class RootGraphicsView.Template1 :7
 // {
-// static Template() :18
-static void RootGraphicsView__Template__cctor__fn(uType* __type)
+// static Template1() :22
+static void RootGraphicsView__Template1__cctor__fn(uType* __type)
 {
 }
 
-static void RootGraphicsView__Template_build(uType* type)
+static void RootGraphicsView__Template1_build(uType* type)
 {
-    ::STRINGS[4] = uString::Const("AndroidAppearance");
-    type->SetFields(2,
-        ::g::Fuse::Android::RootGraphicsView_typeof(), offsetof(::g::Fuse::Android::RootGraphicsView__Template, __parent1), uFieldFlagsWeak,
-        ::g::Fuse::Android::RootGraphicsView_typeof(), offsetof(::g::Fuse::Android::RootGraphicsView__Template, __parentInstance1), uFieldFlagsWeak);
+    type->SetInterfaces(
+        ::g::Uno::IDisposable_typeof(), offsetof(::g::Fuse::Controls::Native::Android::GraphicsViewBase_type, interface0),
+        ::g::Fuse::Controls::Native::IView_typeof(), offsetof(::g::Fuse::Controls::Native::Android::GraphicsViewBase_type, interface1),
+        ::g::Fuse::Controls::Native::IGraphicsView_typeof(), offsetof(::g::Fuse::Controls::Native::Android::GraphicsViewBase_type, interface2),
+        ::g::Fuse::Controls::Native::IViewHost_typeof(), offsetof(::g::Fuse::Controls::Native::Android::GraphicsViewBase_type, interface3));
+    type->SetFields(10,
+        ::g::Fuse::Android::RootGraphicsView_typeof(), offsetof(RootGraphicsView__Template1, __parent1), uFieldFlagsWeak);
 }
 
-::g::Uno::UX::Template_type* RootGraphicsView__Template_typeof()
+::g::Fuse::Controls::Native::Android::GraphicsViewBase_type* RootGraphicsView__Template1_typeof()
 {
-    static uSStrong< ::g::Uno::UX::Template_type*> type;
+    static uSStrong< ::g::Fuse::Controls::Native::Android::GraphicsViewBase_type*> type;
     if (type != NULL) return type;
 
     uTypeOptions options;
-    options.BaseDefinition = ::g::Uno::UX::Template_typeof();
-    options.FieldCount = 4;
-    options.ObjectSize = sizeof(RootGraphicsView__Template);
-    options.TypeSize = sizeof(::g::Uno::UX::Template_type);
-    type = (::g::Uno::UX::Template_type*)uClassType::New("Fuse.Android.RootGraphicsView.Template", options);
-    type->fp_build_ = RootGraphicsView__Template_build;
-    type->fp_cctor_ = RootGraphicsView__Template__cctor__fn;
-    type->fp_New1 = (void(*)(::g::Uno::UX::Template*, uObject**))RootGraphicsView__Template__New1_fn;
+    options.BaseDefinition = ::g::Fuse::Controls::Native::Android::SurfaceView_typeof();
+    options.FieldCount = 11;
+    options.InterfaceCount = 4;
+    options.ObjectSize = sizeof(RootGraphicsView__Template1);
+    options.TypeSize = sizeof(::g::Fuse::Controls::Native::Android::GraphicsViewBase_type);
+    type = (::g::Fuse::Controls::Native::Android::GraphicsViewBase_type*)uClassType::New("Fuse.Android.RootGraphicsView.Template1", options);
+    type->fp_build_ = RootGraphicsView__Template1_build;
+    type->fp_cctor_ = RootGraphicsView__Template1__cctor__fn;
+    type->interface3.fp_Insert = (void(*)(uObject*, ::g::Fuse::Controls::Native::ViewHandle*))::g::Fuse::Controls::Native::Android::GraphicsViewBase__FuseControlsNativeIViewHostInsert_fn;
+    type->interface3.fp_Remove = (void(*)(uObject*, ::g::Fuse::Controls::Native::ViewHandle*))::g::Fuse::Controls::Native::Android::GraphicsViewBase__FuseControlsNativeIViewHostRemove_fn;
+    type->interface2.fp_BeginDraw = (void(*)(uObject*, ::g::Uno::Int2*, bool*))::g::Fuse::Controls::Native::Android::GraphicsViewBase__BeginDraw_fn;
+    type->interface2.fp_EndDraw = (void(*)(uObject*))::g::Fuse::Controls::Native::Android::GraphicsViewBase__EndDraw_fn;
+    type->interface0.fp_Dispose = (void(*)(uObject*))::g::Fuse::Controls::Native::ViewHandle__Dispose_fn;
     return type;
 }
 
-// public Template(Fuse.Android.RootGraphicsView parent, Fuse.Android.RootGraphicsView parentInstance) :13
-void RootGraphicsView__Template__ctor_1_fn(RootGraphicsView__Template* __this, ::g::Fuse::Android::RootGraphicsView* parent, ::g::Fuse::Android::RootGraphicsView* parentInstance)
+// public Template1(Fuse.Android.RootGraphicsView parent) :27
+void RootGraphicsView__Template1__ctor_9_fn(RootGraphicsView__Template1* __this, ::g::Fuse::Android::RootGraphicsView* parent)
 {
-    __this->ctor_1(parent, parentInstance);
+    __this->ctor_9(parent);
 }
 
-// public override sealed object New() :21
-void RootGraphicsView__Template__New1_fn(RootGraphicsView__Template* __this, uObject** __retval)
+// private void InitializeUX() :32
+void RootGraphicsView__Template1__InitializeUX_fn(RootGraphicsView__Template1* __this)
 {
-    ::g::Fuse::Controls::Native::Android::SurfaceView* __self1 = ::g::Fuse::Controls::Native::Android::SurfaceView::New4();
-    return *__retval = __self1, void();
+    __this->InitializeUX();
 }
 
-// public Template New(Fuse.Android.RootGraphicsView parent, Fuse.Android.RootGraphicsView parentInstance) :13
-void RootGraphicsView__Template__New2_fn(::g::Fuse::Android::RootGraphicsView* parent, ::g::Fuse::Android::RootGraphicsView* parentInstance, RootGraphicsView__Template** __retval)
+// public Template1 New(Fuse.Android.RootGraphicsView parent) :27
+void RootGraphicsView__Template1__New6_fn(::g::Fuse::Android::RootGraphicsView* parent, RootGraphicsView__Template1** __retval)
 {
-    *__retval = RootGraphicsView__Template::New2(parent, parentInstance);
+    *__retval = RootGraphicsView__Template1::New6(parent);
 }
 
-// public Template(Fuse.Android.RootGraphicsView parent, Fuse.Android.RootGraphicsView parentInstance) [instance] :13
-void RootGraphicsView__Template::ctor_1(::g::Fuse::Android::RootGraphicsView* parent, ::g::Fuse::Android::RootGraphicsView* parentInstance)
+// public Template1(Fuse.Android.RootGraphicsView parent) [instance] :27
+void RootGraphicsView__Template1::ctor_9(::g::Fuse::Android::RootGraphicsView* parent)
 {
-    ctor_(::STRINGS[4/*"AndroidAppe...*/], false);
+    ctor_8();
     __parent1 = parent;
-    __parentInstance1 = parentInstance;
+    InitializeUX();
 }
 
-// public Template New(Fuse.Android.RootGraphicsView parent, Fuse.Android.RootGraphicsView parentInstance) [static] :13
-RootGraphicsView__Template* RootGraphicsView__Template::New2(::g::Fuse::Android::RootGraphicsView* parent, ::g::Fuse::Android::RootGraphicsView* parentInstance)
+// private void InitializeUX() [instance] :32
+void RootGraphicsView__Template1::InitializeUX()
 {
-    RootGraphicsView__Template* obj1 = (RootGraphicsView__Template*)uNew(RootGraphicsView__Template_typeof());
-    obj1->ctor_1(parent, parentInstance);
+}
+
+// public Template1 New(Fuse.Android.RootGraphicsView parent) [static] :27
+RootGraphicsView__Template1* RootGraphicsView__Template1::New6(::g::Fuse::Android::RootGraphicsView* parent)
+{
+    RootGraphicsView__Template1* obj1 = (RootGraphicsView__Template1*)uNew(RootGraphicsView__Template1_typeof());
+    obj1->ctor_9(parent);
     return obj1;
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Android.TextRenderer/1.2.1/$.uno
-// -------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Android.TextRenderer\1.3.0-rc2\TextRenderer.uno
+// ------------------------------------------------------------------------------------------------
 
-// internal sealed extern class TextControlLayout :17
+// internal sealed extern class TextControlLayout :15
 // {
 static void TextControlLayout_build(uType* type)
 {
-    ::STRINGS[5] = uString::Const("wrapWidth");
-    ::STRINGS[0] = uString::Const("");
-    ::TYPES[4] = ::g::Fuse::ICommonViewport_typeof();
+    ::STRINGS[4] = uString::Const("wrapWidth");
+    ::STRINGS[5] = uString::Const("");
+    ::TYPES[3] = ::g::Fuse::ICommonViewport_typeof();
+    type->SetDependencies(
+        ::g::Fuse::Font_typeof(),
+        ::g::Fuse::Controls::Native::Android::TypefaceCache_typeof());
     type->SetFields(0,
-        ::g::Uno::Bool_typeof(), offsetof(::g::Fuse::Android::TextControlLayout, _cacheMin), 0,
-        ::g::Uno::Bool_typeof(), offsetof(::g::Fuse::Android::TextControlLayout, _cacheValid), 0,
-        ::g::Uno::Float_typeof(), offsetof(::g::Fuse::Android::TextControlLayout, _cacheWrapWidthPoints), 0,
-        ::g::Fuse::Android::StaticLayout_typeof(), offsetof(::g::Fuse::Android::TextControlLayout, _Layout), 0,
-        ::g::Uno::Recti_typeof(), offsetof(::g::Fuse::Android::TextControlLayout, _PixelBounds), 0);
+        ::g::Uno::Bool_typeof(), offsetof(TextControlLayout, _cacheMin), 0,
+        ::g::Uno::Bool_typeof(), offsetof(TextControlLayout, _cacheValid), 0,
+        ::g::Uno::Float_typeof(), offsetof(TextControlLayout, _cacheWrapWidthPoints), 0,
+        ::g::Fuse::Android::StaticLayout_typeof(), offsetof(TextControlLayout, _Layout), 0,
+        ::g::Uno::Recti_typeof(), offsetof(TextControlLayout, _PixelBounds), 0);
 }
 
 uType* TextControlLayout_typeof()
@@ -1906,6 +1998,7 @@ uType* TextControlLayout_typeof()
 
     uTypeOptions options;
     options.FieldCount = 5;
+    options.DependencyCount = 2;
     options.ObjectSize = sizeof(TextControlLayout);
     options.TypeSize = sizeof(uType);
     type = uClassType::New("Fuse.Android.TextControlLayout", options);
@@ -1914,103 +2007,105 @@ uType* TextControlLayout_typeof()
     return type;
 }
 
-// public generated TextControlLayout() :17
+// public generated TextControlLayout() :15
 void TextControlLayout__ctor__fn(TextControlLayout* __this)
 {
     __this->ctor_();
 }
 
-// public void Invalidate() :31
+// public void Invalidate() :29
 void TextControlLayout__Invalidate_fn(TextControlLayout* __this)
 {
     __this->Invalidate();
 }
 
-// public generated Fuse.Android.StaticLayout get_Layout() :19
+// public generated Fuse.Android.StaticLayout get_Layout() :17
 void TextControlLayout__get_Layout_fn(TextControlLayout* __this, ::g::Fuse::Android::StaticLayout** __retval)
 {
     *__retval = __this->Layout();
 }
 
-// private generated void set_Layout(Fuse.Android.StaticLayout value) :19
+// private generated void set_Layout(Fuse.Android.StaticLayout value) :17
 void TextControlLayout__set_Layout_fn(TextControlLayout* __this, ::g::Fuse::Android::StaticLayout* value)
 {
     __this->Layout(value);
 }
 
-// public bool Measure(Fuse.Controls.TextControl Control, Fuse.Android.TextPaint Paint, float wrapWidthPoints, bool useMin) :36
+// public bool Measure(Fuse.Controls.TextControl Control, Fuse.Android.TextPaint Paint, float wrapWidthPoints, bool useMin) :34
 void TextControlLayout__Measure_fn(TextControlLayout* __this, ::g::Fuse::Controls::TextControl* Control, ::g::Fuse::Android::TextPaint* Paint, float* wrapWidthPoints, bool* useMin, bool* __retval)
 {
     *__retval = __this->Measure(Control, Paint, *wrapWidthPoints, *useMin);
 }
 
-// public generated TextControlLayout New() :17
+// public generated TextControlLayout New() :15
 void TextControlLayout__New1_fn(TextControlLayout** __retval)
 {
     *__retval = TextControlLayout::New1();
 }
 
-// public generated Uno.Recti get_PixelBounds() :20
+// public generated Uno.Recti get_PixelBounds() :18
 void TextControlLayout__get_PixelBounds_fn(TextControlLayout* __this, ::g::Uno::Recti* __retval)
 {
     *__retval = __this->PixelBounds();
 }
 
-// private generated void set_PixelBounds(Uno.Recti value) :20
+// private generated void set_PixelBounds(Uno.Recti value) :18
 void TextControlLayout__set_PixelBounds_fn(TextControlLayout* __this, ::g::Uno::Recti* value)
 {
     __this->PixelBounds(*value);
 }
 
-// private Fuse.Android.StaticLayout.Alignment TextAlignmentToAndroidLayoutAlignment(Fuse.Controls.TextAlignment textAlignment) :95
+// private Fuse.Android.StaticLayout.Alignment TextAlignmentToAndroidLayoutAlignment(Fuse.Controls.TextAlignment textAlignment) :93
 void TextControlLayout__TextAlignmentToAndroidLayoutAlignment_fn(TextControlLayout* __this, int* textAlignment, int* __retval)
 {
     *__retval = __this->TextAlignmentToAndroidLayoutAlignment(*textAlignment);
 }
 
-// public void UpdatePaint(Fuse.Controls.TextControl Control, Fuse.Android.TextPaint paint) :107
+// public void UpdatePaint(Fuse.Controls.TextControl Control, Fuse.Android.TextPaint paint) :105
 void TextControlLayout__UpdatePaint_fn(TextControlLayout* __this, ::g::Fuse::Controls::TextControl* Control, ::g::Fuse::Android::TextPaint* paint)
 {
     __this->UpdatePaint(Control, paint);
 }
 
-// public generated TextControlLayout() [instance] :17
+// public generated TextControlLayout() [instance] :15
 void TextControlLayout::ctor_()
 {
 }
 
-// public void Invalidate() [instance] :31
+// public void Invalidate() [instance] :29
 void TextControlLayout::Invalidate()
 {
     _cacheValid = false;
 }
 
-// public generated Fuse.Android.StaticLayout get_Layout() [instance] :19
+// public generated Fuse.Android.StaticLayout get_Layout() [instance] :17
 ::g::Fuse::Android::StaticLayout* TextControlLayout::Layout()
 {
     return _Layout;
 }
 
-// private generated void set_Layout(Fuse.Android.StaticLayout value) [instance] :19
+// private generated void set_Layout(Fuse.Android.StaticLayout value) [instance] :17
 void TextControlLayout::Layout(::g::Fuse::Android::StaticLayout* value)
 {
     _Layout = value;
 }
 
-// public bool Measure(Fuse.Controls.TextControl Control, Fuse.Android.TextPaint Paint, float wrapWidthPoints, bool useMin) [instance] :36
+// public bool Measure(Fuse.Controls.TextControl Control, Fuse.Android.TextPaint Paint, float wrapWidthPoints, bool useMin) [instance] :34
 bool TextControlLayout::Measure(::g::Fuse::Controls::TextControl* Control, ::g::Fuse::Android::TextPaint* Paint, float wrapWidthPoints, bool useMin)
 {
+    uString* ind1;
+
     if ((((Layout() != NULL) && _cacheValid) && (_cacheWrapWidthPoints == wrapWidthPoints)) && (_cacheMin == useMin))
         return false;
 
     if (wrapWidthPoints < 0.0f)
-        U_THROW(::g::Uno::ArgumentOutOfRangeException::New6(::STRINGS[5/*"wrapWidth"*/]));
+        U_THROW(::g::Uno::ArgumentOutOfRangeException::New6(::STRINGS[4/*"wrapWidth"*/]));
 
-    float wrapWidthPixels = wrapWidthPoints * ::g::Fuse::ICommonViewport::PixelsPerPoint(uInterface(uPtr(uPtr(Control)->Viewport()), ::TYPES[4/*Fuse.ICommonViewport*/]));
+    float wrapWidthPixels = wrapWidthPoints * ::g::Fuse::ICommonViewport::PixelsPerPoint(uInterface(uPtr(uPtr(Control)->Viewport()), ::TYPES[3/*Fuse.ICommonViewport*/]));
     int align = TextAlignmentToAndroidLayoutAlignment(Control->TextAlignment());
-    uString* ind1 = Control->RenderValue();
-    uString* text = (ind1 != NULL) ? ind1 : ::STRINGS[0/*""*/];
-    float lineSpacing = Control->LineSpacing() * ::g::Fuse::ICommonViewport::PixelsPerPoint(uInterface(uPtr(Control->Viewport()), ::TYPES[4/*Fuse.ICommonViewport*/]));
+    ind1 = Control->RenderValue();
+    uString* text = (ind1 != NULL) ? ind1 : ::STRINGS[5/*""*/];
+    float lineSpacing = Control->LineSpacing() * ::g::Fuse::ICommonViewport::PixelsPerPoint(uInterface(uPtr(Control->Viewport()), ::TYPES[3/*Fuse.ICommonViewport*/]));
     float desiredWidth = ::g::Fuse::Android::StaticLayout::GetDesiredWidth(text, Paint);
 
     if (useMin)
@@ -2046,19 +2141,19 @@ bool TextControlLayout::Measure(::g::Fuse::Controls::TextControl* Control, ::g::
     return true;
 }
 
-// public generated Uno.Recti get_PixelBounds() [instance] :20
+// public generated Uno.Recti get_PixelBounds() [instance] :18
 ::g::Uno::Recti TextControlLayout::PixelBounds()
 {
     return _PixelBounds;
 }
 
-// private generated void set_PixelBounds(Uno.Recti value) [instance] :20
+// private generated void set_PixelBounds(Uno.Recti value) [instance] :18
 void TextControlLayout::PixelBounds(::g::Uno::Recti value)
 {
     _PixelBounds = value;
 }
 
-// private Fuse.Android.StaticLayout.Alignment TextAlignmentToAndroidLayoutAlignment(Fuse.Controls.TextAlignment textAlignment) [instance] :95
+// private Fuse.Android.StaticLayout.Alignment TextAlignmentToAndroidLayoutAlignment(Fuse.Controls.TextAlignment textAlignment) [instance] :93
 int TextControlLayout::TextAlignmentToAndroidLayoutAlignment(int textAlignment)
 {
     switch (textAlignment)
@@ -2074,16 +2169,16 @@ int TextControlLayout::TextAlignmentToAndroidLayoutAlignment(int textAlignment)
     return 1;
 }
 
-// public void UpdatePaint(Fuse.Controls.TextControl Control, Fuse.Android.TextPaint paint) [instance] :107
+// public void UpdatePaint(Fuse.Controls.TextControl Control, Fuse.Android.TextPaint paint) [instance] :105
 void TextControlLayout::UpdatePaint(::g::Fuse::Controls::TextControl* Control, ::g::Fuse::Android::TextPaint* paint)
 {
     uPtr(paint)->AntiAlias(true);
     paint->Typeface((uPtr(Control)->Font() != ::g::Fuse::Font::PlatformDefault()) ? (::g::Fuse::Controls::Native::Android::Typeface*)::g::Fuse::Controls::Native::Android::TypefaceCache::GetTypeface(uPtr(Control)->Font()) : (::g::Fuse::Controls::Native::Android::Typeface*)::g::Fuse::Controls::Native::Android::Typeface::Default());
-    paint->TextSize(Control->FontSize() * ::g::Fuse::ICommonViewport::PixelsPerPoint(uInterface(uPtr(Control->Viewport()), ::TYPES[4/*Fuse.ICommonViewport*/])));
+    paint->TextSize(Control->FontSize() * ::g::Fuse::ICommonViewport::PixelsPerPoint(uInterface(uPtr(Control->Viewport()), ::TYPES[3/*Fuse.ICommonViewport*/])));
     paint->Color(Control->TextColor());
 }
 
-// public generated TextControlLayout New() [static] :17
+// public generated TextControlLayout New() [static] :15
 TextControlLayout* TextControlLayout::New1()
 {
     TextControlLayout* obj2 = (TextControlLayout*)uNew(TextControlLayout_typeof());
@@ -2092,16 +2187,18 @@ TextControlLayout* TextControlLayout::New1()
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Android.TextRenderer/1.2.1/internal/$.uno
-// ----------------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Android.TextRenderer\1.3.0-rc2\Internal\TextPaint.uno
+// ------------------------------------------------------------------------------------------------------
 
-// internal sealed extern class TextPaint :393
+// internal sealed extern class TextPaint :14
 // {
 static void TextPaint_build(uType* type)
 {
-    ::TYPES[5] = ::g::Uno::Int_typeof()->Array();
+    ::TYPES[4] = ::g::Uno::Int_typeof()->Array();
+    type->SetDependencies(
+        ::g::Uno::Color_typeof());
     type->SetFields(0,
-        ::g::Java::Object_typeof(), offsetof(::g::Fuse::Android::TextPaint, _handle), 0);
+        ::g::Java::Object_typeof(), offsetof(TextPaint, _handle), 0);
 }
 
 uType* TextPaint_typeof()
@@ -2111,6 +2208,7 @@ uType* TextPaint_typeof()
 
     uTypeOptions options;
     options.FieldCount = 1;
+    options.DependencyCount = 1;
     options.ObjectSize = sizeof(TextPaint);
     options.TypeSize = sizeof(uType);
     type = uClassType::New("Fuse.Android.TextPaint", options);
@@ -2119,153 +2217,153 @@ uType* TextPaint_typeof()
     return type;
 }
 
-// public TextPaint() :402
+// public TextPaint() :23
 void TextPaint__ctor__fn(TextPaint* __this)
 {
     __this->ctor_();
 }
 
-// public TextPaint(Java.Object handle) :404
+// public TextPaint(Java.Object handle) :25
 void TextPaint__ctor_1_fn(TextPaint* __this, ::g::Java::Object* handle)
 {
     __this->ctor_1(handle);
 }
 
-// public void set_AntiAlias(bool value) :411
+// public void set_AntiAlias(bool value) :32
 void TextPaint__set_AntiAlias_fn(TextPaint* __this, bool* value)
 {
     __this->AntiAlias(*value);
 }
 
-// public void set_Color(float4 value) :433
+// public void set_Color(float4 value) :54
 void TextPaint__set_Color_fn(TextPaint* __this, ::g::Uno::Float4* value)
 {
     __this->Color(*value);
 }
 
-// private static Java.Object Create() :472
+// private static Java.Object Create() :93
 void TextPaint__Create_fn(::g::Java::Object** __retval)
 {
     *__retval = TextPaint::Create();
 }
 
-// private static void GetTextBounds(Java.Object handle, string text, int start, int end, int[] r) :443
+// private static void GetTextBounds(Java.Object handle, string text, int start, int end, int[] r) :64
 void TextPaint__GetTextBounds_fn(::g::Java::Object* handle, uString* text, int* start, int* end, uArray* r)
 {
     TextPaint::GetTextBounds(handle, text, *start, *end, r);
 }
 
-// public Uno.Rect GetTextBounds(string text, int start, int end) :414
+// public Uno.Rect GetTextBounds(string text, int start, int end) :35
 void TextPaint__GetTextBounds1_fn(TextPaint* __this, uString* text, int* start, int* end, ::g::Uno::Rect* __retval)
 {
     *__retval = __this->GetTextBounds1(text, *start, *end);
 }
 
-// public Java.Object get_Handle() :397
+// public Java.Object get_Handle() :18
 void TextPaint__get_Handle_fn(TextPaint* __this, ::g::Java::Object** __retval)
 {
     *__retval = __this->Handle();
 }
 
-// public TextPaint New() :402
+// public TextPaint New() :23
 void TextPaint__New1_fn(TextPaint** __retval)
 {
     *__retval = TextPaint::New1();
 }
 
-// private static void SetAntiAlias(Java.Object handle, bool value) :454
+// private static void SetAntiAlias(Java.Object handle, bool value) :75
 void TextPaint__SetAntiAlias_fn(::g::Java::Object* handle, bool* value)
 {
     TextPaint::SetAntiAlias(handle, *value);
 }
 
-// private static void SetColor(Java.Object handle, int color) :437
+// private static void SetColor(Java.Object handle, int color) :58
 void TextPaint__SetColor_fn(::g::Java::Object* handle, int* color)
 {
     TextPaint::SetColor(handle, *color);
 }
 
-// private static void SetTextSize(Java.Object handle, float textSize) :466
+// private static void SetTextSize(Java.Object handle, float textSize) :87
 void TextPaint__SetTextSize_fn(::g::Java::Object* handle, float* textSize)
 {
     TextPaint::SetTextSize(handle, *textSize);
 }
 
-// private static void SetTypeface(Java.Object paintHandle, Java.Object typefaceHandle) :460
+// private static void SetTypeface(Java.Object paintHandle, Java.Object typefaceHandle) :81
 void TextPaint__SetTypeface_fn(::g::Java::Object* paintHandle, ::g::Java::Object* typefaceHandle)
 {
     TextPaint::SetTypeface(paintHandle, typefaceHandle);
 }
 
-// public void set_TextSize(float value) :428
+// public void set_TextSize(float value) :49
 void TextPaint__set_TextSize_fn(TextPaint* __this, float* value)
 {
     __this->TextSize(*value);
 }
 
-// public void set_Typeface(Fuse.Controls.Native.Android.Typeface value) :423
+// public void set_Typeface(Fuse.Controls.Native.Android.Typeface value) :44
 void TextPaint__set_Typeface_fn(TextPaint* __this, ::g::Fuse::Controls::Native::Android::Typeface* value)
 {
     __this->Typeface(value);
 }
 
-// public TextPaint() [instance] :402
+// public TextPaint() [instance] :23
 void TextPaint::ctor_()
 {
     ctor_1(TextPaint::Create());
 }
 
-// public TextPaint(Java.Object handle) [instance] :404
+// public TextPaint(Java.Object handle) [instance] :25
 void TextPaint::ctor_1(::g::Java::Object* handle)
 {
     _handle = handle;
 }
 
-// public void set_AntiAlias(bool value) [instance] :411
+// public void set_AntiAlias(bool value) [instance] :32
 void TextPaint::AntiAlias(bool value)
 {
     TextPaint::SetAntiAlias(Handle(), value);
 }
 
-// public void set_Color(float4 value) [instance] :433
+// public void set_Color(float4 value) [instance] :54
 void TextPaint::Color(::g::Uno::Float4 value)
 {
     TextPaint::SetColor(Handle(), (int)::g::Uno::Color::ToArgb(value));
 }
 
-// public Uno.Rect GetTextBounds(string text, int start, int end) [instance] :414
+// public Uno.Rect GetTextBounds(string text, int start, int end) [instance] :35
 ::g::Uno::Rect TextPaint::GetTextBounds1(uString* text, int start, int end)
 {
-    uArray* r = uArray::New(::TYPES[5/*int[]*/], 4);
+    uArray* r = uArray::New(::TYPES[4/*int[]*/], 4);
     TextPaint::GetTextBounds(Handle(), text, start, end, r);
     return ::g::Uno::Rect__New1((float)r->Item<int>(0), (float)r->Item<int>(1), (float)r->Item<int>(2), (float)r->Item<int>(3));
 }
 
-// public Java.Object get_Handle() [instance] :397
+// public Java.Object get_Handle() [instance] :18
 ::g::Java::Object* TextPaint::Handle()
 {
     return _handle;
 }
 
-// public void set_TextSize(float value) [instance] :428
+// public void set_TextSize(float value) [instance] :49
 void TextPaint::TextSize(float value)
 {
     TextPaint::SetTextSize(Handle(), value);
 }
 
-// public void set_Typeface(Fuse.Controls.Native.Android.Typeface value) [instance] :423
+// public void set_Typeface(Fuse.Controls.Native.Android.Typeface value) [instance] :44
 void TextPaint::Typeface(::g::Fuse::Controls::Native::Android::Typeface* value)
 {
     TextPaint::SetTypeface(Handle(), uPtr(value)->Handle());
 }
 
-// private static Java.Object Create() [static] :472
+// private static Java.Object Create() [static] :93
 ::g::Java::Object* TextPaint::Create()
 {
     {
         INIT_JNI;
         jclass __cls = JniHelper::GetNativeExternClass();
-        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "Create362", "()Ljava/lang/Object;");
+        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "Create361", "()Ljava/lang/Object;");
         jobject __jresult = U_JNIVAR->CallStaticObjectMethod(__cls,__mtd);
         ::g::Java::Object* __result = (::g::Java::Object*)::g::Android::Base::Wrappers::JavaObjectHelper::JObjectToJWrapper(__jresult, false);
         ::g::Android::Base::JNI::CheckException();
@@ -2274,13 +2372,13 @@ void TextPaint::Typeface(::g::Fuse::Controls::Native::Android::Typeface* value)
     
 }
 
-// private static void GetTextBounds(Java.Object handle, string text, int start, int end, int[] r) [static] :443
+// private static void GetTextBounds(Java.Object handle, string text, int start, int end, int[] r) [static] :64
 void TextPaint::GetTextBounds(::g::Java::Object* handle, uString* text, int start, int end, uArray* r)
 {
     {
         INIT_JNI;
         jclass __cls = JniHelper::GetNativeExternClass();
-        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "GetTextBounds363", "(Ljava/lang/Object;Ljava/lang/String;IILcom/uno/IntArray;)V");
+        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "GetTextBounds362", "(Ljava/lang/Object;Ljava/lang/String;IILcom/uno/IntArray;)V");
         ::g::Java::Object* _uhandle=handle;
         jobject _handle = (_uhandle==NULL ? NULL : U_JNIVAR->NewLocalRef(::g::Android::Base::Wrappers::IJWrapper::_GetJavaObject(uInterface((uObject*)_uhandle, ::g::Android::Base::Wrappers::IJWrapper_typeof()))));
         uString* _utext=text;
@@ -2304,7 +2402,7 @@ void TextPaint::GetTextBounds(::g::Java::Object* handle, uString* text, int star
     
 }
 
-// public TextPaint New() [static] :402
+// public TextPaint New() [static] :23
 TextPaint* TextPaint::New1()
 {
     TextPaint* obj1 = (TextPaint*)uNew(TextPaint_typeof());
@@ -2312,13 +2410,13 @@ TextPaint* TextPaint::New1()
     return obj1;
 }
 
-// private static void SetAntiAlias(Java.Object handle, bool value) [static] :454
+// private static void SetAntiAlias(Java.Object handle, bool value) [static] :75
 void TextPaint::SetAntiAlias(::g::Java::Object* handle, bool value)
 {
     {
         INIT_JNI;
         jclass __cls = JniHelper::GetNativeExternClass();
-        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "SetAntiAlias364", "(Ljava/lang/Object;Z)V");
+        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "SetAntiAlias363", "(Ljava/lang/Object;Z)V");
         ::g::Java::Object* _uhandle=handle;
         jobject _handle = (_uhandle==NULL ? NULL : U_JNIVAR->NewLocalRef(::g::Android::Base::Wrappers::IJWrapper::_GetJavaObject(uInterface((uObject*)_uhandle, ::g::Android::Base::Wrappers::IJWrapper_typeof()))));
         bool _uvalue=value;
@@ -2333,13 +2431,13 @@ void TextPaint::SetAntiAlias(::g::Java::Object* handle, bool value)
     
 }
 
-// private static void SetColor(Java.Object handle, int color) [static] :437
+// private static void SetColor(Java.Object handle, int color) [static] :58
 void TextPaint::SetColor(::g::Java::Object* handle, int color)
 {
     {
         INIT_JNI;
         jclass __cls = JniHelper::GetNativeExternClass();
-        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "SetColor365", "(Ljava/lang/Object;I)V");
+        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "SetColor364", "(Ljava/lang/Object;I)V");
         ::g::Java::Object* _uhandle=handle;
         jobject _handle = (_uhandle==NULL ? NULL : U_JNIVAR->NewLocalRef(::g::Android::Base::Wrappers::IJWrapper::_GetJavaObject(uInterface((uObject*)_uhandle, ::g::Android::Base::Wrappers::IJWrapper_typeof()))));
         int _ucolor=color;
@@ -2354,13 +2452,13 @@ void TextPaint::SetColor(::g::Java::Object* handle, int color)
     
 }
 
-// private static void SetTextSize(Java.Object handle, float textSize) [static] :466
+// private static void SetTextSize(Java.Object handle, float textSize) [static] :87
 void TextPaint::SetTextSize(::g::Java::Object* handle, float textSize)
 {
     {
         INIT_JNI;
         jclass __cls = JniHelper::GetNativeExternClass();
-        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "SetTextSize366", "(Ljava/lang/Object;F)V");
+        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "SetTextSize365", "(Ljava/lang/Object;F)V");
         ::g::Java::Object* _uhandle=handle;
         jobject _handle = (_uhandle==NULL ? NULL : U_JNIVAR->NewLocalRef(::g::Android::Base::Wrappers::IJWrapper::_GetJavaObject(uInterface((uObject*)_uhandle, ::g::Android::Base::Wrappers::IJWrapper_typeof()))));
         float _utextSize=textSize;
@@ -2375,13 +2473,13 @@ void TextPaint::SetTextSize(::g::Java::Object* handle, float textSize)
     
 }
 
-// private static void SetTypeface(Java.Object paintHandle, Java.Object typefaceHandle) [static] :460
+// private static void SetTypeface(Java.Object paintHandle, Java.Object typefaceHandle) [static] :81
 void TextPaint::SetTypeface(::g::Java::Object* paintHandle, ::g::Java::Object* typefaceHandle)
 {
     {
         INIT_JNI;
         jclass __cls = JniHelper::GetNativeExternClass();
-        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "SetTypeface367", "(Ljava/lang/Object;Ljava/lang/Object;)V");
+        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "SetTypeface366", "(Ljava/lang/Object;Ljava/lang/Object;)V");
         ::g::Java::Object* _upaintHandle=paintHandle;
         jobject _paintHandle = (_upaintHandle==NULL ? NULL : U_JNIVAR->NewLocalRef(::g::Android::Base::Wrappers::IJWrapper::_GetJavaObject(uInterface((uObject*)_upaintHandle, ::g::Android::Base::Wrappers::IJWrapper_typeof()))));
         ::g::Java::Object* _utypefaceHandle=typefaceHandle;
@@ -2397,29 +2495,31 @@ void TextPaint::SetTypeface(::g::Java::Object* paintHandle, ::g::Java::Object* t
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Android.TextRenderer/1.2.1/$.uno
-// -------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Android.TextRenderer\1.3.0-rc2\TextRenderer.uno
+// ------------------------------------------------------------------------------------------------
 
-// internal sealed extern class TextRenderer :119
+// internal sealed extern class TextRenderer :117
 // {
 static void TextRenderer_build(uType* type)
 {
-    ::TYPES[4] = ::g::Fuse::ICommonViewport_typeof();
-    ::TYPES[1] = ::g::Uno::Action_typeof();
+    type->SetDependencies(
+        ::g::Fuse::Android::Bitmap_typeof(),
+        ::g::Fuse::Android::Blitter_typeof(),
+        ::g::Fuse::GraphicsWorker_typeof());
     type->SetInterfaces(
         ::g::Fuse::Controls::ITextRenderer_typeof(), offsetof(TextRenderer_type, interface0));
     type->SetFields(0,
-        ::g::Uno::Float2_typeof(), offsetof(::g::Fuse::Android::TextRenderer, _arrangePosition), 0,
-        ::g::Uno::Float2_typeof(), offsetof(::g::Fuse::Android::TextRenderer, _arrangeSize), 0,
-        ::g::Fuse::Controls::TextControl_typeof(), offsetof(::g::Fuse::Android::TextRenderer, _control), 0,
-        ::g::Uno::Bool_typeof(), offsetof(::g::Fuse::Android::TextRenderer, _emitNewTexture), 0,
-        ::g::Fuse::Android::TextControlLayout_typeof(), offsetof(::g::Fuse::Android::TextRenderer, _measureLayout), 0,
-        ::g::Fuse::Android::TextPaint_typeof(), offsetof(::g::Fuse::Android::TextRenderer, _paint), 0,
-        ::g::Uno::Bool_typeof(), offsetof(::g::Fuse::Android::TextRenderer, _renderThreaded), 0,
-        ::g::Fuse::Android::TextControlLayout_typeof(), offsetof(::g::Fuse::Android::TextRenderer, _textLayout), 0,
-        ::g::Uno::Graphics::Texture2D_typeof(), offsetof(::g::Fuse::Android::TextRenderer, _texture), 0,
-        ::g::Uno::ULong_typeof(), offsetof(::g::Fuse::Android::TextRenderer, _textureVersion), 0,
-        ::g::Uno::ULong_typeof(), offsetof(::g::Fuse::Android::TextRenderer, _wantedVersion), 0);
+        ::g::Uno::Float2_typeof(), offsetof(TextRenderer, _arrangePosition), 0,
+        ::g::Uno::Float2_typeof(), offsetof(TextRenderer, _arrangeSize), 0,
+        ::g::Fuse::Controls::TextControl_typeof(), offsetof(TextRenderer, _control), 0,
+        ::g::Uno::Bool_typeof(), offsetof(TextRenderer, _emitNewTexture), 0,
+        ::g::Fuse::Android::TextControlLayout_typeof(), offsetof(TextRenderer, _measureLayout), 0,
+        ::g::Fuse::Android::TextPaint_typeof(), offsetof(TextRenderer, _paint), 0,
+        ::g::Uno::Bool_typeof(), offsetof(TextRenderer, _renderThreaded), 0,
+        ::g::Fuse::Android::TextControlLayout_typeof(), offsetof(TextRenderer, _textLayout), 0,
+        ::g::Uno::Graphics::Texture2D_typeof(), offsetof(TextRenderer, _texture), 0,
+        ::g::Uno::ULong_typeof(), offsetof(TextRenderer, _textureVersion), 0,
+        ::g::Uno::ULong_typeof(), offsetof(TextRenderer, _wantedVersion), 0);
 }
 
 TextRenderer_type* TextRenderer_typeof()
@@ -2430,6 +2530,7 @@ TextRenderer_type* TextRenderer_typeof()
     uTypeOptions options;
     options.FieldCount = 11;
     options.InterfaceCount = 1;
+    options.DependencyCount = 3;
     options.ObjectSize = sizeof(TextRenderer);
     options.TypeSize = sizeof(TextRenderer_type);
     type = (TextRenderer_type*)uClassType::New("Fuse.Android.TextRenderer", options);
@@ -2443,103 +2544,103 @@ TextRenderer_type* TextRenderer_typeof()
     return type;
 }
 
-// private TextRenderer(Fuse.Controls.TextControl Control) :127
+// private TextRenderer(Fuse.Controls.TextControl Control) :125
 void TextRenderer__ctor__fn(TextRenderer* __this, ::g::Fuse::Controls::TextControl* Control)
 {
     __this->ctor_(Control);
 }
 
-// public void Arrange(float2 position, float2 size) :146
+// public void Arrange(float2 position, float2 size) :144
 void TextRenderer__Arrange_fn(TextRenderer* __this, ::g::Uno::Float2* position, ::g::Uno::Float2* size)
 {
     __this->Arrange(*position, *size);
 }
 
-// public static Fuse.Controls.ITextRenderer Create(Fuse.Controls.TextControl control) :121
+// public static Fuse.Controls.ITextRenderer Create(Fuse.Controls.TextControl control) :119
 void TextRenderer__Create_fn(::g::Fuse::Controls::TextControl* control, uObject** __retval)
 {
     *__retval = TextRenderer::Create(control);
 }
 
-// private void DisposeTexture() :221
+// private void DisposeTexture() :219
 void TextRenderer__DisposeTexture_fn(TextRenderer* __this)
 {
     __this->DisposeTexture();
 }
 
-// public void Draw(Fuse.DrawContext dc, Fuse.Visual where) :346
+// public void Draw(Fuse.DrawContext dc, Fuse.Visual where) :344
 void TextRenderer__Draw_fn(TextRenderer* __this, ::g::Fuse::DrawContext* dc, ::g::Fuse::Visual* where)
 {
     __this->Draw(dc, where);
 }
 
-// public float2 GetContentSize(Fuse.LayoutParams lp) :178
+// public float2 GetContentSize(Fuse.LayoutParams lp) :176
 void TextRenderer__GetContentSize_fn(TextRenderer* __this, ::g::Fuse::LayoutParams* lp, ::g::Uno::Float2* __retval)
 {
     *__retval = __this->GetContentSize(*lp);
 }
 
-// public Uno.Rect GetRenderBounds() :198
+// public Uno.Rect GetRenderBounds() :196
 void TextRenderer__GetRenderBounds_fn(TextRenderer* __this, ::g::Uno::Rect* __retval)
 {
     *__retval = __this->GetRenderBounds();
 }
 
-// public void Invalidate() :165
+// public void Invalidate() :163
 void TextRenderer__Invalidate_fn(TextRenderer* __this)
 {
     __this->Invalidate();
 }
 
-// private TextRenderer New(Fuse.Controls.TextControl Control) :127
+// private TextRenderer New(Fuse.Controls.TextControl Control) :125
 void TextRenderer__New1_fn(::g::Fuse::Controls::TextControl* Control, TextRenderer** __retval)
 {
     *__retval = TextRenderer::New1(Control);
 }
 
-// private void OnBitmapDraw(Fuse.DrawContext dc, Fuse.Visual where, float2 dposition, float2 size) :321
+// private void OnBitmapDraw(Fuse.DrawContext dc, Fuse.Visual where, float2 dposition, float2 size) :319
 void TextRenderer__OnBitmapDraw_fn(TextRenderer* __this, ::g::Fuse::DrawContext* dc, ::g::Fuse::Visual* where, ::g::Uno::Float2* dposition, ::g::Uno::Float2* size)
 {
     __this->OnBitmapDraw(dc, where, *dposition, *size);
 }
 
-// private void PrepareDraw() :229
+// private void PrepareDraw() :227
 void TextRenderer__PrepareDraw_fn(TextRenderer* __this)
 {
     __this->PrepareDraw();
 }
 
-// private void SetTexture(texture2D newTexture) :212
+// private void SetTexture(texture2D newTexture) :210
 void TextRenderer__SetTexture_fn(TextRenderer* __this, ::g::Uno::Graphics::Texture2D* newTexture)
 {
     __this->SetTexture(newTexture);
 }
 
-// public void SoftDispose() :172
+// public void SoftDispose() :170
 void TextRenderer__SoftDispose_fn(TextRenderer* __this)
 {
     __this->SoftDispose();
 }
 
-// private void UpdateLayout() :153
+// private void UpdateLayout() :151
 void TextRenderer__UpdateLayout_fn(TextRenderer* __this)
 {
     __this->UpdateLayout();
 }
 
-// private void UpdatePaint() :133
+// private void UpdatePaint() :131
 void TextRenderer__UpdatePaint_fn(TextRenderer* __this)
 {
     __this->UpdatePaint();
 }
 
-// private texture2D UpdateTexture(Fuse.Android.StaticLayout layout, Uno.Recti pixelBounds) :263
+// private texture2D UpdateTexture(Fuse.Android.StaticLayout layout, Uno.Recti pixelBounds) :261
 void TextRenderer__UpdateTexture_fn(TextRenderer* __this, ::g::Fuse::Android::StaticLayout* layout, ::g::Uno::Recti* pixelBounds, ::g::Uno::Graphics::Texture2D** __retval)
 {
     *__retval = __this->UpdateTexture(layout, *pixelBounds);
 }
 
-// private TextRenderer(Fuse.Controls.TextControl Control) [instance] :127
+// private TextRenderer(Fuse.Controls.TextControl Control) [instance] :125
 void TextRenderer::ctor_(::g::Fuse::Controls::TextControl* Control)
 {
     _textLayout = ::g::Fuse::Android::TextControlLayout::New1();
@@ -2547,7 +2648,7 @@ void TextRenderer::ctor_(::g::Fuse::Controls::TextControl* Control)
     _control = Control;
 }
 
-// public void Arrange(float2 position, float2 size) [instance] :146
+// public void Arrange(float2 position, float2 size) [instance] :144
 void TextRenderer::Arrange(::g::Uno::Float2 position, ::g::Uno::Float2 size)
 {
     _arrangePosition = position;
@@ -2555,7 +2656,7 @@ void TextRenderer::Arrange(::g::Uno::Float2 position, ::g::Uno::Float2 size)
     UpdateLayout();
 }
 
-// private void DisposeTexture() [instance] :221
+// private void DisposeTexture() [instance] :219
 void TextRenderer::DisposeTexture()
 {
     SetTexture(NULL);
@@ -2564,14 +2665,14 @@ void TextRenderer::DisposeTexture()
     _emitNewTexture = true;
 }
 
-// public void Draw(Fuse.DrawContext dc, Fuse.Visual where) [instance] :346
+// public void Draw(Fuse.DrawContext dc, Fuse.Visual where) [instance] :344
 void TextRenderer::Draw(::g::Fuse::DrawContext* dc, ::g::Fuse::Visual* where)
 {
     PrepareDraw();
     OnBitmapDraw(dc, where, _arrangePosition, _arrangeSize);
 }
 
-// public float2 GetContentSize(Fuse.LayoutParams lp) [instance] :178
+// public float2 GetContentSize(Fuse.LayoutParams lp) [instance] :176
 ::g::Uno::Float2 TextRenderer::GetContentSize(::g::Fuse::LayoutParams lp)
 {
     if (_measureLayout == NULL)
@@ -2587,18 +2688,18 @@ void TextRenderer::Draw(::g::Fuse::DrawContext* dc, ::g::Fuse::Visual* where)
 
     UpdatePaint();
     uPtr(_measureLayout)->Measure(_control, _paint, wrapWidth, true);
-    ::g::Uno::Float2 q = ::g::Uno::Float2__op_Division1(::g::Uno::Float2__New2((float)uPtr(uPtr(_measureLayout)->Layout())->EllipsizedWidth(), (float)uPtr(uPtr(_measureLayout)->Layout())->Height()), ::g::Fuse::ICommonViewport::PixelsPerPoint(uInterface(uPtr(uPtr(_control)->Viewport()), ::TYPES[4/*Fuse.ICommonViewport*/])));
+    ::g::Uno::Float2 q = ::g::Uno::Float2__op_Division1(::g::Uno::Float2__New2((float)uPtr(uPtr(_measureLayout)->Layout())->EllipsizedWidth(), (float)uPtr(uPtr(_measureLayout)->Layout())->Height()), ::g::Fuse::ICommonViewport::PixelsPerPoint(uInterface(uPtr(uPtr(_control)->Viewport()), ::TYPES[3/*Fuse.ICommonViewport*/])));
     return q;
 }
 
-// public Uno.Rect GetRenderBounds() [instance] :198
+// public Uno.Rect GetRenderBounds() [instance] :196
 ::g::Uno::Rect TextRenderer::GetRenderBounds()
 {
     UpdateLayout();
-    return ::g::Uno::Rect__Translate(::g::Uno::Rect__New2(::g::Uno::Float2__op_Division1(::g::Uno::Float2__op_Implicit1(uPtr(_textLayout)->PixelBounds().Position()), ::g::Fuse::ICommonViewport::PixelsPerPoint(uInterface(uPtr(uPtr(_control)->Viewport()), ::TYPES[4/*Fuse.ICommonViewport*/]))), ::g::Uno::Float2__op_Division1(::g::Uno::Float2__op_Implicit1(uPtr(_textLayout)->PixelBounds().Size()), ::g::Fuse::ICommonViewport::PixelsPerPoint(uInterface(uPtr(uPtr(_control)->Viewport()), ::TYPES[4/*Fuse.ICommonViewport*/])))), _arrangePosition);
+    return ::g::Uno::Rect__Translate(::g::Uno::Rect__New2(::g::Uno::Float2__op_Division1(::g::Uno::Float2__op_Implicit1(uPtr(_textLayout)->PixelBounds().Position()), ::g::Fuse::ICommonViewport::PixelsPerPoint(uInterface(uPtr(uPtr(_control)->Viewport()), ::TYPES[3/*Fuse.ICommonViewport*/]))), ::g::Uno::Float2__op_Division1(::g::Uno::Float2__op_Implicit1(uPtr(_textLayout)->PixelBounds().Size()), ::g::Fuse::ICommonViewport::PixelsPerPoint(uInterface(uPtr(uPtr(_control)->Viewport()), ::TYPES[3/*Fuse.ICommonViewport*/])))), _arrangePosition);
 }
 
-// public void Invalidate() [instance] :165
+// public void Invalidate() [instance] :163
 void TextRenderer::Invalidate()
 {
     uPtr(_textLayout)->Invalidate();
@@ -2607,20 +2708,20 @@ void TextRenderer::Invalidate()
         uPtr(_measureLayout)->Invalidate();
 }
 
-// private void OnBitmapDraw(Fuse.DrawContext dc, Fuse.Visual where, float2 dposition, float2 size) [instance] :321
+// private void OnBitmapDraw(Fuse.DrawContext dc, Fuse.Visual where, float2 dposition, float2 size) [instance] :319
 void TextRenderer::OnBitmapDraw(::g::Fuse::DrawContext* dc, ::g::Fuse::Visual* where, ::g::Uno::Float2 dposition, ::g::Uno::Float2 size)
 {
     if ((_textureVersion != _wantedVersion) || (_texture == NULL))
         return;
 
     ::g::Uno::Int2 pixelSize = uPtr(_textLayout)->PixelBounds().Size();
-    ::g::Uno::Float2 pointSize = ::g::Uno::Float2__op_Division1(::g::Uno::Float2__op_Implicit1(pixelSize), ::g::Fuse::ICommonViewport::PixelsPerPoint(uInterface(uPtr(uPtr(_control)->Viewport()), ::TYPES[4/*Fuse.ICommonViewport*/])));
-    ::g::Uno::Float2 position = ::g::Uno::Float2__op_Addition2(::g::Uno::Float2__op_Division1(::g::Uno::Float2__op_Implicit1(uPtr(_textLayout)->PixelBounds().Position()), ::g::Fuse::ICommonViewport::PixelsPerPoint(uInterface(uPtr(uPtr(_control)->Viewport()), ::TYPES[4/*Fuse.ICommonViewport*/]))), dposition);
+    ::g::Uno::Float2 pointSize = ::g::Uno::Float2__op_Division1(::g::Uno::Float2__op_Implicit1(pixelSize), ::g::Fuse::ICommonViewport::PixelsPerPoint(uInterface(uPtr(uPtr(_control)->Viewport()), ::TYPES[3/*Fuse.ICommonViewport*/])));
+    ::g::Uno::Float2 position = ::g::Uno::Float2__op_Addition2(::g::Uno::Float2__op_Division1(::g::Uno::Float2__op_Implicit1(uPtr(_textLayout)->PixelBounds().Position()), ::g::Fuse::ICommonViewport::PixelsPerPoint(uInterface(uPtr(uPtr(_control)->Viewport()), ::TYPES[3/*Fuse.ICommonViewport*/]))), dposition);
     ::g::Uno::Float4x4 m = uPtr(dc)->GetLocalToClipTransform(where);
-    uPtr(::g::Fuse::Android::Blitter::Singleton())->Blit(_texture, position, pointSize, m);
+    uPtr(::g::Fuse::Android::Blitter::Singleton_)->Blit(_texture, position, pointSize, m);
 }
 
-// private void PrepareDraw() [instance] :229
+// private void PrepareDraw() [instance] :227
 void TextRenderer::PrepareDraw()
 {
     UpdateLayout();
@@ -2651,7 +2752,7 @@ void TextRenderer::PrepareDraw()
     _emitNewTexture = false;
 }
 
-// private void SetTexture(texture2D newTexture) [instance] :212
+// private void SetTexture(texture2D newTexture) [instance] :210
 void TextRenderer::SetTexture(::g::Uno::Graphics::Texture2D* newTexture)
 {
     if (_texture != NULL)
@@ -2661,14 +2762,14 @@ void TextRenderer::SetTexture(::g::Uno::Graphics::Texture2D* newTexture)
     uPtr(_control)->InvalidateVisual();
 }
 
-// public void SoftDispose() [instance] :172
+// public void SoftDispose() [instance] :170
 void TextRenderer::SoftDispose()
 {
     DisposeTexture();
     _paint = NULL;
 }
 
-// private void UpdateLayout() [instance] :153
+// private void UpdateLayout() [instance] :151
 void TextRenderer::UpdateLayout()
 {
     UpdatePaint();
@@ -2680,7 +2781,7 @@ void TextRenderer::UpdateLayout()
     _renderThreaded = (textLength > 50);
 }
 
-// private void UpdatePaint() [instance] :133
+// private void UpdatePaint() [instance] :131
 void TextRenderer::UpdatePaint()
 {
     if (_paint == NULL)
@@ -2689,7 +2790,7 @@ void TextRenderer::UpdatePaint()
     uPtr(_textLayout)->UpdatePaint(_control, _paint);
 }
 
-// private texture2D UpdateTexture(Fuse.Android.StaticLayout layout, Uno.Recti pixelBounds) [instance] :263
+// private texture2D UpdateTexture(Fuse.Android.StaticLayout layout, Uno.Recti pixelBounds) [instance] :261
 ::g::Uno::Graphics::Texture2D* TextRenderer::UpdateTexture(::g::Fuse::Android::StaticLayout* layout, ::g::Uno::Recti pixelBounds)
 {
     ::g::Fuse::Android::Bitmap* bitmap = ::g::Fuse::Android::Bitmap::CreateBitmapARGB8888(pixelBounds.Size().X, pixelBounds.Size().Y);
@@ -2705,13 +2806,13 @@ void TextRenderer::UpdatePaint()
     return texture;
 }
 
-// public static Fuse.Controls.ITextRenderer Create(Fuse.Controls.TextControl control) [static] :121
+// public static Fuse.Controls.ITextRenderer Create(Fuse.Controls.TextControl control) [static] :119
 uObject* TextRenderer::Create(::g::Fuse::Controls::TextControl* control)
 {
     return (uObject*)TextRenderer::New1(control);
 }
 
-// private TextRenderer New(Fuse.Controls.TextControl Control) [static] :127
+// private TextRenderer New(Fuse.Controls.TextControl Control) [static] :125
 TextRenderer* TextRenderer::New1(::g::Fuse::Controls::TextControl* Control)
 {
     TextRenderer* obj1 = (TextRenderer*)uNew(TextRenderer_typeof());
@@ -2720,10 +2821,10 @@ TextRenderer* TextRenderer::New1(::g::Fuse::Controls::TextControl* Control)
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Android.TextRenderer/1.2.1/internal/$.uno
-// ----------------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Android.TextRenderer\1.3.0-rc2\Internal\TextUtils.uno
+// ------------------------------------------------------------------------------------------------------
 
-// internal sealed extern class TextUtils :494
+// internal sealed extern class TextUtils :12
 // {
 static void TextUtils_build(uType* type)
 {
@@ -2743,10 +2844,10 @@ uType* TextUtils_typeof()
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Android.TextRenderer/1.2.1/internal/$.uno
-// ----------------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Android.TextRenderer\1.3.0-rc2\Internal\TextUtils.uno
+// ------------------------------------------------------------------------------------------------------
 
-// public enum TextUtils.TruncateAt :496
+// public enum TextUtils.TruncateAt :14
 uEnumType* TextUtils__TruncateAt_typeof()
 {
     static uSStrong<uEnumType*> type;

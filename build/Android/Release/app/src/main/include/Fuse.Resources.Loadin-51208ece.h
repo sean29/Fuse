@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Elements/1.2.1/resources/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Elements/1.3.0-rc2/Resources/LoadingImageSource.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -14,7 +14,7 @@ namespace g{
 namespace Fuse{
 namespace Resources{
 
-// internal abstract class LoadingImageSource :691
+// internal abstract class LoadingImageSource :8
 // {
 struct LoadingImageSource_type : ::g::Fuse::Resources::ImageSource_type
 {

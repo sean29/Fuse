@@ -1,4 +1,4 @@
-// This file was generated based on '/Users/a/Library/Application Support/Fusetools/Packages/Fuse.Launcher.Maps/1.2.1/maps/$.uno'.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Launcher.Maps/1.3.0-rc2/Maps/MapsLauncher.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -9,7 +9,7 @@ namespace g{
 namespace Fuse{
 namespace LauncherImpl{
 
-// public static class MapsLauncher :17
+// public static class MapsLauncher :15
 // {
 uClassType* MapsLauncher_typeof();
 void MapsLauncher__get__actionView_fn(uString** __retval);

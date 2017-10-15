@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Controls.Panels/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Controls.Panels/1.3.0-rc2/Panel.Freeze.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -15,6 +15,7 @@
 #include <Fuse.Triggers.Actions.IHide.h>
 #include <Fuse.Triggers.Actions.IShow.h>
 #include <Fuse.Triggers.Actions-ea70af1f.h>
+#include <Fuse.Visual.h>
 #include <Uno.Collections.ICollection-1.h>
 #include <Uno.Collections.IEnumerable-1.h>
 #include <Uno.Collections.IList-1.h>
@@ -33,11 +34,11 @@ namespace g{
 namespace Fuse{
 namespace Controls{
 
-// public partial class Panel :1962
+// public partial class Panel :10
 // {
 struct Panel_type : ::g::Fuse::Controls::Control_type
 {
-    ::g::Fuse::Drawing::ISurfaceDrawable interface16;
+    ::g::Fuse::Drawing::ISurfaceDrawable interface17;
 };
 
 Panel_type* Panel_typeof();
@@ -78,7 +79,7 @@ struct Panel : ::g::Fuse::Controls::LayoutControl
     uStrong< ::g::Fuse::VisualBounds*> _frozenRenderBounds;
     bool _isFrozen;
     static ::g::Uno::UX::Selector ColorPropertyName_;
-    static ::g::Uno::UX::Selector& ColorPropertyName() { return Panel_typeof()->Init(), ColorPropertyName_; }
+    static ::g::Uno::UX::Selector& ColorPropertyName() { return ColorPropertyName_; }
 
     void ctor_6();
     void CleanupBuffer();

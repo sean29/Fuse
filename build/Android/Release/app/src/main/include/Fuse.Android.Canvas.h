@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Android.TextRenderer/1.2.1/internal/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Android.TextRenderer/1.3.0-rc2/Internal/Canvas.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -11,7 +11,7 @@ namespace g{
 namespace Fuse{
 namespace Android{
 
-// internal sealed extern class Canvas :88
+// internal sealed extern class Canvas :12
 // {
 uType* Canvas_typeof();
 void Canvas__ctor__fn(Canvas* __this, ::g::Fuse::Android::Bitmap* bitmap);

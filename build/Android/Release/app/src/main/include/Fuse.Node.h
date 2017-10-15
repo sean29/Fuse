@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Nodes/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Nodes/1.3.0-rc2/Node.Bindings.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -21,7 +21,7 @@ namespace g{namespace Uno{namespace Collections{struct List;}}}
 namespace g{
 namespace Fuse{
 
-// public interfacemodifiers class Node :2218
+// public interfacemodifiers class Node :10
 // {
 struct Node_type : uType
 {
@@ -55,6 +55,7 @@ void Node__get_ContextParent_fn(Node* __this, Node** __retval);
 void Node__DistanceTo_fn(Node* __this, Node* obj, int* reference, int* __retval);
 void Node__EnumerateData_fn(Node* __this, uObject* e);
 void Node__FindBehavior_fn(Node* __this, uType* __type, Node** __retval);
+void Node__FindByType_fn(Node* __this, uType* __type, uObject** __retval);
 void Node__FindNodeByName_fn(Node* __this, ::g::Uno::UX::Selector* name, uDelegate* acceptor, Node** __retval);
 void Node__FuseINotifyUnrootedadd_Unrooted_fn(Node* __this, uDelegate* value);
 void Node__FuseINotifyUnrootedremove_Unrooted_fn(Node* __this, uDelegate* value);
@@ -63,6 +64,7 @@ void Node__FuseScriptingIScriptObjectget_ScriptObject_fn(Node* __this, uObject**
 void Node__FuseScriptingIScriptObjectSetScriptObject_fn(Node* __this, uObject* obj, ::g::Fuse::Scripting::Context* context);
 void Node__GetFirstData_fn(Node* __this, uObject** __retval);
 void Node__GetLastNodeInGroup_fn(Node* __this, Node** __retval);
+void Node__GetNearestAncestorOfType_fn(Node* __this, uType* __type, uObject** __retval);
 void Node__HasInSubtree_fn(Node* __this, Node* c, bool* __retval);
 void Node__Insert_fn(Node* __this, int* index, ::g::Fuse::Binding* item);
 void Node__get_IsPreservedRootFrame_fn(Node* __this, bool* __retval);
@@ -71,14 +73,17 @@ void Node__get_IsRootingCompleted_fn(Node* __this, bool* __retval);
 void Node__get_IsRootingStarted_fn(Node* __this, bool* __retval);
 void Node__get_IsUnrooted_fn(Node* __this, bool* __retval);
 void Node__get_IsUnrooting_fn(Node* __this, bool* __retval);
+void Node__LaterReleaseRooting_fn();
 void Node__MakeBindingList_fn(Node* __this, ::g::Fuse::Binding* newItem);
 void Node__get_Name_fn(Node* __this, ::g::Uno::UX::Selector* __retval);
 void Node__set_Name_fn(Node* __this, ::g::Uno::UX::Selector* value);
+void Node__NextSibling_fn(Node* __this, uType* __type, Node** __retval);
 void Node__get_NodeDepth_fn(Node* __this, int* __retval);
 void Node__OnDataChanged_fn(Node* __this, uString* key, uObject* newValue);
 void Node__OnRooted_fn(Node* __this);
 void Node__OnUnrooted_fn(Node* __this);
 void Node__get_Parent_fn(Node* __this, ::g::Fuse::Visual** __retval);
+void Node__PreviousSibling_fn(Node* __this, uType* __type, Node** __retval);
 void Node__get_Properties_fn(Node* __this, ::g::Fuse::Properties** __retval);
 void Node__Relate_fn(::g::Fuse::Visual* parent, Node* child);
 void Node__ReleaseRooting_fn(bool* captured);
@@ -117,9 +122,14 @@ struct Node : ::g::Uno::UX::PropertyObject
     static uSStrong<uObject*>& _emptyBindings() { return Node_typeof()->Init(), _emptyBindings_; }
     static bool _hasRootCapture_;
     static bool& _hasRootCapture() { return Node_typeof()->Init(), _hasRootCapture_; }
+    static uSStrong<uDelegate*> _laterReleaseRooting_;
+    static uSStrong<uDelegate*>& _laterReleaseRooting() { return Node_typeof()->Init(), _laterReleaseRooting_; }
     ::g::Uno::UX::Selector _name;
+    uStrong<Node*> _nextSibling;
     uStrong< ::g::Fuse::Visual*> _parent;
+    int _parentID;
     int _preservedRootFrame;
+    void* _previousSibling;
     uStrong< ::g::Fuse::Properties*> _properties;
     static int _rootCaptureIndex_;
     static int& _rootCaptureIndex() { return Node_typeof()->Init(), _rootCaptureIndex_; }
@@ -141,9 +151,11 @@ struct Node : ::g::Uno::UX::PropertyObject
     int DistanceTo(Node* obj, int reference);
     void EnumerateData(uObject* e);
     Node* FindBehavior(uType* __type);
+    uObject* FindByType(uType* __type);
     Node* FindNodeByName(::g::Uno::UX::Selector name, uDelegate* acceptor);
     uObject* GetFirstData();
     Node* GetLastNodeInGroup() { Node* __retval; return (((Node_type*)__type)->fp_GetLastNodeInGroup)(this, &__retval), __retval; }
+    uObject* GetNearestAncestorOfType(uType* __type);
     bool HasInSubtree(Node* c);
     void Insert(int index, ::g::Fuse::Binding* item);
     bool IsPreservedRootFrame();
@@ -154,11 +166,13 @@ struct Node : ::g::Uno::UX::PropertyObject
     void MakeBindingList(::g::Fuse::Binding* newItem);
     ::g::Uno::UX::Selector Name();
     void Name(::g::Uno::UX::Selector value);
+    Node* NextSibling(uType* __type);
     int NodeDepth();
     void OnDataChanged(uString* key, uObject* newValue);
     void OnRooted() { (((Node_type*)__type)->fp_OnRooted)(this); }
     void OnUnrooted() { (((Node_type*)__type)->fp_OnUnrooted)(this); }
     ::g::Fuse::Visual* Parent();
+    Node* PreviousSibling(uType* __type);
     ::g::Fuse::Properties* Properties();
     bool Remove(::g::Fuse::Binding* item);
     void RemoveDataListener(uString* key, uObject* listener);
@@ -182,6 +196,7 @@ struct Node : ::g::Uno::UX::PropertyObject
     static bool Contains(uArray* strs, uString* s);
     static Node* GetLastNodeInGroup(Node* __this) { Node* __retval; return Node__GetLastNodeInGroup_fn(__this, &__retval), __retval; }
     static bool IsRootCapture(int index);
+    static void LaterReleaseRooting();
     static void OnRooted(Node* __this) { Node__OnRooted_fn(__this); }
     static void OnUnrooted(Node* __this) { Node__OnUnrooted_fn(__this); }
     static void Relate(::g::Fuse::Visual* parent, Node* child);

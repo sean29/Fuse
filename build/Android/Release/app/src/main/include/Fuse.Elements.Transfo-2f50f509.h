@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Elements/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Elements/1.3.0-rc2/Element.Transform.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -12,7 +12,7 @@ namespace g{
 namespace Fuse{
 namespace Elements{
 
-// private sealed class TransformOrigins.TopLeftOrigin :2521
+// private sealed class TransformOrigins.TopLeftOrigin :48
 // {
 struct TransformOrigins__TopLeftOrigin_type : uType
 {

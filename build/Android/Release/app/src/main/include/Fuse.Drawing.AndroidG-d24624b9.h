@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Drawing.Surface/1.2.1/android/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Drawing.Surface/1.3.0-rc2/Android/Surface.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -12,7 +12,7 @@ namespace g{
 namespace Fuse{
 namespace Drawing{
 
-// internal sealed extern class AndroidGraphicsDrawHelper :849
+// internal sealed extern class AndroidGraphicsDrawHelper :591
 // {
 uType* AndroidGraphicsDrawHelper_typeof();
 void AndroidGraphicsDrawHelper__ctor__fn(AndroidGraphicsDrawHelper* __this);
@@ -25,7 +25,7 @@ struct AndroidGraphicsDrawHelper : uObject
     ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLDrawCall _draw_d190bdb5;
     uStrong< ::g::Uno::Graphics::VertexBuffer*> DrawImageFill_VertexData_d190bdb5_1_1_1;
     static uSStrong<AndroidGraphicsDrawHelper*> Singleton_;
-    static uSStrong<AndroidGraphicsDrawHelper*>& Singleton() { return AndroidGraphicsDrawHelper_typeof()->Init(), Singleton_; }
+    static uSStrong<AndroidGraphicsDrawHelper*>& Singleton() { return Singleton_; }
 
     void ctor_();
     void DrawImageFill(::g::Uno::Graphics::Texture2D* texture);

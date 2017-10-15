@@ -36,17 +36,17 @@
 #include <Uno.Type.h>
 #include <Uno.UX.PropertyObject.h>
 #include <Uno.UX.Selector.h>
-static uString* STRINGS[35];
-static uType* TYPES[17];
+static uString* STRINGS[20];
+static uType* TYPES[5];
 
 namespace g{
 namespace Fuse{
 namespace Selection{
 
-// /usr/local/share/uno/Packages/Fuse.Selection/1.2.1/$.uno
-// --------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Selection\1.3.0-rc2\Selection.uno
+// ----------------------------------------------------------------------------------
 
-// private enum Selection.How :748
+// private enum Selection.How :333
 uEnumType* Selection__How_typeof()
 {
     static uSStrong<uEnumType*> type;
@@ -59,17 +59,17 @@ uEnumType* Selection__How_typeof()
     return type;
 }
 
-// /usr/local/share/uno/Packages/Fuse.Selection/1.2.1/$.uno
-// --------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Selection\1.3.0-rc2\Selection.uno
+// ----------------------------------------------------------------------------------
 
-// private sealed class Selection.ListWrapper :754
+// private sealed class Selection.ListWrapper :339
 // {
 static void Selection__ListWrapper_build(uType* type)
 {
     type->SetInterfaces(
         ::g::Fuse::IArray_typeof(), offsetof(Selection__ListWrapper_type, interface0));
     type->SetFields(0,
-        ::g::Uno::Collections::List_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(::g::Fuse::Selection::Selection__ListWrapper, _list), 0);
+        ::g::Uno::Collections::List_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(Selection__ListWrapper, _list), 0);
 }
 
 Selection__ListWrapper_type* Selection__ListWrapper_typeof()
@@ -89,50 +89,50 @@ Selection__ListWrapper_type* Selection__ListWrapper_typeof()
     return type;
 }
 
-// public ListWrapper(Uno.Collections.List<string> list) :757
+// public ListWrapper(Uno.Collections.List<string> list) :342
 void Selection__ListWrapper__ctor__fn(Selection__ListWrapper* __this, ::g::Uno::Collections::List* list)
 {
     __this->ctor_(list);
 }
 
-// public object get_Item(int index) :762
+// public object get_Item(int index) :347
 void Selection__ListWrapper__get_Item_fn(Selection__ListWrapper* __this, int* index, uObject** __retval)
 {
     *__retval = __this->Item(*index);
 }
 
-// public int get_Length() :761
+// public int get_Length() :346
 void Selection__ListWrapper__get_Length_fn(Selection__ListWrapper* __this, int* __retval)
 {
     *__retval = __this->Length();
 }
 
-// public ListWrapper New(Uno.Collections.List<string> list) :757
+// public ListWrapper New(Uno.Collections.List<string> list) :342
 void Selection__ListWrapper__New1_fn(::g::Uno::Collections::List* list, Selection__ListWrapper** __retval)
 {
     *__retval = Selection__ListWrapper::New1(list);
 }
 
-// public ListWrapper(Uno.Collections.List<string> list) [instance] :757
+// public ListWrapper(Uno.Collections.List<string> list) [instance] :342
 void Selection__ListWrapper::ctor_(::g::Uno::Collections::List* list)
 {
     _list = list;
 }
 
-// public object get_Item(int index) [instance] :762
+// public object get_Item(int index) [instance] :347
 uObject* Selection__ListWrapper::Item(int index)
 {
     uString* ret2;
     return (::g::Uno::Collections::List__get_Item_fn(uPtr(_list), uCRef<int>(index), &ret2), ret2);
 }
 
-// public int get_Length() [instance] :761
+// public int get_Length() [instance] :346
 int Selection__ListWrapper::Length()
 {
     return uPtr(_list)->Count();
 }
 
-// public ListWrapper New(Uno.Collections.List<string> list) [static] :757
+// public ListWrapper New(Uno.Collections.List<string> list) [static] :342
 Selection__ListWrapper* Selection__ListWrapper::New1(::g::Uno::Collections::List* list)
 {
     Selection__ListWrapper* obj1 = (Selection__ListWrapper*)uNew(Selection__ListWrapper_typeof());
@@ -141,14 +141,15 @@ Selection__ListWrapper* Selection__ListWrapper::New1(::g::Uno::Collections::List
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Selection/1.2.1/$.uno
-// --------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Selection\1.3.0-rc2\Selectable.ScriptClass.uno
+// -----------------------------------------------------------------------------------------------
 
-// public partial sealed class Selectable :11
+// public partial sealed class Selectable :9
 // {
-// static Selectable() :13
+// static Selectable() :11
 static void Selectable__cctor_1_fn(uType* __type)
 {
+    ::g::Fuse::Scripting::ScriptClass_typeof()->Init();
     Selectable::ValueName_ = ::g::Uno::UX::Selector__New1(::STRINGS[0/*"Value"*/]);
     ::g::Fuse::Scripting::ScriptClass::Register(__type, uArray::Init< ::g::Fuse::Scripting::ScriptMember*>(::TYPES[1/*Fuse.Scripting.ScriptMember[]*/], 3, (::g::Fuse::Scripting::ScriptMethod1*)::g::Fuse::Scripting::ScriptMethod1::New1(::TYPES[2/*Fuse.Scripting.ScriptMethod<Fuse.Selection.Selectable>*/], ::STRINGS[1/*"add"*/], uDelegate::New(::TYPES[3/*Uno.Action<Fuse.Scripting.Context, Fuse.Selection.Selectable, object[]>*/], (void*)Selectable__add_fn), 2), (::g::Fuse::Scripting::ScriptMethod1*)::g::Fuse::Scripting::ScriptMethod1::New1(::TYPES[2/*Fuse.Scripting.ScriptMethod<Fuse.Selection.Selectable>*/], ::STRINGS[2/*"remove"*/], uDelegate::New(::TYPES[3/*Uno.Action<Fuse.Scripting.Context, Fuse.Selection.Selectable, object[]>*/], (void*)Selectable__remove_fn), 2), (::g::Fuse::Scripting::ScriptMethod1*)::g::Fuse::Scripting::ScriptMethod1::New1(::TYPES[2/*Fuse.Scripting.ScriptMethod<Fuse.Selection.Selectable>*/], ::STRINGS[3/*"toggle"*/], uDelegate::New(::TYPES[3/*Uno.Action<Fuse.Scripting.Context, Fuse.Selection.Selectable, object[]>*/], (void*)Selectable__toggle_fn), 2)));
 }
@@ -160,19 +161,22 @@ static void Selectable_build(uType* type)
     ::STRINGS[2] = uString::Const("remove");
     ::STRINGS[3] = uString::Const("toggle");
     ::STRINGS[4] = uString::Const("add requires 0 arguments");
-    ::STRINGS[5] = uString::Const("/usr/local/share/uno/Packages/Fuse.Selection/1.2.1/$.uno");
+    ::STRINGS[5] = uString::Const("C:\\Users\\q\\AppData\\Local\\Fusetools\\Packages\\Fuse.Selection\\1.3.0-rc2\\Selectable.ScriptClass.uno");
     ::STRINGS[6] = uString::Const("No selection, perhaps not rooted");
-    ::STRINGS[7] = uString::Const("Add");
-    ::STRINGS[8] = uString::Const("Unable to locate `Selection`");
-    ::STRINGS[9] = uString::Const("OnRooted");
-    ::STRINGS[10] = uString::Const("remove requires 0 arguments");
-    ::STRINGS[11] = uString::Const("Remove");
-    ::STRINGS[12] = uString::Const("toggle requires 0 arguments");
-    ::STRINGS[13] = uString::Const("Toggle");
+    ::STRINGS[7] = uString::Const("C:\\Users\\q\\AppData\\Local\\Fusetools\\Packages\\Fuse.Selection\\1.3.0-rc2\\Selectable.uno");
+    ::STRINGS[8] = uString::Const("Add");
+    ::STRINGS[9] = uString::Const("Unable to locate `Selection`");
+    ::STRINGS[10] = uString::Const("OnRooted");
+    ::STRINGS[11] = uString::Const("remove requires 0 arguments");
+    ::STRINGS[12] = uString::Const("Remove");
+    ::STRINGS[13] = uString::Const("toggle requires 0 arguments");
+    ::STRINGS[14] = uString::Const("Toggle");
     ::TYPES[0] = ::g::Uno::Type_typeof();
     ::TYPES[1] = ::g::Fuse::Scripting::ScriptMember_typeof()->Array();
     ::TYPES[2] = ::g::Fuse::Scripting::ScriptMethod1_typeof()->MakeType(type, NULL);
     ::TYPES[3] = ::g::Uno::Action3_typeof()->MakeType(::g::Fuse::Scripting::Context_typeof(), type, uObject_typeof()->Array(), NULL);
+    type->SetDependencies(
+        ::g::Fuse::Diagnostics_typeof());
     type->SetInterfaces(
         ::g::Uno::Collections::IList_typeof()->MakeType(::g::Fuse::Binding_typeof(), NULL), offsetof(::g::Fuse::Node_type, interface0),
         ::g::Fuse::Scripting::IScriptObject_typeof(), offsetof(::g::Fuse::Node_type, interface1),
@@ -180,10 +184,10 @@ static void Selectable_build(uType* type)
         ::g::Fuse::INotifyUnrooted_typeof(), offsetof(::g::Fuse::Node_type, interface3),
         ::g::Uno::Collections::ICollection_typeof()->MakeType(::g::Fuse::Binding_typeof(), NULL), offsetof(::g::Fuse::Node_type, interface4),
         ::g::Uno::Collections::IEnumerable_typeof()->MakeType(::g::Fuse::Binding_typeof(), NULL), offsetof(::g::Fuse::Node_type, interface5));
-    type->SetFields(12,
-        ::g::Fuse::Selection::Selection_typeof(), offsetof(::g::Fuse::Selection::Selectable, _selection), 0,
-        ::g::Uno::String_typeof(), offsetof(::g::Fuse::Selection::Selectable, _value), 0,
-        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&::g::Fuse::Selection::Selectable::ValueName_, uFieldFlagsStatic);
+    type->SetFields(15,
+        ::g::Fuse::Selection::Selection_typeof(), offsetof(Selectable, _selection), 0,
+        ::g::Uno::String_typeof(), offsetof(Selectable, _value), 0,
+        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&Selectable::ValueName_, uFieldFlagsStatic);
 }
 
 ::g::Fuse::Node_type* Selectable_typeof()
@@ -193,8 +197,9 @@ static void Selectable_build(uType* type)
 
     uTypeOptions options;
     options.BaseDefinition = ::g::Fuse::Behavior_typeof();
-    options.FieldCount = 15;
+    options.FieldCount = 18;
     options.InterfaceCount = 6;
+    options.DependencyCount = 1;
     options.ObjectSize = sizeof(Selectable);
     options.TypeSize = sizeof(::g::Fuse::Node_type);
     type = (::g::Fuse::Node_type*)uClassType::New("Fuse.Selection.Selectable", options);
@@ -221,78 +226,78 @@ static void Selectable_build(uType* type)
     return type;
 }
 
-// public generated Selectable() :11
+// public generated Selectable() :9
 void Selectable__ctor_3_fn(Selectable* __this)
 {
     __this->ctor_3();
 }
 
-// private static void add(Fuse.Scripting.Context c, Fuse.Selection.Selectable s, object[] args) :26
+// private static void add(Fuse.Scripting.Context c, Fuse.Selection.Selectable s, object[] args) :24
 void Selectable__add_fn(::g::Fuse::Scripting::Context* c, Selectable* s, uArray* args)
 {
     Selectable::add(c, s, args);
 }
 
-// public void Add() :153
+// public void Add() :78
 void Selectable__Add1_fn(Selectable* __this)
 {
     __this->Add1();
 }
 
-// public generated Selectable New() :11
+// public generated Selectable New() :9
 void Selectable__New2_fn(Selectable** __retval)
 {
     *__retval = Selectable::New2();
 }
 
-// protected override sealed void OnRooted() :110
+// protected override sealed void OnRooted() :35
 void Selectable__OnRooted_fn(Selectable* __this)
 {
     ::g::Fuse::Node__OnRooted_fn(__this);
     __this->_selection = ::g::Fuse::Selection::Selection::TryFindSelection(__this->Parent());
 
     if (__this->_selection == NULL)
-        ::g::Fuse::Diagnostics::UserError(::STRINGS[8/*"Unable to l...*/], __this, ::STRINGS[5/*"/usr/local/...*/], 116, ::STRINGS[9/*"OnRooted"*/], NULL);
+        ::g::Fuse::Diagnostics::UserError(::STRINGS[9/*"Unable to l...*/], __this, ::STRINGS[7/*"C:\\Users\\...*/], 41, ::STRINGS[10/*"OnRooted"*/], NULL);
 }
 
-// protected override sealed void OnUnrooted() :119
+// protected override sealed void OnUnrooted() :44
 void Selectable__OnUnrooted_fn(Selectable* __this)
 {
     ::g::Fuse::Node__OnUnrooted_fn(__this);
     __this->_selection = NULL;
 }
 
-// private static void remove(Fuse.Scripting.Context c, Fuse.Selection.Selectable s, object[] args) :44
+// private static void remove(Fuse.Scripting.Context c, Fuse.Selection.Selectable s, object[] args) :42
 void Selectable__remove_fn(::g::Fuse::Scripting::Context* c, Selectable* s, uArray* args)
 {
     Selectable::remove(c, s, args);
 }
 
-// public void Remove() :167
+// public void Remove() :92
 void Selectable__Remove1_fn(Selectable* __this)
 {
     __this->Remove1();
 }
 
-// private static void toggle(Fuse.Scripting.Context c, Fuse.Selection.Selectable s, object[] args) :60
+// private static void toggle(Fuse.Scripting.Context c, Fuse.Selection.Selectable s, object[] args) :58
 void Selectable__toggle_fn(::g::Fuse::Scripting::Context* c, Selectable* s, uArray* args)
 {
     Selectable::toggle(c, s, args);
 }
 
-// public void Toggle() :181
+// public void Toggle() :106
 void Selectable__Toggle_fn(Selectable* __this)
 {
     __this->Toggle();
 }
 
-// public string get_Value() :135
+// public string get_Value() :60
 void Selectable__get_Value_fn(Selectable* __this, uString** __retval)
 {
     *__retval = __this->Value();
 }
 
-// public void set_Value(string value) :136
+// public void set_Value(string value) :61
 void Selectable__set_Value_fn(Selectable* __this, uString* value)
 {
     __this->Value(value);
@@ -300,55 +305,55 @@ void Selectable__set_Value_fn(Selectable* __this, uString* value)
 
 ::g::Uno::UX::Selector Selectable::ValueName_;
 
-// public generated Selectable() [instance] :11
+// public generated Selectable() [instance] :9
 void Selectable::ctor_3()
 {
     ctor_2();
 }
 
-// public void Add() [instance] :153
+// public void Add() [instance] :78
 void Selectable::Add1()
 {
     if (_selection == NULL)
     {
-        ::g::Fuse::Diagnostics::UserError(::STRINGS[6/*"No selectio...*/], this, ::STRINGS[5/*"/usr/local/...*/], 157, ::STRINGS[7/*"Add"*/], NULL);
+        ::g::Fuse::Diagnostics::UserError(::STRINGS[6/*"No selectio...*/], this, ::STRINGS[7/*"C:\\Users\\...*/], 82, ::STRINGS[8/*"Add"*/], NULL);
         return;
     }
 
     uPtr(_selection)->Add1(this);
 }
 
-// public void Remove() [instance] :167
+// public void Remove() [instance] :92
 void Selectable::Remove1()
 {
     if (_selection == NULL)
     {
-        ::g::Fuse::Diagnostics::UserError(::STRINGS[6/*"No selectio...*/], this, ::STRINGS[5/*"/usr/local/...*/], 171, ::STRINGS[11/*"Remove"*/], NULL);
+        ::g::Fuse::Diagnostics::UserError(::STRINGS[6/*"No selectio...*/], this, ::STRINGS[7/*"C:\\Users\\...*/], 96, ::STRINGS[12/*"Remove"*/], NULL);
         return;
     }
 
     uPtr(_selection)->Remove1(this);
 }
 
-// public void Toggle() [instance] :181
+// public void Toggle() [instance] :106
 void Selectable::Toggle()
 {
     if (_selection == NULL)
     {
-        ::g::Fuse::Diagnostics::UserError(::STRINGS[6/*"No selectio...*/], this, ::STRINGS[5/*"/usr/local/...*/], 185, ::STRINGS[13/*"Toggle"*/], NULL);
+        ::g::Fuse::Diagnostics::UserError(::STRINGS[6/*"No selectio...*/], this, ::STRINGS[7/*"C:\\Users\\...*/], 110, ::STRINGS[14/*"Toggle"*/], NULL);
         return;
     }
 
     uPtr(_selection)->Toggle(this);
 }
 
-// public string get_Value() [instance] :135
+// public string get_Value() [instance] :60
 uString* Selectable::Value()
 {
     return _value;
 }
 
-// public void set_Value(string value) [instance] :136
+// public void set_Value(string value) [instance] :61
 void Selectable::Value(uString* value)
 {
     if (::g::Uno::String::op_Equality(_value, value))
@@ -360,24 +365,24 @@ void Selectable::Value(uString* value)
     if (_selection != NULL)
         uPtr(_selection)->ModifyValue(old, _value);
 
-    OnPropertyChanged(Selectable::ValueName());
+    OnPropertyChanged(Selectable::ValueName_);
 }
 
-// private static void add(Fuse.Scripting.Context c, Fuse.Selection.Selectable s, object[] args) [static] :26
+// private static void add(Fuse.Scripting.Context c, Fuse.Selection.Selectable s, object[] args) [static] :24
 void Selectable::add(::g::Fuse::Scripting::Context* c, Selectable* s, uArray* args)
 {
     Selectable_typeof()->Init();
 
     if (uPtr(args)->Length() != 0)
     {
-        ::g::Fuse::Diagnostics::UserError(::STRINGS[4/*"add require...*/], s, ::STRINGS[5/*"/usr/local/...*/], 30, ::STRINGS[1/*"add"*/], NULL);
+        ::g::Fuse::Diagnostics::UserError(::STRINGS[4/*"add require...*/], s, ::STRINGS[5/*"C:\\Users\\...*/], 28, ::STRINGS[1/*"add"*/], NULL);
         return;
     }
 
     uPtr(s)->Add1();
 }
 
-// public generated Selectable New() [static] :11
+// public generated Selectable New() [static] :9
 Selectable* Selectable::New2()
 {
     Selectable* obj1 = (Selectable*)uNew(Selectable_typeof());
@@ -385,28 +390,28 @@ Selectable* Selectable::New2()
     return obj1;
 }
 
-// private static void remove(Fuse.Scripting.Context c, Fuse.Selection.Selectable s, object[] args) [static] :44
+// private static void remove(Fuse.Scripting.Context c, Fuse.Selection.Selectable s, object[] args) [static] :42
 void Selectable::remove(::g::Fuse::Scripting::Context* c, Selectable* s, uArray* args)
 {
     Selectable_typeof()->Init();
 
     if (uPtr(args)->Length() != 0)
     {
-        ::g::Fuse::Diagnostics::UserError(::STRINGS[10/*"remove requ...*/], s, ::STRINGS[5/*"/usr/local/...*/], 48, ::STRINGS[2/*"remove"*/], NULL);
+        ::g::Fuse::Diagnostics::UserError(::STRINGS[11/*"remove requ...*/], s, ::STRINGS[5/*"C:\\Users\\...*/], 46, ::STRINGS[2/*"remove"*/], NULL);
         return;
     }
 
     uPtr(s)->Remove1();
 }
 
-// private static void toggle(Fuse.Scripting.Context c, Fuse.Selection.Selectable s, object[] args) [static] :60
+// private static void toggle(Fuse.Scripting.Context c, Fuse.Selection.Selectable s, object[] args) [static] :58
 void Selectable::toggle(::g::Fuse::Scripting::Context* c, Selectable* s, uArray* args)
 {
     Selectable_typeof()->Init();
 
     if (uPtr(args)->Length() != 0)
     {
-        ::g::Fuse::Diagnostics::UserError(::STRINGS[12/*"toggle requ...*/], s, ::STRINGS[5/*"/usr/local/...*/], 64, ::STRINGS[3/*"toggle"*/], NULL);
+        ::g::Fuse::Diagnostics::UserError(::STRINGS[13/*"toggle requ...*/], s, ::STRINGS[5/*"C:\\Users\\...*/], 62, ::STRINGS[3/*"toggle"*/], NULL);
         return;
     }
 
@@ -414,58 +419,24 @@ void Selectable::toggle(::g::Fuse::Scripting::Context* c, Selectable* s, uArray*
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Selection/1.2.1/$.uno
-// --------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Selection\1.3.0-rc2\Selection.ScriptClass.uno
+// ----------------------------------------------------------------------------------------------
 
-// public partial sealed class Selection :302
+// public partial sealed class Selection :9
 // {
-// static Selection() :304
+// static Selection() :11
 static void Selection__cctor_1_fn(uType* __type)
 {
+    ::g::Fuse::Scripting::ScriptClass_typeof()->Init();
     Selection::ValueName_ = ::g::Uno::UX::Selector__New1(::STRINGS[0/*"Value"*/]);
-    ::g::Fuse::Scripting::ScriptClass::Register(__type, uArray::Init< ::g::Fuse::Scripting::ScriptMember*>(::TYPES[1/*Fuse.Scripting.ScriptMember[]*/], 6, (::g::Fuse::Scripting::ScriptMethod1*)::g::Fuse::Scripting::ScriptMethod1::New1(::TYPES[4/*Fuse.Scripting.ScriptMethod<Fuse.Selection.Selection>*/], ::STRINGS[14/*"clear"*/], uDelegate::New(::TYPES[5/*Uno.Action<Fuse.Scripting.Context, Fuse.Selection.Selection, object[]>*/], (void*)Selection__clear_fn), 2), (::g::Fuse::Scripting::ScriptMethod1*)::g::Fuse::Scripting::ScriptMethod1::New1(::TYPES[4/*Fuse.Scripting.ScriptMethod<Fuse.Selection.Selection>*/], ::STRINGS[1/*"add"*/], uDelegate::New(::TYPES[5/*Uno.Action<Fuse.Scripting.Context, Fuse.Selection.Selection, object[]>*/], (void*)Selection__add_fn), 2), (::g::Fuse::Scripting::ScriptMethod1*)::g::Fuse::Scripting::ScriptMethod1::New1(::TYPES[4/*Fuse.Scripting.ScriptMethod<Fuse.Selection.Selection>*/], ::STRINGS[2/*"remove"*/], uDelegate::New(::TYPES[5/*Uno.Action<Fuse.Scripting.Context, Fuse.Selection.Selection, object[]>*/], (void*)Selection__remove_fn), 2), (::g::Fuse::Scripting::ScriptMethod1*)::g::Fuse::Scripting::ScriptMethod1::New1(::TYPES[4/*Fuse.Scripting.ScriptMethod<Fuse.Selection.Selection>*/], ::STRINGS[15/*"forceAdd"*/], uDelegate::New(::TYPES[5/*Uno.Action<Fuse.Scripting.Context, Fuse.Selection.Selection, object[]>*/], (void*)Selection__forceAdd_fn), 2), (::g::Fuse::Scripting::ScriptMethod1*)::g::Fuse::Scripting::ScriptMethod1::New1(::TYPES[4/*Fuse.Scripting.ScriptMethod<Fuse.Selection.Selection>*/], ::STRINGS[16/*"forceRemove"*/], uDelegate::New(::TYPES[5/*Uno.Action<Fuse.Scripting.Context, Fuse.Selection.Selection, object[]>*/], (void*)Selection__forceRemove_fn), 2), (::g::Fuse::Scripting::ScriptMethod1*)::g::Fuse::Scripting::ScriptMethod1::New1(::TYPES[4/*Fuse.Scripting.ScriptMethod<Fuse.Selection.Selection>*/], ::STRINGS[3/*"toggle"*/], uDelegate::New(::TYPES[5/*Uno.Action<Fuse.Scripting.Context, Fuse.Selection.Selection, object[]>*/], (void*)Selection__toggle_fn), 2)));
+    ::g::Fuse::Scripting::ScriptClass::Register(__type, uArray::Init< ::g::Fuse::Scripting::ScriptMember*>(::TYPES[1/*Fuse.Scripting.ScriptMember[]*/], 6, (::g::Fuse::Scripting::ScriptMethod1*)::g::Fuse::Scripting::ScriptMethod1::New1(::g::Fuse::Scripting::ScriptMethod1_typeof()->MakeType(__type, NULL), uString::Const("clear"), uDelegate::New(::g::Uno::Action3_typeof()->MakeType(::g::Fuse::Scripting::Context_typeof(), __type, uObject_typeof()->Array(), NULL), (void*)Selection__clear_fn), 2), (::g::Fuse::Scripting::ScriptMethod1*)::g::Fuse::Scripting::ScriptMethod1::New1(::g::Fuse::Scripting::ScriptMethod1_typeof()->MakeType(__type, NULL), ::STRINGS[1/*"add"*/], uDelegate::New(::g::Uno::Action3_typeof()->MakeType(::g::Fuse::Scripting::Context_typeof(), __type, uObject_typeof()->Array(), NULL), (void*)Selection__add_fn), 2), (::g::Fuse::Scripting::ScriptMethod1*)::g::Fuse::Scripting::ScriptMethod1::New1(::g::Fuse::Scripting::ScriptMethod1_typeof()->MakeType(__type, NULL), ::STRINGS[2/*"remove"*/], uDelegate::New(::g::Uno::Action3_typeof()->MakeType(::g::Fuse::Scripting::Context_typeof(), __type, uObject_typeof()->Array(), NULL), (void*)Selection__remove_fn), 2), (::g::Fuse::Scripting::ScriptMethod1*)::g::Fuse::Scripting::ScriptMethod1::New1(::g::Fuse::Scripting::ScriptMethod1_typeof()->MakeType(__type, NULL), uString::Const("forceAdd"), uDelegate::New(::g::Uno::Action3_typeof()->MakeType(::g::Fuse::Scripting::Context_typeof(), __type, uObject_typeof()->Array(), NULL), (void*)Selection__forceAdd_fn), 2), (::g::Fuse::Scripting::ScriptMethod1*)::g::Fuse::Scripting::ScriptMethod1::New1(::g::Fuse::Scripting::ScriptMethod1_typeof()->MakeType(__type, NULL), uString::Const("forceRemove"), uDelegate::New(::g::Uno::Action3_typeof()->MakeType(::g::Fuse::Scripting::Context_typeof(), __type, uObject_typeof()->Array(), NULL), (void*)Selection__forceRemove_fn), 2), (::g::Fuse::Scripting::ScriptMethod1*)::g::Fuse::Scripting::ScriptMethod1::New1(::g::Fuse::Scripting::ScriptMethod1_typeof()->MakeType(__type, NULL), ::STRINGS[3/*"toggle"*/], uDelegate::New(::g::Uno::Action3_typeof()->MakeType(::g::Fuse::Scripting::Context_typeof(), __type, uObject_typeof()->Array(), NULL), (void*)Selection__toggle_fn), 2)));
 }
 
 static void Selection_build(uType* type)
 {
-    ::STRINGS[0] = uString::Const("Value");
-    ::STRINGS[14] = uString::Const("clear");
-    ::STRINGS[1] = uString::Const("add");
-    ::STRINGS[2] = uString::Const("remove");
-    ::STRINGS[15] = uString::Const("forceAdd");
-    ::STRINGS[16] = uString::Const("forceRemove");
-    ::STRINGS[3] = uString::Const("toggle");
-    ::STRINGS[17] = uString::Const("add requires 1 argument, the value of the item");
-    ::STRINGS[5] = uString::Const("/usr/local/share/uno/Packages/Fuse.Selection/1.2.1/$.uno");
-    ::STRINGS[18] = uString::Const("clear requires 0 arguments");
-    ::STRINGS[19] = uString::Const("forceAdd requires 1 argument, the value of the item");
-    ::STRINGS[20] = uString::Const("forceRemove requires 1 argument, the value of the item");
-    ::STRINGS[21] = uString::Const("Fuse.Reactive.IObserver.OnFailed");
-    ::STRINGS[22] = uString::Const("removing invalid observable item");
-    ::STRINGS[23] = uString::Const("Fuse.Reactive.IObserver.OnInsertAt");
-    ::STRINGS[24] = uString::Const("Fuse.Reactive.IObserver.OnNewAt");
-    ::STRINGS[25] = uString::Const("Fuse.Reactive.IObserver.OnRemoveAt");
-    ::STRINGS[26] = uString::Const("remove requires 1 argument, the value of the item");
-    ::STRINGS[27] = uString::Const("toggle requires 1 argument, the value of them item");
-    ::STRINGS[28] = uString::Const("MaxCount must >= 1");
-    ::STRINGS[29] = uString::Const("set_MaxCount");
-    ::STRINGS[30] = uString::Const("`Values` must be an Observable");
-    ::STRINGS[31] = uString::Const("set_Values");
-    ::TYPES[0] = ::g::Uno::Type_typeof();
-    ::TYPES[1] = ::g::Fuse::Scripting::ScriptMember_typeof()->Array();
-    ::TYPES[4] = ::g::Fuse::Scripting::ScriptMethod1_typeof()->MakeType(type, NULL);
-    ::TYPES[5] = ::g::Uno::Action3_typeof()->MakeType(::g::Fuse::Scripting::Context_typeof(), type, uObject_typeof()->Array(), NULL);
-    ::TYPES[6] = ::g::Uno::Collections::List_typeof()->MakeType(::g::Uno::String_typeof(), NULL);
-    ::TYPES[7] = ::g::Fuse::Marshal_typeof()->MakeMethod(0/*ToType<string>*/, ::g::Uno::String_typeof(), NULL);
-    ::TYPES[8] = ::g::Uno::IDisposable_typeof();
-    ::TYPES[9] = ::g::Fuse::Reactive::IObserver_typeof();
-    ::TYPES[10] = ::g::Fuse::IArray_typeof();
-    ::TYPES[11] = ::g::Fuse::Reactive::IObservable_typeof();
-    ::TYPES[12] = ::g::Fuse::Reactive::ISubscription_typeof();
-    ::TYPES[13] = ::g::Fuse::Visual_typeof();
-    ::TYPES[14] = ::TYPES[13/*Fuse.Visual*/]->MakeMethod(3/*FirstChild<Fuse.Selection.Selectable>*/, ::g::Fuse::Selection::Selectable_typeof(), NULL);
-    ::TYPES[15] = ::TYPES[13/*Fuse.Visual*/]->MakeMethod(3/*FirstChild<Fuse.Selection.Selection>*/, type, NULL);
-    ::TYPES[16] = ::g::Uno::EventHandler_typeof();
+    type->SetDependencies(
+        ::g::Fuse::Diagnostics_typeof(),
+        ::g::Uno::EventArgs_typeof());
     type->SetInterfaces(
         ::g::Uno::Collections::IList_typeof()->MakeType(::g::Fuse::Binding_typeof(), NULL), offsetof(Selection_type, interface0),
         ::g::Fuse::Scripting::IScriptObject_typeof(), offsetof(Selection_type, interface1),
@@ -473,17 +444,17 @@ static void Selection_build(uType* type)
         ::g::Fuse::INotifyUnrooted_typeof(), offsetof(Selection_type, interface3),
         ::g::Uno::Collections::ICollection_typeof()->MakeType(::g::Fuse::Binding_typeof(), NULL), offsetof(Selection_type, interface4),
         ::g::Uno::Collections::IEnumerable_typeof()->MakeType(::g::Fuse::Binding_typeof(), NULL), offsetof(Selection_type, interface5),
-        ::TYPES[9/*Fuse.Reactive.IObserver*/], offsetof(Selection_type, interface6));
-    type->SetFields(12,
-        ::g::Uno::Bool_typeof(), offsetof(::g::Fuse::Selection::Selection, _hasMaxCount), 0,
-        ::g::Uno::Int_typeof(), offsetof(::g::Fuse::Selection::Selection, _maxCount), 0,
-        ::g::Uno::Int_typeof(), offsetof(::g::Fuse::Selection::Selection, _minCount), 0,
-        ::TYPES[11/*Fuse.Reactive.IObservable*/], offsetof(::g::Fuse::Selection::Selection, _observableValues), 0,
-        ::g::Fuse::Selection::SelectionReplace_typeof(), offsetof(::g::Fuse::Selection::Selection, _replace), 0,
-        ::TYPES[12/*Fuse.Reactive.ISubscription*/], offsetof(::g::Fuse::Selection::Selection, _subscription), 0,
-        ::TYPES[6/*Uno.Collections.List<string>*/], offsetof(::g::Fuse::Selection::Selection, _values), 0,
-        ::TYPES[16/*Uno.EventHandler*/], offsetof(::g::Fuse::Selection::Selection, SelectionChanged1), 0,
-        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&::g::Fuse::Selection::Selection::ValueName_, uFieldFlagsStatic);
+        ::g::Fuse::Reactive::IObserver_typeof(), offsetof(Selection_type, interface6));
+    type->SetFields(15,
+        ::g::Uno::Bool_typeof(), offsetof(Selection, _hasMaxCount), 0,
+        ::g::Uno::Int_typeof(), offsetof(Selection, _maxCount), 0,
+        ::g::Uno::Int_typeof(), offsetof(Selection, _minCount), 0,
+        ::g::Fuse::Reactive::IObservable_typeof(), offsetof(Selection, _observableValues), 0,
+        ::g::Fuse::Selection::SelectionReplace_typeof(), offsetof(Selection, _replace), 0,
+        ::g::Fuse::Reactive::ISubscription_typeof(), offsetof(Selection, _subscription), 0,
+        ::g::Uno::Collections::List_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(Selection, _values), 0,
+        ::g::Uno::EventHandler_typeof(), offsetof(Selection, SelectionChanged1), 0,
+        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&Selection::ValueName_, uFieldFlagsStatic);
 }
 
 Selection_type* Selection_typeof()
@@ -493,8 +464,9 @@ Selection_type* Selection_typeof()
 
     uTypeOptions options;
     options.BaseDefinition = ::g::Fuse::Behavior_typeof();
-    options.FieldCount = 21;
+    options.FieldCount = 24;
     options.InterfaceCount = 7;
+    options.DependencyCount = 2;
     options.ObjectSize = sizeof(Selection);
     options.TypeSize = sizeof(Selection_type);
     type = (Selection_type*)uClassType::New("Fuse.Selection.Selection", options);
@@ -529,95 +501,95 @@ Selection_type* Selection_typeof()
     return type;
 }
 
-// public generated Selection() :302
+// public generated Selection() :9
 void Selection__ctor_3_fn(Selection* __this)
 {
     __this->ctor_3();
 }
 
-// private static void add(Fuse.Scripting.Context c, Fuse.Selection.Selection s, object[] args) :338
+// private static void add(Fuse.Scripting.Context c, Fuse.Selection.Selection s, object[] args) :45
 void Selection__add_fn(::g::Fuse::Scripting::Context* c, Selection* s, uArray* args)
 {
     Selection::add(c, s, args);
 }
 
-// public void Add(Fuse.Selection.Selectable b) :607
+// public void Add(Fuse.Selection.Selectable b) :192
 void Selection__Add1_fn(Selection* __this, ::g::Fuse::Selection::Selectable* b)
 {
     __this->Add1(b);
 }
 
-// private void Add(string value) :723
+// private void Add(string value) :308
 void Selection__Add2_fn(Selection* __this, uString* value)
 {
     __this->Add2(value);
 }
 
-// private static void clear(Fuse.Scripting.Context c, Fuse.Selection.Selection s, object[] args) :320
+// private static void clear(Fuse.Scripting.Context c, Fuse.Selection.Selection s, object[] args) :27
 void Selection__clear_fn(::g::Fuse::Scripting::Context* c, Selection* s, uArray* args)
 {
     Selection::clear(c, s, args);
 }
 
-// public void Clear() :627
+// public void Clear() :212
 void Selection__Clear_fn(Selection* __this)
 {
     __this->Clear();
 }
 
-// private void ClearSubscription() :829
+// private void ClearSubscription() :414
 void Selection__ClearSubscription_fn(Selection* __this)
 {
     __this->ClearSubscription();
 }
 
-// private static void forceAdd(Fuse.Scripting.Context c, Fuse.Selection.Selection s, object[] args) :370
+// private static void forceAdd(Fuse.Scripting.Context c, Fuse.Selection.Selection s, object[] args) :77
 void Selection__forceAdd_fn(::g::Fuse::Scripting::Context* c, Selection* s, uArray* args)
 {
     Selection::forceAdd(c, s, args);
 }
 
-// private void ForceAdd(string value) :641
+// private void ForceAdd(string value) :226
 void Selection__ForceAdd1_fn(Selection* __this, uString* value)
 {
     __this->ForceAdd1(value);
 }
 
-// private static void forceRemove(Fuse.Scripting.Context c, Fuse.Selection.Selection s, object[] args) :384
+// private static void forceRemove(Fuse.Scripting.Context c, Fuse.Selection.Selection s, object[] args) :91
 void Selection__forceRemove_fn(::g::Fuse::Scripting::Context* c, Selection* s, uArray* args)
 {
     Selection::forceRemove(c, s, args);
 }
 
-// private void ForceRemove(string value) :658
+// private void ForceRemove(string value) :243
 void Selection__ForceRemove1_fn(Selection* __this, uString* value)
 {
     __this->ForceRemove1(value);
 }
 
-// private void Fuse.Reactive.IObserver.OnAdd(object addedValue) :870
+// private void Fuse.Reactive.IObserver.OnAdd(object addedValue) :455
 void Selection__FuseReactiveIObserverOnAdd_fn(Selection* __this, uObject* addedValue)
 {
     uString* ret9;
-    ::g::Uno::Collections::List__Add_fn(uPtr(__this->_values), (::g::Fuse::Marshal__ToType_fn(::TYPES[7/*Fuse.Marshal.ToType<string>*/], addedValue, &ret9), ret9));
+    ::g::Uno::Collections::List__Add_fn(uPtr(__this->_values), (::g::Fuse::Marshal__ToType_fn(::g::Fuse::Marshal_typeof()->MakeMethod(0/*ToType<string>*/, ::g::Uno::String_typeof(), NULL), addedValue, &ret9), ret9));
     __this->OnSelectionChanged(1);
 }
 
-// private void Fuse.Reactive.IObserver.OnClear() :838
+// private void Fuse.Reactive.IObserver.OnClear() :423
 void Selection__FuseReactiveIObserverOnClear_fn(Selection* __this)
 {
     uPtr(__this->_values)->Clear();
     __this->OnSelectionChanged(1);
 }
 
-// private void Fuse.Reactive.IObserver.OnFailed(string message) :898
+// private void Fuse.Reactive.IObserver.OnFailed(string message) :483
 void Selection__FuseReactiveIObserverOnFailed_fn(Selection* __this, uString* message)
 {
-    ::g::Fuse::Reactive::IObserver::OnClear(uInterface(uPtr(uAs<uObject*>(__this, ::TYPES[9/*Fuse.Reactive.IObserver*/])), ::TYPES[9/*Fuse.Reactive.IObserver*/]));
-    ::g::Fuse::Diagnostics::InternalError(message, __this, ::STRINGS[5/*"/usr/local/...*/], 901, ::STRINGS[21/*"Fuse.Reacti...*/]);
+    ::g::Fuse::Reactive::IObserver::OnClear(uInterface(uPtr(uAs<uObject*>(__this, ::g::Fuse::Reactive::IObserver_typeof())), ::g::Fuse::Reactive::IObserver_typeof()));
+    ::g::Fuse::Diagnostics::InternalError(message, __this, uString::Const("C:\\Users\\q\\AppData\\Local\\Fusetools\\Packages\\Fuse.Selection\\1.3.0-rc2\\Selection.uno"), 486, uString::Const("Fuse.Reactive.IObserver.OnFailed"));
 }
 
-// private void Fuse.Reactive.IObserver.OnInsertAt(int index, object value) :887
+// private void Fuse.Reactive.IObserver.OnInsertAt(int index, object value) :472
 void Selection__FuseReactiveIObserverOnInsertAt_fn(Selection* __this, int* index, uObject* value)
 {
     int index_ = *index;
@@ -625,27 +597,27 @@ void Selection__FuseReactiveIObserverOnInsertAt_fn(Selection* __this, int* index
 
     if ((index_ < 0) || (index_ > uPtr(__this->_values)->Count()))
     {
-        ::g::Fuse::Diagnostics::InternalError(::STRINGS[22/*"removing in...*/], __this, ::STRINGS[5/*"/usr/local/...*/], 891, ::STRINGS[23/*"Fuse.Reacti...*/]);
+        ::g::Fuse::Diagnostics::InternalError(uString::Const("removing invalid observable item"), __this, uString::Const("C:\\Users\\q\\AppData\\Local\\Fusetools\\Packages\\Fuse.Selection\\1.3.0-rc2\\Selection.uno"), 476, uString::Const("Fuse.Reactive.IObserver.OnInsertAt"));
         return;
     }
 
-    ::g::Uno::Collections::List__Insert_fn(uPtr(__this->_values), uCRef<int>(index_), (::g::Fuse::Marshal__ToType_fn(::TYPES[7/*Fuse.Marshal.ToType<string>*/], value, &ret10), ret10));
+    ::g::Uno::Collections::List__Insert_fn(uPtr(__this->_values), uCRef<int>(index_), (::g::Fuse::Marshal__ToType_fn(::g::Fuse::Marshal_typeof()->MakeMethod(0/*ToType<string>*/, ::g::Uno::String_typeof(), NULL), value, &ret10), ret10));
     __this->OnSelectionChanged(1);
 }
 
-// private void Fuse.Reactive.IObserver.OnNewAll(Fuse.IArray values) :844
+// private void Fuse.Reactive.IObserver.OnNewAll(Fuse.IArray values) :429
 void Selection__FuseReactiveIObserverOnNewAll_fn(Selection* __this, uObject* values)
 {
     uString* ret11;
     uPtr(__this->_values)->Clear();
 
-    for (int i = 0; i < ::g::Fuse::IArray::Length(uInterface(uPtr(values), ::TYPES[10/*Fuse.IArray*/])); ++i)
-        ::g::Uno::Collections::List__Add_fn(uPtr(__this->_values), (::g::Fuse::Marshal__ToType_fn(::TYPES[7/*Fuse.Marshal.ToType<string>*/], ::g::Fuse::IArray::Item(uInterface(uPtr(values), ::TYPES[10/*Fuse.IArray*/]), i), &ret11), ret11));
+    for (int i = 0; i < ::g::Fuse::IArray::Length(uInterface(uPtr(values), ::g::Fuse::IArray_typeof())); ++i)
+        ::g::Uno::Collections::List__Add_fn(uPtr(__this->_values), (::g::Fuse::Marshal__ToType_fn(::g::Fuse::Marshal_typeof()->MakeMethod(0/*ToType<string>*/, ::g::Uno::String_typeof(), NULL), ::g::Fuse::IArray::Item(uInterface(uPtr(values), ::g::Fuse::IArray_typeof()), i), &ret11), ret11));
 
     __this->OnSelectionChanged(1);
 }
 
-// private void Fuse.Reactive.IObserver.OnNewAt(int index, object newValue) :852
+// private void Fuse.Reactive.IObserver.OnNewAt(int index, object newValue) :437
 void Selection__FuseReactiveIObserverOnNewAt_fn(Selection* __this, int* index, uObject* newValue)
 {
     int index_ = *index;
@@ -653,22 +625,22 @@ void Selection__FuseReactiveIObserverOnNewAt_fn(Selection* __this, int* index, u
 
     if ((index_ < 0) || (index_ >= uPtr(__this->_values)->Count()))
     {
-        ::g::Fuse::Diagnostics::InternalError(::STRINGS[22/*"removing in...*/], __this, ::STRINGS[5/*"/usr/local/...*/], 856, ::STRINGS[24/*"Fuse.Reacti...*/]);
+        ::g::Fuse::Diagnostics::InternalError(uString::Const("removing invalid observable item"), __this, uString::Const("C:\\Users\\q\\AppData\\Local\\Fusetools\\Packages\\Fuse.Selection\\1.3.0-rc2\\Selection.uno"), 441, uString::Const("Fuse.Reactive.IObserver.OnNewAt"));
         return;
     }
 
-    ::g::Uno::Collections::List__set_Item_fn(uPtr(__this->_values), uCRef<int>(index_), (::g::Fuse::Marshal__ToType_fn(::TYPES[7/*Fuse.Marshal.ToType<string>*/], newValue, &ret12), ret12));
+    ::g::Uno::Collections::List__set_Item_fn(uPtr(__this->_values), uCRef<int>(index_), (::g::Fuse::Marshal__ToType_fn(::g::Fuse::Marshal_typeof()->MakeMethod(0/*ToType<string>*/, ::g::Uno::String_typeof(), NULL), newValue, &ret12), ret12));
     __this->OnSelectionChanged(1);
 }
 
-// private void Fuse.Reactive.IObserver.OnRemoveAt(int index) :876
+// private void Fuse.Reactive.IObserver.OnRemoveAt(int index) :461
 void Selection__FuseReactiveIObserverOnRemoveAt_fn(Selection* __this, int* index)
 {
     int index_ = *index;
 
     if ((index_ < 0) || (index_ >= uPtr(__this->_values)->Count()))
     {
-        ::g::Fuse::Diagnostics::InternalError(::STRINGS[22/*"removing in...*/], __this, ::STRINGS[5/*"/usr/local/...*/], 880, ::STRINGS[25/*"Fuse.Reacti...*/]);
+        ::g::Fuse::Diagnostics::InternalError(uString::Const("removing invalid observable item"), __this, uString::Const("C:\\Users\\q\\AppData\\Local\\Fusetools\\Packages\\Fuse.Selection\\1.3.0-rc2\\Selection.uno"), 465, uString::Const("Fuse.Reactive.IObserver.OnRemoveAt"));
         return;
     }
 
@@ -676,168 +648,168 @@ void Selection__FuseReactiveIObserverOnRemoveAt_fn(Selection* __this, int* index
     __this->OnSelectionChanged(1);
 }
 
-// private void Fuse.Reactive.IObserver.OnSet(object newValue) :863
+// private void Fuse.Reactive.IObserver.OnSet(object newValue) :448
 void Selection__FuseReactiveIObserverOnSet_fn(Selection* __this, uObject* newValue)
 {
     uString* ret13;
     uPtr(__this->_values)->Clear();
-    ::g::Uno::Collections::List__Add_fn(uPtr(__this->_values), (::g::Fuse::Marshal__ToType_fn(::TYPES[7/*Fuse.Marshal.ToType<string>*/], newValue, &ret13), ret13));
+    ::g::Uno::Collections::List__Add_fn(uPtr(__this->_values), (::g::Fuse::Marshal__ToType_fn(::g::Fuse::Marshal_typeof()->MakeMethod(0/*ToType<string>*/, ::g::Uno::String_typeof(), NULL), newValue, &ret13), ret13));
     __this->OnSelectionChanged(1);
 }
 
-// public bool get_HasMaxCount() :567
+// public bool get_HasMaxCount() :152
 void Selection__get_HasMaxCount_fn(Selection* __this, bool* __retval)
 {
     *__retval = __this->HasMaxCount();
 }
 
-// public bool IsSelected(Fuse.Selection.Selectable b) :575
+// public bool IsSelected(Fuse.Selection.Selectable b) :160
 void Selection__IsSelected_fn(Selection* __this, ::g::Fuse::Selection::Selectable* b, bool* __retval)
 {
     *__retval = __this->IsSelected(b);
 }
 
-// public int get_MaxCount() :545
+// public int get_MaxCount() :130
 void Selection__get_MaxCount_fn(Selection* __this, int* __retval)
 {
     *__retval = __this->MaxCount();
 }
 
-// public void set_MaxCount(int value) :546
+// public void set_MaxCount(int value) :131
 void Selection__set_MaxCount_fn(Selection* __this, int* value)
 {
     __this->MaxCount(*value);
 }
 
-// public int get_MinCount() :528
+// public int get_MinCount() :113
 void Selection__get_MinCount_fn(Selection* __this, int* __retval)
 {
     *__retval = __this->MinCount();
 }
 
-// public void set_MinCount(int value) :529
+// public void set_MinCount(int value) :114
 void Selection__set_MinCount_fn(Selection* __this, int* value)
 {
     __this->MinCount(*value);
 }
 
-// internal void ModifyValue(string old, string nw) :780
+// internal void ModifyValue(string old, string nw) :365
 void Selection__ModifyValue_fn(Selection* __this, uString* old, uString* nw)
 {
     __this->ModifyValue(old, nw);
 }
 
-// public generated Selection New() :302
+// public generated Selection New() :9
 void Selection__New2_fn(Selection** __retval)
 {
     *__retval = Selection::New2();
 }
 
-// private void OnObservableValuesChanged() :819
+// private void OnObservableValuesChanged() :404
 void Selection__OnObservableValuesChanged_fn(Selection* __this)
 {
     __this->OnObservableValuesChanged();
 }
 
-// protected override sealed void OnRooted() :500
+// protected override sealed void OnRooted() :85
 void Selection__OnRooted_fn(Selection* __this)
 {
     ::g::Fuse::Node__OnRooted_fn(__this);
     __this->OnObservableValuesChanged();
 }
 
-// private void OnSelectionChanged(Fuse.Selection.Selection.How how) :765
+// private void OnSelectionChanged(Fuse.Selection.Selection.How how) :350
 void Selection__OnSelectionChanged_fn(Selection* __this, int* how)
 {
     __this->OnSelectionChanged(*how);
 }
 
-// protected override sealed void OnUnrooted() :506
+// protected override sealed void OnUnrooted() :91
 void Selection__OnUnrooted_fn(Selection* __this)
 {
     __this->ClearSubscription();
     ::g::Fuse::Node__OnUnrooted_fn(__this);
 }
 
-// private static void remove(Fuse.Scripting.Context c, Fuse.Selection.Selection s, object[] args) :356
+// private static void remove(Fuse.Scripting.Context c, Fuse.Selection.Selection s, object[] args) :63
 void Selection__remove_fn(::g::Fuse::Scripting::Context* c, Selection* s, uArray* args)
 {
     Selection::remove(c, s, args);
 }
 
-// public void Remove(Fuse.Selection.Selectable b) :617
+// public void Remove(Fuse.Selection.Selectable b) :202
 void Selection__Remove1_fn(Selection* __this, ::g::Fuse::Selection::Selectable* b)
 {
     __this->Remove1(b);
 }
 
-// private void Remove(string value) :711
+// private void Remove(string value) :296
 void Selection__Remove2_fn(Selection* __this, uString* value)
 {
     __this->Remove2(value);
 }
 
-// public Fuse.Selection.SelectionReplace get_Replace() :518
+// public Fuse.Selection.SelectionReplace get_Replace() :103
 void Selection__get_Replace_fn(Selection* __this, int* __retval)
 {
     *__retval = __this->Replace();
 }
 
-// public void set_Replace(Fuse.Selection.SelectionReplace value) :519
+// public void set_Replace(Fuse.Selection.SelectionReplace value) :104
 void Selection__set_Replace_fn(Selection* __this, int* value)
 {
     __this->Replace(*value);
 }
 
-// public generated void add_SelectionChanged(Uno.EventHandler value) :746
+// public generated void add_SelectionChanged(Uno.EventHandler value) :331
 void Selection__add_SelectionChanged_fn(Selection* __this, uDelegate* value)
 {
     __this->add_SelectionChanged(value);
 }
 
-// public generated void remove_SelectionChanged(Uno.EventHandler value) :746
+// public generated void remove_SelectionChanged(Uno.EventHandler value) :331
 void Selection__remove_SelectionChanged_fn(Selection* __this, uDelegate* value)
 {
     __this->remove_SelectionChanged(value);
 }
 
-// private static void toggle(Fuse.Scripting.Context c, Fuse.Selection.Selection s, object[] args) :400
+// private static void toggle(Fuse.Scripting.Context c, Fuse.Selection.Selection s, object[] args) :107
 void Selection__toggle_fn(::g::Fuse::Scripting::Context* c, Selection* s, uArray* args)
 {
     Selection::toggle(c, s, args);
 }
 
-// public void Toggle(Fuse.Selection.Selectable b) :589
+// public void Toggle(Fuse.Selection.Selectable b) :174
 void Selection__Toggle_fn(Selection* __this, ::g::Fuse::Selection::Selectable* b)
 {
     __this->Toggle(b);
 }
 
-// private void Toggle(string value) :594
+// private void Toggle(string value) :179
 void Selection__Toggle1_fn(Selection* __this, uString* value)
 {
     __this->Toggle1(value);
 }
 
-// internal static bool TryFindSelectable(Fuse.Node n, Fuse.Selection.Selectable& selectable, Fuse.Selection.Selection& selection) :473
+// internal static bool TryFindSelectable(Fuse.Node n, Fuse.Selection.Selectable& selectable, Fuse.Selection.Selection& selection) :58
 void Selection__TryFindSelectable_fn(::g::Fuse::Node* n, ::g::Fuse::Selection::Selectable** selectable, Selection** selection, bool* __retval)
 {
     *__retval = Selection::TryFindSelectable(n, selectable, selection);
 }
 
-// internal static Fuse.Selection.Selection TryFindSelection(Fuse.Node v) :456
+// internal static Fuse.Selection.Selection TryFindSelection(Fuse.Node v) :41
 void Selection__TryFindSelection_fn(::g::Fuse::Node* v, Selection** __retval)
 {
     *__retval = Selection::TryFindSelection(v);
 }
 
-// public object get_Values() :801
+// public object get_Values() :386
 void Selection__get_Values_fn(Selection* __this, uObject** __retval)
 {
     *__retval = __this->Values();
 }
 
-// public void set_Values(object value) :802
+// public void set_Values(object value) :387
 void Selection__set_Values_fn(Selection* __this, uObject* value)
 {
     __this->Values(value);
@@ -845,20 +817,20 @@ void Selection__set_Values_fn(Selection* __this, uObject* value)
 
 ::g::Uno::UX::Selector Selection::ValueName_;
 
-// public generated Selection() [instance] :302
+// public generated Selection() [instance] :9
 void Selection::ctor_3()
 {
-    _values = ((::g::Uno::Collections::List*)::g::Uno::Collections::List::New1(::TYPES[6/*Uno.Collections.List<string>*/]));
+    _values = ((::g::Uno::Collections::List*)::g::Uno::Collections::List::New1(::g::Uno::Collections::List_typeof()->MakeType(::g::Uno::String_typeof(), NULL)));
     ctor_2();
 }
 
-// public void Add(Fuse.Selection.Selectable b) [instance] :607
+// public void Add(Fuse.Selection.Selectable b) [instance] :192
 void Selection::Add1(::g::Fuse::Selection::Selectable* b)
 {
     Add2(uPtr(b)->Value());
 }
 
-// private void Add(string value) [instance] :723
+// private void Add(string value) [instance] :308
 void Selection::Add2(uString* value)
 {
     bool ret3;
@@ -881,24 +853,24 @@ void Selection::Add2(uString* value)
     OnSelectionChanged(0);
 }
 
-// public void Clear() [instance] :627
+// public void Clear() [instance] :212
 void Selection::Clear()
 {
     uPtr(_values)->Clear();
     OnSelectionChanged(0);
 }
 
-// private void ClearSubscription() [instance] :829
+// private void ClearSubscription() [instance] :414
 void Selection::ClearSubscription()
 {
     if (_subscription != NULL)
     {
-        ::g::Uno::IDisposable::Dispose(uInterface(uPtr(_subscription), ::TYPES[8/*Uno.IDisposable*/]));
+        ::g::Uno::IDisposable::Dispose(uInterface(uPtr(_subscription), ::g::Uno::IDisposable_typeof()));
         _subscription = NULL;
     }
 }
 
-// private void ForceAdd(string value) [instance] :641
+// private void ForceAdd(string value) [instance] :226
 void Selection::ForceAdd1(uString* value)
 {
     bool ret5;
@@ -910,7 +882,7 @@ void Selection::ForceAdd1(uString* value)
     }
 }
 
-// private void ForceRemove(string value) [instance] :658
+// private void ForceRemove(string value) [instance] :243
 void Selection::ForceRemove1(uString* value)
 {
     bool ret7;
@@ -923,13 +895,13 @@ void Selection::ForceRemove1(uString* value)
     }
 }
 
-// public bool get_HasMaxCount() [instance] :567
+// public bool get_HasMaxCount() [instance] :152
 bool Selection::HasMaxCount()
 {
     return _hasMaxCount;
 }
 
-// public bool IsSelected(Fuse.Selection.Selectable b) [instance] :575
+// public bool IsSelected(Fuse.Selection.Selectable b) [instance] :160
 bool Selection::IsSelected(::g::Fuse::Selection::Selectable* b)
 {
     bool ret14;
@@ -940,13 +912,13 @@ bool Selection::IsSelected(::g::Fuse::Selection::Selectable* b)
     return (::g::Uno::Collections::List__Contains_fn(uPtr(_values), uPtr(b)->Value(), &ret14), ret14);
 }
 
-// public int get_MaxCount() [instance] :545
+// public int get_MaxCount() [instance] :130
 int Selection::MaxCount()
 {
     return _maxCount;
 }
 
-// public void set_MaxCount(int value) [instance] :546
+// public void set_MaxCount(int value) [instance] :131
 void Selection::MaxCount(int value)
 {
     if (_hasMaxCount && (value == _maxCount))
@@ -954,7 +926,7 @@ void Selection::MaxCount(int value)
 
     if (value < 1)
     {
-        ::g::Fuse::Diagnostics::UserError(::STRINGS[28/*"MaxCount mu...*/], this, ::STRINGS[5/*"/usr/local/...*/], 553, ::STRINGS[29/*"set_MaxCount"*/], NULL);
+        ::g::Fuse::Diagnostics::UserError(uString::Const("MaxCount must >= 1"), this, uString::Const("C:\\Users\\q\\AppData\\Local\\Fusetools\\Packages\\Fuse.Selection\\1.3.0-rc2\\Selection.uno"), 138, uString::Const("set_MaxCount"), NULL);
         return;
     }
 
@@ -962,13 +934,13 @@ void Selection::MaxCount(int value)
     _maxCount = value;
 }
 
-// public int get_MinCount() [instance] :528
+// public int get_MinCount() [instance] :113
 int Selection::MinCount()
 {
     return _minCount;
 }
 
-// public void set_MinCount(int value) [instance] :529
+// public void set_MinCount(int value) [instance] :114
 void Selection::MinCount(int value)
 {
     if (value == _minCount)
@@ -977,7 +949,7 @@ void Selection::MinCount(int value)
     _minCount = value;
 }
 
-// internal void ModifyValue(string old, string nw) [instance] :780
+// internal void ModifyValue(string old, string nw) [instance] :365
 void Selection::ModifyValue(uString* old, uString* nw)
 {
     bool ret15;
@@ -994,7 +966,7 @@ void Selection::ModifyValue(uString* old, uString* nw)
     }
 }
 
-// private void OnObservableValuesChanged() [instance] :819
+// private void OnObservableValuesChanged() [instance] :404
 void Selection::OnObservableValuesChanged()
 {
     ClearSubscription();
@@ -1002,28 +974,28 @@ void Selection::OnObservableValuesChanged()
     if (_observableValues == NULL)
         return;
 
-    _subscription = ::g::Fuse::Reactive::IObservable::Subscribe(uInterface(uPtr(_observableValues), ::TYPES[11/*Fuse.Reactive.IObservable*/]), (uObject*)this);
+    _subscription = ::g::Fuse::Reactive::IObservable::Subscribe(uInterface(uPtr(_observableValues), ::g::Fuse::Reactive::IObservable_typeof()), (uObject*)this);
 }
 
-// private void OnSelectionChanged(Fuse.Selection.Selection.How how) [instance] :765
+// private void OnSelectionChanged(Fuse.Selection.Selection.How how) [instance] :350
 void Selection::OnSelectionChanged(int how)
 {
-    OnPropertyChanged(Selection::ValueName());
+    OnPropertyChanged(Selection::ValueName_);
 
     if (::g::Uno::Delegate::op_Inequality(SelectionChanged1, NULL))
-        uPtr(SelectionChanged1)->Invoke(2, this, (::g::Uno::EventArgs*)::g::Uno::EventArgs::Empty());
+        uPtr(SelectionChanged1)->Invoke(2, this, (::g::Uno::EventArgs*)::g::Uno::EventArgs::Empty_);
 
     if ((how == 0) && (_subscription != NULL))
-        ::g::Fuse::Reactive::ISubscription::ReplaceAllExclusive(uInterface(uPtr(_subscription), ::TYPES[12/*Fuse.Reactive.ISubscription*/]), (uObject*)Selection__ListWrapper::New1(_values));
+        ::g::Fuse::Reactive::ISubscription::ReplaceAllExclusive(uInterface(uPtr(_subscription), ::g::Fuse::Reactive::ISubscription_typeof()), (uObject*)Selection__ListWrapper::New1(_values));
 }
 
-// public void Remove(Fuse.Selection.Selectable b) [instance] :617
+// public void Remove(Fuse.Selection.Selectable b) [instance] :202
 void Selection::Remove1(::g::Fuse::Selection::Selectable* b)
 {
     Remove2(uPtr(b)->Value());
 }
 
-// private void Remove(string value) [instance] :711
+// private void Remove(string value) [instance] :296
 void Selection::Remove2(uString* value)
 {
     bool ret18;
@@ -1039,37 +1011,37 @@ void Selection::Remove2(uString* value)
     OnSelectionChanged(0);
 }
 
-// public Fuse.Selection.SelectionReplace get_Replace() [instance] :518
+// public Fuse.Selection.SelectionReplace get_Replace() [instance] :103
 int Selection::Replace()
 {
     return _replace;
 }
 
-// public void set_Replace(Fuse.Selection.SelectionReplace value) [instance] :519
+// public void set_Replace(Fuse.Selection.SelectionReplace value) [instance] :104
 void Selection::Replace(int value)
 {
     _replace = value;
 }
 
-// public generated void add_SelectionChanged(Uno.EventHandler value) [instance] :746
+// public generated void add_SelectionChanged(Uno.EventHandler value) [instance] :331
 void Selection::add_SelectionChanged(uDelegate* value)
 {
-    SelectionChanged1 = uCast<uDelegate*>(::g::Uno::Delegate::Combine(SelectionChanged1, value), ::TYPES[16/*Uno.EventHandler*/]);
+    SelectionChanged1 = uCast<uDelegate*>(::g::Uno::Delegate::Combine(SelectionChanged1, value), ::TYPES[4/*Uno.EventHandler*/]);
 }
 
-// public generated void remove_SelectionChanged(Uno.EventHandler value) [instance] :746
+// public generated void remove_SelectionChanged(Uno.EventHandler value) [instance] :331
 void Selection::remove_SelectionChanged(uDelegate* value)
 {
-    SelectionChanged1 = uCast<uDelegate*>(::g::Uno::Delegate::Remove(SelectionChanged1, value), ::TYPES[16/*Uno.EventHandler*/]);
+    SelectionChanged1 = uCast<uDelegate*>(::g::Uno::Delegate::Remove(SelectionChanged1, value), ::TYPES[4/*Uno.EventHandler*/]);
 }
 
-// public void Toggle(Fuse.Selection.Selectable b) [instance] :589
+// public void Toggle(Fuse.Selection.Selectable b) [instance] :174
 void Selection::Toggle(::g::Fuse::Selection::Selectable* b)
 {
     Toggle1(uPtr(b)->Value());
 }
 
-// private void Toggle(string value) [instance] :594
+// private void Toggle(string value) [instance] :179
 void Selection::Toggle1(uString* value)
 {
     bool ret24;
@@ -1080,20 +1052,20 @@ void Selection::Toggle1(uString* value)
         Add2(value);
 }
 
-// public object get_Values() [instance] :801
+// public object get_Values() [instance] :386
 uObject* Selection::Values()
 {
     return _observableValues;
 }
 
-// public void set_Values(object value) [instance] :802
+// public void set_Values(object value) [instance] :387
 void Selection::Values(uObject* value)
 {
-    uObject* q = uAs<uObject*>(value, ::TYPES[11/*Fuse.Reactive.IObservable*/]);
+    uObject* q = uAs<uObject*>(value, ::g::Fuse::Reactive::IObservable_typeof());
 
     if ((value != NULL) && (q == NULL))
     {
-        ::g::Fuse::Diagnostics::UserError(::STRINGS[30/*"`Values` mu...*/], this, ::STRINGS[5/*"/usr/local/...*/], 807, ::STRINGS[31/*"set_Values"*/], NULL);
+        ::g::Fuse::Diagnostics::UserError(uString::Const("`Values` must be an Observable"), this, uString::Const("C:\\Users\\q\\AppData\\Local\\Fusetools\\Packages\\Fuse.Selection\\1.3.0-rc2\\Selection.uno"), 392, uString::Const("set_Values"), NULL);
         return;
     }
 
@@ -1104,7 +1076,7 @@ void Selection::Values(uObject* value)
     }
 }
 
-// private static void add(Fuse.Scripting.Context c, Fuse.Selection.Selection s, object[] args) [static] :338
+// private static void add(Fuse.Scripting.Context c, Fuse.Selection.Selection s, object[] args) [static] :45
 void Selection::add(::g::Fuse::Scripting::Context* c, Selection* s, uArray* args)
 {
     Selection_typeof()->Init();
@@ -1112,28 +1084,28 @@ void Selection::add(::g::Fuse::Scripting::Context* c, Selection* s, uArray* args
 
     if (uPtr(args)->Length() != 1)
     {
-        ::g::Fuse::Diagnostics::UserError(::STRINGS[17/*"add require...*/], s, ::STRINGS[5/*"/usr/local/...*/], 342, ::STRINGS[1/*"add"*/], NULL);
+        ::g::Fuse::Diagnostics::UserError(uString::Const("add requires 1 argument, the value of the item"), s, uString::Const("C:\\Users\\q\\AppData\\Local\\Fusetools\\Packages\\Fuse.Selection\\1.3.0-rc2\\Selection.ScriptClass.uno"), 49, ::STRINGS[1/*"add"*/], NULL);
         return;
     }
 
-    uPtr(s)->Add2((::g::Fuse::Marshal__ToType_fn(::TYPES[7/*Fuse.Marshal.ToType<string>*/], uPtr(args)->Strong<uObject*>(0), &ret2), ret2));
+    uPtr(s)->Add2((::g::Fuse::Marshal__ToType_fn(::g::Fuse::Marshal_typeof()->MakeMethod(0/*ToType<string>*/, ::g::Uno::String_typeof(), NULL), uPtr(args)->Strong<uObject*>(0), &ret2), ret2));
 }
 
-// private static void clear(Fuse.Scripting.Context c, Fuse.Selection.Selection s, object[] args) [static] :320
+// private static void clear(Fuse.Scripting.Context c, Fuse.Selection.Selection s, object[] args) [static] :27
 void Selection::clear(::g::Fuse::Scripting::Context* c, Selection* s, uArray* args)
 {
     Selection_typeof()->Init();
 
     if (uPtr(args)->Length() != 0)
     {
-        ::g::Fuse::Diagnostics::UserError(::STRINGS[18/*"clear requi...*/], s, ::STRINGS[5/*"/usr/local/...*/], 324, ::STRINGS[14/*"clear"*/], NULL);
+        ::g::Fuse::Diagnostics::UserError(uString::Const("clear requires 0 arguments"), s, uString::Const("C:\\Users\\q\\AppData\\Local\\Fusetools\\Packages\\Fuse.Selection\\1.3.0-rc2\\Selection.ScriptClass.uno"), 31, uString::Const("clear"), NULL);
         return;
     }
 
     uPtr(s)->Clear();
 }
 
-// private static void forceAdd(Fuse.Scripting.Context c, Fuse.Selection.Selection s, object[] args) [static] :370
+// private static void forceAdd(Fuse.Scripting.Context c, Fuse.Selection.Selection s, object[] args) [static] :77
 void Selection::forceAdd(::g::Fuse::Scripting::Context* c, Selection* s, uArray* args)
 {
     Selection_typeof()->Init();
@@ -1141,14 +1113,14 @@ void Selection::forceAdd(::g::Fuse::Scripting::Context* c, Selection* s, uArray*
 
     if (uPtr(args)->Length() != 1)
     {
-        ::g::Fuse::Diagnostics::UserError(::STRINGS[19/*"forceAdd re...*/], s, ::STRINGS[5/*"/usr/local/...*/], 374, ::STRINGS[15/*"forceAdd"*/], NULL);
+        ::g::Fuse::Diagnostics::UserError(uString::Const("forceAdd requires 1 argument, the value of the item"), s, uString::Const("C:\\Users\\q\\AppData\\Local\\Fusetools\\Packages\\Fuse.Selection\\1.3.0-rc2\\Selection.ScriptClass.uno"), 81, uString::Const("forceAdd"), NULL);
         return;
     }
 
-    uPtr(s)->ForceAdd1((::g::Fuse::Marshal__ToType_fn(::TYPES[7/*Fuse.Marshal.ToType<string>*/], uPtr(args)->Strong<uObject*>(0), &ret4), ret4));
+    uPtr(s)->ForceAdd1((::g::Fuse::Marshal__ToType_fn(::g::Fuse::Marshal_typeof()->MakeMethod(0/*ToType<string>*/, ::g::Uno::String_typeof(), NULL), uPtr(args)->Strong<uObject*>(0), &ret4), ret4));
 }
 
-// private static void forceRemove(Fuse.Scripting.Context c, Fuse.Selection.Selection s, object[] args) [static] :384
+// private static void forceRemove(Fuse.Scripting.Context c, Fuse.Selection.Selection s, object[] args) [static] :91
 void Selection::forceRemove(::g::Fuse::Scripting::Context* c, Selection* s, uArray* args)
 {
     Selection_typeof()->Init();
@@ -1156,14 +1128,14 @@ void Selection::forceRemove(::g::Fuse::Scripting::Context* c, Selection* s, uArr
 
     if (uPtr(args)->Length() != 1)
     {
-        ::g::Fuse::Diagnostics::UserError(::STRINGS[20/*"forceRemove...*/], s, ::STRINGS[5/*"/usr/local/...*/], 388, ::STRINGS[16/*"forceRemove"*/], NULL);
+        ::g::Fuse::Diagnostics::UserError(uString::Const("forceRemove requires 1 argument, the value of the item"), s, uString::Const("C:\\Users\\q\\AppData\\Local\\Fusetools\\Packages\\Fuse.Selection\\1.3.0-rc2\\Selection.ScriptClass.uno"), 95, uString::Const("forceRemove"), NULL);
         return;
     }
 
-    uPtr(s)->ForceRemove1((::g::Fuse::Marshal__ToType_fn(::TYPES[7/*Fuse.Marshal.ToType<string>*/], uPtr(args)->Strong<uObject*>(0), &ret6), ret6));
+    uPtr(s)->ForceRemove1((::g::Fuse::Marshal__ToType_fn(::g::Fuse::Marshal_typeof()->MakeMethod(0/*ToType<string>*/, ::g::Uno::String_typeof(), NULL), uPtr(args)->Strong<uObject*>(0), &ret6), ret6));
 }
 
-// public generated Selection New() [static] :302
+// public generated Selection New() [static] :9
 Selection* Selection::New2()
 {
     Selection* obj1 = (Selection*)uNew(Selection_typeof());
@@ -1171,7 +1143,7 @@ Selection* Selection::New2()
     return obj1;
 }
 
-// private static void remove(Fuse.Scripting.Context c, Fuse.Selection.Selection s, object[] args) [static] :356
+// private static void remove(Fuse.Scripting.Context c, Fuse.Selection.Selection s, object[] args) [static] :63
 void Selection::remove(::g::Fuse::Scripting::Context* c, Selection* s, uArray* args)
 {
     Selection_typeof()->Init();
@@ -1179,14 +1151,14 @@ void Selection::remove(::g::Fuse::Scripting::Context* c, Selection* s, uArray* a
 
     if (uPtr(args)->Length() != 1)
     {
-        ::g::Fuse::Diagnostics::UserError(::STRINGS[26/*"remove requ...*/], s, ::STRINGS[5/*"/usr/local/...*/], 360, ::STRINGS[2/*"remove"*/], NULL);
+        ::g::Fuse::Diagnostics::UserError(uString::Const("remove requires 1 argument, the value of the item"), s, uString::Const("C:\\Users\\q\\AppData\\Local\\Fusetools\\Packages\\Fuse.Selection\\1.3.0-rc2\\Selection.ScriptClass.uno"), 67, ::STRINGS[2/*"remove"*/], NULL);
         return;
     }
 
-    uPtr(s)->Remove2((::g::Fuse::Marshal__ToType_fn(::TYPES[7/*Fuse.Marshal.ToType<string>*/], uPtr(args)->Strong<uObject*>(0), &ret17), ret17));
+    uPtr(s)->Remove2((::g::Fuse::Marshal__ToType_fn(::g::Fuse::Marshal_typeof()->MakeMethod(0/*ToType<string>*/, ::g::Uno::String_typeof(), NULL), uPtr(args)->Strong<uObject*>(0), &ret17), ret17));
 }
 
-// private static void toggle(Fuse.Scripting.Context c, Fuse.Selection.Selection s, object[] args) [static] :400
+// private static void toggle(Fuse.Scripting.Context c, Fuse.Selection.Selection s, object[] args) [static] :107
 void Selection::toggle(::g::Fuse::Scripting::Context* c, Selection* s, uArray* args)
 {
     Selection_typeof()->Init();
@@ -1194,14 +1166,14 @@ void Selection::toggle(::g::Fuse::Scripting::Context* c, Selection* s, uArray* a
 
     if (uPtr(args)->Length() != 1)
     {
-        ::g::Fuse::Diagnostics::UserError(::STRINGS[27/*"toggle requ...*/], s, ::STRINGS[5/*"/usr/local/...*/], 404, ::STRINGS[3/*"toggle"*/], NULL);
+        ::g::Fuse::Diagnostics::UserError(uString::Const("toggle requires 1 argument, the value of them item"), s, uString::Const("C:\\Users\\q\\AppData\\Local\\Fusetools\\Packages\\Fuse.Selection\\1.3.0-rc2\\Selection.ScriptClass.uno"), 111, ::STRINGS[3/*"toggle"*/], NULL);
         return;
     }
 
-    uPtr(s)->Toggle1((::g::Fuse::Marshal__ToType_fn(::TYPES[7/*Fuse.Marshal.ToType<string>*/], uPtr(args)->Strong<uObject*>(0), &ret23), ret23));
+    uPtr(s)->Toggle1((::g::Fuse::Marshal__ToType_fn(::g::Fuse::Marshal_typeof()->MakeMethod(0/*ToType<string>*/, ::g::Uno::String_typeof(), NULL), uPtr(args)->Strong<uObject*>(0), &ret23), ret23));
 }
 
-// internal static bool TryFindSelectable(Fuse.Node n, Fuse.Selection.Selectable& selectable, Fuse.Selection.Selection& selection) [static] :473
+// internal static bool TryFindSelectable(Fuse.Node n, Fuse.Selection.Selectable& selectable, Fuse.Selection.Selection& selection) [static] :58
 bool Selection::TryFindSelectable(::g::Fuse::Node* n, ::g::Fuse::Selection::Selectable** selectable, Selection** selection)
 {
     Selection_typeof()->Init();
@@ -1210,14 +1182,14 @@ bool Selection::TryFindSelectable(::g::Fuse::Node* n, ::g::Fuse::Selection::Sele
 
     while (n != NULL)
     {
-        ::g::Fuse::Visual* vs = uAs< ::g::Fuse::Visual*>(n, ::TYPES[13/*Fuse.Visual*/]);
+        ::g::Fuse::Visual* vs = uAs< ::g::Fuse::Visual*>(n, ::g::Fuse::Visual_typeof());
 
         if (vs != NULL)
         {
             if (*selectable == NULL)
-                *selectable = (::g::Fuse::Selection::Selectable*)uPtr(vs)->FirstChild(::TYPES[14/*Fuse.Visual.FirstChild<Fuse.Selection.Selectable>*/]);
+                *selectable = (::g::Fuse::Selection::Selectable*)uPtr(vs)->FirstChild(::g::Fuse::Visual_typeof()->MakeMethod(2/*FirstChild<Fuse.Selection.Selectable>*/, ::g::Fuse::Selection::Selectable_typeof(), NULL));
             else
-                *selection = (Selection*)uPtr(vs)->FirstChild(::TYPES[15/*Fuse.Visual.FirstChild<Fuse.Selection.Selection>*/]);
+                *selection = (Selection*)uPtr(vs)->FirstChild(::g::Fuse::Visual_typeof()->MakeMethod(2/*FirstChild<Fuse.Selection.Selection>*/, Selection_typeof(), NULL));
 
             if ((*selectable != NULL) && (*selection != NULL))
                 return true;
@@ -1231,18 +1203,18 @@ bool Selection::TryFindSelectable(::g::Fuse::Node* n, ::g::Fuse::Selection::Sele
     return false;
 }
 
-// internal static Fuse.Selection.Selection TryFindSelection(Fuse.Node v) [static] :456
+// internal static Fuse.Selection.Selection TryFindSelection(Fuse.Node v) [static] :41
 Selection* Selection::TryFindSelection(::g::Fuse::Node* v)
 {
     Selection_typeof()->Init();
 
     while (v != NULL)
     {
-        ::g::Fuse::Visual* vs = uAs< ::g::Fuse::Visual*>(v, ::TYPES[13/*Fuse.Visual*/]);
+        ::g::Fuse::Visual* vs = uAs< ::g::Fuse::Visual*>(v, ::g::Fuse::Visual_typeof());
 
         if (vs != NULL)
         {
-            Selection* l = (Selection*)uPtr(vs)->FirstChild(::TYPES[15/*Fuse.Visual.FirstChild<Fuse.Selection.Selection>*/]);
+            Selection* l = (Selection*)uPtr(vs)->FirstChild(::g::Fuse::Visual_typeof()->MakeMethod(2/*FirstChild<Fuse.Selection.Selection>*/, Selection_typeof(), NULL));
 
             if (l != NULL)
                 return l;
@@ -1255,10 +1227,10 @@ Selection* Selection::TryFindSelection(::g::Fuse::Node* v)
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Selection/1.2.1/$.uno
-// --------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Selection\1.3.0-rc2\Selection.uno
+// ----------------------------------------------------------------------------------
 
-// public enum SelectionReplace :424
+// public enum SelectionReplace :9
 uEnumType* SelectionReplace_typeof()
 {
     static uSStrong<uEnumType*> type;
@@ -1272,10 +1244,10 @@ uEnumType* SelectionReplace_typeof()
     return type;
 }
 
-// /usr/local/share/uno/Packages/Fuse.Selection/1.2.1/$.uno
-// --------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Selection\1.3.0-rc2\ToggleSelection.uno
+// ----------------------------------------------------------------------------------------
 
-// public enum SelectMode :927
+// public enum SelectMode :8
 uEnumType* SelectMode_typeof()
 {
     static uSStrong<uEnumType*> type;
@@ -1289,18 +1261,20 @@ uEnumType* SelectMode_typeof()
     return type;
 }
 
-// /usr/local/share/uno/Packages/Fuse.Selection/1.2.1/$.uno
-// --------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Selection\1.3.0-rc2\ToggleSelection.uno
+// ----------------------------------------------------------------------------------------
 
-// public sealed class ToggleSelection :945
+// public sealed class ToggleSelection :26
 // {
 static void ToggleSelection_build(uType* type)
 {
-    ::STRINGS[32] = uString::Const("Unable to locate Selectable");
-    ::STRINGS[5] = uString::Const("/usr/local/share/uno/Packages/Fuse.Selection/1.2.1/$.uno");
-    ::STRINGS[33] = uString::Const("Perform");
+    ::STRINGS[15] = uString::Const("Unable to locate Selectable");
+    ::STRINGS[16] = uString::Const("C:\\Users\\q\\AppData\\Local\\Fusetools\\Packages\\Fuse.Selection\\1.3.0-rc2\\ToggleSelection.uno");
+    ::STRINGS[17] = uString::Const("Perform");
+    type->SetDependencies(
+        ::g::Fuse::Diagnostics_typeof());
     type->SetFields(8,
-        ::g::Fuse::Selection::SelectMode_typeof(), offsetof(::g::Fuse::Selection::ToggleSelection, _mode), 0);
+        ::g::Fuse::Selection::SelectMode_typeof(), offsetof(ToggleSelection, _mode), 0);
 }
 
 ::g::Fuse::Triggers::Actions::TriggerAction_type* ToggleSelection_typeof()
@@ -1311,6 +1285,7 @@ static void ToggleSelection_build(uType* type)
     uTypeOptions options;
     options.BaseDefinition = ::g::Fuse::Triggers::Actions::TriggerAction_typeof();
     options.FieldCount = 9;
+    options.DependencyCount = 1;
     options.ObjectSize = sizeof(ToggleSelection);
     options.TypeSize = sizeof(::g::Fuse::Triggers::Actions::TriggerAction_type);
     type = (::g::Fuse::Triggers::Actions::TriggerAction_type*)uClassType::New("Fuse.Selection.ToggleSelection", options);
@@ -1320,31 +1295,31 @@ static void ToggleSelection_build(uType* type)
     return type;
 }
 
-// public generated ToggleSelection() :945
+// public generated ToggleSelection() :26
 void ToggleSelection__ctor_2_fn(ToggleSelection* __this)
 {
     __this->ctor_2();
 }
 
-// public Fuse.Selection.SelectMode get_Mode() :955
+// public Fuse.Selection.SelectMode get_Mode() :36
 void ToggleSelection__get_Mode_fn(ToggleSelection* __this, int* __retval)
 {
     *__retval = __this->Mode();
 }
 
-// public void set_Mode(Fuse.Selection.SelectMode value) :956
+// public void set_Mode(Fuse.Selection.SelectMode value) :37
 void ToggleSelection__set_Mode_fn(ToggleSelection* __this, int* value)
 {
     __this->Mode(*value);
 }
 
-// public generated ToggleSelection New() :945
+// public generated ToggleSelection New() :26
 void ToggleSelection__New2_fn(ToggleSelection** __retval)
 {
     *__retval = ToggleSelection::New2();
 }
 
-// protected override sealed void Perform(Fuse.Node target) :959
+// protected override sealed void Perform(Fuse.Node target) :40
 void ToggleSelection__Perform_fn(ToggleSelection* __this, ::g::Fuse::Node* target)
 {
     ::g::Fuse::Selection::Selectable* selectable;
@@ -1352,7 +1327,7 @@ void ToggleSelection__Perform_fn(ToggleSelection* __this, ::g::Fuse::Node* targe
 
     if (!::g::Fuse::Selection::Selection::TryFindSelectable(target, &selectable, &selection))
     {
-        ::g::Fuse::Diagnostics::UserError(::STRINGS[32/*"Unable to l...*/], __this, ::STRINGS[5/*"/usr/local/...*/], 965, ::STRINGS[33/*"Perform"*/], NULL);
+        ::g::Fuse::Diagnostics::UserError(::STRINGS[15/*"Unable to l...*/], __this, ::STRINGS[16/*"C:\\Users\\...*/], 46, ::STRINGS[17/*"Perform"*/], NULL);
         return;
     }
 
@@ -1376,25 +1351,25 @@ void ToggleSelection__Perform_fn(ToggleSelection* __this, ::g::Fuse::Node* targe
     }
 }
 
-// public generated ToggleSelection() [instance] :945
+// public generated ToggleSelection() [instance] :26
 void ToggleSelection::ctor_2()
 {
     ctor_1();
 }
 
-// public Fuse.Selection.SelectMode get_Mode() [instance] :955
+// public Fuse.Selection.SelectMode get_Mode() [instance] :36
 int ToggleSelection::Mode()
 {
     return _mode;
 }
 
-// public void set_Mode(Fuse.Selection.SelectMode value) [instance] :956
+// public void set_Mode(Fuse.Selection.SelectMode value) [instance] :37
 void ToggleSelection::Mode(int value)
 {
     _mode = value;
 }
 
-// public generated ToggleSelection New() [static] :945
+// public generated ToggleSelection New() [static] :26
 ToggleSelection* ToggleSelection::New2()
 {
     ToggleSelection* obj1 = (ToggleSelection*)uNew(ToggleSelection_typeof());
@@ -1403,17 +1378,19 @@ ToggleSelection* ToggleSelection::New2()
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Selection/1.2.1/$.uno
-// --------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Selection\1.3.0-rc2\WhileSelected.uno
+// --------------------------------------------------------------------------------------
 
-// public sealed class WhileSelected :1003
+// public sealed class WhileSelected :15
 // {
 static void WhileSelected_build(uType* type)
 {
-    ::STRINGS[34] = uString::Const("Unable to locate a `Selectable` and `Selection`");
-    ::STRINGS[5] = uString::Const("/usr/local/share/uno/Packages/Fuse.Selection/1.2.1/$.uno");
-    ::STRINGS[9] = uString::Const("OnRooted");
-    ::TYPES[16] = ::g::Uno::EventHandler_typeof();
+    ::STRINGS[18] = uString::Const("Unable to locate a `Selectable` and `Selection`");
+    ::STRINGS[19] = uString::Const("C:\\Users\\q\\AppData\\Local\\Fusetools\\Packages\\Fuse.Selection\\1.3.0-rc2\\WhileSelected.uno");
+    ::STRINGS[10] = uString::Const("OnRooted");
+    ::TYPES[4] = ::g::Uno::EventHandler_typeof();
+    type->SetDependencies(
+        ::g::Fuse::Diagnostics_typeof());
     type->SetInterfaces(
         ::g::Uno::Collections::IList_typeof()->MakeType(::g::Fuse::Binding_typeof(), NULL), offsetof(WhileSelected_type, interface0),
         ::g::Fuse::Scripting::IScriptObject_typeof(), offsetof(WhileSelected_type, interface1),
@@ -1424,9 +1401,9 @@ static void WhileSelected_build(uType* type)
         ::g::Fuse::Animations::IUnwrappedPlayerFeedback_typeof(), offsetof(WhileSelected_type, interface6),
         ::g::Fuse::Animations::IBasePlayerFeedback_typeof(), offsetof(WhileSelected_type, interface7),
         ::g::Uno::UX::IPropertyListener_typeof(), offsetof(WhileSelected_type, interface8));
-    type->SetFields(33,
-        ::g::Fuse::Selection::Selectable_typeof(), offsetof(::g::Fuse::Selection::WhileSelected, _selectable), 0,
-        ::g::Fuse::Selection::Selection_typeof(), offsetof(::g::Fuse::Selection::WhileSelected, _selection), 0);
+    type->SetFields(37,
+        ::g::Fuse::Selection::Selectable_typeof(), offsetof(WhileSelected, _selectable), 0,
+        ::g::Fuse::Selection::Selection_typeof(), offsetof(WhileSelected, _selection), 0);
 }
 
 WhileSelected_type* WhileSelected_typeof()
@@ -1436,8 +1413,9 @@ WhileSelected_type* WhileSelected_typeof()
 
     uTypeOptions options;
     options.BaseDefinition = ::g::Fuse::Triggers::WhileTrigger_typeof();
-    options.FieldCount = 35;
+    options.FieldCount = 39;
     options.InterfaceCount = 9;
+    options.DependencyCount = 1;
     options.ObjectSize = sizeof(WhileSelected);
     options.TypeSize = sizeof(WhileSelected_type);
     type = (WhileSelected_type*)uClassType::New("Fuse.Selection.WhileSelected", options);
@@ -1467,46 +1445,46 @@ WhileSelected_type* WhileSelected_typeof()
     return type;
 }
 
-// public generated WhileSelected() :1003
+// public generated WhileSelected() :15
 void WhileSelected__ctor_6_fn(WhileSelected* __this)
 {
     __this->ctor_6();
 }
 
-// public generated WhileSelected New() :1003
+// public generated WhileSelected New() :15
 void WhileSelected__New2_fn(WhileSelected** __retval)
 {
     *__retval = WhileSelected::New2();
 }
 
-// protected override sealed void OnRooted() :1008
+// protected override sealed void OnRooted() :20
 void WhileSelected__OnRooted_fn(WhileSelected* __this)
 {
     ::g::Fuse::Triggers::Trigger__OnRooted_fn(__this);
 
     if (!::g::Fuse::Selection::Selection::TryFindSelectable(__this->Parent(), &__this->_selectable, &__this->_selection))
     {
-        ::g::Fuse::Diagnostics::UserError(::STRINGS[34/*"Unable to l...*/], __this, ::STRINGS[5/*"/usr/local/...*/], 1014, ::STRINGS[9/*"OnRooted"*/], NULL);
+        ::g::Fuse::Diagnostics::UserError(::STRINGS[18/*"Unable to l...*/], __this, ::STRINGS[19/*"C:\\Users\\...*/], 26, ::STRINGS[10/*"OnRooted"*/], NULL);
         return;
     }
 
     __this->SetActive(uPtr(__this->_selection)->IsSelected(__this->_selectable));
-    uPtr(__this->_selection)->add_SelectionChanged(uDelegate::New(::TYPES[16/*Uno.EventHandler*/], (void*)WhileSelected__OnSelectionChanged_fn, __this));
+    uPtr(__this->_selection)->add_SelectionChanged(uDelegate::New(::TYPES[4/*Uno.EventHandler*/], (void*)WhileSelected__OnSelectionChanged_fn, __this));
     uPtr(__this->_selectable)->AddPropertyListener((uObject*)__this);
 }
 
-// private void OnSelectionChanged(object s, object args) :1046
+// private void OnSelectionChanged(object s, object args) :58
 void WhileSelected__OnSelectionChanged_fn(WhileSelected* __this, uObject* s, uObject* args)
 {
     __this->OnSelectionChanged(s, args);
 }
 
-// protected override sealed void OnUnrooted() :1023
+// protected override sealed void OnUnrooted() :35
 void WhileSelected__OnUnrooted_fn(WhileSelected* __this)
 {
     if (__this->_selection != NULL)
     {
-        uPtr(__this->_selection)->remove_SelectionChanged(uDelegate::New(::TYPES[16/*Uno.EventHandler*/], (void*)WhileSelected__OnSelectionChanged_fn, __this));
+        uPtr(__this->_selection)->remove_SelectionChanged(uDelegate::New(::TYPES[4/*Uno.EventHandler*/], (void*)WhileSelected__OnSelectionChanged_fn, __this));
         uPtr(__this->_selectable)->RemovePropertyListener((uObject*)__this);
     }
 
@@ -1515,26 +1493,26 @@ void WhileSelected__OnUnrooted_fn(WhileSelected* __this)
     ::g::Fuse::Triggers::Trigger__OnUnrooted_fn(__this);
 }
 
-// private void Uno.UX.IPropertyListener.OnPropertyChanged(Uno.UX.PropertyObject obj, Uno.UX.Selector prop) :1036
+// private void Uno.UX.IPropertyListener.OnPropertyChanged(Uno.UX.PropertyObject obj, Uno.UX.Selector prop) :48
 void WhileSelected__UnoUXIPropertyListenerOnPropertyChanged_fn(WhileSelected* __this, ::g::Uno::UX::PropertyObject* obj, ::g::Uno::UX::Selector* prop)
 {
     if (obj == __this->_selectable)
         __this->BypassSetActive(uPtr(__this->_selection)->IsSelected(__this->_selectable));
 }
 
-// public generated WhileSelected() [instance] :1003
+// public generated WhileSelected() [instance] :15
 void WhileSelected::ctor_6()
 {
     ctor_5();
 }
 
-// private void OnSelectionChanged(object s, object args) [instance] :1046
+// private void OnSelectionChanged(object s, object args) [instance] :58
 void WhileSelected::OnSelectionChanged(uObject* s, uObject* args)
 {
     SetActive(uPtr(_selection)->IsSelected(_selectable));
 }
 
-// public generated WhileSelected New() [static] :1003
+// public generated WhileSelected New() [static] :15
 WhileSelected* WhileSelected::New2()
 {
     WhileSelected* obj1 = (WhileSelected*)uNew(WhileSelected_typeof());

@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Navigation/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Navigation/1.3.0-rc2/PageBinding.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -20,7 +20,7 @@ namespace g{
 namespace Fuse{
 namespace Navigation{
 
-// public sealed class PageResourceBinding<T> :1760
+// public sealed class PageResourceBinding<T> :160
 // {
 struct PageResourceBinding_type : ::g::Fuse::Node_type
 {
@@ -45,7 +45,7 @@ void PageResourceBinding__UpdateSource_fn(PageResourceBinding* __this);
 struct PageResourceBinding : ::g::Fuse::Behavior
 {
     uStrong< ::g::Fuse::Visual*> _currentPage;
-    uTField _default() { return __type->Field(this, 13); }
+    uTField _default() { return __type->Field(this, 16); }
     bool _hasDefault;
     uStrong<uObject*> _nav;
     uStrong<uString*> _Key;

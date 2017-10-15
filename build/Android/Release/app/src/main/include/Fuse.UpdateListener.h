@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Common/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Common/1.3.0-rc2/UpdateManager.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -8,7 +8,7 @@ namespace g{namespace Fuse{struct UpdateListener;}}
 namespace g{
 namespace Fuse{
 
-// internal sealed class UpdateListener :3492
+// internal sealed class UpdateListener :44
 // {
 uType* UpdateListener_typeof();
 void UpdateListener__ctor__fn(UpdateListener* __this);

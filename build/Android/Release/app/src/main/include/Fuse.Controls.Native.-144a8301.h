@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Controls.Native/1.2.1/ios/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Controls.Native/1.3.0-rc2/iOS/GraphicsView.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -12,16 +12,14 @@ namespace Controls{
 namespace Native{
 namespace iOS{
 
-// public sealed extern class GraphicsView :384
+// public extern class GraphicsView :7
 // {
 uType* GraphicsView_typeof();
 void GraphicsView__ctor__fn(GraphicsView* __this, ::g::Fuse::Visual* host);
-void GraphicsView__New1_fn(::g::Fuse::Visual* host, GraphicsView** __retval);
 
 struct GraphicsView : uObject
 {
     void ctor_(::g::Fuse::Visual* host);
-    static GraphicsView* New1(::g::Fuse::Visual* host);
 };
 // }
 

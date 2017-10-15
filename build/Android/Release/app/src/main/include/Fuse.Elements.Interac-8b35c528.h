@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Elements/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Elements/1.3.0-rc2/InteractiveTransform.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -19,7 +19,7 @@ namespace g{
 namespace Fuse{
 namespace Elements{
 
-// public sealed class InteractiveTransform :3162
+// public sealed class InteractiveTransform :6
 // {
 ::g::Fuse::Transform_type* InteractiveTransform_typeof();
 void InteractiveTransform__AppendTo_fn(InteractiveTransform* __this, ::g::Fuse::FastMatrix* matrix, float* weight);
@@ -39,13 +39,13 @@ struct InteractiveTransform : ::g::Fuse::Transform
 {
     float _rotation;
     static ::g::Uno::UX::Selector _rotationName_;
-    static ::g::Uno::UX::Selector& _rotationName() { return InteractiveTransform_typeof()->Init(), _rotationName_; }
+    static ::g::Uno::UX::Selector& _rotationName() { return _rotationName_; }
     ::g::Uno::Float2 _translation;
     static ::g::Uno::UX::Selector _translationName_;
-    static ::g::Uno::UX::Selector& _translationName() { return InteractiveTransform_typeof()->Init(), _translationName_; }
+    static ::g::Uno::UX::Selector& _translationName() { return _translationName_; }
     float _zoomFactor;
     static ::g::Uno::UX::Selector _zoomFactorName_;
-    static ::g::Uno::UX::Selector& _zoomFactorName() { return InteractiveTransform_typeof()->Init(), _zoomFactorName_; }
+    static ::g::Uno::UX::Selector& _zoomFactorName() { return _zoomFactorName_; }
 
     float Rotation();
     void Rotation(float value);

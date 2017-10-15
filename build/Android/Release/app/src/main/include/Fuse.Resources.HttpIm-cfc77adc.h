@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Elements/1.2.1/resources/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Elements/1.3.0-rc2/Resources/HttpImageSource.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -14,7 +14,7 @@ namespace g{
 namespace Fuse{
 namespace Resources{
 
-// internal sealed class HttpImageSourceImpl :385
+// internal sealed class HttpImageSourceImpl :94
 // {
 ::g::Fuse::Resources::LoadingImageSource_type* HttpImageSourceImpl_typeof();
 void HttpImageSourceImpl__ctor_3_fn(HttpImageSourceImpl* __this, uString* url);

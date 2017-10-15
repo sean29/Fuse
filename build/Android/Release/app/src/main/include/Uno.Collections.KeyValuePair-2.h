@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/UnoCore/1.2.2/source/uno/collections/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/UnoCore/1.3.1/Source/Uno/Collections/KeyValuePair.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -8,7 +8,7 @@ namespace g{
 namespace Uno{
 namespace Collections{
 
-// public struct KeyValuePair<TKey, TValue> :772
+// public struct KeyValuePair<TKey, TValue> :6
 // {
 uStructType* KeyValuePair_typeof();
 void KeyValuePair__ctor__fn(uTRef __this, uType* __type, void* key, void* value);

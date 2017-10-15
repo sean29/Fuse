@@ -27,10 +27,10 @@ namespace Net{
 namespace Http{
 namespace Implementation{
 
-// /usr/local/share/uno/Packages/Uno.Net.Http/1.2.2/implementation/android/$.uno
-// -----------------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Uno.Net.Http\1.3.1\Implementation\Android\AndroidHttpRequest.uno
+// ------------------------------------------------------------------------------------------------------------
 
-// internal sealed extern class AndroidHttpRequest :13
+// internal sealed extern class AndroidHttpRequest :11
 // {
 static void AndroidHttpRequest_build(uType* type)
 {
@@ -39,15 +39,19 @@ static void AndroidHttpRequest_build(uType* type)
     ::TYPES[2] = ::g::Uno::Collections::List__Enumerator_typeof()->MakeType(::TYPES[1/*byte[]*/], NULL);
     ::TYPES[3] = ::g::Uno::Array_typeof()->MakeMethod(0/*Copy<byte>*/, ::g::Uno::Byte_typeof(), NULL);
     ::TYPES[4] = ::g::Android::Base::Wrappers::IJWrapper_typeof();
+    type->SetDependencies(
+        ::g::Android::Base::JNI_typeof(),
+        ::g::Android::Base::Wrappers::JWrapper_typeof(),
+        ::g::Android::Base::Types::String_typeof());
     type->SetInterfaces(
         ::TYPES[4/*Android.Base.Wrappers.IJWrapper*/], offsetof(AndroidHttpRequest_type, interface0),
         ::g::Uno::IDisposable_typeof(), offsetof(AndroidHttpRequest_type, interface1),
         ::g::Uno::Net::Http::Implementation::IHttpRequest_typeof(), offsetof(AndroidHttpRequest_type, interface2));
     type->SetFields(4,
-        ::g::Uno::Net::Http::HttpMessageHandlerRequest_typeof(), offsetof(::g::Uno::Net::Http::Implementation::AndroidHttpRequest, _request), 0,
-        ::TYPES[0/*Uno.Collections.List<byte[]>*/], offsetof(::g::Uno::Net::Http::Implementation::AndroidHttpRequest, _responseData), 0,
-        ::g::Uno::Int_typeof(), offsetof(::g::Uno::Net::Http::Implementation::AndroidHttpRequest, _responseLength), 0,
-        ::TYPES[1/*byte[]*/], offsetof(::g::Uno::Net::Http::Implementation::AndroidHttpRequest, _result), 0);
+        ::g::Uno::Net::Http::HttpMessageHandlerRequest_typeof(), offsetof(AndroidHttpRequest, _request), 0,
+        ::TYPES[0/*Uno.Collections.List<byte[]>*/], offsetof(AndroidHttpRequest, _responseData), 0,
+        ::g::Uno::Int_typeof(), offsetof(AndroidHttpRequest, _responseLength), 0,
+        ::TYPES[1/*byte[]*/], offsetof(AndroidHttpRequest, _result), 0);
 }
 
 AndroidHttpRequest_type* AndroidHttpRequest_typeof()
@@ -59,6 +63,7 @@ AndroidHttpRequest_type* AndroidHttpRequest_typeof()
     options.BaseDefinition = ::g::Android::com::fuse::ExperimentalHttp::HttpRequest_typeof();
     options.FieldCount = 8;
     options.InterfaceCount = 3;
+    options.DependencyCount = 3;
     options.ObjectSize = sizeof(AndroidHttpRequest);
     options.TypeSize = sizeof(AndroidHttpRequest_type);
     type = (AndroidHttpRequest_type*)uClassType::New("Uno.Net.Http.Implementation.AndroidHttpRequest", options);
@@ -88,61 +93,61 @@ AndroidHttpRequest_type* AndroidHttpRequest_typeof()
     return type;
 }
 
-// internal AndroidHttpRequest(Uno.Net.Http.HttpMessageHandlerRequest request, string method, string url) :20
+// internal AndroidHttpRequest(Uno.Net.Http.HttpMessageHandlerRequest request, string method, string url) :18
 void AndroidHttpRequest__ctor_5_fn(AndroidHttpRequest* __this, ::g::Uno::Net::Http::HttpMessageHandlerRequest* request, uString* method, uString* url)
 {
     __this->ctor_5(request, method, url);
 }
 
-// public void Dispose() :31
+// public void Dispose() :29
 void AndroidHttpRequest__Dispose1_fn(AndroidHttpRequest* __this)
 {
     __this->Dispose1();
 }
 
-// public void EnableCache(bool enableCache) :36
+// public void EnableCache(bool enableCache) :34
 void AndroidHttpRequest__EnableCache_fn(AndroidHttpRequest* __this, bool* enableCache)
 {
     __this->EnableCache(*enableCache);
 }
 
-// public byte[] GetResponseContentByteArray() :81
+// public byte[] GetResponseContentByteArray() :79
 void AndroidHttpRequest__GetResponseContentByteArray_fn(AndroidHttpRequest* __this, uArray** __retval)
 {
     *__retval = __this->GetResponseContentByteArray();
 }
 
-// public string GetResponseContentString() :76
+// public string GetResponseContentString() :74
 void AndroidHttpRequest__GetResponseContentString_fn(AndroidHttpRequest* __this, uString** __retval)
 {
     *__retval = __this->GetResponseContentString();
 }
 
-// public string GetResponseHeader(string name) :65
+// public string GetResponseHeader(string name) :63
 void AndroidHttpRequest__GetResponseHeader1_fn(AndroidHttpRequest* __this, uString* name, uString** __retval)
 {
     *__retval = __this->GetResponseHeader1(name);
 }
 
-// public new string GetResponseHeaders() :71
+// public new string GetResponseHeaders() :69
 void AndroidHttpRequest__GetResponseHeaders1_fn(AndroidHttpRequest* __this, uString** __retval)
 {
     *__retval = __this->GetResponseHeaders1();
 }
 
-// internal AndroidHttpRequest New(Uno.Net.Http.HttpMessageHandlerRequest request, string method, string url) :20
+// internal AndroidHttpRequest New(Uno.Net.Http.HttpMessageHandlerRequest request, string method, string url) :18
 void AndroidHttpRequest__New3_fn(::g::Uno::Net::Http::HttpMessageHandlerRequest* request, uString* method, uString* url, AndroidHttpRequest** __retval)
 {
     *__retval = AndroidHttpRequest::New3(request, method, url);
 }
 
-// public override sealed void OnAborted() :86
+// public override sealed void OnAborted() :84
 void AndroidHttpRequest__OnAborted_fn(AndroidHttpRequest* __this)
 {
     uPtr(__this->_request)->OnAborted();
 }
 
-// public override sealed void OnDataReceived(Android.Base.Wrappers.IJWrapper arg0, int arg1) :111
+// public override sealed void OnDataReceived(Android.Base.Wrappers.IJWrapper arg0, int arg1) :109
 void AndroidHttpRequest__OnDataReceived_fn(AndroidHttpRequest* __this, uObject* arg0, int* arg1)
 {
     int arg1_ = *arg1;
@@ -155,13 +160,23 @@ void AndroidHttpRequest__OnDataReceived_fn(AndroidHttpRequest* __this, uObject* 
 
         __this->_result = uArray::New(::TYPES[1/*byte[]*/], __this->_responseLength);
         int pos = 0;
+        ::g::Uno::Collections::List__Enumerator<uStrong<uArray*> > enum1 = (::g::Uno::Collections::List__GetEnumerator_fn(uPtr(__this->_responseData), &ret4), ret4);
 
-        for (::g::Uno::Collections::List__Enumerator<uStrong<uArray*> > enum1 = (::g::Uno::Collections::List__GetEnumerator_fn(uPtr(__this->_responseData), &ret4), ret4); enum1.MoveNext(::TYPES[2/*Uno.Collections.List<byte[]>.Enumerator*/]); )
         {
-            uArray* chunk = enum1.Current(::TYPES[2/*Uno.Collections.List<byte[]>.Enumerator*/]);
-            int chunkLength = uPtr(chunk)->Length();
-            ::g::Uno::Array::Copy(::TYPES[3/*Uno.Array.Copy<byte>*/], chunk, 0, __this->_result, pos, chunkLength);
-            pos = pos + chunkLength;
+            const auto __finally_fun = [&]()
+            {
+                enum1.Dispose(::TYPES[2/*Uno.Collections.List<byte[]>.Enumerator*/]);
+            };
+
+            const uFinally<decltype(__finally_fun)> __f(__finally_fun);
+
+            while (enum1.MoveNext(::TYPES[2/*Uno.Collections.List<byte[]>.Enumerator*/]))
+            {
+                uArray* chunk = enum1.Current(::TYPES[2/*Uno.Collections.List<byte[]>.Enumerator*/]);
+                int chunkLength = uPtr(chunk)->Length();
+                ::g::Uno::Array::Copy(::TYPES[3/*Uno.Array.Copy<byte>*/], chunk, 0, __this->_result, pos, chunkLength);
+                pos = pos + chunkLength;
+            }
         }
     }
     else
@@ -171,25 +186,25 @@ void AndroidHttpRequest__OnDataReceived_fn(AndroidHttpRequest* __this, uObject* 
     }
 }
 
-// public override sealed void OnDone() :96
+// public override sealed void OnDone() :94
 void AndroidHttpRequest__OnDone_fn(AndroidHttpRequest* __this)
 {
     uPtr(__this->_request)->OnDone();
 }
 
-// public override sealed void OnError(Android.Base.Wrappers.IJWrapper arg0) :130
+// public override sealed void OnError(Android.Base.Wrappers.IJWrapper arg0) :128
 void AndroidHttpRequest__OnError_fn(AndroidHttpRequest* __this, uObject* arg0)
 {
     uPtr(__this->_request)->OnError(::g::Android::Base::Types::String::JavaToUno2(arg0));
 }
 
-// public override sealed void OnHeadersReceived() :101
+// public override sealed void OnHeadersReceived() :99
 void AndroidHttpRequest__OnHeadersReceived_fn(AndroidHttpRequest* __this)
 {
     uPtr(__this->_request)->OnHeadersReceived();
 }
 
-// public override sealed void OnProgress(int current, int total, bool hasTotal) :106
+// public override sealed void OnProgress(int current, int total, bool hasTotal) :104
 void AndroidHttpRequest__OnProgress_fn(AndroidHttpRequest* __this, int* current, int* total, bool* hasTotal)
 {
     int current_ = *current;
@@ -198,37 +213,37 @@ void AndroidHttpRequest__OnProgress_fn(AndroidHttpRequest* __this, int* current,
     uPtr(__this->_request)->OnProgress(current_, total_, hasTotal_);
 }
 
-// public override sealed void OnTimeout() :91
+// public override sealed void OnTimeout() :89
 void AndroidHttpRequest__OnTimeout_fn(AndroidHttpRequest* __this)
 {
     uPtr(__this->_request)->OnTimeout();
 }
 
-// public void SendAsync(byte[] data) :53
+// public void SendAsync(byte[] data) :51
 void AndroidHttpRequest__SendAsync1_fn(AndroidHttpRequest* __this, uArray* data)
 {
     __this->SendAsync1(data);
 }
 
-// public void SendAsync(string data) :59
+// public void SendAsync(string data) :57
 void AndroidHttpRequest__SendAsync2_fn(AndroidHttpRequest* __this, uString* data)
 {
     __this->SendAsync2(data);
 }
 
-// public void SetHeader(string name, string value) :41
+// public void SetHeader(string name, string value) :39
 void AndroidHttpRequest__SetHeader1_fn(AndroidHttpRequest* __this, uString* name, uString* value)
 {
     __this->SetHeader1(name, value);
 }
 
-// internal void SetResponseType(Uno.Net.Http.HttpResponseType responseType) :48
+// internal void SetResponseType(Uno.Net.Http.HttpResponseType responseType) :46
 void AndroidHttpRequest__SetResponseType1_fn(AndroidHttpRequest* __this, int* responseType)
 {
     __this->SetResponseType1(*responseType);
 }
 
-// internal AndroidHttpRequest(Uno.Net.Http.HttpMessageHandlerRequest request, string method, string url) [instance] :20
+// internal AndroidHttpRequest(Uno.Net.Http.HttpMessageHandlerRequest request, string method, string url) [instance] :18
 void AndroidHttpRequest::ctor_5(::g::Uno::Net::Http::HttpMessageHandlerRequest* request, uString* method, uString* url)
 {
     ctor_4((uObject*)::g::Android::Base::JNI::GetWrappedActivityObject(), (uObject*)::g::Android::Base::Wrappers::JWrapper::Wrap(::g::Android::Base::Types::String::UnoToJava1(url), false, false), (uObject*)::g::Android::Base::Wrappers::JWrapper::Wrap(::g::Android::Base::Types::String::UnoToJava1(method), false, false));
@@ -238,58 +253,58 @@ void AndroidHttpRequest::ctor_5(::g::Uno::Net::Http::HttpMessageHandlerRequest* 
     _result = uArray::New(::TYPES[1/*byte[]*/], 0);
 }
 
-// public void Dispose() [instance] :31
+// public void Dispose() [instance] :29
 void AndroidHttpRequest::Dispose1()
 {
 }
 
-// public void EnableCache(bool enableCache) [instance] :36
+// public void EnableCache(bool enableCache) [instance] :34
 void AndroidHttpRequest::EnableCache(bool enableCache)
 {
     SetCaching(enableCache);
 }
 
-// public byte[] GetResponseContentByteArray() [instance] :81
+// public byte[] GetResponseContentByteArray() [instance] :79
 uArray* AndroidHttpRequest::GetResponseContentByteArray()
 {
     return _result;
 }
 
-// public string GetResponseContentString() [instance] :76
+// public string GetResponseContentString() [instance] :74
 uString* AndroidHttpRequest::GetResponseContentString()
 {
     return ::g::Android::Base::Types::String::JavaToUno2(GetResponseString());
 }
 
-// public string GetResponseHeader(string name) [instance] :65
+// public string GetResponseHeader(string name) [instance] :63
 uString* AndroidHttpRequest::GetResponseHeader1(uString* name)
 {
     ::g::Android::Base::Wrappers::JWrapper* jName = ::g::Android::Base::Wrappers::JWrapper::Wrap(::g::Android::Base::Types::String::UnoToJava1(name), false, false);
     return ::g::Android::Base::Types::String::JavaToUno2(GetResponseHeader((uObject*)jName));
 }
 
-// public new string GetResponseHeaders() [instance] :71
+// public new string GetResponseHeaders() [instance] :69
 uString* AndroidHttpRequest::GetResponseHeaders1()
 {
     uObject* ret3;
     return ::g::Android::Base::Types::String::JavaToUno2((::g::Android::com::fuse::ExperimentalHttp::HttpRequest__GetResponseHeaders_fn(this, &ret3), ret3));
 }
 
-// public void SendAsync(byte[] data) [instance] :53
+// public void SendAsync(byte[] data) [instance] :51
 void AndroidHttpRequest::SendAsync1(uArray* data)
 {
     ::g::Android::Base::Wrappers::JWrapper* tmp = ::g::Android::Base::Wrappers::JWrapper::Wrap(::g::Android::Base::Types::ByteBuffer::NewDirectByteBuffer(data), false, false);
     SendAsyncBuf((uObject*)tmp);
 }
 
-// public void SendAsync(string data) [instance] :59
+// public void SendAsync(string data) [instance] :57
 void AndroidHttpRequest::SendAsync2(uString* data)
 {
     ::g::Android::Base::Wrappers::JWrapper* jData = ::g::Android::Base::Wrappers::JWrapper::Wrap(::g::Android::Base::Types::String::UnoToJava1(data), false, false);
     SendAsyncStr((uObject*)jData);
 }
 
-// public void SetHeader(string name, string value) [instance] :41
+// public void SetHeader(string name, string value) [instance] :39
 void AndroidHttpRequest::SetHeader1(uString* name, uString* value)
 {
     ::g::Android::Base::Wrappers::JWrapper* jName = ::g::Android::Base::Wrappers::JWrapper::Wrap(::g::Android::Base::Types::String::UnoToJava1(name), false, false);
@@ -297,13 +312,13 @@ void AndroidHttpRequest::SetHeader1(uString* name, uString* value)
     SetHeader((uObject*)jName, (uObject*)jValue);
 }
 
-// internal void SetResponseType(Uno.Net.Http.HttpResponseType responseType) [instance] :48
+// internal void SetResponseType(Uno.Net.Http.HttpResponseType responseType) [instance] :46
 void AndroidHttpRequest::SetResponseType1(int responseType)
 {
     SetResponseType(responseType);
 }
 
-// internal AndroidHttpRequest New(Uno.Net.Http.HttpMessageHandlerRequest request, string method, string url) [static] :20
+// internal AndroidHttpRequest New(Uno.Net.Http.HttpMessageHandlerRequest request, string method, string url) [static] :18
 AndroidHttpRequest* AndroidHttpRequest::New3(::g::Uno::Net::Http::HttpMessageHandlerRequest* request, uString* method, uString* url)
 {
     AndroidHttpRequest* obj2 = (AndroidHttpRequest*)uNew(AndroidHttpRequest_typeof());
@@ -312,10 +327,10 @@ AndroidHttpRequest* AndroidHttpRequest::New3(::g::Uno::Net::Http::HttpMessageHan
 }
 // }
 
-// /usr/local/share/uno/Packages/Uno.Net.Http/1.2.2/implementation/$.uno
-// ---------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Uno.Net.Http\1.3.1\Implementation\IHttpRequest.uno
+// ----------------------------------------------------------------------------------------------
 
-// public abstract interface IHttpRequest :9
+// public abstract interface IHttpRequest :7
 // {
 uInterfaceType* IHttpRequest_typeof()
 {

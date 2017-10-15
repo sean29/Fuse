@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/UnoCore/1.2.2/source/uno/compiler/exporttargetinterop/foreign/android/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/UnoCore/1.3.1/Source/Uno/Compiler/ExportTargetInterop/Foreign/Android/UnoArrayEntrypoints.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -14,7 +14,7 @@ namespace ExportTargetInterop{
 namespace Foreign{
 namespace Android{
 
-// public static extern class JavaToUnoArrayEntrypoints :305
+// public static extern class JavaToUnoArrayEntrypoints :10
 // {
 uClassType* JavaToUnoArrayEntrypoints_typeof();
 void JavaToUnoArrayEntrypoints__BoolArrayToUnoArrayPtr_fn(::g::Java::Object* jarr, int64_t* __retval);

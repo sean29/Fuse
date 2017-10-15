@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Gestures/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Gestures/1.3.0-rc2/Pressed.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -21,7 +21,7 @@ namespace g{
 namespace Fuse{
 namespace Gestures{
 
-// public sealed class WhilePressed :671
+// public sealed class WhilePressed :49
 // {
 ::g::Fuse::Triggers::Trigger_type* WhilePressed_typeof();
 void WhilePressed__ctor_6_fn(WhilePressed* __this);

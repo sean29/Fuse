@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Controls.Navigation/1.2.1/.uno/ux11/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Controls.Navigation/1.3.0-rc2/.uno/ux13/Fuse.Controls.NavigationInternal.PageWhileNavigatingFreeze.g.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -22,7 +22,7 @@ namespace Fuse{
 namespace Controls{
 namespace NavigationInternal{
 
-// public partial sealed class PageWhileNavigatingFreeze :260
+// public partial sealed class PageWhileNavigatingFreeze :4
 // {
 ::g::Fuse::Triggers::Trigger_type* PageWhileNavigatingFreeze_typeof();
 void PageWhileNavigatingFreeze__ctor_7_fn(PageWhileNavigatingFreeze* __this, ::g::Fuse::Controls::Page* page1);

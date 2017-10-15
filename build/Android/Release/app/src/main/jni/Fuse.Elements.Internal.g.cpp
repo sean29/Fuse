@@ -33,12 +33,12 @@ namespace Fuse{
 namespace Elements{
 namespace Internal{
 
-// /usr/local/share/uno/Packages/Fuse.Elements/1.2.1/drawing/$.uno
-// ---------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Elements\1.3.0-rc2\Drawing\Scale9Rectangle.uno
+// -----------------------------------------------------------------------------------------------
 
-// internal sealed class Scale9Rectangle :377
+// internal sealed class Scale9Rectangle :7
 // {
-// static Scale9Rectangle() :377
+// static generated Scale9Rectangle() :7
 static void Scale9Rectangle__cctor__fn(uType* __type)
 {
     Scale9Rectangle::Impl_ = Scale9Rectangle::New1();
@@ -50,12 +50,12 @@ static void Scale9Rectangle_build(uType* type)
     ::TYPES[1] = ::g::Uno::UShort_typeof()->Array();
     ::TYPES[2] = ::g::Uno::Float3_typeof()->Array();
     type->SetFields(0,
-        ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLDrawCall_typeof(), offsetof(::g::Fuse::Elements::Internal::Scale9Rectangle, _draw_42808b82), 0,
-        ::TYPES[1/*ushort[]*/], offsetof(::g::Fuse::Elements::Internal::Scale9Rectangle, Draw_indices_42808b82_1_2_13), 0,
-        ::g::Uno::Graphics::IndexBuffer_typeof(), offsetof(::g::Fuse::Elements::Internal::Scale9Rectangle, Draw_xv_42808b82_1_3_2), 0,
-        ::g::Uno::Graphics::VertexBuffer_typeof(), offsetof(::g::Fuse::Elements::Internal::Scale9Rectangle, Draw_xv_42808b82_1_3_3), 0,
-        ::g::Uno::Graphics::VertexBuffer_typeof(), offsetof(::g::Fuse::Elements::Internal::Scale9Rectangle, Draw_yv_42808b82_1_4_6), 0,
-        type, (uintptr_t)&::g::Fuse::Elements::Internal::Scale9Rectangle::Impl_, uFieldFlagsStatic);
+        ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLDrawCall_typeof(), offsetof(Scale9Rectangle, _draw_42808b82), 0,
+        ::TYPES[1/*ushort[]*/], offsetof(Scale9Rectangle, Draw_indices_42808b82_1_2_13), 0,
+        ::g::Uno::Graphics::IndexBuffer_typeof(), offsetof(Scale9Rectangle, Draw_xv_42808b82_1_3_2), 0,
+        ::g::Uno::Graphics::VertexBuffer_typeof(), offsetof(Scale9Rectangle, Draw_xv_42808b82_1_3_3), 0,
+        ::g::Uno::Graphics::VertexBuffer_typeof(), offsetof(Scale9Rectangle, Draw_yv_42808b82_1_4_6), 0,
+        type, (uintptr_t)&Scale9Rectangle::Impl_, uFieldFlagsStatic);
 }
 
 uType* Scale9Rectangle_typeof()
@@ -74,25 +74,25 @@ uType* Scale9Rectangle_typeof()
     return type;
 }
 
-// public generated Scale9Rectangle() :377
+// public generated Scale9Rectangle() :7
 void Scale9Rectangle__ctor__fn(Scale9Rectangle* __this)
 {
     __this->ctor_();
 }
 
-// public void Draw(Fuse.DrawContext dc, Fuse.Visual element, float2 size, float2 scaleTextureSize, texture2D tex, float4 color, float4 margin) :381
+// public void Draw(Fuse.DrawContext dc, Fuse.Visual element, float2 size, float2 scaleTextureSize, texture2D tex, float4 color, float4 margin) :11
 void Scale9Rectangle__Draw_fn(Scale9Rectangle* __this, ::g::Fuse::DrawContext* dc, ::g::Fuse::Visual* element, ::g::Uno::Float2* size, ::g::Uno::Float2* scaleTextureSize, ::g::Uno::Graphics::Texture2D* tex, ::g::Uno::Float4* color, ::g::Uno::Float4* margin)
 {
     __this->Draw(dc, element, *size, *scaleTextureSize, tex, *color, *margin);
 }
 
-// private generated void init_DrawCalls() :377
+// private generated void init_DrawCalls() :7
 void Scale9Rectangle__init_DrawCalls_fn(Scale9Rectangle* __this)
 {
     __this->init_DrawCalls();
 }
 
-// public generated Scale9Rectangle New() :377
+// public generated Scale9Rectangle New() :7
 void Scale9Rectangle__New1_fn(Scale9Rectangle** __retval)
 {
     *__retval = Scale9Rectangle::New1();
@@ -100,13 +100,13 @@ void Scale9Rectangle__New1_fn(Scale9Rectangle** __retval)
 
 uSStrong<Scale9Rectangle*> Scale9Rectangle::Impl_;
 
-// public generated Scale9Rectangle() [instance] :377
+// public generated Scale9Rectangle() [instance] :7
 void Scale9Rectangle::ctor_()
 {
     init_DrawCalls();
 }
 
-// public void Draw(Fuse.DrawContext dc, Fuse.Visual element, float2 size, float2 scaleTextureSize, texture2D tex, float4 color, float4 margin) [instance] :381
+// public void Draw(Fuse.DrawContext dc, Fuse.Visual element, float2 size, float2 scaleTextureSize, texture2D tex, float4 color, float4 margin) [instance] :11
 void Scale9Rectangle::Draw(::g::Fuse::DrawContext* dc, ::g::Fuse::Visual* element, ::g::Uno::Float2 size, ::g::Uno::Float2 scaleTextureSize, ::g::Uno::Graphics::Texture2D* tex, ::g::Uno::Float4 color, ::g::Uno::Float4 margin)
 {
     _draw_42808b82.BlendEnabled(true);
@@ -136,7 +136,7 @@ void Scale9Rectangle::Draw(::g::Fuse::DrawContext* dc, ::g::Fuse::Visual* elemen
     _draw_42808b82.Draw(uPtr(Draw_indices_42808b82_1_2_13)->Length(), 2, Draw_xv_42808b82_1_3_2);
 }
 
-// private generated void init_DrawCalls() [instance] :377
+// private generated void init_DrawCalls() [instance] :7
 void Scale9Rectangle::init_DrawCalls()
 {
     uArray* indices_42808b82_1_2_1 = uArray::Init<int>(::TYPES[1/*ushort[]*/], 54, 0, 4, 5, 0, 5, 1, 1, 5, 6, 1, 6, 2, 2, 6, 7, 2, 7, 3, 4, 8, 9, 4, 9, 5, 5, 9, 10, 5, 10, 6, 6, 10, 11, 6, 11, 7, 8, 12, 13, 8, 13, 9, 9, 13, 14, 9, 14, 10, 10, 14, 15, 10, 15, 11);
@@ -147,7 +147,7 @@ void Scale9Rectangle::init_DrawCalls()
     _draw_42808b82 = ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLDrawCall__New1(::g::FuseElements_bundle::Scale9Rectangle720ad3ad());
 }
 
-// public generated Scale9Rectangle New() [static] :377
+// public generated Scale9Rectangle New() [static] :7
 Scale9Rectangle* Scale9Rectangle::New1()
 {
     Scale9Rectangle* obj1 = (Scale9Rectangle*)uNew(Scale9Rectangle_typeof());

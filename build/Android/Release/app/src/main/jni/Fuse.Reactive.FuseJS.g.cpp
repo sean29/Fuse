@@ -89,18 +89,18 @@
 #include <Uno.Threading.IDispatcher.h>
 #include <Uno.UX.FileSource.h>
 #include <Uno.UX.Resource.h>
-static uString* STRINGS[62];
-static uType* TYPES[40];
+static uString* STRINGS[56];
+static uType* TYPES[36];
 
 namespace g{
 namespace Fuse{
 namespace Reactive{
 namespace FuseJS{
 
-// /usr/local/share/uno/Packages/Fuse.Reactive.JavaScript/1.2.1/fusejs/$.uno
-// -------------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Reactive.JavaScript\1.3.0-rc2\FuseJS\Builtins.uno
+// --------------------------------------------------------------------------------------------------
 
-// internal sealed class Builtins :9
+// internal sealed class Builtins :7
 // {
 static void Builtins_build(uType* type)
 {
@@ -111,16 +111,25 @@ static void Builtins_build(uType* type)
     ::STRINGS[4] = uString::Const("ES6Promise.polyfill();");
     ::STRINGS[5] = uString::Const("FuseJS/Diagnostics");
     ::STRINGS[6] = uString::Const("FuseJS/Observable");
-    ::STRINGS[7] = uString::Const("Polyfills/Window");
+    ::STRINGS[7] = uString::Const("fuse-builtins");
+    ::STRINGS[8] = uString::Const("Date");
+    ::STRINGS[9] = uString::Const("(function(ticks) { return new Date(ticks); })");
+    ::STRINGS[10] = uString::Const("Polyfills/Window");
     ::TYPES[0] = ::g::Uno::Predicate_typeof()->MakeType(uObject_typeof(), NULL);
     ::TYPES[1] = ::g::Fuse::Reactive::FuseJS::TimerModule_typeof();
     ::TYPES[2] = ::g::Fuse::Scripting::Function_typeof();
     ::TYPES[3] = uObject_typeof()->Array();
     ::TYPES[4] = ::g::Fuse::Scripting::Module_typeof();
+    type->SetDependencies(
+        ::g::Fuse::Scripting::EventEmitterModule_typeof(),
+        ::g::Uno::UX::FileSource_typeof(),
+        ::g::Uno::UX::Resource_typeof());
     type->SetFields(0,
-        ::TYPES[2/*Fuse.Scripting.Function*/], offsetof(::g::Fuse::Reactive::FuseJS::Builtins, EventEmitter), 0,
-        ::TYPES[2/*Fuse.Scripting.Function*/], offsetof(::g::Fuse::Reactive::FuseJS::Builtins, Observable), 0,
-        ::TYPES[1/*Fuse.Reactive.FuseJS.TimerModule*/], (uintptr_t)&::g::Fuse::Reactive::FuseJS::Builtins::_timer_, uFieldFlagsStatic);
+        ::TYPES[2/*Fuse.Scripting.Function*/], offsetof(Builtins, Date), 0,
+        ::TYPES[2/*Fuse.Scripting.Function*/], offsetof(Builtins, DateCtor), 0,
+        ::TYPES[2/*Fuse.Scripting.Function*/], offsetof(Builtins, EventEmitter), 0,
+        ::TYPES[2/*Fuse.Scripting.Function*/], offsetof(Builtins, Observable), 0,
+        ::TYPES[1/*Fuse.Reactive.FuseJS.TimerModule*/], (uintptr_t)&Builtins::_timer_, uFieldFlagsStatic);
 }
 
 uType* Builtins_typeof()
@@ -129,7 +138,8 @@ uType* Builtins_typeof()
     if (type != NULL) return type;
 
     uTypeOptions options;
-    options.FieldCount = 3;
+    options.FieldCount = 5;
+    options.DependencyCount = 3;
     options.ObjectSize = sizeof(Builtins);
     options.TypeSize = sizeof(uType);
     type = uClassType::New("Fuse.Reactive.FuseJS.Builtins", options);
@@ -143,7 +153,7 @@ void Builtins__ctor__fn(Builtins* __this, ::g::Fuse::Scripting::Context* context
     __this->ctor_(context);
 }
 
-// private static bool IsModule(object module) :57
+// private static bool IsModule(object module) :59
 void Builtins__IsModule_fn(uObject* module, bool* __retval)
 {
     *__retval = Builtins::IsModule(module);
@@ -155,7 +165,7 @@ void Builtins__New1_fn(::g::Fuse::Scripting::Context* context, Builtins** __retv
     *__retval = Builtins::New1(context);
 }
 
-// internal void UpdateModules(Fuse.Scripting.Context context) :72
+// internal void UpdateModules(Fuse.Scripting.Context context) :74
 void Builtins__UpdateModules_fn(Builtins* __this, ::g::Fuse::Scripting::Context* context)
 {
     __this->UpdateModules(context);
@@ -175,33 +185,35 @@ void Builtins::ctor_(::g::Fuse::Scripting::Context* context)
     else
         Builtins::_timer_ = ::g::Fuse::Reactive::FuseJS::TimerModule::New2();
 
-    ::g::Fuse::Scripting::Function* setTimout = uCast< ::g::Fuse::Scripting::Function*>(uPtr(context)->Evaluate(::STRINGS[1/*"fuse-builti...*/], uPtr(::g::FuseReactiveJavaScript_bundle::setTimeout1593941f())->ReadAllText()), ::TYPES[2/*Fuse.Scripting.Function*/]);
+    ::g::Fuse::Scripting::Function* setTimout = uCast< ::g::Fuse::Scripting::Function*>(uPtr(context)->Evaluate(::STRINGS[1/*"fuse-builti...*/], uPtr(::g::FuseReactiveJavaScript_bundle::setTimeoutddc67d36())->ReadAllText()), ::TYPES[2/*Fuse.Scripting.Function*/]);
 
     if ((setTimout != NULL) && (Builtins::_timer_ != NULL))
         uPtr(setTimout)->Call(uArray::Init<uObject*>(::TYPES[3/*object[]*/], 2, (uObject*)uPtr(Builtins::_timer_)->EvaluateExports(context, ::STRINGS[0/*"FuseJS/Timer"*/]), (::g::Fuse::Scripting::Object*)uPtr(context)->GlobalObject()));
     else
         U_THROW(::g::Uno::Exception::New2(::STRINGS[2/*"Could not l...*/]));
 
-    context->Evaluate(::STRINGS[3/*"fuse-builti...*/], uPtr(::g::FuseReactiveJavaScript_bundle::es6promisemin8af4f747())->ReadAllText());
+    context->Evaluate(::STRINGS[3/*"fuse-builti...*/], uPtr(::g::FuseReactiveJavaScript_bundle::es6promiseminb4b7ea8e())->ReadAllText());
     context->Evaluate(::STRINGS[3/*"fuse-builti...*/], ::STRINGS[4/*"ES6Promise....*/]);
     ::g::Fuse::Reactive::FuseJS::DiagnosticsImplModule::New2();
-    ::g::Fuse::Scripting::FileModule::New2(::g::Uno::UX::FileSource::op_Implicit(::g::FuseReactiveJavaScript_bundle::Diagnostics3be36552()))->EvaluateExports(context, ::STRINGS[5/*"FuseJS/Diag...*/]);
-    Observable = uCast< ::g::Fuse::Scripting::Function*>(::g::Fuse::Scripting::FileModule::New2(::g::Uno::UX::FileSource::op_Implicit(::g::FuseReactiveJavaScript_bundle::Observable9fb7466f()))->EvaluateExports(context, ::STRINGS[6/*"FuseJS/Obse...*/]), ::TYPES[2/*Fuse.Scripting.Function*/]);
+    ::g::Fuse::Scripting::FileModule::New2(::g::Uno::UX::FileSource::op_Implicit(::g::FuseReactiveJavaScript_bundle::Diagnosticsa2c35693()))->EvaluateExports(context, ::STRINGS[5/*"FuseJS/Diag...*/]);
+    Observable = uCast< ::g::Fuse::Scripting::Function*>(::g::Fuse::Scripting::FileModule::New2(::g::Uno::UX::FileSource::op_Implicit(::g::FuseReactiveJavaScript_bundle::Observable61dc4260()))->EvaluateExports(context, ::STRINGS[6/*"FuseJS/Obse...*/]), ::TYPES[2/*Fuse.Scripting.Function*/]);
     EventEmitter = ::g::Fuse::Scripting::EventEmitterModule::GetConstructor(context);
+    Date = uCast< ::g::Fuse::Scripting::Function*>(context->Evaluate(::STRINGS[7/*"fuse-builtins"*/], ::STRINGS[8/*"Date"*/]), ::TYPES[2/*Fuse.Scripting.Function*/]);
+    DateCtor = uCast< ::g::Fuse::Scripting::Function*>(context->Evaluate(::STRINGS[7/*"fuse-builtins"*/], ::STRINGS[9/*"(function(t...*/]), ::TYPES[2/*Fuse.Scripting.Function*/]);
     res = NULL;
 
-    if (::g::Uno::UX::Resource::TryFindGlobal(::STRINGS[7/*"Polyfills/W...*/], uDelegate::New(::TYPES[0/*Uno.Predicate<object>*/], (void*)Builtins__IsModule_fn), &res))
-        uPtr(uCast< ::g::Fuse::Scripting::Module*>(res, ::TYPES[4/*Fuse.Scripting.Module*/]))->Evaluate1(context, ::STRINGS[7/*"Polyfills/W...*/]);
+    if (::g::Uno::UX::Resource::TryFindGlobal(::STRINGS[10/*"Polyfills/W...*/], uDelegate::New(::TYPES[0/*Uno.Predicate<object>*/], (void*)Builtins__IsModule_fn), &res))
+        uPtr(uCast< ::g::Fuse::Scripting::Module*>(res, ::TYPES[4/*Fuse.Scripting.Module*/]))->Evaluate1(context, ::STRINGS[10/*"Polyfills/W...*/]);
 }
 
-// internal void UpdateModules(Fuse.Scripting.Context context) [instance] :72
+// internal void UpdateModules(Fuse.Scripting.Context context) [instance] :74
 void Builtins::UpdateModules(::g::Fuse::Scripting::Context* context)
 {
     if (Builtins::_timer_ != NULL)
         uPtr(Builtins::_timer_)->UpdateModule();
 }
 
-// private static bool IsModule(object module) [static] :57
+// private static bool IsModule(object module) [static] :59
 bool Builtins::IsModule(uObject* module)
 {
     return uIs(module, ::TYPES[4/*Fuse.Scripting.Module*/]);
@@ -216,19 +228,19 @@ Builtins* Builtins::New1(::g::Fuse::Scripting::Context* context)
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Reactive.JavaScript/1.2.1/fusejs/$.uno
-// -------------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Reactive.JavaScript\1.3.0-rc2\FuseJS\Timer.uno
+// -----------------------------------------------------------------------------------------------
 
-// private sealed class TimerModule.CallbackClosure :842
+// private sealed class TimerModule.CallbackClosure :146
 // {
 static void TimerModule__CallbackClosure_build(uType* type)
 {
-    ::STRINGS[8] = uString::Const("func");
-    ::STRINGS[9] = uString::Const("args");
+    ::STRINGS[11] = uString::Const("func");
+    ::STRINGS[12] = uString::Const("args");
     type->SetFields(0,
-        uObject_typeof()->Array(), offsetof(::g::Fuse::Reactive::FuseJS::TimerModule__CallbackClosure, _args), 0,
-        ::g::Fuse::Scripting::Context_typeof(), offsetof(::g::Fuse::Reactive::FuseJS::TimerModule__CallbackClosure, _context), 0,
-        ::g::Fuse::Scripting::Function_typeof(), offsetof(::g::Fuse::Reactive::FuseJS::TimerModule__CallbackClosure, _func), 0);
+        uObject_typeof()->Array(), offsetof(TimerModule__CallbackClosure, _args), 0,
+        ::g::Fuse::Scripting::Context_typeof(), offsetof(TimerModule__CallbackClosure, _context), 0,
+        ::g::Fuse::Scripting::Function_typeof(), offsetof(TimerModule__CallbackClosure, _func), 0);
 }
 
 uType* TimerModule__CallbackClosure_typeof()
@@ -245,45 +257,45 @@ uType* TimerModule__CallbackClosure_typeof()
     return type;
 }
 
-// public CallbackClosure(Fuse.Scripting.Context context, Fuse.Scripting.Function func, object[] args) :848
+// public CallbackClosure(Fuse.Scripting.Context context, Fuse.Scripting.Function func, object[] args) :152
 void TimerModule__CallbackClosure__ctor__fn(TimerModule__CallbackClosure* __this, ::g::Fuse::Scripting::Context* context, ::g::Fuse::Scripting::Function* func, uArray* args)
 {
     __this->ctor_(context, func, args);
 }
 
-// public void Callback() :858
+// public void Callback() :162
 void TimerModule__CallbackClosure__Callback_fn(TimerModule__CallbackClosure* __this)
 {
     __this->Callback();
 }
 
-// public CallbackClosure New(Fuse.Scripting.Context context, Fuse.Scripting.Function func, object[] args) :848
+// public CallbackClosure New(Fuse.Scripting.Context context, Fuse.Scripting.Function func, object[] args) :152
 void TimerModule__CallbackClosure__New1_fn(::g::Fuse::Scripting::Context* context, ::g::Fuse::Scripting::Function* func, uArray* args, TimerModule__CallbackClosure** __retval)
 {
     *__retval = TimerModule__CallbackClosure::New1(context, func, args);
 }
 
-// public CallbackClosure(Fuse.Scripting.Context context, Fuse.Scripting.Function func, object[] args) [instance] :848
+// public CallbackClosure(Fuse.Scripting.Context context, Fuse.Scripting.Function func, object[] args) [instance] :152
 void TimerModule__CallbackClosure::ctor_(::g::Fuse::Scripting::Context* context, ::g::Fuse::Scripting::Function* func, uArray* args)
 {
     if (func == NULL)
-        U_THROW(::g::Uno::ArgumentNullException::New6(::STRINGS[8/*"func"*/]));
+        U_THROW(::g::Uno::ArgumentNullException::New6(::STRINGS[11/*"func"*/]));
 
     if (args == NULL)
-        U_THROW(::g::Uno::ArgumentNullException::New6(::STRINGS[9/*"args"*/]));
+        U_THROW(::g::Uno::ArgumentNullException::New6(::STRINGS[12/*"args"*/]));
 
     _context = context;
     _func = func;
     _args = args;
 }
 
-// public void Callback() [instance] :858
+// public void Callback() [instance] :162
 void TimerModule__CallbackClosure::Callback()
 {
     uPtr(_func)->Call(_args);
 }
 
-// public CallbackClosure New(Fuse.Scripting.Context context, Fuse.Scripting.Function func, object[] args) [static] :848
+// public CallbackClosure New(Fuse.Scripting.Context context, Fuse.Scripting.Function func, object[] args) [static] :152
 TimerModule__CallbackClosure* TimerModule__CallbackClosure::New1(::g::Fuse::Scripting::Context* context, ::g::Fuse::Scripting::Function* func, uArray* args)
 {
     TimerModule__CallbackClosure* obj1 = (TimerModule__CallbackClosure*)uNew(TimerModule__CallbackClosure_typeof());
@@ -292,26 +304,29 @@ TimerModule__CallbackClosure* TimerModule__CallbackClosure::New1(::g::Fuse::Scri
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Reactive.JavaScript/1.2.1/fusejs/$.uno
-// -------------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Reactive.JavaScript\1.3.0-rc2\FuseJS\DiagnosticsImpl.uno
+// ---------------------------------------------------------------------------------------------------------
 
-// public sealed class DiagnosticsImplModule :231
+// public sealed class DiagnosticsImplModule :12
 // {
 static void DiagnosticsImplModule_build(uType* type)
 {
-    ::STRINGS[10] = uString::Const("FuseJS/DiagnosticsImpl");
-    ::STRINGS[11] = uString::Const("report");
-    ::STRINGS[12] = uString::Const("Report requires 2 arguments");
-    ::STRINGS[13] = uString::Const("/usr/local/share/uno/Packages/Fuse.Reactive.JavaScript/1.2.1/fusejs/$.uno");
-    ::STRINGS[14] = uString::Const("Report");
+    ::STRINGS[13] = uString::Const("FuseJS/DiagnosticsImpl");
+    ::STRINGS[14] = uString::Const("report");
+    ::STRINGS[15] = uString::Const("Report requires 2 arguments");
+    ::STRINGS[16] = uString::Const("C:\\Users\\q\\AppData\\Local\\Fusetools\\Packages\\Fuse.Reactive.JavaScript\\1.3.0-rc2\\FuseJS\\DiagnosticsImpl.uno");
+    ::STRINGS[17] = uString::Const("Report");
     ::TYPES[5] = ::g::Fuse::Scripting::NativeCallback_typeof();
     ::TYPES[6] = ::g::Fuse::Marshal_typeof()->MakeMethod(0/*ToType<Fuse.DiagnosticType>*/, ::g::Fuse::DiagnosticType_typeof(), NULL);
     ::TYPES[7] = ::g::Fuse::Marshal_typeof()->MakeMethod(0/*ToType<string>*/, ::g::Uno::String_typeof(), NULL);
+    type->SetDependencies(
+        ::g::Fuse::Diagnostics_typeof(),
+        ::g::Uno::UX::Resource_typeof());
     type->SetInterfaces(
         ::g::Uno::IDisposable_typeof(), offsetof(::g::Fuse::Scripting::NativeModule_type, interface0),
         ::g::Fuse::Scripting::IModuleProvider_typeof(), offsetof(::g::Fuse::Scripting::NativeModule_type, interface1));
     type->SetFields(4,
-        type, (uintptr_t)&::g::Fuse::Reactive::FuseJS::DiagnosticsImplModule::_instance_, uFieldFlagsStatic);
+        type, (uintptr_t)&DiagnosticsImplModule::_instance_, uFieldFlagsStatic);
 }
 
 ::g::Fuse::Scripting::NativeModule_type* DiagnosticsImplModule_typeof()
@@ -323,6 +338,7 @@ static void DiagnosticsImplModule_build(uType* type)
     options.BaseDefinition = ::g::Fuse::Scripting::NativeModule_typeof();
     options.FieldCount = 5;
     options.InterfaceCount = 2;
+    options.DependencyCount = 2;
     options.ObjectSize = sizeof(DiagnosticsImplModule);
     options.TypeSize = sizeof(::g::Fuse::Scripting::NativeModule_type);
     type = (::g::Fuse::Scripting::NativeModule_type*)uClassType::New("Fuse.Reactive.FuseJS.DiagnosticsImplModule", options);
@@ -333,19 +349,19 @@ static void DiagnosticsImplModule_build(uType* type)
     return type;
 }
 
-// public DiagnosticsImplModule() :235
+// public DiagnosticsImplModule() :16
 void DiagnosticsImplModule__ctor_2_fn(DiagnosticsImplModule* __this)
 {
     __this->ctor_2();
 }
 
-// public DiagnosticsImplModule New() :235
+// public DiagnosticsImplModule New() :16
 void DiagnosticsImplModule__New2_fn(DiagnosticsImplModule** __retval)
 {
     *__retval = DiagnosticsImplModule::New2();
 }
 
-// private object Report(Fuse.Scripting.Context context, object[] args) :245
+// private object Report(Fuse.Scripting.Context context, object[] args) :26
 void DiagnosticsImplModule__Report_fn(DiagnosticsImplModule* __this, ::g::Fuse::Scripting::Context* context, uArray* args, uObject** __retval)
 {
     *__retval = __this->Report(context, args);
@@ -353,7 +369,7 @@ void DiagnosticsImplModule__Report_fn(DiagnosticsImplModule* __this, ::g::Fuse::
 
 uSStrong<DiagnosticsImplModule*> DiagnosticsImplModule::_instance_;
 
-// public DiagnosticsImplModule() [instance] :235
+// public DiagnosticsImplModule() [instance] :16
 void DiagnosticsImplModule::ctor_2()
 {
     ctor_1();
@@ -361,11 +377,11 @@ void DiagnosticsImplModule::ctor_2()
     if (DiagnosticsImplModule::_instance_ != NULL)
         return;
 
-    ::g::Uno::UX::Resource::SetGlobalKey(DiagnosticsImplModule::_instance_ = this, ::STRINGS[10/*"FuseJS/Diag...*/]);
-    AddMember(::g::Fuse::Scripting::NativeFunction::New1(::STRINGS[11/*"report"*/], uDelegate::New(::TYPES[5/*Fuse.Scripting.NativeCallback*/], (void*)DiagnosticsImplModule__Report_fn, this)));
+    ::g::Uno::UX::Resource::SetGlobalKey(DiagnosticsImplModule::_instance_ = this, ::STRINGS[13/*"FuseJS/Diag...*/]);
+    AddMember(::g::Fuse::Scripting::NativeFunction::New1(::STRINGS[14/*"report"*/], uDelegate::New(::TYPES[5/*Fuse.Scripting.NativeCallback*/], (void*)DiagnosticsImplModule__Report_fn, this)));
 }
 
-// private object Report(Fuse.Scripting.Context context, object[] args) [instance] :245
+// private object Report(Fuse.Scripting.Context context, object[] args) [instance] :26
 uObject* DiagnosticsImplModule::Report(::g::Fuse::Scripting::Context* context, uArray* args)
 {
     int ret2;
@@ -373,7 +389,7 @@ uObject* DiagnosticsImplModule::Report(::g::Fuse::Scripting::Context* context, u
 
     if (uPtr(args)->Length() != 2)
     {
-        ::g::Fuse::Diagnostics::InternalError(::STRINGS[12/*"Report requ...*/], this, ::STRINGS[13/*"/usr/local/...*/], 249, ::STRINGS[14/*"Report"*/]);
+        ::g::Fuse::Diagnostics::InternalError(::STRINGS[15/*"Report requ...*/], this, ::STRINGS[16/*"C:\\Users\\...*/], 30, ::STRINGS[17/*"Report"*/]);
         return NULL;
     }
 
@@ -383,7 +399,7 @@ uObject* DiagnosticsImplModule::Report(::g::Fuse::Scripting::Context* context, u
     return NULL;
 }
 
-// public DiagnosticsImplModule New() [static] :235
+// public DiagnosticsImplModule New() [static] :16
 DiagnosticsImplModule* DiagnosticsImplModule::New2()
 {
     DiagnosticsImplModule* obj1 = (DiagnosticsImplModule*)uNew(DiagnosticsImplModule_typeof());
@@ -392,22 +408,25 @@ DiagnosticsImplModule* DiagnosticsImplModule::New2()
 }
 // }
 
-// /Users/a/Library/Application Support/Fusetools/Packages/Fuse.Launcher.Email/1.2.1/email/$.uno
-// ---------------------------------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Launcher.Email\1.3.0-rc2\Email\JS.uno
+// --------------------------------------------------------------------------------------
 
-// public sealed class Email :150
+// public sealed class Email :19
 // {
 static void Email_build(uType* type)
 {
-    ::STRINGS[15] = uString::Const("FuseJS/Email");
-    ::STRINGS[16] = uString::Const("compose");
+    ::STRINGS[18] = uString::Const("FuseJS/Email");
+    ::STRINGS[19] = uString::Const("compose");
     ::TYPES[5] = ::g::Fuse::Scripting::NativeCallback_typeof();
     ::TYPES[8] = ::g::Uno::String_typeof();
+    type->SetDependencies(
+        ::g::Fuse::LauncherImpl::EmailLauncher_typeof(),
+        ::g::Uno::UX::Resource_typeof());
     type->SetInterfaces(
         ::g::Uno::IDisposable_typeof(), offsetof(::g::Fuse::Scripting::NativeModule_type, interface0),
         ::g::Fuse::Scripting::IModuleProvider_typeof(), offsetof(::g::Fuse::Scripting::NativeModule_type, interface1));
     type->SetFields(4,
-        type, (uintptr_t)&::g::Fuse::Reactive::FuseJS::Email::_instance_, uFieldFlagsStatic);
+        type, (uintptr_t)&Email::_instance_, uFieldFlagsStatic);
 }
 
 ::g::Fuse::Scripting::NativeModule_type* Email_typeof()
@@ -419,6 +438,7 @@ static void Email_build(uType* type)
     options.BaseDefinition = ::g::Fuse::Scripting::NativeModule_typeof();
     options.FieldCount = 5;
     options.InterfaceCount = 2;
+    options.DependencyCount = 2;
     options.ObjectSize = sizeof(Email);
     options.TypeSize = sizeof(::g::Fuse::Scripting::NativeModule_type);
     type = (::g::Fuse::Scripting::NativeModule_type*)uClassType::New("Fuse.Reactive.FuseJS.Email", options);
@@ -429,19 +449,19 @@ static void Email_build(uType* type)
     return type;
 }
 
-// public Email() :154
+// public Email() :23
 void Email__ctor_2_fn(Email* __this)
 {
     __this->ctor_2();
 }
 
-// public static object Compose(Fuse.Scripting.Context context, object[] args) :177
+// public static object Compose(Fuse.Scripting.Context context, object[] args) :46
 void Email__Compose_fn(::g::Fuse::Scripting::Context* context, uArray* args, uObject** __retval)
 {
     *__retval = Email::Compose(context, args);
 }
 
-// public Email New() :154
+// public Email New() :23
 void Email__New2_fn(Email** __retval)
 {
     *__retval = Email::New2();
@@ -449,7 +469,7 @@ void Email__New2_fn(Email** __retval)
 
 uSStrong<Email*> Email::_instance_;
 
-// public Email() [instance] :154
+// public Email() [instance] :23
 void Email::ctor_2()
 {
     ctor_1();
@@ -457,11 +477,11 @@ void Email::ctor_2()
     if (Email::_instance_ != NULL)
         return;
 
-    ::g::Uno::UX::Resource::SetGlobalKey(Email::_instance_ = this, ::STRINGS[15/*"FuseJS/Email"*/]);
-    AddMember(::g::Fuse::Scripting::NativeFunction::New1(::STRINGS[16/*"compose"*/], uDelegate::New(::TYPES[5/*Fuse.Scripting.NativeCallback*/], (void*)Email__Compose_fn)));
+    ::g::Uno::UX::Resource::SetGlobalKey(Email::_instance_ = this, ::STRINGS[18/*"FuseJS/Email"*/]);
+    AddMember(::g::Fuse::Scripting::NativeFunction::New1(::STRINGS[19/*"compose"*/], uDelegate::New(::TYPES[5/*Fuse.Scripting.NativeCallback*/], (void*)Email__Compose_fn)));
 }
 
-// public static object Compose(Fuse.Scripting.Context context, object[] args) [static] :177
+// public static object Compose(Fuse.Scripting.Context context, object[] args) [static] :46
 uObject* Email::Compose(::g::Fuse::Scripting::Context* context, uArray* args)
 {
     uString* to = uCast<uString*>(uPtr(args)->Strong<uObject*>(0), ::TYPES[8/*string*/]);
@@ -473,7 +493,7 @@ uObject* Email::Compose(::g::Fuse::Scripting::Context* context, uArray* args)
     return NULL;
 }
 
-// public Email New() [static] :154
+// public Email New() [static] :23
 Email* Email::New2()
 {
     Email* obj1 = (Email*)uNew(Email_typeof());
@@ -482,17 +502,17 @@ Email* Email::New2()
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Reactive.JavaScript/1.2.1/fusejs/$.uno
-// -------------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Reactive.JavaScript\1.3.0-rc2\FuseJS\Http.uno
+// ----------------------------------------------------------------------------------------------
 
-// private sealed class Http.FunctionClosure :294
+// private sealed class Http.FunctionClosure :31
 // {
 static void Http__FunctionClosure_build(uType* type)
 {
     ::TYPES[9] = ::g::Fuse::Scripting::Callback_typeof();
     type->SetFields(0,
-        ::g::Uno::Func2_typeof()->MakeType(::g::Fuse::Scripting::Context_typeof(), uObject_typeof()->Array(), uObject_typeof(), NULL), offsetof(::g::Fuse::Reactive::FuseJS::Http__FunctionClosure, _callback), 0,
-        ::g::Fuse::Scripting::Context_typeof(), offsetof(::g::Fuse::Reactive::FuseJS::Http__FunctionClosure, _context), 0);
+        ::g::Uno::Func2_typeof()->MakeType(::g::Fuse::Scripting::Context_typeof(), uObject_typeof()->Array(), uObject_typeof(), NULL), offsetof(Http__FunctionClosure, _callback), 0,
+        ::g::Fuse::Scripting::Context_typeof(), offsetof(Http__FunctionClosure, _context), 0);
 }
 
 uType* Http__FunctionClosure_typeof()
@@ -509,50 +529,50 @@ uType* Http__FunctionClosure_typeof()
     return type;
 }
 
-// public FunctionClosure(Fuse.Scripting.Context context, Uno.Func<Fuse.Scripting.Context, object[], object> callback) :299
+// public FunctionClosure(Fuse.Scripting.Context context, Uno.Func<Fuse.Scripting.Context, object[], object> callback) :36
 void Http__FunctionClosure__ctor__fn(Http__FunctionClosure* __this, ::g::Fuse::Scripting::Context* context, uDelegate* callback)
 {
     __this->ctor_(context, callback);
 }
 
-// public Fuse.Scripting.Callback get_Callback() :312
+// public Fuse.Scripting.Callback get_Callback() :49
 void Http__FunctionClosure__get_Callback_fn(Http__FunctionClosure* __this, uDelegate** __retval)
 {
     *__retval = __this->Callback();
 }
 
-// private object function(object[] args) :305
+// private object function(object[] args) :42
 void Http__FunctionClosure__function_fn(Http__FunctionClosure* __this, uArray* args, uObject** __retval)
 {
     *__retval = __this->function(args);
 }
 
-// public FunctionClosure New(Fuse.Scripting.Context context, Uno.Func<Fuse.Scripting.Context, object[], object> callback) :299
+// public FunctionClosure New(Fuse.Scripting.Context context, Uno.Func<Fuse.Scripting.Context, object[], object> callback) :36
 void Http__FunctionClosure__New1_fn(::g::Fuse::Scripting::Context* context, uDelegate* callback, Http__FunctionClosure** __retval)
 {
     *__retval = Http__FunctionClosure::New1(context, callback);
 }
 
-// public FunctionClosure(Fuse.Scripting.Context context, Uno.Func<Fuse.Scripting.Context, object[], object> callback) [instance] :299
+// public FunctionClosure(Fuse.Scripting.Context context, Uno.Func<Fuse.Scripting.Context, object[], object> callback) [instance] :36
 void Http__FunctionClosure::ctor_(::g::Fuse::Scripting::Context* context, uDelegate* callback)
 {
     _context = context;
     _callback = callback;
 }
 
-// public Fuse.Scripting.Callback get_Callback() [instance] :312
+// public Fuse.Scripting.Callback get_Callback() [instance] :49
 uDelegate* Http__FunctionClosure::Callback()
 {
     return uDelegate::New(::TYPES[9/*Fuse.Scripting.Callback*/], (void*)Http__FunctionClosure__function_fn, this);
 }
 
-// private object function(object[] args) [instance] :305
+// private object function(object[] args) [instance] :42
 uObject* Http__FunctionClosure::function(uArray* args)
 {
     return uPtr(_callback)->Invoke(2, (::g::Fuse::Scripting::Context*)_context, args);
 }
 
-// public FunctionClosure New(Fuse.Scripting.Context context, Uno.Func<Fuse.Scripting.Context, object[], object> callback) [static] :299
+// public FunctionClosure New(Fuse.Scripting.Context context, Uno.Func<Fuse.Scripting.Context, object[], object> callback) [static] :36
 Http__FunctionClosure* Http__FunctionClosure::New1(::g::Fuse::Scripting::Context* context, uDelegate* callback)
 {
     Http__FunctionClosure* obj1 = (Http__FunctionClosure*)uNew(Http__FunctionClosure_typeof());
@@ -561,20 +581,20 @@ Http__FunctionClosure* Http__FunctionClosure::New1(::g::Fuse::Scripting::Context
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Reactive.JavaScript/1.2.1/fusejs/$.uno
-// -------------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Reactive.JavaScript\1.3.0-rc2\FuseJS\Http.uno
+// ----------------------------------------------------------------------------------------------
 
-// private sealed class Http.FuseJSHttpClient :316
+// private sealed class Http.FuseJSHttpClient :53
 // {
 static void Http__FuseJSHttpClient_build(uType* type)
 {
-    ::STRINGS[17] = uString::Const("createRequest");
+    ::STRINGS[20] = uString::Const("createRequest");
     ::TYPES[9] = ::g::Fuse::Scripting::Callback_typeof();
     ::TYPES[8] = ::g::Uno::String_typeof();
     type->SetFields(0,
-        ::g::Uno::Net::Http::HttpMessageHandler_typeof(), offsetof(::g::Fuse::Reactive::FuseJS::Http__FuseJSHttpClient, _client), 0,
-        ::g::Fuse::Scripting::Context_typeof(), offsetof(::g::Fuse::Reactive::FuseJS::Http__FuseJSHttpClient, _context), 0,
-        ::g::Fuse::Scripting::Object_typeof(), offsetof(::g::Fuse::Reactive::FuseJS::Http__FuseJSHttpClient, _Obj), 0);
+        ::g::Uno::Net::Http::HttpMessageHandler_typeof(), offsetof(Http__FuseJSHttpClient, _client), 0,
+        ::g::Fuse::Scripting::Context_typeof(), offsetof(Http__FuseJSHttpClient, _context), 0,
+        ::g::Fuse::Scripting::Object_typeof(), offsetof(Http__FuseJSHttpClient, _Obj), 0);
 }
 
 uType* Http__FuseJSHttpClient_typeof()
@@ -591,46 +611,46 @@ uType* Http__FuseJSHttpClient_typeof()
     return type;
 }
 
-// public FuseJSHttpClient(Fuse.Scripting.Context context) :323
+// public FuseJSHttpClient(Fuse.Scripting.Context context) :60
 void Http__FuseJSHttpClient__ctor__fn(Http__FuseJSHttpClient* __this, ::g::Fuse::Scripting::Context* context)
 {
     __this->ctor_(context);
 }
 
-// private object CreateRequest(object[] args) :332
+// private object CreateRequest(object[] args) :69
 void Http__FuseJSHttpClient__CreateRequest_fn(Http__FuseJSHttpClient* __this, uArray* args, uObject** __retval)
 {
     *__retval = __this->CreateRequest(args);
 }
 
-// public FuseJSHttpClient New(Fuse.Scripting.Context context) :323
+// public FuseJSHttpClient New(Fuse.Scripting.Context context) :60
 void Http__FuseJSHttpClient__New1_fn(::g::Fuse::Scripting::Context* context, Http__FuseJSHttpClient** __retval)
 {
     *__retval = Http__FuseJSHttpClient::New1(context);
 }
 
-// public generated Fuse.Scripting.Object get_Obj() :318
+// public generated Fuse.Scripting.Object get_Obj() :55
 void Http__FuseJSHttpClient__get_Obj_fn(Http__FuseJSHttpClient* __this, ::g::Fuse::Scripting::Object** __retval)
 {
     *__retval = __this->Obj();
 }
 
-// private generated void set_Obj(Fuse.Scripting.Object value) :318
+// private generated void set_Obj(Fuse.Scripting.Object value) :55
 void Http__FuseJSHttpClient__set_Obj_fn(Http__FuseJSHttpClient* __this, ::g::Fuse::Scripting::Object* value)
 {
     __this->Obj(value);
 }
 
-// public FuseJSHttpClient(Fuse.Scripting.Context context) [instance] :323
+// public FuseJSHttpClient(Fuse.Scripting.Context context) [instance] :60
 void Http__FuseJSHttpClient::ctor_(::g::Fuse::Scripting::Context* context)
 {
     _context = context;
     _client = ::g::Uno::Net::Http::HttpMessageHandler::New1();
     Obj(uPtr(context)->NewObject());
-    uPtr(Obj())->Item(::STRINGS[17/*"createRequest"*/], uDelegate::New(::TYPES[9/*Fuse.Scripting.Callback*/], (void*)Http__FuseJSHttpClient__CreateRequest_fn, this));
+    uPtr(Obj())->Item(::STRINGS[20/*"createRequest"*/], uDelegate::New(::TYPES[9/*Fuse.Scripting.Callback*/], (void*)Http__FuseJSHttpClient__CreateRequest_fn, this));
 }
 
-// private object CreateRequest(object[] args) [instance] :332
+// private object CreateRequest(object[] args) [instance] :69
 uObject* Http__FuseJSHttpClient::CreateRequest(uArray* args)
 {
     uString* method = uAs<uString*>(uPtr(args)->Strong<uObject*>(0), ::TYPES[8/*string*/]);
@@ -638,19 +658,19 @@ uObject* Http__FuseJSHttpClient::CreateRequest(uArray* args)
     return ::g::Fuse::Reactive::FuseJS::Http__FuseJSHttpRequest::New1(_context, uPtr(_client)->CreateRequest1(method, url, uPtr(_context)->Dispatcher()))->Obj();
 }
 
-// public generated Fuse.Scripting.Object get_Obj() [instance] :318
+// public generated Fuse.Scripting.Object get_Obj() [instance] :55
 ::g::Fuse::Scripting::Object* Http__FuseJSHttpClient::Obj()
 {
     return _Obj;
 }
 
-// private generated void set_Obj(Fuse.Scripting.Object value) [instance] :318
+// private generated void set_Obj(Fuse.Scripting.Object value) [instance] :55
 void Http__FuseJSHttpClient::Obj(::g::Fuse::Scripting::Object* value)
 {
     _Obj = value;
 }
 
-// public FuseJSHttpClient New(Fuse.Scripting.Context context) [static] :323
+// public FuseJSHttpClient New(Fuse.Scripting.Context context) [static] :60
 Http__FuseJSHttpClient* Http__FuseJSHttpClient::New1(::g::Fuse::Scripting::Context* context)
 {
     Http__FuseJSHttpClient* obj1 = (Http__FuseJSHttpClient*)uNew(Http__FuseJSHttpClient_typeof());
@@ -659,36 +679,36 @@ Http__FuseJSHttpClient* Http__FuseJSHttpClient::New1(::g::Fuse::Scripting::Conte
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Reactive.JavaScript/1.2.1/fusejs/$.uno
-// -------------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Reactive.JavaScript\1.3.0-rc2\FuseJS\Http.uno
+// ----------------------------------------------------------------------------------------------
 
-// private sealed class Http.FuseJSHttpRequest :341
+// private sealed class Http.FuseJSHttpRequest :78
 // {
 static void Http__FuseJSHttpRequest_build(uType* type)
 {
-    ::STRINGS[18] = uString::Const("enableCache");
-    ::STRINGS[19] = uString::Const("setTimeout");
-    ::STRINGS[20] = uString::Const("setResponseType");
-    ::STRINGS[21] = uString::Const("getResponseType");
-    ::STRINGS[22] = uString::Const("sendAsync");
-    ::STRINGS[23] = uString::Const("abort");
-    ::STRINGS[24] = uString::Const("setHeader");
-    ::STRINGS[25] = uString::Const("getResponseHeader");
-    ::STRINGS[26] = uString::Const("getResponseHeaders");
-    ::STRINGS[27] = uString::Const("getState");
-    ::STRINGS[28] = uString::Const("getResponseStatus");
-    ::STRINGS[29] = uString::Const("getResponseReasonPhrase");
-    ::STRINGS[30] = uString::Const("getResponseContentString");
-    ::STRINGS[31] = uString::Const("getResponseContentByteArray");
-    ::STRINGS[32] = uString::Const("This operation is illegal after request has finished");
-    ::STRINGS[33] = uString::Const("Unable to get header.");
-    ::STRINGS[34] = uString::Const("onabort");
-    ::STRINGS[35] = uString::Const("ondone");
-    ::STRINGS[36] = uString::Const("onerror");
-    ::STRINGS[37] = uString::Const("onprogress");
-    ::STRINGS[38] = uString::Const("onstatechanged");
-    ::STRINGS[39] = uString::Const("ontimeout");
-    ::STRINGS[40] = uString::Const("buffer");
+    ::STRINGS[21] = uString::Const("enableCache");
+    ::STRINGS[22] = uString::Const("setTimeout");
+    ::STRINGS[23] = uString::Const("setResponseType");
+    ::STRINGS[24] = uString::Const("getResponseType");
+    ::STRINGS[25] = uString::Const("sendAsync");
+    ::STRINGS[26] = uString::Const("abort");
+    ::STRINGS[27] = uString::Const("setHeader");
+    ::STRINGS[28] = uString::Const("getResponseHeader");
+    ::STRINGS[29] = uString::Const("getResponseHeaders");
+    ::STRINGS[30] = uString::Const("getState");
+    ::STRINGS[31] = uString::Const("getResponseStatus");
+    ::STRINGS[32] = uString::Const("getResponseReasonPhrase");
+    ::STRINGS[33] = uString::Const("getResponseContentString");
+    ::STRINGS[34] = uString::Const("getResponseContentByteArray");
+    ::STRINGS[35] = uString::Const("This operation is illegal after request has finished");
+    ::STRINGS[36] = uString::Const("Unable to get header.");
+    ::STRINGS[37] = uString::Const("onabort");
+    ::STRINGS[38] = uString::Const("ondone");
+    ::STRINGS[39] = uString::Const("onerror");
+    ::STRINGS[40] = uString::Const("onprogress");
+    ::STRINGS[41] = uString::Const("onstatechanged");
+    ::STRINGS[42] = uString::Const("ontimeout");
+    ::STRINGS[43] = uString::Const("buffer");
     ::TYPES[10] = ::g::Uno::Action1_typeof()->MakeType(::g::Uno::Net::Http::HttpMessageHandlerRequest_typeof(), NULL);
     ::TYPES[11] = ::g::Uno::Action2_typeof()->MakeType(::g::Uno::Net::Http::HttpMessageHandlerRequest_typeof(), ::g::Uno::String_typeof(), NULL);
     ::TYPES[12] = ::g::Uno::Action4_typeof()->MakeType(::g::Uno::Net::Http::HttpMessageHandlerRequest_typeof(), ::g::Uno::Int_typeof(), ::g::Uno::Int_typeof(), ::g::Uno::Bool_typeof(), NULL);
@@ -711,14 +731,16 @@ static void Http__FuseJSHttpRequest_build(uType* type)
     ::TYPES[3] = uObject_typeof()->Array();
     ::TYPES[26] = ::g::Fuse::Scripting::Object_typeof();
     ::TYPES[27] = ::g::Uno::Int_typeof();
+    type->SetDependencies(
+        ::g::Uno::Net::Http::HttpStatusReasonPhrase_typeof());
     type->SetFields(0,
-        uObject_typeof(), offsetof(::g::Fuse::Reactive::FuseJS::Http__FuseJSHttpRequest, _cachedResponseContent), 0,
-        ::TYPES[8/*string*/], offsetof(::g::Fuse::Reactive::FuseJS::Http__FuseJSHttpRequest, _cachedResponseHeaders), 0,
-        ::TYPES[27/*int*/], offsetof(::g::Fuse::Reactive::FuseJS::Http__FuseJSHttpRequest, _cachedResponseStatus), 0,
-        ::g::Uno::Net::Http::HttpResponseType_typeof(), offsetof(::g::Fuse::Reactive::FuseJS::Http__FuseJSHttpRequest, _cachedResponseType), 0,
-        ::g::Uno::Net::Http::HttpRequestState_typeof(), offsetof(::g::Fuse::Reactive::FuseJS::Http__FuseJSHttpRequest, _finalState), 0,
-        ::g::Uno::Net::Http::HttpMessageHandlerRequest_typeof(), offsetof(::g::Fuse::Reactive::FuseJS::Http__FuseJSHttpRequest, _req), 0,
-        ::TYPES[26/*Fuse.Scripting.Object*/], offsetof(::g::Fuse::Reactive::FuseJS::Http__FuseJSHttpRequest, _Obj), 0);
+        uObject_typeof(), offsetof(Http__FuseJSHttpRequest, _cachedResponseContent), 0,
+        ::TYPES[8/*string*/], offsetof(Http__FuseJSHttpRequest, _cachedResponseHeaders), 0,
+        ::TYPES[27/*int*/], offsetof(Http__FuseJSHttpRequest, _cachedResponseStatus), 0,
+        ::g::Uno::Net::Http::HttpResponseType_typeof(), offsetof(Http__FuseJSHttpRequest, _cachedResponseType), 0,
+        ::g::Uno::Net::Http::HttpRequestState_typeof(), offsetof(Http__FuseJSHttpRequest, _finalState), 0,
+        ::g::Uno::Net::Http::HttpMessageHandlerRequest_typeof(), offsetof(Http__FuseJSHttpRequest, _req), 0,
+        ::TYPES[26/*Fuse.Scripting.Object*/], offsetof(Http__FuseJSHttpRequest, _Obj), 0);
 }
 
 uType* Http__FuseJSHttpRequest_typeof()
@@ -728,6 +750,7 @@ uType* Http__FuseJSHttpRequest_typeof()
 
     uTypeOptions options;
     options.FieldCount = 7;
+    options.DependencyCount = 1;
     options.ObjectSize = sizeof(Http__FuseJSHttpRequest);
     options.TypeSize = sizeof(uType);
     type = uClassType::New("Fuse.Reactive.FuseJS.Http.FuseJSHttpRequest", options);
@@ -735,163 +758,163 @@ uType* Http__FuseJSHttpRequest_typeof()
     return type;
 }
 
-// public FuseJSHttpRequest(Fuse.Scripting.Context context, Uno.Net.Http.HttpMessageHandlerRequest req) :354
+// public FuseJSHttpRequest(Fuse.Scripting.Context context, Uno.Net.Http.HttpMessageHandlerRequest req) :91
 void Http__FuseJSHttpRequest__ctor__fn(Http__FuseJSHttpRequest* __this, ::g::Fuse::Scripting::Context* context, ::g::Uno::Net::Http::HttpMessageHandlerRequest* req)
 {
     __this->ctor_(context, req);
 }
 
-// private void Abort() :417
+// private void Abort() :154
 void Http__FuseJSHttpRequest__Abort_fn(Http__FuseJSHttpRequest* __this)
 {
     __this->Abort();
 }
 
-// private void CheckIsAttached() :443
+// private void CheckIsAttached() :180
 void Http__FuseJSHttpRequest__CheckIsAttached_fn(Http__FuseJSHttpRequest* __this)
 {
     __this->CheckIsAttached();
 }
 
-// private void DetachRequest() :383
+// private void DetachRequest() :120
 void Http__FuseJSHttpRequest__DetachRequest_fn(Http__FuseJSHttpRequest* __this)
 {
     __this->DetachRequest();
 }
 
-// private object EnableCache(object[] args) :583
+// private object EnableCache(object[] args) :320
 void Http__FuseJSHttpRequest__EnableCache_fn(Http__FuseJSHttpRequest* __this, uArray* args, uObject** __retval)
 {
     *__retval = __this->EnableCache(args);
 }
 
-// private object GetResponseContentByteArray(object[] args) :489
+// private object GetResponseContentByteArray(object[] args) :226
 void Http__FuseJSHttpRequest__GetResponseContentByteArray_fn(Http__FuseJSHttpRequest* __this, uArray* args, uObject** __retval)
 {
     *__retval = __this->GetResponseContentByteArray(args);
 }
 
-// private string GetResponseContentString(object[] args) :474
+// private string GetResponseContentString(object[] args) :211
 void Http__FuseJSHttpRequest__GetResponseContentString_fn(Http__FuseJSHttpRequest* __this, uArray* args, uString** __retval)
 {
     *__retval = __this->GetResponseContentString(args);
 }
 
-// private string GetResponseHeader(string key) :459
+// private string GetResponseHeader(string key) :196
 void Http__FuseJSHttpRequest__GetResponseHeader_fn(Http__FuseJSHttpRequest* __this, uString* key, uString** __retval)
 {
     *__retval = __this->GetResponseHeader(key);
 }
 
-// private string GetResponseHeaders() :449
+// private string GetResponseHeaders() :186
 void Http__FuseJSHttpRequest__GetResponseHeaders_fn(Http__FuseJSHttpRequest* __this, uString** __retval)
 {
     *__retval = __this->GetResponseHeaders();
 }
 
-// private object GetResponseReasonPhrase(object[] args) :610
+// private object GetResponseReasonPhrase(object[] args) :347
 void Http__FuseJSHttpRequest__GetResponseReasonPhrase_fn(Http__FuseJSHttpRequest* __this, uArray* args, uObject** __retval)
 {
     *__retval = __this->GetResponseReasonPhrase(args);
 }
 
-// private int GetResponseStatus() :600
+// private int GetResponseStatus() :337
 void Http__FuseJSHttpRequest__GetResponseStatus_fn(Http__FuseJSHttpRequest* __this, int* __retval)
 {
     *__retval = __this->GetResponseStatus();
 }
 
-// private object GetResponseType(object[] args) :628
+// private object GetResponseType(object[] args) :365
 void Http__FuseJSHttpRequest__GetResponseType_fn(Http__FuseJSHttpRequest* __this, uArray* args, uObject** __retval)
 {
     *__retval = __this->GetResponseType(args);
 }
 
-// private object GetState(object[] args) :595
+// private object GetState(object[] args) :332
 void Http__FuseJSHttpRequest__GetState_fn(Http__FuseJSHttpRequest* __this, uArray* args, uObject** __retval)
 {
     *__retval = __this->GetState(args);
 }
 
-// public FuseJSHttpRequest New(Fuse.Scripting.Context context, Uno.Net.Http.HttpMessageHandlerRequest req) :354
+// public FuseJSHttpRequest New(Fuse.Scripting.Context context, Uno.Net.Http.HttpMessageHandlerRequest req) :91
 void Http__FuseJSHttpRequest__New1_fn(::g::Fuse::Scripting::Context* context, ::g::Uno::Net::Http::HttpMessageHandlerRequest* req, Http__FuseJSHttpRequest** __retval)
 {
     *__retval = Http__FuseJSHttpRequest::New1(context, req);
 }
 
-// public generated Fuse.Scripting.Object get_Obj() :343
+// public generated Fuse.Scripting.Object get_Obj() :80
 void Http__FuseJSHttpRequest__get_Obj_fn(Http__FuseJSHttpRequest* __this, ::g::Fuse::Scripting::Object** __retval)
 {
     *__retval = __this->Obj();
 }
 
-// private generated void set_Obj(Fuse.Scripting.Object value) :343
+// private generated void set_Obj(Fuse.Scripting.Object value) :80
 void Http__FuseJSHttpRequest__set_Obj_fn(Http__FuseJSHttpRequest* __this, ::g::Fuse::Scripting::Object* value)
 {
     __this->Obj(value);
 }
 
-// private void OnAbort(Uno.Net.Http.HttpMessageHandlerRequest res) :504
+// private void OnAbort(Uno.Net.Http.HttpMessageHandlerRequest res) :241
 void Http__FuseJSHttpRequest__OnAbort_fn(Http__FuseJSHttpRequest* __this, ::g::Uno::Net::Http::HttpMessageHandlerRequest* res)
 {
     __this->OnAbort(res);
 }
 
-// private void OnDone(Uno.Net.Http.HttpMessageHandlerRequest res) :535
+// private void OnDone(Uno.Net.Http.HttpMessageHandlerRequest res) :272
 void Http__FuseJSHttpRequest__OnDone_fn(Http__FuseJSHttpRequest* __this, ::g::Uno::Net::Http::HttpMessageHandlerRequest* res)
 {
     __this->OnDone(res);
 }
 
-// private void OnError(Uno.Net.Http.HttpMessageHandlerRequest res, string error) :512
+// private void OnError(Uno.Net.Http.HttpMessageHandlerRequest res, string error) :249
 void Http__FuseJSHttpRequest__OnError_fn(Http__FuseJSHttpRequest* __this, ::g::Uno::Net::Http::HttpMessageHandlerRequest* res, uString* error)
 {
     __this->OnError(res, error);
 }
 
-// private void OnProgress(Uno.Net.Http.HttpMessageHandlerRequest res, int current, int total, bool hastotal) :543
+// private void OnProgress(Uno.Net.Http.HttpMessageHandlerRequest res, int current, int total, bool hastotal) :280
 void Http__FuseJSHttpRequest__OnProgress_fn(Http__FuseJSHttpRequest* __this, ::g::Uno::Net::Http::HttpMessageHandlerRequest* res, int* current, int* total, bool* hastotal)
 {
     __this->OnProgress(res, *current, *total, *hastotal);
 }
 
-// private void OnStateChanged(Uno.Net.Http.HttpMessageHandlerRequest res) :528
+// private void OnStateChanged(Uno.Net.Http.HttpMessageHandlerRequest res) :265
 void Http__FuseJSHttpRequest__OnStateChanged_fn(Http__FuseJSHttpRequest* __this, ::g::Uno::Net::Http::HttpMessageHandlerRequest* res)
 {
     __this->OnStateChanged(res);
 }
 
-// private void OnTimeout(Uno.Net.Http.HttpMessageHandlerRequest res) :520
+// private void OnTimeout(Uno.Net.Http.HttpMessageHandlerRequest res) :257
 void Http__FuseJSHttpRequest__OnTimeout_fn(Http__FuseJSHttpRequest* __this, ::g::Uno::Net::Http::HttpMessageHandlerRequest* res)
 {
     __this->OnTimeout(res);
 }
 
-// private object SendAsync(object[] args) :550
+// private object SendAsync(object[] args) :287
 void Http__FuseJSHttpRequest__SendAsync_fn(Http__FuseJSHttpRequest* __this, uArray* args, uObject** __retval)
 {
     *__retval = __this->SendAsync(args);
 }
 
-// private void SetHeader(string key, string value) :431
+// private void SetHeader(string key, string value) :168
 void Http__FuseJSHttpRequest__SetHeader_fn(Http__FuseJSHttpRequest* __this, uString* key, uString* value)
 {
     __this->SetHeader(key, value);
 }
 
-// private object SetResponseType(object[] args) :615
+// private object SetResponseType(object[] args) :352
 void Http__FuseJSHttpRequest__SetResponseType_fn(Http__FuseJSHttpRequest* __this, uArray* args, uObject** __retval)
 {
     *__retval = __this->SetResponseType(args);
 }
 
-// private void SetTimeout(int timeout) :437
+// private void SetTimeout(int timeout) :174
 void Http__FuseJSHttpRequest__SetTimeout_fn(Http__FuseJSHttpRequest* __this, int* timeout)
 {
     __this->SetTimeout(*timeout);
 }
 
-// public FuseJSHttpRequest(Fuse.Scripting.Context context, Uno.Net.Http.HttpMessageHandlerRequest req) [instance] :354
+// public FuseJSHttpRequest(Fuse.Scripting.Context context, Uno.Net.Http.HttpMessageHandlerRequest req) [instance] :91
 void Http__FuseJSHttpRequest::ctor_(::g::Fuse::Scripting::Context* context, ::g::Uno::Net::Http::HttpMessageHandlerRequest* req)
 {
     _req = req;
@@ -902,23 +925,23 @@ void Http__FuseJSHttpRequest::ctor_(::g::Fuse::Scripting::Context* context, ::g:
     uPtr(_req)->add_Done(uDelegate::New(::TYPES[10/*Uno.Action<Uno.Net.Http.HttpMessageHandlerRequest>*/], (void*)Http__FuseJSHttpRequest__OnDone_fn, this));
     uPtr(_req)->add_StateChanged(uDelegate::New(::TYPES[10/*Uno.Action<Uno.Net.Http.HttpMessageHandlerRequest>*/], (void*)Http__FuseJSHttpRequest__OnStateChanged_fn, this));
     uPtr(_req)->add_Progress(uDelegate::New(::TYPES[12/*Uno.Action<Uno.Net.Http.HttpMessageHandlerRequest, int, int, bool>*/], (void*)Http__FuseJSHttpRequest__OnProgress_fn, this));
-    uPtr(Obj())->Item(::STRINGS[18/*"enableCache"*/], uDelegate::New(::TYPES[9/*Fuse.Scripting.Callback*/], (void*)Http__FuseJSHttpRequest__EnableCache_fn, this));
-    uPtr(Obj())->Item(::STRINGS[19/*"setTimeout"*/], ::g::Fuse::Scripting::JSCallback::FromAction1(::TYPES[13/*Fuse.Scripting.JSCallback.FromAction<int>*/], uDelegate::New(::TYPES[14/*Uno.Action<int>*/], (void*)Http__FuseJSHttpRequest__SetTimeout_fn, this)));
-    uPtr(Obj())->Item(::STRINGS[20/*"setResponse...*/], uDelegate::New(::TYPES[9/*Fuse.Scripting.Callback*/], (void*)Http__FuseJSHttpRequest__SetResponseType_fn, this));
-    uPtr(Obj())->Item(::STRINGS[21/*"getResponse...*/], uDelegate::New(::TYPES[9/*Fuse.Scripting.Callback*/], (void*)Http__FuseJSHttpRequest__GetResponseType_fn, this));
-    uPtr(Obj())->Item(::STRINGS[22/*"sendAsync"*/], uDelegate::New(::TYPES[9/*Fuse.Scripting.Callback*/], (void*)Http__FuseJSHttpRequest__SendAsync_fn, this));
-    uPtr(Obj())->Item(::STRINGS[23/*"abort"*/], ::g::Fuse::Scripting::JSCallback::FromAction(uDelegate::New(::TYPES[15/*Uno.Action*/], (void*)Http__FuseJSHttpRequest__Abort_fn, this)));
-    uPtr(Obj())->Item(::STRINGS[24/*"setHeader"*/], ::g::Fuse::Scripting::JSCallback::FromAction2(::TYPES[16/*Fuse.Scripting.JSCallback.FromAction<string, string>*/], uDelegate::New(::TYPES[17/*Uno.Action<string, string>*/], (void*)Http__FuseJSHttpRequest__SetHeader_fn, this)));
-    uPtr(Obj())->Item(::STRINGS[25/*"getResponse...*/], ::g::Fuse::Scripting::JSCallback::FromFunc1(::TYPES[18/*Fuse.Scripting.JSCallback.FromFunc<string, string>*/], uDelegate::New(::TYPES[19/*Uno.Func<string, string>*/], (void*)Http__FuseJSHttpRequest__GetResponseHeader_fn, this)));
-    uPtr(Obj())->Item(::STRINGS[26/*"getResponse...*/], ::g::Fuse::Scripting::JSCallback::FromFunc(::TYPES[20/*Fuse.Scripting.JSCallback.FromFunc<string>*/], uDelegate::New(::TYPES[21/*Uno.Func<string>*/], (void*)Http__FuseJSHttpRequest__GetResponseHeaders_fn, this)));
-    uPtr(Obj())->Item(::STRINGS[27/*"getState"*/], uDelegate::New(::TYPES[9/*Fuse.Scripting.Callback*/], (void*)Http__FuseJSHttpRequest__GetState_fn, this));
-    uPtr(Obj())->Item(::STRINGS[28/*"getResponse...*/], ::g::Fuse::Scripting::JSCallback::FromFunc(::TYPES[22/*Fuse.Scripting.JSCallback.FromFunc<int>*/], uDelegate::New(::TYPES[23/*Uno.Func<int>*/], (void*)Http__FuseJSHttpRequest__GetResponseStatus_fn, this)));
-    uPtr(Obj())->Item(::STRINGS[29/*"getResponse...*/], uDelegate::New(::TYPES[9/*Fuse.Scripting.Callback*/], (void*)Http__FuseJSHttpRequest__GetResponseReasonPhrase_fn, this));
-    uPtr(Obj())->Item(::STRINGS[30/*"getResponse...*/], uDelegate::New(::TYPES[9/*Fuse.Scripting.Callback*/], (void*)Http__FuseJSHttpRequest__GetResponseContentString_fn, this));
-    uPtr(Obj())->Item(::STRINGS[31/*"getResponse...*/], uDelegate::New(::TYPES[9/*Fuse.Scripting.Callback*/], (void*)Http__FuseJSHttpRequest__GetResponseContentByteArray_fn, this));
+    uPtr(Obj())->Item(::STRINGS[21/*"enableCache"*/], uDelegate::New(::TYPES[9/*Fuse.Scripting.Callback*/], (void*)Http__FuseJSHttpRequest__EnableCache_fn, this));
+    uPtr(Obj())->Item(::STRINGS[22/*"setTimeout"*/], ::g::Fuse::Scripting::JSCallback::FromAction1(::TYPES[13/*Fuse.Scripting.JSCallback.FromAction<int>*/], uDelegate::New(::TYPES[14/*Uno.Action<int>*/], (void*)Http__FuseJSHttpRequest__SetTimeout_fn, this)));
+    uPtr(Obj())->Item(::STRINGS[23/*"setResponse...*/], uDelegate::New(::TYPES[9/*Fuse.Scripting.Callback*/], (void*)Http__FuseJSHttpRequest__SetResponseType_fn, this));
+    uPtr(Obj())->Item(::STRINGS[24/*"getResponse...*/], uDelegate::New(::TYPES[9/*Fuse.Scripting.Callback*/], (void*)Http__FuseJSHttpRequest__GetResponseType_fn, this));
+    uPtr(Obj())->Item(::STRINGS[25/*"sendAsync"*/], uDelegate::New(::TYPES[9/*Fuse.Scripting.Callback*/], (void*)Http__FuseJSHttpRequest__SendAsync_fn, this));
+    uPtr(Obj())->Item(::STRINGS[26/*"abort"*/], ::g::Fuse::Scripting::JSCallback::FromAction(uDelegate::New(::TYPES[15/*Uno.Action*/], (void*)Http__FuseJSHttpRequest__Abort_fn, this)));
+    uPtr(Obj())->Item(::STRINGS[27/*"setHeader"*/], ::g::Fuse::Scripting::JSCallback::FromAction2(::TYPES[16/*Fuse.Scripting.JSCallback.FromAction<string, string>*/], uDelegate::New(::TYPES[17/*Uno.Action<string, string>*/], (void*)Http__FuseJSHttpRequest__SetHeader_fn, this)));
+    uPtr(Obj())->Item(::STRINGS[28/*"getResponse...*/], ::g::Fuse::Scripting::JSCallback::FromFunc1(::TYPES[18/*Fuse.Scripting.JSCallback.FromFunc<string, string>*/], uDelegate::New(::TYPES[19/*Uno.Func<string, string>*/], (void*)Http__FuseJSHttpRequest__GetResponseHeader_fn, this)));
+    uPtr(Obj())->Item(::STRINGS[29/*"getResponse...*/], ::g::Fuse::Scripting::JSCallback::FromFunc(::TYPES[20/*Fuse.Scripting.JSCallback.FromFunc<string>*/], uDelegate::New(::TYPES[21/*Uno.Func<string>*/], (void*)Http__FuseJSHttpRequest__GetResponseHeaders_fn, this)));
+    uPtr(Obj())->Item(::STRINGS[30/*"getState"*/], uDelegate::New(::TYPES[9/*Fuse.Scripting.Callback*/], (void*)Http__FuseJSHttpRequest__GetState_fn, this));
+    uPtr(Obj())->Item(::STRINGS[31/*"getResponse...*/], ::g::Fuse::Scripting::JSCallback::FromFunc(::TYPES[22/*Fuse.Scripting.JSCallback.FromFunc<int>*/], uDelegate::New(::TYPES[23/*Uno.Func<int>*/], (void*)Http__FuseJSHttpRequest__GetResponseStatus_fn, this)));
+    uPtr(Obj())->Item(::STRINGS[32/*"getResponse...*/], uDelegate::New(::TYPES[9/*Fuse.Scripting.Callback*/], (void*)Http__FuseJSHttpRequest__GetResponseReasonPhrase_fn, this));
+    uPtr(Obj())->Item(::STRINGS[33/*"getResponse...*/], uDelegate::New(::TYPES[9/*Fuse.Scripting.Callback*/], (void*)Http__FuseJSHttpRequest__GetResponseContentString_fn, this));
+    uPtr(Obj())->Item(::STRINGS[34/*"getResponse...*/], uDelegate::New(::TYPES[9/*Fuse.Scripting.Callback*/], (void*)Http__FuseJSHttpRequest__GetResponseContentByteArray_fn, this));
 }
 
-// private void Abort() [instance] :417
+// private void Abort() [instance] :154
 void Http__FuseJSHttpRequest::Abort()
 {
     if (_req == NULL)
@@ -937,14 +960,14 @@ void Http__FuseJSHttpRequest::Abort()
     }
 }
 
-// private void CheckIsAttached() [instance] :443
+// private void CheckIsAttached() [instance] :180
 void Http__FuseJSHttpRequest::CheckIsAttached()
 {
     if (_req == NULL)
-        U_THROW(::g::Uno::InvalidOperationException::New5(::STRINGS[32/*"This operat...*/]));
+        U_THROW(::g::Uno::InvalidOperationException::New5(::STRINGS[35/*"This operat...*/]));
 }
 
-// private void DetachRequest() [instance] :383
+// private void DetachRequest() [instance] :120
 void Http__FuseJSHttpRequest::DetachRequest()
 {
     _finalState = uPtr(_req)->State();
@@ -981,7 +1004,7 @@ void Http__FuseJSHttpRequest::DetachRequest()
     Obj(NULL);
 }
 
-// private object EnableCache(object[] args) [instance] :583
+// private object EnableCache(object[] args) [instance] :320
 uObject* Http__FuseJSHttpRequest::EnableCache(uArray* args)
 {
     if (uPtr(args)->Length() > 0)
@@ -990,7 +1013,7 @@ uObject* Http__FuseJSHttpRequest::EnableCache(uArray* args)
     return NULL;
 }
 
-// private object GetResponseContentByteArray(object[] args) [instance] :489
+// private object GetResponseContentByteArray(object[] args) [instance] :226
 uObject* Http__FuseJSHttpRequest::GetResponseContentByteArray(uArray* args)
 {
     if (_cachedResponseContent == NULL)
@@ -1007,7 +1030,7 @@ uObject* Http__FuseJSHttpRequest::GetResponseContentByteArray(uArray* args)
     return contentAsBytes;
 }
 
-// private string GetResponseContentString(object[] args) [instance] :474
+// private string GetResponseContentString(object[] args) [instance] :211
 uString* Http__FuseJSHttpRequest::GetResponseContentString(uArray* args)
 {
     if (_cachedResponseContent == NULL)
@@ -1024,19 +1047,19 @@ uString* Http__FuseJSHttpRequest::GetResponseContentString(uArray* args)
     return contentAsString;
 }
 
-// private string GetResponseHeader(string key) [instance] :459
+// private string GetResponseHeader(string key) [instance] :196
 uString* Http__FuseJSHttpRequest::GetResponseHeader(uString* key)
 {
     if (_req != NULL)
         return uPtr(_req)->GetResponseHeader(key);
 
     if (::g::Uno::String::op_Equality(_cachedResponseHeaders, NULL))
-        U_THROW(::g::Uno::InvalidOperationException::New5(::STRINGS[33/*"Unable to g...*/]));
+        U_THROW(::g::Uno::InvalidOperationException::New5(::STRINGS[36/*"Unable to g...*/]));
 
     return ::g::Fuse::Reactive::FuseJS::HttpHeaders::New1(_cachedResponseHeaders)->GetValue(key);
 }
 
-// private string GetResponseHeaders() [instance] :449
+// private string GetResponseHeaders() [instance] :186
 uString* Http__FuseJSHttpRequest::GetResponseHeaders()
 {
     if (::g::Uno::String::op_Equality(_cachedResponseHeaders, NULL))
@@ -1048,13 +1071,13 @@ uString* Http__FuseJSHttpRequest::GetResponseHeaders()
     return _cachedResponseHeaders;
 }
 
-// private object GetResponseReasonPhrase(object[] args) [instance] :610
+// private object GetResponseReasonPhrase(object[] args) [instance] :347
 uObject* Http__FuseJSHttpRequest::GetResponseReasonPhrase(uArray* args)
 {
     return ::g::Uno::Net::Http::HttpStatusReasonPhrase::GetFromStatusCode(GetResponseStatus());
 }
 
-// private int GetResponseStatus() [instance] :600
+// private int GetResponseStatus() [instance] :337
 int Http__FuseJSHttpRequest::GetResponseStatus()
 {
     if (_cachedResponseStatus == 0)
@@ -1066,7 +1089,7 @@ int Http__FuseJSHttpRequest::GetResponseStatus()
     return _cachedResponseStatus;
 }
 
-// private object GetResponseType(object[] args) [instance] :628
+// private object GetResponseType(object[] args) [instance] :365
 uObject* Http__FuseJSHttpRequest::GetResponseType(uArray* args)
 {
     if (_req == NULL)
@@ -1075,28 +1098,28 @@ uObject* Http__FuseJSHttpRequest::GetResponseType(uArray* args)
     return uBox<int>(::TYPES[27/*int*/], uPtr(_req)->HttpResponseType());
 }
 
-// private object GetState(object[] args) [instance] :595
+// private object GetState(object[] args) [instance] :332
 uObject* Http__FuseJSHttpRequest::GetState(uArray* args)
 {
     return uBox<int>(::TYPES[27/*int*/], (_req != NULL) ? uPtr(_req)->State() : _finalState);
 }
 
-// public generated Fuse.Scripting.Object get_Obj() [instance] :343
+// public generated Fuse.Scripting.Object get_Obj() [instance] :80
 ::g::Fuse::Scripting::Object* Http__FuseJSHttpRequest::Obj()
 {
     return _Obj;
 }
 
-// private generated void set_Obj(Fuse.Scripting.Object value) [instance] :343
+// private generated void set_Obj(Fuse.Scripting.Object value) [instance] :80
 void Http__FuseJSHttpRequest::Obj(::g::Fuse::Scripting::Object* value)
 {
     _Obj = value;
 }
 
-// private void OnAbort(Uno.Net.Http.HttpMessageHandlerRequest res) [instance] :504
+// private void OnAbort(Uno.Net.Http.HttpMessageHandlerRequest res) [instance] :241
 void Http__FuseJSHttpRequest::OnAbort(::g::Uno::Net::Http::HttpMessageHandlerRequest* res)
 {
-    ::g::Fuse::Scripting::Function* func = uAs< ::g::Fuse::Scripting::Function*>(uPtr(Obj())->Item(::STRINGS[34/*"onabort"*/]), ::TYPES[2/*Fuse.Scripting.Function*/]);
+    ::g::Fuse::Scripting::Function* func = uAs< ::g::Fuse::Scripting::Function*>(uPtr(Obj())->Item(::STRINGS[37/*"onabort"*/]), ::TYPES[2/*Fuse.Scripting.Function*/]);
 
     if (func != NULL)
         uPtr(func)->Call(uArray::New(::TYPES[3/*object[]*/], 0));
@@ -1104,10 +1127,10 @@ void Http__FuseJSHttpRequest::OnAbort(::g::Uno::Net::Http::HttpMessageHandlerReq
     DetachRequest();
 }
 
-// private void OnDone(Uno.Net.Http.HttpMessageHandlerRequest res) [instance] :535
+// private void OnDone(Uno.Net.Http.HttpMessageHandlerRequest res) [instance] :272
 void Http__FuseJSHttpRequest::OnDone(::g::Uno::Net::Http::HttpMessageHandlerRequest* res)
 {
-    ::g::Fuse::Scripting::Function* func = uAs< ::g::Fuse::Scripting::Function*>(uPtr(Obj())->Item(::STRINGS[35/*"ondone"*/]), ::TYPES[2/*Fuse.Scripting.Function*/]);
+    ::g::Fuse::Scripting::Function* func = uAs< ::g::Fuse::Scripting::Function*>(uPtr(Obj())->Item(::STRINGS[38/*"ondone"*/]), ::TYPES[2/*Fuse.Scripting.Function*/]);
 
     if (func != NULL)
         uPtr(func)->Call(uArray::New(::TYPES[3/*object[]*/], 0));
@@ -1115,10 +1138,10 @@ void Http__FuseJSHttpRequest::OnDone(::g::Uno::Net::Http::HttpMessageHandlerRequ
     DetachRequest();
 }
 
-// private void OnError(Uno.Net.Http.HttpMessageHandlerRequest res, string error) [instance] :512
+// private void OnError(Uno.Net.Http.HttpMessageHandlerRequest res, string error) [instance] :249
 void Http__FuseJSHttpRequest::OnError(::g::Uno::Net::Http::HttpMessageHandlerRequest* res, uString* error)
 {
-    ::g::Fuse::Scripting::Function* func = uAs< ::g::Fuse::Scripting::Function*>(uPtr(Obj())->Item(::STRINGS[36/*"onerror"*/]), ::TYPES[2/*Fuse.Scripting.Function*/]);
+    ::g::Fuse::Scripting::Function* func = uAs< ::g::Fuse::Scripting::Function*>(uPtr(Obj())->Item(::STRINGS[39/*"onerror"*/]), ::TYPES[2/*Fuse.Scripting.Function*/]);
 
     if (func != NULL)
         uPtr(func)->Call(uArray::Init<uObject*>(::TYPES[3/*object[]*/], 1, error));
@@ -1126,28 +1149,28 @@ void Http__FuseJSHttpRequest::OnError(::g::Uno::Net::Http::HttpMessageHandlerReq
     DetachRequest();
 }
 
-// private void OnProgress(Uno.Net.Http.HttpMessageHandlerRequest res, int current, int total, bool hastotal) [instance] :543
+// private void OnProgress(Uno.Net.Http.HttpMessageHandlerRequest res, int current, int total, bool hastotal) [instance] :280
 void Http__FuseJSHttpRequest::OnProgress(::g::Uno::Net::Http::HttpMessageHandlerRequest* res, int current, int total, bool hastotal)
 {
-    ::g::Fuse::Scripting::Function* func = uAs< ::g::Fuse::Scripting::Function*>(uPtr(Obj())->Item(::STRINGS[37/*"onprogress"*/]), ::TYPES[2/*Fuse.Scripting.Function*/]);
+    ::g::Fuse::Scripting::Function* func = uAs< ::g::Fuse::Scripting::Function*>(uPtr(Obj())->Item(::STRINGS[40/*"onprogress"*/]), ::TYPES[2/*Fuse.Scripting.Function*/]);
 
     if (func != NULL)
         uPtr(func)->Call(uArray::Init<uObject*>(::TYPES[3/*object[]*/], 3, uBox<int>(::TYPES[27/*int*/], current), uBox<int>(::TYPES[27/*int*/], total), uBox(::g::Uno::Bool_typeof(), hastotal)));
 }
 
-// private void OnStateChanged(Uno.Net.Http.HttpMessageHandlerRequest res) [instance] :528
+// private void OnStateChanged(Uno.Net.Http.HttpMessageHandlerRequest res) [instance] :265
 void Http__FuseJSHttpRequest::OnStateChanged(::g::Uno::Net::Http::HttpMessageHandlerRequest* res)
 {
-    ::g::Fuse::Scripting::Function* func = uAs< ::g::Fuse::Scripting::Function*>(uPtr(Obj())->Item(::STRINGS[38/*"onstatechan...*/]), ::TYPES[2/*Fuse.Scripting.Function*/]);
+    ::g::Fuse::Scripting::Function* func = uAs< ::g::Fuse::Scripting::Function*>(uPtr(Obj())->Item(::STRINGS[41/*"onstatechan...*/]), ::TYPES[2/*Fuse.Scripting.Function*/]);
 
     if (func != NULL)
         uPtr(func)->Call(uArray::Init<uObject*>(::TYPES[3/*object[]*/], 1, uBox<int>(::TYPES[27/*int*/], uPtr(_req)->State())));
 }
 
-// private void OnTimeout(Uno.Net.Http.HttpMessageHandlerRequest res) [instance] :520
+// private void OnTimeout(Uno.Net.Http.HttpMessageHandlerRequest res) [instance] :257
 void Http__FuseJSHttpRequest::OnTimeout(::g::Uno::Net::Http::HttpMessageHandlerRequest* res)
 {
-    ::g::Fuse::Scripting::Function* func = uAs< ::g::Fuse::Scripting::Function*>(uPtr(Obj())->Item(::STRINGS[39/*"ontimeout"*/]), ::TYPES[2/*Fuse.Scripting.Function*/]);
+    ::g::Fuse::Scripting::Function* func = uAs< ::g::Fuse::Scripting::Function*>(uPtr(Obj())->Item(::STRINGS[42/*"ontimeout"*/]), ::TYPES[2/*Fuse.Scripting.Function*/]);
 
     if (func != NULL)
         uPtr(func)->Call(uArray::New(::TYPES[3/*object[]*/], 0));
@@ -1155,7 +1178,7 @@ void Http__FuseJSHttpRequest::OnTimeout(::g::Uno::Net::Http::HttpMessageHandlerR
     DetachRequest();
 }
 
-// private object SendAsync(object[] args) [instance] :550
+// private object SendAsync(object[] args) [instance] :287
 uObject* Http__FuseJSHttpRequest::SendAsync(uArray* args)
 {
     if ((args != NULL) && (uPtr(args)->Length() > 0))
@@ -1177,9 +1200,9 @@ uObject* Http__FuseJSHttpRequest::SendAsync(uArray* args)
         {
             ::g::Fuse::Scripting::Object* obj = uAs< ::g::Fuse::Scripting::Object*>(a, ::TYPES[26/*Fuse.Scripting.Object*/]);
 
-            if ((obj != NULL) && (uPtr(obj)->Item(::STRINGS[40/*"buffer"*/]) != NULL))
+            if ((obj != NULL) && (uPtr(obj)->Item(::STRINGS[43/*"buffer"*/]) != NULL))
             {
-                uArray* b1 = uAs<uArray*>(uPtr(obj)->Item(::STRINGS[40/*"buffer"*/]), ::TYPES[25/*byte[]*/]);
+                uArray* b1 = uAs<uArray*>(uPtr(obj)->Item(::STRINGS[43/*"buffer"*/]), ::TYPES[25/*byte[]*/]);
                 uPtr(_req)->SendAsync1(b1);
                 return NULL;
             }
@@ -1190,14 +1213,14 @@ uObject* Http__FuseJSHttpRequest::SendAsync(uArray* args)
     return NULL;
 }
 
-// private void SetHeader(string key, string value) [instance] :431
+// private void SetHeader(string key, string value) [instance] :168
 void Http__FuseJSHttpRequest::SetHeader(uString* key, uString* value)
 {
     CheckIsAttached();
     uPtr(_req)->SetHeader(key, value);
 }
 
-// private object SetResponseType(object[] args) [instance] :615
+// private object SetResponseType(object[] args) [instance] :352
 uObject* Http__FuseJSHttpRequest::SetResponseType(uArray* args)
 {
     CheckIsAttached();
@@ -1212,14 +1235,14 @@ uObject* Http__FuseJSHttpRequest::SetResponseType(uArray* args)
     return NULL;
 }
 
-// private void SetTimeout(int timeout) [instance] :437
+// private void SetTimeout(int timeout) [instance] :174
 void Http__FuseJSHttpRequest::SetTimeout(int timeout)
 {
     CheckIsAttached();
     uPtr(_req)->SetTimeout(timeout);
 }
 
-// public FuseJSHttpRequest New(Fuse.Scripting.Context context, Uno.Net.Http.HttpMessageHandlerRequest req) [static] :354
+// public FuseJSHttpRequest New(Fuse.Scripting.Context context, Uno.Net.Http.HttpMessageHandlerRequest req) [static] :91
 Http__FuseJSHttpRequest* Http__FuseJSHttpRequest::New1(::g::Fuse::Scripting::Context* context, ::g::Uno::Net::Http::HttpMessageHandlerRequest* req)
 {
     Http__FuseJSHttpRequest* obj1 = (Http__FuseJSHttpRequest*)uNew(Http__FuseJSHttpRequest_typeof());
@@ -1228,21 +1251,20 @@ Http__FuseJSHttpRequest* Http__FuseJSHttpRequest::New1(::g::Fuse::Scripting::Con
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Reactive.JavaScript/1.2.1/fusejs/$.uno
-// -------------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Reactive.JavaScript\1.3.0-rc2\FuseJS\Http.uno
+// ----------------------------------------------------------------------------------------------
 
-// public sealed class Http :275
+// public sealed class Http :12
 // {
 static void Http_build(uType* type)
 {
-    ::STRINGS[41] = uString::Const("FuseJS/Http");
-    ::STRINGS[42] = uString::Const("exports");
-    ::TYPES[28] = ::g::Uno::Func2_typeof()->MakeType(::g::Fuse::Scripting::Context_typeof(), uObject_typeof()->Array(), uObject_typeof(), NULL);
+    type->SetDependencies(
+        ::g::Uno::UX::Resource_typeof());
     type->SetInterfaces(
         ::g::Uno::IDisposable_typeof(), offsetof(::g::Fuse::Scripting::NativeModule_type, interface0),
         ::g::Fuse::Scripting::IModuleProvider_typeof(), offsetof(::g::Fuse::Scripting::NativeModule_type, interface1));
     type->SetFields(4,
-        type, (uintptr_t)&::g::Fuse::Reactive::FuseJS::Http::_instance_, uFieldFlagsStatic);
+        type, (uintptr_t)&Http::_instance_, uFieldFlagsStatic);
 }
 
 ::g::Fuse::Scripting::NativeModule_type* Http_typeof()
@@ -1254,6 +1276,7 @@ static void Http_build(uType* type)
     options.BaseDefinition = ::g::Fuse::Scripting::NativeModule_typeof();
     options.FieldCount = 5;
     options.InterfaceCount = 2;
+    options.DependencyCount = 1;
     options.ObjectSize = sizeof(Http);
     options.TypeSize = sizeof(::g::Fuse::Scripting::NativeModule_type);
     type = (::g::Fuse::Scripting::NativeModule_type*)uClassType::New("Fuse.Reactive.FuseJS.Http", options);
@@ -1265,25 +1288,25 @@ static void Http_build(uType* type)
     return type;
 }
 
-// public Http() :278
+// public Http() :15
 void Http__ctor_2_fn(Http* __this)
 {
     __this->ctor_2();
 }
 
-// private object CreateClient(Fuse.Scripting.Context context, object[] args) :289
+// private object CreateClient(Fuse.Scripting.Context context, object[] args) :26
 void Http__CreateClient_fn(Http* __this, ::g::Fuse::Scripting::Context* context, uArray* args, uObject** __retval)
 {
     *__retval = __this->CreateClient(context, args);
 }
 
-// public override sealed void Evaluate(Fuse.Scripting.Context c, Fuse.Scripting.ModuleResult result) :284
+// public override sealed void Evaluate(Fuse.Scripting.Context c, Fuse.Scripting.ModuleResult result) :21
 void Http__Evaluate_fn(Http* __this, ::g::Fuse::Scripting::Context* c, ::g::Fuse::Scripting::ModuleResult* result)
 {
-    uPtr(uPtr(result)->Object)->Item(::STRINGS[42/*"exports"*/], Http__FunctionClosure::New1(c, uDelegate::New(::TYPES[28/*Uno.Func<Fuse.Scripting.Context, object[], object>*/], (void*)Http__CreateClient_fn, __this))->Callback());
+    uPtr(uPtr(result)->Object)->Item(uString::Const("exports"), Http__FunctionClosure::New1(c, uDelegate::New(::g::Uno::Func2_typeof()->MakeType(::g::Fuse::Scripting::Context_typeof(), ::TYPES[3/*object[]*/], uObject_typeof(), NULL), (void*)Http__CreateClient_fn, __this))->Callback());
 }
 
-// public Http New() :278
+// public Http New() :15
 void Http__New2_fn(Http** __retval)
 {
     *__retval = Http::New2();
@@ -1291,7 +1314,7 @@ void Http__New2_fn(Http** __retval)
 
 uSStrong<Http*> Http::_instance_;
 
-// public Http() [instance] :278
+// public Http() [instance] :15
 void Http::ctor_2()
 {
     ctor_1();
@@ -1299,16 +1322,16 @@ void Http::ctor_2()
     if (Http::_instance_ != NULL)
         return;
 
-    ::g::Uno::UX::Resource::SetGlobalKey(Http::_instance_ = this, ::STRINGS[41/*"FuseJS/Http"*/]);
+    ::g::Uno::UX::Resource::SetGlobalKey(Http::_instance_ = this, uString::Const("FuseJS/Http"));
 }
 
-// private object CreateClient(Fuse.Scripting.Context context, object[] args) [instance] :289
+// private object CreateClient(Fuse.Scripting.Context context, object[] args) [instance] :26
 uObject* Http::CreateClient(::g::Fuse::Scripting::Context* context, uArray* args)
 {
     return Http__FuseJSHttpClient::New1(context)->Obj();
 }
 
-// public Http New() [static] :278
+// public Http New() [static] :15
 Http* Http::New2()
 {
     Http* obj1 = (Http*)uNew(Http_typeof());
@@ -1317,24 +1340,24 @@ Http* Http::New2()
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Reactive.JavaScript/1.2.1/fusejs/$.uno
-// -------------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Reactive.JavaScript\1.3.0-rc2\FuseJS\Http.uno
+// ----------------------------------------------------------------------------------------------
 
-// internal sealed class HttpHeaders :639
+// internal sealed class HttpHeaders :376
 // {
 static void HttpHeaders_build(uType* type)
 {
-    ::STRINGS[43] = uString::Const(", ");
-    ::STRINGS[44] = uString::Const("");
-    ::TYPES[29] = ::g::Uno::Collections::Dictionary_typeof()->MakeType(::g::Uno::String_typeof(), ::g::Uno::Collections::IList_typeof()->MakeType(::g::Uno::String_typeof(), NULL), NULL);
-    ::TYPES[30] = ::g::Uno::IDisposable_typeof();
-    ::TYPES[31] = ::g::Uno::Collections::EnumerableExtensions_typeof()->MakeMethod(6/*ToArray<string>*/, ::g::Uno::String_typeof(), NULL);
-    ::TYPES[32] = ::g::Uno::Char_typeof()->Array();
-    ::TYPES[33] = ::g::Uno::Collections::List_typeof()->MakeType(::g::Uno::String_typeof(), NULL);
-    ::TYPES[34] = ::g::Uno::Collections::List__Enumerator_typeof()->MakeType(::g::Uno::String_typeof(), NULL);
-    ::TYPES[35] = ::g::Uno::Collections::ICollection_typeof()->MakeType(::g::Uno::String_typeof(), NULL);
+    ::STRINGS[44] = uString::Const(", ");
+    ::STRINGS[45] = uString::Const("");
+    ::TYPES[28] = ::g::Uno::Collections::Dictionary_typeof()->MakeType(::g::Uno::String_typeof(), ::g::Uno::Collections::IList_typeof()->MakeType(::g::Uno::String_typeof(), NULL), NULL);
+    ::TYPES[29] = ::g::Uno::IDisposable_typeof();
+    ::TYPES[30] = ::g::Uno::Collections::EnumerableExtensions_typeof()->MakeMethod(6/*ToArray<string>*/, ::g::Uno::String_typeof(), NULL);
+    ::TYPES[31] = ::g::Uno::Char_typeof()->Array();
+    ::TYPES[32] = ::g::Uno::Collections::List_typeof()->MakeType(::g::Uno::String_typeof(), NULL);
+    ::TYPES[33] = ::g::Uno::Collections::List__Enumerator_typeof()->MakeType(::g::Uno::String_typeof(), NULL);
+    ::TYPES[34] = ::g::Uno::Collections::ICollection_typeof()->MakeType(::g::Uno::String_typeof(), NULL);
     type->SetFields(0,
-        ::TYPES[29/*Uno.Collections.Dictionary<string, Uno.Collections.IList<string>>*/], offsetof(::g::Fuse::Reactive::FuseJS::HttpHeaders, _headers), 0);
+        ::TYPES[28/*Uno.Collections.Dictionary<string, Uno.Collections.IList<string>>*/], offsetof(HttpHeaders, _headers), 0);
 }
 
 uType* HttpHeaders_typeof()
@@ -1351,40 +1374,40 @@ uType* HttpHeaders_typeof()
     return type;
 }
 
-// internal HttpHeaders(string headers) :643
+// internal HttpHeaders(string headers) :380
 void HttpHeaders__ctor__fn(HttpHeaders* __this, uString* headers)
 {
     __this->ctor_(headers);
 }
 
-// public string GetValue(string key) :656
+// public string GetValue(string key) :393
 void HttpHeaders__GetValue_fn(HttpHeaders* __this, uString* key, uString** __retval)
 {
     *__retval = __this->GetValue(key);
 }
 
-// internal HttpHeaders New(string headers) :643
+// internal HttpHeaders New(string headers) :380
 void HttpHeaders__New1_fn(uString* headers, HttpHeaders** __retval)
 {
     *__retval = HttpHeaders::New1(headers);
 }
 
-// private void ParseHeader(string headerLine) :666
+// private void ParseHeader(string headerLine) :403
 void HttpHeaders__ParseHeader_fn(HttpHeaders* __this, uString* headerLine)
 {
     __this->ParseHeader(headerLine);
 }
 
-// internal HttpHeaders(string headers) [instance] :643
+// internal HttpHeaders(string headers) [instance] :380
 void HttpHeaders::ctor_(uString* headers)
 {
-    _headers = ((::g::Uno::Collections::Dictionary*)::g::Uno::Collections::Dictionary::New1(::TYPES[29/*Uno.Collections.Dictionary<string, Uno.Collections.IList<string>>*/]));
+    _headers = ((::g::Uno::Collections::Dictionary*)::g::Uno::Collections::Dictionary::New1(::TYPES[28/*Uno.Collections.Dictionary<string, Uno.Collections.IList<string>>*/]));
     ::g::Uno::IO::StringReader* reader = ::g::Uno::IO::StringReader::New1(headers);
 
     {
         const auto __finally_fun = [&]()
         {
-            ::g::Uno::IDisposable::Dispose(uInterface(uPtr((uObject*)reader), ::TYPES[30/*Uno.IDisposable*/]));
+            ::g::Uno::IDisposable::Dispose(uInterface(uPtr((uObject*)reader), ::TYPES[29/*Uno.IDisposable*/]));
         };
 
         const uFinally<decltype(__finally_fun)> __f(__finally_fun);
@@ -1398,19 +1421,19 @@ void HttpHeaders::ctor_(uString* headers)
     }
 }
 
-// public string GetValue(string key) [instance] :656
+// public string GetValue(string key) [instance] :393
 uString* HttpHeaders::GetValue(uString* key)
 {
     bool ret6;
     uObject* list;
 
     if ((::g::Uno::Collections::Dictionary__TryGetValue_fn(uPtr(_headers), ::g::Uno::String::ToLower(uPtr(key)), (void**)(&list), &ret6), ret6))
-        return ::g::Uno::String::Join(::STRINGS[43/*", "*/], (uArray*)::g::Uno::Collections::EnumerableExtensions::ToArray(::TYPES[31/*Uno.Collections.EnumerableExtensions.ToArray<string>*/], list));
+        return ::g::Uno::String::Join(::STRINGS[44/*", "*/], (uArray*)::g::Uno::Collections::EnumerableExtensions::ToArray(::TYPES[30/*Uno.Collections.EnumerableExtensions.ToArray<string>*/], list));
 
-    return ::STRINGS[44/*""*/];
+    return ::STRINGS[45/*""*/];
 }
 
-// private void ParseHeader(string headerLine) [instance] :666
+// private void ParseHeader(string headerLine) [instance] :403
 void HttpHeaders::ParseHeader(uString* headerLine)
 {
     bool ret7;
@@ -1426,8 +1449,8 @@ void HttpHeaders::ParseHeader(uString* headerLine)
         return;
 
     uString* name = ::g::Uno::String::ToLower(uPtr(::g::Uno::String::Trim(uPtr(::g::Uno::String::Substring1(headerLine, 0, colon)))));
-    uArray* strings = ::g::Uno::String::Split(uPtr(::g::Uno::String::Trim(uPtr(::g::Uno::String::Substring1(headerLine, colon + 1, headerLine->Length() - (colon + 1))))), uArray::Init<int>(::TYPES[32/*char[]*/], 1, ';'));
-    ::g::Uno::Collections::List* values = (::g::Uno::Collections::List*)::g::Uno::Collections::List::New1(::TYPES[33/*Uno.Collections.List<string>*/]);
+    uArray* strings = ::g::Uno::String::Split(uPtr(::g::Uno::String::Trim(uPtr(::g::Uno::String::Substring1(headerLine, colon + 1, headerLine->Length() - (colon + 1))))), uArray::Init<int>(::TYPES[31/*char[]*/], 1, ';'));
+    ::g::Uno::Collections::List* values = (::g::Uno::Collections::List*)::g::Uno::Collections::List::New1(::TYPES[32/*Uno.Collections.List<string>*/]);
 
     for (int index2 = 0, length3 = uPtr(strings)->Length(); index2 < length3; ++index2)
     {
@@ -1436,17 +1459,29 @@ void HttpHeaders::ParseHeader(uString* headerLine)
     }
 
     if ((::g::Uno::Collections::Dictionary__ContainsKey_fn(uPtr(_headers), name, &ret7), ret7))
+    {
+        ::g::Uno::Collections::List__Enumerator<uStrong<uString*> > enum4 = (::g::Uno::Collections::List__GetEnumerator_fn(uPtr(values), &ret8), ret8);
 
-        for (::g::Uno::Collections::List__Enumerator<uStrong<uString*> > enum4 = (::g::Uno::Collections::List__GetEnumerator_fn(uPtr(values), &ret8), ret8); enum4.MoveNext(::TYPES[34/*Uno.Collections.List<string>.Enumerator*/]); )
         {
-            uString* value = enum4.Current(::TYPES[34/*Uno.Collections.List<string>.Enumerator*/]);
-            ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr((::g::Uno::Collections::Dictionary__get_Item_fn(uPtr(_headers), name, &ret9), ret9)), ::TYPES[35/*Uno.Collections.ICollection<string>*/]), value);
+            const auto __finally_fun = [&]()
+            {
+                enum4.Dispose(::TYPES[33/*Uno.Collections.List<string>.Enumerator*/]);
+            };
+
+            const uFinally<decltype(__finally_fun)> __f(__finally_fun);
+
+            while (enum4.MoveNext(::TYPES[33/*Uno.Collections.List<string>.Enumerator*/]))
+            {
+                uString* value = enum4.Current(::TYPES[33/*Uno.Collections.List<string>.Enumerator*/]);
+                ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr((::g::Uno::Collections::Dictionary__get_Item_fn(uPtr(_headers), name, &ret9), ret9)), ::TYPES[34/*Uno.Collections.ICollection<string>*/]), value);
+            }
         }
+    }
     else
         ::g::Uno::Collections::Dictionary__Add_fn(uPtr(_headers), name, (uObject*)values);
 }
 
-// internal HttpHeaders New(string headers) [static] :643
+// internal HttpHeaders New(string headers) [static] :380
 HttpHeaders* HttpHeaders::New1(uString* headers)
 {
     HttpHeaders* obj5 = (HttpHeaders*)uNew(HttpHeaders_typeof());
@@ -1455,26 +1490,28 @@ HttpHeaders* HttpHeaders::New1(uString* headers)
 }
 // }
 
-// /Users/a/Library/Application Support/Fusetools/Packages/Fuse.Launcher.InterApp/1.2.1/interapp/$.uno
-// ---------------------------------------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Launcher.InterApp\1.3.0-rc2\InterApp\JS.uno
+// --------------------------------------------------------------------------------------------
 
-// public sealed class InterApp :139
+// public sealed class InterApp :32
 // {
 static void InterApp_build(uType* type)
 {
-    ::STRINGS[45] = uString::Const("receivedUri");
-    ::STRINGS[46] = uString::Const("FuseJS/InterApp");
-    ::STRINGS[47] = uString::Const("onReceivedUri");
-    ::STRINGS[48] = uString::Const("launchUri");
+    ::STRINGS[46] = uString::Const("receivedUri");
+    ::STRINGS[47] = uString::Const("FuseJS/InterApp");
+    ::STRINGS[48] = uString::Const("onReceivedUri");
+    ::STRINGS[49] = uString::Const("launchUri");
     ::TYPES[3] = uObject_typeof()->Array();
     ::TYPES[5] = ::g::Fuse::Scripting::NativeCallback_typeof();
-    ::TYPES[36] = ::g::Uno::Action1_typeof()->MakeType(::g::Uno::String_typeof(), NULL);
+    ::TYPES[35] = ::g::Uno::Action1_typeof()->MakeType(::g::Uno::String_typeof(), NULL);
     ::TYPES[8] = ::g::Uno::String_typeof();
+    type->SetDependencies(
+        ::g::Uno::UX::Resource_typeof());
     type->SetInterfaces(
         ::g::Uno::IDisposable_typeof(), offsetof(::g::Fuse::Scripting::NativeModule_type, interface0),
         ::g::Fuse::Scripting::IModuleProvider_typeof(), offsetof(::g::Fuse::Scripting::NativeModule_type, interface1));
     type->SetFields(12,
-        type, (uintptr_t)&::g::Fuse::Reactive::FuseJS::InterApp::_instance_, uFieldFlagsStatic);
+        type, (uintptr_t)&InterApp::_instance_, uFieldFlagsStatic);
 }
 
 ::g::Fuse::Scripting::NativeModule_type* InterApp_typeof()
@@ -1486,6 +1523,7 @@ static void InterApp_build(uType* type)
     options.BaseDefinition = ::g::Fuse::Scripting::NativeEventEmitterModule_typeof();
     options.FieldCount = 13;
     options.InterfaceCount = 2;
+    options.DependencyCount = 1;
     options.ObjectSize = sizeof(InterApp);
     options.TypeSize = sizeof(::g::Fuse::Scripting::NativeModule_type);
     type = (::g::Fuse::Scripting::NativeModule_type*)uClassType::New("Fuse.Reactive.FuseJS.InterApp", options);
@@ -1496,25 +1534,25 @@ static void InterApp_build(uType* type)
     return type;
 }
 
-// public InterApp() :143
+// public InterApp() :36
 void InterApp__ctor_3_fn(InterApp* __this)
 {
     __this->ctor_3();
 }
 
-// public static object LaunchUri(Fuse.Scripting.Context context, object[] args) :191
+// public static object LaunchUri(Fuse.Scripting.Context context, object[] args) :84
 void InterApp__LaunchUri_fn(::g::Fuse::Scripting::Context* context, uArray* args, uObject** __retval)
 {
     *__retval = InterApp::LaunchUri(context, args);
 }
 
-// public InterApp New() :143
+// public InterApp New() :36
 void InterApp__New3_fn(InterApp** __retval)
 {
     *__retval = InterApp::New3();
 }
 
-// private void OnReceivedUri(string uri) :168
+// private void OnReceivedUri(string uri) :61
 void InterApp__OnReceivedUri_fn(InterApp* __this, uString* uri)
 {
     __this->OnReceivedUri(uri);
@@ -1522,36 +1560,36 @@ void InterApp__OnReceivedUri_fn(InterApp* __this, uString* uri)
 
 uSStrong<InterApp*> InterApp::_instance_;
 
-// public InterApp() [instance] :143
+// public InterApp() [instance] :36
 void InterApp::ctor_3()
 {
-    ctor_2(true, uArray::Init<uObject*>(::TYPES[3/*object[]*/], 1, ::STRINGS[45/*"receivedUri"*/]));
+    ctor_2(true, uArray::Init<uObject*>(::TYPES[3/*object[]*/], 1, ::STRINGS[46/*"receivedUri"*/]));
 
     if (InterApp::_instance_ != NULL)
         return;
 
-    ::g::Uno::UX::Resource::SetGlobalKey(InterApp::_instance_ = this, ::STRINGS[46/*"FuseJS/Inte...*/]);
-    ::g::Fuse::Scripting::NativeEvent* onReceivedUri = ::g::Fuse::Scripting::NativeEvent::New4(::STRINGS[47/*"onReceivedUri"*/], true);
-    On1(::STRINGS[45/*"receivedUri"*/], onReceivedUri);
+    ::g::Uno::UX::Resource::SetGlobalKey(InterApp::_instance_ = this, ::STRINGS[47/*"FuseJS/Inte...*/]);
+    ::g::Fuse::Scripting::NativeEvent* onReceivedUri = ::g::Fuse::Scripting::NativeEvent::New4(::STRINGS[48/*"onReceivedUri"*/], true);
+    On1(::STRINGS[46/*"receivedUri"*/], onReceivedUri);
     AddMember(onReceivedUri);
-    AddMember(::g::Fuse::Scripting::NativeFunction::New1(::STRINGS[48/*"launchUri"*/], uDelegate::New(::TYPES[5/*Fuse.Scripting.NativeCallback*/], (void*)InterApp__LaunchUri_fn)));
-    ::g::Fuse::Platform::InterApp::add_ReceivedURI(uDelegate::New(::TYPES[36/*Uno.Action<string>*/], (void*)InterApp__OnReceivedUri_fn, this));
+    AddMember(::g::Fuse::Scripting::NativeFunction::New1(::STRINGS[49/*"launchUri"*/], uDelegate::New(::TYPES[5/*Fuse.Scripting.NativeCallback*/], (void*)InterApp__LaunchUri_fn)));
+    ::g::Fuse::Platform::InterApp::add_ReceivedURI(uDelegate::New(::TYPES[35/*Uno.Action<string>*/], (void*)InterApp__OnReceivedUri_fn, this));
 }
 
-// private void OnReceivedUri(string uri) [instance] :168
+// private void OnReceivedUri(string uri) [instance] :61
 void InterApp::OnReceivedUri(uString* uri)
 {
-    Emit(uArray::Init<uObject*>(::TYPES[3/*object[]*/], 2, ::STRINGS[45/*"receivedUri"*/], uri));
+    Emit(uArray::Init<uObject*>(::TYPES[3/*object[]*/], 2, ::STRINGS[46/*"receivedUri"*/], uri));
 }
 
-// public static object LaunchUri(Fuse.Scripting.Context context, object[] args) [static] :191
+// public static object LaunchUri(Fuse.Scripting.Context context, object[] args) [static] :84
 uObject* InterApp::LaunchUri(::g::Fuse::Scripting::Context* context, uArray* args)
 {
     ::g::Fuse::LauncherImpl::InterAppLauncher::LaunchUri(::g::Uno::Net::Http::Uri::New1(uCast<uString*>(uPtr(args)->Strong<uObject*>(0), ::TYPES[8/*string*/])));
     return NULL;
 }
 
-// public InterApp New() [static] :143
+// public InterApp New() [static] :36
 InterApp* InterApp::New3()
 {
     InterApp* obj1 = (InterApp*)uNew(InterApp_typeof());
@@ -1560,24 +1598,27 @@ InterApp* InterApp::New3()
 }
 // }
 
-// /Users/a/Library/Application Support/Fusetools/Packages/Fuse.Launcher.Maps/1.2.1/maps/$.uno
-// -------------------------------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Launcher.Maps\1.3.0-rc2\Maps\JS.uno
+// ------------------------------------------------------------------------------------
 
-// public sealed class Maps :153
+// public sealed class Maps :22
 // {
 static void Maps_build(uType* type)
 {
-    ::STRINGS[49] = uString::Const("FuseJS/Maps");
-    ::STRINGS[50] = uString::Const("openAt");
-    ::STRINGS[51] = uString::Const("searchNearby");
-    ::STRINGS[52] = uString::Const("searchNear");
+    ::STRINGS[50] = uString::Const("FuseJS/Maps");
+    ::STRINGS[51] = uString::Const("openAt");
+    ::STRINGS[52] = uString::Const("searchNearby");
+    ::STRINGS[53] = uString::Const("searchNear");
     ::TYPES[5] = ::g::Fuse::Scripting::NativeCallback_typeof();
     ::TYPES[8] = ::g::Uno::String_typeof();
+    type->SetDependencies(
+        ::g::Fuse::LauncherImpl::MapsLauncher_typeof(),
+        ::g::Uno::UX::Resource_typeof());
     type->SetInterfaces(
         ::g::Uno::IDisposable_typeof(), offsetof(::g::Fuse::Scripting::NativeModule_type, interface0),
         ::g::Fuse::Scripting::IModuleProvider_typeof(), offsetof(::g::Fuse::Scripting::NativeModule_type, interface1));
     type->SetFields(4,
-        type, (uintptr_t)&::g::Fuse::Reactive::FuseJS::Maps::_instance_, uFieldFlagsStatic);
+        type, (uintptr_t)&Maps::_instance_, uFieldFlagsStatic);
 }
 
 ::g::Fuse::Scripting::NativeModule_type* Maps_typeof()
@@ -1589,6 +1630,7 @@ static void Maps_build(uType* type)
     options.BaseDefinition = ::g::Fuse::Scripting::NativeModule_typeof();
     options.FieldCount = 5;
     options.InterfaceCount = 2;
+    options.DependencyCount = 2;
     options.ObjectSize = sizeof(Maps);
     options.TypeSize = sizeof(::g::Fuse::Scripting::NativeModule_type);
     type = (::g::Fuse::Scripting::NativeModule_type*)uClassType::New("Fuse.Reactive.FuseJS.Maps", options);
@@ -1599,31 +1641,31 @@ static void Maps_build(uType* type)
     return type;
 }
 
-// public Maps() :157
+// public Maps() :26
 void Maps__ctor_2_fn(Maps* __this)
 {
     __this->ctor_2();
 }
 
-// public Maps New() :157
+// public Maps New() :26
 void Maps__New2_fn(Maps** __retval)
 {
     *__retval = Maps::New2();
 }
 
-// public static object OpenAt(Fuse.Scripting.Context context, object[] args) :219
+// public static object OpenAt(Fuse.Scripting.Context context, object[] args) :88
 void Maps__OpenAt_fn(::g::Fuse::Scripting::Context* context, uArray* args, uObject** __retval)
 {
     *__retval = Maps::OpenAt(context, args);
 }
 
-// public static object SearchNear(Fuse.Scripting.Context context, object[] args) :198
+// public static object SearchNear(Fuse.Scripting.Context context, object[] args) :67
 void Maps__SearchNear_fn(::g::Fuse::Scripting::Context* context, uArray* args, uObject** __retval)
 {
     *__retval = Maps::SearchNear(context, args);
 }
 
-// public static object SearchNearby(Fuse.Scripting.Context context, object[] args) :177
+// public static object SearchNearby(Fuse.Scripting.Context context, object[] args) :46
 void Maps__SearchNearby_fn(::g::Fuse::Scripting::Context* context, uArray* args, uObject** __retval)
 {
     *__retval = Maps::SearchNearby(context, args);
@@ -1631,7 +1673,7 @@ void Maps__SearchNearby_fn(::g::Fuse::Scripting::Context* context, uArray* args,
 
 uSStrong<Maps*> Maps::_instance_;
 
-// public Maps() [instance] :157
+// public Maps() [instance] :26
 void Maps::ctor_2()
 {
     ctor_1();
@@ -1639,13 +1681,13 @@ void Maps::ctor_2()
     if (Maps::_instance_ != NULL)
         return;
 
-    ::g::Uno::UX::Resource::SetGlobalKey(Maps::_instance_ = this, ::STRINGS[49/*"FuseJS/Maps"*/]);
-    AddMember(::g::Fuse::Scripting::NativeFunction::New1(::STRINGS[50/*"openAt"*/], uDelegate::New(::TYPES[5/*Fuse.Scripting.NativeCallback*/], (void*)Maps__OpenAt_fn)));
-    AddMember(::g::Fuse::Scripting::NativeFunction::New1(::STRINGS[51/*"searchNearby"*/], uDelegate::New(::TYPES[5/*Fuse.Scripting.NativeCallback*/], (void*)Maps__SearchNearby_fn)));
-    AddMember(::g::Fuse::Scripting::NativeFunction::New1(::STRINGS[52/*"searchNear"*/], uDelegate::New(::TYPES[5/*Fuse.Scripting.NativeCallback*/], (void*)Maps__SearchNear_fn)));
+    ::g::Uno::UX::Resource::SetGlobalKey(Maps::_instance_ = this, ::STRINGS[50/*"FuseJS/Maps"*/]);
+    AddMember(::g::Fuse::Scripting::NativeFunction::New1(::STRINGS[51/*"openAt"*/], uDelegate::New(::TYPES[5/*Fuse.Scripting.NativeCallback*/], (void*)Maps__OpenAt_fn)));
+    AddMember(::g::Fuse::Scripting::NativeFunction::New1(::STRINGS[52/*"searchNearby"*/], uDelegate::New(::TYPES[5/*Fuse.Scripting.NativeCallback*/], (void*)Maps__SearchNearby_fn)));
+    AddMember(::g::Fuse::Scripting::NativeFunction::New1(::STRINGS[53/*"searchNear"*/], uDelegate::New(::TYPES[5/*Fuse.Scripting.NativeCallback*/], (void*)Maps__SearchNear_fn)));
 }
 
-// public Maps New() [static] :157
+// public Maps New() [static] :26
 Maps* Maps::New2()
 {
     Maps* obj1 = (Maps*)uNew(Maps_typeof());
@@ -1653,7 +1695,7 @@ Maps* Maps::New2()
     return obj1;
 }
 
-// public static object OpenAt(Fuse.Scripting.Context context, object[] args) [static] :219
+// public static object OpenAt(Fuse.Scripting.Context context, object[] args) [static] :88
 uObject* Maps::OpenAt(::g::Fuse::Scripting::Context* context, uArray* args)
 {
     double latitude = ::g::Fuse::Marshal::ToDouble(uPtr(args)->Strong<uObject*>(0));
@@ -1662,7 +1704,7 @@ uObject* Maps::OpenAt(::g::Fuse::Scripting::Context* context, uArray* args)
     return NULL;
 }
 
-// public static object SearchNear(Fuse.Scripting.Context context, object[] args) [static] :198
+// public static object SearchNear(Fuse.Scripting.Context context, object[] args) [static] :67
 uObject* Maps::SearchNear(::g::Fuse::Scripting::Context* context, uArray* args)
 {
     double latitude = ::g::Fuse::Marshal::ToDouble(uPtr(args)->Strong<uObject*>(0));
@@ -1672,7 +1714,7 @@ uObject* Maps::SearchNear(::g::Fuse::Scripting::Context* context, uArray* args)
     return NULL;
 }
 
-// public static object SearchNearby(Fuse.Scripting.Context context, object[] args) [static] :177
+// public static object SearchNearby(Fuse.Scripting.Context context, object[] args) [static] :46
 uObject* Maps::SearchNearby(::g::Fuse::Scripting::Context* context, uArray* args)
 {
     uString* query = uCast<uString*>(uPtr(args)->Strong<uObject*>(0), ::TYPES[8/*string*/]);
@@ -1681,22 +1723,25 @@ uObject* Maps::SearchNearby(::g::Fuse::Scripting::Context* context, uArray* args
 }
 // }
 
-// /Users/a/Library/Application Support/Fusetools/Packages/Fuse.Launcher.Phone/1.2.1/phone/$.uno
-// ---------------------------------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Launcher.Phone\1.3.0-rc2\Phone\JS.uno
+// --------------------------------------------------------------------------------------
 
-// public sealed class Phone :158
+// public sealed class Phone :21
 // {
 static void Phone_build(uType* type)
 {
-    ::STRINGS[53] = uString::Const("FuseJS/Phone");
-    ::STRINGS[54] = uString::Const("call");
+    ::STRINGS[54] = uString::Const("FuseJS/Phone");
+    ::STRINGS[55] = uString::Const("call");
     ::TYPES[5] = ::g::Fuse::Scripting::NativeCallback_typeof();
     ::TYPES[8] = ::g::Uno::String_typeof();
+    type->SetDependencies(
+        ::g::Fuse::LauncherImpl::PhoneLauncher_typeof(),
+        ::g::Uno::UX::Resource_typeof());
     type->SetInterfaces(
         ::g::Uno::IDisposable_typeof(), offsetof(::g::Fuse::Scripting::NativeModule_type, interface0),
         ::g::Fuse::Scripting::IModuleProvider_typeof(), offsetof(::g::Fuse::Scripting::NativeModule_type, interface1));
     type->SetFields(4,
-        type, (uintptr_t)&::g::Fuse::Reactive::FuseJS::Phone::_instance_, uFieldFlagsStatic);
+        type, (uintptr_t)&Phone::_instance_, uFieldFlagsStatic);
 }
 
 ::g::Fuse::Scripting::NativeModule_type* Phone_typeof()
@@ -1708,6 +1753,7 @@ static void Phone_build(uType* type)
     options.BaseDefinition = ::g::Fuse::Scripting::NativeModule_typeof();
     options.FieldCount = 5;
     options.InterfaceCount = 2;
+    options.DependencyCount = 2;
     options.ObjectSize = sizeof(Phone);
     options.TypeSize = sizeof(::g::Fuse::Scripting::NativeModule_type);
     type = (::g::Fuse::Scripting::NativeModule_type*)uClassType::New("Fuse.Reactive.FuseJS.Phone", options);
@@ -1718,19 +1764,19 @@ static void Phone_build(uType* type)
     return type;
 }
 
-// public Phone() :161
+// public Phone() :24
 void Phone__ctor_2_fn(Phone* __this)
 {
     __this->ctor_2();
 }
 
-// public static object Call(Fuse.Scripting.Context context, object[] args) :179
+// public static object Call(Fuse.Scripting.Context context, object[] args) :42
 void Phone__Call_fn(::g::Fuse::Scripting::Context* context, uArray* args, uObject** __retval)
 {
     *__retval = Phone::Call(context, args);
 }
 
-// public Phone New() :161
+// public Phone New() :24
 void Phone__New2_fn(Phone** __retval)
 {
     *__retval = Phone::New2();
@@ -1738,15 +1784,15 @@ void Phone__New2_fn(Phone** __retval)
 
 uSStrong<Phone*> Phone::_instance_;
 
-// public Phone() [instance] :161
+// public Phone() [instance] :24
 void Phone::ctor_2()
 {
     ctor_1();
-    ::g::Uno::UX::Resource::SetGlobalKey(Phone::_instance_ = this, ::STRINGS[53/*"FuseJS/Phone"*/]);
-    AddMember(::g::Fuse::Scripting::NativeFunction::New1(::STRINGS[54/*"call"*/], uDelegate::New(::TYPES[5/*Fuse.Scripting.NativeCallback*/], (void*)Phone__Call_fn)));
+    ::g::Uno::UX::Resource::SetGlobalKey(Phone::_instance_ = this, ::STRINGS[54/*"FuseJS/Phone"*/]);
+    AddMember(::g::Fuse::Scripting::NativeFunction::New1(::STRINGS[55/*"call"*/], uDelegate::New(::TYPES[5/*Fuse.Scripting.NativeCallback*/], (void*)Phone__Call_fn)));
 }
 
-// public static object Call(Fuse.Scripting.Context context, object[] args) [static] :179
+// public static object Call(Fuse.Scripting.Context context, object[] args) [static] :42
 uObject* Phone::Call(::g::Fuse::Scripting::Context* context, uArray* args)
 {
     uString* callString = uCast<uString*>(uPtr(args)->Strong<uObject*>(0), ::TYPES[8/*string*/]);
@@ -1754,7 +1800,7 @@ uObject* Phone::Call(::g::Fuse::Scripting::Context* context, uArray* args)
     return NULL;
 }
 
-// public Phone New() [static] :161
+// public Phone New() [static] :24
 Phone* Phone::New2()
 {
     Phone* obj1 = (Phone*)uNew(Phone_typeof());
@@ -1763,22 +1809,22 @@ Phone* Phone::New2()
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Reactive.JavaScript/1.2.1/fusejs/$.uno
-// -------------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Reactive.JavaScript\1.3.0-rc2\FuseJS\Timer.uno
+// -----------------------------------------------------------------------------------------------
 
-// private sealed class TimerManager.Timer :940
+// private sealed class TimerManager.Timer :244
 // {
 static void TimerManager__Timer_build(uType* type)
 {
     type->SetFields(0,
-        ::g::Uno::Action_typeof(), offsetof(::g::Fuse::Reactive::FuseJS::TimerManager__Timer, _callback), 0,
-        ::g::Uno::Bool_typeof(), offsetof(::g::Fuse::Reactive::FuseJS::TimerManager__Timer, _isRunning), 0,
-        ::g::Uno::Bool_typeof(), offsetof(::g::Fuse::Reactive::FuseJS::TimerManager__Timer, _repeat), 0,
-        ::g::Uno::Double_typeof(), offsetof(::g::Fuse::Reactive::FuseJS::TimerManager__Timer, _startTime), 0,
-        ::g::Uno::Double_typeof(), offsetof(::g::Fuse::Reactive::FuseJS::TimerManager__Timer, _timeout), 0,
-        ::g::Uno::Int_typeof(), offsetof(::g::Fuse::Reactive::FuseJS::TimerManager__Timer, ID), 0,
-        ::g::Uno::Action1_typeof()->MakeType(::g::Uno::Int_typeof(), NULL), offsetof(::g::Fuse::Reactive::FuseJS::TimerManager__Timer, OnStop), 0,
-        ::g::Uno::Int_typeof(), (uintptr_t)&::g::Fuse::Reactive::FuseJS::TimerManager__Timer::_id_, uFieldFlagsStatic);
+        ::g::Uno::Action_typeof(), offsetof(TimerManager__Timer, _callback), 0,
+        ::g::Uno::Bool_typeof(), offsetof(TimerManager__Timer, _isRunning), 0,
+        ::g::Uno::Bool_typeof(), offsetof(TimerManager__Timer, _repeat), 0,
+        ::g::Uno::Double_typeof(), offsetof(TimerManager__Timer, _startTime), 0,
+        ::g::Uno::Double_typeof(), offsetof(TimerManager__Timer, _timeout), 0,
+        ::g::Uno::Int_typeof(), offsetof(TimerManager__Timer, ID), 0,
+        ::g::Uno::Action1_typeof()->MakeType(::g::Uno::Int_typeof(), NULL), offsetof(TimerManager__Timer, OnStop), 0,
+        ::g::Uno::Int_typeof(), (uintptr_t)&TimerManager__Timer::_id_, uFieldFlagsStatic);
 }
 
 uType* TimerManager__Timer_typeof()
@@ -1795,37 +1841,37 @@ uType* TimerManager__Timer_typeof()
     return type;
 }
 
-// public Timer(double ms, Uno.Action callback, bool repeat) :955
+// public Timer(double ms, Uno.Action callback, bool repeat) :259
 void TimerManager__Timer__ctor__fn(TimerManager__Timer* __this, double* ms, uDelegate* callback, bool* repeat)
 {
     __this->ctor_(*ms, callback, *repeat);
 }
 
-// public static double GetMilliseconds() :1000
+// public static double GetMilliseconds() :304
 void TimerManager__Timer__GetMilliseconds_fn(double* __retval)
 {
     *__retval = TimerManager__Timer::GetMilliseconds();
 }
 
-// public Timer New(double ms, Uno.Action callback, bool repeat) :955
+// public Timer New(double ms, Uno.Action callback, bool repeat) :259
 void TimerManager__Timer__New1_fn(double* ms, uDelegate* callback, bool* repeat, TimerManager__Timer** __retval)
 {
     *__retval = TimerManager__Timer::New1(*ms, callback, *repeat);
 }
 
-// private void Start() :964
+// private void Start() :268
 void TimerManager__Timer__Start_fn(TimerManager__Timer* __this)
 {
     __this->Start();
 }
 
-// public void Stop() :970
+// public void Stop() :274
 void TimerManager__Timer__Stop_fn(TimerManager__Timer* __this)
 {
     __this->Stop();
 }
 
-// internal void Update() :977
+// internal void Update() :281
 void TimerManager__Timer__Update_fn(TimerManager__Timer* __this)
 {
     __this->Update();
@@ -1833,7 +1879,7 @@ void TimerManager__Timer__Update_fn(TimerManager__Timer* __this)
 
 int TimerManager__Timer::_id_;
 
-// public Timer(double ms, Uno.Action callback, bool repeat) [instance] :955
+// public Timer(double ms, Uno.Action callback, bool repeat) [instance] :259
 void TimerManager__Timer::ctor_(double ms, uDelegate* callback, bool repeat)
 {
     ID = (TimerManager__Timer::_id_++);
@@ -1843,14 +1889,14 @@ void TimerManager__Timer::ctor_(double ms, uDelegate* callback, bool repeat)
     Start();
 }
 
-// private void Start() [instance] :964
+// private void Start() [instance] :268
 void TimerManager__Timer::Start()
 {
     _startTime = TimerManager__Timer::GetMilliseconds();
     _isRunning = true;
 }
 
-// public void Stop() [instance] :970
+// public void Stop() [instance] :274
 void TimerManager__Timer::Stop()
 {
     _isRunning = false;
@@ -1859,7 +1905,7 @@ void TimerManager__Timer::Stop()
         uPtr(OnStop)->InvokeVoid(uCRef<int>(ID));
 }
 
-// internal void Update() [instance] :977
+// internal void Update() [instance] :281
 void TimerManager__Timer::Update()
 {
     if (!_isRunning)
@@ -1887,13 +1933,13 @@ void TimerManager__Timer::Update()
     }
 }
 
-// public static double GetMilliseconds() [static] :1000
+// public static double GetMilliseconds() [static] :304
 double TimerManager__Timer::GetMilliseconds()
 {
     return (double)(::g::Uno::Diagnostics::Clock::GetTicks() / 10000LL);
 }
 
-// public Timer New(double ms, Uno.Action callback, bool repeat) [static] :955
+// public Timer New(double ms, Uno.Action callback, bool repeat) [static] :259
 TimerManager__Timer* TimerManager__Timer::New1(double ms, uDelegate* callback, bool repeat)
 {
     TimerManager__Timer* obj1 = (TimerManager__Timer*)uNew(TimerManager__Timer_typeof());
@@ -1902,17 +1948,15 @@ TimerManager__Timer* TimerManager__Timer::New1(double ms, uDelegate* callback, b
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Reactive.JavaScript/1.2.1/fusejs/$.uno
-// -------------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Reactive.JavaScript\1.3.0-rc2\FuseJS\Timer.uno
+// -----------------------------------------------------------------------------------------------
 
-// internal sealed class TimerManager :865
+// internal sealed class TimerManager :169
 // {
 static void TimerManager_build(uType* type)
 {
-    ::TYPES[37] = ::g::Uno::Collections::List_typeof()->MakeType(TimerManager__Timer_typeof(), NULL);
-    ::TYPES[14] = ::g::Uno::Action1_typeof()->MakeType(::g::Uno::Int_typeof(), NULL);
     type->SetFields(0,
-        ::TYPES[37/*Uno.Collections.List<Fuse.Reactive.FuseJS.TimerManager.Timer>*/], offsetof(::g::Fuse::Reactive::FuseJS::TimerManager, _timers), 0);
+        ::g::Uno::Collections::List_typeof()->MakeType(TimerManager__Timer_typeof(), NULL), offsetof(TimerManager, _timers), 0);
 }
 
 uType* TimerManager_typeof()
@@ -1930,61 +1974,61 @@ uType* TimerManager_typeof()
     return type;
 }
 
-// public generated TimerManager() :865
+// public generated TimerManager() :169
 void TimerManager__ctor__fn(TimerManager* __this)
 {
     __this->ctor_();
 }
 
-// public int AddTimer(double ms, Uno.Action callback, [bool repeat]) :886
+// public int AddTimer(double ms, Uno.Action callback, [bool repeat]) :190
 void TimerManager__AddTimer_fn(TimerManager* __this, double* ms, uDelegate* callback, bool* repeat, int* __retval)
 {
     *__retval = __this->AddTimer(*ms, callback, *repeat);
 }
 
-// public void DeleteAllTimers() :894
+// public void DeleteAllTimers() :198
 void TimerManager__DeleteAllTimers_fn(TimerManager* __this)
 {
     __this->DeleteAllTimers();
 }
 
-// public bool DeleteTimer(int id) :902
+// public bool DeleteTimer(int id) :206
 void TimerManager__DeleteTimer_fn(TimerManager* __this, int* id, bool* __retval)
 {
     *__retval = __this->DeleteTimer(*id);
 }
 
-// private Fuse.Reactive.FuseJS.TimerManager.Timer GetTimer(int id) :922
+// private Fuse.Reactive.FuseJS.TimerManager.Timer GetTimer(int id) :226
 void TimerManager__GetTimer_fn(TimerManager* __this, int* id, TimerManager__Timer** __retval)
 {
     *__retval = __this->GetTimer(*id);
 }
 
-// public generated TimerManager New() :865
+// public generated TimerManager New() :169
 void TimerManager__New1_fn(TimerManager** __retval)
 {
     *__retval = TimerManager::New1();
 }
 
-// private void RemoveTimer(int id) :913
+// private void RemoveTimer(int id) :217
 void TimerManager__RemoveTimer_fn(TimerManager* __this, int* id)
 {
     __this->RemoveTimer(*id);
 }
 
-// public void Tick() :932
+// public void Tick() :236
 void TimerManager__Tick_fn(TimerManager* __this)
 {
     __this->Tick();
 }
 
-// public generated TimerManager() [instance] :865
+// public generated TimerManager() [instance] :169
 void TimerManager::ctor_()
 {
-    _timers = ((::g::Uno::Collections::List*)::g::Uno::Collections::List::New1(::TYPES[37/*Uno.Collections.List<Fuse.Reactive.FuseJS.TimerManager.Timer>*/]));
+    _timers = ((::g::Uno::Collections::List*)::g::Uno::Collections::List::New1(::g::Uno::Collections::List_typeof()->MakeType(TimerManager__Timer_typeof(), NULL)));
 }
 
-// public int AddTimer(double ms, Uno.Action callback, [bool repeat]) [instance] :886
+// public int AddTimer(double ms, Uno.Action callback, [bool repeat]) [instance] :190
 int TimerManager::AddTimer(double ms, uDelegate* callback, bool repeat)
 {
     TimerManager__Timer* t = TimerManager__Timer::New1(ms, callback, repeat);
@@ -1993,7 +2037,7 @@ int TimerManager::AddTimer(double ms, uDelegate* callback, bool repeat)
     return t->ID;
 }
 
-// public void DeleteAllTimers() [instance] :894
+// public void DeleteAllTimers() [instance] :198
 void TimerManager::DeleteAllTimers()
 {
     TimerManager__Timer* ret2;
@@ -2002,7 +2046,7 @@ void TimerManager::DeleteAllTimers()
         uPtr((::g::Uno::Collections::List__get_Item_fn(uPtr(_timers), uCRef<int>(i), &ret2), ret2))->Stop();
 }
 
-// public bool DeleteTimer(int id) [instance] :902
+// public bool DeleteTimer(int id) [instance] :206
 bool TimerManager::DeleteTimer(int id)
 {
     TimerManager__Timer* timer = GetTimer(id);
@@ -2016,7 +2060,7 @@ bool TimerManager::DeleteTimer(int id)
     return false;
 }
 
-// private Fuse.Reactive.FuseJS.TimerManager.Timer GetTimer(int id) [instance] :922
+// private Fuse.Reactive.FuseJS.TimerManager.Timer GetTimer(int id) [instance] :226
 TimerManager__Timer* TimerManager::GetTimer(int id)
 {
     TimerManager__Timer* ret4;
@@ -2032,7 +2076,7 @@ TimerManager__Timer* TimerManager::GetTimer(int id)
     return NULL;
 }
 
-// private void RemoveTimer(int id) [instance] :913
+// private void RemoveTimer(int id) [instance] :217
 void TimerManager::RemoveTimer(int id)
 {
     TimerManager__Timer* ret5;
@@ -2042,7 +2086,7 @@ void TimerManager::RemoveTimer(int id)
             uPtr(_timers)->RemoveAt(i);
 }
 
-// public void Tick() [instance] :932
+// public void Tick() [instance] :236
 void TimerManager::Tick()
 {
     TimerManager__Timer* ret6;
@@ -2051,7 +2095,7 @@ void TimerManager::Tick()
         uPtr((::g::Uno::Collections::List__get_Item_fn(uPtr(_timers), uCRef<int>(i), &ret6), ret6))->Update();
 }
 
-// public generated TimerManager New() [static] :865
+// public generated TimerManager New() [static] :169
 TimerManager* TimerManager::New1()
 {
     TimerManager* obj1 = (TimerManager*)uNew(TimerManager_typeof());
@@ -2060,34 +2104,22 @@ TimerManager* TimerManager::New1()
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Reactive.JavaScript/1.2.1/fusejs/$.uno
-// -------------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Reactive.JavaScript\1.3.0-rc2\FuseJS\Timer.uno
+// -----------------------------------------------------------------------------------------------
 
-// public sealed class TimerModule :722
+// public sealed class TimerModule :26
 // {
 static void TimerModule_build(uType* type)
 {
-    ::STRINGS[0] = uString::Const("FuseJS/Timer");
-    ::STRINGS[55] = uString::Const("create");
-    ::STRINGS[56] = uString::Const("delete");
-    ::STRINGS[57] = uString::Const("create(): requires at least three arguments");
-    ::STRINGS[58] = uString::Const("create(): first argument must be a function");
-    ::STRINGS[59] = uString::Const("delete(): requires one argument");
-    ::STRINGS[60] = uString::Const("Timer.delete(): The parameter is not a valid timer handle");
-    ::STRINGS[13] = uString::Const("/usr/local/share/uno/Packages/Fuse.Reactive.JavaScript/1.2.1/fusejs/$.uno");
-    ::STRINGS[61] = uString::Const("Delete");
-    ::TYPES[5] = ::g::Fuse::Scripting::NativeCallback_typeof();
-    ::TYPES[38] = ::g::Uno::EventHandler_typeof();
-    ::TYPES[2] = ::g::Fuse::Scripting::Function_typeof();
-    ::TYPES[3] = uObject_typeof()->Array();
-    ::TYPES[15] = ::g::Uno::Action_typeof();
-    ::TYPES[39] = ::g::Fuse::MarshalException_typeof();
+    type->SetDependencies(
+        ::g::Fuse::Diagnostics_typeof(),
+        ::g::Uno::UX::Resource_typeof());
     type->SetInterfaces(
         ::g::Uno::IDisposable_typeof(), offsetof(::g::Fuse::Scripting::NativeModule_type, interface0),
         ::g::Fuse::Scripting::IModuleProvider_typeof(), offsetof(::g::Fuse::Scripting::NativeModule_type, interface1));
     type->SetFields(4,
-        ::g::Fuse::Reactive::FuseJS::TimerManager_typeof(), offsetof(::g::Fuse::Reactive::FuseJS::TimerModule, _tm), 0,
-        type, (uintptr_t)&::g::Fuse::Reactive::FuseJS::TimerModule::_instance_, uFieldFlagsStatic);
+        ::g::Fuse::Reactive::FuseJS::TimerManager_typeof(), offsetof(TimerModule, _tm), 0,
+        type, (uintptr_t)&TimerModule::_instance_, uFieldFlagsStatic);
 }
 
 ::g::Fuse::Scripting::NativeModule_type* TimerModule_typeof()
@@ -2099,6 +2131,7 @@ static void TimerModule_build(uType* type)
     options.BaseDefinition = ::g::Fuse::Scripting::NativeModule_typeof();
     options.FieldCount = 6;
     options.InterfaceCount = 2;
+    options.DependencyCount = 2;
     options.ObjectSize = sizeof(TimerModule);
     options.TypeSize = sizeof(::g::Fuse::Scripting::NativeModule_type);
     type = (::g::Fuse::Scripting::NativeModule_type*)uClassType::New("Fuse.Reactive.FuseJS.TimerModule", options);
@@ -2109,37 +2142,37 @@ static void TimerModule_build(uType* type)
     return type;
 }
 
-// public TimerModule() :739
+// public TimerModule() :43
 void TimerModule__ctor_2_fn(TimerModule* __this)
 {
     __this->ctor_2();
 }
 
-// private object Create(Fuse.Scripting.Context context, object[] args) :776
+// private object Create(Fuse.Scripting.Context context, object[] args) :80
 void TimerModule__Create_fn(TimerModule* __this, ::g::Fuse::Scripting::Context* context, uArray* args, uObject** __retval)
 {
     *__retval = __this->Create(context, args);
 }
 
-// private object Delete(Fuse.Scripting.Context context, object[] args) :817
+// private object Delete(Fuse.Scripting.Context context, object[] args) :121
 void TimerModule__Delete_fn(TimerModule* __this, ::g::Fuse::Scripting::Context* context, uArray* args, uObject** __retval)
 {
     *__retval = __this->Delete(context, args);
 }
 
-// public TimerModule New() :739
+// public TimerModule New() :43
 void TimerModule__New2_fn(TimerModule** __retval)
 {
     *__retval = TimerModule::New2();
 }
 
-// private void OnReset(object sender, Uno.EventArgs args) :752
+// private void OnReset(object sender, Uno.EventArgs args) :56
 void TimerModule__OnReset_fn(TimerModule* __this, uObject* sender, ::g::Uno::EventArgs* args)
 {
     __this->OnReset(sender, args);
 }
 
-// internal void UpdateModule() :835
+// internal void UpdateModule() :139
 void TimerModule__UpdateModule_fn(TimerModule* __this)
 {
     __this->UpdateModule();
@@ -2147,7 +2180,7 @@ void TimerModule__UpdateModule_fn(TimerModule* __this)
 
 uSStrong<TimerModule*> TimerModule::_instance_;
 
-// public TimerModule() [instance] :739
+// public TimerModule() [instance] :43
 void TimerModule::ctor_2()
 {
     ctor_1();
@@ -2157,19 +2190,19 @@ void TimerModule::ctor_2()
 
     ::g::Uno::UX::Resource::SetGlobalKey(TimerModule::_instance_ = this, ::STRINGS[0/*"FuseJS/Timer"*/]);
     _tm = ::g::Fuse::Reactive::FuseJS::TimerManager::New1();
-    AddMember(::g::Fuse::Scripting::NativeFunction::New1(::STRINGS[55/*"create"*/], uDelegate::New(::TYPES[5/*Fuse.Scripting.NativeCallback*/], (void*)TimerModule__Create_fn, this)));
-    AddMember(::g::Fuse::Scripting::NativeFunction::New1(::STRINGS[56/*"delete"*/], uDelegate::New(::TYPES[5/*Fuse.Scripting.NativeCallback*/], (void*)TimerModule__Delete_fn, this)));
-    add_Reset(uDelegate::New(::TYPES[38/*Uno.EventHandler*/], (void*)TimerModule__OnReset_fn, this));
+    AddMember(::g::Fuse::Scripting::NativeFunction::New1(uString::Const("create"), uDelegate::New(::TYPES[5/*Fuse.Scripting.NativeCallback*/], (void*)TimerModule__Create_fn, this)));
+    AddMember(::g::Fuse::Scripting::NativeFunction::New1(uString::Const("delete"), uDelegate::New(::TYPES[5/*Fuse.Scripting.NativeCallback*/], (void*)TimerModule__Delete_fn, this)));
+    add_Reset(uDelegate::New(::g::Uno::EventHandler_typeof(), (void*)TimerModule__OnReset_fn, this));
 }
 
-// private object Create(Fuse.Scripting.Context context, object[] args) [instance] :776
+// private object Create(Fuse.Scripting.Context context, object[] args) [instance] :80
 uObject* TimerModule::Create(::g::Fuse::Scripting::Context* context, uArray* args)
 {
     if (uPtr(args)->Length() < 3)
-        U_THROW(::g::Fuse::Scripting::Error::New4(::STRINGS[57/*"create(): r...*/]));
+        U_THROW(::g::Fuse::Scripting::Error::New4(uString::Const("create(): requires at least three arguments")));
 
     if (!uIs((uObject*)uPtr(args)->Strong<uObject*>(0), ::TYPES[2/*Fuse.Scripting.Function*/]))
-        U_THROW(::g::Fuse::Scripting::Error::New4(::STRINGS[58/*"create(): f...*/]));
+        U_THROW(::g::Fuse::Scripting::Error::New4(uString::Const("create(): first argument must be a function")));
 
     ::g::Fuse::Scripting::Function* func = uAs< ::g::Fuse::Scripting::Function*>(uPtr(args)->Strong<uObject*>(0), ::TYPES[2/*Fuse.Scripting.Function*/]);
     double ms = ::g::Fuse::Scripting::Value::ToNumber(args->Strong<uObject*>(1));
@@ -2182,11 +2215,11 @@ uObject* TimerModule::Create(::g::Fuse::Scripting::Context* context, uArray* arg
     return uBox<int>(::TYPES[27/*int*/], uPtr(_tm)->AddTimer(ms, uDelegate::New(::TYPES[15/*Uno.Action*/], (void*)TimerModule__CallbackClosure__Callback_fn, TimerModule__CallbackClosure::New1(context, func, innerArgs)), repeat));
 }
 
-// private object Delete(Fuse.Scripting.Context context, object[] args) [instance] :817
+// private object Delete(Fuse.Scripting.Context context, object[] args) [instance] :121
 uObject* TimerModule::Delete(::g::Fuse::Scripting::Context* context, uArray* args)
 {
     if (uPtr(args)->Length() < 1)
-        U_THROW(::g::Fuse::Scripting::Error::New4(::STRINGS[59/*"delete(): r...*/]));
+        U_THROW(::g::Fuse::Scripting::Error::New4(uString::Const("delete(): requires one argument")));
 
     try
     {
@@ -2195,10 +2228,10 @@ uObject* TimerModule::Delete(::g::Fuse::Scripting::Context* context, uArray* arg
     }
     catch (const uThrowable& __t)
     {
-        if (uIs(__t.Exception, ::TYPES[39/*Fuse.MarshalException*/]))
+        if (uIs(__t.Exception, ::g::Fuse::MarshalException_typeof()))
         {
             ::g::Fuse::MarshalException* me = (::g::Fuse::MarshalException*)__t.Exception;
-            ::g::Fuse::Diagnostics::UserWarning(::STRINGS[60/*"Timer.delet...*/], this, ::STRINGS[13/*"/usr/local/...*/], 829, ::STRINGS[61/*"Delete"*/]);
+            ::g::Fuse::Diagnostics::UserWarning(uString::Const("Timer.delete(): The parameter is not a valid timer handle"), this, uString::Const("C:\\Users\\q\\AppData\\Local\\Fusetools\\Packages\\Fuse.Reactive.JavaScript\\1.3.0-rc2\\FuseJS\\Timer.uno"), 133, uString::Const("Delete"));
         }
         else throw __t;
     }
@@ -2206,21 +2239,21 @@ uObject* TimerModule::Delete(::g::Fuse::Scripting::Context* context, uArray* arg
     return NULL;
 }
 
-// private void OnReset(object sender, Uno.EventArgs args) [instance] :752
+// private void OnReset(object sender, Uno.EventArgs args) [instance] :56
 void TimerModule::OnReset(uObject* sender, ::g::Uno::EventArgs* args)
 {
     if (_tm != NULL)
         uPtr(_tm)->DeleteAllTimers();
 }
 
-// internal void UpdateModule() [instance] :835
+// internal void UpdateModule() [instance] :139
 void TimerModule::UpdateModule()
 {
     if (_tm != NULL)
         uPtr(_tm)->Tick();
 }
 
-// public TimerModule New() [static] :739
+// public TimerModule New() [static] :43
 TimerModule* TimerModule::New2()
 {
     TimerModule* obj1 = (TimerModule*)uNew(TimerModule_typeof());

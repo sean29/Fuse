@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Reactive.Bindings/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Reactive.Bindings/1.3.0-rc2/Instance.WindowItems.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -13,7 +13,7 @@ namespace g{
 namespace Fuse{
 namespace Reactive{
 
-// private sealed class Instantiator.WindowItem :2185
+// private sealed class Instantiator.WindowItem :461
 // {
 uType* Instantiator__WindowItem_typeof();
 void Instantiator__WindowItem__ctor__fn(Instantiator__WindowItem* __this);

@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Elements/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Elements/1.3.0-rc2/LimitBoxSizing.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -13,7 +13,7 @@ namespace g{
 namespace Fuse{
 namespace Elements{
 
-// internal sealed class LimitBoxSizing :3459
+// internal sealed class LimitBoxSizing :6
 // {
 ::g::Fuse::Elements::BoxSizing_type* LimitBoxSizing_typeof();
 void LimitBoxSizing__ctor_1_fn(LimitBoxSizing* __this);
@@ -26,7 +26,7 @@ void LimitBoxSizing__New1_fn(LimitBoxSizing** __retval);
 struct LimitBoxSizing : ::g::Fuse::Elements::BoxSizing
 {
     static uSStrong<LimitBoxSizing*> Singleton_;
-    static uSStrong<LimitBoxSizing*>& Singleton() { return LimitBoxSizing_typeof()->Init(), Singleton_; }
+    static uSStrong<LimitBoxSizing*>& Singleton() { return Singleton_; }
 
     void ctor_1();
     ::g::Uno::Float2 Limit(::g::Fuse::Elements::Element* element, ::g::Uno::Float2 std);

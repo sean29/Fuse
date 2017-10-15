@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Common/1.2.1/internal/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Common/1.3.0-rc2/Internal/MiniList.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -14,7 +14,7 @@ namespace g{
 namespace Fuse{
 namespace Internal{
 
-// public struct MiniList<T>.Enumerator :1696
+// public struct MiniList<T>.Enumerator :189
 // {
 struct MiniList__Enumerator_type : uStructType
 {

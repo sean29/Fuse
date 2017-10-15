@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Effects/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Effects/1.3.0-rc2/Halftone.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -21,7 +21,7 @@ namespace g{
 namespace Fuse{
 namespace Effects{
 
-// public sealed class Halftone :730
+// public sealed class Halftone :12
 // {
 ::g::Fuse::Effects::BasicEffect_type* Halftone_typeof();
 void Halftone__get_DotTint_fn(Halftone* __this, float* __retval);

@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Nodes/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Nodes/1.3.0-rc2/RootViewport.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -25,13 +25,13 @@ namespace g{namespace Fuse{struct RootViewport;}}
 namespace g{
 namespace Fuse{
 
-// public class RootViewport :3711
+// public class RootViewport :33
 // {
 struct RootViewport_type : ::g::Fuse::Visual_type
 {
-    ::g::Fuse::IViewport interface11;
-    ::g::Uno::IDisposable interface12;
-    ::g::Fuse::ICommonViewport interface13;
+    ::g::Fuse::IViewport interface12;
+    ::g::Uno::IDisposable interface13;
+    ::g::Fuse::ICommonViewport interface14;
 };
 
 RootViewport_type* RootViewport_typeof();

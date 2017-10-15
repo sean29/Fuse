@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/UnoCore/1.2.2/source/uno/platform/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/UnoCore/1.3.1/Source/Uno/Platform/EventSources.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -11,7 +11,7 @@ namespace Uno{
 namespace Platform{
 namespace EventSources{
 
-// public static class HardwareKeys :1181
+// public static class HardwareKeys :40
 // {
 uClassType* HardwareKeys_typeof();
 void HardwareKeys__add_KeyDown_fn(uDelegate* value);

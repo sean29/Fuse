@@ -1,30 +1,30 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Navigation/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Navigation/1.3.0-rc2/IRouterOutlet.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
 #include <Uno.Object.h>
-namespace g{namespace Fuse{struct Visual;}}
+namespace g{namespace Fuse{namespace Navigation{struct RouterPage;}}}
 
 namespace g{
 namespace Fuse{
 namespace Navigation{
 
-// public abstract interface IRouterOutlet :825
+// internal abstract interface IRouterOutlet :124
 // {
 uInterfaceType* IRouterOutlet_typeof();
 
 struct IRouterOutlet
 {
     void(*fp_CancelPrepare)(uObject*);
-    void(*fp_GetCurrent)(uObject*, uString**, uString**, ::g::Fuse::Visual**);
-    void(*fp_GetPath)(uObject*, ::g::Fuse::Visual*, uString**, uString**, bool*);
-    void(*fp_Goto)(uObject*, uString**, uString**, int*, int*, uString*, ::g::Fuse::Visual**, int*);
+    void(*fp_CompareCurrent)(uObject*, ::g::Fuse::Navigation::RouterPage*, int*);
+    void(*fp_GetCurrent)(uObject*, ::g::Fuse::Navigation::RouterPage**);
+    void(*fp_Goto)(uObject*, ::g::Fuse::Navigation::RouterPage*, int*, int*, uString*, int*);
     void(*fp_PartialPrepareGoto)(uObject*, double*);
     void(*fp_get_Type)(uObject*, int*);
     static void CancelPrepare(const uInterface& __this) { __this.VTable<IRouterOutlet>()->fp_CancelPrepare(__this); }
-    static void GetCurrent(const uInterface& __this, uString** path, uString** parameter, ::g::Fuse::Visual** active) { __this.VTable<IRouterOutlet>()->fp_GetCurrent(__this, path, parameter, active); }
-    static bool GetPath(const uInterface& __this, ::g::Fuse::Visual* active, uString** path, uString** parameter) { bool __retval; return __this.VTable<IRouterOutlet>()->fp_GetPath(__this, active, path, parameter, &__retval), __retval; }
-    static int Goto(const uInterface& __this, uString** path, uString** parameter, int gotoMode, int operation, uString* operationStyle, ::g::Fuse::Visual** active) { int __retval; return __this.VTable<IRouterOutlet>()->fp_Goto(__this, path, parameter, &gotoMode, &operation, operationStyle, active, &__retval), __retval; }
+    static int CompareCurrent(const uInterface& __this, ::g::Fuse::Navigation::RouterPage* page) { int __retval; return __this.VTable<IRouterOutlet>()->fp_CompareCurrent(__this, page, &__retval), __retval; }
+    static ::g::Fuse::Navigation::RouterPage* GetCurrent(const uInterface& __this) { ::g::Fuse::Navigation::RouterPage* __retval; return __this.VTable<IRouterOutlet>()->fp_GetCurrent(__this, &__retval), __retval; }
+    static int Goto(const uInterface& __this, ::g::Fuse::Navigation::RouterPage* page, int gotoMode, int operation, uString* operationStyle) { int __retval; return __this.VTable<IRouterOutlet>()->fp_Goto(__this, page, &gotoMode, &operation, operationStyle, &__retval), __retval; }
     static void PartialPrepareGoto(const uInterface& __this, double progress) { __this.VTable<IRouterOutlet>()->fp_PartialPrepareGoto(__this, &progress); }
     static int Type(const uInterface& __this) { int __retval; return __this.VTable<IRouterOutlet>()->fp_get_Type(__this, &__retval), __retval; }
 };

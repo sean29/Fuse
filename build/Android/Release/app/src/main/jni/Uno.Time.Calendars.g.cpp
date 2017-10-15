@@ -21,12 +21,12 @@ namespace Uno{
 namespace Time{
 namespace Calendars{
 
-// /usr/local/share/uno/Packages/UnoCore/1.2.2/source/uno/time/calendars/$.uno
-// ---------------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\UnoCore\1.3.1\Source\Uno\Time\Calendars\Era.uno
+// -------------------------------------------------------------------------------------------
 
-// public sealed class Era :5
+// public sealed class Era :3
 // {
-// static Era() :5
+// static generated Era() :3
 static void Era__cctor__fn(uType* __type)
 {
     Era::Common_ = Era::New1(::STRINGS[0/*"CE"*/]);
@@ -45,13 +45,13 @@ static void Era_build(uType* type)
     ::STRINGS[3] = uString::Const("EH");
     ::STRINGS[4] = uString::Const("AP");
     type->SetFields(0,
-        ::g::Uno::String_typeof(), offsetof(::g::Uno::Time::Calendars::Era, _name), 0,
-        type, (uintptr_t)&::g::Uno::Time::Calendars::Era::AnnoHegirae_, uFieldFlagsStatic,
-        type, (uintptr_t)&::g::Uno::Time::Calendars::Era::AnnoMartyrum_, uFieldFlagsStatic,
-        type, (uintptr_t)&::g::Uno::Time::Calendars::Era::AnnoMundi_, uFieldFlagsStatic,
-        type, (uintptr_t)&::g::Uno::Time::Calendars::Era::AnnoPersico_, uFieldFlagsStatic,
-        type, (uintptr_t)&::g::Uno::Time::Calendars::Era::BeforeCommon_, uFieldFlagsStatic,
-        type, (uintptr_t)&::g::Uno::Time::Calendars::Era::Common_, uFieldFlagsStatic);
+        ::g::Uno::String_typeof(), offsetof(Era, _name), 0,
+        type, (uintptr_t)&Era::AnnoHegirae_, uFieldFlagsStatic,
+        type, (uintptr_t)&Era::AnnoMartyrum_, uFieldFlagsStatic,
+        type, (uintptr_t)&Era::AnnoMundi_, uFieldFlagsStatic,
+        type, (uintptr_t)&Era::AnnoPersico_, uFieldFlagsStatic,
+        type, (uintptr_t)&Era::BeforeCommon_, uFieldFlagsStatic,
+        type, (uintptr_t)&Era::Common_, uFieldFlagsStatic);
 }
 
 uType* Era_typeof()
@@ -70,19 +70,19 @@ uType* Era_typeof()
     return type;
 }
 
-// internal Era(string name) :21
+// internal Era(string name) :19
 void Era__ctor__fn(Era* __this, uString* name)
 {
     __this->ctor_(name);
 }
 
-// internal Era New(string name) :21
+// internal Era New(string name) :19
 void Era__New1_fn(uString* name, Era** __retval)
 {
     *__retval = Era::New1(name);
 }
 
-// public override sealed string ToString() :28
+// public override sealed string ToString() :26
 void Era__ToString_fn(Era* __this, uString** __retval)
 {
     return *__retval = __this->_name, void();
@@ -95,13 +95,13 @@ uSStrong<Era*> Era::AnnoPersico_;
 uSStrong<Era*> Era::BeforeCommon_;
 uSStrong<Era*> Era::Common_;
 
-// internal Era(string name) [instance] :21
+// internal Era(string name) [instance] :19
 void Era::ctor_(uString* name)
 {
     _name = name;
 }
 
-// internal Era New(string name) [static] :21
+// internal Era New(string name) [static] :19
 Era* Era::New1(uString* name)
 {
     Era* obj1 = (Era*)uNew(Era_typeof());
@@ -110,12 +110,12 @@ Era* Era::New1(uString* name)
 }
 // }
 
-// /usr/local/share/uno/Packages/UnoCore/1.2.2/source/uno/time/calendars/$.uno
-// ---------------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\UnoCore\1.3.1\Source\Uno\Time\Calendars\GregorianYearMonthDayCalculator.uno
+// -----------------------------------------------------------------------------------------------------------------------
 
-// internal sealed class GregorianYearMonthDayCalculator :40
+// internal sealed class GregorianYearMonthDayCalculator :3
 // {
-// static GregorianYearMonthDayCalculator() :61
+// static GregorianYearMonthDayCalculator() :24
 static void GregorianYearMonthDayCalculator__cctor__fn(uType* __type)
 {
     GregorianYearMonthDayCalculator::MonthStartTicks_ = uArray::New(::TYPES[0/*long[]*/], 2413);
@@ -158,15 +158,17 @@ static void GregorianYearMonthDayCalculator_build(uType* type)
     ::TYPES[0] = ::g::Uno::Long_typeof()->Array();
     ::TYPES[1] = ::g::Uno::Int_typeof()->Array();
     ::TYPES[2] = ::g::Uno::Time::Calendars::Era_typeof()->Array();
+    type->SetDependencies(
+        ::g::Uno::Time::Calendars::Era_typeof());
     type->SetFields(6,
-        ::TYPES[1/*int[]*/], (uintptr_t)&::g::Uno::Time::Calendars::GregorianYearMonthDayCalculator::MaxDaysPerMonth_, uFieldFlagsStatic,
-        ::TYPES[0/*long[]*/], (uintptr_t)&::g::Uno::Time::Calendars::GregorianYearMonthDayCalculator::MaxTotalTicksByMonth_, uFieldFlagsStatic,
-        ::TYPES[1/*int[]*/], (uintptr_t)&::g::Uno::Time::Calendars::GregorianYearMonthDayCalculator::MinDaysPerMonth_, uFieldFlagsStatic,
-        ::TYPES[0/*long[]*/], (uintptr_t)&::g::Uno::Time::Calendars::GregorianYearMonthDayCalculator::MinTotalTicksByMonth_, uFieldFlagsStatic,
-        ::TYPES[1/*int[]*/], (uintptr_t)&::g::Uno::Time::Calendars::GregorianYearMonthDayCalculator::MonthLengths_, uFieldFlagsStatic,
-        ::TYPES[0/*long[]*/], (uintptr_t)&::g::Uno::Time::Calendars::GregorianYearMonthDayCalculator::MonthStartTicks_, uFieldFlagsStatic,
-        ::TYPES[1/*int[]*/], (uintptr_t)&::g::Uno::Time::Calendars::GregorianYearMonthDayCalculator::YearStartDays_, uFieldFlagsStatic,
-        ::TYPES[0/*long[]*/], (uintptr_t)&::g::Uno::Time::Calendars::GregorianYearMonthDayCalculator::YearStartTicks_, uFieldFlagsStatic);
+        ::TYPES[1/*int[]*/], (uintptr_t)&GregorianYearMonthDayCalculator::MaxDaysPerMonth_, uFieldFlagsStatic,
+        ::TYPES[0/*long[]*/], (uintptr_t)&GregorianYearMonthDayCalculator::MaxTotalTicksByMonth_, uFieldFlagsStatic,
+        ::TYPES[1/*int[]*/], (uintptr_t)&GregorianYearMonthDayCalculator::MinDaysPerMonth_, uFieldFlagsStatic,
+        ::TYPES[0/*long[]*/], (uintptr_t)&GregorianYearMonthDayCalculator::MinTotalTicksByMonth_, uFieldFlagsStatic,
+        ::TYPES[1/*int[]*/], (uintptr_t)&GregorianYearMonthDayCalculator::MonthLengths_, uFieldFlagsStatic,
+        ::TYPES[0/*long[]*/], (uintptr_t)&GregorianYearMonthDayCalculator::MonthStartTicks_, uFieldFlagsStatic,
+        ::TYPES[1/*int[]*/], (uintptr_t)&GregorianYearMonthDayCalculator::YearStartDays_, uFieldFlagsStatic,
+        ::TYPES[0/*long[]*/], (uintptr_t)&GregorianYearMonthDayCalculator::YearStartTicks_, uFieldFlagsStatic);
 }
 
 ::g::Uno::Time::Calendars::YearMonthDayCalculator_type* GregorianYearMonthDayCalculator_typeof()
@@ -177,6 +179,7 @@ static void GregorianYearMonthDayCalculator_build(uType* type)
     uTypeOptions options;
     options.BaseDefinition = ::g::Uno::Time::Calendars::YearMonthDayCalculator_typeof();
     options.FieldCount = 14;
+    options.DependencyCount = 1;
     options.ObjectSize = sizeof(GregorianYearMonthDayCalculator);
     options.TypeSize = sizeof(::g::Uno::Time::Calendars::YearMonthDayCalculator_type);
     type = (::g::Uno::Time::Calendars::YearMonthDayCalculator_type*)uClassType::New("Uno.Time.Calendars.GregorianYearMonthDayCalculator", options);
@@ -193,13 +196,13 @@ static void GregorianYearMonthDayCalculator_build(uType* type)
     return type;
 }
 
-// internal GregorianYearMonthDayCalculator() :90
+// internal GregorianYearMonthDayCalculator() :53
 void GregorianYearMonthDayCalculator__ctor_1_fn(GregorianYearMonthDayCalculator* __this)
 {
     __this->ctor_1();
 }
 
-// protected override sealed int CalculateStartOfYearDays(int year) :117
+// protected override sealed int CalculateStartOfYearDays(int year) :80
 void GregorianYearMonthDayCalculator__CalculateStartOfYearDays_fn(GregorianYearMonthDayCalculator* __this, int* year, int* __retval)
 {
     int year_ = *year;
@@ -218,15 +221,15 @@ void GregorianYearMonthDayCalculator__CalculateStartOfYearDays_fn(GregorianYearM
     return *__retval = (year_ * 365) + (leapYears - 719527), void();
 }
 
-// internal override sealed int GetDaysInMonth(int year, int month) :181
+// internal override sealed int GetDaysInMonth(int year, int month) :144
 void GregorianYearMonthDayCalculator__GetDaysInMonth_fn(GregorianYearMonthDayCalculator* __this, int* year, int* month, int* __retval)
 {
     int year_ = *year;
     int month_ = *month;
-    return *__retval = __this->IsLeapYear(year_) ? uPtr(GregorianYearMonthDayCalculator::MaxDaysPerMonth())->Item<int>(month_ - 1) : uPtr(GregorianYearMonthDayCalculator::MinDaysPerMonth())->Item<int>(month_ - 1), void();
+    return *__retval = __this->IsLeapYear(year_) ? uPtr(GregorianYearMonthDayCalculator::MaxDaysPerMonth_)->Item<int>(month_ - 1) : uPtr(GregorianYearMonthDayCalculator::MinDaysPerMonth_)->Item<int>(month_ - 1), void();
 }
 
-// internal override sealed Uno.Time.Instant GetInstant(int year, int monthOfYear, int dayOfMonth) :105
+// internal override sealed Uno.Time.Instant GetInstant(int year, int monthOfYear, int dayOfMonth) :68
 void GregorianYearMonthDayCalculator__GetInstant_fn(GregorianYearMonthDayCalculator* __this, int* year, int* monthOfYear, int* dayOfMonth, ::g::Uno::Time::Instant* __retval)
 {
     int year_ = *year;
@@ -235,13 +238,13 @@ void GregorianYearMonthDayCalculator__GetInstant_fn(GregorianYearMonthDayCalcula
     ::g::Uno::Time::Instant ret2;
     int yearMonthIndex = ((year_ - 1900) * 12) + monthOfYear_;
 
-    if ((((((year_ < 1900) || (year_ > 2099)) || (monthOfYear_ < 1)) || (monthOfYear_ > 12)) || (dayOfMonth_ < 1)) || (dayOfMonth_ > uPtr(GregorianYearMonthDayCalculator::MonthLengths())->Item<int>(yearMonthIndex)))
+    if ((((((year_ < 1900) || (year_ > 2099)) || (monthOfYear_ < 1)) || (monthOfYear_ > 12)) || (dayOfMonth_ < 1)) || (dayOfMonth_ > uPtr(GregorianYearMonthDayCalculator::MonthLengths_)->Item<int>(yearMonthIndex)))
         return *__retval = (::g::Uno::Time::Calendars::YearMonthDayCalculator__GetInstant_fn(__this, uCRef<int>(year_), uCRef<int>(monthOfYear_), uCRef<int>(dayOfMonth_), &ret2), ret2), void();
 
-    return *__retval = ::g::Uno::Time::Instant__New1(uPtr(GregorianYearMonthDayCalculator::MonthStartTicks())->Item<int64_t>(yearMonthIndex) + ((int64_t)(dayOfMonth_ - 1) * 864000000000LL)), void();
+    return *__retval = ::g::Uno::Time::Instant__New1(uPtr(GregorianYearMonthDayCalculator::MonthStartTicks_)->Item<int64_t>(yearMonthIndex) + ((int64_t)(dayOfMonth_ - 1) * 864000000000LL)), void();
 }
 
-// protected override sealed int GetMonthOfYear(Uno.Time.Instant instant, int year) :157
+// protected override sealed int GetMonthOfYear(Uno.Time.Instant instant, int year) :120
 void GregorianYearMonthDayCalculator__GetMonthOfYear1_fn(GregorianYearMonthDayCalculator* __this, ::g::Uno::Time::Instant* instant, int* year, int* __retval)
 {
     ::g::Uno::Time::Instant instant_ = *instant;
@@ -250,7 +253,7 @@ void GregorianYearMonthDayCalculator__GetMonthOfYear1_fn(GregorianYearMonthDayCa
     return *__retval = __this->IsLeapYear(year_) ? (i < 15356250) ? (i < 7678125) ? (i < 2615625) ? 1 : (i < 5062500) ? 2 : 3 : (i < 10209375) ? 4 : (i < 12825000) ? 5 : 6 : (i < 23118750) ? (i < 17971875) ? 7 : (i < 20587500) ? 8 : 9 : (i < 25734375) ? 10 : (i < 28265625) ? 11 : 12 : (i < 15271875) ? (i < 7593750) ? (i < 2615625) ? 1 : (i < 4978125) ? 2 : 3 : (i < 10125000) ? 4 : (i < 12740625) ? 5 : 6 : (i < 23034375) ? (i < 17887500) ? 7 : (i < 20503125) ? 8 : 9 : (i < 25650000) ? 10 : (i < 28181250) ? 11 : 12, void();
 }
 
-// internal override sealed long GetStartOfYearInTicks(int year) :96
+// internal override sealed long GetStartOfYearInTicks(int year) :59
 void GregorianYearMonthDayCalculator__GetStartOfYearInTicks_fn(GregorianYearMonthDayCalculator* __this, int* year, int64_t* __retval)
 {
     int year_ = *year;
@@ -259,25 +262,25 @@ void GregorianYearMonthDayCalculator__GetStartOfYearInTicks_fn(GregorianYearMont
     if ((year_ < 1900) || (year_ > 2100))
         return *__retval = (::g::Uno::Time::Calendars::YearMonthDayCalculator__GetStartOfYearInTicks_fn(__this, uCRef<int>(year_), &ret3), ret3), void();
 
-    return *__retval = uPtr(GregorianYearMonthDayCalculator::YearStartTicks())->Item<int64_t>(year_ - 1900), void();
+    return *__retval = uPtr(GregorianYearMonthDayCalculator::YearStartTicks_)->Item<int64_t>(year_ - 1900), void();
 }
 
-// protected override sealed long GetTicksFromStartOfYearToStartOfMonth(int year, int month) :186
+// protected override sealed long GetTicksFromStartOfYearToStartOfMonth(int year, int month) :149
 void GregorianYearMonthDayCalculator__GetTicksFromStartOfYearToStartOfMonth_fn(GregorianYearMonthDayCalculator* __this, int* year, int* month, int64_t* __retval)
 {
     int year_ = *year;
     int month_ = *month;
-    return *__retval = __this->IsLeapYear(year_) ? uPtr(GregorianYearMonthDayCalculator::MaxTotalTicksByMonth())->Item<int64_t>(month_ - 1) : uPtr(GregorianYearMonthDayCalculator::MinTotalTicksByMonth())->Item<int64_t>(month_ - 1), void();
+    return *__retval = __this->IsLeapYear(year_) ? uPtr(GregorianYearMonthDayCalculator::MaxTotalTicksByMonth_)->Item<int64_t>(month_ - 1) : uPtr(GregorianYearMonthDayCalculator::MinTotalTicksByMonth_)->Item<int64_t>(month_ - 1), void();
 }
 
-// internal override sealed bool IsLeapYear(int year) :142
+// internal override sealed bool IsLeapYear(int year) :105
 void GregorianYearMonthDayCalculator__IsLeapYear_fn(GregorianYearMonthDayCalculator* __this, int* year, bool* __retval)
 {
     int year_ = *year;
     return *__retval = ((year_ & 3) == 0) && (((year_ % 100) != 0) || ((year_ % 400) == 0)), void();
 }
 
-// internal GregorianYearMonthDayCalculator New() :90
+// internal GregorianYearMonthDayCalculator New() :53
 void GregorianYearMonthDayCalculator__New1_fn(GregorianYearMonthDayCalculator** __retval)
 {
     *__retval = GregorianYearMonthDayCalculator::New1();
@@ -292,13 +295,13 @@ uSStrong<uArray*> GregorianYearMonthDayCalculator::MonthStartTicks_;
 uSStrong<uArray*> GregorianYearMonthDayCalculator::YearStartDays_;
 uSStrong<uArray*> GregorianYearMonthDayCalculator::YearStartTicks_;
 
-// internal GregorianYearMonthDayCalculator() [instance] :90
+// internal GregorianYearMonthDayCalculator() [instance] :53
 void GregorianYearMonthDayCalculator::ctor_1()
 {
-    ctor_(-27255, 31195, 12, 315569520000000LL, -621355968000000000LL, uArray::Init< ::g::Uno::Time::Calendars::Era*>(::TYPES[2/*Uno.Time.Calendars.Era[]*/], 2, (::g::Uno::Time::Calendars::Era*)::g::Uno::Time::Calendars::Era::BeforeCommon(), (::g::Uno::Time::Calendars::Era*)::g::Uno::Time::Calendars::Era::Common()));
+    ctor_(-27255, 31195, 12, 315569520000000LL, -621355968000000000LL, uArray::Init< ::g::Uno::Time::Calendars::Era*>(::TYPES[2/*Uno.Time.Calendars.Era[]*/], 2, (::g::Uno::Time::Calendars::Era*)::g::Uno::Time::Calendars::Era::BeforeCommon_, (::g::Uno::Time::Calendars::Era*)::g::Uno::Time::Calendars::Era::Common_));
 }
 
-// internal GregorianYearMonthDayCalculator New() [static] :90
+// internal GregorianYearMonthDayCalculator New() [static] :53
 GregorianYearMonthDayCalculator* GregorianYearMonthDayCalculator::New1()
 {
     GregorianYearMonthDayCalculator* obj1 = (GregorianYearMonthDayCalculator*)uNew(GregorianYearMonthDayCalculator_typeof());
@@ -307,10 +310,10 @@ GregorianYearMonthDayCalculator* GregorianYearMonthDayCalculator::New1()
 }
 // }
 
-// /usr/local/share/uno/Packages/UnoCore/1.2.2/source/uno/time/calendars/$.uno
-// ---------------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\UnoCore\1.3.1\Source\Uno\Time\Calendars\TimeOfDayCalculator.uno
+// -----------------------------------------------------------------------------------------------------------
 
-// internal static class TimeOfDayCalculator :265
+// internal static class TimeOfDayCalculator :3
 // {
 static void TimeOfDayCalculator_build(uType* type)
 {
@@ -330,93 +333,93 @@ uClassType* TimeOfDayCalculator_typeof()
     return type;
 }
 
-// internal static int GetHourOfDay(Uno.Time.Instant instant) :354
+// internal static int GetHourOfDay(Uno.Time.Instant instant) :92
 void TimeOfDayCalculator__GetHourOfDay_fn(::g::Uno::Time::Instant* instant, int* __retval)
 {
     *__retval = TimeOfDayCalculator::GetHourOfDay(*instant);
 }
 
-// internal static int GetHourOfDayFromTickOfDay(long tickOfDay) :370
+// internal static int GetHourOfDayFromTickOfDay(long tickOfDay) :108
 void TimeOfDayCalculator__GetHourOfDayFromTickOfDay_fn(int64_t* tickOfDay, int* __retval)
 {
     *__retval = TimeOfDayCalculator::GetHourOfDayFromTickOfDay(*tickOfDay);
 }
 
-// internal static int GetMinuteOfHour(Uno.Time.Instant instant) :344
+// internal static int GetMinuteOfHour(Uno.Time.Instant instant) :82
 void TimeOfDayCalculator__GetMinuteOfHour_fn(::g::Uno::Time::Instant* instant, int* __retval)
 {
     *__retval = TimeOfDayCalculator::GetMinuteOfHour(*instant);
 }
 
-// internal static int GetMinuteOfHourFromTickOfDay(long tickOfDay) :375
+// internal static int GetMinuteOfHourFromTickOfDay(long tickOfDay) :113
 void TimeOfDayCalculator__GetMinuteOfHourFromTickOfDay_fn(int64_t* tickOfDay, int* __retval)
 {
     *__retval = TimeOfDayCalculator::GetMinuteOfHourFromTickOfDay(*tickOfDay);
 }
 
-// internal static int GetSecondOfMinute(Uno.Time.Instant instant) :334
+// internal static int GetSecondOfMinute(Uno.Time.Instant instant) :72
 void TimeOfDayCalculator__GetSecondOfMinute_fn(::g::Uno::Time::Instant* instant, int* __retval)
 {
     *__retval = TimeOfDayCalculator::GetSecondOfMinute(*instant);
 }
 
-// internal static int GetSecondOfMinuteFromTickOfDay(long tickOfDay) :381
+// internal static int GetSecondOfMinuteFromTickOfDay(long tickOfDay) :119
 void TimeOfDayCalculator__GetSecondOfMinuteFromTickOfDay_fn(int64_t* tickOfDay, int* __retval)
 {
     *__retval = TimeOfDayCalculator::GetSecondOfMinuteFromTickOfDay(*tickOfDay);
 }
 
-// internal static long GetTickOfDay(Uno.Time.Instant instant) :300
+// internal static long GetTickOfDay(Uno.Time.Instant instant) :38
 void TimeOfDayCalculator__GetTickOfDay_fn(::g::Uno::Time::Instant* instant, int64_t* __retval)
 {
     *__retval = TimeOfDayCalculator::GetTickOfDay(*instant);
 }
 
-// internal static long GetTicks(int hourOfDay, int minuteOfHour) :267
+// internal static long GetTicks(int hourOfDay, int minuteOfHour) :5
 void TimeOfDayCalculator__GetTicks_fn(int* hourOfDay, int* minuteOfHour, int64_t* __retval)
 {
     *__retval = TimeOfDayCalculator::GetTicks(*hourOfDay, *minuteOfHour);
 }
 
-// internal static int GetHourOfDay(Uno.Time.Instant instant) [static] :354
+// internal static int GetHourOfDay(Uno.Time.Instant instant) [static] :92
 int TimeOfDayCalculator::GetHourOfDay(::g::Uno::Time::Instant instant)
 {
     return TimeOfDayCalculator::GetHourOfDayFromTickOfDay(TimeOfDayCalculator::GetTickOfDay(instant));
 }
 
-// internal static int GetHourOfDayFromTickOfDay(long tickOfDay) [static] :370
+// internal static int GetHourOfDayFromTickOfDay(long tickOfDay) [static] :108
 int TimeOfDayCalculator::GetHourOfDayFromTickOfDay(int64_t tickOfDay)
 {
     return (int)(tickOfDay >> 11) / 17578125;
 }
 
-// internal static int GetMinuteOfHour(Uno.Time.Instant instant) [static] :344
+// internal static int GetMinuteOfHour(Uno.Time.Instant instant) [static] :82
 int TimeOfDayCalculator::GetMinuteOfHour(::g::Uno::Time::Instant instant)
 {
     return TimeOfDayCalculator::GetMinuteOfHourFromTickOfDay(TimeOfDayCalculator::GetTickOfDay(instant));
 }
 
-// internal static int GetMinuteOfHourFromTickOfDay(long tickOfDay) [static] :375
+// internal static int GetMinuteOfHourFromTickOfDay(long tickOfDay) [static] :113
 int TimeOfDayCalculator::GetMinuteOfHourFromTickOfDay(int64_t tickOfDay)
 {
     int minuteOfDay = (int)(tickOfDay / 600000000LL);
     return minuteOfDay % 60;
 }
 
-// internal static int GetSecondOfMinute(Uno.Time.Instant instant) [static] :334
+// internal static int GetSecondOfMinute(Uno.Time.Instant instant) [static] :72
 int TimeOfDayCalculator::GetSecondOfMinute(::g::Uno::Time::Instant instant)
 {
     return TimeOfDayCalculator::GetSecondOfMinuteFromTickOfDay(TimeOfDayCalculator::GetTickOfDay(instant));
 }
 
-// internal static int GetSecondOfMinuteFromTickOfDay(long tickOfDay) [static] :381
+// internal static int GetSecondOfMinuteFromTickOfDay(long tickOfDay) [static] :119
 int TimeOfDayCalculator::GetSecondOfMinuteFromTickOfDay(int64_t tickOfDay)
 {
     int secondOfDay = (int)(tickOfDay / 10000000LL);
     return secondOfDay % 60;
 }
 
-// internal static long GetTickOfDay(Uno.Time.Instant instant) [static] :300
+// internal static long GetTickOfDay(Uno.Time.Instant instant) [static] :38
 int64_t TimeOfDayCalculator::GetTickOfDay(::g::Uno::Time::Instant instant)
 {
     int64_t ticks = instant.Ticks();
@@ -430,7 +433,7 @@ int64_t TimeOfDayCalculator::GetTickOfDay(::g::Uno::Time::Instant instant)
         return 863999999999LL + ((ticks + 1LL) % 864000000000LL);
 }
 
-// internal static long GetTicks(int hourOfDay, int minuteOfHour) [static] :267
+// internal static long GetTicks(int hourOfDay, int minuteOfHour) [static] :5
 int64_t TimeOfDayCalculator::GetTicks(int hourOfDay, int minuteOfHour)
 {
     ::g::Uno::Time::Preconditions::CheckArgumentRange(::STRINGS[5/*"hourOfDay"*/], hourOfDay, 0, 23);
@@ -439,16 +442,16 @@ int64_t TimeOfDayCalculator::GetTicks(int hourOfDay, int minuteOfHour)
 }
 // }
 
-// /usr/local/share/uno/Packages/UnoCore/1.2.2/source/uno/time/calendars/$.uno
-// ---------------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\UnoCore\1.3.1\Source\Uno\Time\Calendars\WeekYearCalculator.uno
+// ----------------------------------------------------------------------------------------------------------
 
-// internal sealed class WeekYearCalculator :405
+// internal sealed class WeekYearCalculator :3
 // {
 static void WeekYearCalculator_build(uType* type)
 {
     type->SetFields(0,
-        ::g::Uno::Int_typeof(), offsetof(::g::Uno::Time::Calendars::WeekYearCalculator, minDaysInFirstWeek), 0,
-        ::g::Uno::Time::Calendars::YearMonthDayCalculator_typeof(), offsetof(::g::Uno::Time::Calendars::WeekYearCalculator, yearMonthDayCalculator), 0);
+        ::g::Uno::Int_typeof(), offsetof(WeekYearCalculator, minDaysInFirstWeek), 0,
+        ::g::Uno::Time::Calendars::YearMonthDayCalculator_typeof(), offsetof(WeekYearCalculator, yearMonthDayCalculator), 0);
 }
 
 uType* WeekYearCalculator_typeof()
@@ -465,26 +468,26 @@ uType* WeekYearCalculator_typeof()
     return type;
 }
 
-// internal WeekYearCalculator(Uno.Time.Calendars.YearMonthDayCalculator yearMonthDayCalculator, int minDaysInFirstWeek) :410
+// internal WeekYearCalculator(Uno.Time.Calendars.YearMonthDayCalculator yearMonthDayCalculator, int minDaysInFirstWeek) :8
 void WeekYearCalculator__ctor__fn(WeekYearCalculator* __this, ::g::Uno::Time::Calendars::YearMonthDayCalculator* yearMonthDayCalculator1, int* minDaysInFirstWeek1)
 {
     __this->ctor_(yearMonthDayCalculator1, *minDaysInFirstWeek1);
 }
 
-// internal WeekYearCalculator New(Uno.Time.Calendars.YearMonthDayCalculator yearMonthDayCalculator, int minDaysInFirstWeek) :410
+// internal WeekYearCalculator New(Uno.Time.Calendars.YearMonthDayCalculator yearMonthDayCalculator, int minDaysInFirstWeek) :8
 void WeekYearCalculator__New1_fn(::g::Uno::Time::Calendars::YearMonthDayCalculator* yearMonthDayCalculator1, int* minDaysInFirstWeek1, WeekYearCalculator** __retval)
 {
     *__retval = WeekYearCalculator::New1(yearMonthDayCalculator1, *minDaysInFirstWeek1);
 }
 
-// internal WeekYearCalculator(Uno.Time.Calendars.YearMonthDayCalculator yearMonthDayCalculator, int minDaysInFirstWeek) [instance] :410
+// internal WeekYearCalculator(Uno.Time.Calendars.YearMonthDayCalculator yearMonthDayCalculator, int minDaysInFirstWeek) [instance] :8
 void WeekYearCalculator::ctor_(::g::Uno::Time::Calendars::YearMonthDayCalculator* yearMonthDayCalculator1, int minDaysInFirstWeek1)
 {
     yearMonthDayCalculator = yearMonthDayCalculator1;
     minDaysInFirstWeek = minDaysInFirstWeek1;
 }
 
-// internal WeekYearCalculator New(Uno.Time.Calendars.YearMonthDayCalculator yearMonthDayCalculator, int minDaysInFirstWeek) [static] :410
+// internal WeekYearCalculator New(Uno.Time.Calendars.YearMonthDayCalculator yearMonthDayCalculator, int minDaysInFirstWeek) [static] :8
 WeekYearCalculator* WeekYearCalculator::New1(::g::Uno::Time::Calendars::YearMonthDayCalculator* yearMonthDayCalculator1, int minDaysInFirstWeek1)
 {
     WeekYearCalculator* obj1 = (WeekYearCalculator*)uNew(WeekYearCalculator_typeof());
@@ -493,10 +496,10 @@ WeekYearCalculator* WeekYearCalculator::New1(::g::Uno::Time::Calendars::YearMont
 }
 // }
 
-// /usr/local/share/uno/Packages/UnoCore/1.2.2/source/uno/time/calendars/$.uno
-// ---------------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\UnoCore\1.3.1\Source\Uno\Time\Calendars\YearMonthDayCalculator.uno
+// --------------------------------------------------------------------------------------------------------------
 
-// internal abstract class YearMonthDayCalculator :510
+// internal abstract class YearMonthDayCalculator :3
 // {
 static void YearMonthDayCalculator_build(uType* type)
 {
@@ -506,12 +509,12 @@ static void YearMonthDayCalculator_build(uType* type)
     ::STRINGS[10] = uString::Const("dayOfMonth");
     ::TYPES[3] = ::g::Uno::Time::Preconditions_typeof()->MakeMethod(0/*CheckNotNull<Uno.Time.Calendars.Era[]>*/, ::g::Uno::Time::Calendars::Era_typeof()->Array(), NULL);
     type->SetFields(0,
-        ::g::Uno::Long_typeof(), offsetof(::g::Uno::Time::Calendars::YearMonthDayCalculator, _averageTicksPerYear), 0,
-        ::g::Uno::Time::Calendars::Era_typeof()->Array(), offsetof(::g::Uno::Time::Calendars::YearMonthDayCalculator, _eras), 0,
-        ::g::Uno::Int_typeof(), offsetof(::g::Uno::Time::Calendars::YearMonthDayCalculator, _maxYear), 0,
-        ::g::Uno::Int_typeof(), offsetof(::g::Uno::Time::Calendars::YearMonthDayCalculator, _minYear), 0,
-        ::g::Uno::Int_typeof(), offsetof(::g::Uno::Time::Calendars::YearMonthDayCalculator, _monthsInYear), 0,
-        ::g::Uno::Long_typeof(), offsetof(::g::Uno::Time::Calendars::YearMonthDayCalculator, _ticksAtStartOfYear1), 0);
+        ::g::Uno::Long_typeof(), offsetof(YearMonthDayCalculator, _averageTicksPerYear), 0,
+        ::g::Uno::Time::Calendars::Era_typeof()->Array(), offsetof(YearMonthDayCalculator, _eras), 0,
+        ::g::Uno::Int_typeof(), offsetof(YearMonthDayCalculator, _maxYear), 0,
+        ::g::Uno::Int_typeof(), offsetof(YearMonthDayCalculator, _minYear), 0,
+        ::g::Uno::Int_typeof(), offsetof(YearMonthDayCalculator, _monthsInYear), 0,
+        ::g::Uno::Long_typeof(), offsetof(YearMonthDayCalculator, _ticksAtStartOfYear1), 0);
 }
 
 YearMonthDayCalculator_type* YearMonthDayCalculator_typeof()
@@ -530,31 +533,31 @@ YearMonthDayCalculator_type* YearMonthDayCalculator_typeof()
     return type;
 }
 
-// protected YearMonthDayCalculator(int minYear, int maxYear, int monthsInYear, long averageTicksPerYear, long ticksAtStartOfYear1, Uno.Time.Calendars.Era[] eras) :528
+// protected YearMonthDayCalculator(int minYear, int maxYear, int monthsInYear, long averageTicksPerYear, long ticksAtStartOfYear1, Uno.Time.Calendars.Era[] eras) :21
 void YearMonthDayCalculator__ctor__fn(YearMonthDayCalculator* __this, int* minYear, int* maxYear, int* monthsInYear, int64_t* averageTicksPerYear, int64_t* ticksAtStartOfYear1, uArray* eras)
 {
     __this->ctor_(*minYear, *maxYear, *monthsInYear, *averageTicksPerYear, *ticksAtStartOfYear1, eras);
 }
 
-// internal Uno.Time.Calendars.Era[] get_Eras() :526
+// internal Uno.Time.Calendars.Era[] get_Eras() :19
 void YearMonthDayCalculator__get_Eras_fn(YearMonthDayCalculator* __this, uArray** __retval)
 {
     *__retval = __this->Eras();
 }
 
-// internal int GetDayOfMonth(Uno.Time.Instant instant) :635
+// internal int GetDayOfMonth(Uno.Time.Instant instant) :128
 void YearMonthDayCalculator__GetDayOfMonth_fn(YearMonthDayCalculator* __this, ::g::Uno::Time::Instant* instant, int* __retval)
 {
     *__retval = __this->GetDayOfMonth(*instant);
 }
 
-// protected int GetDayOfMonth(Uno.Time.Instant instant, int year, int month) :642
+// protected int GetDayOfMonth(Uno.Time.Instant instant, int year, int month) :135
 void YearMonthDayCalculator__GetDayOfMonth1_fn(YearMonthDayCalculator* __this, ::g::Uno::Time::Instant* instant, int* year, int* month, int* __retval)
 {
     *__retval = __this->GetDayOfMonth1(*instant, *year, *month);
 }
 
-// internal virtual Uno.Time.Instant GetInstant(int year, int monthOfYear, int dayOfMonth) :669
+// internal virtual Uno.Time.Instant GetInstant(int year, int monthOfYear, int dayOfMonth) :162
 void YearMonthDayCalculator__GetInstant_fn(YearMonthDayCalculator* __this, int* year, int* monthOfYear, int* dayOfMonth, ::g::Uno::Time::Instant* __retval)
 {
     int year_ = *year;
@@ -566,62 +569,62 @@ void YearMonthDayCalculator__GetInstant_fn(YearMonthDayCalculator* __this, int* 
     return *__retval = ::g::Uno::Time::Instant__New1(__this->GetYearMonthDayTicks(year_, monthOfYear_, dayOfMonth_)), void();
 }
 
-// internal int GetMaxMonth(int year) :547
+// internal int GetMaxMonth(int year) :40
 void YearMonthDayCalculator__GetMaxMonth_fn(YearMonthDayCalculator* __this, int* year, int* __retval)
 {
     *__retval = __this->GetMaxMonth(*year);
 }
 
-// internal int GetMonthOfYear(Uno.Time.Instant instant) :664
+// internal int GetMonthOfYear(Uno.Time.Instant instant) :157
 void YearMonthDayCalculator__GetMonthOfYear_fn(YearMonthDayCalculator* __this, ::g::Uno::Time::Instant* instant, int* __retval)
 {
     *__retval = __this->GetMonthOfYear(*instant);
 }
 
-// internal virtual long GetStartOfYearInTicks(int year) :630
+// internal virtual long GetStartOfYearInTicks(int year) :123
 void YearMonthDayCalculator__GetStartOfYearInTicks_fn(YearMonthDayCalculator* __this, int* year, int64_t* __retval)
 {
     int year_ = *year;
     return *__retval = (int64_t)__this->CalculateStartOfYearDays(year_) * 864000000000LL, void();
 }
 
-// protected long GetTicksInYear(int year) :790
+// protected long GetTicksInYear(int year) :283
 void YearMonthDayCalculator__GetTicksInYear_fn(YearMonthDayCalculator* __this, int* year, int64_t* __retval)
 {
     *__retval = __this->GetTicksInYear(*year);
 }
 
-// internal int GetYear(Uno.Time.Instant instant) :707
+// internal int GetYear(Uno.Time.Instant instant) :200
 void YearMonthDayCalculator__GetYear_fn(YearMonthDayCalculator* __this, ::g::Uno::Time::Instant* instant, int* __retval)
 {
     *__retval = __this->GetYear(*instant);
 }
 
-// internal long GetYearMonthDayTicks(int year, int month, int dayOfMonth) :677
+// internal long GetYearMonthDayTicks(int year, int month, int dayOfMonth) :170
 void YearMonthDayCalculator__GetYearMonthDayTicks_fn(YearMonthDayCalculator* __this, int* year, int* month, int* dayOfMonth, int64_t* __retval)
 {
     *__retval = __this->GetYearMonthDayTicks(*year, *month, *dayOfMonth);
 }
 
-// internal long GetYearMonthTicks(int year, int month) :683
+// internal long GetYearMonthTicks(int year, int month) :176
 void YearMonthDayCalculator__GetYearMonthTicks_fn(YearMonthDayCalculator* __this, int* year, int* month, int64_t* __retval)
 {
     *__retval = __this->GetYearMonthTicks(*year, *month);
 }
 
-// internal int get_MaxYear() :516
+// internal int get_MaxYear() :9
 void YearMonthDayCalculator__get_MaxYear_fn(YearMonthDayCalculator* __this, int* __retval)
 {
     *__retval = __this->MaxYear();
 }
 
-// internal int get_MinYear() :513
+// internal int get_MinYear() :6
 void YearMonthDayCalculator__get_MinYear_fn(YearMonthDayCalculator* __this, int* __retval)
 {
     *__retval = __this->MinYear();
 }
 
-// protected YearMonthDayCalculator(int minYear, int maxYear, int monthsInYear, long averageTicksPerYear, long ticksAtStartOfYear1, Uno.Time.Calendars.Era[] eras) [instance] :528
+// protected YearMonthDayCalculator(int minYear, int maxYear, int monthsInYear, long averageTicksPerYear, long ticksAtStartOfYear1, Uno.Time.Calendars.Era[] eras) [instance] :21
 void YearMonthDayCalculator::ctor_(int minYear, int maxYear, int monthsInYear, int64_t averageTicksPerYear, int64_t ticksAtStartOfYear1, uArray* eras)
 {
     _minYear = minYear;
@@ -632,13 +635,13 @@ void YearMonthDayCalculator::ctor_(int minYear, int maxYear, int monthsInYear, i
     _ticksAtStartOfYear1 = ticksAtStartOfYear1;
 }
 
-// internal Uno.Time.Calendars.Era[] get_Eras() [instance] :526
+// internal Uno.Time.Calendars.Era[] get_Eras() [instance] :19
 uArray* YearMonthDayCalculator::Eras()
 {
     return _eras;
 }
 
-// internal int GetDayOfMonth(Uno.Time.Instant instant) [instance] :635
+// internal int GetDayOfMonth(Uno.Time.Instant instant) [instance] :128
 int YearMonthDayCalculator::GetDayOfMonth(::g::Uno::Time::Instant instant)
 {
     ::g::Uno::Time::Instant instant_ = instant;
@@ -647,7 +650,7 @@ int YearMonthDayCalculator::GetDayOfMonth(::g::Uno::Time::Instant instant)
     return GetDayOfMonth1(instant_, year, month);
 }
 
-// protected int GetDayOfMonth(Uno.Time.Instant instant, int year, int month) [instance] :642
+// protected int GetDayOfMonth(Uno.Time.Instant instant, int year, int month) [instance] :135
 int YearMonthDayCalculator::GetDayOfMonth1(::g::Uno::Time::Instant instant, int year, int month)
 {
     int64_t dateTicks = GetYearMonthTicks(year, month);
@@ -655,27 +658,27 @@ int YearMonthDayCalculator::GetDayOfMonth1(::g::Uno::Time::Instant instant, int 
     return ::g::Uno::Time::Converter::TicksToDays(ticksWithinMonth) + 1;
 }
 
-// internal int GetMaxMonth(int year) [instance] :547
+// internal int GetMaxMonth(int year) [instance] :40
 int YearMonthDayCalculator::GetMaxMonth(int year)
 {
     return _monthsInYear;
 }
 
-// internal int GetMonthOfYear(Uno.Time.Instant instant) [instance] :664
+// internal int GetMonthOfYear(Uno.Time.Instant instant) [instance] :157
 int YearMonthDayCalculator::GetMonthOfYear(::g::Uno::Time::Instant instant)
 {
     ::g::Uno::Time::Instant instant_ = instant;
     return GetMonthOfYear1(instant_, GetYear(instant_));
 }
 
-// protected long GetTicksInYear(int year) [instance] :790
+// protected long GetTicksInYear(int year) [instance] :283
 int64_t YearMonthDayCalculator::GetTicksInYear(int year)
 {
     int year_ = year;
     return IsLeapYear(year_) ? 316224000000000LL : 315360000000000LL;
 }
 
-// internal int GetYear(Uno.Time.Instant instant) [instance] :707
+// internal int GetYear(Uno.Time.Instant instant) [instance] :200
 int YearMonthDayCalculator::GetYear(::g::Uno::Time::Instant instant)
 {
     int64_t targetTicks = instant.Ticks();
@@ -713,27 +716,27 @@ int YearMonthDayCalculator::GetYear(::g::Uno::Time::Instant instant)
     return candidate;
 }
 
-// internal long GetYearMonthDayTicks(int year, int month, int dayOfMonth) [instance] :677
+// internal long GetYearMonthDayTicks(int year, int month, int dayOfMonth) [instance] :170
 int64_t YearMonthDayCalculator::GetYearMonthDayTicks(int year, int month, int dayOfMonth)
 {
     int64_t ticks = GetYearMonthTicks(year, month);
     return ticks + ((int64_t)(dayOfMonth - 1) * 864000000000LL);
 }
 
-// internal long GetYearMonthTicks(int year, int month) [instance] :683
+// internal long GetYearMonthTicks(int year, int month) [instance] :176
 int64_t YearMonthDayCalculator::GetYearMonthTicks(int year, int month)
 {
     int64_t ticks = GetStartOfYearInTicks(year);
     return ticks + GetTicksFromStartOfYearToStartOfMonth(year, month);
 }
 
-// internal int get_MaxYear() [instance] :516
+// internal int get_MaxYear() [instance] :9
 int YearMonthDayCalculator::MaxYear()
 {
     return _maxYear;
 }
 
-// internal int get_MinYear() [instance] :513
+// internal int get_MinYear() [instance] :6
 int YearMonthDayCalculator::MinYear()
 {
     return _minYear;

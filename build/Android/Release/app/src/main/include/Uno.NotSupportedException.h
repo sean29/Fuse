@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/UnoCore/1.2.2/source/uno/exceptions/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/UnoCore/1.3.1/Source/Uno/Exceptions/NotSupportedException.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -8,7 +8,7 @@ namespace g{namespace Uno{struct NotSupportedException;}}
 namespace g{
 namespace Uno{
 
-// public sealed class NotSupportedException :292
+// public sealed class NotSupportedException :6
 // {
 ::g::Uno::Exception_type* NotSupportedException_typeof();
 void NotSupportedException__ctor_3_fn(NotSupportedException* __this);

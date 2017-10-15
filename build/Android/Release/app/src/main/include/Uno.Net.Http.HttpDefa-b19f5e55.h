@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Uno.Net.Http/1.2.2/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Uno.Net.Http/1.3.1/HttpDefaultDispatcher.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -11,7 +11,7 @@ namespace Uno{
 namespace Net{
 namespace Http{
 
-// internal sealed class HttpDefaultDispatcher :847
+// internal sealed class HttpDefaultDispatcher :6
 // {
 struct HttpDefaultDispatcher_type : uType
 {

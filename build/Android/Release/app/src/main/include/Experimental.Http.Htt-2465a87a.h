@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Experimental.Http/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Experimental.Http/1.3.0-rc2/HttpResponseHeader.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -12,7 +12,7 @@ namespace g{
 namespace Experimental{
 namespace Http{
 
-// public sealed class HttpResponseHeader :602
+// public sealed class HttpResponseHeader :7
 // {
 uType* HttpResponseHeader_typeof();
 void HttpResponseHeader__ctor__fn(HttpResponseHeader* __this);

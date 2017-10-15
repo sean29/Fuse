@@ -23,12 +23,12 @@ public class AndroidProperties
         android.util.Log.d("emrals", (message==null ? "null" : message.toString()));
     }
 
-    public static int GetBuildVersion432()
+    public static int GetBuildVersion431()
     {
         return android.os.Build.VERSION.SDK_INT;
     }
     
-    public static String GetReleaseVersion433()
+    public static String GetReleaseVersion432()
     {
         return android.os.Build.VERSION.RELEASE;
     }

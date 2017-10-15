@@ -1,20 +1,24 @@
-// This file was generated based on /usr/local/share/uno/Packages/UnoCore/1.2.2/source/uno/io/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/UnoCore/1.3.1/Source/Uno/IO/File.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
 #include <Uno.h>
 namespace g{namespace Uno{namespace IO{struct File;}}}
 namespace g{namespace Uno{namespace IO{struct Stream;}}}
+namespace uBase { class Stream; }
 
 namespace g{
 namespace Uno{
 namespace IO{
 
-// public static class File :1318
+// public static class File :28
 // {
 uClassType* File_typeof();
 void File__AppendAllText_fn(uString* filename, uString* contents);
 void File__Copy_fn(uString* sourceFile, uString* destinationFile);
+void File__Copy1_fn(uString* sourceFile, uString* destinationFile, bool* overwrite);
+void File__CppXliOpen_fn(uString* filename, int* filemode, uBase::Stream** __retval);
+void File__CppXliOpenRead_fn(uString* filename, uBase::Stream** __retval);
 void File__Delete_fn(uString* filename);
 void File__Exists_fn(uString* filename, bool* __retval);
 void File__Move_fn(uString* oldName, uString* newName);
@@ -29,6 +33,9 @@ struct File : uObject
 {
     static void AppendAllText(uString* filename, uString* contents);
     static void Copy(uString* sourceFile, uString* destinationFile);
+    static void Copy1(uString* sourceFile, uString* destinationFile, bool overwrite);
+    static uBase::Stream* CppXliOpen(uString* filename, int filemode);
+    static uBase::Stream* CppXliOpenRead(uString* filename);
     static void Delete(uString* filename);
     static bool Exists(uString* filename);
     static void Move(uString* oldName, uString* newName);

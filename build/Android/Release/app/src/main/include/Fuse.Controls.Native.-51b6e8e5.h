@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Controls.Native/1.2.1/android/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Controls.Native/1.3.0-rc2/Android/Switch.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -15,7 +15,7 @@ namespace Controls{
 namespace Native{
 namespace Android{
 
-// public sealed extern class Switch :1583
+// public sealed extern class Switch :17
 // {
 struct Switch_type : ::g::Fuse::Controls::Native::Android::View_type
 {

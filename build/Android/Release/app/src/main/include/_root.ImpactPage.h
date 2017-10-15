@@ -1,4 +1,4 @@
-// This file was generated based on '.uno/ux11/ImpactPage.g.uno'.
+// This file was generated based on '.uno/ux13/ImpactPage.g.uno'.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -15,6 +15,7 @@
 #include <Fuse.Triggers.Actions.IHide.h>
 #include <Fuse.Triggers.Actions.IShow.h>
 #include <Fuse.Triggers.Actions-ea70af1f.h>
+#include <Fuse.Visual.h>
 #include <Uno.Collections.ICollection-1.h>
 #include <Uno.Collections.IEnumerable-1.h>
 #include <Uno.Collections.IList-1.h>
@@ -32,12 +33,11 @@ namespace g{struct ImpactPage;}
 
 namespace g{
 
-// public partial sealed class ImpactPage :2
+// public partial class ImpactPage :2
 // {
 ::g::Fuse::Controls::Panel_type* ImpactPage_typeof();
 void ImpactPage__ctor_8_fn(ImpactPage* __this, ::g::Fuse::Navigation::Router* router1);
 void ImpactPage__InitializeUX_fn(ImpactPage* __this);
-void ImpactPage__New5_fn(::g::Fuse::Navigation::Router* router1, ImpactPage** __retval);
 
 struct ImpactPage : ::g::Fuse::Controls::Page
 {
@@ -77,7 +77,6 @@ struct ImpactPage : ::g::Fuse::Controls::Page
 
     void ctor_8(::g::Fuse::Navigation::Router* router1);
     void InitializeUX();
-    static ImpactPage* New5(::g::Fuse::Navigation::Router* router1);
 };
 // }
 

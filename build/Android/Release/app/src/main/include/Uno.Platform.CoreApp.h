@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/UnoCore/1.2.2/source/uno/platform/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/UnoCore/1.3.1/Source/Uno/Platform/CoreApp.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -10,7 +10,7 @@ namespace g{
 namespace Uno{
 namespace Platform{
 
-// public abstract class CoreApp :28
+// public abstract class CoreApp :26
 // {
 uType* CoreApp_typeof();
 void CoreApp__ctor__fn(CoreApp* __this);
@@ -44,25 +44,25 @@ void CoreApp__remove_Terminating_fn(uDelegate* value);
 struct CoreApp : uObject
 {
     static uSStrong< ::g::Uno::Collections::List*> _delayedURIS_;
-    static uSStrong< ::g::Uno::Collections::List*>& _delayedURIS() { return CoreApp_typeof()->Init(), _delayedURIS_; }
+    static uSStrong< ::g::Uno::Collections::List*>& _delayedURIS() { return _delayedURIS_; }
     static uSStrong<CoreApp*> _Current_;
-    static uSStrong<CoreApp*>& _Current() { return CoreApp_typeof()->Init(), _Current_; }
+    static uSStrong<CoreApp*>& _Current() { return _Current_; }
     static int _State_;
-    static int& _State() { return CoreApp_typeof()->Init(), _State_; }
+    static int& _State() { return _State_; }
     static uSStrong<uDelegate*> EnteringBackground1_;
-    static uSStrong<uDelegate*>& EnteringBackground1() { return CoreApp_typeof()->Init(), EnteringBackground1_; }
+    static uSStrong<uDelegate*>& EnteringBackground1() { return EnteringBackground1_; }
     static uSStrong<uDelegate*> EnteringForeground1_;
-    static uSStrong<uDelegate*>& EnteringForeground1() { return CoreApp_typeof()->Init(), EnteringForeground1_; }
+    static uSStrong<uDelegate*>& EnteringForeground1() { return EnteringForeground1_; }
     static uSStrong<uDelegate*> EnteringInteractive1_;
-    static uSStrong<uDelegate*>& EnteringInteractive1() { return CoreApp_typeof()->Init(), EnteringInteractive1_; }
+    static uSStrong<uDelegate*>& EnteringInteractive1() { return EnteringInteractive1_; }
     static uSStrong<uDelegate*> ExitedInteractive1_;
-    static uSStrong<uDelegate*>& ExitedInteractive1() { return CoreApp_typeof()->Init(), ExitedInteractive1_; }
+    static uSStrong<uDelegate*>& ExitedInteractive1() { return ExitedInteractive1_; }
     static uSStrong<uDelegate*> ReceivedLowMemoryWarning1_;
-    static uSStrong<uDelegate*>& ReceivedLowMemoryWarning1() { return CoreApp_typeof()->Init(), ReceivedLowMemoryWarning1_; }
+    static uSStrong<uDelegate*>& ReceivedLowMemoryWarning1() { return ReceivedLowMemoryWarning1_; }
     static uSStrong<uDelegate*> Started1_;
-    static uSStrong<uDelegate*>& Started1() { return CoreApp_typeof()->Init(), Started1_; }
+    static uSStrong<uDelegate*>& Started1() { return Started1_; }
     static uSStrong<uDelegate*> Terminating1_;
-    static uSStrong<uDelegate*>& Terminating1() { return CoreApp_typeof()->Init(), Terminating1_; }
+    static uSStrong<uDelegate*>& Terminating1() { return Terminating1_; }
 
     void ctor_();
     void Load();

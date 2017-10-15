@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Common/1.2.1/resources/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Common/1.3.0-rc2/Resources/ResourceRegistry.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -11,7 +11,7 @@ namespace g{
 namespace Fuse{
 namespace Resources{
 
-// public static class ResourceRegistry :382
+// public static class ResourceRegistry :8
 // {
 uClassType* ResourceRegistry_typeof();
 void ResourceRegistry__AddResourceChangedHandler_fn(uString* key, uDelegate* handler);
@@ -21,7 +21,7 @@ void ResourceRegistry__RemoveResourceChangedHandler_fn(uString* key, uDelegate* 
 struct ResourceRegistry : uObject
 {
     static uSStrong< ::g::Uno::Collections::Dictionary*> _handlers_;
-    static uSStrong< ::g::Uno::Collections::Dictionary*>& _handlers() { return ResourceRegistry_typeof()->Init(), _handlers_; }
+    static uSStrong< ::g::Uno::Collections::Dictionary*>& _handlers() { return _handlers_; }
 
     static void AddResourceChangedHandler(uString* key, uDelegate* handler);
     static void NotifyResourceChanged(uString* key);

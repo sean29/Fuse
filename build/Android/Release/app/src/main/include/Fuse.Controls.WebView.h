@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Controls.WebView/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Controls.WebView/1.3.0-rc2/WebView.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -19,6 +19,7 @@
 #include <Fuse.Triggers.Actions.IShow.h>
 #include <Fuse.Triggers.Actions-ea70af1f.h>
 #include <Fuse.Triggers.IProgress.h>
+#include <Fuse.Visual.h>
 #include <Uno.Collections.ICollection-1.h>
 #include <Uno.Collections.IEnumerable-1.h>
 #include <Uno.Collections.IList-1.h>
@@ -33,14 +34,14 @@ namespace g{
 namespace Fuse{
 namespace Controls{
 
-// public partial sealed class WebView :127
+// public partial sealed class WebView :125
 // {
 struct WebView_type : ::g::Fuse::Controls::Panel_type
 {
-    ::g::Fuse::Controls::IWebView interface17;
-    ::g::Fuse::Triggers::IProgress interface18;
-    ::g::Fuse::Navigation::IBaseNavigation interface19;
-    ::g::Fuse::Controls::ISourceReceiver interface20;
+    ::g::Fuse::Controls::IWebView interface18;
+    ::g::Fuse::Triggers::IProgress interface19;
+    ::g::Fuse::Navigation::IBaseNavigation interface20;
+    ::g::Fuse::Controls::ISourceReceiver interface21;
 };
 
 WebView_type* WebView_typeof();
@@ -73,6 +74,7 @@ void WebView__OnRooted_fn(WebView* __this);
 void WebView__OnUnrooted_fn(WebView* __this);
 void WebView__add_PageLoaded_fn(WebView* __this, uDelegate* value);
 void WebView__remove_PageLoaded_fn(WebView* __this, uDelegate* value);
+void WebView__PreprocUriScheme_fn(uString* inScheme, uString** __retval);
 void WebView__get_Progress_fn(WebView* __this, double* __retval);
 void WebView__add_ProgressChanged_fn(WebView* __this, uDelegate* value);
 void WebView__remove_ProgressChanged_fn(WebView* __this, uDelegate* value);
@@ -157,6 +159,7 @@ struct WebView : ::g::Fuse::Controls::Panel
     bool ZoomEnabled();
     void ZoomEnabled(bool value);
     static void loadHtml(::g::Fuse::Scripting::Context* c, WebView* view, uArray* args);
+    static uString* PreprocUriScheme(uString* inScheme);
     static void setBaseUrl(::g::Fuse::Scripting::Context* c, WebView* view, uArray* args);
     static void setUrl(::g::Fuse::Scripting::Context* c, WebView* view, uArray* args);
 };

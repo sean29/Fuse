@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/UnoCore/1.2.2/source/uno/io/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/UnoCore/1.3.1/Source/Uno/IO/CppXliStream.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -11,7 +11,7 @@ namespace g{
 namespace Uno{
 namespace IO{
 
-// internal sealed extern class CppXliStream :974
+// internal sealed extern class CppXliStream :18
 // {
 ::g::Uno::IO::Stream_type* CppXliStream_typeof();
 void CppXliStream__ctor_1_fn(CppXliStream* __this, uBase::Stream** handle);

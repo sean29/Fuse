@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Controls.Panels/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Controls.Panels/1.3.0-rc2/GraphicsView.ux.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -9,14 +9,13 @@ namespace g{namespace Fuse{namespace Drawing{struct Brush;}}}
 namespace g{namespace Fuse{namespace Elements{struct Element;}}}
 namespace g{namespace Fuse{struct LayoutParams;}}
 namespace g{namespace Fuse{struct Visual;}}
-namespace g{namespace Uno{namespace Collections{struct List;}}}
 namespace g{namespace Uno{struct Float2;}}
 
 namespace g{
 namespace Fuse{
 namespace Controls{
 
-// internal sealed class DefaultTreeRenderer :215
+// internal sealed class DefaultTreeRenderer :11
 // {
 struct DefaultTreeRenderer_type : uType
 {
@@ -39,12 +38,12 @@ void DefaultTreeRenderer__Rooted_fn(DefaultTreeRenderer* __this, ::g::Fuse::Elem
 void DefaultTreeRenderer__RootingStarted_fn(DefaultTreeRenderer* __this, ::g::Fuse::Elements::Element* e);
 void DefaultTreeRenderer__TransformChanged_fn(DefaultTreeRenderer* __this, ::g::Fuse::Elements::Element* e);
 void DefaultTreeRenderer__Unrooted_fn(DefaultTreeRenderer* __this, ::g::Fuse::Elements::Element* e);
-void DefaultTreeRenderer__ZOrderChanged_fn(DefaultTreeRenderer* __this, ::g::Fuse::Elements::Element* e, ::g::Uno::Collections::List* zorder);
+void DefaultTreeRenderer__ZOrderChanged_fn(DefaultTreeRenderer* __this, ::g::Fuse::Elements::Element* e, uArray* zorder);
 
 struct DefaultTreeRenderer : uObject
 {
     static uSStrong<DefaultTreeRenderer*> Instance_;
-    static uSStrong<DefaultTreeRenderer*>& Instance() { return DefaultTreeRenderer_typeof()->Init(), Instance_; }
+    static uSStrong<DefaultTreeRenderer*>& Instance() { return Instance_; }
 
     void ctor_();
     void BackgroundChanged(::g::Fuse::Elements::Element* e, ::g::Fuse::Drawing::Brush* background);
@@ -60,7 +59,7 @@ struct DefaultTreeRenderer : uObject
     void RootingStarted(::g::Fuse::Elements::Element* e);
     void TransformChanged(::g::Fuse::Elements::Element* e);
     void Unrooted(::g::Fuse::Elements::Element* e);
-    void ZOrderChanged(::g::Fuse::Elements::Element* e, ::g::Uno::Collections::List* zorder);
+    void ZOrderChanged(::g::Fuse::Elements::Element* e, uArray* zorder);
     static DefaultTreeRenderer* New1();
 };
 // }

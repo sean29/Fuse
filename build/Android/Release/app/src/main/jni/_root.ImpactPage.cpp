@@ -1,4 +1,4 @@
-// This file was generated based on '.uno/ux11/ImpactPage.g.uno'.
+// This file was generated based on '.uno/ux13/ImpactPage.g.uno'.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #include <_root.Curl.h>
@@ -50,7 +50,6 @@
 #include <Fuse.Translation.h>
 #include <Fuse.Triggers.Trigger.h>
 #include <Fuse.Triggers.WhileKe-99bafeca.h>
-#include <Fuse.Visual.h>
 #include <Uno.Double.h>
 #include <Uno.Float.h>
 #include <Uno.Int.h>
@@ -71,11 +70,13 @@ static uType* TYPES[7];
 
 namespace g{
 
-// public partial sealed class ImpactPage :2
+// public partial class ImpactPage :2
 // {
 // static ImpactPage() :32
 static void ImpactPage__cctor_4_fn(uType* __type)
 {
+    ::g::Uno::UX::Selector_typeof()->Init();
+    ::g::Uno::UX::Resource_typeof()->Init();
     ImpactPage::__g_static_nametable1_ = uArray::Init<uString*>(::TYPES[0/*string[]*/], 10, ::STRINGS[0/*"router"*/], ::STRINGS[1/*"outerpanel"*/], ::STRINGS[2/*"temp_eb40"*/], ::STRINGS[3/*"ZipBar"*/], ::STRINGS[4/*"fiverec"*/], ::STRINGS[5/*"temp_eb41"*/], ::STRINGS[6/*"tenrec"*/], ::STRINGS[7/*"temp_eb42"*/], ::STRINGS[8/*"twentyfiverec"*/], ::STRINGS[9/*"temp_eb43"*/]);
     ImpactPage::__selector0_ = ::g::Uno::UX::Selector__op_Implicit(::STRINGS[10/*"Value"*/]);
     ImpactPage::__selector1_ = ::g::Uno::UX::Selector__op_Implicit(::STRINGS[11/*"Color"*/]);
@@ -84,7 +85,7 @@ static void ImpactPage__cctor_4_fn(uType* __type)
     ImpactPage::__selector4_ = ::g::Uno::UX::Selector__op_Implicit(::STRINGS[4/*"fiverec"*/]);
     ImpactPage::__selector5_ = ::g::Uno::UX::Selector__op_Implicit(::STRINGS[6/*"tenrec"*/]);
     ImpactPage::__selector6_ = ::g::Uno::UX::Selector__op_Implicit(::STRINGS[8/*"twentyfiverec"*/]);
-    ImpactPage::Curl_ = ::g::Fuse::Font::New2(::g::Uno::UX::BundleFileSource::New1(::g::emrals_bundle::PTF55F5dbeddf8()));
+    ImpactPage::Curl_ = ::g::Fuse::Font::New2(::g::Uno::UX::BundleFileSource::New1(::g::emrals_bundle::PTF55F7486d4bd()));
     ::g::Uno::UX::Resource::SetGlobalKey(ImpactPage::Curl_, ::STRINGS[12/*"Curl"*/]);
 }
 
@@ -127,6 +128,9 @@ static void ImpactPage_build(uType* type)
     ::TYPES[4] = ::g::Fuse::Gestures::ClickedHandler_typeof();
     ::TYPES[5] = ::g::Uno::Collections::ICollection_typeof()->MakeType(::g::Fuse::Binding_typeof(), NULL);
     ::TYPES[6] = ::g::Uno::Collections::ICollection_typeof()->MakeType(uObject_typeof(), NULL);
+    type->SetDependencies(
+        ::g::Fuse::Animations::Easing_typeof(),
+        ::g::Fuse::Controls::Grid_typeof());
     type->SetInterfaces(
         ::g::Uno::Collections::IList_typeof()->MakeType(::g::Fuse::Binding_typeof(), NULL), offsetof(::g::Fuse::Controls::Panel_type, interface0),
         ::g::Fuse::Scripting::IScriptObject_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface1),
@@ -137,39 +141,40 @@ static void ImpactPage_build(uType* type)
         ::g::Uno::Collections::IList_typeof()->MakeType(::g::Fuse::Node_typeof(), NULL), offsetof(::g::Fuse::Controls::Panel_type, interface6),
         ::g::Uno::UX::IPropertyListener_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface7),
         ::g::Fuse::ITemplateSource_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface8),
-        ::TYPES[3/*Uno.Collections.ICollection<Fuse.Node>*/], offsetof(::g::Fuse::Controls::Panel_type, interface9),
-        ::g::Uno::Collections::IEnumerable_typeof()->MakeType(::g::Fuse::Node_typeof(), NULL), offsetof(::g::Fuse::Controls::Panel_type, interface10),
-        ::g::Fuse::Triggers::Actions::IShow_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface11),
-        ::g::Fuse::Triggers::Actions::IHide_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface12),
-        ::g::Fuse::Triggers::Actions::ICollapse_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface13),
-        ::g::Fuse::IActualPlacement_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface14),
-        ::g::Fuse::Animations::IResize_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface15),
-        ::g::Fuse::Drawing::ISurfaceDrawable_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface16));
-    type->SetFields(111,
-        ::g::Uno::UX::NameTable_typeof(), offsetof(::g::ImpactPage, __g_nametable1), 0,
-        ::g::Fuse::Controls::Rectangle_typeof(), offsetof(::g::ImpactPage, fiverec), 0,
-        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::Float4_typeof(), NULL), offsetof(::g::ImpactPage, fiverec_Color_inst), 0,
-        ::g::Fuse::Controls::StackPanel_typeof(), offsetof(::g::ImpactPage, outerpanel), 0,
-        ::g::Fuse::Navigation::Router_typeof(), offsetof(::g::ImpactPage, router), 0,
-        ::g::Fuse::Reactive::EventBinding_typeof(), offsetof(::g::ImpactPage, temp_eb40), 0,
-        ::g::Fuse::Reactive::EventBinding_typeof(), offsetof(::g::ImpactPage, temp_eb41), 0,
-        ::g::Fuse::Reactive::EventBinding_typeof(), offsetof(::g::ImpactPage, temp_eb42), 0,
-        ::g::Fuse::Reactive::EventBinding_typeof(), offsetof(::g::ImpactPage, temp_eb43), 0,
-        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(::g::ImpactPage, temp_Value_inst), 0,
-        ::g::Fuse::Controls::Rectangle_typeof(), offsetof(::g::ImpactPage, tenrec), 0,
-        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::Float4_typeof(), NULL), offsetof(::g::ImpactPage, tenrec_Color_inst), 0,
-        ::g::Fuse::Controls::Rectangle_typeof(), offsetof(::g::ImpactPage, twentyfiverec), 0,
-        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::Float4_typeof(), NULL), offsetof(::g::ImpactPage, twentyfiverec_Color_inst), 0,
-        ::g::Fuse::Controls::Rectangle_typeof(), offsetof(::g::ImpactPage, ZipBar), 0,
-        ::TYPES[0/*string[]*/], (uintptr_t)&::g::ImpactPage::__g_static_nametable1_, uFieldFlagsStatic,
-        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&::g::ImpactPage::__selector0_, uFieldFlagsStatic,
-        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&::g::ImpactPage::__selector1_, uFieldFlagsStatic,
-        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&::g::ImpactPage::__selector2_, uFieldFlagsStatic,
-        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&::g::ImpactPage::__selector3_, uFieldFlagsStatic,
-        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&::g::ImpactPage::__selector4_, uFieldFlagsStatic,
-        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&::g::ImpactPage::__selector5_, uFieldFlagsStatic,
-        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&::g::ImpactPage::__selector6_, uFieldFlagsStatic,
-        ::g::Fuse::Font_typeof(), (uintptr_t)&::g::ImpactPage::Curl_, uFieldFlagsStatic);
+        ::g::Uno::Collections::IEnumerable_typeof()->MakeType(::g::Fuse::Visual_typeof(), NULL), offsetof(::g::Fuse::Controls::Panel_type, interface9),
+        ::TYPES[3/*Uno.Collections.ICollection<Fuse.Node>*/], offsetof(::g::Fuse::Controls::Panel_type, interface10),
+        ::g::Uno::Collections::IEnumerable_typeof()->MakeType(::g::Fuse::Node_typeof(), NULL), offsetof(::g::Fuse::Controls::Panel_type, interface11),
+        ::g::Fuse::Triggers::Actions::IShow_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface12),
+        ::g::Fuse::Triggers::Actions::IHide_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface13),
+        ::g::Fuse::Triggers::Actions::ICollapse_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface14),
+        ::g::Fuse::IActualPlacement_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface15),
+        ::g::Fuse::Animations::IResize_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface16),
+        ::g::Fuse::Drawing::ISurfaceDrawable_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface17));
+    type->SetFields(117,
+        ::g::Uno::UX::NameTable_typeof(), offsetof(ImpactPage, __g_nametable1), 0,
+        ::g::Fuse::Controls::Rectangle_typeof(), offsetof(ImpactPage, fiverec), 0,
+        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::Float4_typeof(), NULL), offsetof(ImpactPage, fiverec_Color_inst), 0,
+        ::g::Fuse::Controls::StackPanel_typeof(), offsetof(ImpactPage, outerpanel), 0,
+        ::g::Fuse::Navigation::Router_typeof(), offsetof(ImpactPage, router), 0,
+        ::g::Fuse::Reactive::EventBinding_typeof(), offsetof(ImpactPage, temp_eb40), 0,
+        ::g::Fuse::Reactive::EventBinding_typeof(), offsetof(ImpactPage, temp_eb41), 0,
+        ::g::Fuse::Reactive::EventBinding_typeof(), offsetof(ImpactPage, temp_eb42), 0,
+        ::g::Fuse::Reactive::EventBinding_typeof(), offsetof(ImpactPage, temp_eb43), 0,
+        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(ImpactPage, temp_Value_inst), 0,
+        ::g::Fuse::Controls::Rectangle_typeof(), offsetof(ImpactPage, tenrec), 0,
+        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::Float4_typeof(), NULL), offsetof(ImpactPage, tenrec_Color_inst), 0,
+        ::g::Fuse::Controls::Rectangle_typeof(), offsetof(ImpactPage, twentyfiverec), 0,
+        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::Float4_typeof(), NULL), offsetof(ImpactPage, twentyfiverec_Color_inst), 0,
+        ::g::Fuse::Controls::Rectangle_typeof(), offsetof(ImpactPage, ZipBar), 0,
+        ::TYPES[0/*string[]*/], (uintptr_t)&ImpactPage::__g_static_nametable1_, uFieldFlagsStatic,
+        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&ImpactPage::__selector0_, uFieldFlagsStatic,
+        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&ImpactPage::__selector1_, uFieldFlagsStatic,
+        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&ImpactPage::__selector2_, uFieldFlagsStatic,
+        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&ImpactPage::__selector3_, uFieldFlagsStatic,
+        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&ImpactPage::__selector4_, uFieldFlagsStatic,
+        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&ImpactPage::__selector5_, uFieldFlagsStatic,
+        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&ImpactPage::__selector6_, uFieldFlagsStatic,
+        ::g::Fuse::Font_typeof(), (uintptr_t)&ImpactPage::Curl_, uFieldFlagsStatic);
 }
 
 ::g::Fuse::Controls::Panel_type* ImpactPage_typeof()
@@ -179,34 +184,36 @@ static void ImpactPage_build(uType* type)
 
     uTypeOptions options;
     options.BaseDefinition = ::g::Fuse::Controls::Page_typeof();
-    options.FieldCount = 135;
-    options.InterfaceCount = 17;
+    options.FieldCount = 141;
+    options.InterfaceCount = 18;
+    options.DependencyCount = 2;
     options.ObjectSize = sizeof(ImpactPage);
     options.TypeSize = sizeof(::g::Fuse::Controls::Panel_type);
     type = (::g::Fuse::Controls::Panel_type*)uClassType::New("ImpactPage", options);
     type->fp_build_ = ImpactPage_build;
     type->fp_cctor_ = ImpactPage__cctor_4_fn;
-    type->interface16.fp_Draw = (void(*)(uObject*, ::g::Fuse::Drawing::Surface*))::g::Fuse::Controls::Panel__FuseDrawingISurfaceDrawableDraw_fn;
-    type->interface16.fp_get_IsPrimary = (void(*)(uObject*, bool*))::g::Fuse::Controls::Panel__FuseDrawingISurfaceDrawableget_IsPrimary_fn;
-    type->interface16.fp_get_ElementSize = (void(*)(uObject*, ::g::Uno::Float2*))::g::Fuse::Controls::Panel__FuseDrawingISurfaceDrawableget_ElementSize_fn;
-    type->interface11.fp_Show = (void(*)(uObject*))::g::Fuse::Elements::Element__FuseTriggersActionsIShowShow_fn;
-    type->interface13.fp_Collapse = (void(*)(uObject*))::g::Fuse::Elements::Element__FuseTriggersActionsICollapseCollapse_fn;
-    type->interface12.fp_Hide = (void(*)(uObject*))::g::Fuse::Elements::Element__FuseTriggersActionsIHideHide_fn;
-    type->interface15.fp_SetSize = (void(*)(uObject*, ::g::Uno::Float2*))::g::Fuse::Elements::Element__FuseAnimationsIResizeSetSize_fn;
-    type->interface14.fp_get_ActualSize = (void(*)(uObject*, ::g::Uno::Float3*))::g::Fuse::Elements::Element__FuseIActualPlacementget_ActualSize_fn;
-    type->interface14.fp_add_Placed = (void(*)(uObject*, uDelegate*))::g::Fuse::Elements::Element__add_Placed_fn;
-    type->interface14.fp_remove_Placed = (void(*)(uObject*, uDelegate*))::g::Fuse::Elements::Element__remove_Placed_fn;
-    type->interface9.fp_Clear = (void(*)(uObject*))::g::Fuse::Visual__UnoCollectionsICollectionFuseNodeClear_fn;
-    type->interface9.fp_Contains = (void(*)(uObject*, void*, bool*))::g::Fuse::Visual__UnoCollectionsICollectionFuseNodeContains_fn;
+    type->interface17.fp_Draw = (void(*)(uObject*, ::g::Fuse::Drawing::Surface*))::g::Fuse::Controls::Panel__FuseDrawingISurfaceDrawableDraw_fn;
+    type->interface17.fp_get_IsPrimary = (void(*)(uObject*, bool*))::g::Fuse::Controls::Panel__FuseDrawingISurfaceDrawableget_IsPrimary_fn;
+    type->interface17.fp_get_ElementSize = (void(*)(uObject*, ::g::Uno::Float2*))::g::Fuse::Controls::Panel__FuseDrawingISurfaceDrawableget_ElementSize_fn;
+    type->interface12.fp_Show = (void(*)(uObject*))::g::Fuse::Elements::Element__FuseTriggersActionsIShowShow_fn;
+    type->interface14.fp_Collapse = (void(*)(uObject*))::g::Fuse::Elements::Element__FuseTriggersActionsICollapseCollapse_fn;
+    type->interface13.fp_Hide = (void(*)(uObject*))::g::Fuse::Elements::Element__FuseTriggersActionsIHideHide_fn;
+    type->interface16.fp_SetSize = (void(*)(uObject*, ::g::Uno::Float2*))::g::Fuse::Elements::Element__FuseAnimationsIResizeSetSize_fn;
+    type->interface15.fp_get_ActualSize = (void(*)(uObject*, ::g::Uno::Float3*))::g::Fuse::Elements::Element__FuseIActualPlacementget_ActualSize_fn;
+    type->interface15.fp_add_Placed = (void(*)(uObject*, uDelegate*))::g::Fuse::Elements::Element__add_Placed_fn;
+    type->interface15.fp_remove_Placed = (void(*)(uObject*, uDelegate*))::g::Fuse::Elements::Element__remove_Placed_fn;
+    type->interface9.fp_GetEnumerator = (void(*)(uObject*, uObject**))::g::Fuse::Visual__UnoCollectionsIEnumerableFuseVisualGetEnumerator_fn;
+    type->interface10.fp_Clear = (void(*)(uObject*))::g::Fuse::Visual__UnoCollectionsICollectionFuseNodeClear_fn;
+    type->interface10.fp_Contains = (void(*)(uObject*, void*, bool*))::g::Fuse::Visual__UnoCollectionsICollectionFuseNodeContains_fn;
     type->interface6.fp_RemoveAt = (void(*)(uObject*, int*))::g::Fuse::Visual__UnoCollectionsIListFuseNodeRemoveAt_fn;
-    type->interface10.fp_GetEnumerator = (void(*)(uObject*, uObject**))::g::Fuse::Visual__UnoCollectionsIEnumerableFuseNodeGetEnumerator_fn;
-    type->interface9.fp_get_Count = (void(*)(uObject*, int*))::g::Fuse::Visual__UnoCollectionsICollectionFuseNodeget_Count_fn;
+    type->interface11.fp_GetEnumerator = (void(*)(uObject*, uObject**))::g::Fuse::Visual__UnoCollectionsIEnumerableFuseNodeGetEnumerator_fn;
+    type->interface10.fp_get_Count = (void(*)(uObject*, int*))::g::Fuse::Visual__UnoCollectionsICollectionFuseNodeget_Count_fn;
     type->interface6.fp_get_Item = (void(*)(uObject*, int*, uTRef))::g::Fuse::Visual__UnoCollectionsIListFuseNodeget_Item_fn;
     type->interface6.fp_Insert = (void(*)(uObject*, int*, void*))::g::Fuse::Visual__Insert1_fn;
     type->interface7.fp_OnPropertyChanged = (void(*)(uObject*, ::g::Uno::UX::PropertyObject*, ::g::Uno::UX::Selector*))::g::Fuse::Controls::Control__OnPropertyChanged2_fn;
     type->interface8.fp_FindTemplate = (void(*)(uObject*, uString*, ::g::Uno::UX::Template**))::g::Fuse::Visual__FindTemplate_fn;
-    type->interface9.fp_Add = (void(*)(uObject*, void*))::g::Fuse::Visual__Add1_fn;
-    type->interface9.fp_Remove = (void(*)(uObject*, void*, bool*))::g::Fuse::Visual__Remove1_fn;
+    type->interface10.fp_Add = (void(*)(uObject*, void*))::g::Fuse::Visual__Add1_fn;
+    type->interface10.fp_Remove = (void(*)(uObject*, void*, bool*))::g::Fuse::Visual__Remove1_fn;
     type->interface4.fp_Clear = (void(*)(uObject*))::g::Fuse::Node__UnoCollectionsICollectionFuseBindingClear_fn;
     type->interface4.fp_Contains = (void(*)(uObject*, void*, bool*))::g::Fuse::Node__UnoCollectionsICollectionFuseBindingContains_fn;
     type->interface0.fp_RemoveAt = (void(*)(uObject*, int*))::g::Fuse::Node__UnoCollectionsIListFuseBindingRemoveAt_fn;
@@ -237,12 +244,6 @@ void ImpactPage__InitializeUX_fn(ImpactPage* __this)
     __this->InitializeUX();
 }
 
-// public ImpactPage New(Fuse.Navigation.Router router) :38
-void ImpactPage__New5_fn(::g::Fuse::Navigation::Router* router1, ImpactPage** __retval)
-{
-    *__retval = ImpactPage::New5(router1);
-}
-
 uSStrong<uArray*> ImpactPage::__g_static_nametable1_;
 ::g::Uno::UX::Selector ImpactPage::__selector0_;
 ::g::Uno::UX::Selector ImpactPage::__selector1_;
@@ -264,20 +265,20 @@ void ImpactPage::ctor_8(::g::Fuse::Navigation::Router* router1)
 // private void InitializeUX() [instance] :44
 void ImpactPage::InitializeUX()
 {
-    __g_nametable1 = ::g::Uno::UX::NameTable::New1(NULL, ImpactPage::__g_static_nametable1());
+    __g_nametable1 = ::g::Uno::UX::NameTable::New1(NULL, ImpactPage::__g_static_nametable1_);
     ::g::Fuse::Reactive::Data* temp1 = ::g::Fuse::Reactive::Data::New1(::STRINGS[13/*"extractzip"*/]);
     ::g::Fuse::Controls::TextInput* temp = ::g::Fuse::Controls::TextInput::New3();
-    temp_Value_inst = ::g::emrals_FuseControlsTextInputControl_Value_Property::New1(temp, ImpactPage::__selector0());
+    temp_Value_inst = ::g::emrals_FuseControlsTextInputControl_Value_Property::New1(temp, ImpactPage::__selector0_);
     ::g::Fuse::Reactive::Data* temp2 = ::g::Fuse::Reactive::Data::New1(::STRINGS[14/*"zipcode"*/]);
     ::g::Fuse::Reactive::Data* temp3 = ::g::Fuse::Reactive::Data::New1(::STRINGS[15/*"goToPayment50"*/]);
     fiverec = ::g::Fuse::Controls::Rectangle::New3();
-    fiverec_Color_inst = ::g::emrals_FuseControlsShape_Color_Property::New1(fiverec, ImpactPage::__selector1());
+    fiverec_Color_inst = ::g::emrals_FuseControlsShape_Color_Property::New1(fiverec, ImpactPage::__selector1_);
     ::g::Fuse::Reactive::Data* temp4 = ::g::Fuse::Reactive::Data::New1(::STRINGS[16/*"goToPayment10"*/]);
     tenrec = ::g::Fuse::Controls::Rectangle::New3();
-    tenrec_Color_inst = ::g::emrals_FuseControlsShape_Color_Property::New1(tenrec, ImpactPage::__selector1());
+    tenrec_Color_inst = ::g::emrals_FuseControlsShape_Color_Property::New1(tenrec, ImpactPage::__selector1_);
     ::g::Fuse::Reactive::Data* temp5 = ::g::Fuse::Reactive::Data::New1(::STRINGS[17/*"goToPayment25"*/]);
     twentyfiverec = ::g::Fuse::Controls::Rectangle::New3();
-    twentyfiverec_Color_inst = ::g::emrals_FuseControlsShape_Color_Property::New1(twentyfiverec, ImpactPage::__selector1());
+    twentyfiverec_Color_inst = ::g::emrals_FuseControlsShape_Color_Property::New1(twentyfiverec, ImpactPage::__selector1_);
     ::g::Fuse::Reactive::JavaScript* temp6 = ::g::Fuse::Reactive::JavaScript::New2(__g_nametable1);
     ::g::Fuse::Triggers::WhileKeyboardVisible* temp7 = ::g::Fuse::Triggers::WhileKeyboardVisible::New2();
     ::g::Fuse::Animations::Move* temp8 = ::g::Fuse::Animations::Move::New2();
@@ -289,14 +290,14 @@ void ImpactPage::InitializeUX()
     ::g::Fuse::Controls::Rectangle* temp13 = ::g::Fuse::Controls::Rectangle::New3();
     ::g::Curl* temp14 = ::g::Curl::New4();
     ::g::Fuse::Controls::Image* temp15 = ::g::Fuse::Controls::Image::New3();
-    temp_eb40 = ::g::Fuse::Reactive::EventBinding::New1((uObject*)temp1, __g_nametable1);
+    temp_eb40 = ::g::Fuse::Reactive::EventBinding::New1((uObject*)temp1);
     ZipBar = ::g::Fuse::Controls::Rectangle::New3();
     ::g::Fuse::Controls::ClientPanel* temp16 = ::g::Fuse::Controls::ClientPanel::New5();
     ::g::Fuse::Controls::StackPanel* temp17 = ::g::Fuse::Controls::StackPanel::New4();
     ::g::Fuse::Controls::Grid* temp18 = ::g::Fuse::Controls::Grid::New4();
     ::g::Fuse::Controls::Text* temp19 = ::g::Fuse::Controls::Text::New3();
     ::g::Fuse::Controls::Rectangle* temp20 = ::g::Fuse::Controls::Rectangle::New3();
-    ::g::Fuse::Reactive::DataBinding* temp21 = ::g::Fuse::Reactive::DataBinding::New1(temp_Value_inst, (uObject*)temp2, __g_nametable1, 3);
+    ::g::Fuse::Reactive::DataBinding* temp21 = ::g::Fuse::Reactive::DataBinding::New1(temp_Value_inst, (uObject*)temp2, 3);
     ::g::Fuse::Controls::Grid* temp22 = ::g::Fuse::Controls::Grid::New4();
     ::g::Fuse::Controls::Text* temp23 = ::g::Fuse::Controls::Text::New3();
     ::g::Fuse::Controls::Rectangle* temp24 = ::g::Fuse::Controls::Rectangle::New3();
@@ -304,25 +305,25 @@ void ImpactPage::InitializeUX()
     ::g::Fuse::Controls::Text* temp26 = ::g::Fuse::Controls::Text::New3();
     ::g::Fuse::Controls::Grid* temp27 = ::g::Fuse::Controls::Grid::New4();
     ::g::Horse* temp28 = ::g::Horse::New4();
-    temp_eb41 = ::g::Fuse::Reactive::EventBinding::New1((uObject*)temp3, __g_nametable1);
+    temp_eb41 = ::g::Fuse::Reactive::EventBinding::New1((uObject*)temp3);
     ::g::Fuse::Gestures::WhilePressed* temp29 = ::g::Fuse::Gestures::WhilePressed::New2();
     ::g::Fuse::Animations::Change* temp30 = (::g::Fuse::Animations::Change*)::g::Fuse::Animations::Change::New2(::TYPES[1/*Fuse.Animations.Change<float4>*/], fiverec_Color_inst);
     ::g::Horse* temp31 = ::g::Horse::New4();
-    temp_eb42 = ::g::Fuse::Reactive::EventBinding::New1((uObject*)temp4, __g_nametable1);
+    temp_eb42 = ::g::Fuse::Reactive::EventBinding::New1((uObject*)temp4);
     ::g::Fuse::Gestures::WhilePressed* temp32 = ::g::Fuse::Gestures::WhilePressed::New2();
     ::g::Fuse::Animations::Change* temp33 = (::g::Fuse::Animations::Change*)::g::Fuse::Animations::Change::New2(::TYPES[1/*Fuse.Animations.Change<float4>*/], tenrec_Color_inst);
     ::g::Horse* temp34 = ::g::Horse::New4();
-    temp_eb43 = ::g::Fuse::Reactive::EventBinding::New1((uObject*)temp5, __g_nametable1);
+    temp_eb43 = ::g::Fuse::Reactive::EventBinding::New1((uObject*)temp5);
     ::g::Fuse::Gestures::WhilePressed* temp35 = ::g::Fuse::Gestures::WhilePressed::New2();
     ::g::Fuse::Animations::Change* temp36 = (::g::Fuse::Animations::Change*)::g::Fuse::Animations::Change::New2(::TYPES[1/*Fuse.Animations.Change<float4>*/], twentyfiverec_Color_inst);
     ::g::Fuse::Drawing::StaticSolidColor* temp37 = ::g::Fuse::Drawing::StaticSolidColor::New2(::g::Uno::Float4__New2(1.0f, 1.0f, 1.0f, 1.0f));
     temp6->LineNumber(2);
     temp6->FileName(::STRINGS[18/*"Pages/Impac...*/]);
-    temp6->File(::g::Uno::UX::BundleFileSource::New1(::g::emrals_bundle::ImpactPage8e80ff68()));
+    temp6->File(::g::Uno::UX::BundleFileSource::New1(::g::emrals_bundle::ImpactPagef1f8893f()));
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(temp7->Animators()), ::TYPES[2/*Uno.Collections.ICollection<Fuse.Animations.Animator>*/]), temp8);
     temp8->Y(-200.0f);
     temp8->Target(outerpanel);
-    temp8->Easing(::g::Fuse::Animations::Easing::CircularOut());
+    temp8->Easing(::g::Fuse::Animations::Easing::CircularOut_);
     temp9->Height(::g::Uno::UX::Size__New1(45.0f, 1));
     temp9->Alignment(4);
     temp9->Y(::g::Uno::UX::Size__New1(0.0f, 1));
@@ -333,7 +334,7 @@ void ImpactPage::InitializeUX()
     temp10->Margin(::g::Uno::Float4__New2(0.0f, 10.0f, 0.0f, 0.0f));
     uPtr(outerpanel)->Alignment(4);
     uPtr(outerpanel)->Y(::g::Uno::UX::Size__New1(45.0f, 1));
-    uPtr(outerpanel)->Name(ImpactPage::__selector2());
+    uPtr(outerpanel)->Name(ImpactPage::__selector2_);
     uPtr(outerpanel)->Background(temp37);
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(uPtr(outerpanel)->Children()), ::TYPES[3/*Uno.Collections.ICollection<Fuse.Node>*/]), temp12);
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(uPtr(outerpanel)->Children()), ::TYPES[3/*Uno.Collections.ICollection<Fuse.Node>*/]), ZipBar);
@@ -359,14 +360,14 @@ void ImpactPage::InitializeUX()
     temp15->Margin(::g::Uno::Float4__New2(0.0f, 0.0f, 0.0f, 0.0f));
     temp15->Padding(::g::Uno::Float4__New2(0.0f, 0.0f, 0.0f, 0.0f));
     ::g::Fuse::Gestures::Clicked::AddHandler(temp15, uDelegate::New(::TYPES[4/*Fuse.Gestures.ClickedHandler*/], (void*)::g::Fuse::Reactive::EventBinding__OnEvent_fn, uPtr(temp_eb40)));
-    temp15->File(::g::Uno::UX::BundleFileSource::New1(::g::emrals_bundle::cityb1f11489()));
+    temp15->File(::g::Uno::UX::BundleFileSource::New1(::g::emrals_bundle::city7a2d2b13()));
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(temp15->Bindings()), ::TYPES[5/*Uno.Collections.ICollection<Fuse.Binding>*/]), temp_eb40);
     uPtr(ZipBar)->CornerRadius(::g::Uno::Float4__New2(10.0f, 10.0f, 10.0f, 10.0f));
     uPtr(ZipBar)->Color(::g::Uno::Float4__New2(0.9607843f, 0.9607843f, 0.9607843f, 1.0f));
     uPtr(ZipBar)->Width(::g::Uno::UX::Size__New1(320.0f, 1));
     uPtr(ZipBar)->Height(::g::Uno::UX::Size__New1(100.0f, 4));
     uPtr(ZipBar)->Margin(::g::Uno::Float4__New2(0.0f, 20.0f, 0.0f, 20.0f));
-    uPtr(ZipBar)->Name(ImpactPage::__selector3());
+    uPtr(ZipBar)->Name(ImpactPage::__selector3_);
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(uPtr(ZipBar)->Children()), ::TYPES[3/*Uno.Collections.ICollection<Fuse.Node>*/]), temp16);
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(temp16->Children()), ::TYPES[3/*Uno.Collections.ICollection<Fuse.Node>*/]), temp17);
     temp17->Margin(::g::Uno::Float4__New2(0.0f, 15.0f, 0.0f, 0.0f));
@@ -429,7 +430,7 @@ void ImpactPage::InitializeUX()
     uPtr(fiverec)->Height(::g::Uno::UX::Size__New1(48.0f, 1));
     uPtr(fiverec)->Alignment(10);
     uPtr(fiverec)->Margin(::g::Uno::Float4__New2(0.0f, 0.0f, 0.0f, 0.0f));
-    uPtr(fiverec)->Name(ImpactPage::__selector4());
+    uPtr(fiverec)->Name(ImpactPage::__selector4_);
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(uPtr(fiverec)->Children()), ::TYPES[3/*Uno.Collections.ICollection<Fuse.Node>*/]), temp28);
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(uPtr(fiverec)->Children()), ::TYPES[3/*Uno.Collections.ICollection<Fuse.Node>*/]), temp29);
     temp28->Value(::STRINGS[27/*"$5/m"*/]);
@@ -447,7 +448,7 @@ void ImpactPage::InitializeUX()
     uPtr(tenrec)->Height(::g::Uno::UX::Size__New1(48.0f, 1));
     uPtr(tenrec)->Alignment(10);
     uPtr(tenrec)->Margin(::g::Uno::Float4__New2(0.0f, 0.0f, 0.0f, 0.0f));
-    uPtr(tenrec)->Name(ImpactPage::__selector5());
+    uPtr(tenrec)->Name(ImpactPage::__selector5_);
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(uPtr(tenrec)->Children()), ::TYPES[3/*Uno.Collections.ICollection<Fuse.Node>*/]), temp31);
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(uPtr(tenrec)->Children()), ::TYPES[3/*Uno.Collections.ICollection<Fuse.Node>*/]), temp32);
     temp31->Value(::STRINGS[28/*"$10/m"*/]);
@@ -465,7 +466,7 @@ void ImpactPage::InitializeUX()
     uPtr(twentyfiverec)->Height(::g::Uno::UX::Size__New1(48.0f, 1));
     uPtr(twentyfiverec)->Alignment(10);
     uPtr(twentyfiverec)->Margin(::g::Uno::Float4__New2(0.0f, 0.0f, 0.0f, 0.0f));
-    uPtr(twentyfiverec)->Name(ImpactPage::__selector6());
+    uPtr(twentyfiverec)->Name(ImpactPage::__selector6_);
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(uPtr(twentyfiverec)->Children()), ::TYPES[3/*Uno.Collections.ICollection<Fuse.Node>*/]), temp34);
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(uPtr(twentyfiverec)->Children()), ::TYPES[3/*Uno.Collections.ICollection<Fuse.Node>*/]), temp35);
     temp34->Value(::STRINGS[29/*"$25/m"*/]);
@@ -492,14 +493,6 @@ void ImpactPage::InitializeUX()
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(Children()), ::TYPES[3/*Uno.Collections.ICollection<Fuse.Node>*/]), temp7);
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(Children()), ::TYPES[3/*Uno.Collections.ICollection<Fuse.Node>*/]), temp9);
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(Children()), ::TYPES[3/*Uno.Collections.ICollection<Fuse.Node>*/]), outerpanel);
-}
-
-// public ImpactPage New(Fuse.Navigation.Router router) [static] :38
-ImpactPage* ImpactPage::New5(::g::Fuse::Navigation::Router* router1)
-{
-    ImpactPage* obj1 = (ImpactPage*)uNew(ImpactPage_typeof());
-    obj1->ctor_8(router1);
-    return obj1;
 }
 // }
 

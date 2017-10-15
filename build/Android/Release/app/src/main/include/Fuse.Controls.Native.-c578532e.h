@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Controls.Native/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Controls.Native/1.3.0-rc2/ImageLoader.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -18,7 +18,7 @@ namespace Fuse{
 namespace Controls{
 namespace Native{
 
-// internal static extern class ImageLoader :89
+// internal static extern class ImageLoader :63
 // {
 uClassType* ImageLoader_typeof();
 void ImageLoader__Load_fn(::g::Fuse::Resources::HttpImageSource* http, ::g::Uno::Threading::Future1** __retval);
@@ -33,9 +33,9 @@ void ImageLoader__ReleaseHandle_fn(::g::Fuse::Controls::Native::ImageHandle* han
 struct ImageLoader : uObject
 {
     static uSStrong< ::g::Uno::Collections::Dictionary*> _imageHandleCache_;
-    static uSStrong< ::g::Uno::Collections::Dictionary*>& _imageHandleCache() { return ImageLoader_typeof()->Init(), _imageHandleCache_; }
+    static uSStrong< ::g::Uno::Collections::Dictionary*>& _imageHandleCache() { return _imageHandleCache_; }
     static uSStrong< ::g::Uno::Collections::Dictionary*> _pendingeImages_;
-    static uSStrong< ::g::Uno::Collections::Dictionary*>& _pendingeImages() { return ImageLoader_typeof()->Init(), _pendingeImages_; }
+    static uSStrong< ::g::Uno::Collections::Dictionary*>& _pendingeImages() { return _pendingeImages_; }
 
     static ::g::Uno::Threading::Future1* Load(::g::Fuse::Resources::HttpImageSource* http);
     static ::g::Fuse::Controls::Native::ImageHandle* Load1(uString* uri);

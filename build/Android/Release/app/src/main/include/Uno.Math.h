@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/UnoCore/1.2.2/source/uno/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/UnoCore/1.3.1/Source/Uno/Math.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -12,7 +12,7 @@ namespace g{namespace Uno{struct Math;}}
 namespace g{
 namespace Uno{
 
-// public static class Math :4078
+// public static class Math :8
 // {
 uClassType* Math_typeof();
 void Math__Abs_fn(double* x, double* __retval);
@@ -38,6 +38,7 @@ void Math__Cos_fn(double* radians, double* __retval);
 void Math__Cos1_fn(float* radians, float* __retval);
 void Math__DegreesToRadians1_fn(float* degrees, float* __retval);
 void Math__Exp1_fn(float* x, float* __retval);
+void Math__Exp22_fn(float* x, float* __retval);
 void Math__Floor_fn(double* x, double* __retval);
 void Math__Floor1_fn(float* x, float* __retval);
 void Math__Floor2_fn(::g::Uno::Float2* v, ::g::Uno::Float2* __retval);
@@ -46,6 +47,8 @@ void Math__Lerp1_fn(float* a, float* b, float* t, float* __retval);
 void Math__Lerp2_fn(::g::Uno::Float2* a, ::g::Uno::Float2* b, float* t, ::g::Uno::Float2* __retval);
 void Math__Lerp4_fn(::g::Uno::Float3* a, ::g::Uno::Float3* b, float* t, ::g::Uno::Float3* __retval);
 void Math__Lerp6_fn(::g::Uno::Float4* a, ::g::Uno::Float4* b, float* t, ::g::Uno::Float4* __retval);
+void Math__Log1_fn(float* x, float* __retval);
+void Math__Log22_fn(float* x, float* __retval);
 void Math__Max_fn(double* a, double* b, double* __retval);
 void Math__Max1_fn(float* a, float* b, float* __retval);
 void Math__Max2_fn(::g::Uno::Float2* a, float* b, ::g::Uno::Float2* __retval);
@@ -105,6 +108,7 @@ struct Math : uObject
     static float Cos1(float radians);
     static float DegreesToRadians1(float degrees);
     static float Exp1(float x);
+    static float Exp22(float x);
     static double Floor(double x);
     static float Floor1(float x);
     static ::g::Uno::Float2 Floor2(::g::Uno::Float2 v);
@@ -113,6 +117,8 @@ struct Math : uObject
     static ::g::Uno::Float2 Lerp2(::g::Uno::Float2 a, ::g::Uno::Float2 b, float t);
     static ::g::Uno::Float3 Lerp4(::g::Uno::Float3 a, ::g::Uno::Float3 b, float t);
     static ::g::Uno::Float4 Lerp6(::g::Uno::Float4 a, ::g::Uno::Float4 b, float t);
+    static float Log1(float x);
+    static float Log22(float x);
     static double Max(double a, double b);
     static float Max1(float a, float b);
     static ::g::Uno::Float2 Max2(::g::Uno::Float2 a, float b);

@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Animations/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Animations/1.3.0-rc2/Change.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -11,7 +11,7 @@ namespace g{
 namespace Fuse{
 namespace Animations{
 
-// internal sealed class ConverterSize :900
+// internal sealed class ConverterSize :254
 // {
 ::g::Fuse::Animations::Converter_type* ConverterSize_typeof();
 void ConverterSize__ctor_1_fn(ConverterSize* __this);
@@ -22,7 +22,7 @@ void ConverterSize__Out_fn(ConverterSize* __this, ::g::Uno::Float4* value, ::g::
 struct ConverterSize : ::g::Fuse::Animations::Converter
 {
     static uSStrong<ConverterSize*> Singleton_;
-    static uSStrong<ConverterSize*>& Singleton() { return ConverterSize_typeof()->Init(), Singleton_; }
+    static uSStrong<ConverterSize*>& Singleton() { return Singleton_; }
 
     void ctor_1();
     static ConverterSize* New1();

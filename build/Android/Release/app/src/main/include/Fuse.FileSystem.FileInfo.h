@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.FileSystem/1.2.1/uno/io/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.FileSystem/1.3.0-rc2/Uno/IO/FileInfo.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -10,7 +10,7 @@ namespace g{
 namespace Fuse{
 namespace FileSystem{
 
-// public sealed class FileInfo :66
+// public sealed class FileInfo :5
 // {
 ::g::Fuse::FileSystem::FileSystemInfo_type* FileInfo_typeof();
 void FileInfo__ctor_1_fn(FileInfo* __this, uString* originalPath);

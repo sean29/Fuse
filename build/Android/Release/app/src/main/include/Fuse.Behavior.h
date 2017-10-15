@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Nodes/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Nodes/1.3.0-rc2/Behavior.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -15,7 +15,7 @@ namespace g{namespace Fuse{struct Behavior;}}
 namespace g{
 namespace Fuse{
 
-// public abstract class Behavior :456
+// public abstract class Behavior :6
 // {
 ::g::Fuse::Node_type* Behavior_typeof();
 void Behavior__ctor_2_fn(Behavior* __this);

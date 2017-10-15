@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.FileSystem/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.FileSystem/1.3.0-rc2/FileSystemModule.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -20,7 +20,7 @@ namespace g{
 namespace Fuse{
 namespace FileSystem{
 
-// public sealed class FileSystemModule :112
+// public sealed class FileSystemModule :42
 // {
 ::g::Fuse::Scripting::NativeModule_type* FileSystemModule_typeof();
 void FileSystemModule__ctor_2_fn(FileSystemModule* __this);

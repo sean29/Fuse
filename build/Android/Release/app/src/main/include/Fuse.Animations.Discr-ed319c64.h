@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Animations/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Animations/1.3.0-rc2/DiscreteSingleTrack.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -13,7 +13,7 @@ namespace g{
 namespace Fuse{
 namespace Animations{
 
-// internal sealed class DiscreteSingleTrack :1396
+// internal sealed class DiscreteSingleTrack :5
 // {
 struct DiscreteSingleTrack_type : uType
 {
@@ -32,7 +32,7 @@ void DiscreteSingleTrack__New1_fn(DiscreteSingleTrack** __retval);
 struct DiscreteSingleTrack : uObject
 {
     static uSStrong<DiscreteSingleTrack*> Singleton_;
-    static uSStrong<DiscreteSingleTrack*>& Singleton() { return DiscreteSingleTrack_typeof()->Init(), Singleton_; }
+    static uSStrong<DiscreteSingleTrack*>& Singleton() { return Singleton_; }
 
     void ctor_();
     static DiscreteSingleTrack* New1();

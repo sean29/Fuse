@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Experimental.TextureLoader/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Experimental.TextureLoader/1.3.0-rc2/TextureLoader.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -10,7 +10,7 @@ namespace g{
 namespace Experimental{
 namespace TextureLoader{
 
-// internal sealed class Callback :11
+// internal sealed class Callback :9
 // {
 uType* Callback_typeof();
 void Callback__ctor__fn(Callback* __this, uDelegate* action);

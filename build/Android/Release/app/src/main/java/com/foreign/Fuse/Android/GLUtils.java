@@ -23,7 +23,7 @@ public class GLUtils
         android.util.Log.d("emrals", (message==null ? "null" : message.toString()));
     }
 
-    public static void TexImage2D345(final int target,final int level,final Object bitmap,final int border)
+    public static void TexImage2D344(final int target,final int level,final Object bitmap,final int border)
     {
         android.opengl.GLUtils.texImage2D(target, level, ((android.graphics.Bitmap)bitmap), border);
     }

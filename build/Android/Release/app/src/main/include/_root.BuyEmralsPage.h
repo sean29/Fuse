@@ -1,4 +1,4 @@
-// This file was generated based on '.uno/ux11/BuyEmralsPage.g.uno'.
+// This file was generated based on '.uno/ux13/BuyEmralsPage.g.uno'.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -15,6 +15,7 @@
 #include <Fuse.Triggers.Actions.IHide.h>
 #include <Fuse.Triggers.Actions.IShow.h>
 #include <Fuse.Triggers.Actions-ea70af1f.h>
+#include <Fuse.Visual.h>
 #include <Uno.Collections.ICollection-1.h>
 #include <Uno.Collections.IEnumerable-1.h>
 #include <Uno.Collections.IList-1.h>
@@ -30,12 +31,11 @@ namespace g{struct BuyEmralsPage;}
 
 namespace g{
 
-// public partial sealed class BuyEmralsPage :2
+// public partial class BuyEmralsPage :2
 // {
 ::g::Fuse::Controls::Panel_type* BuyEmralsPage_typeof();
 void BuyEmralsPage__ctor_8_fn(BuyEmralsPage* __this, ::g::Fuse::Navigation::Router* router1);
 void BuyEmralsPage__InitializeUX_fn(BuyEmralsPage* __this);
-void BuyEmralsPage__New5_fn(::g::Fuse::Navigation::Router* router1, BuyEmralsPage** __retval);
 
 struct BuyEmralsPage : ::g::Fuse::Controls::Page
 {
@@ -71,7 +71,6 @@ struct BuyEmralsPage : ::g::Fuse::Controls::Page
 
     void ctor_8(::g::Fuse::Navigation::Router* router1);
     void InitializeUX();
-    static BuyEmralsPage* New5(::g::Fuse::Navigation::Router* router1);
 };
 // }
 

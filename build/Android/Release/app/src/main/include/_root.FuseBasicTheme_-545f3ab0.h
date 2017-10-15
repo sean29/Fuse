@@ -1,4 +1,4 @@
-// This file was generated based on '/Users/a/Library/Application Support/Fusetools/Packages/Fuse.BasicTheme/1.2.1/.uno/ux11/$.uno'.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.BasicTheme/1.3.0-rc2/.uno/ux13/Fuse.BasicTheme.unoproj.g.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -9,7 +9,7 @@ namespace g{struct FuseBasicTheme_accessor_Fuse_Controls_ButtonBase_Text;}
 
 namespace g{
 
-// internal sealed class FuseBasicTheme_accessor_Fuse_Controls_ButtonBase_Text :765
+// internal sealed class FuseBasicTheme_accessor_Fuse_Controls_ButtonBase_Text :1
 // {
 ::g::Uno::UX::PropertyAccessor_type* FuseBasicTheme_accessor_Fuse_Controls_ButtonBase_Text_typeof();
 void FuseBasicTheme_accessor_Fuse_Controls_ButtonBase_Text__ctor_1_fn(FuseBasicTheme_accessor_Fuse_Controls_ButtonBase_Text* __this);
@@ -23,9 +23,9 @@ void FuseBasicTheme_accessor_Fuse_Controls_ButtonBase_Text__get_SupportsOriginSe
 struct FuseBasicTheme_accessor_Fuse_Controls_ButtonBase_Text : ::g::Uno::UX::PropertyAccessor
 {
     static ::g::Uno::UX::Selector _name_;
-    static ::g::Uno::UX::Selector& _name() { return FuseBasicTheme_accessor_Fuse_Controls_ButtonBase_Text_typeof()->Init(), _name_; }
+    static ::g::Uno::UX::Selector& _name() { return _name_; }
     static uSStrong< ::g::Uno::UX::PropertyAccessor*> Singleton_;
-    static uSStrong< ::g::Uno::UX::PropertyAccessor*>& Singleton() { return FuseBasicTheme_accessor_Fuse_Controls_ButtonBase_Text_typeof()->Init(), Singleton_; }
+    static uSStrong< ::g::Uno::UX::PropertyAccessor*>& Singleton() { return Singleton_; }
 
     void ctor_1();
     static FuseBasicTheme_accessor_Fuse_Controls_ButtonBase_Text* New1();

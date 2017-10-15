@@ -26,7 +26,7 @@ public class MapsLauncher
         android.util.Log.d("emrals", (message==null ? "null" : message.toString()));
     }
 
-    public static String get__actionView431()
+    public static String get__actionView430()
     {
         return Intent.ACTION_VIEW;
     }

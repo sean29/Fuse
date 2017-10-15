@@ -1,4 +1,4 @@
-// This file was generated based on '/Users/a/Library/Application Support/Fusetools/Packages/Fuse.Launcher.Phone/1.2.1/phone/$.uno'.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Launcher.Phone/1.3.0-rc2/Phone/PhoneLauncher.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -10,7 +10,7 @@ namespace g{
 namespace Fuse{
 namespace LauncherImpl{
 
-// internal sealed extern class AndroidCall :37
+// internal sealed extern class AndroidCall :35
 // {
 uType* AndroidCall_typeof();
 void AndroidCall__ctor__fn(AndroidCall* __this, uString* uri);

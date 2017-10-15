@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/UnoCore/1.2.2/source/uno/text/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/UnoCore/1.3.1/Source/Uno/Text/Utf8.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -10,7 +10,7 @@ namespace g{
 namespace Uno{
 namespace Text{
 
-// public sealed class UTF8Encoding :414
+// public sealed class UTF8Encoding :284
 // {
 ::g::Uno::Text::Encoding_type* UTF8Encoding_typeof();
 void UTF8Encoding__ctor_1_fn(UTF8Encoding* __this);

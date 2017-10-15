@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Experimental.Http/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Experimental.Http/1.3.0-rc2/HttpLoader.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -11,7 +11,7 @@ namespace g{
 namespace Experimental{
 namespace Http{
 
-// public static class HttpLoader :521
+// public static class HttpLoader :9
 // {
 uClassType* HttpLoader_typeof();
 void HttpLoader__get_CacheMaxAge_fn(int* __retval);
@@ -22,9 +22,9 @@ void HttpLoader__LoadBinary_fn(uString* requestUri, uDelegate* callback, uDelega
 struct HttpLoader : uObject
 {
     static uSStrong<uObject*> _cache_;
-    static uSStrong<uObject*>& _cache() { return HttpLoader_typeof()->Init(), _cache_; }
+    static uSStrong<uObject*>& _cache() { return _cache_; }
     static int _maxAge_;
-    static int& _maxAge() { return HttpLoader_typeof()->Init(), _maxAge_; }
+    static int& _maxAge() { return _maxAge_; }
 
     static void Discard(uString* requestUri);
     static void LoadBinary(uString* requestUri, uDelegate* callback, uDelegate* error);

@@ -29,7 +29,7 @@ public class TakePictureCallback
         android.util.Log.d("emrals", (message==null ? "null" : message.toString()));
     }
 
-    public static void HandleIntent381(final UnoObject _this, final int resultCode,final Object intent,final Object photo,final com.foreign.Uno.Action_String onComplete,final com.foreign.Uno.Action_String onFail)
+    public static void HandleIntent380(final UnoObject _this, final int resultCode,final Object intent,final Object photo,final com.foreign.Uno.Action_String onComplete,final com.foreign.Uno.Action_String onFail)
     {
         switch (resultCode)
         {

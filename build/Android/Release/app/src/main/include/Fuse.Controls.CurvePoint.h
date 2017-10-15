@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Controls.Primitives/1.2.1/shapes/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Controls.Primitives/1.3.0-rc2/Shapes/Curve.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -18,7 +18,7 @@ namespace g{
 namespace Fuse{
 namespace Controls{
 
-// public sealed class CurvePoint :280
+// public sealed class CurvePoint :40
 // {
 ::g::Fuse::Node_type* CurvePoint_typeof();
 void CurvePoint__get_At_fn(CurvePoint* __this, ::g::Uno::Float2* __retval);
@@ -43,15 +43,15 @@ struct CurvePoint : ::g::Fuse::Node
     ::g::Uno::Float2 _b;
     int _has;
     static ::g::Uno::UX::Selector NameAt_;
-    static ::g::Uno::UX::Selector& NameAt() { return CurvePoint_typeof()->Init(), NameAt_; }
+    static ::g::Uno::UX::Selector& NameAt() { return NameAt_; }
     static ::g::Uno::UX::Selector NameControlIn_;
-    static ::g::Uno::UX::Selector& NameControlIn() { return CurvePoint_typeof()->Init(), NameControlIn_; }
+    static ::g::Uno::UX::Selector& NameControlIn() { return NameControlIn_; }
     static ::g::Uno::UX::Selector NameControlOut_;
-    static ::g::Uno::UX::Selector& NameControlOut() { return CurvePoint_typeof()->Init(), NameControlOut_; }
+    static ::g::Uno::UX::Selector& NameControlOut() { return NameControlOut_; }
     static ::g::Uno::UX::Selector NameTangentIn_;
-    static ::g::Uno::UX::Selector& NameTangentIn() { return CurvePoint_typeof()->Init(), NameTangentIn_; }
+    static ::g::Uno::UX::Selector& NameTangentIn() { return NameTangentIn_; }
     static ::g::Uno::UX::Selector NameTangentOut_;
-    static ::g::Uno::UX::Selector& NameTangentOut() { return CurvePoint_typeof()->Init(), NameTangentOut_; }
+    static ::g::Uno::UX::Selector& NameTangentOut() { return NameTangentOut_; }
 
     ::g::Uno::Float2 At();
     void At(::g::Uno::Float2 value);

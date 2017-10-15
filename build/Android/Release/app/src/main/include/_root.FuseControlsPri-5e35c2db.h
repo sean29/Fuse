@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Controls.Primitives/1.2.1/.uno/ux11/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Controls.Primitives/1.3.0-rc2/.uno/ux13/Fuse.Controls.Primitives.unoproj.g.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -11,7 +11,7 @@ namespace g{struct FuseControlsPrimitives_FuseElementsElement_Opacity_Property;}
 
 namespace g{
 
-// internal sealed class FuseControlsPrimitives_FuseElementsElement_Opacity_Property :788
+// internal sealed class FuseControlsPrimitives_FuseElementsElement_Opacity_Property :38
 // {
 ::g::Uno::UX::Property1_type* FuseControlsPrimitives_FuseElementsElement_Opacity_Property_typeof();
 void FuseControlsPrimitives_FuseElementsElement_Opacity_Property__ctor_3_fn(FuseControlsPrimitives_FuseElementsElement_Opacity_Property* __this, ::g::Fuse::Elements::Element* obj, ::g::Uno::UX::Selector* name);

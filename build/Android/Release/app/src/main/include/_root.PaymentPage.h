@@ -1,4 +1,4 @@
-// This file was generated based on '.uno/ux11/PaymentPage.g.uno'.
+// This file was generated based on '.uno/ux13/PaymentPage.g.uno'.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -15,6 +15,7 @@
 #include <Fuse.Triggers.Actions.IHide.h>
 #include <Fuse.Triggers.Actions.IShow.h>
 #include <Fuse.Triggers.Actions-ea70af1f.h>
+#include <Fuse.Visual.h>
 #include <Uno.Collections.ICollection-1.h>
 #include <Uno.Collections.IEnumerable-1.h>
 #include <Uno.Collections.IList-1.h>
@@ -30,12 +31,11 @@ namespace g{struct PaymentPage;}
 
 namespace g{
 
-// public partial sealed class PaymentPage :2
+// public partial class PaymentPage :2
 // {
 ::g::Fuse::Controls::Panel_type* PaymentPage_typeof();
 void PaymentPage__ctor_8_fn(PaymentPage* __this, ::g::Fuse::Navigation::Router* router1);
 void PaymentPage__InitializeUX_fn(PaymentPage* __this);
-void PaymentPage__New5_fn(::g::Fuse::Navigation::Router* router1, PaymentPage** __retval);
 
 struct PaymentPage : ::g::Fuse::Controls::Page
 {
@@ -70,7 +70,6 @@ struct PaymentPage : ::g::Fuse::Controls::Page
 
     void ctor_8(::g::Fuse::Navigation::Router* router1);
     void InitializeUX();
-    static PaymentPage* New5(::g::Fuse::Navigation::Router* router1);
 };
 // }
 

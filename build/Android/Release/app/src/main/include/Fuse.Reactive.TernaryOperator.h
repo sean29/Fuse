@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Reactive.Expressions/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Reactive.Expressions/1.3.0-rc2/TernaryOperator.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -10,7 +10,7 @@ namespace g{
 namespace Fuse{
 namespace Reactive{
 
-// public abstract class TernaryOperator :1869
+// public abstract class TernaryOperator :8
 // {
 struct TernaryOperator_type : ::g::Fuse::Reactive::Expression_type
 {

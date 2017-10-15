@@ -29,7 +29,7 @@ public class TakePictureCommand
         android.util.Log.d("emrals", (message==null ? "null" : message.toString()));
     }
 
-    public static Object CreateImage382()
+    public static Object CreateImage381()
     {
         try {
         	return Image.create();
@@ -39,7 +39,7 @@ public class TakePictureCommand
         }
     }
     
-    public static Object CreateIntent383(final Object photo)
+    public static Object CreateIntent382(final Object photo)
     {
         Image p = (Image)photo;
         try {

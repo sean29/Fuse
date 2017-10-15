@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Controls.Panels/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Controls.Panels/1.3.0-rc2/Panel.Freeze.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -17,7 +17,7 @@ namespace g{
 namespace Fuse{
 namespace Controls{
 
-// internal sealed class FreezeDrawable :2162
+// internal sealed class FreezeDrawable :210
 // {
 uType* FreezeDrawable_typeof();
 void FreezeDrawable__ctor__fn(FreezeDrawable* __this);
@@ -32,7 +32,7 @@ struct FreezeDrawable : uObject
     ::g::Uno::Float4x4 Draw_LocalTransform_646c65c3_4_9_3;
     uStrong< ::g::Uno::Graphics::VertexBuffer*> Draw_VertexData_646c65c3_7_2_1;
     static uSStrong<FreezeDrawable*> Singleton_;
-    static uSStrong<FreezeDrawable*>& Singleton() { return FreezeDrawable_typeof()->Init(), Singleton_; }
+    static uSStrong<FreezeDrawable*>& Singleton() { return Singleton_; }
 
     void ctor_();
     void Draw(::g::Fuse::DrawContext* dc, ::g::Fuse::Controls::Panel* panel, float Opacity, ::g::Uno::Float2 scale, ::g::Fuse::VisualBounds* renderBounds, ::g::Uno::Graphics::Framebuffer* buffer);

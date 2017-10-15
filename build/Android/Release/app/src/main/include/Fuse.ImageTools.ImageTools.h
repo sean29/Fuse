@@ -1,4 +1,4 @@
-// This file was generated based on '/Users/a/Library/Application Support/Fusetools/Packages/Fuse.ImageTools/1.2.1/$.uno'.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.ImageTools/1.3.0-rc2/ImageTools.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -13,7 +13,7 @@ namespace g{
 namespace Fuse{
 namespace ImageTools{
 
-// public sealed class ImageTools :243
+// public sealed class ImageTools :49
 // {
 ::g::Fuse::Scripting::NativeModule_type* ImageTools_typeof();
 void ImageTools__ctor_2_fn(ImageTools* __this);

@@ -1,4 +1,4 @@
-// This file was generated based on '/Users/a/Library/Application Support/Fusetools/Packages/Fuse.Launcher.Email/1.2.1/email/$.uno'.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Launcher.Email/1.3.0-rc2/Email/EmailTrigger.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -11,7 +11,7 @@ namespace Fuse{
 namespace Triggers{
 namespace Actions{
 
-// public sealed class LaunchEmail :114
+// public sealed class LaunchEmail :35
 // {
 ::g::Fuse::Triggers::Actions::TriggerAction_type* LaunchEmail_typeof();
 void LaunchEmail__get_BlindCarbonCopy_fn(LaunchEmail* __this, uString** __retval);

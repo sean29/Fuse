@@ -1,4 +1,4 @@
-// This file was generated based on '/Users/a/Library/Application Support/Fusetools/Packages/Fuse.Maps/1.2.1/$.uno'.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Maps/1.3.0-rc2/MapView.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -15,6 +15,7 @@
 #include <Fuse.Triggers.Actions.IHide.h>
 #include <Fuse.Triggers.Actions.IShow.h>
 #include <Fuse.Triggers.Actions-ea70af1f.h>
+#include <Fuse.Visual.h>
 #include <Uno.Collections.ICollection-1.h>
 #include <Uno.Collections.IEnumerable-1.h>
 #include <Uno.Collections.IList-1.h>
@@ -33,7 +34,7 @@ namespace g{
 namespace Fuse{
 namespace Controls{
 
-// public partial sealed class MapView :285
+// public partial sealed class MapView :124
 // {
 ::g::Fuse::Controls::Panel_type* MapView_typeof();
 void MapView__ctor_7_fn(MapView* __this);

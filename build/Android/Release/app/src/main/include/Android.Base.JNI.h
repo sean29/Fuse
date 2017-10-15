@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/UnoCore/1.2.2/targets/android/uno/base/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/UnoCore/1.3.1/Targets/Android/Uno/Base/JNI.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -16,7 +16,7 @@ namespace g{
 namespace Android{
 namespace Base{
 
-// public static extern class JNI :36
+// public static extern class JNI :14
 // {
 uClassType* JNI_typeof();
 void JNI__CheckException_fn();
@@ -47,17 +47,8 @@ void JNI__LoadClass_fn(JNIEnv** jni, const char** name, jclass* __retval);
 void JNI__LoadClass1_fn(JNIEnv** jni, const char** name, bool* systemClass, jclass* __retval);
 void JNI__LoadClass2_fn(JNIEnv** jni, uString* name, bool* systemClass, jclass* __retval);
 void JNI__LoadClass3_fn(uString* name, bool* systemClass, jclass* __retval);
-void JNI__NewBooleanArray_fn(int* len_, jobject* __retval);
-void JNI__NewByteArray_fn(int* len_, jobject* __retval);
-void JNI__NewCharArray_fn(int* len_, jobject* __retval);
-void JNI__NewDoubleArray_fn(int* len_, jobject* __retval);
-void JNI__NewFloatArray_fn(int* len_, jobject* __retval);
 void JNI__NewGlobalRef_fn(jclass* obj, jclass* __retval);
 void JNI__NewGlobalRef1_fn(jobject* obj, jobject* __retval);
-void JNI__NewIntArray_fn(int* len_, jobject* __retval);
-void JNI__NewLongArray_fn(int* len_, jobject* __retval);
-void JNI__NewObjectArray_fn(jclass* cls_, int* len_, jobject* __retval);
-void JNI__NewShortArray_fn(int* len_, jobject* __retval);
 void JNI__NewWeakGlobalRef_fn(jobject* obj_, jobject* __retval);
 void JNI__SetBooleanArrayRegion_fn(jobject* javaArr, uArray* unoArr, int* start, int* len);
 void JNI__SetByteArrayRegion_fn(jobject* javaArr, uArray* unoArr, int* start, int* len);
@@ -114,17 +105,8 @@ struct JNI : uObject
     static jclass LoadClass1(JNIEnv* jni, const char* name, bool systemClass);
     static jclass LoadClass2(JNIEnv* jni, uString* name, bool systemClass);
     static jclass LoadClass3(uString* name, bool systemClass);
-    static jobject NewBooleanArray(int len_);
-    static jobject NewByteArray(int len_);
-    static jobject NewCharArray(int len_);
-    static jobject NewDoubleArray(int len_);
-    static jobject NewFloatArray(int len_);
     static jclass NewGlobalRef(jclass obj);
     static jobject NewGlobalRef1(jobject obj);
-    static jobject NewIntArray(int len_);
-    static jobject NewLongArray(int len_);
-    static jobject NewObjectArray(jclass cls_, int len_);
-    static jobject NewShortArray(int len_);
     static jobject NewWeakGlobalRef(jobject obj_);
     static void SetBooleanArrayRegion(jobject javaArr, uArray* unoArr, int start, int len);
     static void SetByteArrayRegion(jobject javaArr, uArray* unoArr, int start, int len);

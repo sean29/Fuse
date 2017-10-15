@@ -1,4 +1,4 @@
-// This file was generated based on '.uno/ux11/LoginPage.g.uno'.
+// This file was generated based on '.uno/ux13/LoginPage.g.uno'.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #include <_root.emrals_bundle.h>
@@ -46,7 +46,6 @@
 #include <Fuse.Translation.h>
 #include <Fuse.Triggers.Trigger.h>
 #include <Fuse.Triggers.WhileKe-99bafeca.h>
-#include <Fuse.Visual.h>
 #include <Uno.Bool.h>
 #include <Uno.Double.h>
 #include <Uno.Float.h>
@@ -67,11 +66,12 @@ static uType* TYPES[7];
 
 namespace g{
 
-// public partial sealed class LoginPage :2
+// public partial class LoginPage :2
 // {
 // static LoginPage() :27
 static void LoginPage__cctor_4_fn(uType* __type)
 {
+    ::g::Uno::UX::Selector_typeof()->Init();
     LoginPage::__g_static_nametable1_ = uArray::Init<uString*>(::TYPES[0/*string[]*/], 8, ::STRINGS[0/*"router"*/], ::STRINGS[1/*"temp_eb47"*/], ::STRINGS[2/*"LogoFile"*/], ::STRINGS[3/*"loggedOutView"*/], ::STRINGS[4/*"loginArea"*/], ::STRINGS[5/*"temp_eb48"*/], ::STRINGS[6/*"loginprect"*/], ::STRINGS[7/*"temp_eb49"*/]);
     LoginPage::__selector0_ = ::g::Uno::UX::Selector__op_Implicit(::STRINGS[8/*"Value"*/]);
     LoginPage::__selector1_ = ::g::Uno::UX::Selector__op_Implicit(::STRINGS[9/*"Color"*/]);
@@ -114,6 +114,11 @@ static void LoginPage_build(uType* type)
     ::TYPES[4] = ::g::Uno::Collections::ICollection_typeof()->MakeType(::g::Fuse::Binding_typeof(), NULL);
     ::TYPES[5] = ::g::Uno::Collections::ICollection_typeof()->MakeType(::g::Fuse::Animations::Animator_typeof(), NULL);
     ::TYPES[6] = ::g::Uno::Collections::ICollection_typeof()->MakeType(uObject_typeof(), NULL);
+    type->SetDependencies(
+        ::g::Fuse::Controls::DockPanel_typeof(),
+        ::g::Fuse::Animations::Easing_typeof(),
+        ::g::Fuse::Font_typeof(),
+        ::g::Fuse::Controls::Grid_typeof());
     type->SetInterfaces(
         ::g::Uno::Collections::IList_typeof()->MakeType(::g::Fuse::Binding_typeof(), NULL), offsetof(::g::Fuse::Controls::Panel_type, interface0),
         ::g::Fuse::Scripting::IScriptObject_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface1),
@@ -124,35 +129,36 @@ static void LoginPage_build(uType* type)
         ::g::Uno::Collections::IList_typeof()->MakeType(::g::Fuse::Node_typeof(), NULL), offsetof(::g::Fuse::Controls::Panel_type, interface6),
         ::g::Uno::UX::IPropertyListener_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface7),
         ::g::Fuse::ITemplateSource_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface8),
-        ::TYPES[2/*Uno.Collections.ICollection<Fuse.Node>*/], offsetof(::g::Fuse::Controls::Panel_type, interface9),
-        ::g::Uno::Collections::IEnumerable_typeof()->MakeType(::g::Fuse::Node_typeof(), NULL), offsetof(::g::Fuse::Controls::Panel_type, interface10),
-        ::g::Fuse::Triggers::Actions::IShow_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface11),
-        ::g::Fuse::Triggers::Actions::IHide_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface12),
-        ::g::Fuse::Triggers::Actions::ICollapse_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface13),
-        ::g::Fuse::IActualPlacement_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface14),
-        ::g::Fuse::Animations::IResize_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface15),
-        ::g::Fuse::Drawing::ISurfaceDrawable_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface16));
-    type->SetFields(111,
-        ::g::Uno::UX::NameTable_typeof(), offsetof(::g::LoginPage, __g_nametable1), 0,
-        ::g::Fuse::Controls::Grid_typeof(), offsetof(::g::LoginPage, loggedOutView), 0,
-        ::g::Fuse::Controls::Grid_typeof(), offsetof(::g::LoginPage, loginArea), 0,
-        ::g::Fuse::Controls::Rectangle_typeof(), offsetof(::g::LoginPage, loginprect), 0,
-        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::Float4_typeof(), NULL), offsetof(::g::LoginPage, loginprect_Color_inst), 0,
-        ::g::Fuse::Controls::Image_typeof(), offsetof(::g::LoginPage, LogoFile), 0,
-        ::g::Fuse::Navigation::Router_typeof(), offsetof(::g::LoginPage, router), 0,
-        ::g::Fuse::Reactive::EventBinding_typeof(), offsetof(::g::LoginPage, temp_eb47), 0,
-        ::g::Fuse::Reactive::EventBinding_typeof(), offsetof(::g::LoginPage, temp_eb48), 0,
-        ::g::Fuse::Reactive::EventBinding_typeof(), offsetof(::g::LoginPage, temp_eb49), 0,
-        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(::g::LoginPage, temp_Value_inst), 0,
-        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(::g::LoginPage, temp1_Value_inst), 0,
-        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(::g::LoginPage, temp2_Value_inst), 0,
-        ::TYPES[0/*string[]*/], (uintptr_t)&::g::LoginPage::__g_static_nametable1_, uFieldFlagsStatic,
-        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&::g::LoginPage::__selector0_, uFieldFlagsStatic,
-        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&::g::LoginPage::__selector1_, uFieldFlagsStatic,
-        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&::g::LoginPage::__selector2_, uFieldFlagsStatic,
-        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&::g::LoginPage::__selector3_, uFieldFlagsStatic,
-        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&::g::LoginPage::__selector4_, uFieldFlagsStatic,
-        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&::g::LoginPage::__selector5_, uFieldFlagsStatic);
+        ::g::Uno::Collections::IEnumerable_typeof()->MakeType(::g::Fuse::Visual_typeof(), NULL), offsetof(::g::Fuse::Controls::Panel_type, interface9),
+        ::TYPES[2/*Uno.Collections.ICollection<Fuse.Node>*/], offsetof(::g::Fuse::Controls::Panel_type, interface10),
+        ::g::Uno::Collections::IEnumerable_typeof()->MakeType(::g::Fuse::Node_typeof(), NULL), offsetof(::g::Fuse::Controls::Panel_type, interface11),
+        ::g::Fuse::Triggers::Actions::IShow_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface12),
+        ::g::Fuse::Triggers::Actions::IHide_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface13),
+        ::g::Fuse::Triggers::Actions::ICollapse_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface14),
+        ::g::Fuse::IActualPlacement_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface15),
+        ::g::Fuse::Animations::IResize_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface16),
+        ::g::Fuse::Drawing::ISurfaceDrawable_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface17));
+    type->SetFields(117,
+        ::g::Uno::UX::NameTable_typeof(), offsetof(LoginPage, __g_nametable1), 0,
+        ::g::Fuse::Controls::Grid_typeof(), offsetof(LoginPage, loggedOutView), 0,
+        ::g::Fuse::Controls::Grid_typeof(), offsetof(LoginPage, loginArea), 0,
+        ::g::Fuse::Controls::Rectangle_typeof(), offsetof(LoginPage, loginprect), 0,
+        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::Float4_typeof(), NULL), offsetof(LoginPage, loginprect_Color_inst), 0,
+        ::g::Fuse::Controls::Image_typeof(), offsetof(LoginPage, LogoFile), 0,
+        ::g::Fuse::Navigation::Router_typeof(), offsetof(LoginPage, router), 0,
+        ::g::Fuse::Reactive::EventBinding_typeof(), offsetof(LoginPage, temp_eb47), 0,
+        ::g::Fuse::Reactive::EventBinding_typeof(), offsetof(LoginPage, temp_eb48), 0,
+        ::g::Fuse::Reactive::EventBinding_typeof(), offsetof(LoginPage, temp_eb49), 0,
+        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(LoginPage, temp_Value_inst), 0,
+        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(LoginPage, temp1_Value_inst), 0,
+        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(LoginPage, temp2_Value_inst), 0,
+        ::TYPES[0/*string[]*/], (uintptr_t)&LoginPage::__g_static_nametable1_, uFieldFlagsStatic,
+        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&LoginPage::__selector0_, uFieldFlagsStatic,
+        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&LoginPage::__selector1_, uFieldFlagsStatic,
+        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&LoginPage::__selector2_, uFieldFlagsStatic,
+        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&LoginPage::__selector3_, uFieldFlagsStatic,
+        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&LoginPage::__selector4_, uFieldFlagsStatic,
+        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&LoginPage::__selector5_, uFieldFlagsStatic);
 }
 
 ::g::Fuse::Controls::Panel_type* LoginPage_typeof()
@@ -162,34 +168,36 @@ static void LoginPage_build(uType* type)
 
     uTypeOptions options;
     options.BaseDefinition = ::g::Fuse::Controls::Page_typeof();
-    options.FieldCount = 131;
-    options.InterfaceCount = 17;
+    options.FieldCount = 137;
+    options.InterfaceCount = 18;
+    options.DependencyCount = 4;
     options.ObjectSize = sizeof(LoginPage);
     options.TypeSize = sizeof(::g::Fuse::Controls::Panel_type);
     type = (::g::Fuse::Controls::Panel_type*)uClassType::New("LoginPage", options);
     type->fp_build_ = LoginPage_build;
     type->fp_cctor_ = LoginPage__cctor_4_fn;
-    type->interface16.fp_Draw = (void(*)(uObject*, ::g::Fuse::Drawing::Surface*))::g::Fuse::Controls::Panel__FuseDrawingISurfaceDrawableDraw_fn;
-    type->interface16.fp_get_IsPrimary = (void(*)(uObject*, bool*))::g::Fuse::Controls::Panel__FuseDrawingISurfaceDrawableget_IsPrimary_fn;
-    type->interface16.fp_get_ElementSize = (void(*)(uObject*, ::g::Uno::Float2*))::g::Fuse::Controls::Panel__FuseDrawingISurfaceDrawableget_ElementSize_fn;
-    type->interface11.fp_Show = (void(*)(uObject*))::g::Fuse::Elements::Element__FuseTriggersActionsIShowShow_fn;
-    type->interface13.fp_Collapse = (void(*)(uObject*))::g::Fuse::Elements::Element__FuseTriggersActionsICollapseCollapse_fn;
-    type->interface12.fp_Hide = (void(*)(uObject*))::g::Fuse::Elements::Element__FuseTriggersActionsIHideHide_fn;
-    type->interface15.fp_SetSize = (void(*)(uObject*, ::g::Uno::Float2*))::g::Fuse::Elements::Element__FuseAnimationsIResizeSetSize_fn;
-    type->interface14.fp_get_ActualSize = (void(*)(uObject*, ::g::Uno::Float3*))::g::Fuse::Elements::Element__FuseIActualPlacementget_ActualSize_fn;
-    type->interface14.fp_add_Placed = (void(*)(uObject*, uDelegate*))::g::Fuse::Elements::Element__add_Placed_fn;
-    type->interface14.fp_remove_Placed = (void(*)(uObject*, uDelegate*))::g::Fuse::Elements::Element__remove_Placed_fn;
-    type->interface9.fp_Clear = (void(*)(uObject*))::g::Fuse::Visual__UnoCollectionsICollectionFuseNodeClear_fn;
-    type->interface9.fp_Contains = (void(*)(uObject*, void*, bool*))::g::Fuse::Visual__UnoCollectionsICollectionFuseNodeContains_fn;
+    type->interface17.fp_Draw = (void(*)(uObject*, ::g::Fuse::Drawing::Surface*))::g::Fuse::Controls::Panel__FuseDrawingISurfaceDrawableDraw_fn;
+    type->interface17.fp_get_IsPrimary = (void(*)(uObject*, bool*))::g::Fuse::Controls::Panel__FuseDrawingISurfaceDrawableget_IsPrimary_fn;
+    type->interface17.fp_get_ElementSize = (void(*)(uObject*, ::g::Uno::Float2*))::g::Fuse::Controls::Panel__FuseDrawingISurfaceDrawableget_ElementSize_fn;
+    type->interface12.fp_Show = (void(*)(uObject*))::g::Fuse::Elements::Element__FuseTriggersActionsIShowShow_fn;
+    type->interface14.fp_Collapse = (void(*)(uObject*))::g::Fuse::Elements::Element__FuseTriggersActionsICollapseCollapse_fn;
+    type->interface13.fp_Hide = (void(*)(uObject*))::g::Fuse::Elements::Element__FuseTriggersActionsIHideHide_fn;
+    type->interface16.fp_SetSize = (void(*)(uObject*, ::g::Uno::Float2*))::g::Fuse::Elements::Element__FuseAnimationsIResizeSetSize_fn;
+    type->interface15.fp_get_ActualSize = (void(*)(uObject*, ::g::Uno::Float3*))::g::Fuse::Elements::Element__FuseIActualPlacementget_ActualSize_fn;
+    type->interface15.fp_add_Placed = (void(*)(uObject*, uDelegate*))::g::Fuse::Elements::Element__add_Placed_fn;
+    type->interface15.fp_remove_Placed = (void(*)(uObject*, uDelegate*))::g::Fuse::Elements::Element__remove_Placed_fn;
+    type->interface9.fp_GetEnumerator = (void(*)(uObject*, uObject**))::g::Fuse::Visual__UnoCollectionsIEnumerableFuseVisualGetEnumerator_fn;
+    type->interface10.fp_Clear = (void(*)(uObject*))::g::Fuse::Visual__UnoCollectionsICollectionFuseNodeClear_fn;
+    type->interface10.fp_Contains = (void(*)(uObject*, void*, bool*))::g::Fuse::Visual__UnoCollectionsICollectionFuseNodeContains_fn;
     type->interface6.fp_RemoveAt = (void(*)(uObject*, int*))::g::Fuse::Visual__UnoCollectionsIListFuseNodeRemoveAt_fn;
-    type->interface10.fp_GetEnumerator = (void(*)(uObject*, uObject**))::g::Fuse::Visual__UnoCollectionsIEnumerableFuseNodeGetEnumerator_fn;
-    type->interface9.fp_get_Count = (void(*)(uObject*, int*))::g::Fuse::Visual__UnoCollectionsICollectionFuseNodeget_Count_fn;
+    type->interface11.fp_GetEnumerator = (void(*)(uObject*, uObject**))::g::Fuse::Visual__UnoCollectionsIEnumerableFuseNodeGetEnumerator_fn;
+    type->interface10.fp_get_Count = (void(*)(uObject*, int*))::g::Fuse::Visual__UnoCollectionsICollectionFuseNodeget_Count_fn;
     type->interface6.fp_get_Item = (void(*)(uObject*, int*, uTRef))::g::Fuse::Visual__UnoCollectionsIListFuseNodeget_Item_fn;
     type->interface6.fp_Insert = (void(*)(uObject*, int*, void*))::g::Fuse::Visual__Insert1_fn;
     type->interface7.fp_OnPropertyChanged = (void(*)(uObject*, ::g::Uno::UX::PropertyObject*, ::g::Uno::UX::Selector*))::g::Fuse::Controls::Control__OnPropertyChanged2_fn;
     type->interface8.fp_FindTemplate = (void(*)(uObject*, uString*, ::g::Uno::UX::Template**))::g::Fuse::Visual__FindTemplate_fn;
-    type->interface9.fp_Add = (void(*)(uObject*, void*))::g::Fuse::Visual__Add1_fn;
-    type->interface9.fp_Remove = (void(*)(uObject*, void*, bool*))::g::Fuse::Visual__Remove1_fn;
+    type->interface10.fp_Add = (void(*)(uObject*, void*))::g::Fuse::Visual__Add1_fn;
+    type->interface10.fp_Remove = (void(*)(uObject*, void*, bool*))::g::Fuse::Visual__Remove1_fn;
     type->interface4.fp_Clear = (void(*)(uObject*))::g::Fuse::Node__UnoCollectionsICollectionFuseBindingClear_fn;
     type->interface4.fp_Contains = (void(*)(uObject*, void*, bool*))::g::Fuse::Node__UnoCollectionsICollectionFuseBindingContains_fn;
     type->interface0.fp_RemoveAt = (void(*)(uObject*, int*))::g::Fuse::Node__UnoCollectionsIListFuseBindingRemoveAt_fn;
@@ -220,12 +228,6 @@ void LoginPage__InitializeUX_fn(LoginPage* __this)
     __this->InitializeUX();
 }
 
-// public LoginPage New(Fuse.Navigation.Router router) :31
-void LoginPage__New5_fn(::g::Fuse::Navigation::Router* router1, LoginPage** __retval)
-{
-    *__retval = LoginPage::New5(router1);
-}
-
 uSStrong<uArray*> LoginPage::__g_static_nametable1_;
 ::g::Uno::UX::Selector LoginPage::__selector0_;
 ::g::Uno::UX::Selector LoginPage::__selector1_;
@@ -245,25 +247,25 @@ void LoginPage::ctor_8(::g::Fuse::Navigation::Router* router1)
 // private void InitializeUX() [instance] :37
 void LoginPage::InitializeUX()
 {
-    __g_nametable1 = ::g::Uno::UX::NameTable::New1(NULL, LoginPage::__g_static_nametable1());
+    __g_nametable1 = ::g::Uno::UX::NameTable::New1(NULL, LoginPage::__g_static_nametable1_);
     ::g::Fuse::Reactive::Data* temp3 = ::g::Fuse::Reactive::Data::New1(::STRINGS[10/*"back"*/]);
     ::g::Fuse::Controls::TextInput* temp = ::g::Fuse::Controls::TextInput::New3();
-    temp_Value_inst = ::g::emrals_FuseControlsTextInputControl_Value_Property::New1(temp, LoginPage::__selector0());
+    temp_Value_inst = ::g::emrals_FuseControlsTextInputControl_Value_Property::New1(temp, LoginPage::__selector0_);
     ::g::Fuse::Reactive::Data* temp4 = ::g::Fuse::Reactive::Data::New1(::STRINGS[11/*"username"*/]);
     ::g::Fuse::Controls::TextInput* temp1 = ::g::Fuse::Controls::TextInput::New3();
-    temp1_Value_inst = ::g::emrals_FuseControlsTextInputControl_Value_Property::New1(temp1, LoginPage::__selector0());
+    temp1_Value_inst = ::g::emrals_FuseControlsTextInputControl_Value_Property::New1(temp1, LoginPage::__selector0_);
     ::g::Fuse::Reactive::Data* temp5 = ::g::Fuse::Reactive::Data::New1(::STRINGS[12/*"password"*/]);
     ::g::Fuse::Reactive::Data* temp6 = ::g::Fuse::Reactive::Data::New1(::STRINGS[13/*"goToSignup"*/]);
     ::g::Fuse::Controls::Text* temp2 = ::g::Fuse::Controls::Text::New3();
-    temp2_Value_inst = ::g::emrals_FuseControlsTextControl_Value_Property::New1(temp2, LoginPage::__selector0());
+    temp2_Value_inst = ::g::emrals_FuseControlsTextControl_Value_Property::New1(temp2, LoginPage::__selector0_);
     ::g::Fuse::Reactive::Data* temp7 = ::g::Fuse::Reactive::Data::New1(::STRINGS[14/*"error"*/]);
     loginprect = ::g::Fuse::Controls::Rectangle::New3();
-    loginprect_Color_inst = ::g::emrals_FuseControlsShape_Color_Property::New1(loginprect, LoginPage::__selector1());
+    loginprect_Color_inst = ::g::emrals_FuseControlsShape_Color_Property::New1(loginprect, LoginPage::__selector1_);
     ::g::Fuse::Reactive::Data* temp8 = ::g::Fuse::Reactive::Data::New1(::STRINGS[15/*"doLogin"*/]);
     ::g::Fuse::Reactive::JavaScript* temp9 = ::g::Fuse::Reactive::JavaScript::New2(__g_nametable1);
     ::g::Fuse::Controls::Panel* temp10 = ::g::Fuse::Controls::Panel::New3();
     ::g::Fuse::Controls::Text* temp11 = ::g::Fuse::Controls::Text::New3();
-    temp_eb47 = ::g::Fuse::Reactive::EventBinding::New1((uObject*)temp3, __g_nametable1);
+    temp_eb47 = ::g::Fuse::Reactive::EventBinding::New1((uObject*)temp3);
     ::g::Fuse::Drawing::StaticSolidColor* temp12 = ::g::Fuse::Drawing::StaticSolidColor::New2(::g::Uno::Float4__New2(1.0f, 1.0f, 1.0f, 1.0f));
     ::g::Fuse::Controls::DockPanel* temp13 = ::g::Fuse::Controls::DockPanel::New4();
     ::g::Fuse::Triggers::WhileKeyboardVisible* temp14 = ::g::Fuse::Triggers::WhileKeyboardVisible::New2();
@@ -274,22 +276,22 @@ void LoginPage::InitializeUX()
     loggedOutView = ::g::Fuse::Controls::Grid::New4();
     loginArea = ::g::Fuse::Controls::Grid::New4();
     ::g::Fuse::Controls::Image* temp18 = ::g::Fuse::Controls::Image::New3();
-    ::g::Fuse::Reactive::DataBinding* temp19 = ::g::Fuse::Reactive::DataBinding::New1(temp_Value_inst, (uObject*)temp4, __g_nametable1, 3);
+    ::g::Fuse::Reactive::DataBinding* temp19 = ::g::Fuse::Reactive::DataBinding::New1(temp_Value_inst, (uObject*)temp4, 3);
     ::g::Fuse::Controls::Rectangle* temp20 = ::g::Fuse::Controls::Rectangle::New3();
     ::g::Fuse::Controls::Image* temp21 = ::g::Fuse::Controls::Image::New3();
-    ::g::Fuse::Reactive::DataBinding* temp22 = ::g::Fuse::Reactive::DataBinding::New1(temp1_Value_inst, (uObject*)temp5, __g_nametable1, 3);
+    ::g::Fuse::Reactive::DataBinding* temp22 = ::g::Fuse::Reactive::DataBinding::New1(temp1_Value_inst, (uObject*)temp5, 3);
     ::g::Fuse::Controls::Rectangle* temp23 = ::g::Fuse::Controls::Rectangle::New3();
     ::g::Fuse::Controls::Text* temp24 = ::g::Fuse::Controls::Text::New3();
-    temp_eb48 = ::g::Fuse::Reactive::EventBinding::New1((uObject*)temp6, __g_nametable1);
+    temp_eb48 = ::g::Fuse::Reactive::EventBinding::New1((uObject*)temp6);
     ::g::Fuse::Controls::DockPanel* temp25 = ::g::Fuse::Controls::DockPanel::New4();
-    ::g::Fuse::Reactive::DataBinding* temp26 = ::g::Fuse::Reactive::DataBinding::New1(temp2_Value_inst, (uObject*)temp7, __g_nametable1, 3);
+    ::g::Fuse::Reactive::DataBinding* temp26 = ::g::Fuse::Reactive::DataBinding::New1(temp2_Value_inst, (uObject*)temp7, 3);
     ::g::Horse* temp27 = ::g::Horse::New4();
     ::g::Fuse::Gestures::WhilePressed* temp28 = ::g::Fuse::Gestures::WhilePressed::New2();
     ::g::Fuse::Animations::Change* temp29 = (::g::Fuse::Animations::Change*)::g::Fuse::Animations::Change::New2(::TYPES[1/*Fuse.Animations.Change<float4>*/], loginprect_Color_inst);
-    temp_eb49 = ::g::Fuse::Reactive::EventBinding::New1((uObject*)temp8, __g_nametable1);
+    temp_eb49 = ::g::Fuse::Reactive::EventBinding::New1((uObject*)temp8);
     temp9->LineNumber(3);
     temp9->FileName(::STRINGS[16/*"Pages/Login...*/]);
-    temp9->File(::g::Uno::UX::BundleFileSource::New1(::g::emrals_bundle::LoginPagee85f33db()));
+    temp9->File(::g::Uno::UX::BundleFileSource::New1(::g::emrals_bundle::LoginPage6f67b7a8()));
     temp10->Height(::g::Uno::UX::Size__New1(45.0f, 1));
     temp10->Y(::g::Uno::UX::Size__New1(0.0f, 1));
     temp10->Background(temp12);
@@ -309,29 +311,29 @@ void LoginPage::InitializeUX()
     temp15->Y(-60.0f);
     temp15->Duration(0.6);
     temp15->Target(LogoFile);
-    temp15->Easing(::g::Fuse::Animations::Easing::ExponentialInOut());
+    temp15->Easing(::g::Fuse::Animations::Easing::ExponentialInOut_);
     temp16->Factor(0.6f);
     temp16->Duration(0.6);
     temp16->Target(LogoFile);
     temp17->Y(-10.0f);
     temp17->Duration(0.6);
     temp17->Target(loginArea);
-    temp17->Easing(::g::Fuse::Animations::Easing::ExponentialInOut());
+    temp17->Easing(::g::Fuse::Animations::Easing::ExponentialInOut_);
     uPtr(LogoFile)->MaxHeight(::g::Uno::UX::Size__New1(110.0f, 1));
     uPtr(LogoFile)->Margin(::g::Uno::Float4__New2(0.0f, 50.0f, 0.0f, 0.0f));
-    uPtr(LogoFile)->Name(LoginPage::__selector2());
+    uPtr(LogoFile)->Name(LoginPage::__selector2_);
     ::g::Fuse::Controls::DockPanel::SetDock(LogoFile, 2);
-    uPtr(LogoFile)->File(::g::Uno::UX::BundleFileSource::New1(::g::emrals_bundle::emralsv2logoc8e35c00()));
+    uPtr(LogoFile)->File(::g::Uno::UX::BundleFileSource::New1(::g::emrals_bundle::emralsv2logodcad63ae()));
     uPtr(loggedOutView)->Rows(::STRINGS[18/*"1*,auto,1*"*/]);
     uPtr(loggedOutView)->Padding(::g::Uno::Float4__New2(40.0f, 0.0f, 40.0f, 0.0f));
-    uPtr(loggedOutView)->Name(LoginPage::__selector3());
+    uPtr(loggedOutView)->Name(LoginPage::__selector3_);
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(uPtr(loggedOutView)->Children()), ::TYPES[2/*Uno.Collections.ICollection<Fuse.Node>*/]), loginArea);
     uPtr(loginArea)->RowCount(2);
     uPtr(loginArea)->Columns(::STRINGS[19/*"auto, 1*"*/]);
     uPtr(loginArea)->Height(::g::Uno::UX::Size__New1(220.0f, 1));
     uPtr(loginArea)->MaxWidth(::g::Uno::UX::Size__New1(400.0f, 1));
     uPtr(loginArea)->Padding(::g::Uno::Float4__New2(0.0f, 20.0f, 0.0f, 20.0f));
-    uPtr(loginArea)->Name(LoginPage::__selector4());
+    uPtr(loginArea)->Name(LoginPage::__selector4_);
     ::g::Fuse::Controls::Grid::SetRow(loginArea, 1);
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(uPtr(loginArea)->Children()), ::TYPES[2/*Uno.Collections.ICollection<Fuse.Node>*/]), temp18);
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(uPtr(loginArea)->Children()), ::TYPES[2/*Uno.Collections.ICollection<Fuse.Node>*/]), temp);
@@ -346,7 +348,7 @@ void LoginPage::InitializeUX()
     temp18->Margin(::g::Uno::Float4__New2(10.0f, 0.0f, 30.0f, 0.0f));
     ::g::Fuse::Controls::Grid::SetRow(temp18, 0);
     ::g::Fuse::Controls::Grid::SetColumn(temp18, 0);
-    temp18->File(::g::Uno::UX::BundleFileSource::New1(::g::emrals_bundle::personicon64b5e5dd()));
+    temp18->File(::g::Uno::UX::BundleFileSource::New1(::g::emrals_bundle::personicon038fbd6f()));
     temp->PlaceholderText(::STRINGS[20/*"Username"*/]);
     temp->PlaceholderColor(::g::Uno::Float4__New2(0.6f, 0.6f, 0.6f, 1.0f));
     temp->TextColor(::g::Uno::Float4__New2(0.1333333f, 0.1333333f, 0.1333333f, 1.0f));
@@ -366,7 +368,7 @@ void LoginPage::InitializeUX()
     temp21->Margin(::g::Uno::Float4__New2(10.0f, 0.0f, 30.0f, 0.0f));
     ::g::Fuse::Controls::Grid::SetRow(temp21, 1);
     ::g::Fuse::Controls::Grid::SetColumn(temp21, 0);
-    temp21->File(::g::Uno::UX::BundleFileSource::New1(::g::emrals_bundle::lockicon9c77e3bf()));
+    temp21->File(::g::Uno::UX::BundleFileSource::New1(::g::emrals_bundle::lockicon85ff26cd()));
     temp1->IsPassword(true);
     temp1->PlaceholderText(::STRINGS[21/*"Password"*/]);
     temp1->PlaceholderColor(::g::Uno::Float4__New2(0.6f, 0.6f, 0.6f, 1.0f));
@@ -394,14 +396,14 @@ void LoginPage::InitializeUX()
     temp2->FontSize(42.0f);
     temp2->TextAlignment(1);
     temp2->Color(::g::Uno::Float4__New2(1.0f, 0.0f, 0.0f, 1.0f));
-    temp2->Font(::g::Fuse::Font::Medium());
+    temp2->Font(::g::Fuse::Font::Medium_);
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(temp2->Bindings()), ::TYPES[4/*Uno.Collections.ICollection<Fuse.Binding>*/]), temp26);
     uPtr(loginprect)->CornerRadius(::g::Uno::Float4__New2(10.0f, 10.0f, 10.0f, 10.0f));
     uPtr(loginprect)->Color(::g::Uno::Float4__New2(0.5411765f, 0.7215686f, 0.2784314f, 1.0f));
     uPtr(loginprect)->Width(::g::Uno::UX::Size__New1(300.0f, 1));
     uPtr(loginprect)->Height(::g::Uno::UX::Size__New1(48.0f, 1));
     uPtr(loginprect)->Margin(::g::Uno::Float4__New2(0.0f, 0.0f, 0.0f, 40.0f));
-    uPtr(loginprect)->Name(LoginPage::__selector5());
+    uPtr(loginprect)->Name(LoginPage::__selector5_);
     ::g::Fuse::Controls::DockPanel::SetDock(loginprect, 3);
     ::g::Fuse::Gestures::Clicked::AddHandler(loginprect, uDelegate::New(::TYPES[3/*Fuse.Gestures.ClickedHandler*/], (void*)::g::Fuse::Reactive::EventBinding__OnEvent_fn, uPtr(temp_eb49)));
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(uPtr(loginprect)->Children()), ::TYPES[2/*Uno.Collections.ICollection<Fuse.Node>*/]), temp27);
@@ -429,14 +431,6 @@ void LoginPage::InitializeUX()
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(Children()), ::TYPES[2/*Uno.Collections.ICollection<Fuse.Node>*/]), temp13);
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(Children()), ::TYPES[2/*Uno.Collections.ICollection<Fuse.Node>*/]), loggedOutView);
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(Children()), ::TYPES[2/*Uno.Collections.ICollection<Fuse.Node>*/]), temp25);
-}
-
-// public LoginPage New(Fuse.Navigation.Router router) [static] :31
-LoginPage* LoginPage::New5(::g::Fuse::Navigation::Router* router1)
-{
-    LoginPage* obj1 = (LoginPage*)uNew(LoginPage_typeof());
-    obj1->ctor_8(router1);
-    return obj1;
 }
 // }
 

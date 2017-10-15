@@ -1,4 +1,4 @@
-// This file was generated based on '/Users/a/Library/Application Support/Fusetools/Packages/Fuse.Launcher.InterApp/1.2.1/interapp/$.uno'.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Launcher.InterApp/1.3.0-rc2/InterApp/InterAppTrigger.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -11,7 +11,7 @@ namespace Fuse{
 namespace Triggers{
 namespace Actions{
 
-// public sealed class LaunchUri :94
+// public sealed class LaunchUri :45
 // {
 ::g::Fuse::Triggers::Actions::TriggerAction_type* LaunchUri_typeof();
 void LaunchUri__Perform_fn(LaunchUri* __this, ::g::Fuse::Node* target);

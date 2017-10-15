@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Reactive.JavaScript/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Reactive.JavaScript/1.3.0-rc2/ThreadWorker.ScriptClass.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -13,7 +13,7 @@ namespace g{
 namespace Fuse{
 namespace Reactive{
 
-// private sealed class ThreadWorker.MethodClosure :1790
+// private sealed class ThreadWorker.MethodClosure :159
 // {
 uType* ThreadWorker__MethodClosure_typeof();
 void ThreadWorker__MethodClosure__ctor__fn(ThreadWorker__MethodClosure* __this, ::g::Fuse::Scripting::Function* cl, ::g::Fuse::Scripting::ScriptMethod* m, ::g::Fuse::Reactive::ThreadWorker* worker);
@@ -24,7 +24,7 @@ void ThreadWorker__MethodClosure__New1_fn(::g::Fuse::Scripting::Function* cl, ::
 struct ThreadWorker__MethodClosure : uObject
 {
     static uSStrong<uArray*> _emptyArgs_;
-    static uSStrong<uArray*>& _emptyArgs() { return ThreadWorker__MethodClosure_typeof()->Init(), _emptyArgs_; }
+    static uSStrong<uArray*>& _emptyArgs() { return _emptyArgs_; }
     uStrong< ::g::Fuse::Scripting::ScriptMethod*> _m;
     uStrong< ::g::Fuse::Reactive::ThreadWorker*> _worker;
 

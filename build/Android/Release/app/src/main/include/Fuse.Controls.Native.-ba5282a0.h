@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Controls.Native/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Controls.Native/1.3.0-rc2/Interfaces.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -9,7 +9,7 @@ namespace Fuse{
 namespace Controls{
 namespace Native{
 
-// public abstract interface IToggleViewHost :402
+// public abstract interface IToggleViewHost :50
 // {
 uInterfaceType* IToggleViewHost_typeof();
 

@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Controls/1.2.1/graphics/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Controls/1.3.0-rc2/Graphics/ControlVisual.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -9,6 +9,7 @@
 #include <Fuse.ITemplateSource.h>
 #include <Fuse.Node.h>
 #include <Fuse.Scripting.IScriptObject.h>
+#include <Fuse.Visual.h>
 #include <Uno.Collections.ICollection-1.h>
 #include <Uno.Collections.IEnumerable-1.h>
 #include <Uno.Collections.IList-1.h>
@@ -21,7 +22,7 @@ namespace Fuse{
 namespace Controls{
 namespace Graphics{
 
-// public abstract class ControlVisual<T> :6
+// public abstract class ControlVisual<T> :4
 // {
 struct ControlVisual_type : ::g::Fuse::Visual_type
 {
@@ -39,7 +40,7 @@ void ControlVisual__OnUnrooted_fn(ControlVisual* __this);
 
 struct ControlVisual : ::g::Fuse::Controls::Graphics::Visual
 {
-    uTField _control() { return __type->Field(this, 62); }
+    uTField _control() { return __type->Field(this, 67); }
 
     void ctor_4();
     void Attach() { (((ControlVisual_type*)__type)->fp_Attach)(this); }

@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Triggers/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Triggers/1.3.0-rc2/Completed.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -9,7 +9,7 @@ namespace g{
 namespace Fuse{
 namespace Triggers{
 
-// public sealed class CompletedEventArgs :612
+// public sealed class CompletedEventArgs :6
 // {
 uType* CompletedEventArgs_typeof();
 void CompletedEventArgs__ctor_1_fn(CompletedEventArgs* __this);

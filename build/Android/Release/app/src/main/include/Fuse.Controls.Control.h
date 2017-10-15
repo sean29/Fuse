@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Controls/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Controls/1.3.0-rc2/Control.Background.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -14,6 +14,7 @@
 #include <Fuse.Triggers.Actions.IHide.h>
 #include <Fuse.Triggers.Actions.IShow.h>
 #include <Fuse.Triggers.Actions-ea70af1f.h>
+#include <Fuse.Visual.h>
 #include <Uno.Collections.ICollection-1.h>
 #include <Uno.Collections.IEnumerable-1.h>
 #include <Uno.Collections.IList-1.h>
@@ -23,7 +24,6 @@ namespace g{namespace Fuse{namespace Drawing{struct Brush;}}}
 namespace g{namespace Fuse{struct DrawContext;}}
 namespace g{namespace Fuse{struct HitTestContext;}}
 namespace g{namespace Fuse{struct LayoutParams;}}
-namespace g{namespace Fuse{struct Visual;}}
 namespace g{namespace Fuse{struct VisualBounds;}}
 namespace g{namespace Uno{namespace UX{struct PropertyObject;}}}
 namespace g{namespace Uno{namespace UX{struct Selector;}}}
@@ -34,7 +34,7 @@ namespace g{
 namespace Fuse{
 namespace Controls{
 
-// public interfacemodifiers class Control :10
+// public interfacemodifiers class Control :9
 // {
 struct Control_type : ::g::Fuse::Elements::Element_type
 {

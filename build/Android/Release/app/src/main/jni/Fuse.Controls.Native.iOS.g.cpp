@@ -14,10 +14,10 @@ namespace Controls{
 namespace Native{
 namespace iOS{
 
-// /usr/local/share/uno/Packages/Fuse.Controls.Native/1.2.1/ios/$.uno
-// ------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Controls.Native\1.3.0-rc2\iOS\Button.uno
+// -----------------------------------------------------------------------------------------
 
-// public sealed extern class Button :8
+// public extern class Button :6
 // {
 static void Button_build(uType* type)
 {
@@ -33,40 +33,25 @@ uType* Button_typeof()
     options.TypeSize = sizeof(uType);
     type = uClassType::New("Fuse.Controls.Native.iOS.Button", options);
     type->fp_build_ = Button_build;
-    type->fp_ctor_ = (void*)Button__New1_fn;
     return type;
 }
 
-// public Button() :10
+// public Button() :8
 void Button__ctor__fn(Button* __this)
 {
     __this->ctor_();
 }
 
-// public Button New() :10
-void Button__New1_fn(Button** __retval)
-{
-    *__retval = Button::New1();
-}
-
-// public Button() [instance] :10
+// public Button() [instance] :8
 void Button::ctor_()
 {
 }
-
-// public Button New() [static] :10
-Button* Button::New1()
-{
-    Button* obj1 = (Button*)uNew(Button_typeof());
-    obj1->ctor_();
-    return obj1;
-}
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Controls.Native/1.2.1/ios/$.uno
-// ------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Controls.Native\1.3.0-rc2\iOS\GraphicsView.uno
+// -----------------------------------------------------------------------------------------------
 
-// public sealed extern class GraphicsView :384
+// public extern class GraphicsView :7
 // {
 static void GraphicsView_build(uType* type)
 {
@@ -85,36 +70,22 @@ uType* GraphicsView_typeof()
     return type;
 }
 
-// public GraphicsView(Fuse.Visual host) :387
+// public GraphicsView(Fuse.Visual host) :10
 void GraphicsView__ctor__fn(GraphicsView* __this, ::g::Fuse::Visual* host)
 {
     __this->ctor_(host);
 }
 
-// public GraphicsView New(Fuse.Visual host) :387
-void GraphicsView__New1_fn(::g::Fuse::Visual* host, GraphicsView** __retval)
-{
-    *__retval = GraphicsView::New1(host);
-}
-
-// public GraphicsView(Fuse.Visual host) [instance] :387
+// public GraphicsView(Fuse.Visual host) [instance] :10
 void GraphicsView::ctor_(::g::Fuse::Visual* host)
 {
 }
-
-// public GraphicsView New(Fuse.Visual host) [static] :387
-GraphicsView* GraphicsView::New1(::g::Fuse::Visual* host)
-{
-    GraphicsView* obj1 = (GraphicsView*)uNew(GraphicsView_typeof());
-    obj1->ctor_(host);
-    return obj1;
-}
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Controls.Native/1.2.1/ios/$.uno
-// ------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Controls.Native\1.3.0-rc2\iOS\ScrollView.uno
+// ---------------------------------------------------------------------------------------------
 
-// public sealed extern class ScrollView :1608
+// public extern class ScrollView :7
 // {
 static void ScrollView_build(uType* type)
 {
@@ -133,36 +104,22 @@ uType* ScrollView_typeof()
     return type;
 }
 
-// public ScrollView(Fuse.Controls.Native.IScrollViewHost host) :1611
+// public ScrollView(Fuse.Controls.Native.IScrollViewHost host) :10
 void ScrollView__ctor__fn(ScrollView* __this, uObject* host)
 {
     __this->ctor_(host);
 }
 
-// public ScrollView New(Fuse.Controls.Native.IScrollViewHost host) :1611
-void ScrollView__New1_fn(uObject* host, ScrollView** __retval)
-{
-    *__retval = ScrollView::New1(host);
-}
-
-// public ScrollView(Fuse.Controls.Native.IScrollViewHost host) [instance] :1611
+// public ScrollView(Fuse.Controls.Native.IScrollViewHost host) [instance] :10
 void ScrollView::ctor_(uObject* host)
 {
 }
-
-// public ScrollView New(Fuse.Controls.Native.IScrollViewHost host) [static] :1611
-ScrollView* ScrollView::New1(uObject* host)
-{
-    ScrollView* obj1 = (ScrollView*)uNew(ScrollView_typeof());
-    obj1->ctor_(host);
-    return obj1;
-}
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Controls.Native/1.2.1/ios/$.uno
-// ------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Controls.Native\1.3.0-rc2\iOS\TextView.uno
+// -------------------------------------------------------------------------------------------
 
-// public sealed extern class TextView :2942
+// public extern class TextView :6
 // {
 static void TextView_build(uType* type)
 {
@@ -178,33 +135,18 @@ uType* TextView_typeof()
     options.TypeSize = sizeof(uType);
     type = uClassType::New("Fuse.Controls.Native.iOS.TextView", options);
     type->fp_build_ = TextView_build;
-    type->fp_ctor_ = (void*)TextView__New1_fn;
     return type;
 }
 
-// public generated TextView() :2942
+// public generated TextView() :6
 void TextView__ctor__fn(TextView* __this)
 {
     __this->ctor_();
 }
 
-// public generated TextView New() :2942
-void TextView__New1_fn(TextView** __retval)
-{
-    *__retval = TextView::New1();
-}
-
-// public generated TextView() [instance] :2942
+// public generated TextView() [instance] :6
 void TextView::ctor_()
 {
-}
-
-// public generated TextView New() [static] :2942
-TextView* TextView::New1()
-{
-    TextView* obj1 = (TextView*)uNew(TextView_typeof());
-    obj1->ctor_();
-    return obj1;
 }
 // }
 

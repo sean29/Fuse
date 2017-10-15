@@ -11,10 +11,10 @@ namespace Uno{
 namespace Permissions{
 namespace Internal{
 
-// /Users/a/Library/Application Support/Fusetools/Packages/Uno.Permissions/1.2.2/$.uno
-// -----------------------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Uno.Permissions\1.3.1\AndroidPermissionsInternal.uno
+// ------------------------------------------------------------------------------------------------
 
-// internal sealed extern class Android :313
+// internal sealed extern class Android :10
 // {
 static void Android_build(uType* type)
 {
@@ -41,97 +41,97 @@ uType* Android_typeof()
     return type;
 }
 
-// internal static extern Uno.Permissions.PlatformPermission _access_coarse_location() :321
+// internal static extern Uno.Permissions.PlatformPermission _access_coarse_location() :18
 void Android___access_coarse_location_fn(::g::Uno::Permissions::PlatformPermission* __retval)
 {
     *__retval = Android::_access_coarse_location();
 }
 
-// internal static extern Uno.Permissions.PlatformPermission _access_fine_location() :326
+// internal static extern Uno.Permissions.PlatformPermission _access_fine_location() :23
 void Android___access_fine_location_fn(::g::Uno::Permissions::PlatformPermission* __retval)
 {
     *__retval = Android::_access_fine_location();
 }
 
-// internal static extern Uno.Permissions.PlatformPermission _call_phone() :491
+// internal static extern Uno.Permissions.PlatformPermission _call_phone() :188
 void Android___call_phone_fn(::g::Uno::Permissions::PlatformPermission* __retval)
 {
     *__retval = Android::_call_phone();
 }
 
-// internal static extern Uno.Permissions.PlatformPermission _camera() :501
+// internal static extern Uno.Permissions.PlatformPermission _camera() :198
 void Android___camera_fn(::g::Uno::Permissions::PlatformPermission* __retval)
 {
     *__retval = Android::_camera();
 }
 
-// internal static extern Uno.Permissions.PlatformPermission _internet() :666
+// internal static extern Uno.Permissions.PlatformPermission _internet() :363
 void Android___internet_fn(::g::Uno::Permissions::PlatformPermission* __retval)
 {
     *__retval = Android::_internet();
 }
 
-// internal static extern Uno.Permissions.PlatformPermission _read_external_storage() :756
+// internal static extern Uno.Permissions.PlatformPermission _read_external_storage() :453
 void Android___read_external_storage_fn(::g::Uno::Permissions::PlatformPermission* __retval)
 {
     *__retval = Android::_read_external_storage();
 }
 
-// internal static extern Uno.Permissions.PlatformPermission _read_phone_state() :781
+// internal static extern Uno.Permissions.PlatformPermission _read_phone_state() :478
 void Android___read_phone_state_fn(::g::Uno::Permissions::PlatformPermission* __retval)
 {
     *__retval = Android::_read_phone_state();
 }
 
-// internal static extern Uno.Permissions.PlatformPermission _write_external_storage() :1016
+// internal static extern Uno.Permissions.PlatformPermission _write_external_storage() :713
 void Android___write_external_storage_fn(::g::Uno::Permissions::PlatformPermission* __retval)
 {
     *__retval = Android::_write_external_storage();
 }
 
-// internal static extern Uno.Permissions.PlatformPermission _access_coarse_location() [static] :321
+// internal static extern Uno.Permissions.PlatformPermission _access_coarse_location() [static] :18
 ::g::Uno::Permissions::PlatformPermission Android::_access_coarse_location()
 {
     return ::g::Uno::Permissions::PlatformPermission__New1(::STRINGS[0/*"android.per...*/]);
 }
 
-// internal static extern Uno.Permissions.PlatformPermission _access_fine_location() [static] :326
+// internal static extern Uno.Permissions.PlatformPermission _access_fine_location() [static] :23
 ::g::Uno::Permissions::PlatformPermission Android::_access_fine_location()
 {
     return ::g::Uno::Permissions::PlatformPermission__New1(::STRINGS[1/*"android.per...*/]);
 }
 
-// internal static extern Uno.Permissions.PlatformPermission _call_phone() [static] :491
+// internal static extern Uno.Permissions.PlatformPermission _call_phone() [static] :188
 ::g::Uno::Permissions::PlatformPermission Android::_call_phone()
 {
     return ::g::Uno::Permissions::PlatformPermission__New1(::STRINGS[2/*"android.per...*/]);
 }
 
-// internal static extern Uno.Permissions.PlatformPermission _camera() [static] :501
+// internal static extern Uno.Permissions.PlatformPermission _camera() [static] :198
 ::g::Uno::Permissions::PlatformPermission Android::_camera()
 {
     return ::g::Uno::Permissions::PlatformPermission__New1(::STRINGS[3/*"android.per...*/]);
 }
 
-// internal static extern Uno.Permissions.PlatformPermission _internet() [static] :666
+// internal static extern Uno.Permissions.PlatformPermission _internet() [static] :363
 ::g::Uno::Permissions::PlatformPermission Android::_internet()
 {
     return ::g::Uno::Permissions::PlatformPermission__New1(::STRINGS[4/*"android.per...*/]);
 }
 
-// internal static extern Uno.Permissions.PlatformPermission _read_external_storage() [static] :756
+// internal static extern Uno.Permissions.PlatformPermission _read_external_storage() [static] :453
 ::g::Uno::Permissions::PlatformPermission Android::_read_external_storage()
 {
     return ::g::Uno::Permissions::PlatformPermission__New1(::STRINGS[5/*"android.per...*/]);
 }
 
-// internal static extern Uno.Permissions.PlatformPermission _read_phone_state() [static] :781
+// internal static extern Uno.Permissions.PlatformPermission _read_phone_state() [static] :478
 ::g::Uno::Permissions::PlatformPermission Android::_read_phone_state()
 {
     return ::g::Uno::Permissions::PlatformPermission__New1(::STRINGS[6/*"android.per...*/]);
 }
 
-// internal static extern Uno.Permissions.PlatformPermission _write_external_storage() [static] :1016
+// internal static extern Uno.Permissions.PlatformPermission _write_external_storage() [static] :713
 ::g::Uno::Permissions::PlatformPermission Android::_write_external_storage()
 {
     return ::g::Uno::Permissions::PlatformPermission__New1(::STRINGS[7/*"android.per...*/]);

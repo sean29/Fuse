@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Controls.WebView/1.2.1/android/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Controls.WebView/1.3.0-rc2/Android/WebView.Eval.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -12,7 +12,7 @@ namespace Android{
 namespace Controls{
 namespace WebViewUtils{
 
-// internal sealed extern class EvaluateJsCommand :14
+// internal sealed extern class EvaluateJsCommand :12
 // {
 uType* EvaluateJsCommand_typeof();
 void EvaluateJsCommand__ctor__fn(EvaluateJsCommand* __this, uString* javaScript, uDelegate* handler);

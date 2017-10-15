@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/UnoCore/1.2.2/source/uno/time/utilities/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/UnoCore/1.3.1/Source/Uno/Time/Utilities/HashcodeHelper.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -9,7 +9,7 @@ namespace g{
 namespace Uno{
 namespace Time{
 
-// internal static class HashCodeHelper :71
+// internal static class HashCodeHelper :3
 // {
 uClassType* HashCodeHelper_typeof();
 void HashCodeHelper__Hash_fn(uType* __type, int* code, void* value, int* __retval);

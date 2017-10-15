@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Uno.Net.Sockets/1.2.2/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Uno.Net.Sockets/1.3.1/Socket.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -10,7 +10,7 @@ namespace Uno{
 namespace Net{
 namespace Sockets{
 
-// public sealed class SocketException :1128
+// public sealed class SocketException :545
 // {
 ::g::Uno::Exception_type* SocketException_typeof();
 void SocketException__ctor_3_fn(SocketException* __this, uString* message);

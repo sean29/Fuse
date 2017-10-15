@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Common/1.2.1/resources/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Common/1.3.0-rc2/Resources/MemoryPolicy.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -9,7 +9,7 @@ namespace g{
 namespace Fuse{
 namespace Resources{
 
-// public sealed class MemoryPolicy :288
+// public sealed class MemoryPolicy :10
 // {
 uType* MemoryPolicy_typeof();
 void MemoryPolicy__ctor__fn(MemoryPolicy* __this);
@@ -29,13 +29,13 @@ void MemoryPolicy__set_UnusedTimeout_fn(MemoryPolicy* __this, double* value);
 struct MemoryPolicy : uObject
 {
     static uSStrong<MemoryPolicy*> PreloadRetain_;
-    static uSStrong<MemoryPolicy*>& PreloadRetain() { return MemoryPolicy_typeof()->Init(), PreloadRetain_; }
+    static uSStrong<MemoryPolicy*>& PreloadRetain() { return PreloadRetain_; }
     static uSStrong<MemoryPolicy*> QuickUnload_;
-    static uSStrong<MemoryPolicy*>& QuickUnload() { return MemoryPolicy_typeof()->Init(), QuickUnload_; }
+    static uSStrong<MemoryPolicy*>& QuickUnload() { return QuickUnload_; }
     static uSStrong<MemoryPolicy*> UnloadInBackgroundPolicy_;
-    static uSStrong<MemoryPolicy*>& UnloadInBackgroundPolicy() { return MemoryPolicy_typeof()->Init(), UnloadInBackgroundPolicy_; }
+    static uSStrong<MemoryPolicy*>& UnloadInBackgroundPolicy() { return UnloadInBackgroundPolicy_; }
     static uSStrong<MemoryPolicy*> UnloadUnused_;
-    static uSStrong<MemoryPolicy*>& UnloadUnused() { return MemoryPolicy_typeof()->Init(), UnloadUnused_; }
+    static uSStrong<MemoryPolicy*>& UnloadUnused() { return UnloadUnused_; }
     bool _AllowPinnedFree;
     bool _BundlePreload;
     bool _UnloadInBackground;

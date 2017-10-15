@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Uno.Net.Http/1.2.2/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Uno.Net.Http/1.3.1/HttpStatusReasonPhrase.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -10,7 +10,7 @@ namespace Uno{
 namespace Net{
 namespace Http{
 
-// public static class HttpStatusReasonPhrase :750
+// public static class HttpStatusReasonPhrase :5
 // {
 uClassType* HttpStatusReasonPhrase_typeof();
 void HttpStatusReasonPhrase__GetFromStatusCode_fn(int* statusCode, uString** __retval);
@@ -18,15 +18,15 @@ void HttpStatusReasonPhrase__GetFromStatusCode_fn(int* statusCode, uString** __r
 struct HttpStatusReasonPhrase : uObject
 {
     static uSStrong<uObject*> ClientErrors_;
-    static uSStrong<uObject*>& ClientErrors() { return HttpStatusReasonPhrase_typeof()->Init(), ClientErrors_; }
+    static uSStrong<uObject*>& ClientErrors() { return ClientErrors_; }
     static uSStrong<uObject*> Informational_;
-    static uSStrong<uObject*>& Informational() { return HttpStatusReasonPhrase_typeof()->Init(), Informational_; }
+    static uSStrong<uObject*>& Informational() { return Informational_; }
     static uSStrong<uObject*> Redirection_;
-    static uSStrong<uObject*>& Redirection() { return HttpStatusReasonPhrase_typeof()->Init(), Redirection_; }
+    static uSStrong<uObject*>& Redirection() { return Redirection_; }
     static uSStrong<uObject*> ServerErrors_;
-    static uSStrong<uObject*>& ServerErrors() { return HttpStatusReasonPhrase_typeof()->Init(), ServerErrors_; }
+    static uSStrong<uObject*>& ServerErrors() { return ServerErrors_; }
     static uSStrong<uObject*> Success_;
-    static uSStrong<uObject*>& Success() { return HttpStatusReasonPhrase_typeof()->Init(), Success_; }
+    static uSStrong<uObject*>& Success() { return Success_; }
 
     static uString* GetFromStatusCode(int statusCode);
 };

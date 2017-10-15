@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Triggers/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Triggers/1.3.0-rc2/Trigger.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -11,7 +11,7 @@ namespace g{
 namespace Fuse{
 namespace Triggers{
 
-// private sealed class Trigger.DeferredItem :2851
+// private sealed class Trigger.DeferredItem :275
 // {
 uType* Trigger__DeferredItem_typeof();
 void Trigger__DeferredItem__ctor__fn(Trigger__DeferredItem* __this);
@@ -21,7 +21,7 @@ void Trigger__DeferredItem__Perform_fn(Trigger__DeferredItem* __this);
 struct Trigger__DeferredItem : uObject
 {
     uStrong< ::g::Fuse::Triggers::Actions::TriggerAction*> Action;
-    uStrong< ::g::Fuse::Node*> Parent;
+    uStrong< ::g::Fuse::Node*> Node;
 
     void ctor_();
     void Perform();

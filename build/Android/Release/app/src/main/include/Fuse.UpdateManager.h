@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Common/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Common/1.3.0-rc2/UpdateManager.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -12,13 +12,14 @@ namespace g{namespace Uno{struct Exception;}}
 namespace g{
 namespace Fuse{
 
-// public static class UpdateManager :3583
+// public static class UpdateManager :145
 // {
 uClassType* UpdateManager_typeof();
 void UpdateManager__AddAction_fn(uObject* pu, int* stage);
 void UpdateManager__AddAction1_fn(uDelegate* pu, int* stage);
-void UpdateManager__AddDeferredAction_fn(uDelegate* pu, int* stage, int* priority);
-void UpdateManager__AddDeferredAction1_fn(uDelegate* pu, int* priority);
+void UpdateManager__AddDeferredAction_fn(uObject* pu, int* stage, int* priority);
+void UpdateManager__AddDeferredAction2_fn(uDelegate* pu, int* stage, int* priority);
+void UpdateManager__AddDeferredAction3_fn(uDelegate* pu, int* priority);
 void UpdateManager__AddOnceAction_fn(uDelegate* pu, int* stage);
 void UpdateManager__CheckExceptions_fn(::g::Uno::Collections::List* exs);
 void UpdateManager__get_CurrentDeferredActionStage_fn(::g::Fuse::Stage** __retval);
@@ -58,8 +59,9 @@ struct UpdateManager : uObject
 
     static void AddAction(uObject* pu, int stage);
     static void AddAction1(uDelegate* pu, int stage);
-    static void AddDeferredAction(uDelegate* pu, int stage, int priority);
-    static void AddDeferredAction1(uDelegate* pu, int priority);
+    static void AddDeferredAction(uObject* pu, int stage, int priority);
+    static void AddDeferredAction2(uDelegate* pu, int stage, int priority);
+    static void AddDeferredAction3(uDelegate* pu, int priority);
     static void AddOnceAction(uDelegate* pu, int stage);
     static void CheckExceptions(::g::Uno::Collections::List* exs);
     static void IncreaseFrameIndex();

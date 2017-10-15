@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Uno.Threading/1.2.2/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Uno.Threading/1.3.1/Future.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -14,7 +14,7 @@ namespace g{
 namespace Uno{
 namespace Threading{
 
-// public abstract class Future<T> :310
+// public abstract class Future<T> :15
 // {
 ::g::Uno::Threading::Future_type* Future1_typeof();
 void Future1__ctor_1_fn(Future1* __this);

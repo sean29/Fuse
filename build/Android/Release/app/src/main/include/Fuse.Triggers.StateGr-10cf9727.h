@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Triggers/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Triggers/1.3.0-rc2/StateGroup.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -11,7 +11,7 @@ namespace g{
 namespace Fuse{
 namespace Triggers{
 
-// private sealed class StateGroup.GotoImpl :1967
+// private sealed class StateGroup.GotoImpl :117
 // {
 uType* StateGroup__GotoImpl_typeof();
 void StateGroup__GotoImpl__ctor__fn(StateGroup__GotoImpl* __this);

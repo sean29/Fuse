@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/UnoCore/1.2.2/source/uno/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/UnoCore/1.3.1/Source/Uno/Color.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -11,7 +11,7 @@ namespace g{namespace Uno{struct Int4;}}
 namespace g{
 namespace Uno{
 
-// public static class Color :1358
+// public static class Color :9
 // {
 uClassType* Color_typeof();
 void Color__FromArgb_fn(uint32_t* argb, ::g::Uno::Float4* __retval);
@@ -29,9 +29,9 @@ void Color__ToInt4_fn(::g::Uno::Float4* rgba, ::g::Uno::Int4* __retval);
 struct Color : uObject
 {
     static ::g::Uno::Float3x3 ToYCbCrMat_;
-    static ::g::Uno::Float3x3& ToYCbCrMat() { return Color_typeof()->Init(), ToYCbCrMat_; }
+    static ::g::Uno::Float3x3& ToYCbCrMat() { return ToYCbCrMat_; }
     static ::g::Uno::Float3x3 ToYCbCrMatInv_;
-    static ::g::Uno::Float3x3& ToYCbCrMatInv() { return Color_typeof()->Init(), ToYCbCrMatInv_; }
+    static ::g::Uno::Float3x3& ToYCbCrMatInv() { return ToYCbCrMatInv_; }
 
     static ::g::Uno::Float4 FromArgb(uint32_t argb);
     static ::g::Uno::Float4 FromHex(uString* hex);

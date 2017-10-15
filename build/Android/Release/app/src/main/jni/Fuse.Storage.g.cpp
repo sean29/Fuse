@@ -29,29 +29,22 @@
 #include <Uno.Threading.Future-1.h>
 #include <Uno.Threading.Promise-1.h>
 #include <Uno.UX.Resource.h>
-static uString* STRINGS[10];
-static uType* TYPES[12];
+static uString* STRINGS[7];
+static uType* TYPES[6];
 
 namespace g{
 namespace Fuse{
 namespace Storage{
 
-// /usr/local/share/uno/Packages/Fuse.Storage/1.2.1/$.uno
-// ------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Storage\1.3.0-rc2\ApplicationDir.uno
+// -------------------------------------------------------------------------------------
 
-// internal static class ApplicationDir :9
+// internal static class ApplicationDir :7
 // {
 static void ApplicationDir_build(uType* type)
 {
-    ::STRINGS[0] = uString::Const("filename");
-    ::STRINGS[1] = uString::Const("File does not exist.");
-    ::STRINGS[2] = uString::Const("value");
-    ::TYPES[0] = ::g::Uno::IDisposable_typeof();
-    ::TYPES[1] = ::g::Uno::Exception_typeof();
-    ::TYPES[2] = ::g::Uno::Threading::Promise_typeof()->MakeType(::g::Uno::String_typeof(), NULL);
-    ::TYPES[3] = ::g::Uno::Func_typeof()->MakeType(::g::Uno::String_typeof(), NULL);
-    ::TYPES[4] = ::g::Uno::Threading::Promise_typeof()->MakeType(::g::Uno::Bool_typeof(), NULL);
-    ::TYPES[5] = ::g::Uno::Func_typeof()->MakeType(::g::Uno::Bool_typeof(), NULL);
+    type->SetDependencies(
+        ::g::Uno::IO::Path_typeof());
 }
 
 uClassType* ApplicationDir_typeof()
@@ -60,55 +53,56 @@ uClassType* ApplicationDir_typeof()
     if (type != NULL) return type;
 
     uTypeOptions options;
+    options.DependencyCount = 1;
     options.TypeSize = sizeof(uClassType);
     type = uClassType::New("Fuse.Storage.ApplicationDir", options);
     type->fp_build_ = ApplicationDir_build;
     return type;
 }
 
-// private static void CreateFile(string filepath) :26
+// private static void CreateFile(string filepath) :24
 void ApplicationDir__CreateFile_fn(uString* filepath)
 {
     ApplicationDir::CreateFile(filepath);
 }
 
-// public static bool Delete(string filename) :57
+// public static bool Delete(string filename) :55
 void ApplicationDir__Delete_fn(uString* filename, bool* __retval)
 {
     *__retval = ApplicationDir::Delete(filename);
 }
 
-// public static string Read(string filename) :48
+// public static string Read(string filename) :46
 void ApplicationDir__Read_fn(uString* filename, uString** __retval)
 {
     *__retval = ApplicationDir::Read(filename);
 }
 
-// public static Uno.Threading.Future<string> ReadAsync(string filename) :83
+// public static Uno.Threading.Future<string> ReadAsync(string filename) :81
 void ApplicationDir__ReadAsync_fn(uString* filename, ::g::Uno::Threading::Future1** __retval)
 {
     *__retval = ApplicationDir::ReadAsync(filename);
 }
 
-// public static bool TryRead(string filename, string& content) :32
+// public static bool TryRead(string filename, string& content) :30
 void ApplicationDir__TryRead_fn(uString* filename, uString** content, bool* __retval)
 {
     *__retval = ApplicationDir::TryRead(filename, content);
 }
 
-// public static bool Write(string filename, string value) :11
+// public static bool Write(string filename, string value) :9
 void ApplicationDir__Write_fn(uString* filename, uString* value, bool* __retval)
 {
     *__retval = ApplicationDir::Write(filename, value);
 }
 
-// public static Uno.Threading.Future<bool> WriteAsync(string filename, string value) :73
+// public static Uno.Threading.Future<bool> WriteAsync(string filename, string value) :71
 void ApplicationDir__WriteAsync_fn(uString* filename, uString* value, ::g::Uno::Threading::Future1** __retval)
 {
     *__retval = ApplicationDir::WriteAsync(filename, value);
 }
 
-// private static void CreateFile(string filepath) [static] :26
+// private static void CreateFile(string filepath) [static] :24
 void ApplicationDir::CreateFile(uString* filepath)
 {
     ::g::Uno::IO::Stream* stream = ::g::Uno::IO::File::Open(filepath, 2);
@@ -116,18 +110,18 @@ void ApplicationDir::CreateFile(uString* filepath)
     {
         const auto __finally_fun = [&]()
         {
-            ::g::Uno::IDisposable::Dispose(uInterface(uPtr((uObject*)stream), ::TYPES[0/*Uno.IDisposable*/]));
+            ::g::Uno::IDisposable::Dispose(uInterface(uPtr((uObject*)stream), ::g::Uno::IDisposable_typeof()));
         };
 
         const uFinally<decltype(__finally_fun)> __f(__finally_fun);
     }
 }
 
-// public static bool Delete(string filename) [static] :57
+// public static bool Delete(string filename) [static] :55
 bool ApplicationDir::Delete(uString* filename)
 {
     if (::g::Uno::String::op_Equality(filename, NULL))
-        U_THROW(::g::Uno::ArgumentNullException::New6(::STRINGS[0/*"filename"*/]));
+        U_THROW(::g::Uno::ArgumentNullException::New6(uString::Const("filename")));
 
     uString* filepath = ::g::Uno::IO::Path::Combine(::g::Uno::IO::Directory::GetUserDirectory(1), filename);
 
@@ -147,7 +141,7 @@ bool ApplicationDir::Delete(uString* filename)
     return false;
 }
 
-// public static string Read(string filename) [static] :48
+// public static string Read(string filename) [static] :46
 uString* ApplicationDir::Read(uString* filename)
 {
     uString* content;
@@ -155,26 +149,26 @@ uString* ApplicationDir::Read(uString* filename)
     if (ApplicationDir::TryRead(filename, &content))
         return content;
     else
-        U_THROW(::g::Uno::Exception::New2(::STRINGS[1/*"File does n...*/]));
+        U_THROW(::g::Uno::Exception::New2(uString::Const("File does not exist.")));
 }
 
-// public static Uno.Threading.Future<string> ReadAsync(string filename) [static] :83
+// public static Uno.Threading.Future<string> ReadAsync(string filename) [static] :81
 ::g::Uno::Threading::Future1* ApplicationDir::ReadAsync(uString* filename)
 {
-    return (::g::Uno::Threading::Future1*)::g::Uno::Threading::Promise::Run(::TYPES[2/*Uno.Threading.Promise<string>*/], uDelegate::New(::TYPES[3/*Uno.Func<string>*/], (void*)ApplicationDir__ReadClosure__Invoke_fn, ApplicationDir__ReadClosure::New1(filename)));
+    return (::g::Uno::Threading::Future1*)::g::Uno::Threading::Promise::Run(::g::Uno::Threading::Promise_typeof()->MakeType(::TYPES[5/*string*/], NULL), uDelegate::New(::g::Uno::Func_typeof()->MakeType(::TYPES[5/*string*/], NULL), (void*)ApplicationDir__ReadClosure__Invoke_fn, ApplicationDir__ReadClosure::New1(filename)));
 }
 
-// public static bool TryRead(string filename, string& content) [static] :32
+// public static bool TryRead(string filename, string& content) [static] :30
 bool ApplicationDir::TryRead(uString* filename, uString** content)
 {
     if (::g::Uno::String::op_Equality(filename, NULL))
-        U_THROW(::g::Uno::ArgumentNullException::New6(::STRINGS[0/*"filename"*/]));
+        U_THROW(::g::Uno::ArgumentNullException::New6(uString::Const("filename")));
 
     uString* filepath = ::g::Uno::IO::Path::Combine(::g::Uno::IO::Directory::GetUserDirectory(1), filename);
 
     if (!::g::Uno::IO::File::Exists(filepath))
     {
-        *content = ::g::Uno::String::Empty();
+        *content = ::g::Uno::String::Empty_;
         return false;
     }
 
@@ -182,14 +176,14 @@ bool ApplicationDir::TryRead(uString* filename, uString** content)
     return true;
 }
 
-// public static bool Write(string filename, string value) [static] :11
+// public static bool Write(string filename, string value) [static] :9
 bool ApplicationDir::Write(uString* filename, uString* value)
 {
     if (::g::Uno::String::op_Equality(filename, NULL))
-        U_THROW(::g::Uno::ArgumentNullException::New6(::STRINGS[0/*"filename"*/]));
+        U_THROW(::g::Uno::ArgumentNullException::New6(uString::Const("filename")));
 
     if (::g::Uno::String::op_Equality(value, NULL))
-        U_THROW(::g::Uno::ArgumentNullException::New6(::STRINGS[2/*"value"*/]));
+        U_THROW(::g::Uno::ArgumentNullException::New6(uString::Const("value")));
 
     uString* filepath = ::g::Uno::IO::Path::Combine(::g::Uno::IO::Directory::GetUserDirectory(1), filename);
     ApplicationDir::CreateFile(filepath);
@@ -197,22 +191,24 @@ bool ApplicationDir::Write(uString* filename, uString* value)
     return true;
 }
 
-// public static Uno.Threading.Future<bool> WriteAsync(string filename, string value) [static] :73
+// public static Uno.Threading.Future<bool> WriteAsync(string filename, string value) [static] :71
 ::g::Uno::Threading::Future1* ApplicationDir::WriteAsync(uString* filename, uString* value)
 {
-    return (::g::Uno::Threading::Future1*)::g::Uno::Threading::Promise::Run(::TYPES[4/*Uno.Threading.Promise<bool>*/], uDelegate::New(::TYPES[5/*Uno.Func<bool>*/], (void*)ApplicationDir__WriteClosure__Invoke_fn, ApplicationDir__WriteClosure::New1(filename, value)));
+    return (::g::Uno::Threading::Future1*)::g::Uno::Threading::Promise::Run(::g::Uno::Threading::Promise_typeof()->MakeType(::g::Uno::Bool_typeof(), NULL), uDelegate::New(::g::Uno::Func_typeof()->MakeType(::g::Uno::Bool_typeof(), NULL), (void*)ApplicationDir__WriteClosure__Invoke_fn, ApplicationDir__WriteClosure::New1(filename, value)));
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Storage/1.2.1/$.uno
-// ------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Storage\1.3.0-rc2\ApplicationDir.uno
+// -------------------------------------------------------------------------------------
 
-// private sealed class ApplicationDir.ReadClosure :110
+// private sealed class ApplicationDir.ReadClosure :108
 // {
 static void ApplicationDir__ReadClosure_build(uType* type)
 {
+    type->SetDependencies(
+        ::g::Fuse::Storage::ApplicationDir_typeof());
     type->SetFields(0,
-        ::g::Uno::String_typeof(), offsetof(::g::Fuse::Storage::ApplicationDir__ReadClosure, _filename), 0);
+        ::g::Uno::String_typeof(), offsetof(ApplicationDir__ReadClosure, _filename), 0);
 }
 
 uType* ApplicationDir__ReadClosure_typeof()
@@ -222,6 +218,7 @@ uType* ApplicationDir__ReadClosure_typeof()
 
     uTypeOptions options;
     options.FieldCount = 1;
+    options.DependencyCount = 1;
     options.ObjectSize = sizeof(ApplicationDir__ReadClosure);
     options.TypeSize = sizeof(uType);
     type = uClassType::New("Fuse.Storage.ApplicationDir.ReadClosure", options);
@@ -229,37 +226,37 @@ uType* ApplicationDir__ReadClosure_typeof()
     return type;
 }
 
-// public ReadClosure(string filename) :114
+// public ReadClosure(string filename) :112
 void ApplicationDir__ReadClosure__ctor__fn(ApplicationDir__ReadClosure* __this, uString* filename)
 {
     __this->ctor_(filename);
 }
 
-// public string Invoke() :119
+// public string Invoke() :117
 void ApplicationDir__ReadClosure__Invoke_fn(ApplicationDir__ReadClosure* __this, uString** __retval)
 {
     *__retval = __this->Invoke();
 }
 
-// public ReadClosure New(string filename) :114
+// public ReadClosure New(string filename) :112
 void ApplicationDir__ReadClosure__New1_fn(uString* filename, ApplicationDir__ReadClosure** __retval)
 {
     *__retval = ApplicationDir__ReadClosure::New1(filename);
 }
 
-// public ReadClosure(string filename) [instance] :114
+// public ReadClosure(string filename) [instance] :112
 void ApplicationDir__ReadClosure::ctor_(uString* filename)
 {
     _filename = filename;
 }
 
-// public string Invoke() [instance] :119
+// public string Invoke() [instance] :117
 uString* ApplicationDir__ReadClosure::Invoke()
 {
     return ::g::Fuse::Storage::ApplicationDir::Read(_filename);
 }
 
-// public ReadClosure New(string filename) [static] :114
+// public ReadClosure New(string filename) [static] :112
 ApplicationDir__ReadClosure* ApplicationDir__ReadClosure::New1(uString* filename)
 {
     ApplicationDir__ReadClosure* obj1 = (ApplicationDir__ReadClosure*)uNew(ApplicationDir__ReadClosure_typeof());
@@ -268,31 +265,34 @@ ApplicationDir__ReadClosure* ApplicationDir__ReadClosure::New1(uString* filename
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Storage/1.2.1/$.uno
-// ------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Storage\1.3.0-rc2\StorageModule.uno
+// ------------------------------------------------------------------------------------
 
-// public sealed class StorageModule :148
+// public sealed class StorageModule :18
 // {
 static void StorageModule_build(uType* type)
 {
-    ::STRINGS[3] = uString::Const("FuseJS/Storage");
-    ::STRINGS[4] = uString::Const("writeSync");
-    ::STRINGS[5] = uString::Const("readSync");
-    ::STRINGS[6] = uString::Const("deleteSync");
-    ::STRINGS[7] = uString::Const("write");
-    ::STRINGS[8] = uString::Const("read");
-    ::STRINGS[9] = uString::Const("");
-    ::TYPES[6] = ::g::Fuse::Scripting::NativeCallback_typeof();
-    ::TYPES[7] = ::g::Fuse::Scripting::NativePromise_typeof()->MakeType(::g::Uno::Bool_typeof(), ::g::Uno::Bool_typeof(), NULL);
-    ::TYPES[8] = ::g::Fuse::Scripting::FutureFactory_typeof()->MakeType(::g::Uno::Bool_typeof(), NULL);
-    ::TYPES[9] = ::g::Fuse::Scripting::NativePromise_typeof()->MakeType(::g::Uno::String_typeof(), ::g::Uno::String_typeof(), NULL);
-    ::TYPES[10] = ::g::Fuse::Scripting::FutureFactory_typeof()->MakeType(::g::Uno::String_typeof(), NULL);
-    ::TYPES[11] = ::g::Uno::String_typeof();
+    ::STRINGS[0] = uString::Const("FuseJS/Storage");
+    ::STRINGS[1] = uString::Const("writeSync");
+    ::STRINGS[2] = uString::Const("readSync");
+    ::STRINGS[3] = uString::Const("deleteSync");
+    ::STRINGS[4] = uString::Const("write");
+    ::STRINGS[5] = uString::Const("read");
+    ::STRINGS[6] = uString::Const("");
+    ::TYPES[0] = ::g::Fuse::Scripting::NativeCallback_typeof();
+    ::TYPES[1] = ::g::Fuse::Scripting::NativePromise_typeof()->MakeType(::g::Uno::Bool_typeof(), ::g::Uno::Bool_typeof(), NULL);
+    ::TYPES[2] = ::g::Fuse::Scripting::FutureFactory_typeof()->MakeType(::g::Uno::Bool_typeof(), NULL);
+    ::TYPES[3] = ::g::Fuse::Scripting::NativePromise_typeof()->MakeType(::g::Uno::String_typeof(), ::g::Uno::String_typeof(), NULL);
+    ::TYPES[4] = ::g::Fuse::Scripting::FutureFactory_typeof()->MakeType(::g::Uno::String_typeof(), NULL);
+    ::TYPES[5] = ::g::Uno::String_typeof();
+    type->SetDependencies(
+        ::g::Fuse::Storage::ApplicationDir_typeof(),
+        ::g::Uno::UX::Resource_typeof());
     type->SetInterfaces(
         ::g::Uno::IDisposable_typeof(), offsetof(::g::Fuse::Scripting::NativeModule_type, interface0),
         ::g::Fuse::Scripting::IModuleProvider_typeof(), offsetof(::g::Fuse::Scripting::NativeModule_type, interface1));
     type->SetFields(4,
-        type, (uintptr_t)&::g::Fuse::Storage::StorageModule::_instance_, uFieldFlagsStatic);
+        type, (uintptr_t)&StorageModule::_instance_, uFieldFlagsStatic);
 }
 
 ::g::Fuse::Scripting::NativeModule_type* StorageModule_typeof()
@@ -304,6 +304,7 @@ static void StorageModule_build(uType* type)
     options.BaseDefinition = ::g::Fuse::Scripting::NativeModule_typeof();
     options.FieldCount = 5;
     options.InterfaceCount = 2;
+    options.DependencyCount = 2;
     options.ObjectSize = sizeof(StorageModule);
     options.TypeSize = sizeof(::g::Fuse::Scripting::NativeModule_type);
     type = (::g::Fuse::Scripting::NativeModule_type*)uClassType::New("Fuse.Storage.StorageModule", options);
@@ -314,43 +315,43 @@ static void StorageModule_build(uType* type)
     return type;
 }
 
-// public StorageModule() :151
+// public StorageModule() :21
 void StorageModule__ctor_2_fn(StorageModule* __this)
 {
     __this->ctor_2();
 }
 
-// private static object Delete(Fuse.Scripting.Context c, object[] args) :239
+// private static object Delete(Fuse.Scripting.Context c, object[] args) :109
 void StorageModule__Delete_fn(::g::Fuse::Scripting::Context* c, uArray* args, uObject** __retval)
 {
     *__retval = StorageModule::Delete(c, args);
 }
 
-// public StorageModule New() :151
+// public StorageModule New() :21
 void StorageModule__New2_fn(StorageModule** __retval)
 {
     *__retval = StorageModule::New2();
 }
 
-// private static object Read(Fuse.Scripting.Context c, object[] args) :294
+// private static object Read(Fuse.Scripting.Context c, object[] args) :164
 void StorageModule__Read_fn(::g::Fuse::Scripting::Context* c, uArray* args, uObject** __retval)
 {
     *__retval = StorageModule::Read(c, args);
 }
 
-// private static Uno.Threading.Future<string> ReadAsync(object[] args) :210
+// private static Uno.Threading.Future<string> ReadAsync(object[] args) :80
 void StorageModule__ReadAsync_fn(uArray* args, ::g::Uno::Threading::Future1** __retval)
 {
     *__retval = StorageModule::ReadAsync(args);
 }
 
-// private static object Write(Fuse.Scripting.Context c, object[] args) :268
+// private static object Write(Fuse.Scripting.Context c, object[] args) :138
 void StorageModule__Write_fn(::g::Fuse::Scripting::Context* c, uArray* args, uObject** __retval)
 {
     *__retval = StorageModule::Write(c, args);
 }
 
-// private static Uno.Threading.Future<bool> WriteAsync(object[] args) :182
+// private static Uno.Threading.Future<bool> WriteAsync(object[] args) :52
 void StorageModule__WriteAsync_fn(uArray* args, ::g::Uno::Threading::Future1** __retval)
 {
     *__retval = StorageModule::WriteAsync(args);
@@ -358,7 +359,7 @@ void StorageModule__WriteAsync_fn(uArray* args, ::g::Uno::Threading::Future1** _
 
 uSStrong<StorageModule*> StorageModule::_instance_;
 
-// public StorageModule() [instance] :151
+// public StorageModule() [instance] :21
 void StorageModule::ctor_2()
 {
     ctor_1();
@@ -366,27 +367,27 @@ void StorageModule::ctor_2()
     if (StorageModule::_instance_ != NULL)
         return;
 
-    ::g::Uno::UX::Resource::SetGlobalKey(StorageModule::_instance_ = this, ::STRINGS[3/*"FuseJS/Stor...*/]);
-    AddMember(::g::Fuse::Scripting::NativeFunction::New1(::STRINGS[4/*"writeSync"*/], uDelegate::New(::TYPES[6/*Fuse.Scripting.NativeCallback*/], (void*)StorageModule__Write_fn)));
-    AddMember(::g::Fuse::Scripting::NativeFunction::New1(::STRINGS[5/*"readSync"*/], uDelegate::New(::TYPES[6/*Fuse.Scripting.NativeCallback*/], (void*)StorageModule__Read_fn)));
-    AddMember(::g::Fuse::Scripting::NativeFunction::New1(::STRINGS[6/*"deleteSync"*/], uDelegate::New(::TYPES[6/*Fuse.Scripting.NativeCallback*/], (void*)StorageModule__Delete_fn)));
-    AddMember((::g::Fuse::Scripting::NativePromise*)::g::Fuse::Scripting::NativePromise::New1(::TYPES[7/*Fuse.Scripting.NativePromise<bool, bool>*/], ::STRINGS[7/*"write"*/], uDelegate::New(::TYPES[8/*Fuse.Scripting.FutureFactory<bool>*/], (void*)StorageModule__WriteAsync_fn), NULL));
-    AddMember((::g::Fuse::Scripting::NativePromise*)::g::Fuse::Scripting::NativePromise::New1(::TYPES[9/*Fuse.Scripting.NativePromise<string, string>*/], ::STRINGS[8/*"read"*/], uDelegate::New(::TYPES[10/*Fuse.Scripting.FutureFactory<string>*/], (void*)StorageModule__ReadAsync_fn), NULL));
+    ::g::Uno::UX::Resource::SetGlobalKey(StorageModule::_instance_ = this, ::STRINGS[0/*"FuseJS/Stor...*/]);
+    AddMember(::g::Fuse::Scripting::NativeFunction::New1(::STRINGS[1/*"writeSync"*/], uDelegate::New(::TYPES[0/*Fuse.Scripting.NativeCallback*/], (void*)StorageModule__Write_fn)));
+    AddMember(::g::Fuse::Scripting::NativeFunction::New1(::STRINGS[2/*"readSync"*/], uDelegate::New(::TYPES[0/*Fuse.Scripting.NativeCallback*/], (void*)StorageModule__Read_fn)));
+    AddMember(::g::Fuse::Scripting::NativeFunction::New1(::STRINGS[3/*"deleteSync"*/], uDelegate::New(::TYPES[0/*Fuse.Scripting.NativeCallback*/], (void*)StorageModule__Delete_fn)));
+    AddMember((::g::Fuse::Scripting::NativePromise*)::g::Fuse::Scripting::NativePromise::New1(::TYPES[1/*Fuse.Scripting.NativePromise<bool, bool>*/], ::STRINGS[4/*"write"*/], uDelegate::New(::TYPES[2/*Fuse.Scripting.FutureFactory<bool>*/], (void*)StorageModule__WriteAsync_fn), NULL));
+    AddMember((::g::Fuse::Scripting::NativePromise*)::g::Fuse::Scripting::NativePromise::New1(::TYPES[3/*Fuse.Scripting.NativePromise<string, string>*/], ::STRINGS[5/*"read"*/], uDelegate::New(::TYPES[4/*Fuse.Scripting.FutureFactory<string>*/], (void*)StorageModule__ReadAsync_fn), NULL));
 }
 
-// private static object Delete(Fuse.Scripting.Context c, object[] args) [static] :239
+// private static object Delete(Fuse.Scripting.Context c, object[] args) [static] :109
 uObject* StorageModule::Delete(::g::Fuse::Scripting::Context* c, uArray* args)
 {
     if (uPtr(args)->Length() > 0)
     {
-        uString* filename = uAs<uString*>(uPtr(args)->Strong<uObject*>(0), ::TYPES[11/*string*/]);
+        uString* filename = uAs<uString*>(uPtr(args)->Strong<uObject*>(0), ::TYPES[5/*string*/]);
         return uBox(::g::Uno::Bool_typeof(), ::g::Fuse::Storage::ApplicationDir::Delete(filename));
     }
 
     return uBox(::g::Uno::Bool_typeof(), false);
 }
 
-// public StorageModule New() [static] :151
+// public StorageModule New() [static] :21
 StorageModule* StorageModule::New2()
 {
     StorageModule* obj1 = (StorageModule*)uNew(StorageModule_typeof());
@@ -394,71 +395,73 @@ StorageModule* StorageModule::New2()
     return obj1;
 }
 
-// private static object Read(Fuse.Scripting.Context c, object[] args) [static] :294
+// private static object Read(Fuse.Scripting.Context c, object[] args) [static] :164
 uObject* StorageModule::Read(::g::Fuse::Scripting::Context* c, uArray* args)
 {
     uString* filename = NULL;
 
     if (uPtr(args)->Length() > 0)
-        filename = uAs<uString*>(uPtr(args)->Strong<uObject*>(0), ::TYPES[11/*string*/]);
+        filename = uAs<uString*>(uPtr(args)->Strong<uObject*>(0), ::TYPES[5/*string*/]);
 
     uString* content;
 
-    if (::g::Fuse::Storage::ApplicationDir::TryRead((filename != NULL) ? filename : ::STRINGS[9/*""*/], &content))
+    if (::g::Fuse::Storage::ApplicationDir::TryRead((filename != NULL) ? filename : ::STRINGS[6/*""*/], &content))
         return content;
     else
-        return ::g::Uno::String::Empty();
+        return ::g::Uno::String::Empty_;
 }
 
-// private static Uno.Threading.Future<string> ReadAsync(object[] args) [static] :210
+// private static Uno.Threading.Future<string> ReadAsync(object[] args) [static] :80
 ::g::Uno::Threading::Future1* StorageModule::ReadAsync(uArray* args)
 {
     if (uPtr(args)->Length() > 0)
     {
-        uString* filename = uAs<uString*>(uPtr(args)->Strong<uObject*>(0), ::TYPES[11/*string*/]);
-        return ::g::Fuse::Storage::ApplicationDir::ReadAsync((filename != NULL) ? filename : ::STRINGS[9/*""*/]);
+        uString* filename = uAs<uString*>(uPtr(args)->Strong<uObject*>(0), ::TYPES[5/*string*/]);
+        return ::g::Fuse::Storage::ApplicationDir::ReadAsync((filename != NULL) ? filename : ::STRINGS[6/*""*/]);
     }
 
-    return ::g::Fuse::Storage::ApplicationDir::ReadAsync(::STRINGS[9/*""*/]);
+    return ::g::Fuse::Storage::ApplicationDir::ReadAsync(::STRINGS[6/*""*/]);
 }
 
-// private static object Write(Fuse.Scripting.Context c, object[] args) [static] :268
+// private static object Write(Fuse.Scripting.Context c, object[] args) [static] :138
 uObject* StorageModule::Write(::g::Fuse::Scripting::Context* c, uArray* args)
 {
     if (uPtr(args)->Length() > 0)
     {
-        uString* filename = uAs<uString*>(uPtr(args)->Strong<uObject*>(0), ::TYPES[11/*string*/]);
-        uString* value = uAs<uString*>(args->Strong<uObject*>(1), ::TYPES[11/*string*/]);
-        return uBox(::g::Uno::Bool_typeof(), ::g::Fuse::Storage::ApplicationDir::Write((filename != NULL) ? filename : ::STRINGS[9/*""*/], (value != NULL) ? value : ::STRINGS[9/*""*/]));
+        uString* filename = uAs<uString*>(uPtr(args)->Strong<uObject*>(0), ::TYPES[5/*string*/]);
+        uString* value = uAs<uString*>(args->Strong<uObject*>(1), ::TYPES[5/*string*/]);
+        return uBox(::g::Uno::Bool_typeof(), ::g::Fuse::Storage::ApplicationDir::Write((filename != NULL) ? filename : ::STRINGS[6/*""*/], (value != NULL) ? value : ::STRINGS[6/*""*/]));
     }
 
-    return uBox(::g::Uno::Bool_typeof(), ::g::Fuse::Storage::ApplicationDir::Write(::STRINGS[9/*""*/], ::STRINGS[9/*""*/]));
+    return uBox(::g::Uno::Bool_typeof(), ::g::Fuse::Storage::ApplicationDir::Write(::STRINGS[6/*""*/], ::STRINGS[6/*""*/]));
 }
 
-// private static Uno.Threading.Future<bool> WriteAsync(object[] args) [static] :182
+// private static Uno.Threading.Future<bool> WriteAsync(object[] args) [static] :52
 ::g::Uno::Threading::Future1* StorageModule::WriteAsync(uArray* args)
 {
     if (uPtr(args)->Length() > 0)
     {
-        uString* filename = uAs<uString*>(uPtr(args)->Strong<uObject*>(0), ::TYPES[11/*string*/]);
-        uString* value = uAs<uString*>(args->Strong<uObject*>(1), ::TYPES[11/*string*/]);
-        return ::g::Fuse::Storage::ApplicationDir::WriteAsync((filename != NULL) ? filename : ::STRINGS[9/*""*/], (value != NULL) ? value : ::STRINGS[9/*""*/]);
+        uString* filename = uAs<uString*>(uPtr(args)->Strong<uObject*>(0), ::TYPES[5/*string*/]);
+        uString* value = uAs<uString*>(args->Strong<uObject*>(1), ::TYPES[5/*string*/]);
+        return ::g::Fuse::Storage::ApplicationDir::WriteAsync((filename != NULL) ? filename : ::STRINGS[6/*""*/], (value != NULL) ? value : ::STRINGS[6/*""*/]);
     }
 
-    return ::g::Fuse::Storage::ApplicationDir::WriteAsync(::STRINGS[9/*""*/], ::STRINGS[9/*""*/]);
+    return ::g::Fuse::Storage::ApplicationDir::WriteAsync(::STRINGS[6/*""*/], ::STRINGS[6/*""*/]);
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Storage/1.2.1/$.uno
-// ------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Storage\1.3.0-rc2\ApplicationDir.uno
+// -------------------------------------------------------------------------------------
 
-// private sealed class ApplicationDir.WriteClosure :93
+// private sealed class ApplicationDir.WriteClosure :91
 // {
 static void ApplicationDir__WriteClosure_build(uType* type)
 {
+    type->SetDependencies(
+        ::g::Fuse::Storage::ApplicationDir_typeof());
     type->SetFields(0,
-        ::g::Uno::String_typeof(), offsetof(::g::Fuse::Storage::ApplicationDir__WriteClosure, _filename), 0,
-        ::g::Uno::String_typeof(), offsetof(::g::Fuse::Storage::ApplicationDir__WriteClosure, _value), 0);
+        ::g::Uno::String_typeof(), offsetof(ApplicationDir__WriteClosure, _filename), 0,
+        ::g::Uno::String_typeof(), offsetof(ApplicationDir__WriteClosure, _value), 0);
 }
 
 uType* ApplicationDir__WriteClosure_typeof()
@@ -468,6 +471,7 @@ uType* ApplicationDir__WriteClosure_typeof()
 
     uTypeOptions options;
     options.FieldCount = 2;
+    options.DependencyCount = 1;
     options.ObjectSize = sizeof(ApplicationDir__WriteClosure);
     options.TypeSize = sizeof(uType);
     type = uClassType::New("Fuse.Storage.ApplicationDir.WriteClosure", options);
@@ -475,38 +479,38 @@ uType* ApplicationDir__WriteClosure_typeof()
     return type;
 }
 
-// public WriteClosure(string filename, string value) :98
+// public WriteClosure(string filename, string value) :96
 void ApplicationDir__WriteClosure__ctor__fn(ApplicationDir__WriteClosure* __this, uString* filename, uString* value)
 {
     __this->ctor_(filename, value);
 }
 
-// public bool Invoke() :104
+// public bool Invoke() :102
 void ApplicationDir__WriteClosure__Invoke_fn(ApplicationDir__WriteClosure* __this, bool* __retval)
 {
     *__retval = __this->Invoke();
 }
 
-// public WriteClosure New(string filename, string value) :98
+// public WriteClosure New(string filename, string value) :96
 void ApplicationDir__WriteClosure__New1_fn(uString* filename, uString* value, ApplicationDir__WriteClosure** __retval)
 {
     *__retval = ApplicationDir__WriteClosure::New1(filename, value);
 }
 
-// public WriteClosure(string filename, string value) [instance] :98
+// public WriteClosure(string filename, string value) [instance] :96
 void ApplicationDir__WriteClosure::ctor_(uString* filename, uString* value)
 {
     _filename = filename;
     _value = value;
 }
 
-// public bool Invoke() [instance] :104
+// public bool Invoke() [instance] :102
 bool ApplicationDir__WriteClosure::Invoke()
 {
     return ::g::Fuse::Storage::ApplicationDir::Write(_filename, _value);
 }
 
-// public WriteClosure New(string filename, string value) [static] :98
+// public WriteClosure New(string filename, string value) [static] :96
 ApplicationDir__WriteClosure* ApplicationDir__WriteClosure::New1(uString* filename, uString* value)
 {
     ApplicationDir__WriteClosure* obj1 = (ApplicationDir__WriteClosure*)uNew(ApplicationDir__WriteClosure_typeof());

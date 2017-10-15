@@ -26,37 +26,37 @@ public class LocationHelpers
         android.util.Log.d("emrals", (message==null ? "null" : message.toString()));
     }
 
-    public static float GetAccuracy409(final Object handle)
+    public static float GetAccuracy408(final Object handle)
     {
         Location l = (Location)handle;
         return l.getAccuracy();
     }
     
-    public static double GetAltitude410(final Object handle)
+    public static double GetAltitude409(final Object handle)
     {
         Location l = (Location)handle;
         return l.getAltitude();
     }
     
-    public static double GetLatitude411(final Object handle)
+    public static double GetLatitude410(final Object handle)
     {
         Location l = (Location)handle;
         return l.getLatitude();
     }
     
-    public static double GetLongitude412(final Object handle)
+    public static double GetLongitude411(final Object handle)
     {
         Location l = (Location)handle;
         return l.getLongitude();
     }
     
-    public static double GetSpeed413(final Object handle)
+    public static double GetSpeed412(final Object handle)
     {
         Location l = (Location)handle;
         return l.getSpeed();
     }
     
-    public static int GetTime414(final Object handle)
+    public static int GetTime413(final Object handle)
     {
         Location l = (Location)handle;
         return (int)l.getTime();

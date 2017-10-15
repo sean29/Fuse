@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/UnoCore/1.2.2/backends/cplusplus/Uno/Memory.cpp.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/UnoCore/1.3.1/Backends/CPlusPlus/Uno/Memory.cpp.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #include <Uno/_internal.h>
@@ -455,39 +455,9 @@ void uGarbageCollect()
 //#endif
 }
 
-static size_t uAlignOf(uType* type)
+static void uAlignField(size_t& offset, size_t align)
 {
-    if (U_IS_OBJECT(type))
-        return sizeof(uObject*);
-
-    size_t align = 0;
-    for (size_t i = 0; i < type->FieldCount; i++)
-    {
-        uFieldInfo& f = type->Fields[i];
-        if (f.Flags & uFieldFlagsStatic)
-            continue;
-
-        size_t fAlign = uAlignOf(f.Type);
-        if (fAlign > align)
-            align = fAlign;
-    }
-
-    return align > 0
-            ? align :
-#ifdef __ILP32__
-        // 64-bit data types are 32-bit aligned on ILP32 (x32).
-        // Ref: https://developer.apple.com/library/content/documentation/Xcode/Conceptual/iPhoneOSABIReference/Articles/ARMv6FunctionCallingConventions.html#//apple_ref/doc/uid/TP40009021-SW1
-        type->ValueSize == 8
-            ? 4 :
-#endif
-        type->ValueSize > 0
-            ? type->ValueSize
-            : 1;
-}
-
-static void uAlignField(size_t& offset, uType* type)
-{
-    size_t align = uAlignOf(type);
+    U_ASSERT(align);
     size_t rem = offset % align;
 
     if (rem > 0)
@@ -505,7 +475,8 @@ void uBuildMemory(uType* type)
            objOffset = U_IS_OBJECT(type)
                ? sizeof(uObject)
                : 0,
-           typeOffset = 0;
+           typeOffset = 0,
+           align = 0;
 
     if (type->Base)
         type->Base->Build();
@@ -520,6 +491,9 @@ void uBuildMemory(uType* type)
 
         if ((f.Flags & uFieldFlagsStatic) == 0)
         {
+            if (f.Type->Alignment > align)
+                align = f.Type->Alignment;
+
             if ((f.Flags & uFieldFlagsConstrained) == 0)
                 objOffset = f.Offset + f.Type->ValueSize;
 
@@ -535,7 +509,7 @@ void uBuildMemory(uType* type)
         }
         else if (type->GenericCount)
         {
-            uAlignField(typeOffset, f.Type);
+            uAlignField(typeOffset, f.Type->Alignment);
             f.Offset = typeOffset;
             typeOffset += f.Type->ValueSize;
         }
@@ -559,7 +533,7 @@ void uBuildMemory(uType* type)
         {
             if ((f.Flags & uFieldFlagsConstrained) != 0)
             {
-                uAlignField(objOffset, f.Type);
+                uAlignField(objOffset, f.Type->Alignment);
                 f.Flags &= ~uFieldFlagsConstrained;
                 f.Offset = objOffset;
                 objOffset += f.Type->ValueSize;
@@ -590,9 +564,15 @@ void uBuildMemory(uType* type)
 
     if (U_IS_VALUE(type))
     {
+        if (align != 0)
+        {
+            U_ASSERT(type->Alignment == 0 || type->Alignment == align);
+            type->Alignment = align;
+        }
+
         if (objOffset != 0)
         {
-            uAlignField(objOffset, type);
+            uAlignField(objOffset, type->Alignment);
             U_ASSERT(type->ValueSize == objOffset || type->ValueSize == 0);
             type->ValueSize = objOffset;
         }
@@ -809,6 +789,9 @@ uObject* uNew(uType* type, size_t size)
 
 uString* uString::New(int length)
 {
+    if (!length && ::g::Uno::String::Empty_)
+        return ::g::Uno::String::Empty_;
+
     size_t size = sizeof(uString) + sizeof(uChar) * length + sizeof(uChar);
     uString* string = (uString*)uInitObject(::g::Uno::String_typeof(), U_MALLOC_STRING(size), size);
     string->_ptr = (uChar*)((uint8_t*)string + sizeof(uString));

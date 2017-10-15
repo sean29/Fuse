@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Motion/1.2.1/simulation/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Motion/1.3.0-rc2/Simulation/PointerVelocity.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -11,7 +11,7 @@ namespace Fuse{
 namespace Motion{
 namespace Simulation{
 
-// public sealed class PointerVelocity<T> :1172
+// public sealed class PointerVelocity<T> :17
 // {
 uType* PointerVelocity_typeof();
 void PointerVelocity__ctor__fn(PointerVelocity* __this);

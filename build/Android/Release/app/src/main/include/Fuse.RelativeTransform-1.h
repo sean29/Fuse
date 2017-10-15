@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Nodes/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Nodes/1.3.0-rc2/Transform.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -17,7 +17,7 @@ namespace g{namespace Fuse{struct Visual;}}
 namespace g{
 namespace Fuse{
 
-// public abstract class RelativeTransform<TransformMode> :4487
+// public abstract class RelativeTransform<TransformMode> :300
 // {
 struct RelativeTransform_type : ::g::Fuse::Transform_type
 {

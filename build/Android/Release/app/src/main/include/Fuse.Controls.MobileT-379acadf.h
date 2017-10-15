@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Controls.Primitives/1.2.1/textcontrols/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Controls.Primitives/1.3.0-rc2/TextControls/MobileTextEdit.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -10,7 +10,7 @@ namespace g{
 namespace Fuse{
 namespace Controls{
 
-// private sealed class MobileTextEdit.iOSTemplate :1481
+// private sealed class MobileTextEdit.iOSTemplate :193
 // {
 ::g::Uno::UX::Template_type* MobileTextEdit__iOSTemplate_typeof();
 void MobileTextEdit__iOSTemplate__ctor_1_fn(MobileTextEdit__iOSTemplate* __this, ::g::Fuse::Controls::MobileTextEdit* parent);

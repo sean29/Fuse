@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Navigation/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Navigation/1.3.0-rc2/TriggerActions.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -11,7 +11,7 @@ namespace g{
 namespace Fuse{
 namespace Navigation{
 
-// public sealed class NavigateTo :4812
+// public sealed class NavigateTo :53
 // {
 ::g::Fuse::Navigation::NavigationTriggerAction_type* NavigateTo_typeof();
 void NavigateTo__ctor_3_fn(NavigateTo* __this);

@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Controls.Primitives/1.2.1/shapes/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Controls.Primitives/1.3.0-rc2/Shapes/Rectangle.Surface.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -16,6 +16,7 @@
 #include <Fuse.Triggers.Actions.IHide.h>
 #include <Fuse.Triggers.Actions.IShow.h>
 #include <Fuse.Triggers.Actions-ea70af1f.h>
+#include <Fuse.Visual.h>
 #include <Uno.Collections.ICollection-1.h>
 #include <Uno.Collections.IEnumerable-1.h>
 #include <Uno.Collections.IList-1.h>
@@ -35,7 +36,7 @@ namespace g{
 namespace Fuse{
 namespace Controls{
 
-// public partial class Rectangle :1290
+// public partial class Rectangle :8
 // {
 ::g::Fuse::Controls::Shape_type* Rectangle_typeof();
 void Rectangle__ctor_7_fn(Rectangle* __this);
@@ -58,7 +59,7 @@ struct Rectangle : ::g::Fuse::Controls::Shape
 {
     ::g::Uno::Float4 _cornerRadius;
     static ::g::Uno::UX::Selector CornerRadiusPropertyName_;
-    static ::g::Uno::UX::Selector& CornerRadiusPropertyName() { return Rectangle_typeof()->Init(), CornerRadiusPropertyName_; }
+    static ::g::Uno::UX::Selector& CornerRadiusPropertyName() { return CornerRadiusPropertyName_; }
 
     void ctor_7();
     ::g::Uno::Float4 ConstrainedCornerRadius();

@@ -1,4 +1,4 @@
-// This file was generated based on '/Users/a/Library/Application Support/Fusetools/Packages/Fuse.Launcher.Email/1.2.1/email/$.uno'.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Launcher.Email/1.3.0-rc2/Email/JS.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -13,7 +13,7 @@ namespace Fuse{
 namespace Reactive{
 namespace FuseJS{
 
-// public sealed class Email :150
+// public sealed class Email :19
 // {
 ::g::Fuse::Scripting::NativeModule_type* Email_typeof();
 void Email__ctor_2_fn(Email* __this);

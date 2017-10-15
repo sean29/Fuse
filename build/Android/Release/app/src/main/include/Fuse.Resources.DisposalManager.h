@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Common/1.2.1/resources/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Common/1.3.0-rc2/Resources/DisposalManager.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -10,7 +10,7 @@ namespace g{
 namespace Fuse{
 namespace Resources{
 
-// internal static class DisposalManager :9
+// internal static class DisposalManager :7
 // {
 uClassType* DisposalManager_typeof();
 void DisposalManager__Add_fn(uObject* item);
@@ -23,13 +23,13 @@ void DisposalManager__VerifyAttach_fn();
 struct DisposalManager : uObject
 {
     static bool _actionAdded_;
-    static bool& _actionAdded() { return DisposalManager_typeof()->Init(), _actionAdded_; }
+    static bool& _actionAdded() { return _actionAdded_; }
     static int _disposeAt_;
-    static int& _disposeAt() { return DisposalManager_typeof()->Init(), _disposeAt_; }
+    static int& _disposeAt() { return _disposeAt_; }
     static uSStrong< ::g::Uno::Collections::List*> _items_;
-    static uSStrong< ::g::Uno::Collections::List*>& _items() { return DisposalManager_typeof()->Init(), _items_; }
+    static uSStrong< ::g::Uno::Collections::List*>& _items() { return _items_; }
     static uSStrong< ::g::Uno::Collections::List*> _softDisposables_;
-    static uSStrong< ::g::Uno::Collections::List*>& _softDisposables() { return DisposalManager_typeof()->Init(), _softDisposables_; }
+    static uSStrong< ::g::Uno::Collections::List*>& _softDisposables() { return _softDisposables_; }
 
     static void Add(uObject* item);
     static void Add1(uObject* item);

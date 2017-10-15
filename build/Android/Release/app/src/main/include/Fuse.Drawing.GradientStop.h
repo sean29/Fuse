@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Drawing/1.2.1/brushes/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Drawing/1.3.0-rc2/Brushes/LinearGradient.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -11,7 +11,7 @@ namespace g{
 namespace Fuse{
 namespace Drawing{
 
-// public sealed class GradientStop :13
+// public sealed class GradientStop :11
 // {
 uType* GradientStop_typeof();
 void GradientStop__get_Color_fn(GradientStop* __this, ::g::Uno::Float4* __retval);
@@ -23,10 +23,10 @@ struct GradientStop : ::g::Uno::UX::PropertyObject
 {
     ::g::Uno::Float4 _color;
     static ::g::Uno::UX::Selector _colorName_;
-    static ::g::Uno::UX::Selector& _colorName() { return GradientStop_typeof()->Init(), _colorName_; }
+    static ::g::Uno::UX::Selector& _colorName() { return _colorName_; }
     float _offset;
     static ::g::Uno::UX::Selector _offsetName_;
-    static ::g::Uno::UX::Selector& _offsetName() { return GradientStop_typeof()->Init(), _offsetName_; }
+    static ::g::Uno::UX::Selector& _offsetName() { return _offsetName_; }
 
     ::g::Uno::Float4 Color();
     void Color(::g::Uno::Float4 value);

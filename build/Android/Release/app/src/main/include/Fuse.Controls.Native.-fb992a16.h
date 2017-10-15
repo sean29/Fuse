@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Controls.Native/1.2.1/android/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Controls.Native/1.3.0-rc2/Android/GraphicsView.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -18,7 +18,7 @@ namespace Controls{
 namespace Native{
 namespace Android{
 
-// public abstract extern class GraphicsViewBase :225
+// public abstract extern class GraphicsViewBase :10
 // {
 struct GraphicsViewBase_type : ::g::Fuse::Controls::Native::Android::View_type
 {
@@ -27,7 +27,7 @@ struct GraphicsViewBase_type : ::g::Fuse::Controls::Native::Android::View_type
 };
 
 GraphicsViewBase_type* GraphicsViewBase_typeof();
-void GraphicsViewBase__ctor_6_fn(GraphicsViewBase* __this, ::g::Java::Object* handle);
+void GraphicsViewBase__ctor_7_fn(GraphicsViewBase* __this, ::g::Java::Object* handle);
 void GraphicsViewBase__BeginDraw_fn(GraphicsViewBase* __this, ::g::Uno::Int2* size, bool* __retval);
 void GraphicsViewBase__DestroySurface_fn(GraphicsViewBase* __this);
 void GraphicsViewBase__EndDraw_fn(GraphicsViewBase* __this);
@@ -43,7 +43,7 @@ struct GraphicsViewBase : ::g::Fuse::Controls::Native::Android::View
     void* _nativeWindow;
     uStrong< ::g::Java::Object*> _surfaceHandle;
 
-    void ctor_6(::g::Java::Object* handle);
+    void ctor_7(::g::Java::Object* handle);
     bool BeginDraw(::g::Uno::Int2 size);
     void DestroySurface();
     void EndDraw();

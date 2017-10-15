@@ -2,7 +2,6 @@
 // WARNING: Changes might be lost if you edit this file directly.
 
 #include <Experimental.Http.Int-14679e9d.h>
-#include <Uno.DateTime.h>
 #include <Uno.Int.h>
 #include <Uno.Time.ZonedDateTime.h>
 
@@ -11,13 +10,15 @@ namespace Experimental{
 namespace Http{
 namespace Internal{
 
-// /usr/local/share/uno/Packages/Experimental.Http/1.2.1/internal/$.uno
-// --------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Experimental.Http\1.3.0-rc2\Internal\DateUtil.uno
+// ---------------------------------------------------------------------------------------------
 
-// internal static class DateUtil :7
+// internal static class DateUtil :6
 // {
 static void DateUtil_build(uType* type)
 {
+    type->SetDependencies(
+        ::g::Uno::Time::ZonedDateTime_typeof());
 }
 
 uClassType* DateUtil_typeof()
@@ -26,22 +27,23 @@ uClassType* DateUtil_typeof()
     if (type != NULL) return type;
 
     uTypeOptions options;
+    options.DependencyCount = 1;
     options.TypeSize = sizeof(uClassType);
     type = uClassType::New("Experimental.Http.Internal.DateUtil", options);
     type->fp_build_ = DateUtil_build;
     return type;
 }
 
-// public static int get_TimestampNow() :11
+// public static int get_TimestampNow() :10
 void DateUtil__get_TimestampNow_fn(int* __retval)
 {
     *__retval = DateUtil::TimestampNow();
 }
 
-// public static int get_TimestampNow() [static] :11
+// public static int get_TimestampNow() [static] :10
 int DateUtil::TimestampNow()
 {
-    ::g::Uno::Time::ZonedDateTime* d = ::g::Uno::DateTime::Now();
+    ::g::Uno::Time::ZonedDateTime* d = ::g::Uno::Time::ZonedDateTime::Now();
     int mon = ((uPtr(d)->Year() - 2000) * 12) + uPtr(d)->Month();
     int day = (mon * 31) + d->Day();
     int hour = (day * 24) + d->Hour();

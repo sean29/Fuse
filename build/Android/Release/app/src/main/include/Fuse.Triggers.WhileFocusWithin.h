@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Triggers/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Triggers/1.3.0-rc2/WhileFocusWithin.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -19,7 +19,7 @@ namespace g{
 namespace Fuse{
 namespace Triggers{
 
-// public sealed class WhileFocusWithin :3778
+// public sealed class WhileFocusWithin :13
 // {
 ::g::Fuse::Triggers::Trigger_type* WhileFocusWithin_typeof();
 void WhileFocusWithin__ctor_6_fn(WhileFocusWithin* __this);

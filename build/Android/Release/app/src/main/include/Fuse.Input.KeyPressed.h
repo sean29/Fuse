@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Nodes/1.2.1/input/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Nodes/1.3.0-rc2/Input/Keyboard.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -11,7 +11,7 @@ namespace g{
 namespace Fuse{
 namespace Input{
 
-// internal sealed class KeyPressed :1108
+// internal sealed class KeyPressed :59
 // {
 ::g::Fuse::VisualEvent_type* KeyPressed_typeof();
 void KeyPressed__ctor_1_fn(KeyPressed* __this);

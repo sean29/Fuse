@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/UnoCore/1.2.2/source/uno/time/text/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/UnoCore/1.3.1/Source/Uno/Time/Text/PatternPart.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -9,7 +9,7 @@ namespace Uno{
 namespace Time{
 namespace Text{
 
-// internal abstract interface IPatternPart<T> :820
+// internal abstract interface IPatternPart<T> :3
 // {
 uInterfaceType* IPatternPart_typeof();
 

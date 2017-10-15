@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Reactive.JavaScript/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Reactive.JavaScript/1.3.0-rc2/Observable.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -17,7 +17,7 @@ namespace g{
 namespace Fuse{
 namespace Reactive{
 
-// internal sealed class Observable :749
+// internal sealed class Observable :6
 // {
 struct Observable_type : ::g::Fuse::Reactive::ListMirror_type
 {
@@ -25,12 +25,12 @@ struct Observable_type : ::g::Fuse::Reactive::ListMirror_type
 };
 
 Observable_type* Observable_typeof();
-void Observable__ctor_2_fn(Observable* __this, ::g::Fuse::Reactive::ThreadWorker* worker, ::g::Fuse::Scripting::Object* obj, bool* supressCallback);
+void Observable__ctor_2_fn(Observable* __this, ::g::Fuse::Reactive::ThreadWorker* worker, ::g::Fuse::Scripting::Object* obj, bool* suppressCallback);
 void Observable__Create_fn(::g::Fuse::Reactive::ThreadWorker* worker, Observable** __retval);
 void Observable__get_IsUnsubscribed_fn(Observable* __this, bool* __retval);
 void Observable__get_Item_fn(Observable* __this, int* index, uObject** __retval);
 void Observable__get_Length_fn(Observable* __this, int* __retval);
-void Observable__New1_fn(::g::Fuse::Reactive::ThreadWorker* worker, ::g::Fuse::Scripting::Object* obj, bool* supressCallback, Observable** __retval);
+void Observable__New1_fn(::g::Fuse::Reactive::ThreadWorker* worker, ::g::Fuse::Scripting::Object* obj, bool* suppressCallback, Observable** __retval);
 void Observable__get_Object_fn(Observable* __this, ::g::Fuse::Scripting::Object** __retval);
 void Observable__ObserveChange_fn(Observable* __this, uArray* args, uObject** __retval);
 void Observable__ObserversCleanup_fn(Observable* __this);
@@ -51,7 +51,7 @@ struct Observable : ::g::Fuse::Reactive::ListMirror
     uStrong< ::g::Uno::Collections::List*> _values;
     uStrong< ::g::Fuse::Reactive::ThreadWorker*> _worker;
 
-    void ctor_2(::g::Fuse::Reactive::ThreadWorker* worker, ::g::Fuse::Scripting::Object* obj, bool supressCallback);
+    void ctor_2(::g::Fuse::Reactive::ThreadWorker* worker, ::g::Fuse::Scripting::Object* obj, bool suppressCallback);
     bool IsUnsubscribed();
     ::g::Fuse::Scripting::Object* Object();
     uObject* ObserveChange(uArray* args);
@@ -62,7 +62,7 @@ struct Observable : ::g::Fuse::Reactive::ListMirror
     int ToInt(uObject* obj);
     void UnsubscribeValues();
     static Observable* Create(::g::Fuse::Reactive::ThreadWorker* worker);
-    static Observable* New1(::g::Fuse::Reactive::ThreadWorker* worker, ::g::Fuse::Scripting::Object* obj, bool supressCallback);
+    static Observable* New1(::g::Fuse::Reactive::ThreadWorker* worker, ::g::Fuse::Scripting::Object* obj, bool suppressCallback);
 };
 // }
 

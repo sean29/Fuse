@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Uno.Threading/1.2.2/implementation/posix/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Uno.Threading/1.3.1/Implementation/Posix/PthreadHelpers.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -12,7 +12,7 @@ namespace g{
 namespace Uno{
 namespace Threading{
 
-// internal static extern class PthreadHelpers :7
+// internal static extern class PthreadHelpers :5
 // {
 uClassType* PthreadHelpers_typeof();
 void PthreadHelpers__CreateMutex_fn(pthread_mutex_t* mutexHandle);

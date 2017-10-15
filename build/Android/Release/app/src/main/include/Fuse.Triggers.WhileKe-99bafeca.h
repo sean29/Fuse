@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Triggers/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Triggers/1.3.0-rc2/KeyboardVisible.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -20,7 +20,7 @@ namespace g{
 namespace Fuse{
 namespace Triggers{
 
-// public sealed class WhileKeyboardVisible :1149
+// public sealed class WhileKeyboardVisible :10
 // {
 ::g::Fuse::Triggers::Trigger_type* WhileKeyboardVisible_typeof();
 void WhileKeyboardVisible__ctor_5_fn(WhileKeyboardVisible* __this);
@@ -35,10 +35,10 @@ struct WhileKeyboardVisible : ::g::Fuse::Triggers::Trigger
 {
     float _baseHeight;
     static float _deltaY_;
-    static float& _deltaY() { return WhileKeyboardVisible_typeof()->Init(), _deltaY_; }
+    static float& _deltaY() { return _deltaY_; }
     float _threshold;
     static uSStrong<uObject*> Keyboard_;
-    static uSStrong<uObject*>& Keyboard() { return WhileKeyboardVisible_typeof()->Init(), Keyboard_; }
+    static uSStrong<uObject*>& Keyboard() { return Keyboard_; }
 
     void ctor_5();
     float GetHeight(::g::Uno::Rect r);

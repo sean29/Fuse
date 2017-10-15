@@ -29,12 +29,12 @@ public class PromiseListener
         android.util.Log.d("emrals", (message==null ? "null" : message.toString()));
     }
 
-    public static Object CreateListener425(final com.foreign.Uno.Action_Object onLocationChanged)
+    public static Object CreateListener424(final com.foreign.Uno.Action_Object onLocationChanged)
     {
         return new UpdateListener(onLocationChanged);
     }
     
-    public static void StartUpdatesWithTimer426(final Object locationManager,final Object listener,final com.foreign.Uno.Action onTimeout,final int timeout)
+    public static void StartUpdatesWithTimer425(final Object locationManager,final Object listener,final com.foreign.Uno.Action onTimeout,final int timeout)
     {
         Handler h = new Handler(Looper.getMainLooper());
         h.postDelayed(onTimeout, (long)timeout);				
@@ -48,7 +48,7 @@ public class PromiseListener
         });
     }
     
-    public static void StopUpdate427(final Object locationManager,final Object listener)
+    public static void StopUpdate426(final Object locationManager,final Object listener)
     {
         Handler h = new Handler(Looper.getMainLooper());
         h.post(new Runnable() {

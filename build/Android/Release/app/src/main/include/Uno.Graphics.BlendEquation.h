@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/UnoCore/1.2.2/source/uno/graphics/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/UnoCore/1.3.1/Source/Uno/Graphics/Enums.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -8,7 +8,7 @@ namespace g{
 namespace Uno{
 namespace Graphics{
 
-// public enum BlendEquation :199
+// public enum BlendEquation :79
 uEnumType* BlendEquation_typeof();
 
 }}} // ::g::Uno::Graphics

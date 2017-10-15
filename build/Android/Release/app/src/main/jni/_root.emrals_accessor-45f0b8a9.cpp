@@ -1,4 +1,4 @@
-// This file was generated based on '.uno/ux11/emrals.unoproj.g.uno'.
+// This file was generated based on '.uno/ux13/emrals.unoproj.g.uno'.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #include <_root.emrals_accessor-45f0b8a9.h>
@@ -17,9 +17,10 @@ namespace g{
 
 // internal sealed class emrals_accessor_FatButton_Text :31
 // {
-// static emrals_accessor_FatButton_Text() :31
+// static generated emrals_accessor_FatButton_Text() :31
 static void emrals_accessor_FatButton_Text__cctor__fn(uType* __type)
 {
+    ::g::Uno::UX::Selector_typeof()->Init();
     emrals_accessor_FatButton_Text::Singleton_ = emrals_accessor_FatButton_Text::New1();
     emrals_accessor_FatButton_Text::_name_ = ::g::Uno::UX::Selector__op_Implicit(::STRINGS[0/*"Text"*/]);
 }
@@ -31,8 +32,8 @@ static void emrals_accessor_FatButton_Text_build(uType* type)
     ::TYPES[1] = ::g::Uno::String_typeof();
     ::TYPES[2] = ::g::Uno::Type_typeof();
     type->SetFields(0,
-        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&::g::emrals_accessor_FatButton_Text::_name_, uFieldFlagsStatic,
-        ::g::Uno::UX::PropertyAccessor_typeof(), (uintptr_t)&::g::emrals_accessor_FatButton_Text::Singleton_, uFieldFlagsStatic);
+        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&emrals_accessor_FatButton_Text::_name_, uFieldFlagsStatic,
+        ::g::Uno::UX::PropertyAccessor_typeof(), (uintptr_t)&emrals_accessor_FatButton_Text::Singleton_, uFieldFlagsStatic);
 }
 
 ::g::Uno::UX::PropertyAccessor_type* emrals_accessor_FatButton_Text_typeof()
@@ -72,7 +73,7 @@ void emrals_accessor_FatButton_Text__GetAsObject_fn(emrals_accessor_FatButton_Te
 // public override sealed Uno.UX.Selector get_Name() :34
 void emrals_accessor_FatButton_Text__get_Name_fn(emrals_accessor_FatButton_Text* __this, ::g::Uno::UX::Selector* __retval)
 {
-    return *__retval = emrals_accessor_FatButton_Text::_name(), void();
+    return *__retval = emrals_accessor_FatButton_Text::_name_, void();
 }
 
 // public generated emrals_accessor_FatButton_Text New() :31

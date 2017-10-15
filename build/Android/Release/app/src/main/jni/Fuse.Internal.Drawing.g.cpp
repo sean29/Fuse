@@ -40,12 +40,12 @@ namespace Fuse{
 namespace Internal{
 namespace Drawing{
 
-// /usr/local/share/uno/Packages/Fuse.Controls/1.2.1/$.uno
-// -------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Controls\1.3.0-rc2\Control.Background.uno
+// ------------------------------------------------------------------------------------------
 
-// internal sealed class SolidRectangle :134
+// internal sealed class SolidRectangle :133
 // {
-// static SolidRectangle() :134
+// static generated SolidRectangle() :133
 static void SolidRectangle__cctor__fn(uType* __type)
 {
     SolidRectangle::Impl_ = SolidRectangle::New1();
@@ -60,17 +60,17 @@ static void SolidRectangle_build(uType* type)
     ::TYPES[4] = ::g::Fuse::Drawing::StaticSolidColor_typeof();
     ::TYPES[5] = ::g::Uno::Float2_typeof()->Array();
     type->SetFields(0,
-        ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLDrawCall_typeof(), offsetof(::g::Fuse::Internal::Drawing::SolidRectangle, _draw_66ccbe7e), 0,
-        ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLDrawCall_typeof(), offsetof(::g::Fuse::Internal::Drawing::SolidRectangle, _draw_77a0ae88), 0,
-        ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLDrawCall_typeof(), offsetof(::g::Fuse::Internal::Drawing::SolidRectangle, _draw_c5598fc3), 0,
-        ::g::Uno::Float4x4_typeof(), offsetof(::g::Fuse::Internal::Drawing::SolidRectangle, DrawElement_LocalTransform_77a0ae88_4_9_2), 0,
-        ::g::Uno::Float4x4_typeof(), offsetof(::g::Fuse::Internal::Drawing::SolidRectangle, DrawElement_LocalTransform_77a0ae88_4_9_3), 0,
-        ::g::Uno::Float4x4_typeof(), offsetof(::g::Fuse::Internal::Drawing::SolidRectangle, DrawElement_LocalTransform_77a0ae88_4_9_4), 0,
-        ::g::Uno::Graphics::VertexBuffer_typeof(), offsetof(::g::Fuse::Internal::Drawing::SolidRectangle, DrawElement_VertexData_66ccbe7e_7_2_1), 0,
-        ::g::Uno::Graphics::VertexBuffer_typeof(), offsetof(::g::Fuse::Internal::Drawing::SolidRectangle, DrawElement_VertexData_77a0ae88_7_2_1), 0,
-        ::g::Uno::Graphics::VertexBuffer_typeof(), offsetof(::g::Fuse::Internal::Drawing::SolidRectangle, DrawElement_VertexData_b4859fb9_7_2_1), 0,
-        ::g::Uno::Graphics::VertexBuffer_typeof(), offsetof(::g::Fuse::Internal::Drawing::SolidRectangle, DrawElement_VertexData_c5598fc3_7_2_1), 0,
-        type, (uintptr_t)&::g::Fuse::Internal::Drawing::SolidRectangle::Impl_, uFieldFlagsStatic);
+        ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLDrawCall_typeof(), offsetof(SolidRectangle, _draw_66ccbe7e), 0,
+        ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLDrawCall_typeof(), offsetof(SolidRectangle, _draw_77a0ae88), 0,
+        ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLDrawCall_typeof(), offsetof(SolidRectangle, _draw_c5598fc3), 0,
+        ::g::Uno::Float4x4_typeof(), offsetof(SolidRectangle, DrawElement_LocalTransform_77a0ae88_4_9_2), 0,
+        ::g::Uno::Float4x4_typeof(), offsetof(SolidRectangle, DrawElement_LocalTransform_77a0ae88_4_9_3), 0,
+        ::g::Uno::Float4x4_typeof(), offsetof(SolidRectangle, DrawElement_LocalTransform_77a0ae88_4_9_4), 0,
+        ::g::Uno::Graphics::VertexBuffer_typeof(), offsetof(SolidRectangle, DrawElement_VertexData_66ccbe7e_7_2_1), 0,
+        ::g::Uno::Graphics::VertexBuffer_typeof(), offsetof(SolidRectangle, DrawElement_VertexData_77a0ae88_7_2_1), 0,
+        ::g::Uno::Graphics::VertexBuffer_typeof(), offsetof(SolidRectangle, DrawElement_VertexData_b4859fb9_7_2_1), 0,
+        ::g::Uno::Graphics::VertexBuffer_typeof(), offsetof(SolidRectangle, DrawElement_VertexData_c5598fc3_7_2_1), 0,
+        type, (uintptr_t)&SolidRectangle::Impl_, uFieldFlagsStatic);
 }
 
 uType* SolidRectangle_typeof()
@@ -89,25 +89,25 @@ uType* SolidRectangle_typeof()
     return type;
 }
 
-// public generated SolidRectangle() :134
+// public generated SolidRectangle() :133
 void SolidRectangle__ctor__fn(SolidRectangle* __this)
 {
     __this->ctor_();
 }
 
-// public void DrawElement(Fuse.DrawContext dc, Fuse.Elements.Element element, Fuse.Drawing.Brush brush, float opacity) :138
+// public void DrawElement(Fuse.DrawContext dc, Fuse.Elements.Element element, Fuse.Drawing.Brush brush, float opacity) :137
 void SolidRectangle__DrawElement_fn(SolidRectangle* __this, ::g::Fuse::DrawContext* dc, ::g::Fuse::Elements::Element* element, ::g::Fuse::Drawing::Brush* brush, float* opacity)
 {
     __this->DrawElement(dc, element, brush, *opacity);
 }
 
-// private generated void init_DrawCalls() :134
+// private generated void init_DrawCalls() :133
 void SolidRectangle__init_DrawCalls_fn(SolidRectangle* __this)
 {
     __this->init_DrawCalls();
 }
 
-// public generated SolidRectangle New() :134
+// public generated SolidRectangle New() :133
 void SolidRectangle__New1_fn(SolidRectangle** __retval)
 {
     *__retval = SolidRectangle::New1();
@@ -115,13 +115,13 @@ void SolidRectangle__New1_fn(SolidRectangle** __retval)
 
 uSStrong<SolidRectangle*> SolidRectangle::Impl_;
 
-// public generated SolidRectangle() [instance] :134
+// public generated SolidRectangle() [instance] :133
 void SolidRectangle::ctor_()
 {
     init_DrawCalls();
 }
 
-// public void DrawElement(Fuse.DrawContext dc, Fuse.Elements.Element element, Fuse.Drawing.Brush brush, float opacity) [instance] :138
+// public void DrawElement(Fuse.DrawContext dc, Fuse.Elements.Element element, Fuse.Drawing.Brush brush, float opacity) [instance] :137
 void SolidRectangle::DrawElement(::g::Fuse::DrawContext* dc, ::g::Fuse::Elements::Element* element, ::g::Fuse::Drawing::Brush* brush, float opacity)
 {
     ::g::Uno::Float4 ind1;
@@ -215,7 +215,7 @@ void SolidRectangle::DrawElement(::g::Fuse::DrawContext* dc, ::g::Fuse::Elements
     }
 }
 
-// private generated void init_DrawCalls() [instance] :134
+// private generated void init_DrawCalls() [instance] :133
 void SolidRectangle::init_DrawCalls()
 {
     uArray* Vertices_77a0ae88_7_1_0 = uArray::Init< ::g::Uno::Float2>(::TYPES[5/*float2[]*/], 6, ::g::Uno::Float2__New2(0.0f, 0.0f), ::g::Uno::Float2__New2(0.0f, 1.0f), ::g::Uno::Float2__New2(1.0f, 1.0f), ::g::Uno::Float2__New2(0.0f, 0.0f), ::g::Uno::Float2__New2(1.0f, 1.0f), ::g::Uno::Float2__New2(1.0f, 0.0f));
@@ -231,7 +231,7 @@ void SolidRectangle::init_DrawCalls()
     _draw_66ccbe7e = ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLDrawCall__New1(::g::FuseControls_bundle::SolidRectangle7463714b());
 }
 
-// public generated SolidRectangle New() [static] :134
+// public generated SolidRectangle New() [static] :133
 SolidRectangle* SolidRectangle::New1()
 {
     SolidRectangle* obj6 = (SolidRectangle*)uNew(SolidRectangle_typeof());

@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Controls.Native/1.2.1/android/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Controls.Native/1.3.0-rc2/Android/SurfaceView.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -16,14 +16,13 @@ namespace Controls{
 namespace Native{
 namespace Android{
 
-// public sealed extern class SurfaceView :1511
+// public extern class SurfaceView :8
 // {
 ::g::Fuse::Controls::Native::Android::GraphicsViewBase_type* SurfaceView_typeof();
-void SurfaceView__ctor_7_fn(SurfaceView* __this);
+void SurfaceView__ctor_8_fn(SurfaceView* __this);
 void SurfaceView__AddCallback_fn(SurfaceView* __this, ::g::Java::Object* handle);
 void SurfaceView__Create_fn(::g::Java::Object** __retval);
 void SurfaceView__GetSurface_fn(::g::Java::Object* holder, ::g::Java::Object** __retval);
-void SurfaceView__New4_fn(SurfaceView** __retval);
 void SurfaceView__OnSurfaceChanged_fn(SurfaceView* __this, ::g::Java::Object* holder, int* f, int* w, int* h);
 void SurfaceView__OnSurfaceCreated_fn(SurfaceView* __this, ::g::Java::Object* holder);
 void SurfaceView__OnSurfaceDestroyed_fn(SurfaceView* __this, ::g::Java::Object* holder);
@@ -31,7 +30,7 @@ void SurfaceView__OnSurfaceRedrawNeeded_fn(SurfaceView* __this, ::g::Java::Objec
 
 struct SurfaceView : ::g::Fuse::Controls::Native::Android::GraphicsViewBase
 {
-    void ctor_7();
+    void ctor_8();
     void AddCallback(::g::Java::Object* handle);
     void OnSurfaceChanged(::g::Java::Object* holder, int f, int w, int h);
     void OnSurfaceCreated(::g::Java::Object* holder);
@@ -39,7 +38,6 @@ struct SurfaceView : ::g::Fuse::Controls::Native::Android::GraphicsViewBase
     void OnSurfaceRedrawNeeded(::g::Java::Object* holder);
     static ::g::Java::Object* Create();
     static ::g::Java::Object* GetSurface(::g::Java::Object* holder);
-    static SurfaceView* New4();
 };
 // }
 

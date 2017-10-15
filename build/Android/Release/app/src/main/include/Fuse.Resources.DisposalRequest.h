@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Common/1.2.1/resources/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Common/1.3.0-rc2/Resources/IDeferredDisposable.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -8,7 +8,7 @@ namespace g{
 namespace Fuse{
 namespace Resources{
 
-// public enum DisposalRequest :203
+// public enum DisposalRequest :6
 uEnumType* DisposalRequest_typeof();
 
 }}} // ::g::Fuse::Resources

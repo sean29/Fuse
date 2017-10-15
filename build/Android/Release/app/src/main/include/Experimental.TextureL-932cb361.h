@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Experimental.TextureLoader/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Experimental.TextureLoader/1.3.0-rc2/TextureLoader.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -9,7 +9,7 @@ namespace g{
 namespace Experimental{
 namespace TextureLoader{
 
-// public sealed class InvalidContentTypeException :27
+// public sealed class InvalidContentTypeException :25
 // {
 ::g::Uno::Exception_type* InvalidContentTypeException_typeof();
 void InvalidContentTypeException__ctor_3_fn(InvalidContentTypeException* __this, uString* reason);

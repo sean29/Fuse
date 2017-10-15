@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Controls.Panels/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Controls.Panels/1.3.0-rc2/SingleViewHost.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -15,6 +15,7 @@
 #include <Fuse.Triggers.Actions.IHide.h>
 #include <Fuse.Triggers.Actions.IShow.h>
 #include <Fuse.Triggers.Actions-ea70af1f.h>
+#include <Fuse.Visual.h>
 #include <Uno.Collections.ICollection-1.h>
 #include <Uno.Collections.IEnumerable-1.h>
 #include <Uno.Collections.IList-1.h>
@@ -26,9 +27,7 @@ namespace g{namespace Fuse{namespace Drawing{struct Brush;}}}
 namespace g{namespace Fuse{namespace Elements{struct Element;}}}
 namespace g{namespace Fuse{struct DrawContext;}}
 namespace g{namespace Fuse{struct LayoutParams;}}
-namespace g{namespace Fuse{struct Visual;}}
 namespace g{namespace Fuse{struct VisualBounds;}}
-namespace g{namespace Uno{namespace Collections{struct List;}}}
 namespace g{namespace Uno{struct EventArgs;}}
 namespace g{namespace Uno{struct Float2;}}
 namespace g{namespace Uno{struct Float4x4;}}
@@ -37,12 +36,12 @@ namespace g{
 namespace Fuse{
 namespace Controls{
 
-// internal sealed extern class SingleViewHost :2285
+// internal sealed extern class SingleViewHost :10
 // {
 struct SingleViewHost_type : ::g::Fuse::Controls::Control_type
 {
-    ::g::Fuse::Elements::ITreeRenderer interface16;
-    ::g::Uno::IDisposable interface17;
+    ::g::Fuse::Elements::ITreeRenderer interface17;
+    ::g::Uno::IDisposable interface18;
 };
 
 SingleViewHost_type* SingleViewHost_typeof();
@@ -63,7 +62,7 @@ void SingleViewHost__FuseElementsITreeRendererRooted_fn(SingleViewHost* __this, 
 void SingleViewHost__FuseElementsITreeRendererRootingStarted_fn(SingleViewHost* __this, ::g::Fuse::Elements::Element* e);
 void SingleViewHost__FuseElementsITreeRendererTransformChanged_fn(SingleViewHost* __this, ::g::Fuse::Elements::Element* e);
 void SingleViewHost__FuseElementsITreeRendererUnrooted_fn(SingleViewHost* __this, ::g::Fuse::Elements::Element* e);
-void SingleViewHost__FuseElementsITreeRendererZOrderChanged_fn(SingleViewHost* __this, ::g::Fuse::Elements::Element* e, ::g::Uno::Collections::List* zorder);
+void SingleViewHost__FuseElementsITreeRendererZOrderChanged_fn(SingleViewHost* __this, ::g::Fuse::Elements::Element* e, uArray* zorder);
 void SingleViewHost__GetContentSize_fn(SingleViewHost* __this, ::g::Fuse::LayoutParams* lp, ::g::Uno::Float2* __retval);
 void SingleViewHost__New2_fn(int* initialState, ::g::Fuse::Controls::Native::ViewHandle* viewHandle, uObject* renderer, SingleViewHost** __retval);
 void SingleViewHost__OnInvalidateVisual_fn(SingleViewHost* __this);

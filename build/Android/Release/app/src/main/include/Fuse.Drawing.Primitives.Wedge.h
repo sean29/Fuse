@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Drawing.Primitives/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Drawing.Primitives/1.3.0-rc2/Wedge.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -20,7 +20,7 @@ namespace Fuse{
 namespace Drawing{
 namespace Primitives{
 
-// public sealed class Wedge :594
+// public sealed class Wedge :51
 // {
 uType* Wedge_typeof();
 void Wedge__ctor__fn(Wedge* __this);
@@ -36,7 +36,7 @@ struct Wedge : uObject
     uStrong< ::g::Fuse::Drawing::Primitives::FillCoverage*> _fillCoverage;
     uStrong< ::g::Fuse::Drawing::Primitives::StrokeCoverage*> _strokeCoverage;
     static uSStrong<Wedge*> Singleton_;
-    static uSStrong<Wedge*>& Singleton() { return Wedge_typeof()->Init(), Singleton_; }
+    static uSStrong<Wedge*>& Singleton() { return Singleton_; }
 
     void ctor_();
     void Fill(::g::Fuse::DrawContext* dc, ::g::Fuse::Elements::Element* node, float radius, ::g::Fuse::Drawing::Brush* brush, ::g::Uno::Float2 center, float startAngle, float endAngle, float smoothness);

@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Uno.Threading/1.2.2/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Uno.Threading/1.3.1/ConcurrentDictionary.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -14,7 +14,7 @@ namespace g{
 namespace Uno{
 namespace Threading{
 
-// public sealed class ConcurrentDictionary<TKey, TValue> :24
+// public sealed class ConcurrentDictionary<TKey, TValue> :6
 // {
 struct ConcurrentDictionary_type : uType
 {

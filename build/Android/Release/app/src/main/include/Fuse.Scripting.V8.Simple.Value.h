@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Scripting.V8/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Scripting.V8/1.3.0-rc2/V8Simple.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -12,7 +12,7 @@ namespace Scripting{
 namespace V8{
 namespace Simple{
 
-// internal static extern class Value :1200
+// internal static extern class Value :171
 // {
 uClassType* Value_typeof();
 void Value__AsArray_fn(::JSValue** value, int* error, ::JSArray** __retval);

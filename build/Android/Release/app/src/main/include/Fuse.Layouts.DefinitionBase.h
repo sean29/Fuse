@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Controls.Panels/1.2.1/layouts/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Controls.Panels/1.3.0-rc2/Layouts/GridLayout.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -9,7 +9,7 @@ namespace g{
 namespace Fuse{
 namespace Layouts{
 
-// public abstract class DefinitionBase :786
+// public abstract class DefinitionBase :21
 // {
 uType* DefinitionBase_typeof();
 void DefinitionBase__ctor_1_fn(DefinitionBase* __this);

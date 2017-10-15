@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Uno.Net.Http/1.2.2/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Uno.Net.Http/1.3.1/Uri.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -10,7 +10,7 @@ namespace Uno{
 namespace Net{
 namespace Http{
 
-// public sealed class Uri :869
+// public sealed class Uri :7
 // {
 uType* Uri_typeof();
 void Uri__ctor__fn(Uri* __this, uString* uriString);

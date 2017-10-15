@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Controls.Video/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Controls.Video/1.3.0-rc2/VideoVisual.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -14,6 +14,7 @@
 #include <Fuse.Triggers.IMediaPlayback.h>
 #include <Fuse.Triggers.IPlayback.h>
 #include <Fuse.Triggers.IProgress.h>
+#include <Fuse.Visual.h>
 #include <Uno.Collections.ICollection-1.h>
 #include <Uno.Collections.IEnumerable-1.h>
 #include <Uno.Collections.IList-1.h>
@@ -35,14 +36,14 @@ namespace Fuse{
 namespace Controls{
 namespace VideoImpl{
 
-// internal sealed extern class VideoVisual :1028
+// internal sealed extern class VideoVisual :52
 // {
 struct VideoVisual_type : ::g::Fuse::Controls::Graphics::ControlVisual_type
 {
-    ::g::Fuse::Controls::VideoImpl::IVideoCallbacks interface11;
-    ::g::Fuse::Triggers::IMediaPlayback interface12;
-    ::g::Fuse::Triggers::IPlayback interface13;
-    ::g::Fuse::Triggers::IProgress interface14;
+    ::g::Fuse::Controls::VideoImpl::IVideoCallbacks interface12;
+    ::g::Fuse::Triggers::IMediaPlayback interface13;
+    ::g::Fuse::Triggers::IPlayback interface14;
+    ::g::Fuse::Triggers::IProgress interface15;
 };
 
 VideoVisual_type* VideoVisual_typeof();

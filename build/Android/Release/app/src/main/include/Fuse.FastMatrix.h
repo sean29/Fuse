@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Common/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Common/1.3.0-rc2/FastMatrix.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -11,7 +11,7 @@ namespace g{namespace Uno{struct Float4;}}
 namespace g{
 namespace Fuse{
 
-// public sealed class FastMatrix :1397
+// public sealed class FastMatrix :5
 // {
 uType* FastMatrix_typeof();
 void FastMatrix__ctor__fn(FastMatrix* __this);
@@ -25,6 +25,7 @@ void FastMatrix__AppendShear_fn(FastMatrix* __this, float* xRadians, float* yRad
 void FastMatrix__AppendTranslation_fn(FastMatrix* __this, float* x, float* y, float* z);
 void FastMatrix__Copy_fn(FastMatrix* __this, FastMatrix** __retval);
 void FastMatrix__FromFloat4x4_fn(::g::Uno::Float4x4* m, FastMatrix** __retval);
+void FastMatrix__get_HasNonTranslation_fn(FastMatrix* __this, bool* __retval);
 void FastMatrix__Identity_fn(FastMatrix** __retval);
 void FastMatrix__Invert_fn(FastMatrix* __this);
 void FastMatrix__get_IsValid_fn(FastMatrix* __this, bool* __retval);
@@ -61,6 +62,7 @@ struct FastMatrix : uObject
     void AppendShear(float xRadians, float yRadians);
     void AppendTranslation(float x, float y, float z);
     FastMatrix* Copy();
+    bool HasNonTranslation();
     void Invert();
     bool IsValid();
     ::g::Uno::Float4x4 Matrix();

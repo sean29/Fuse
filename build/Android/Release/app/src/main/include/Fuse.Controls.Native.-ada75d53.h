@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Controls.Native/1.2.1/ios/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Controls.Native/1.3.0-rc2/iOS/Button.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -11,16 +11,14 @@ namespace Controls{
 namespace Native{
 namespace iOS{
 
-// public sealed extern class Button :8
+// public extern class Button :6
 // {
 uType* Button_typeof();
 void Button__ctor__fn(Button* __this);
-void Button__New1_fn(Button** __retval);
 
 struct Button : uObject
 {
     void ctor_();
-    static Button* New1();
 };
 // }
 

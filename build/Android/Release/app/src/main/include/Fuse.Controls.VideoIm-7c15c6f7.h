@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Controls.Video/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Controls.Video/1.3.0-rc2/VideoContainer.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -17,7 +17,7 @@ namespace Fuse{
 namespace Controls{
 namespace VideoImpl{
 
-// internal sealed class GraphicsVideoService :677
+// internal sealed class GraphicsVideoService :93
 // {
 struct GraphicsVideoService_type : uType
 {
@@ -67,7 +67,7 @@ struct GraphicsVideoService : uObject
     ::g::Uno::Int2 _sizeCache;
     float _volume;
     static float CompletionTimeThreshold_;
-    static float& CompletionTimeThreshold() { return GraphicsVideoService_typeof()->Init(), CompletionTimeThreshold_; }
+    static float& CompletionTimeThreshold() { return CompletionTimeThreshold_; }
 
     void ctor_(uObject* callbacks);
     bool IsCompleted();

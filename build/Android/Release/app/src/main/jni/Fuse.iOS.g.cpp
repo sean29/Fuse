@@ -13,12 +13,12 @@ namespace g{
 namespace Fuse{
 namespace iOS{
 
-// /usr/local/share/uno/Packages/Fuse.iOS/1.2.1/$.uno
-// --------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.iOS\1.3.0-rc2\StatusBarConfig.uno
+// ----------------------------------------------------------------------------------
 
-// public sealed class StatusBarConfig :370
+// public sealed class StatusBarConfig :28
 // {
-// static StatusBarConfig() :370
+// static generated StatusBarConfig() :28
 static void StatusBarConfig__cctor_1_fn(uType* __type)
 {
     StatusBarConfig::_stack_ = ((::g::Uno::Collections::List*)::g::Uno::Collections::List::New1(::TYPES[0/*Uno.Collections.List<Fuse.iOS.StatusBarConfig>*/]));
@@ -34,10 +34,10 @@ static void StatusBarConfig_build(uType* type)
         ::g::Fuse::INotifyUnrooted_typeof(), offsetof(::g::Fuse::Node_type, interface3),
         ::g::Uno::Collections::ICollection_typeof()->MakeType(::g::Fuse::Binding_typeof(), NULL), offsetof(::g::Fuse::Node_type, interface4),
         ::g::Uno::Collections::IEnumerable_typeof()->MakeType(::g::Fuse::Binding_typeof(), NULL), offsetof(::g::Fuse::Node_type, interface5));
-    type->SetFields(12,
-        ::g::Uno::Bool_typeof(), offsetof(::g::Fuse::iOS::StatusBarConfig, _hasStyle), 0,
-        ::g::Fuse::Platform::StatusBarStyle_typeof(), offsetof(::g::Fuse::iOS::StatusBarConfig, _style), 0,
-        ::TYPES[0/*Uno.Collections.List<Fuse.iOS.StatusBarConfig>*/], (uintptr_t)&::g::Fuse::iOS::StatusBarConfig::_stack_, uFieldFlagsStatic);
+    type->SetFields(15,
+        ::g::Uno::Bool_typeof(), offsetof(StatusBarConfig, _hasStyle), 0,
+        ::g::Fuse::Platform::StatusBarStyle_typeof(), offsetof(StatusBarConfig, _style), 0,
+        ::TYPES[0/*Uno.Collections.List<Fuse.iOS.StatusBarConfig>*/], (uintptr_t)&StatusBarConfig::_stack_, uFieldFlagsStatic);
 }
 
 ::g::Fuse::Node_type* StatusBarConfig_typeof()
@@ -47,7 +47,7 @@ static void StatusBarConfig_build(uType* type)
 
     uTypeOptions options;
     options.BaseDefinition = ::g::Fuse::Behavior_typeof();
-    options.FieldCount = 15;
+    options.FieldCount = 18;
     options.InterfaceCount = 6;
     options.ObjectSize = sizeof(StatusBarConfig);
     options.TypeSize = sizeof(::g::Fuse::Node_type);
@@ -75,48 +75,48 @@ static void StatusBarConfig_build(uType* type)
     return type;
 }
 
-// public generated StatusBarConfig() :370
+// public generated StatusBarConfig() :28
 void StatusBarConfig__ctor_3_fn(StatusBarConfig* __this)
 {
     __this->ctor_3();
 }
 
-// private static void Apply() :478
+// private static void Apply() :136
 void StatusBarConfig__Apply_fn()
 {
     StatusBarConfig::Apply();
 }
 
-// public generated StatusBarConfig New() :370
+// public generated StatusBarConfig New() :28
 void StatusBarConfig__New2_fn(StatusBarConfig** __retval)
 {
     *__retval = StatusBarConfig::New2();
 }
 
-// protected override sealed void OnRooted() :432
+// protected override sealed void OnRooted() :90
 void StatusBarConfig__OnRooted_fn(StatusBarConfig* __this)
 {
     ::g::Fuse::Node__OnRooted_fn(__this);
-    ::g::Uno::Collections::List__Add_fn(uPtr(StatusBarConfig::_stack()), __this);
+    ::g::Uno::Collections::List__Add_fn(uPtr(StatusBarConfig::_stack_), __this);
     StatusBarConfig::Apply();
 }
 
-// protected override sealed void OnUnrooted() :440
+// protected override sealed void OnUnrooted() :98
 void StatusBarConfig__OnUnrooted_fn(StatusBarConfig* __this)
 {
     bool ret8;
-    ::g::Uno::Collections::List__Remove_fn(uPtr(StatusBarConfig::_stack()), __this, &ret8);
+    ::g::Uno::Collections::List__Remove_fn(uPtr(StatusBarConfig::_stack_), __this, &ret8);
     StatusBarConfig::Apply();
     ::g::Fuse::Node__OnUnrooted_fn(__this);
 }
 
-// public Fuse.Platform.StatusBarStyle get_Style() :399
+// public Fuse.Platform.StatusBarStyle get_Style() :57
 void StatusBarConfig__get_Style_fn(StatusBarConfig* __this, int* __retval)
 {
     *__retval = __this->Style();
 }
 
-// public void set_Style(Fuse.Platform.StatusBarStyle value) :400
+// public void set_Style(Fuse.Platform.StatusBarStyle value) :58
 void StatusBarConfig__set_Style_fn(StatusBarConfig* __this, int* value)
 {
     __this->Style(*value);
@@ -124,19 +124,19 @@ void StatusBarConfig__set_Style_fn(StatusBarConfig* __this, int* value)
 
 uSStrong< ::g::Uno::Collections::List*> StatusBarConfig::_stack_;
 
-// public generated StatusBarConfig() [instance] :370
+// public generated StatusBarConfig() [instance] :28
 void StatusBarConfig::ctor_3()
 {
     ctor_2();
 }
 
-// public Fuse.Platform.StatusBarStyle get_Style() [instance] :399
+// public Fuse.Platform.StatusBarStyle get_Style() [instance] :57
 int StatusBarConfig::Style()
 {
     return _style;
 }
 
-// public void set_Style(Fuse.Platform.StatusBarStyle value) [instance] :400
+// public void set_Style(Fuse.Platform.StatusBarStyle value) [instance] :58
 void StatusBarConfig::Style(int value)
 {
     if (!_hasStyle || (_style != value))
@@ -147,13 +147,12 @@ void StatusBarConfig::Style(int value)
     }
 }
 
-// private static void Apply() [static] :478
+// private static void Apply() [static] :136
 void StatusBarConfig::Apply()
 {
-    StatusBarConfig_typeof()->Init();
 }
 
-// public generated StatusBarConfig New() [static] :370
+// public generated StatusBarConfig New() [static] :28
 StatusBarConfig* StatusBarConfig::New2()
 {
     StatusBarConfig* obj1 = (StatusBarConfig*)uNew(StatusBarConfig_typeof());

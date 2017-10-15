@@ -1,4 +1,4 @@
-// This file was generated based on '/Users/a/Library/Application Support/Fusetools/Packages/Fuse.ImageTools/1.2.1/android/$.uno'.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.ImageTools/1.3.0-rc2/Android/AndroidImageUtils.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -11,7 +11,7 @@ namespace g{
 namespace Fuse{
 namespace ImageTools{
 
-// internal static extern class AndroidImageUtils :10
+// internal static extern class AndroidImageUtils :8
 // {
 uClassType* AndroidImageUtils_typeof();
 void AndroidImageUtils__Crop_fn(uString* path, int* width, int* height, int* x, int* y, uDelegate* onSuccess, uDelegate* onFail, bool* performInPlace);

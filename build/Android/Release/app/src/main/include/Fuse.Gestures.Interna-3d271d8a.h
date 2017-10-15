@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Gestures/1.2.1/internal/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Gestures/1.3.0-rc2/Internal/Swiper.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -15,7 +15,7 @@ namespace Fuse{
 namespace Gestures{
 namespace Internal{
 
-// internal sealed class SwipeRegion :738
+// internal sealed class SwipeRegion :19
 // {
 struct SwipeRegion_type : uType
 {
@@ -57,7 +57,7 @@ struct SwipeRegion : ::g::Uno::UX::PropertyObject
     bool _inProgress;
     bool _isActive;
     static ::g::Uno::UX::Selector _isActiveName_;
-    static ::g::Uno::UX::Selector& _isActiveName() { return SwipeRegion_typeof()->Init(), _isActiveName_; }
+    static ::g::Uno::UX::Selector& _isActiveName() { return _isActiveName_; }
     bool _isEnabled;
     double _progress;
     double _stableProgress;
@@ -69,14 +69,14 @@ struct SwipeRegion : ::g::Uno::UX::PropertyObject
     float DeactivationThreshold;
     ::g::Uno::Float2 Direction;
     static ::g::Uno::UX::Selector InProgressName_;
-    static ::g::Uno::UX::Selector& InProgressName() { return SwipeRegion_typeof()->Init(), InProgressName_; }
+    static ::g::Uno::UX::Selector& InProgressName() { return InProgressName_; }
     bool IsInterruptible;
     double Length;
     uStrong< ::g::Fuse::Elements::Element*> LengthElement;
     uStrong<uObject*> PointBody1D;
     int Priority;
     static ::g::Uno::UX::Selector ProgressName_;
-    static ::g::Uno::UX::Selector& ProgressName() { return SwipeRegion_typeof()->Init(), ProgressName_; }
+    static ::g::Uno::UX::Selector& ProgressName() { return ProgressName_; }
     float Range;
     bool RevertActive;
     double TimeMultiplier;

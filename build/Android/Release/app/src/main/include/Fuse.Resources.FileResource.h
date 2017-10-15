@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Common/1.2.1/resources/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Common/1.3.0-rc2/Resources/FileResource.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -10,7 +10,7 @@ namespace g{
 namespace Fuse{
 namespace Resources{
 
-// public sealed class FileResource :181
+// public sealed class FileResource :7
 // {
 ::g::Uno::UX::FileSource_type* FileResource_typeof();
 void FileResource__OpenRead_fn(FileResource* __this, ::g::Uno::IO::Stream** __retval);

@@ -23,11 +23,11 @@ compile 'com.android.support:design:23.0.1'
 
 task copySharedLibraries {
     copy {
-        from '/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/libgnustl_shared.so'
+        from 'C:/Users/q/AppData/Local/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/libgnustl_shared.so'
         into file('src/main/jniLibs/armeabi-v7a')
     }
     copy {
-        from '/usr/local/share/uno/Packages/Fuse.Scripting.V8/1.2.1/lib/Android/libV8Simple.so'
+        from 'C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Scripting.V8/1.3.0-rc2/lib/Android/libV8Simple.so'
         into file('src/main/jniLibs/armeabi-v7a')
     }
 }
@@ -63,7 +63,7 @@ android.lintOptions {
 
 android {
     compileSdkVersion = 23
-    buildToolsVersion = "23.0.1"
+    buildToolsVersion = "25.0.3"
 
     defaultConfig {
 //#if !#(LIBRARY:Defined)
@@ -80,18 +80,24 @@ android {
 
         externalNativeBuild {
             cmake {
-                arguments "-DANDROID_STL=gnustl_shared",
-                "-DANDROID_PLATFORM=android-9",
-                "-DANDROID_TOOLCHAIN=clang"
-                "-DANDROID_NDK="
+                // The build configuration of the native binary might differ from the build
+                // configuration of the APK. For performance reasons, we don't want to use the
+                // Fuse Simulator on the significantly slower debug binaries, so building debug by
+                // default means we are giving users a bad experience by default. Native debug
+                // binaries are only really useful when actually debugging generated C++ code.
+                // Running 'uno build android --debug' will produce debuggable C++ code.
+                arguments "-DCMAKE_BUILD_TYPE=Release",
+                    "-DANDROID_STL=gnustl_shared",
+                    "-DANDROID_PLATFORM=android-9",
+                    "-DANDROID_TOOLCHAIN=clang",
+                    "-DANDROID_NDK=C:/Users/q/AppData/Local/Android/sdk/ndk-bundle"
             }
-        }        
+        }
     }
 
     externalNativeBuild {
         cmake {
-            // Provides a relative path to your CMake build script.
-            path "../CMakeLists.txt"
+            path "src/main/CMakeLists.txt"
         }
     }
 
@@ -100,7 +106,7 @@ android {
         release {
             keyAlias "application"
             keyPassword "<alias password>"
-            storeFile file("/Users/a/Documents/GitHub/Fuse/release.keystore")
+            storeFile file("C:/files/Fuse/release.keystore")
             storePassword "<store password>"
         }
     }
@@ -116,6 +122,10 @@ android {
             minifyEnabled = false
             proguardFiles 'proguard-rules.pro'
         }
+    }
+
+    aaptOptions {
+        cruncherEnabled = false
     }
 }
 

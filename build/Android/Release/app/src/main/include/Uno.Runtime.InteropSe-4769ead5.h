@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/UnoCore/1.2.2/source/uno/runtime/interopservices/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/UnoCore/1.3.1/Source/Uno/Runtime/InteropServices/GCHandleType.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -9,7 +9,7 @@ namespace Uno{
 namespace Runtime{
 namespace InteropServices{
 
-// public enum GCHandleType :84
+// public enum GCHandleType :6
 uEnumType* GCHandleType_typeof();
 
 }}}} // ::g::Uno::Runtime::InteropServices

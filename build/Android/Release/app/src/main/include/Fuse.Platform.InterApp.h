@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Platform/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Platform/1.3.0-rc2/InterApp.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -9,7 +9,7 @@ namespace g{
 namespace Fuse{
 namespace Platform{
 
-// public static class InterApp :44
+// public static class InterApp :9
 // {
 uClassType* InterApp_typeof();
 void InterApp__OnReceivedURI_fn(uObject* sender, uString* uri);

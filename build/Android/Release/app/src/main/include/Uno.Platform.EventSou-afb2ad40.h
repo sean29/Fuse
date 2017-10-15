@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/UnoCore/1.2.2/source/uno/platform/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/UnoCore/1.3.1/Source/Uno/Platform/EventSources.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -10,7 +10,7 @@ namespace Uno{
 namespace Platform{
 namespace EventSources{
 
-// public static class InterAppInvoke :1148
+// public static class InterAppInvoke :7
 // {
 uClassType* InterAppInvoke_typeof();
 void InterAppInvoke__DispatchDelayedUri_fn(int* state);
@@ -21,9 +21,9 @@ void InterAppInvoke__remove_ReceivedURI_fn(uDelegate* value);
 struct InterAppInvoke : uObject
 {
     static uSStrong<uString*> DelayedUri_;
-    static uSStrong<uString*>& DelayedUri() { return InterAppInvoke_typeof()->Init(), DelayedUri_; }
+    static uSStrong<uString*>& DelayedUri() { return DelayedUri_; }
     static uSStrong<uDelegate*> ReceivedURI1_;
-    static uSStrong<uDelegate*>& ReceivedURI1() { return InterAppInvoke_typeof()->Init(), ReceivedURI1_; }
+    static uSStrong<uDelegate*>& ReceivedURI1() { return ReceivedURI1_; }
 
     static void DispatchDelayedUri(int state);
     static void OnReceivedURI(uString* Uri);

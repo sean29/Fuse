@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Elements/1.2.1/drawing/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Elements/1.3.0-rc2/Drawing/ImageFill.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -15,7 +15,7 @@ namespace g{
 namespace Fuse{
 namespace Drawing{
 
-// internal sealed class RepeatBaker :311
+// internal sealed class RepeatBaker :309
 // {
 uType* RepeatBaker_typeof();
 void RepeatBaker__ctor__fn(RepeatBaker* __this);
@@ -29,7 +29,7 @@ struct RepeatBaker : uObject
     uStrong< ::g::Uno::Graphics::VertexBuffer*> FillBuffer_VertexPosition_2972f423_1_1_1;
     uStrong<uArray*> FillBuffer_Vertices_2972f423_1_0_6;
     static uSStrong<RepeatBaker*> Singleton_;
-    static uSStrong<RepeatBaker*>& Singleton() { return RepeatBaker_typeof()->Init(), Singleton_; }
+    static uSStrong<RepeatBaker*>& Singleton() { return Singleton_; }
 
     void ctor_();
     void FillBuffer(::g::Fuse::DrawContext* dc, ::g::Uno::Graphics::Texture2D* tex, ::g::Uno::Graphics::Framebuffer* fb);

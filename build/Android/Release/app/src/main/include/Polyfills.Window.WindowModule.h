@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Polyfills.Window/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Polyfills.Window/1.3.0-rc2/WindowModule.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -13,7 +13,7 @@ namespace g{
 namespace Polyfills{
 namespace Window{
 
-// public sealed class WindowModule :12
+// public sealed class WindowModule :10
 // {
 struct WindowModule_type : ::g::Fuse::Scripting::ScriptModule_type
 {

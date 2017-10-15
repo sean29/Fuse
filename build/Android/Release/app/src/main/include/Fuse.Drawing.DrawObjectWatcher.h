@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Drawing.Surface/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Drawing.Surface/1.3.0-rc2/DrawObjectWatcher.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -16,7 +16,7 @@ namespace g{
 namespace Fuse{
 namespace Drawing{
 
-// internal sealed class DrawObjectWatcher :2111
+// internal sealed class DrawObjectWatcher :21
 // {
 struct DrawObjectWatcher_type : uType
 {
@@ -41,7 +41,7 @@ struct DrawObjectWatcher : uObject
     ::g::Fuse::Internal::MiniList _items;
     bool _rooted;
     static ::g::Uno::UX::Selector ShadingName_;
-    static ::g::Uno::UX::Selector& ShadingName() { return DrawObjectWatcher_typeof()->Init(), ShadingName_; }
+    static ::g::Uno::UX::Selector& ShadingName() { return ShadingName_; }
 
     void ctor_();
     void Add(::g::Fuse::Drawing::Brush* brush);

@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Gestures/1.2.1/internal/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Gestures/1.3.0-rc2/Internal/Clicker.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -19,7 +19,7 @@ namespace g{
 namespace Fuse{
 namespace Gestures{
 
-// internal sealed class Clicker :103
+// internal sealed class Clicker :101
 // {
 struct Clicker_type : uType
 {
@@ -57,7 +57,7 @@ struct Clicker : uObject
     int _attachCount;
     int _clickCount;
     static uSStrong< ::g::Fuse::PropertyHandle*> _clickerProperty_;
-    static uSStrong< ::g::Fuse::PropertyHandle*>& _clickerProperty() { return Clicker_typeof()->Init(), _clickerProperty_; }
+    static uSStrong< ::g::Fuse::PropertyHandle*>& _clickerProperty() { return _clickerProperty_; }
     uStrong< ::g::Fuse::Input::Gesture*> _gesture;
     bool _hasUpdate;
     bool _hovering;

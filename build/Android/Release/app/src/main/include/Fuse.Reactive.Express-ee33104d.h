@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Reactive.Bindings/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Reactive.Bindings/1.3.0-rc2/ExpressionBinding.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -7,13 +7,12 @@
 #include <Fuse.Reactive.IListener.h>
 namespace g{namespace Fuse{namespace Reactive{struct ExpressionBinding;}}}
 namespace g{namespace Fuse{struct Node;}}
-namespace g{namespace Uno{namespace UX{struct NameTable;}}}
 
 namespace g{
 namespace Fuse{
 namespace Reactive{
 
-// public abstract class ExpressionBinding :810
+// public abstract class ExpressionBinding :6
 // {
 struct ExpressionBinding_type : ::g::Fuse::Binding_type
 {
@@ -24,14 +23,13 @@ struct ExpressionBinding_type : ::g::Fuse::Binding_type
 };
 
 ExpressionBinding_type* ExpressionBinding_typeof();
-void ExpressionBinding__ctor_1_fn(ExpressionBinding* __this, uObject* key, ::g::Uno::UX::NameTable* nameTable);
+void ExpressionBinding__ctor_1_fn(ExpressionBinding* __this, uObject* key);
 void ExpressionBinding__get_CanWriteBack_fn(ExpressionBinding* __this, bool* __retval);
 void ExpressionBinding__FuseReactiveIContextget_Node_fn(ExpressionBinding* __this, ::g::Fuse::Node** __retval);
 void ExpressionBinding__FuseReactiveIContextSubscribe_fn(ExpressionBinding* __this, uObject* source, uString* key, uObject* listener, uObject** __retval);
 void ExpressionBinding__FuseReactiveIListenerOnNewData_fn(ExpressionBinding* __this, uObject* source, uObject* obj);
 void ExpressionBinding__get_Key_fn(ExpressionBinding* __this, uObject** __retval);
 void ExpressionBinding__set_Key_fn(ExpressionBinding* __this, uObject* value);
-void ExpressionBinding__get_NameTable_fn(ExpressionBinding* __this, ::g::Uno::UX::NameTable** __retval);
 void ExpressionBinding__OnRooted_fn(ExpressionBinding* __this);
 void ExpressionBinding__OnUnrooted_fn(ExpressionBinding* __this);
 void ExpressionBinding__SubscribeResource_fn(ExpressionBinding* __this, uObject* source, uString* key, uObject* listener, uObject** __retval);
@@ -40,14 +38,12 @@ void ExpressionBinding__WriteBack_fn(ExpressionBinding* __this, uObject* value);
 struct ExpressionBinding : ::g::Fuse::Binding
 {
     uStrong<uObject*> _expressionSub;
-    uWeak< ::g::Uno::UX::NameTable*> _nameTable;
     uStrong<uObject*> _Key;
 
-    void ctor_1(uObject* key, ::g::Uno::UX::NameTable* nameTable);
+    void ctor_1(uObject* key);
     bool CanWriteBack();
     uObject* Key();
     void Key(uObject* value);
-    ::g::Uno::UX::NameTable* NameTable();
     void NewValue(uObject* obj) { (((ExpressionBinding_type*)__type)->fp_NewValue)(this, obj); }
     uObject* SubscribeResource(uObject* source, uString* key, uObject* listener) { uObject* __retval; return (((ExpressionBinding_type*)__type)->fp_SubscribeResource)(this, source, key, listener, &__retval), __retval; }
     void WriteBack(uObject* value);

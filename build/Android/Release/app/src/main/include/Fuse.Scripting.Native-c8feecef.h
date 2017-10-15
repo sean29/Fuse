@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Scripting/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Scripting/1.3.0-rc2/NativeProperty.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -9,7 +9,7 @@ namespace g{
 namespace Fuse{
 namespace Scripting{
 
-// public class NativeProperty<T, TJSValue> :1425
+// public class NativeProperty<T, TJSValue> :8
 // {
 struct NativeProperty_type : ::g::Fuse::Scripting::NativeMember_type
 {

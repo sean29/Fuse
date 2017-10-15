@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.FileSystem/1.2.1/uno/io/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.FileSystem/1.3.0-rc2/Uno/IO/FileStatus.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -11,7 +11,7 @@ namespace g{
 namespace Fuse{
 namespace FileSystem{
 
-// internal sealed class FileStatus :114
+// internal sealed class FileStatus :6
 // {
 uType* FileStatus_typeof();
 void FileStatus__ctor__fn(FileStatus* __this);
@@ -33,7 +33,7 @@ struct FileStatus : uObject
     uStrong< ::g::Uno::Time::ZonedDateTime*> _lastWriteTimeUtc;
     int64_t _length;
     static ::g::Uno::Time::Instant FileTimeEpoch_;
-    static ::g::Uno::Time::Instant& FileTimeEpoch() { return FileStatus_typeof()->Init(), FileTimeEpoch_; }
+    static ::g::Uno::Time::Instant& FileTimeEpoch() { return FileTimeEpoch_; }
 
     void ctor_();
     void ctor_1(int64_t length, int attributes, ::g::Uno::Time::ZonedDateTime* creationTimeUtc, ::g::Uno::Time::ZonedDateTime* lastAccessTimeUtc, ::g::Uno::Time::ZonedDateTime* lastWriteTimeUtc);

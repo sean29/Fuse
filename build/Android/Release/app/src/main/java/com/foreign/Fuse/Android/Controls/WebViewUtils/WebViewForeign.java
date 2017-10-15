@@ -31,40 +31,40 @@ public class WebViewForeign
         android.util.Log.d("emrals", (message==null ? "null" : message.toString()));
     }
 
-    public static void AddJavascriptInterface321(final Object handle,final String name,final com.foreign.Uno.Action_String resultHandler)
+    public static void AddJavascriptInterface320(final Object handle,final String name,final com.foreign.Uno.Action_String resultHandler)
     {
         WebView wv = (WebView)handle;
         JsInterface jsi = new JsInterface(resultHandler);
         wv.addJavascriptInterface(jsi, name);
     }
     
-    public static boolean CanGoBack322(final Object handle)
+    public static boolean CanGoBack321(final Object handle)
     {
         WebView wv = (WebView)handle;
         return wv.canGoBack();
     }
     
-    public static boolean CanGoForward323(final Object handle)
+    public static boolean CanGoForward322(final Object handle)
     {
         WebView wv = (WebView)handle;
         return wv.canGoForward();
     }
     
-    public static Object CreateAndSetWebChromeClient324(final Object webViewHandle,final com.foreign.Uno.Action_int onProgress)
+    public static Object CreateAndSetWebChromeClient323(final Object webViewHandle,final com.foreign.Uno.Action_int onProgress)
     {
         FuseWebChromeClient client = new FuseWebChromeClient(onProgress);
         ((WebView)webViewHandle).setWebChromeClient(client);
         return client;
     }
     
-    public static Object CreateAndSetWebViewClient325(final Object webViewHandle,final com.foreign.Uno.Action loaded,final com.foreign.Uno.Action started,final com.foreign.Uno.Action changed,final com.foreign.Uno.Action_String onCustomURI,final com.uno.StringArray customURIs)
+    public static Object CreateAndSetWebViewClient324(final Object webViewHandle,final com.foreign.Uno.Action loaded,final com.foreign.Uno.Action started,final com.foreign.Uno.Action changed,final com.foreign.Uno.Func_String matchedUriSchemeHandler)
     {
-        FuseWebViewClient client = new FuseWebViewClient(loaded, started, changed, onCustomURI, customURIs);
+        FuseWebViewClient client = new FuseWebViewClient(loaded, started, changed, matchedUriSchemeHandler);
         ((WebView)webViewHandle).setWebViewClient(client);
         return client;
     }
     
-    public static Object CreateWebView326(final boolean zoomEnabled,final boolean scrollEnabled)
+    public static Object CreateWebView325(final boolean zoomEnabled,final boolean scrollEnabled)
     {
         ScrollableWebView wv = new ScrollableWebView(com.fuse.Activity.getRootActivity());
         wv.getSettings().setJavaScriptEnabled(true);
@@ -78,55 +78,55 @@ public class WebViewForeign
         return wv;
     }
     
-    public static double GetProgress327(final Object handle)
+    public static double GetProgress326(final Object handle)
     {
         WebView wv = (WebView)handle;
         return wv.getProgress();
     }
     
-    public static String GetTitle328(final Object handle)
+    public static String GetTitle327(final Object handle)
     {
         WebView wv = (WebView)handle;
         return wv.getTitle();
     }
     
-    public static String GetUrl329(final Object handle)
+    public static String GetUrl328(final Object handle)
     {
         WebView wv = (WebView)handle;
         return wv.getUrl();
     }
     
-    public static void GoBack330(final Object handle)
+    public static void GoBack329(final Object handle)
     {
         WebView wv = (WebView)handle;
         wv.goBack();
     }
     
-    public static void GoForward331(final Object handle)
+    public static void GoForward330(final Object handle)
     {
         WebView wv = (WebView)handle;
         wv.goForward();
     }
     
-    public static void LoadHtml332(final Object handle,final String html,final String baseUrl)
+    public static void LoadHtml331(final Object handle,final String html,final String baseUrl)
     {
         WebView wv = (WebView)handle;
         wv.loadDataWithBaseURL(baseUrl, html, "text/html", "UTF-8", null);
     }
     
-    public static void LoadUrl333(final Object handle,final String url)
+    public static void LoadUrl332(final Object handle,final String url)
     {
         WebView wv = (WebView)handle;
         wv.loadUrl(url);
     }
     
-    public static void Reload334(final Object handle)
+    public static void Reload333(final Object handle)
     {
         WebView wv = (WebView)handle;
         wv.reload();
     }
     
-    public static void StopLoading335(final Object handle)
+    public static void StopLoading334(final Object handle)
     {
         WebView wv = (WebView)handle;
         wv.stopLoading();

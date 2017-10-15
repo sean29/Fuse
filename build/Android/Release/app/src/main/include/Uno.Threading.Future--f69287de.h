@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Uno.Threading/1.2.2/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Uno.Threading/1.3.1/Future.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -9,7 +9,7 @@ namespace g{
 namespace Uno{
 namespace Threading{
 
-// private sealed class Future<T>.Closure<T> :453
+// private sealed class Future<T>.Closure<T> :158
 // {
 uType* Future1__Closure_typeof();
 void Future1__Closure__ctor__fn(Future1__Closure* __this, uDelegate* action, void* result);

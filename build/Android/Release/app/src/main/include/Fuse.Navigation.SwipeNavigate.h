@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Navigation/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Navigation/1.3.0-rc2/SwipeNavigate.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -27,7 +27,7 @@ namespace g{
 namespace Fuse{
 namespace Navigation{
 
-// public sealed class SwipeNavigate :4441
+// public sealed class SwipeNavigate :89
 // {
 struct SwipeNavigate_type : ::g::Fuse::Node_type
 {
@@ -75,13 +75,14 @@ struct SwipeNavigate : ::g::Fuse::Behavior
     float _maxPages;
     float _prevDistance;
     ::g::Uno::Float2 _startCoord;
+    bool _startedSeek;
     double _startTime;
     int _swipeAllow;
     uStrong< ::g::Fuse::Motion::Simulation::PointerVelocity*> _velocity;
     static float elasticDecay_;
-    static float& elasticDecay() { return SwipeNavigate_typeof()->Init(), elasticDecay_; }
+    static float& elasticDecay() { return elasticDecay_; }
     static float elasticScale_;
-    static float& elasticScale() { return SwipeNavigate_typeof()->Init(), elasticScale_; }
+    static float& elasticScale() { return elasticScale_; }
     float _VelocityThreshold;
 
     void ctor_3();

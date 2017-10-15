@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Uno.Net.Http/1.2.2/implementation/android/experimentalhttp/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Uno.Net.Http/1.3.1/Implementation/Android/ExperimentalHttp/HttpRequest.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -14,7 +14,7 @@ namespace com{
 namespace fuse{
 namespace ExperimentalHttp{
 
-// public abstract extern class HttpRequest :9
+// public abstract extern class HttpRequest :7
 // {
 struct HttpRequest_type : ::g::Android::Base::Wrappers::JWrapper_type
 {

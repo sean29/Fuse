@@ -33,16 +33,16 @@ namespace g{
 namespace Fuse{
 namespace LauncherImpl{
 
-// /Users/a/Library/Application Support/Fusetools/Packages/Fuse.Launcher.Phone/1.2.1/phone/$.uno
-// ---------------------------------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Launcher.Phone\1.3.0-rc2\Phone\PhoneLauncher.uno
+// -------------------------------------------------------------------------------------------------
 
-// internal sealed extern class AndroidCall :37
+// internal sealed extern class AndroidCall :35
 // {
 static void AndroidCall_build(uType* type)
 {
     ::TYPES[0] = ::g::Uno::Action1_typeof()->MakeType(::g::Uno::Permissions::PlatformPermission_typeof(), NULL);
     type->SetFields(0,
-        ::g::Uno::String_typeof(), offsetof(::g::Fuse::LauncherImpl::AndroidCall, _uri), 0);
+        ::g::Uno::String_typeof(), offsetof(AndroidCall, _uri), 0);
 }
 
 uType* AndroidCall_typeof()
@@ -59,55 +59,55 @@ uType* AndroidCall_typeof()
     return type;
 }
 
-// public AndroidCall(string uri) :50
+// public AndroidCall(string uri) :48
 void AndroidCall__ctor__fn(AndroidCall* __this, uString* uri)
 {
     __this->ctor_(uri);
 }
 
-// private static extern string get__actionCall() :44
+// private static extern string get__actionCall() :42
 void AndroidCall__get__actionCall_fn(uString** __retval)
 {
     *__retval = AndroidCall::_actionCall();
 }
 
-// public void Begin() :55
+// public void Begin() :53
 void AndroidCall__Begin_fn(AndroidCall* __this)
 {
     __this->Begin();
 }
 
-// public AndroidCall New(string uri) :50
+// public AndroidCall New(string uri) :48
 void AndroidCall__New1_fn(uString* uri, AndroidCall** __retval)
 {
     *__retval = AndroidCall::New1(uri);
 }
 
-// private extern void OnPermitted(Uno.Permissions.PlatformPermission permission) :60
+// private extern void OnPermitted(Uno.Permissions.PlatformPermission permission) :58
 void AndroidCall__OnPermitted_fn(AndroidCall* __this, ::g::Uno::Permissions::PlatformPermission* permission)
 {
     __this->OnPermitted(*permission);
 }
 
-// public AndroidCall(string uri) [instance] :50
+// public AndroidCall(string uri) [instance] :48
 void AndroidCall::ctor_(uString* uri)
 {
     _uri = uri;
 }
 
-// public void Begin() [instance] :55
+// public void Begin() [instance] :53
 void AndroidCall::Begin()
 {
     uPtr(::g::Uno::Permissions::Permissions::Request(::g::Uno::Permissions::Permissions__Android::CALL_PHONE()))->Then(uDelegate::New(::TYPES[0/*Uno.Action<Uno.Permissions.PlatformPermission>*/], (void*)AndroidCall__OnPermitted_fn, this));
 }
 
-// private extern void OnPermitted(Uno.Permissions.PlatformPermission permission) [instance] :60
+// private extern void OnPermitted(Uno.Permissions.PlatformPermission permission) [instance] :58
 void AndroidCall::OnPermitted(::g::Uno::Permissions::PlatformPermission permission)
 {
     ::g::Fuse::Android::Bindings::AndroidDeviceInterop::LaunchIntent(AndroidCall::_actionCall(), _uri, NULL, NULL);
 }
 
-// public AndroidCall New(string uri) [static] :50
+// public AndroidCall New(string uri) [static] :48
 AndroidCall* AndroidCall::New1(uString* uri)
 {
     AndroidCall* obj1 = (AndroidCall*)uNew(AndroidCall_typeof());
@@ -115,13 +115,13 @@ AndroidCall* AndroidCall::New1(uString* uri)
     return obj1;
 }
 
-// private static extern string get__actionCall() [static] :44
+// private static extern string get__actionCall() [static] :42
 uString* AndroidCall::_actionCall()
 {
     {
         INIT_JNI;
         jclass __cls = JniHelper::GetNativeExternClass();
-        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "get__actionCall428", "()Ljava/lang/String;");
+        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "get__actionCall427", "()Ljava/lang/String;");
         jobject __jresult = U_JNIVAR->CallStaticObjectMethod(__cls,__mtd);
         uString* __result = JniHelper::JavaToUnoString((jstring)__jresult);
         if (__jresult!=NULL && U_JNIVAR->GetObjectRefType(__jresult) == JNILocalRefType) U_JNIVAR->DeleteLocalRef(__jresult);
@@ -132,10 +132,10 @@ uString* AndroidCall::_actionCall()
 }
 // }
 
-// /Users/a/Library/Application Support/Fusetools/Packages/Fuse.Launcher.Email/1.2.1/email/$.uno
-// ---------------------------------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Launcher.Email\1.3.0-rc2\Email\EmailLauncher.uno
+// -------------------------------------------------------------------------------------------------
 
-// public static class EmailLauncher :17
+// public static class EmailLauncher :15
 // {
 static void EmailLauncher_build(uType* type)
 {
@@ -147,6 +147,8 @@ static void EmailLauncher_build(uType* type)
     ::STRINGS[5] = uString::Const("bcc=");
     ::STRINGS[6] = uString::Const("subject=");
     ::STRINGS[7] = uString::Const("body=");
+    type->SetDependencies(
+        ::g::Uno::Net::Http::Uri_typeof());
 }
 
 uClassType* EmailLauncher_typeof()
@@ -155,25 +157,26 @@ uClassType* EmailLauncher_typeof()
     if (type != NULL) return type;
 
     uTypeOptions options;
+    options.DependencyCount = 1;
     options.TypeSize = sizeof(uClassType);
     type = uClassType::New("Fuse.LauncherImpl.EmailLauncher", options);
     type->fp_build_ = EmailLauncher_build;
     return type;
 }
 
-// private static extern string get__actionSendTo() :22
+// private static extern string get__actionSendTo() :20
 void EmailLauncher__get__actionSendTo_fn(uString** __retval)
 {
     *__retval = EmailLauncher::_actionSendTo();
 }
 
-// public static void LaunchEmail(string to, string carbonCopy, string blindCarbonCopy, string subject, string message) :28
+// public static void LaunchEmail(string to, string carbonCopy, string blindCarbonCopy, string subject, string message) :26
 void EmailLauncher__LaunchEmail_fn(uString* to, uString* carbonCopy, uString* blindCarbonCopy, uString* subject, uString* message)
 {
     EmailLauncher::LaunchEmail(to, carbonCopy, blindCarbonCopy, subject, message);
 }
 
-// public static void LaunchEmail(string to, string carbonCopy, string blindCarbonCopy, string subject, string message) [static] :28
+// public static void LaunchEmail(string to, string carbonCopy, string blindCarbonCopy, string subject, string message) [static] :26
 void EmailLauncher::LaunchEmail(uString* to, uString* carbonCopy, uString* blindCarbonCopy, uString* subject, uString* message)
 {
     if (::g::Uno::String::op_Equality(to, NULL))
@@ -215,13 +218,13 @@ void EmailLauncher::LaunchEmail(uString* to, uString* carbonCopy, uString* blind
     ::g::Fuse::Android::Bindings::AndroidDeviceInterop::LaunchIntent(EmailLauncher::_actionSendTo(), uPtr(builder)->ToString(), NULL, NULL);
 }
 
-// private static extern string get__actionSendTo() [static] :22
+// private static extern string get__actionSendTo() [static] :20
 uString* EmailLauncher::_actionSendTo()
 {
     {
         INIT_JNI;
         jclass __cls = JniHelper::GetNativeExternClass();
-        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "get__actionSendTo429", "()Ljava/lang/String;");
+        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "get__actionSendTo428", "()Ljava/lang/String;");
         jobject __jresult = U_JNIVAR->CallStaticObjectMethod(__cls,__mtd);
         uString* __result = JniHelper::JavaToUnoString((jstring)__jresult);
         if (__jresult!=NULL && U_JNIVAR->GetObjectRefType(__jresult) == JNILocalRefType) U_JNIVAR->DeleteLocalRef(__jresult);
@@ -232,10 +235,10 @@ uString* EmailLauncher::_actionSendTo()
 }
 // }
 
-// /Users/a/Library/Application Support/Fusetools/Packages/Fuse.Launcher.InterApp/1.2.1/interapp/$.uno
-// ---------------------------------------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Launcher.InterApp\1.3.0-rc2\InterApp\InterAppLauncher.uno
+// ----------------------------------------------------------------------------------------------------------
 
-// public static class InterAppLauncher :17
+// public static class InterAppLauncher :15
 // {
 static void InterAppLauncher_build(uType* type)
 {
@@ -254,19 +257,19 @@ uClassType* InterAppLauncher_typeof()
     return type;
 }
 
-// private static extern string get__actionView() :22
+// private static extern string get__actionView() :20
 void InterAppLauncher__get__actionView_fn(uString** __retval)
 {
     *__retval = InterAppLauncher::_actionView();
 }
 
-// public static void LaunchUri(Uno.Net.Http.Uri uri) :28
+// public static void LaunchUri(Uno.Net.Http.Uri uri) :26
 void InterAppLauncher__LaunchUri_fn(::g::Uno::Net::Http::Uri* uri)
 {
     InterAppLauncher::LaunchUri(uri);
 }
 
-// public static void LaunchUri(Uno.Net.Http.Uri uri) [static] :28
+// public static void LaunchUri(Uno.Net.Http.Uri uri) [static] :26
 void InterAppLauncher::LaunchUri(::g::Uno::Net::Http::Uri* uri)
 {
     ::g::Uno::Permissions::Permissions::Request(::g::Uno::Permissions::Permissions__Android::INTERNET());
@@ -281,8 +284,122 @@ void InterAppLauncher::LaunchUri(::g::Uno::Net::Http::Uri* uri)
     }
 }
 
-// private static extern string get__actionView() [static] :22
+// private static extern string get__actionView() [static] :20
 uString* InterAppLauncher::_actionView()
+{
+    {
+        INIT_JNI;
+        jclass __cls = JniHelper::GetNativeExternClass();
+        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "get__actionView429", "()Ljava/lang/String;");
+        jobject __jresult = U_JNIVAR->CallStaticObjectMethod(__cls,__mtd);
+        uString* __result = JniHelper::JavaToUnoString((jstring)__jresult);
+        if (__jresult!=NULL && U_JNIVAR->GetObjectRefType(__jresult) == JNILocalRefType) U_JNIVAR->DeleteLocalRef(__jresult);
+        ::g::Android::Base::JNI::CheckException();
+        return __result;
+    }
+    
+}
+// }
+
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Launcher.Maps\1.3.0-rc2\Maps\MapsLauncher.uno
+// ----------------------------------------------------------------------------------------------
+
+// public static class MapsLauncher :15
+// {
+static void MapsLauncher_build(uType* type)
+{
+    ::STRINGS[8] = uString::Const(",");
+    ::STRINGS[9] = uString::Const("geo:");
+    ::STRINGS[10] = uString::Const("?q=");
+    ::STRINGS[11] = uString::Const("geo:0,0?q=");
+    ::STRINGS[12] = uString::Const("com.google.android.apps.maps");
+    ::STRINGS[13] = uString::Const("com.google.android.maps.MapsActivity");
+    ::TYPES[2] = ::g::Uno::Double_typeof();
+    ::TYPES[1] = ::g::Uno::Exception_typeof();
+    type->SetDependencies(
+        ::g::Uno::Net::Http::Uri_typeof());
+}
+
+uClassType* MapsLauncher_typeof()
+{
+    static uSStrong<uClassType*> type;
+    if (type != NULL) return type;
+
+    uTypeOptions options;
+    options.DependencyCount = 1;
+    options.TypeSize = sizeof(uClassType);
+    type = uClassType::New("Fuse.LauncherImpl.MapsLauncher", options);
+    type->fp_build_ = MapsLauncher_build;
+    return type;
+}
+
+// private static extern string get__actionView() :20
+void MapsLauncher__get__actionView_fn(uString** __retval)
+{
+    *__retval = MapsLauncher::_actionView();
+}
+
+// public static void LaunchMaps(double latitude, double longitude) :26
+void MapsLauncher__LaunchMaps_fn(double* latitude, double* longitude)
+{
+    MapsLauncher::LaunchMaps(*latitude, *longitude);
+}
+
+// public static void LaunchMaps(double latitude, double longitude, string query) :48
+void MapsLauncher__LaunchMaps1_fn(double* latitude, double* longitude, uString* query)
+{
+    MapsLauncher::LaunchMaps1(*latitude, *longitude, query);
+}
+
+// public static void LaunchMaps(string query) :39
+void MapsLauncher__LaunchMaps2_fn(uString* query)
+{
+    MapsLauncher::LaunchMaps2(query);
+}
+
+// private static extern void LaunchMapsAndroid(string uri) :62
+void MapsLauncher__LaunchMapsAndroid_fn(uString* uri)
+{
+    MapsLauncher::LaunchMapsAndroid(uri);
+}
+
+// public static void LaunchMaps(double latitude, double longitude) [static] :26
+void MapsLauncher::LaunchMaps(double latitude, double longitude)
+{
+    uString* latlon = ::g::Uno::String::op_Addition2(::g::Uno::String::op_Addition2(::g::Uno::Double::ToString(latitude, ::TYPES[2/*double*/]), ::STRINGS[8/*","*/]), ::g::Uno::Double::ToString(longitude, ::TYPES[2/*double*/]));
+    MapsLauncher::LaunchMapsAndroid(::g::Uno::String::op_Addition2(::g::Uno::String::op_Addition2(::g::Uno::String::op_Addition2(::STRINGS[9/*"geo:"*/], latlon), ::STRINGS[10/*"?q="*/]), latlon));
+}
+
+// public static void LaunchMaps(double latitude, double longitude, string query) [static] :48
+void MapsLauncher::LaunchMaps1(double latitude, double longitude, uString* query)
+{
+    uString* latlon = ::g::Uno::String::op_Addition2(::g::Uno::String::op_Addition2(::g::Uno::Double::ToString(latitude, ::TYPES[2/*double*/]), ::STRINGS[8/*","*/]), ::g::Uno::Double::ToString(longitude, ::TYPES[2/*double*/]));
+    query = ::g::Uno::Net::Http::Uri::Encode(query);
+    MapsLauncher::LaunchMapsAndroid(::g::Uno::String::op_Addition2(::g::Uno::String::op_Addition2(::g::Uno::String::op_Addition2(::STRINGS[9/*"geo:"*/], latlon), ::STRINGS[10/*"?q="*/]), query));
+}
+
+// public static void LaunchMaps(string query) [static] :39
+void MapsLauncher::LaunchMaps2(uString* query)
+{
+    query = ::g::Uno::Net::Http::Uri::Encode(query);
+    MapsLauncher::LaunchMapsAndroid(::g::Uno::String::op_Addition2(::STRINGS[11/*"geo:0,0?q="*/], query));
+}
+
+// private static extern void LaunchMapsAndroid(string uri) [static] :62
+void MapsLauncher::LaunchMapsAndroid(uString* uri)
+{
+    try
+    {
+        ::g::Fuse::Android::Bindings::AndroidDeviceInterop::LaunchIntent(MapsLauncher::_actionView(), uri, ::STRINGS[12/*"com.google....*/], ::STRINGS[13/*"com.google....*/]);
+    }
+    catch (const uThrowable& __t)
+    {
+        ::g::Uno::Exception* e = __t.Exception;
+    }
+}
+
+// private static extern string get__actionView() [static] :20
+uString* MapsLauncher::_actionView()
 {
     {
         INIT_JNI;
@@ -298,124 +415,15 @@ uString* InterAppLauncher::_actionView()
 }
 // }
 
-// /Users/a/Library/Application Support/Fusetools/Packages/Fuse.Launcher.Maps/1.2.1/maps/$.uno
-// -------------------------------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Launcher.Phone\1.3.0-rc2\Phone\PhoneLauncher.uno
+// -------------------------------------------------------------------------------------------------
 
-// public static class MapsLauncher :17
-// {
-static void MapsLauncher_build(uType* type)
-{
-    ::STRINGS[8] = uString::Const(",");
-    ::STRINGS[9] = uString::Const("geo:");
-    ::STRINGS[10] = uString::Const("?q=");
-    ::STRINGS[11] = uString::Const("geo:0,0?q=");
-    ::STRINGS[12] = uString::Const("com.google.android.apps.maps");
-    ::STRINGS[13] = uString::Const("com.google.android.maps.MapsActivity");
-    ::TYPES[2] = ::g::Uno::Double_typeof();
-    ::TYPES[1] = ::g::Uno::Exception_typeof();
-}
-
-uClassType* MapsLauncher_typeof()
-{
-    static uSStrong<uClassType*> type;
-    if (type != NULL) return type;
-
-    uTypeOptions options;
-    options.TypeSize = sizeof(uClassType);
-    type = uClassType::New("Fuse.LauncherImpl.MapsLauncher", options);
-    type->fp_build_ = MapsLauncher_build;
-    return type;
-}
-
-// private static extern string get__actionView() :22
-void MapsLauncher__get__actionView_fn(uString** __retval)
-{
-    *__retval = MapsLauncher::_actionView();
-}
-
-// public static void LaunchMaps(double latitude, double longitude) :28
-void MapsLauncher__LaunchMaps_fn(double* latitude, double* longitude)
-{
-    MapsLauncher::LaunchMaps(*latitude, *longitude);
-}
-
-// public static void LaunchMaps(double latitude, double longitude, string query) :50
-void MapsLauncher__LaunchMaps1_fn(double* latitude, double* longitude, uString* query)
-{
-    MapsLauncher::LaunchMaps1(*latitude, *longitude, query);
-}
-
-// public static void LaunchMaps(string query) :41
-void MapsLauncher__LaunchMaps2_fn(uString* query)
-{
-    MapsLauncher::LaunchMaps2(query);
-}
-
-// private static extern void LaunchMapsAndroid(string uri) :64
-void MapsLauncher__LaunchMapsAndroid_fn(uString* uri)
-{
-    MapsLauncher::LaunchMapsAndroid(uri);
-}
-
-// public static void LaunchMaps(double latitude, double longitude) [static] :28
-void MapsLauncher::LaunchMaps(double latitude, double longitude)
-{
-    uString* latlon = ::g::Uno::String::op_Addition2(::g::Uno::String::op_Addition2(::g::Uno::Double::ToString(latitude, ::TYPES[2/*double*/]), ::STRINGS[8/*","*/]), ::g::Uno::Double::ToString(longitude, ::TYPES[2/*double*/]));
-    MapsLauncher::LaunchMapsAndroid(::g::Uno::String::op_Addition2(::g::Uno::String::op_Addition2(::g::Uno::String::op_Addition2(::STRINGS[9/*"geo:"*/], latlon), ::STRINGS[10/*"?q="*/]), latlon));
-}
-
-// public static void LaunchMaps(double latitude, double longitude, string query) [static] :50
-void MapsLauncher::LaunchMaps1(double latitude, double longitude, uString* query)
-{
-    uString* latlon = ::g::Uno::String::op_Addition2(::g::Uno::String::op_Addition2(::g::Uno::Double::ToString(latitude, ::TYPES[2/*double*/]), ::STRINGS[8/*","*/]), ::g::Uno::Double::ToString(longitude, ::TYPES[2/*double*/]));
-    query = ::g::Uno::Net::Http::Uri::Encode(query);
-    MapsLauncher::LaunchMapsAndroid(::g::Uno::String::op_Addition2(::g::Uno::String::op_Addition2(::g::Uno::String::op_Addition2(::STRINGS[9/*"geo:"*/], latlon), ::STRINGS[10/*"?q="*/]), query));
-}
-
-// public static void LaunchMaps(string query) [static] :41
-void MapsLauncher::LaunchMaps2(uString* query)
-{
-    query = ::g::Uno::Net::Http::Uri::Encode(query);
-    MapsLauncher::LaunchMapsAndroid(::g::Uno::String::op_Addition2(::STRINGS[11/*"geo:0,0?q="*/], query));
-}
-
-// private static extern void LaunchMapsAndroid(string uri) [static] :64
-void MapsLauncher::LaunchMapsAndroid(uString* uri)
-{
-    try
-    {
-        ::g::Fuse::Android::Bindings::AndroidDeviceInterop::LaunchIntent(MapsLauncher::_actionView(), uri, ::STRINGS[12/*"com.google....*/], ::STRINGS[13/*"com.google....*/]);
-    }
-    catch (const uThrowable& __t)
-    {
-        ::g::Uno::Exception* e = __t.Exception;
-    }
-}
-
-// private static extern string get__actionView() [static] :22
-uString* MapsLauncher::_actionView()
-{
-    {
-        INIT_JNI;
-        jclass __cls = JniHelper::GetNativeExternClass();
-        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "get__actionView431", "()Ljava/lang/String;");
-        jobject __jresult = U_JNIVAR->CallStaticObjectMethod(__cls,__mtd);
-        uString* __result = JniHelper::JavaToUnoString((jstring)__jresult);
-        if (__jresult!=NULL && U_JNIVAR->GetObjectRefType(__jresult) == JNILocalRefType) U_JNIVAR->DeleteLocalRef(__jresult);
-        ::g::Android::Base::JNI::CheckException();
-        return __result;
-    }
-    
-}
-// }
-
-// /Users/a/Library/Application Support/Fusetools/Packages/Fuse.Launcher.Phone/1.2.1/phone/$.uno
-// ---------------------------------------------------------------------------------------------
-
-// public static class PhoneLauncher :15
+// public static class PhoneLauncher :13
 // {
 static void PhoneLauncher_build(uType* type)
 {
+    type->SetDependencies(
+        ::g::Fuse::PhoneUriHelper_typeof());
 }
 
 uClassType* PhoneLauncher_typeof()
@@ -424,19 +432,20 @@ uClassType* PhoneLauncher_typeof()
     if (type != NULL) return type;
 
     uTypeOptions options;
+    options.DependencyCount = 1;
     options.TypeSize = sizeof(uClassType);
     type = uClassType::New("Fuse.LauncherImpl.PhoneLauncher", options);
     type->fp_build_ = PhoneLauncher_build;
     return type;
 }
 
-// public static void LaunchCall(string callString) :17
+// public static void LaunchCall(string callString) :15
 void PhoneLauncher__LaunchCall_fn(uString* callString)
 {
     PhoneLauncher::LaunchCall(callString);
 }
 
-// public static void LaunchCall(string callString) [static] :17
+// public static void LaunchCall(string callString) [static] :15
 void PhoneLauncher::LaunchCall(uString* callString)
 {
     uString* uri = ::g::Fuse::PhoneUriHelper::PhoneNumberToUri(callString);

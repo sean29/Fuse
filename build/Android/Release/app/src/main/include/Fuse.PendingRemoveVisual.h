@@ -1,7 +1,8 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Nodes/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Nodes/1.3.0-rc2/Visual.BeginRemove.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
+#include <Fuse.IUpdateListener.h>
 #include <Uno.Object.h>
 namespace g{namespace Fuse{struct Node;}}
 namespace g{namespace Fuse{struct PendingRemoveVisual;}}
@@ -10,13 +11,19 @@ namespace g{namespace Fuse{struct Visual;}}
 namespace g{
 namespace Fuse{
 
-// public sealed class PendingRemoveVisual :5495
+// public sealed class PendingRemoveVisual :5
 // {
-uType* PendingRemoveVisual_typeof();
+struct PendingRemoveVisual_type : uType
+{
+    ::g::Fuse::IUpdateListener interface0;
+};
+
+PendingRemoveVisual_type* PendingRemoveVisual_typeof();
 void PendingRemoveVisual__ctor__fn(PendingRemoveVisual* __this, ::g::Fuse::Visual* child, ::g::Fuse::Visual* parent, uDelegate* then);
 void PendingRemoveVisual__AddSubscriber_fn(PendingRemoveVisual* __this);
 void PendingRemoveVisual__get_Child_fn(PendingRemoveVisual* __this, ::g::Fuse::Visual** __retval);
 void PendingRemoveVisual__set_Child_fn(PendingRemoveVisual* __this, ::g::Fuse::Visual* value);
+void PendingRemoveVisual__FuseIUpdateListenerUpdate_fn(PendingRemoveVisual* __this);
 void PendingRemoveVisual__get_HasSubscribers_fn(PendingRemoveVisual* __this, bool* __retval);
 void PendingRemoveVisual__New1_fn(::g::Fuse::Visual* child, ::g::Fuse::Visual* parent, uDelegate* then, PendingRemoveVisual** __retval);
 void PendingRemoveVisual__get_Parent_fn(PendingRemoveVisual* __this, ::g::Fuse::Visual** __retval);

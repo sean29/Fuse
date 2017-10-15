@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Controls.Native/1.2.1/ios/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Controls.Native/1.3.0-rc2/iOS/ScrollView.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -11,16 +11,14 @@ namespace Controls{
 namespace Native{
 namespace iOS{
 
-// public sealed extern class ScrollView :1608
+// public extern class ScrollView :7
 // {
 uType* ScrollView_typeof();
 void ScrollView__ctor__fn(ScrollView* __this, uObject* host);
-void ScrollView__New1_fn(uObject* host, ScrollView** __retval);
 
 struct ScrollView : uObject
 {
     void ctor_(uObject* host);
-    static ScrollView* New1(uObject* host);
 };
 // }
 

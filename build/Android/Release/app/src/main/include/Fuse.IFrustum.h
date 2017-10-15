@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Nodes/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Nodes/1.3.0-rc2/IFrustum.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -8,7 +8,7 @@ namespace g{namespace Uno{struct Float4x4;}}
 namespace g{
 namespace Fuse{
 
-// public abstract interface IFrustum :1206
+// public abstract interface IFrustum :5
 // {
 uInterfaceType* IFrustum_typeof();
 

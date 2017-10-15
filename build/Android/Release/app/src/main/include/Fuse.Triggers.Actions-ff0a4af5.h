@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Triggers/1.2.1/actions/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Triggers/1.3.0-rc2/Actions/StateTransition.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -12,7 +12,7 @@ namespace Fuse{
 namespace Triggers{
 namespace Actions{
 
-// public sealed class TransitionState :759
+// public sealed class TransitionState :13
 // {
 ::g::Fuse::Triggers::Actions::TriggerAction_type* TransitionState_typeof();
 void TransitionState__Perform_fn(TransitionState* __this, ::g::Fuse::Node* target);

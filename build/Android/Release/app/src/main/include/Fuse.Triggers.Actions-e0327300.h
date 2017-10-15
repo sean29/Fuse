@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.UserEvents/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.UserEvents/1.3.0-rc2/RaiseUserEvent.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -10,7 +10,7 @@ namespace Fuse{
 namespace Triggers{
 namespace Actions{
 
-// public sealed class UserEventArg :286
+// public sealed class UserEventArg :132
 // {
 uType* UserEventArg_typeof();
 void UserEventArg__get_Name_fn(UserEventArg* __this, uString** __retval);

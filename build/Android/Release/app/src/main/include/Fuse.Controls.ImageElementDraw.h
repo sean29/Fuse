@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Controls.Primitives/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Controls.Primitives/1.3.0-rc2/Image.Visual.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -18,7 +18,7 @@ namespace g{
 namespace Fuse{
 namespace Controls{
 
-// internal sealed class ImageElementDraw :752
+// internal sealed class ImageElementDraw :127
 // {
 uType* ImageElementDraw_typeof();
 void ImageElementDraw__ctor__fn(ImageElementDraw* __this);
@@ -34,7 +34,7 @@ struct ImageElementDraw : uObject
     ::g::Uno::Float4x4 Draw_LocalTransform_eecabc7e_4_9_3;
     uStrong< ::g::Uno::Graphics::VertexBuffer*> Draw_VertexData_eecabc7e_7_2_1;
     static uSStrong<ImageElementDraw*> Impl_;
-    static uSStrong<ImageElementDraw*>& Impl() { return ImageElementDraw_typeof()->Init(), Impl_; }
+    static uSStrong<ImageElementDraw*>& Impl() { return Impl_; }
 
     void ctor_();
     void Draw(::g::Fuse::DrawContext* dc, ::g::Fuse::Visual* element, ::g::Uno::Float2 offset, ::g::Uno::Float2 size, ::g::Uno::Float2 uvPosition, ::g::Uno::Float2 uvSize, ::g::Uno::Graphics::Texture2D* tex, int resampleMode, ::g::Uno::Float4 Color);

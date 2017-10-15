@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Controls.Primitives/1.2.1/shapes/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Controls.Primitives/1.3.0-rc2/Shapes/Shape.Resources.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -9,7 +9,7 @@ namespace g{
 namespace Fuse{
 namespace Controls{
 
-// private sealed class Shape.ResourceWatcher :1619
+// private sealed class Shape.ResourceWatcher :23
 // {
 uType* Shape__ResourceWatcher_typeof();
 void Shape__ResourceWatcher__ctor__fn(Shape__ResourceWatcher* __this);

@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Motion/1.2.1/simulation/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Motion/1.3.0-rc2/Simulation/BoundedRegion2D.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -12,12 +12,13 @@ namespace Fuse{
 namespace Motion{
 namespace Simulation{
 
-// internal abstract interface BoundedRegion2D :164
+// internal abstract interface BoundedRegion2D :7
 // {
 uInterfaceType* BoundedRegion2D_typeof();
 
 struct BoundedRegion2D
 {
+    void(*fp_Adjust)(uObject*, ::g::Uno::Float2*);
     void(*fp_EndUser)(uObject*, ::g::Uno::Float2*);
     void(*fp_get_IsUser)(uObject*, bool*);
     void(*fp_get_MaxPosition)(uObject*, ::g::Uno::Float2*);
@@ -28,6 +29,7 @@ struct BoundedRegion2D
     void(*fp_Reset)(uObject*, ::g::Uno::Float2*);
     void(*fp_StartUser)(uObject*);
     void(*fp_StepUser)(uObject*, ::g::Uno::Float2*);
+    static void Adjust(const uInterface& __this, ::g::Uno::Float2 adjust) { __this.VTable<BoundedRegion2D>()->fp_Adjust(__this, &adjust); }
     static void EndUser(const uInterface& __this, ::g::Uno::Float2 velocity) { __this.VTable<BoundedRegion2D>()->fp_EndUser(__this, &velocity); }
     static bool IsUser(const uInterface& __this) { bool __retval; return __this.VTable<BoundedRegion2D>()->fp_get_IsUser(__this, &__retval), __retval; }
     static ::g::Uno::Float2 MaxPosition(const uInterface& __this) { ::g::Uno::Float2 __retval; return __this.VTable<BoundedRegion2D>()->fp_get_MaxPosition(__this, &__retval), __retval; }

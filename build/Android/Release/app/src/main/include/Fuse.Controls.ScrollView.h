@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Controls.ScrollView/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Controls.ScrollView/1.3.0-rc2/ScrollView.ux.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -15,19 +15,19 @@
 #include <Fuse.Triggers.Actions.IHide.h>
 #include <Fuse.Triggers.Actions.IShow.h>
 #include <Fuse.Triggers.Actions-ea70af1f.h>
+#include <Fuse.Visual.h>
 #include <Uno.Collections.ICollection-1.h>
 #include <Uno.Collections.IEnumerable-1.h>
 #include <Uno.Collections.IList-1.h>
 #include <Uno.UX.IPropertyListener.h>
 namespace g{namespace Fuse{namespace Controls{struct ScrollView;}}}
-namespace g{namespace Uno{namespace UX{struct NameTable;}}}
 namespace g{namespace Uno{namespace UX{struct Selector;}}}
 
 namespace g{
 namespace Fuse{
 namespace Controls{
 
-// public partial sealed class ScrollView :1552
+// public partial sealed class ScrollView :58
 // {
 ::g::Fuse::Controls::ScrollViewBase_type* ScrollView_typeof();
 void ScrollView__ctor_7_fn(ScrollView* __this);
@@ -38,9 +38,6 @@ void ScrollView__OnUnrooted_fn(ScrollView* __this);
 
 struct ScrollView : ::g::Fuse::Controls::ScrollViewBase
 {
-    uStrong< ::g::Uno::UX::NameTable*> __g_nametable1;
-    static uSStrong<uArray*> __g_static_nametable1_;
-    static uSStrong<uArray*>& __g_static_nametable1() { return ScrollView_typeof()->Init(), __g_static_nametable1_; }
     static ::g::Uno::UX::Selector __selector0_;
     static ::g::Uno::UX::Selector& __selector0() { return ScrollView_typeof()->Init(), __selector0_; }
 

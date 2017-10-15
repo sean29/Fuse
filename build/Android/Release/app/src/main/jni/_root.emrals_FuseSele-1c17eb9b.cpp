@@ -1,4 +1,4 @@
-// This file was generated based on '.uno/ux11/emrals.unoproj.g.uno'.
+// This file was generated based on '.uno/ux13/emrals.unoproj.g.uno'.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #include <_root.emrals_FuseSele-1c17eb9b.h>
@@ -17,7 +17,7 @@ static void emrals_FuseSelectionSelectable_Value_Property_build(uType* type)
     ::TYPES[0] = ::g::Fuse::Selection::Selectable_typeof();
     type->SetBase(::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL));
     type->SetFields(1,
-        ::TYPES[0/*Fuse.Selection.Selectable*/], offsetof(::g::emrals_FuseSelectionSelectable_Value_Property, _obj), uFieldFlagsWeak);
+        ::TYPES[0/*Fuse.Selection.Selectable*/], offsetof(emrals_FuseSelectionSelectable_Value_Property, _obj), uFieldFlagsWeak);
 }
 
 ::g::Uno::UX::Property1_type* emrals_FuseSelectionSelectable_Value_Property_typeof()

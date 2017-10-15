@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/UnoCore/1.2.2/targets/android/uno/base/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/UnoCore/1.3.1/Targets/Android/Uno/Base/Primitives.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -10,7 +10,7 @@ namespace Android{
 namespace Base{
 namespace Primitives{
 
-// public extern struct ujobject :685
+// public extern struct ujobject :175
 // {
 uStructType* ujobject_typeof();
 void ujobject__get_Null_fn(jobject* __retval);

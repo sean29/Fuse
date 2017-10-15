@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Android.TextRenderer/1.2.1/internal/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Android.TextRenderer/1.3.0-rc2/Internal/StaticLayout.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -12,7 +12,7 @@ namespace g{
 namespace Fuse{
 namespace Android{
 
-// internal sealed extern class StaticLayout :166
+// internal sealed extern class StaticLayout :12
 // {
 uType* StaticLayout_typeof();
 void StaticLayout__ctor__fn(StaticLayout* __this, ::g::Java::Object* handle);

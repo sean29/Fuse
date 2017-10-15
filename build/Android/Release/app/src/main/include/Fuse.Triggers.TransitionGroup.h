@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Controls.Navigation/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Controls.Navigation/1.3.0-rc2/Transition.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -16,7 +16,7 @@ namespace g{
 namespace Fuse{
 namespace Triggers{
 
-// internal sealed class TransitionGroup :2767
+// internal sealed class TransitionGroup :11
 // {
 uType* TransitionGroup_typeof();
 void TransitionGroup__ctor__fn(TransitionGroup* __this, ::g::Fuse::Controls::Navigator* navigator, ::g::Fuse::Visual* parent);
@@ -34,7 +34,7 @@ void TransitionGroup__Unroot_fn(TransitionGroup* __this, ::g::Fuse::Triggers::Tr
 struct TransitionGroup : uObject
 {
     static uSStrong< ::g::Uno::Collections::Dictionary*> _groupMap_;
-    static uSStrong< ::g::Uno::Collections::Dictionary*>& _groupMap() { return TransitionGroup_typeof()->Init(), _groupMap_; }
+    static uSStrong< ::g::Uno::Collections::Dictionary*>& _groupMap() { return _groupMap_; }
     uStrong< ::g::Fuse::Controls::Navigator*> _navigator;
     uStrong< ::g::Fuse::Visual*> _parent;
     uStrong< ::g::Fuse::Triggers::Transition*> _selected;

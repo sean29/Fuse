@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Uno.Net.Http/1.2.2/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Uno.Net.Http/1.3.1/HttpMessageHandlerRequest.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -10,7 +10,7 @@ namespace Uno{
 namespace Net{
 namespace Http{
 
-// public sealed class InvalidStateException :697
+// public sealed class InvalidStateException :502
 // {
 ::g::Uno::Exception_type* InvalidStateException_typeof();
 void InvalidStateException__ctor_3_fn(InvalidStateException* __this);

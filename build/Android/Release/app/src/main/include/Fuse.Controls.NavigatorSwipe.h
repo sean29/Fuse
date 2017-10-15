@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Controls.Navigation/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Controls.Navigation/1.3.0-rc2/NavigatorSwipe.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -22,7 +22,7 @@ namespace g{
 namespace Fuse{
 namespace Controls{
 
-// public sealed class NavigatorSwipe :1838
+// public sealed class NavigatorSwipe :77
 // {
 ::g::Fuse::Node_type* NavigatorSwipe_typeof();
 void NavigatorSwipe__ctor_4_fn(NavigatorSwipe* __this);

@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/UnoCore/1.2.2/source/uno/io/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/UnoCore/1.3.1/Source/Uno/IO/Path.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -9,26 +9,33 @@ namespace g{
 namespace Uno{
 namespace IO{
 
-// public static class Path :2671
+// public static class Path :6
 // {
 uClassType* Path_typeof();
 void Path__Combine_fn(uString* a, uString* b, uString** __retval);
-void Path__get_DirectorySeparatorChar_fn(uChar* __retval);
 void Path__GetDirectoryName_fn(uString* filename, uString** __retval);
+void Path__GetDirectorySeparatorChar_fn(uChar* __retval);
 void Path__GetExtension_fn(uString* filename, uString** __retval);
 void Path__GetFileName_fn(uString* filename, uString** __retval);
 void Path__GetFullPath_fn(uString* filename, uString** __retval);
+void Path__GetPathSeparator_fn(uChar* __retval);
 void Path__IsPathRooted_fn(uString* filename, bool* __retval);
 
 struct Path : uObject
 {
+    static uChar DirectorySeparatorChar_;
+    static uChar& DirectorySeparatorChar() { return DirectorySeparatorChar_; }
+    static uChar PathSeparator_;
+    static uChar& PathSeparator() { return PathSeparator_; }
+
     static uString* Combine(uString* a, uString* b);
     static uString* GetDirectoryName(uString* filename);
+    static uChar GetDirectorySeparatorChar();
     static uString* GetExtension(uString* filename);
     static uString* GetFileName(uString* filename);
     static uString* GetFullPath(uString* filename);
+    static uChar GetPathSeparator();
     static bool IsPathRooted(uString* filename);
-    static uChar DirectorySeparatorChar();
 };
 // }
 

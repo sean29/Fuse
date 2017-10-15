@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Motion/1.2.1/simulation/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Motion/1.3.0-rc2/Simulation/BoundedRegion2D.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -14,7 +14,7 @@ namespace Fuse{
 namespace Motion{
 namespace Simulation{
 
-// internal sealed class BasicBoundedRegion2D :185
+// internal sealed class BasicBoundedRegion2D :31
 // {
 struct BasicBoundedRegion2D_type : uType
 {
@@ -25,7 +25,9 @@ struct BasicBoundedRegion2D_type : uType
 
 BasicBoundedRegion2D_type* BasicBoundedRegion2D_typeof();
 void BasicBoundedRegion2D__ctor__fn(BasicBoundedRegion2D* __this);
+void BasicBoundedRegion2D__Adjust_fn(BasicBoundedRegion2D* __this, ::g::Uno::Float2* adjust);
 void BasicBoundedRegion2D__CalcOver_fn(BasicBoundedRegion2D* __this, ::g::Uno::Float2* sp, ::g::Uno::Float2* __retval);
+void BasicBoundedRegion2D__get_Destination_fn(BasicBoundedRegion2D* __this, ::g::Uno::Float2* __retval);
 void BasicBoundedRegion2D__get_DestinationSimulation_fn(BasicBoundedRegion2D* __this, uObject** __retval);
 void BasicBoundedRegion2D__set_DestinationSimulation_fn(BasicBoundedRegion2D* __this, uObject* value);
 void BasicBoundedRegion2D__EndUser_fn(BasicBoundedRegion2D* __this, ::g::Uno::Float2* velocity);
@@ -74,7 +76,9 @@ struct BasicBoundedRegion2D : uObject
     ::g::Uno::Float2 _Position;
 
     void ctor_();
+    void Adjust(::g::Uno::Float2 adjust);
     ::g::Uno::Float2 CalcOver(::g::Uno::Float2 sp);
+    ::g::Uno::Float2 Destination();
     uObject* DestinationSimulation();
     void DestinationSimulation(uObject* value);
     void EndUser(::g::Uno::Float2 velocity);

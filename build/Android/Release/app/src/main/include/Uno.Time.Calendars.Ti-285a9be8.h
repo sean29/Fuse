@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/UnoCore/1.2.2/source/uno/time/calendars/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/UnoCore/1.3.1/Source/Uno/Time/Calendars/TimeOfDayCalculator.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -11,7 +11,7 @@ namespace Uno{
 namespace Time{
 namespace Calendars{
 
-// internal static class TimeOfDayCalculator :265
+// internal static class TimeOfDayCalculator :3
 // {
 uClassType* TimeOfDayCalculator_typeof();
 void TimeOfDayCalculator__GetHourOfDay_fn(::g::Uno::Time::Instant* instant, int* __retval);

@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Controls.Primitives/1.2.1/textcontrols/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Controls.Primitives/1.3.0-rc2/TextControls/MobileTextEdit.Forwarding.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -17,6 +17,7 @@
 #include <Fuse.Triggers.Actions.IShow.h>
 #include <Fuse.Triggers.Actions-ea70af1f.h>
 #include <Fuse.Triggers.IValue-1.h>
+#include <Fuse.Visual.h>
 #include <Uno.Collections.ICollection-1.h>
 #include <Uno.Collections.IEnumerable-1.h>
 #include <Uno.Collections.IList-1.h>
@@ -29,12 +30,12 @@ namespace g{
 namespace Fuse{
 namespace Controls{
 
-// internal partial sealed class MobileTextEdit :1184
+// internal partial sealed class MobileTextEdit :7
 // {
 struct MobileTextEdit_type : ::g::Fuse::Controls::TextEdit_type
 {
-    ::g::Fuse::Controls::Native::ITextEditHost interface17;
-    ::g::Fuse::Input::INotifyFocus interface18;
+    ::g::Fuse::Controls::Native::ITextEditHost interface18;
+    ::g::Fuse::Input::INotifyFocus interface19;
 };
 
 MobileTextEdit_type* MobileTextEdit_typeof();

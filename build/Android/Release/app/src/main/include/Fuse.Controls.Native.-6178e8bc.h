@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Controls.Native/1.2.1/android/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Controls.Native/1.3.0-rc2/Android/TypefaceCache.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -16,7 +16,7 @@ namespace Controls{
 namespace Native{
 namespace Android{
 
-// internal static extern class TypefaceCache :2539
+// internal static extern class TypefaceCache :73
 // {
 uClassType* TypefaceCache_typeof();
 void TypefaceCache__GetTypeface_fn(::g::Fuse::Font* font, ::g::Fuse::Controls::Native::Android::Typeface** __retval);
@@ -26,7 +26,7 @@ void TypefaceCache__GetTypefaceFromFileSource_fn(::g::Uno::UX::FileSource* fileS
 struct TypefaceCache : uObject
 {
     static uSStrong< ::g::Uno::Collections::Dictionary*> _typefaces_;
-    static uSStrong< ::g::Uno::Collections::Dictionary*>& _typefaces() { return TypefaceCache_typeof()->Init(), _typefaces_; }
+    static uSStrong< ::g::Uno::Collections::Dictionary*>& _typefaces() { return _typefaces_; }
 
     static ::g::Fuse::Controls::Native::Android::Typeface* GetTypeface(::g::Fuse::Font* font);
     static ::g::Fuse::Controls::Native::Android::Typeface* GetTypefaceFromBundleFile(::g::Uno::IO::BundleFile* file);

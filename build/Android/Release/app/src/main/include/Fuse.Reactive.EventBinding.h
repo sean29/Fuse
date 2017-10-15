@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Reactive.Bindings/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Reactive.Bindings/1.3.0-rc2/EventBinding.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -8,18 +8,17 @@
 namespace g{namespace Fuse{namespace Reactive{struct EventBinding;}}}
 namespace g{namespace Fuse{namespace Reactive{struct EventRecord;}}}
 namespace g{namespace Uno{namespace Collections{struct List;}}}
-namespace g{namespace Uno{namespace UX{struct NameTable;}}}
 namespace g{namespace Uno{struct EventArgs;}}
 
 namespace g{
 namespace Fuse{
 namespace Reactive{
 
-// public sealed class EventBinding :675
+// public sealed class EventBinding :26
 // {
 ::g::Fuse::Reactive::ExpressionBinding_type* EventBinding_typeof();
-void EventBinding__ctor_2_fn(EventBinding* __this, uObject* key, ::g::Uno::UX::NameTable* nameTable);
-void EventBinding__New1_fn(uObject* key, ::g::Uno::UX::NameTable* nameTable, EventBinding** __retval);
+void EventBinding__ctor_2_fn(EventBinding* __this, uObject* key);
+void EventBinding__New1_fn(uObject* key, EventBinding** __retval);
 void EventBinding__NewValue_fn(EventBinding* __this, uObject* obj);
 void EventBinding__OnEvent_fn(EventBinding* __this, uObject* sender, ::g::Uno::EventArgs* args);
 void EventBinding__OnUnrooted_fn(EventBinding* __this);
@@ -30,10 +29,10 @@ struct EventBinding : ::g::Fuse::Reactive::ExpressionBinding
     uStrong<uObject*> _eventHandler;
     uStrong< ::g::Uno::Collections::List*> _queuedEvents;
 
-    void ctor_2(uObject* key, ::g::Uno::UX::NameTable* nameTable);
+    void ctor_2(uObject* key);
     void OnEvent(uObject* sender, ::g::Uno::EventArgs* args);
     void ProcessQueuedEvents();
-    static EventBinding* New1(uObject* key, ::g::Uno::UX::NameTable* nameTable);
+    static EventBinding* New1(uObject* key);
 };
 // }
 

@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Reactive.JavaScript/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Reactive.JavaScript/1.3.0-rc2/ModuleInstance.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -13,7 +13,7 @@ namespace g{
 namespace Fuse{
 namespace Reactive{
 
-// internal sealed class ModuleInstance :589
+// internal sealed class ModuleInstance :7
 // {
 uType* ModuleInstance_typeof();
 void ModuleInstance__ctor_1_fn(ModuleInstance* __this, ::g::Fuse::Reactive::ThreadWorker* worker, ::g::Fuse::Reactive::JavaScript* js);
@@ -32,10 +32,10 @@ struct ModuleInstance : ::g::Fuse::Reactive::DiagnosticSubject
     uStrong< ::g::Fuse::Reactive::JavaScript*> _js;
     uStrong< ::g::Fuse::Scripting::ModuleResult*> _moduleResult;
     static uSStrong<uObject*> _resetHookMutex_;
-    static uSStrong<uObject*>& _resetHookMutex() { return ModuleInstance_typeof()->Init(), _resetHookMutex_; }
+    static uSStrong<uObject*>& _resetHookMutex() { return _resetHookMutex_; }
     uStrong< ::g::Fuse::Reactive::ThreadWorker*> _worker;
     static uSStrong<uString*> previousErrorFile_;
-    static uSStrong<uString*>& previousErrorFile() { return ModuleInstance_typeof()->Init(), previousErrorFile_; }
+    static uSStrong<uString*>& previousErrorFile() { return previousErrorFile_; }
 
     void ctor_1(::g::Fuse::Reactive::ThreadWorker* worker, ::g::Fuse::Reactive::JavaScript* js);
     void Dispose();

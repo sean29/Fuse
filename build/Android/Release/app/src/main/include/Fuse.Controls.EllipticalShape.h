@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Controls.Primitives/1.2.1/shapes/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Controls.Primitives/1.3.0-rc2/Shapes/EllipticalShape.Surface.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -16,6 +16,7 @@
 #include <Fuse.Triggers.Actions.IHide.h>
 #include <Fuse.Triggers.Actions.IShow.h>
 #include <Fuse.Triggers.Actions-ea70af1f.h>
+#include <Fuse.Visual.h>
 #include <Uno.Collections.ICollection-1.h>
 #include <Uno.Collections.IEnumerable-1.h>
 #include <Uno.Collections.IList-1.h>
@@ -30,7 +31,7 @@ namespace g{
 namespace Fuse{
 namespace Controls{
 
-// public interfacemodifiers class EllipticalShape :869
+// public interfacemodifiers class EllipticalShape :8
 // {
 ::g::Fuse::Controls::Shape_type* EllipticalShape_typeof();
 void EllipticalShape__ctor_7_fn(EllipticalShape* __this);
@@ -55,11 +56,11 @@ struct EllipticalShape : ::g::Fuse::Controls::Shape
     float _lengthAngle;
     float _startAngle;
     static ::g::Uno::UX::Selector EndAngleName_;
-    static ::g::Uno::UX::Selector& EndAngleName() { return EllipticalShape_typeof()->Init(), EndAngleName_; }
+    static ::g::Uno::UX::Selector& EndAngleName() { return EndAngleName_; }
     static ::g::Uno::UX::Selector LengthAngleName_;
-    static ::g::Uno::UX::Selector& LengthAngleName() { return EllipticalShape_typeof()->Init(), LengthAngleName_; }
+    static ::g::Uno::UX::Selector& LengthAngleName() { return LengthAngleName_; }
     static ::g::Uno::UX::Selector StartAngleName_;
-    static ::g::Uno::UX::Selector& StartAngleName() { return EllipticalShape_typeof()->Init(), StartAngleName_; }
+    static ::g::Uno::UX::Selector& StartAngleName() { return StartAngleName_; }
 
     void ctor_7();
     ::g::Fuse::Drawing::SurfacePath* CreateEllipticalPath(::g::Fuse::Drawing::Surface* surface, ::g::Uno::Float2 center, ::g::Uno::Float2 radius, bool drawArc);

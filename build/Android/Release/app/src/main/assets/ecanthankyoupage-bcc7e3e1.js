@@ -1,1 +1,0 @@
-module.exports.email = this.Parameter.map(function(x) { return x.email; });

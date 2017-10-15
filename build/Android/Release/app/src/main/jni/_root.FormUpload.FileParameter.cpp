@@ -12,9 +12,9 @@ namespace g{
 static void FormUpload__FileParameter_build(uType* type)
 {
     type->SetFields(0,
-        ::g::Uno::String_typeof(), offsetof(::g::FormUpload__FileParameter, _ContentType), 0,
-        ::g::Uno::Byte_typeof()->Array(), offsetof(::g::FormUpload__FileParameter, _File), 0,
-        ::g::Uno::String_typeof(), offsetof(::g::FormUpload__FileParameter, _FileName), 0);
+        ::g::Uno::String_typeof(), offsetof(FormUpload__FileParameter, _ContentType), 0,
+        ::g::Uno::Byte_typeof()->Array(), offsetof(FormUpload__FileParameter, _File), 0,
+        ::g::Uno::String_typeof(), offsetof(FormUpload__FileParameter, _FileName), 0);
 }
 
 uType* FormUpload__FileParameter_typeof()

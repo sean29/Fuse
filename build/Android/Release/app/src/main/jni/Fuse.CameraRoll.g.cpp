@@ -41,10 +41,10 @@ namespace g{
 namespace Fuse{
 namespace CameraRoll{
 
-// /Users/a/Library/Application Support/Fusetools/Packages/Fuse.CameraRoll/1.2.1/android/$.uno
-// -------------------------------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.CameraRoll\1.3.0-rc2\Android\AndroidCameraRoll.uno
+// ---------------------------------------------------------------------------------------------------
 
-// internal sealed extern class AddPicturePermissionCheckCommand :109
+// internal sealed extern class AddPicturePermissionCheckCommand :107
 // {
 static void AddPicturePermissionCheckCommand_build(uType* type)
 {
@@ -55,8 +55,8 @@ static void AddPicturePermissionCheckCommand_build(uType* type)
     ::TYPES[3] = ::g::Uno::Action_typeof();
     ::TYPES[4] = ::g::Uno::Action1_typeof()->MakeType(::g::Uno::String_typeof(), NULL);
     type->SetFields(0,
-        ::g::Fuse::ImageTools::BoolPromiseCallback_typeof(), offsetof(::g::Fuse::CameraRoll::AddPicturePermissionCheckCommand, _callback), 0,
-        ::g::Uno::String_typeof(), offsetof(::g::Fuse::CameraRoll::AddPicturePermissionCheckCommand, _path), 0);
+        ::g::Fuse::ImageTools::BoolPromiseCallback_typeof(), offsetof(AddPicturePermissionCheckCommand, _callback), 0,
+        ::g::Uno::String_typeof(), offsetof(AddPicturePermissionCheckCommand, _path), 0);
 }
 
 uType* AddPicturePermissionCheckCommand_typeof()
@@ -73,57 +73,57 @@ uType* AddPicturePermissionCheckCommand_typeof()
     return type;
 }
 
-// public AddPicturePermissionCheckCommand(Uno.Threading.Promise<bool> p, string path) :113
+// public AddPicturePermissionCheckCommand(Uno.Threading.Promise<bool> p, string path) :111
 void AddPicturePermissionCheckCommand__ctor__fn(AddPicturePermissionCheckCommand* __this, ::g::Uno::Threading::Promise* p, uString* path)
 {
     __this->ctor_(p, path);
 }
 
-// internal static void AddToCameraRollInternal(string path, Uno.Action success, Uno.Action<string> reject) :142
+// internal static void AddToCameraRollInternal(string path, Uno.Action success, Uno.Action<string> reject) :140
 void AddPicturePermissionCheckCommand__AddToCameraRollInternal_fn(uString* path, uDelegate* success, uDelegate* reject)
 {
     AddPicturePermissionCheckCommand::AddToCameraRollInternal(path, success, reject);
 }
 
-// public void Execute() :119
+// public void Execute() :117
 void AddPicturePermissionCheckCommand__Execute_fn(AddPicturePermissionCheckCommand* __this)
 {
     __this->Execute();
 }
 
-// public AddPicturePermissionCheckCommand New(Uno.Threading.Promise<bool> p, string path) :113
+// public AddPicturePermissionCheckCommand New(Uno.Threading.Promise<bool> p, string path) :111
 void AddPicturePermissionCheckCommand__New1_fn(::g::Uno::Threading::Promise* p, uString* path, AddPicturePermissionCheckCommand** __retval)
 {
     *__retval = AddPicturePermissionCheckCommand::New1(p, path);
 }
 
-// private void OnPermissions(Uno.Permissions.PlatformPermission[] grantedPermissions) :124
+// private void OnPermissions(Uno.Permissions.PlatformPermission[] grantedPermissions) :122
 void AddPicturePermissionCheckCommand__OnPermissions_fn(AddPicturePermissionCheckCommand* __this, uArray* grantedPermissions)
 {
     __this->OnPermissions(grantedPermissions);
 }
 
-// private void OnRejected(Uno.Exception e) :136
+// private void OnRejected(Uno.Exception e) :134
 void AddPicturePermissionCheckCommand__OnRejected_fn(AddPicturePermissionCheckCommand* __this, ::g::Uno::Exception* e)
 {
     __this->OnRejected(e);
 }
 
-// public AddPicturePermissionCheckCommand(Uno.Threading.Promise<bool> p, string path) [instance] :113
+// public AddPicturePermissionCheckCommand(Uno.Threading.Promise<bool> p, string path) [instance] :111
 void AddPicturePermissionCheckCommand::ctor_(::g::Uno::Threading::Promise* p, uString* path)
 {
     _path = path;
     _callback = ::g::Fuse::ImageTools::BoolPromiseCallback::New1(p);
 }
 
-// public void Execute() [instance] :119
+// public void Execute() [instance] :117
 void AddPicturePermissionCheckCommand::Execute()
 {
     uArray* array2;
     uPtr(::g::Uno::Permissions::Permissions::Request1((array2 = uArray::New(::TYPES[0/*Uno.Permissions.PlatformPermission[]*/], 2), uPtr(array2)->Item< ::g::Uno::Permissions::PlatformPermission>(0) = ::g::Uno::Permissions::Permissions__Android::WRITE_EXTERNAL_STORAGE(), uPtr(array2)->Item< ::g::Uno::Permissions::PlatformPermission>(1) = ::g::Uno::Permissions::Permissions__Android::READ_EXTERNAL_STORAGE(), array2)))->Then1(uDelegate::New(::TYPES[1/*Uno.Action<Uno.Permissions.PlatformPermission[]>*/], (void*)AddPicturePermissionCheckCommand__OnPermissions_fn, this), uDelegate::New(::TYPES[2/*Uno.Action<Uno.Exception>*/], (void*)AddPicturePermissionCheckCommand__OnRejected_fn, this));
 }
 
-// private void OnPermissions(Uno.Permissions.PlatformPermission[] grantedPermissions) [instance] :124
+// private void OnPermissions(Uno.Permissions.PlatformPermission[] grantedPermissions) [instance] :122
 void AddPicturePermissionCheckCommand::OnPermissions(uArray* grantedPermissions)
 {
     if (uPtr(grantedPermissions)->Length() == 2)
@@ -132,19 +132,19 @@ void AddPicturePermissionCheckCommand::OnPermissions(uArray* grantedPermissions)
         uPtr(_callback)->Reject(::STRINGS[0/*"Required pe...*/]);
 }
 
-// private void OnRejected(Uno.Exception e) [instance] :136
+// private void OnRejected(Uno.Exception e) [instance] :134
 void AddPicturePermissionCheckCommand::OnRejected(::g::Uno::Exception* e)
 {
     uPtr(_callback)->Reject(uPtr(e)->Message());
 }
 
-// internal static void AddToCameraRollInternal(string path, Uno.Action success, Uno.Action<string> reject) [static] :142
+// internal static void AddToCameraRollInternal(string path, Uno.Action success, Uno.Action<string> reject) [static] :140
 void AddPicturePermissionCheckCommand::AddToCameraRollInternal(uString* path, uDelegate* success, uDelegate* reject)
 {
     {
         INIT_JNI;
         jclass __cls = JniHelper::GetNativeExternClass();
-        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "AddToCameraRollInternal406", "(Ljava/lang/String;Lcom/foreign/Uno/Action;Lcom/foreign/Uno/Action_String;)V");
+        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "AddToCameraRollInternal405", "(Ljava/lang/String;Lcom/foreign/Uno/Action;Lcom/foreign/Uno/Action_String;)V");
         uString* _upath=path;
         jstring _path = JniHelper::UnoToJavaString(_upath);
         uDelegate* _usuccess=success;
@@ -162,7 +162,7 @@ void AddPicturePermissionCheckCommand::AddToCameraRollInternal(uString* path, uD
     
 }
 
-// public AddPicturePermissionCheckCommand New(Uno.Threading.Promise<bool> p, string path) [static] :113
+// public AddPicturePermissionCheckCommand New(Uno.Threading.Promise<bool> p, string path) [static] :111
 AddPicturePermissionCheckCommand* AddPicturePermissionCheckCommand::New1(::g::Uno::Threading::Promise* p, uString* path)
 {
     AddPicturePermissionCheckCommand* obj1 = (AddPicturePermissionCheckCommand*)uNew(AddPicturePermissionCheckCommand_typeof());
@@ -171,10 +171,10 @@ AddPicturePermissionCheckCommand* AddPicturePermissionCheckCommand::New1(::g::Un
 }
 // }
 
-// /Users/a/Library/Application Support/Fusetools/Packages/Fuse.CameraRoll/1.2.1/android/$.uno
-// -------------------------------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.CameraRoll\1.3.0-rc2\Android\AndroidCameraRoll.uno
+// ---------------------------------------------------------------------------------------------------
 
-// internal static extern class AndroidCameraRoll :159
+// internal static extern class AndroidCameraRoll :157
 // {
 static void AndroidCameraRoll_build(uType* type)
 {
@@ -193,19 +193,19 @@ uClassType* AndroidCameraRoll_typeof()
     return type;
 }
 
-// internal static Uno.Threading.Future<bool> AddToCameraRoll(Fuse.ImageTools.Image photo) :166
+// internal static Uno.Threading.Future<bool> AddToCameraRoll(Fuse.ImageTools.Image photo) :164
 void AndroidCameraRoll__AddToCameraRoll_fn(::g::Fuse::ImageTools::Image* photo, ::g::Uno::Threading::Future1** __retval)
 {
     *__retval = AndroidCameraRoll::AddToCameraRoll(photo);
 }
 
-// internal static void SelectPicture(Uno.Threading.Promise<Fuse.ImageTools.Image> p) :161
+// internal static void SelectPicture(Uno.Threading.Promise<Fuse.ImageTools.Image> p) :159
 void AndroidCameraRoll__SelectPicture_fn(::g::Uno::Threading::Promise* p)
 {
     AndroidCameraRoll::SelectPicture(p);
 }
 
-// internal static Uno.Threading.Future<bool> AddToCameraRoll(Fuse.ImageTools.Image photo) [static] :166
+// internal static Uno.Threading.Future<bool> AddToCameraRoll(Fuse.ImageTools.Image photo) [static] :164
 ::g::Uno::Threading::Future1* AndroidCameraRoll::AddToCameraRoll(::g::Fuse::ImageTools::Image* photo)
 {
     ::g::Uno::Threading::Promise* p = (::g::Uno::Threading::Promise*)::g::Uno::Threading::Promise::New1(::TYPES[5/*Uno.Threading.Promise<bool>*/]);
@@ -213,17 +213,17 @@ void AndroidCameraRoll__SelectPicture_fn(::g::Uno::Threading::Promise* p)
     return p;
 }
 
-// internal static void SelectPicture(Uno.Threading.Promise<Fuse.ImageTools.Image> p) [static] :161
+// internal static void SelectPicture(Uno.Threading.Promise<Fuse.ImageTools.Image> p) [static] :159
 void AndroidCameraRoll::SelectPicture(::g::Uno::Threading::Promise* p)
 {
     ::g::Fuse::CameraRoll::SelectPicturePermissionCheckCommand::New1(p)->Execute();
 }
 // }
 
-// /Users/a/Library/Application Support/Fusetools/Packages/Fuse.CameraRoll/1.2.1/$.uno
-// -----------------------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.CameraRoll\1.3.0-rc2\CameraRoll.uno
+// ------------------------------------------------------------------------------------
 
-// public sealed class CameraRoll :53
+// public sealed class CameraRoll :51
 // {
 static void CameraRoll_build(uType* type)
 {
@@ -236,11 +236,14 @@ static void CameraRoll_build(uType* type)
     ::TYPES[9] = ::g::Fuse::Scripting::NativePromise_typeof()->MakeType(::g::Uno::Bool_typeof(), ::g::Fuse::Scripting::Object_typeof(), NULL);
     ::TYPES[10] = ::g::Fuse::Scripting::FutureFactory_typeof()->MakeType(::g::Uno::Bool_typeof(), NULL);
     ::TYPES[11] = ::g::Uno::Threading::Promise_typeof()->MakeType(::g::Fuse::ImageTools::Image_typeof(), NULL);
+    type->SetDependencies(
+        ::g::Fuse::ImageTools::Image_typeof(),
+        ::g::Uno::UX::Resource_typeof());
     type->SetInterfaces(
         ::g::Uno::IDisposable_typeof(), offsetof(::g::Fuse::Scripting::NativeModule_type, interface0),
         ::g::Fuse::Scripting::IModuleProvider_typeof(), offsetof(::g::Fuse::Scripting::NativeModule_type, interface1));
     type->SetFields(4,
-        type, (uintptr_t)&::g::Fuse::CameraRoll::CameraRoll::_instance_, uFieldFlagsStatic);
+        type, (uintptr_t)&CameraRoll::_instance_, uFieldFlagsStatic);
 }
 
 ::g::Fuse::Scripting::NativeModule_type* CameraRoll_typeof()
@@ -252,6 +255,7 @@ static void CameraRoll_build(uType* type)
     options.BaseDefinition = ::g::Fuse::Scripting::NativeModule_typeof();
     options.FieldCount = 5;
     options.InterfaceCount = 2;
+    options.DependencyCount = 2;
     options.ObjectSize = sizeof(CameraRoll);
     options.TypeSize = sizeof(::g::Fuse::Scripting::NativeModule_type);
     type = (::g::Fuse::Scripting::NativeModule_type*)uClassType::New("Fuse.CameraRoll.CameraRoll", options);
@@ -262,37 +266,37 @@ static void CameraRoll_build(uType* type)
     return type;
 }
 
-// public CameraRoll() :56
+// public CameraRoll() :54
 void CameraRoll__ctor_2_fn(CameraRoll* __this)
 {
     __this->ctor_2();
 }
 
-// internal static Uno.Threading.Future<bool> AddToCameraRoll(Fuse.ImageTools.Image photo) :107
+// internal static Uno.Threading.Future<bool> AddToCameraRoll(Fuse.ImageTools.Image photo) :105
 void CameraRoll__AddToCameraRoll_fn(::g::Fuse::ImageTools::Image* photo, ::g::Uno::Threading::Future1** __retval)
 {
     *__retval = CameraRoll::AddToCameraRoll(photo);
 }
 
-// private static Uno.Threading.Future<bool> AddToCameraRollInterface(object[] args) :91
+// private static Uno.Threading.Future<bool> AddToCameraRollInterface(object[] args) :89
 void CameraRoll__AddToCameraRollInterface_fn(uArray* args, ::g::Uno::Threading::Future1** __retval)
 {
     *__retval = CameraRoll::AddToCameraRollInterface(args);
 }
 
-// public CameraRoll New() :56
+// public CameraRoll New() :54
 void CameraRoll__New2_fn(CameraRoll** __retval)
 {
     *__retval = CameraRoll::New2();
 }
 
-// internal static Uno.Threading.Future<Fuse.ImageTools.Image> SelectPicture() :97
+// internal static Uno.Threading.Future<Fuse.ImageTools.Image> SelectPicture() :95
 void CameraRoll__SelectPicture_fn(::g::Uno::Threading::Future1** __retval)
 {
     *__retval = CameraRoll::SelectPicture();
 }
 
-// private static Uno.Threading.Future<Fuse.ImageTools.Image> SelectPictureInterface(object[] args) :71
+// private static Uno.Threading.Future<Fuse.ImageTools.Image> SelectPictureInterface(object[] args) :69
 void CameraRoll__SelectPictureInterface_fn(uArray* args, ::g::Uno::Threading::Future1** __retval)
 {
     *__retval = CameraRoll::SelectPictureInterface(args);
@@ -300,7 +304,7 @@ void CameraRoll__SelectPictureInterface_fn(uArray* args, ::g::Uno::Threading::Fu
 
 uSStrong<CameraRoll*> CameraRoll::_instance_;
 
-// public CameraRoll() [instance] :56
+// public CameraRoll() [instance] :54
 void CameraRoll::ctor_2()
 {
     ctor_1();
@@ -313,20 +317,20 @@ void CameraRoll::ctor_2()
     AddMember((::g::Fuse::Scripting::NativePromise*)::g::Fuse::Scripting::NativePromise::New1(::TYPES[9/*Fuse.Scripting.NativePromise<bool, Fuse.Scripting.Object>*/], ::STRINGS[3/*"publishImage"*/], uDelegate::New(::TYPES[10/*Fuse.Scripting.FutureFactory<bool>*/], (void*)CameraRoll__AddToCameraRollInterface_fn), NULL));
 }
 
-// internal static Uno.Threading.Future<bool> AddToCameraRoll(Fuse.ImageTools.Image photo) [static] :107
+// internal static Uno.Threading.Future<bool> AddToCameraRoll(Fuse.ImageTools.Image photo) [static] :105
 ::g::Uno::Threading::Future1* CameraRoll::AddToCameraRoll(::g::Fuse::ImageTools::Image* photo)
 {
     return ::g::Fuse::CameraRoll::AndroidCameraRoll::AddToCameraRoll(photo);
 }
 
-// private static Uno.Threading.Future<bool> AddToCameraRollInterface(object[] args) [static] :91
+// private static Uno.Threading.Future<bool> AddToCameraRollInterface(object[] args) [static] :89
 ::g::Uno::Threading::Future1* CameraRoll::AddToCameraRollInterface(uArray* args)
 {
     ::g::Fuse::ImageTools::Image* Image = ::g::Fuse::ImageTools::Image::FromObject1(uPtr(args)->Strong<uObject*>(0));
     return CameraRoll::AddToCameraRoll(Image);
 }
 
-// public CameraRoll New() [static] :56
+// public CameraRoll New() [static] :54
 CameraRoll* CameraRoll::New2()
 {
     CameraRoll* obj1 = (CameraRoll*)uNew(CameraRoll_typeof());
@@ -334,7 +338,7 @@ CameraRoll* CameraRoll::New2()
     return obj1;
 }
 
-// internal static Uno.Threading.Future<Fuse.ImageTools.Image> SelectPicture() [static] :97
+// internal static Uno.Threading.Future<Fuse.ImageTools.Image> SelectPicture() [static] :95
 ::g::Uno::Threading::Future1* CameraRoll::SelectPicture()
 {
     ::g::Uno::Threading::Promise* p = (::g::Uno::Threading::Promise*)::g::Uno::Threading::Promise::New1(::TYPES[11/*Uno.Threading.Promise<Fuse.ImageTools.Image>*/]);
@@ -342,23 +346,23 @@ CameraRoll* CameraRoll::New2()
     return p;
 }
 
-// private static Uno.Threading.Future<Fuse.ImageTools.Image> SelectPictureInterface(object[] args) [static] :71
+// private static Uno.Threading.Future<Fuse.ImageTools.Image> SelectPictureInterface(object[] args) [static] :69
 ::g::Uno::Threading::Future1* CameraRoll::SelectPictureInterface(uArray* args)
 {
     return CameraRoll::SelectPicture();
 }
 // }
 
-// /Users/a/Library/Application Support/Fusetools/Packages/Fuse.CameraRoll/1.2.1/android/$.uno
-// -------------------------------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.CameraRoll\1.3.0-rc2\Android\AndroidCameraRoll.uno
+// ---------------------------------------------------------------------------------------------------
 
-// internal sealed extern class SelectPictureClosure :12
+// internal sealed extern class SelectPictureClosure :10
 // {
 static void SelectPictureClosure_build(uType* type)
 {
     ::TYPES[4] = ::g::Uno::Action1_typeof()->MakeType(::g::Uno::String_typeof(), NULL);
     type->SetFields(0,
-        ::g::Uno::Threading::Promise_typeof()->MakeType(::g::Fuse::ImageTools::Image_typeof(), NULL), offsetof(::g::Fuse::CameraRoll::SelectPictureClosure, _p), 0);
+        ::g::Uno::Threading::Promise_typeof()->MakeType(::g::Fuse::ImageTools::Image_typeof(), NULL), offsetof(SelectPictureClosure, _p), 0);
 }
 
 uType* SelectPictureClosure_typeof()
@@ -375,55 +379,55 @@ uType* SelectPictureClosure_typeof()
     return type;
 }
 
-// public SelectPictureClosure(Uno.Threading.Promise<Fuse.ImageTools.Image> p) :15
+// public SelectPictureClosure(Uno.Threading.Promise<Fuse.ImageTools.Image> p) :13
 void SelectPictureClosure__ctor__fn(SelectPictureClosure* __this, ::g::Uno::Threading::Promise* p)
 {
     __this->ctor_(p);
 }
 
-// private void HandleIntent(int resultCode, Java.Object intent, Uno.Action<string> onComplete, Uno.Action<string> onFail) :27
+// private void HandleIntent(int resultCode, Java.Object intent, Uno.Action<string> onComplete, Uno.Action<string> onFail) :25
 void SelectPictureClosure__HandleIntent_fn(SelectPictureClosure* __this, int* resultCode, ::g::Java::Object* intent, uDelegate* onComplete, uDelegate* onFail)
 {
     __this->HandleIntent(*resultCode, intent, onComplete, onFail);
 }
 
-// public SelectPictureClosure New(Uno.Threading.Promise<Fuse.ImageTools.Image> p) :15
+// public SelectPictureClosure New(Uno.Threading.Promise<Fuse.ImageTools.Image> p) :13
 void SelectPictureClosure__New1_fn(::g::Uno::Threading::Promise* p, SelectPictureClosure** __retval)
 {
     *__retval = SelectPictureClosure::New1(p);
 }
 
-// public void OnActivityResult(int resultCode, Java.Object intent, object info) :21
+// public void OnActivityResult(int resultCode, Java.Object intent, object info) :19
 void SelectPictureClosure__OnActivityResult_fn(SelectPictureClosure* __this, int* resultCode, ::g::Java::Object* intent, uObject* info)
 {
     __this->OnActivityResult(*resultCode, intent, info);
 }
 
-// public void OnComplete(string path) :53
+// public void OnComplete(string path) :51
 void SelectPictureClosure__OnComplete_fn(SelectPictureClosure* __this, uString* path)
 {
     __this->OnComplete(path);
 }
 
-// public void OnFail(string reason) :58
+// public void OnFail(string reason) :56
 void SelectPictureClosure__OnFail_fn(SelectPictureClosure* __this, uString* reason)
 {
     __this->OnFail(reason);
 }
 
-// public SelectPictureClosure(Uno.Threading.Promise<Fuse.ImageTools.Image> p) [instance] :15
+// public SelectPictureClosure(Uno.Threading.Promise<Fuse.ImageTools.Image> p) [instance] :13
 void SelectPictureClosure::ctor_(::g::Uno::Threading::Promise* p)
 {
     _p = p;
 }
 
-// private void HandleIntent(int resultCode, Java.Object intent, Uno.Action<string> onComplete, Uno.Action<string> onFail) [instance] :27
+// private void HandleIntent(int resultCode, Java.Object intent, Uno.Action<string> onComplete, Uno.Action<string> onFail) [instance] :25
 void SelectPictureClosure::HandleIntent(int resultCode, ::g::Java::Object* intent, uDelegate* onComplete, uDelegate* onFail)
 {
     {
         INIT_JNI;
         jclass __cls = JniHelper::GetNativeExternClass();
-        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "HandleIntent407", "(Lcom/uno/UnoObject;ILjava/lang/Object;Lcom/foreign/Uno/Action_String;Lcom/foreign/Uno/Action_String;)V");
+        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "HandleIntent406", "(Lcom/uno/UnoObject;ILjava/lang/Object;Lcom/foreign/Uno/Action_String;Lcom/foreign/Uno/Action_String;)V");
         uObject* _uthis=this;
         jobject _this_ = ::g::Uno::Compiler::ExportTargetInterop::Foreign::Android::JavaUnoObject::Box6(_uthis);
         int _uresultCode=resultCode;
@@ -447,25 +451,25 @@ void SelectPictureClosure::HandleIntent(int resultCode, ::g::Java::Object* inten
     
 }
 
-// public void OnActivityResult(int resultCode, Java.Object intent, object info) [instance] :21
+// public void OnActivityResult(int resultCode, Java.Object intent, object info) [instance] :19
 void SelectPictureClosure::OnActivityResult(int resultCode, ::g::Java::Object* intent, uObject* info)
 {
     HandleIntent(resultCode, intent, uDelegate::New(::TYPES[4/*Uno.Action<string>*/], (void*)SelectPictureClosure__OnComplete_fn, this), uDelegate::New(::TYPES[4/*Uno.Action<string>*/], (void*)SelectPictureClosure__OnFail_fn, this));
 }
 
-// public void OnComplete(string path) [instance] :53
+// public void OnComplete(string path) [instance] :51
 void SelectPictureClosure::OnComplete(uString* path)
 {
     ::g::Uno::Threading::Promise__Resolve_fn(uPtr(_p), ::g::Fuse::ImageTools::Image::New2(path));
 }
 
-// public void OnFail(string reason) [instance] :58
+// public void OnFail(string reason) [instance] :56
 void SelectPictureClosure::OnFail(uString* reason)
 {
     uPtr(_p)->Reject(::g::Uno::Exception::New2(reason));
 }
 
-// public SelectPictureClosure New(Uno.Threading.Promise<Fuse.ImageTools.Image> p) [static] :15
+// public SelectPictureClosure New(Uno.Threading.Promise<Fuse.ImageTools.Image> p) [static] :13
 SelectPictureClosure* SelectPictureClosure::New1(::g::Uno::Threading::Promise* p)
 {
     SelectPictureClosure* obj1 = (SelectPictureClosure*)uNew(SelectPictureClosure_typeof());
@@ -474,10 +478,10 @@ SelectPictureClosure* SelectPictureClosure::New1(::g::Uno::Threading::Promise* p
 }
 // }
 
-// /Users/a/Library/Application Support/Fusetools/Packages/Fuse.CameraRoll/1.2.1/android/$.uno
-// -------------------------------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.CameraRoll\1.3.0-rc2\Android\AndroidCameraRoll.uno
+// ---------------------------------------------------------------------------------------------------
 
-// internal sealed extern class SelectPicturePermissionCheckCommand :65
+// internal sealed extern class SelectPicturePermissionCheckCommand :63
 // {
 static void SelectPicturePermissionCheckCommand_build(uType* type)
 {
@@ -488,7 +492,7 @@ static void SelectPicturePermissionCheckCommand_build(uType* type)
     ::TYPES[2] = ::g::Uno::Action1_typeof()->MakeType(::g::Uno::Exception_typeof(), NULL);
     ::TYPES[12] = ::g::Android::ActivityResultCallback_typeof();
     type->SetFields(0,
-        ::g::Fuse::CameraRoll::SelectPictureClosure_typeof(), offsetof(::g::Fuse::CameraRoll::SelectPicturePermissionCheckCommand, _closure), 0);
+        ::g::Fuse::CameraRoll::SelectPictureClosure_typeof(), offsetof(SelectPicturePermissionCheckCommand, _closure), 0);
 }
 
 uType* SelectPicturePermissionCheckCommand_typeof()
@@ -505,56 +509,56 @@ uType* SelectPicturePermissionCheckCommand_typeof()
     return type;
 }
 
-// public SelectPicturePermissionCheckCommand(Uno.Threading.Promise<Fuse.ImageTools.Image> p) :68
+// public SelectPicturePermissionCheckCommand(Uno.Threading.Promise<Fuse.ImageTools.Image> p) :66
 void SelectPicturePermissionCheckCommand__ctor__fn(SelectPicturePermissionCheckCommand* __this, ::g::Uno::Threading::Promise* p)
 {
     __this->ctor_(p);
 }
 
-// private static Java.Object CreateIntent() :75
+// private static Java.Object CreateIntent() :73
 void SelectPicturePermissionCheckCommand__CreateIntent_fn(::g::Java::Object** __retval)
 {
     *__retval = SelectPicturePermissionCheckCommand::CreateIntent();
 }
 
-// public void Execute() :82
+// public void Execute() :80
 void SelectPicturePermissionCheckCommand__Execute_fn(SelectPicturePermissionCheckCommand* __this)
 {
     __this->Execute();
 }
 
-// public SelectPicturePermissionCheckCommand New(Uno.Threading.Promise<Fuse.ImageTools.Image> p) :68
+// public SelectPicturePermissionCheckCommand New(Uno.Threading.Promise<Fuse.ImageTools.Image> p) :66
 void SelectPicturePermissionCheckCommand__New1_fn(::g::Uno::Threading::Promise* p, SelectPicturePermissionCheckCommand** __retval)
 {
     *__retval = SelectPicturePermissionCheckCommand::New1(p);
 }
 
-// private void OnPermissions(Uno.Permissions.PlatformPermission[] grantedPermissions) :87
+// private void OnPermissions(Uno.Permissions.PlatformPermission[] grantedPermissions) :85
 void SelectPicturePermissionCheckCommand__OnPermissions_fn(SelectPicturePermissionCheckCommand* __this, uArray* grantedPermissions)
 {
     __this->OnPermissions(grantedPermissions);
 }
 
-// private void OnRejected(Uno.Exception e) :102
+// private void OnRejected(Uno.Exception e) :100
 void SelectPicturePermissionCheckCommand__OnRejected_fn(SelectPicturePermissionCheckCommand* __this, ::g::Uno::Exception* e)
 {
     __this->OnRejected(e);
 }
 
-// public SelectPicturePermissionCheckCommand(Uno.Threading.Promise<Fuse.ImageTools.Image> p) [instance] :68
+// public SelectPicturePermissionCheckCommand(Uno.Threading.Promise<Fuse.ImageTools.Image> p) [instance] :66
 void SelectPicturePermissionCheckCommand::ctor_(::g::Uno::Threading::Promise* p)
 {
     _closure = ::g::Fuse::CameraRoll::SelectPictureClosure::New1(p);
 }
 
-// public void Execute() [instance] :82
+// public void Execute() [instance] :80
 void SelectPicturePermissionCheckCommand::Execute()
 {
     uArray* array2;
     uPtr(::g::Uno::Permissions::Permissions::Request1((array2 = uArray::New(::TYPES[0/*Uno.Permissions.PlatformPermission[]*/], 2), uPtr(array2)->Item< ::g::Uno::Permissions::PlatformPermission>(0) = ::g::Uno::Permissions::Permissions__Android::WRITE_EXTERNAL_STORAGE(), uPtr(array2)->Item< ::g::Uno::Permissions::PlatformPermission>(1) = ::g::Uno::Permissions::Permissions__Android::READ_EXTERNAL_STORAGE(), array2)))->Then1(uDelegate::New(::TYPES[1/*Uno.Action<Uno.Permissions.PlatformPermission[]>*/], (void*)SelectPicturePermissionCheckCommand__OnPermissions_fn, this), uDelegate::New(::TYPES[2/*Uno.Action<Uno.Exception>*/], (void*)SelectPicturePermissionCheckCommand__OnRejected_fn, this));
 }
 
-// private void OnPermissions(Uno.Permissions.PlatformPermission[] grantedPermissions) [instance] :87
+// private void OnPermissions(Uno.Permissions.PlatformPermission[] grantedPermissions) [instance] :85
 void SelectPicturePermissionCheckCommand::OnPermissions(uArray* grantedPermissions)
 {
     if (uPtr(grantedPermissions)->Length() == 2)
@@ -570,19 +574,19 @@ void SelectPicturePermissionCheckCommand::OnPermissions(uArray* grantedPermissio
         uPtr(_closure)->OnFail(::STRINGS[0/*"Required pe...*/]);
 }
 
-// private void OnRejected(Uno.Exception e) [instance] :102
+// private void OnRejected(Uno.Exception e) [instance] :100
 void SelectPicturePermissionCheckCommand::OnRejected(::g::Uno::Exception* e)
 {
     uPtr(_closure)->OnFail(uPtr(e)->Message());
 }
 
-// private static Java.Object CreateIntent() [static] :75
+// private static Java.Object CreateIntent() [static] :73
 ::g::Java::Object* SelectPicturePermissionCheckCommand::CreateIntent()
 {
     {
         INIT_JNI;
         jclass __cls = JniHelper::GetNativeExternClass();
-        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "CreateIntent408", "()Ljava/lang/Object;");
+        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "CreateIntent407", "()Ljava/lang/Object;");
         jobject __jresult = U_JNIVAR->CallStaticObjectMethod(__cls,__mtd);
         ::g::Java::Object* __result = (::g::Java::Object*)::g::Android::Base::Wrappers::JavaObjectHelper::JObjectToJWrapper(__jresult, false);
         ::g::Android::Base::JNI::CheckException();
@@ -591,7 +595,7 @@ void SelectPicturePermissionCheckCommand::OnRejected(::g::Uno::Exception* e)
     
 }
 
-// public SelectPicturePermissionCheckCommand New(Uno.Threading.Promise<Fuse.ImageTools.Image> p) [static] :68
+// public SelectPicturePermissionCheckCommand New(Uno.Threading.Promise<Fuse.ImageTools.Image> p) [static] :66
 SelectPicturePermissionCheckCommand* SelectPicturePermissionCheckCommand::New1(::g::Uno::Threading::Promise* p)
 {
     SelectPicturePermissionCheckCommand* obj1 = (SelectPicturePermissionCheckCommand*)uNew(SelectPicturePermissionCheckCommand_typeof());

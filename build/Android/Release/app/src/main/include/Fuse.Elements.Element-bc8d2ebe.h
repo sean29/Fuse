@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Elements/1.2.1/caching/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Elements/1.3.0-rc2/Caching/ElementAtlasPool.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -13,7 +13,7 @@ namespace g{
 namespace Fuse{
 namespace Elements{
 
-// internal sealed class ElementAtlasFramebuffer :347
+// internal sealed class ElementAtlasFramebuffer :9
 // {
 uType* ElementAtlasFramebuffer_typeof();
 void ElementAtlasFramebuffer__ctor__fn(ElementAtlasFramebuffer* __this);

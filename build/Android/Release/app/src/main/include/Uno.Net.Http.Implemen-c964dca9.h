@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Uno.Net.Http/1.2.2/implementation/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Uno.Net.Http/1.3.1/Implementation/IHttpRequest.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -11,7 +11,7 @@ namespace Net{
 namespace Http{
 namespace Implementation{
 
-// public abstract interface IHttpRequest :9
+// public abstract interface IHttpRequest :7
 // {
 uInterfaceType* IHttpRequest_typeof();
 

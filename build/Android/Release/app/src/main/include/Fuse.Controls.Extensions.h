@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Controls.Panels/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Controls.Panels/1.3.0-rc2/TreeRenderer.Android.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -10,7 +10,7 @@ namespace g{
 namespace Fuse{
 namespace Controls{
 
-// internal static extern class Extensions :2858
+// internal static extern class Extensions :236
 // {
 uClassType* Extensions_typeof();
 void Extensions__GetColor_fn(::g::Fuse::Drawing::Brush* brush, int* __retval);

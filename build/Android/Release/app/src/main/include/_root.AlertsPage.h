@@ -1,4 +1,4 @@
-// This file was generated based on '.uno/ux11/AlertsPage.g.uno'.
+// This file was generated based on '.uno/ux13/AlertsPage.g.uno'.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -15,6 +15,7 @@
 #include <Fuse.Triggers.Actions.IHide.h>
 #include <Fuse.Triggers.Actions.IShow.h>
 #include <Fuse.Triggers.Actions-ea70af1f.h>
+#include <Fuse.Visual.h>
 #include <Uno.Collections.ICollection-1.h>
 #include <Uno.Collections.IEnumerable-1.h>
 #include <Uno.Collections.IList-1.h>
@@ -36,12 +37,11 @@ namespace g{struct MyLoadingIndicator;}
 
 namespace g{
 
-// public partial sealed class AlertsPage :2
+// public partial class AlertsPage :2
 // {
 ::g::Fuse::Controls::Panel_type* AlertsPage_typeof();
 void AlertsPage__ctor_8_fn(AlertsPage* __this, ::g::Fuse::Navigation::Router* router1);
 void AlertsPage__InitializeUX_fn(AlertsPage* __this);
-void AlertsPage__New5_fn(::g::Fuse::Navigation::Router* router1, AlertsPage** __retval);
 
 struct AlertsPage : ::g::Fuse::Controls::Page
 {
@@ -96,7 +96,6 @@ struct AlertsPage : ::g::Fuse::Controls::Page
 
     void ctor_8(::g::Fuse::Navigation::Router* router1);
     void InitializeUX();
-    static AlertsPage* New5(::g::Fuse::Navigation::Router* router1);
 };
 // }
 

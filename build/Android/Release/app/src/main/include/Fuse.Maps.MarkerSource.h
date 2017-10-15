@@ -1,4 +1,4 @@
-// This file was generated based on '/Users/a/Library/Application Support/Fusetools/Packages/Fuse.Maps/1.2.1/$.uno'.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Maps/1.3.0-rc2/MarkerIconCache.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -12,7 +12,7 @@ namespace g{
 namespace Fuse{
 namespace Maps{
 
-// internal sealed class MarkerSource :986
+// internal sealed class MarkerSource :41
 // {
 uType* MarkerSource_typeof();
 void MarkerSource__ctor__fn(MarkerSource* __this, uString* name, ::g::Uno::UX::FileSource* input, ::g::Fuse::Maps::MarkerIconCache* cache);

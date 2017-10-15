@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Controls.Native/1.2.1/android/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Controls.Native/1.3.0-rc2/Android/LeafView.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -14,14 +14,14 @@ namespace Controls{
 namespace Native{
 namespace Android{
 
-// public abstract extern class LeafView :1064
+// public abstract extern class LeafView :7
 // {
 ::g::Fuse::Controls::Native::Android::View_type* LeafView_typeof();
-void LeafView__ctor_6_fn(LeafView* __this, ::g::Java::Object* handle);
+void LeafView__ctor_7_fn(LeafView* __this, ::g::Java::Object* handle);
 
 struct LeafView : ::g::Fuse::Controls::Native::Android::View
 {
-    void ctor_6(::g::Java::Object* handle);
+    void ctor_7(::g::Java::Object* handle);
 };
 // }
 

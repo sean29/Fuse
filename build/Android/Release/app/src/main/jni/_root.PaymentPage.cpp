@@ -1,4 +1,4 @@
-// This file was generated based on '.uno/ux11/PaymentPage.g.uno'.
+// This file was generated based on '.uno/ux13/PaymentPage.g.uno'.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #include <_root.emrals_bundle.h>
@@ -51,7 +51,6 @@
 #include <Fuse.Reactive.IExpression.h>
 #include <Fuse.Reactive.JavaScript.h>
 #include <Fuse.Triggers.Trigger.h>
-#include <Fuse.Visual.h>
 #include <Uno.Double.h>
 #include <Uno.Float.h>
 #include <Uno.Int.h>
@@ -71,11 +70,12 @@ static uType* TYPES[7];
 
 namespace g{
 
-// public partial sealed class PaymentPage :2
+// public partial class PaymentPage :2
 // {
 // static PaymentPage() :30
 static void PaymentPage__cctor_4_fn(uType* __type)
 {
+    ::g::Uno::UX::Selector_typeof()->Init();
     PaymentPage::__g_static_nametable1_ = uArray::Init<uString*>(::TYPES[0/*string[]*/], 6, ::STRINGS[0/*"router"*/], ::STRINGS[1/*"temp_eb56"*/], ::STRINGS[2/*"temp_eb58"*/], ::STRINGS[3/*"temp_eb57"*/], ::STRINGS[4/*"confirmrec"*/], ::STRINGS[5/*"temp_eb59"*/]);
     PaymentPage::__selector0_ = ::g::Uno::UX::Selector__op_Implicit(::STRINGS[6/*"Value"*/]);
     PaymentPage::__selector1_ = ::g::Uno::UX::Selector__op_Implicit(::STRINGS[7/*"Visibility"*/]);
@@ -130,6 +130,9 @@ static void PaymentPage_build(uType* type)
     ::TYPES[4] = ::g::Uno::Collections::ICollection_typeof()->MakeType(::g::Fuse::Binding_typeof(), NULL);
     ::TYPES[5] = ::g::Uno::Collections::ICollection_typeof()->MakeType(::g::Fuse::Animations::Animator_typeof(), NULL);
     ::TYPES[6] = ::g::Uno::Collections::ICollection_typeof()->MakeType(uObject_typeof(), NULL);
+    type->SetDependencies(
+        ::g::Fuse::Controls::DockPanel_typeof(),
+        ::g::Fuse::Controls::Grid_typeof());
     type->SetInterfaces(
         ::g::Uno::Collections::IList_typeof()->MakeType(::g::Fuse::Binding_typeof(), NULL), offsetof(::g::Fuse::Controls::Panel_type, interface0),
         ::g::Fuse::Scripting::IScriptObject_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface1),
@@ -140,38 +143,39 @@ static void PaymentPage_build(uType* type)
         ::g::Uno::Collections::IList_typeof()->MakeType(::g::Fuse::Node_typeof(), NULL), offsetof(::g::Fuse::Controls::Panel_type, interface6),
         ::g::Uno::UX::IPropertyListener_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface7),
         ::g::Fuse::ITemplateSource_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface8),
-        ::TYPES[2/*Uno.Collections.ICollection<Fuse.Node>*/], offsetof(::g::Fuse::Controls::Panel_type, interface9),
-        ::g::Uno::Collections::IEnumerable_typeof()->MakeType(::g::Fuse::Node_typeof(), NULL), offsetof(::g::Fuse::Controls::Panel_type, interface10),
-        ::g::Fuse::Triggers::Actions::IShow_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface11),
-        ::g::Fuse::Triggers::Actions::IHide_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface12),
-        ::g::Fuse::Triggers::Actions::ICollapse_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface13),
-        ::g::Fuse::IActualPlacement_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface14),
-        ::g::Fuse::Animations::IResize_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface15),
-        ::g::Fuse::Drawing::ISurfaceDrawable_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface16));
-    type->SetFields(111,
-        ::g::Uno::UX::NameTable_typeof(), offsetof(::g::PaymentPage, __g_nametable1), 0,
-        ::g::Fuse::Controls::Rectangle_typeof(), offsetof(::g::PaymentPage, confirmrec), 0,
-        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::Float4_typeof(), NULL), offsetof(::g::PaymentPage, confirmrec_Color_inst), 0,
-        ::g::Fuse::Navigation::Router_typeof(), offsetof(::g::PaymentPage, router), 0,
-        ::g::Fuse::Reactive::EventBinding_typeof(), offsetof(::g::PaymentPage, temp_eb56), 0,
-        ::g::Fuse::Reactive::EventBinding_typeof(), offsetof(::g::PaymentPage, temp_eb57), 0,
-        ::g::Fuse::Reactive::EventBinding_typeof(), offsetof(::g::PaymentPage, temp_eb58), 0,
-        ::g::Fuse::Reactive::EventBinding_typeof(), offsetof(::g::PaymentPage, temp_eb59), 0,
-        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(::g::PaymentPage, temp_Value_inst), 0,
-        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(::g::PaymentPage, temp1_Value_inst), 0,
-        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(::g::PaymentPage, temp2_Value_inst), 0,
-        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Fuse::Elements::Visibility_typeof(), NULL), offsetof(::g::PaymentPage, temp3_Visibility_inst), 0,
-        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(::g::PaymentPage, temp4_Value_inst), 0,
-        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(::g::PaymentPage, temp5_Value_inst), 0,
-        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(::g::PaymentPage, temp6_Value_inst), 0,
-        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(::g::PaymentPage, temp7_Value_inst), 0,
-        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(::g::PaymentPage, temp8_Value_inst), 0,
-        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(::g::PaymentPage, temp9_Value_inst), 0,
-        ::TYPES[0/*string[]*/], (uintptr_t)&::g::PaymentPage::__g_static_nametable1_, uFieldFlagsStatic,
-        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&::g::PaymentPage::__selector0_, uFieldFlagsStatic,
-        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&::g::PaymentPage::__selector1_, uFieldFlagsStatic,
-        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&::g::PaymentPage::__selector2_, uFieldFlagsStatic,
-        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&::g::PaymentPage::__selector3_, uFieldFlagsStatic);
+        ::g::Uno::Collections::IEnumerable_typeof()->MakeType(::g::Fuse::Visual_typeof(), NULL), offsetof(::g::Fuse::Controls::Panel_type, interface9),
+        ::TYPES[2/*Uno.Collections.ICollection<Fuse.Node>*/], offsetof(::g::Fuse::Controls::Panel_type, interface10),
+        ::g::Uno::Collections::IEnumerable_typeof()->MakeType(::g::Fuse::Node_typeof(), NULL), offsetof(::g::Fuse::Controls::Panel_type, interface11),
+        ::g::Fuse::Triggers::Actions::IShow_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface12),
+        ::g::Fuse::Triggers::Actions::IHide_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface13),
+        ::g::Fuse::Triggers::Actions::ICollapse_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface14),
+        ::g::Fuse::IActualPlacement_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface15),
+        ::g::Fuse::Animations::IResize_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface16),
+        ::g::Fuse::Drawing::ISurfaceDrawable_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface17));
+    type->SetFields(117,
+        ::g::Uno::UX::NameTable_typeof(), offsetof(PaymentPage, __g_nametable1), 0,
+        ::g::Fuse::Controls::Rectangle_typeof(), offsetof(PaymentPage, confirmrec), 0,
+        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::Float4_typeof(), NULL), offsetof(PaymentPage, confirmrec_Color_inst), 0,
+        ::g::Fuse::Navigation::Router_typeof(), offsetof(PaymentPage, router), 0,
+        ::g::Fuse::Reactive::EventBinding_typeof(), offsetof(PaymentPage, temp_eb56), 0,
+        ::g::Fuse::Reactive::EventBinding_typeof(), offsetof(PaymentPage, temp_eb57), 0,
+        ::g::Fuse::Reactive::EventBinding_typeof(), offsetof(PaymentPage, temp_eb58), 0,
+        ::g::Fuse::Reactive::EventBinding_typeof(), offsetof(PaymentPage, temp_eb59), 0,
+        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(PaymentPage, temp_Value_inst), 0,
+        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(PaymentPage, temp1_Value_inst), 0,
+        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(PaymentPage, temp2_Value_inst), 0,
+        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Fuse::Elements::Visibility_typeof(), NULL), offsetof(PaymentPage, temp3_Visibility_inst), 0,
+        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(PaymentPage, temp4_Value_inst), 0,
+        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(PaymentPage, temp5_Value_inst), 0,
+        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(PaymentPage, temp6_Value_inst), 0,
+        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(PaymentPage, temp7_Value_inst), 0,
+        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(PaymentPage, temp8_Value_inst), 0,
+        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(PaymentPage, temp9_Value_inst), 0,
+        ::TYPES[0/*string[]*/], (uintptr_t)&PaymentPage::__g_static_nametable1_, uFieldFlagsStatic,
+        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&PaymentPage::__selector0_, uFieldFlagsStatic,
+        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&PaymentPage::__selector1_, uFieldFlagsStatic,
+        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&PaymentPage::__selector2_, uFieldFlagsStatic,
+        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&PaymentPage::__selector3_, uFieldFlagsStatic);
 }
 
 ::g::Fuse::Controls::Panel_type* PaymentPage_typeof()
@@ -181,34 +185,36 @@ static void PaymentPage_build(uType* type)
 
     uTypeOptions options;
     options.BaseDefinition = ::g::Fuse::Controls::Page_typeof();
-    options.FieldCount = 134;
-    options.InterfaceCount = 17;
+    options.FieldCount = 140;
+    options.InterfaceCount = 18;
+    options.DependencyCount = 2;
     options.ObjectSize = sizeof(PaymentPage);
     options.TypeSize = sizeof(::g::Fuse::Controls::Panel_type);
     type = (::g::Fuse::Controls::Panel_type*)uClassType::New("PaymentPage", options);
     type->fp_build_ = PaymentPage_build;
     type->fp_cctor_ = PaymentPage__cctor_4_fn;
-    type->interface16.fp_Draw = (void(*)(uObject*, ::g::Fuse::Drawing::Surface*))::g::Fuse::Controls::Panel__FuseDrawingISurfaceDrawableDraw_fn;
-    type->interface16.fp_get_IsPrimary = (void(*)(uObject*, bool*))::g::Fuse::Controls::Panel__FuseDrawingISurfaceDrawableget_IsPrimary_fn;
-    type->interface16.fp_get_ElementSize = (void(*)(uObject*, ::g::Uno::Float2*))::g::Fuse::Controls::Panel__FuseDrawingISurfaceDrawableget_ElementSize_fn;
-    type->interface11.fp_Show = (void(*)(uObject*))::g::Fuse::Elements::Element__FuseTriggersActionsIShowShow_fn;
-    type->interface13.fp_Collapse = (void(*)(uObject*))::g::Fuse::Elements::Element__FuseTriggersActionsICollapseCollapse_fn;
-    type->interface12.fp_Hide = (void(*)(uObject*))::g::Fuse::Elements::Element__FuseTriggersActionsIHideHide_fn;
-    type->interface15.fp_SetSize = (void(*)(uObject*, ::g::Uno::Float2*))::g::Fuse::Elements::Element__FuseAnimationsIResizeSetSize_fn;
-    type->interface14.fp_get_ActualSize = (void(*)(uObject*, ::g::Uno::Float3*))::g::Fuse::Elements::Element__FuseIActualPlacementget_ActualSize_fn;
-    type->interface14.fp_add_Placed = (void(*)(uObject*, uDelegate*))::g::Fuse::Elements::Element__add_Placed_fn;
-    type->interface14.fp_remove_Placed = (void(*)(uObject*, uDelegate*))::g::Fuse::Elements::Element__remove_Placed_fn;
-    type->interface9.fp_Clear = (void(*)(uObject*))::g::Fuse::Visual__UnoCollectionsICollectionFuseNodeClear_fn;
-    type->interface9.fp_Contains = (void(*)(uObject*, void*, bool*))::g::Fuse::Visual__UnoCollectionsICollectionFuseNodeContains_fn;
+    type->interface17.fp_Draw = (void(*)(uObject*, ::g::Fuse::Drawing::Surface*))::g::Fuse::Controls::Panel__FuseDrawingISurfaceDrawableDraw_fn;
+    type->interface17.fp_get_IsPrimary = (void(*)(uObject*, bool*))::g::Fuse::Controls::Panel__FuseDrawingISurfaceDrawableget_IsPrimary_fn;
+    type->interface17.fp_get_ElementSize = (void(*)(uObject*, ::g::Uno::Float2*))::g::Fuse::Controls::Panel__FuseDrawingISurfaceDrawableget_ElementSize_fn;
+    type->interface12.fp_Show = (void(*)(uObject*))::g::Fuse::Elements::Element__FuseTriggersActionsIShowShow_fn;
+    type->interface14.fp_Collapse = (void(*)(uObject*))::g::Fuse::Elements::Element__FuseTriggersActionsICollapseCollapse_fn;
+    type->interface13.fp_Hide = (void(*)(uObject*))::g::Fuse::Elements::Element__FuseTriggersActionsIHideHide_fn;
+    type->interface16.fp_SetSize = (void(*)(uObject*, ::g::Uno::Float2*))::g::Fuse::Elements::Element__FuseAnimationsIResizeSetSize_fn;
+    type->interface15.fp_get_ActualSize = (void(*)(uObject*, ::g::Uno::Float3*))::g::Fuse::Elements::Element__FuseIActualPlacementget_ActualSize_fn;
+    type->interface15.fp_add_Placed = (void(*)(uObject*, uDelegate*))::g::Fuse::Elements::Element__add_Placed_fn;
+    type->interface15.fp_remove_Placed = (void(*)(uObject*, uDelegate*))::g::Fuse::Elements::Element__remove_Placed_fn;
+    type->interface9.fp_GetEnumerator = (void(*)(uObject*, uObject**))::g::Fuse::Visual__UnoCollectionsIEnumerableFuseVisualGetEnumerator_fn;
+    type->interface10.fp_Clear = (void(*)(uObject*))::g::Fuse::Visual__UnoCollectionsICollectionFuseNodeClear_fn;
+    type->interface10.fp_Contains = (void(*)(uObject*, void*, bool*))::g::Fuse::Visual__UnoCollectionsICollectionFuseNodeContains_fn;
     type->interface6.fp_RemoveAt = (void(*)(uObject*, int*))::g::Fuse::Visual__UnoCollectionsIListFuseNodeRemoveAt_fn;
-    type->interface10.fp_GetEnumerator = (void(*)(uObject*, uObject**))::g::Fuse::Visual__UnoCollectionsIEnumerableFuseNodeGetEnumerator_fn;
-    type->interface9.fp_get_Count = (void(*)(uObject*, int*))::g::Fuse::Visual__UnoCollectionsICollectionFuseNodeget_Count_fn;
+    type->interface11.fp_GetEnumerator = (void(*)(uObject*, uObject**))::g::Fuse::Visual__UnoCollectionsIEnumerableFuseNodeGetEnumerator_fn;
+    type->interface10.fp_get_Count = (void(*)(uObject*, int*))::g::Fuse::Visual__UnoCollectionsICollectionFuseNodeget_Count_fn;
     type->interface6.fp_get_Item = (void(*)(uObject*, int*, uTRef))::g::Fuse::Visual__UnoCollectionsIListFuseNodeget_Item_fn;
     type->interface6.fp_Insert = (void(*)(uObject*, int*, void*))::g::Fuse::Visual__Insert1_fn;
     type->interface7.fp_OnPropertyChanged = (void(*)(uObject*, ::g::Uno::UX::PropertyObject*, ::g::Uno::UX::Selector*))::g::Fuse::Controls::Control__OnPropertyChanged2_fn;
     type->interface8.fp_FindTemplate = (void(*)(uObject*, uString*, ::g::Uno::UX::Template**))::g::Fuse::Visual__FindTemplate_fn;
-    type->interface9.fp_Add = (void(*)(uObject*, void*))::g::Fuse::Visual__Add1_fn;
-    type->interface9.fp_Remove = (void(*)(uObject*, void*, bool*))::g::Fuse::Visual__Remove1_fn;
+    type->interface10.fp_Add = (void(*)(uObject*, void*))::g::Fuse::Visual__Add1_fn;
+    type->interface10.fp_Remove = (void(*)(uObject*, void*, bool*))::g::Fuse::Visual__Remove1_fn;
     type->interface4.fp_Clear = (void(*)(uObject*))::g::Fuse::Node__UnoCollectionsICollectionFuseBindingClear_fn;
     type->interface4.fp_Contains = (void(*)(uObject*, void*, bool*))::g::Fuse::Node__UnoCollectionsICollectionFuseBindingContains_fn;
     type->interface0.fp_RemoveAt = (void(*)(uObject*, int*))::g::Fuse::Node__UnoCollectionsIListFuseBindingRemoveAt_fn;
@@ -239,12 +245,6 @@ void PaymentPage__InitializeUX_fn(PaymentPage* __this)
     __this->InitializeUX();
 }
 
-// public PaymentPage New(Fuse.Navigation.Router router) :34
-void PaymentPage__New5_fn(::g::Fuse::Navigation::Router* router1, PaymentPage** __retval)
-{
-    *__retval = PaymentPage::New5(router1);
-}
-
 uSStrong<uArray*> PaymentPage::__g_static_nametable1_;
 ::g::Uno::UX::Selector PaymentPage::__selector0_;
 ::g::Uno::UX::Selector PaymentPage::__selector1_;
@@ -262,10 +262,10 @@ void PaymentPage::ctor_8(::g::Fuse::Navigation::Router* router1)
 // private void InitializeUX() [instance] :40
 void PaymentPage::InitializeUX()
 {
-    __g_nametable1 = ::g::Uno::UX::NameTable::New1(NULL, PaymentPage::__g_static_nametable1());
+    __g_nametable1 = ::g::Uno::UX::NameTable::New1(NULL, PaymentPage::__g_static_nametable1_);
     ::g::Fuse::Reactive::Data* temp10 = ::g::Fuse::Reactive::Data::New1(::STRINGS[9/*"back"*/]);
     ::g::Mouse* temp = ::g::Mouse::New4();
-    temp_Value_inst = ::g::emrals_FuseControlsTextControl_Value_Property::New1(temp, PaymentPage::__selector0());
+    temp_Value_inst = ::g::emrals_FuseControlsTextControl_Value_Property::New1(temp, PaymentPage::__selector0_);
     ::g::Fuse::Reactive::Data* temp11 = ::g::Fuse::Reactive::Data::New1(::STRINGS[10/*"zipcode"*/]);
     uString* temp12 = ::STRINGS[11/*"$"*/];
     ::g::Fuse::Reactive::Constant* temp13 = ::g::Fuse::Reactive::Constant::New1(temp12);
@@ -274,42 +274,42 @@ void PaymentPage::InitializeUX()
     ::g::Fuse::Reactive::Constant* temp16 = ::g::Fuse::Reactive::Constant::New1(temp15);
     ::g::Fuse::Reactive::Add* temp17 = ::g::Fuse::Reactive::Add::New1(temp14, temp16);
     ::g::Mouse* temp1 = ::g::Mouse::New4();
-    temp1_Value_inst = ::g::emrals_FuseControlsTextControl_Value_Property::New1(temp1, PaymentPage::__selector0());
+    temp1_Value_inst = ::g::emrals_FuseControlsTextControl_Value_Property::New1(temp1, PaymentPage::__selector0_);
     ::g::Fuse::Reactive::Add* temp18 = ::g::Fuse::Reactive::Add::New1(temp13, temp17);
     ::g::PTMono* temp2 = ::g::PTMono::New4();
-    temp2_Value_inst = ::g::emrals_FuseControlsTextControl_Value_Property::New1(temp2, PaymentPage::__selector0());
+    temp2_Value_inst = ::g::emrals_FuseControlsTextControl_Value_Property::New1(temp2, PaymentPage::__selector0_);
     ::g::Fuse::Reactive::Data* temp19 = ::g::Fuse::Reactive::Data::New1(::STRINGS[14/*"error"*/]);
     ::g::Fuse::Reactive::Data* temp20 = ::g::Fuse::Reactive::Data::New1(::STRINGS[15/*"hideError"*/]);
     ::g::Fuse::Controls::Rectangle* temp3 = ::g::Fuse::Controls::Rectangle::New3();
-    temp3_Visibility_inst = ::g::emrals_FuseElementsElement_Visibility_Property::New1(temp3, PaymentPage::__selector1());
+    temp3_Visibility_inst = ::g::emrals_FuseElementsElement_Visibility_Property::New1(temp3, PaymentPage::__selector1_);
     ::g::Fuse::Reactive::Data* temp21 = ::g::Fuse::Reactive::Data::New1(::STRINGS[16/*"error_visib...*/]);
     ::g::Fuse::Reactive::Data* temp22 = ::g::Fuse::Reactive::Data::New1(::STRINGS[15/*"hideError"*/]);
     ::g::Basic::TextInput* temp4 = ::g::Basic::TextInput::New4();
-    temp4_Value_inst = ::g::emrals_FuseControlsTextInputControl_Value_Property::New1(temp4, PaymentPage::__selector0());
+    temp4_Value_inst = ::g::emrals_FuseControlsTextInputControl_Value_Property::New1(temp4, PaymentPage::__selector0_);
     ::g::Fuse::Reactive::Data* temp23 = ::g::Fuse::Reactive::Data::New1(::STRINGS[17/*"name"*/]);
     ::g::Basic::TextInput* temp5 = ::g::Basic::TextInput::New4();
-    temp5_Value_inst = ::g::emrals_FuseControlsTextInputControl_Value_Property::New1(temp5, PaymentPage::__selector0());
+    temp5_Value_inst = ::g::emrals_FuseControlsTextInputControl_Value_Property::New1(temp5, PaymentPage::__selector0_);
     ::g::Fuse::Reactive::Data* temp24 = ::g::Fuse::Reactive::Data::New1(::STRINGS[18/*"email"*/]);
     ::g::Basic::TextInput* temp6 = ::g::Basic::TextInput::New4();
-    temp6_Value_inst = ::g::emrals_FuseControlsTextInputControl_Value_Property::New1(temp6, PaymentPage::__selector0());
+    temp6_Value_inst = ::g::emrals_FuseControlsTextInputControl_Value_Property::New1(temp6, PaymentPage::__selector0_);
     ::g::Fuse::Reactive::Data* temp25 = ::g::Fuse::Reactive::Data::New1(::STRINGS[19/*"cardNumber"*/]);
     ::g::Basic::TextInput* temp7 = ::g::Basic::TextInput::New4();
-    temp7_Value_inst = ::g::emrals_FuseControlsTextInputControl_Value_Property::New1(temp7, PaymentPage::__selector0());
+    temp7_Value_inst = ::g::emrals_FuseControlsTextInputControl_Value_Property::New1(temp7, PaymentPage::__selector0_);
     ::g::Fuse::Reactive::Data* temp26 = ::g::Fuse::Reactive::Data::New1(::STRINGS[20/*"expiryMonth"*/]);
     ::g::Basic::TextInput* temp8 = ::g::Basic::TextInput::New4();
-    temp8_Value_inst = ::g::emrals_FuseControlsTextInputControl_Value_Property::New1(temp8, PaymentPage::__selector0());
+    temp8_Value_inst = ::g::emrals_FuseControlsTextInputControl_Value_Property::New1(temp8, PaymentPage::__selector0_);
     ::g::Fuse::Reactive::Data* temp27 = ::g::Fuse::Reactive::Data::New1(::STRINGS[21/*"expiryYear"*/]);
     ::g::Basic::TextInput* temp9 = ::g::Basic::TextInput::New4();
-    temp9_Value_inst = ::g::emrals_FuseControlsTextInputControl_Value_Property::New1(temp9, PaymentPage::__selector0());
+    temp9_Value_inst = ::g::emrals_FuseControlsTextInputControl_Value_Property::New1(temp9, PaymentPage::__selector0_);
     ::g::Fuse::Reactive::Data* temp28 = ::g::Fuse::Reactive::Data::New1(::STRINGS[22/*"cvc"*/]);
     confirmrec = ::g::Fuse::Controls::Rectangle::New3();
-    confirmrec_Color_inst = ::g::emrals_FuseControlsShape_Color_Property::New1(confirmrec, PaymentPage::__selector2());
+    confirmrec_Color_inst = ::g::emrals_FuseControlsShape_Color_Property::New1(confirmrec, PaymentPage::__selector2_);
     ::g::Fuse::Reactive::Data* temp29 = ::g::Fuse::Reactive::Data::New1(::STRINGS[23/*"testPay"*/]);
     ::g::Fuse::Reactive::JavaScript* temp30 = ::g::Fuse::Reactive::JavaScript::New2(__g_nametable1);
     ::g::Fuse::Controls::DockPanel* temp31 = ::g::Fuse::Controls::DockPanel::New4();
     ::g::Fuse::Controls::Panel* temp32 = ::g::Fuse::Controls::Panel::New3();
     ::g::Fuse::Controls::Text* temp33 = ::g::Fuse::Controls::Text::New3();
-    temp_eb56 = ::g::Fuse::Reactive::EventBinding::New1((uObject*)temp10, __g_nametable1);
+    temp_eb56 = ::g::Fuse::Reactive::EventBinding::New1((uObject*)temp10);
     ::g::PTreal* temp34 = ::g::PTreal::New4();
     ::g::Fuse::Drawing::StaticSolidColor* temp35 = ::g::Fuse::Drawing::StaticSolidColor::New2(::g::Uno::Float4__New2(1.0f, 1.0f, 1.0f, 1.0f));
     ::g::Fuse::Controls::ScrollView* temp36 = ::g::Fuse::Controls::ScrollView::New4();
@@ -320,37 +320,37 @@ void PaymentPage::InitializeUX()
     ::g::Fuse::Controls::Rectangle* temp41 = ::g::Fuse::Controls::Rectangle::New3();
     ::g::Fuse::Controls::Grid* temp42 = ::g::Fuse::Controls::Grid::New4();
     ::g::Horse* temp43 = ::g::Horse::New4();
-    ::g::Fuse::Reactive::DataBinding* temp44 = ::g::Fuse::Reactive::DataBinding::New1(temp_Value_inst, (uObject*)temp11, __g_nametable1, 3);
+    ::g::Fuse::Reactive::DataBinding* temp44 = ::g::Fuse::Reactive::DataBinding::New1(temp_Value_inst, (uObject*)temp11, 3);
     ::g::Horse* temp45 = ::g::Horse::New4();
-    ::g::Fuse::Reactive::DataBinding* temp46 = ::g::Fuse::Reactive::DataBinding::New1(temp1_Value_inst, (uObject*)temp18, __g_nametable1, 3);
+    ::g::Fuse::Reactive::DataBinding* temp46 = ::g::Fuse::Reactive::DataBinding::New1(temp1_Value_inst, (uObject*)temp18, 3);
     ::g::Fuse::Controls::Rectangle* temp47 = ::g::Fuse::Controls::Rectangle::New3();
     ::g::Fuse::Controls::Panel* temp48 = ::g::Fuse::Controls::Panel::New3();
     ::g::PTMono* temp49 = ::g::PTMono::New4();
-    ::g::Fuse::Reactive::DataBinding* temp50 = ::g::Fuse::Reactive::DataBinding::New1(temp2_Value_inst, (uObject*)temp19, __g_nametable1, 3);
-    temp_eb58 = ::g::Fuse::Reactive::EventBinding::New1((uObject*)temp20, __g_nametable1);
-    ::g::Fuse::Reactive::DataBinding* temp51 = ::g::Fuse::Reactive::DataBinding::New1(temp3_Visibility_inst, (uObject*)temp21, __g_nametable1, 3);
-    temp_eb57 = ::g::Fuse::Reactive::EventBinding::New1((uObject*)temp22, __g_nametable1);
+    ::g::Fuse::Reactive::DataBinding* temp50 = ::g::Fuse::Reactive::DataBinding::New1(temp2_Value_inst, (uObject*)temp19, 3);
+    temp_eb58 = ::g::Fuse::Reactive::EventBinding::New1((uObject*)temp20);
+    ::g::Fuse::Reactive::DataBinding* temp51 = ::g::Fuse::Reactive::DataBinding::New1(temp3_Visibility_inst, (uObject*)temp21, 3);
+    temp_eb57 = ::g::Fuse::Reactive::EventBinding::New1((uObject*)temp22);
     ::g::Fuse::Controls::StackPanel* temp52 = ::g::Fuse::Controls::StackPanel::New4();
     ::g::Mouse* temp53 = ::g::Mouse::New4();
     ::g::Fuse::Controls::Rectangle* temp54 = ::g::Fuse::Controls::Rectangle::New3();
-    ::g::Fuse::Reactive::DataBinding* temp55 = ::g::Fuse::Reactive::DataBinding::New1(temp4_Value_inst, (uObject*)temp23, __g_nametable1, 3);
+    ::g::Fuse::Reactive::DataBinding* temp55 = ::g::Fuse::Reactive::DataBinding::New1(temp4_Value_inst, (uObject*)temp23, 3);
     ::g::Fuse::Controls::Rectangle* temp56 = ::g::Fuse::Controls::Rectangle::New3();
-    ::g::Fuse::Reactive::DataBinding* temp57 = ::g::Fuse::Reactive::DataBinding::New1(temp5_Value_inst, (uObject*)temp24, __g_nametable1, 3);
+    ::g::Fuse::Reactive::DataBinding* temp57 = ::g::Fuse::Reactive::DataBinding::New1(temp5_Value_inst, (uObject*)temp24, 3);
     ::g::Fuse::Controls::Rectangle* temp58 = ::g::Fuse::Controls::Rectangle::New3();
-    ::g::Fuse::Reactive::DataBinding* temp59 = ::g::Fuse::Reactive::DataBinding::New1(temp6_Value_inst, (uObject*)temp25, __g_nametable1, 3);
+    ::g::Fuse::Reactive::DataBinding* temp59 = ::g::Fuse::Reactive::DataBinding::New1(temp6_Value_inst, (uObject*)temp25, 3);
     ::g::Fuse::Controls::StackPanel* temp60 = ::g::Fuse::Controls::StackPanel::New4();
     ::g::Fuse::Controls::Rectangle* temp61 = ::g::Fuse::Controls::Rectangle::New3();
-    ::g::Fuse::Reactive::DataBinding* temp62 = ::g::Fuse::Reactive::DataBinding::New1(temp7_Value_inst, (uObject*)temp26, __g_nametable1, 3);
-    ::g::Fuse::Reactive::DataBinding* temp63 = ::g::Fuse::Reactive::DataBinding::New1(temp8_Value_inst, (uObject*)temp27, __g_nametable1, 3);
+    ::g::Fuse::Reactive::DataBinding* temp62 = ::g::Fuse::Reactive::DataBinding::New1(temp7_Value_inst, (uObject*)temp26, 3);
+    ::g::Fuse::Reactive::DataBinding* temp63 = ::g::Fuse::Reactive::DataBinding::New1(temp8_Value_inst, (uObject*)temp27, 3);
     ::g::Fuse::Controls::Rectangle* temp64 = ::g::Fuse::Controls::Rectangle::New3();
-    ::g::Fuse::Reactive::DataBinding* temp65 = ::g::Fuse::Reactive::DataBinding::New1(temp9_Value_inst, (uObject*)temp28, __g_nametable1, 3);
+    ::g::Fuse::Reactive::DataBinding* temp65 = ::g::Fuse::Reactive::DataBinding::New1(temp9_Value_inst, (uObject*)temp28, 3);
     ::g::Horse* temp66 = ::g::Horse::New4();
     ::g::Fuse::Gestures::WhilePressed* temp67 = ::g::Fuse::Gestures::WhilePressed::New2();
     ::g::Fuse::Animations::Change* temp68 = (::g::Fuse::Animations::Change*)::g::Fuse::Animations::Change::New2(::TYPES[1/*Fuse.Animations.Change<float4>*/], confirmrec_Color_inst);
-    temp_eb59 = ::g::Fuse::Reactive::EventBinding::New1((uObject*)temp29, __g_nametable1);
+    temp_eb59 = ::g::Fuse::Reactive::EventBinding::New1((uObject*)temp29);
     temp30->LineNumber(2);
     temp30->FileName(::STRINGS[24/*"Pages/Payme...*/]);
-    temp30->File(::g::Uno::UX::BundleFileSource::New1(::g::emrals_bundle::PaymentPage49237308()));
+    temp30->File(::g::Uno::UX::BundleFileSource::New1(::g::emrals_bundle::PaymentPagebdd6d56f()));
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(temp31->Children()), ::TYPES[2/*Uno.Collections.ICollection<Fuse.Node>*/]), temp32);
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(temp31->Children()), ::TYPES[2/*Uno.Collections.ICollection<Fuse.Node>*/]), temp36);
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(temp31->Children()), ::TYPES[2/*Uno.Collections.ICollection<Fuse.Node>*/]), confirmrec);
@@ -535,7 +535,7 @@ void PaymentPage::InitializeUX()
     uPtr(confirmrec)->Height(::g::Uno::UX::Size__New1(44.0f, 1));
     uPtr(confirmrec)->Alignment(4);
     uPtr(confirmrec)->Margin(::g::Uno::Float4__New2(0.0f, 0.0f, 0.0f, 60.0f));
-    uPtr(confirmrec)->Name(PaymentPage::__selector3());
+    uPtr(confirmrec)->Name(PaymentPage::__selector3_);
     ::g::Fuse::Controls::DockPanel::SetDock(confirmrec, 3);
     ::g::Fuse::Gestures::Clicked::AddHandler(confirmrec, uDelegate::New(::TYPES[3/*Fuse.Gestures.ClickedHandler*/], (void*)::g::Fuse::Reactive::EventBinding__OnEvent_fn, uPtr(temp_eb59)));
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(uPtr(confirmrec)->Children()), ::TYPES[2/*Uno.Collections.ICollection<Fuse.Node>*/]), temp66);
@@ -556,14 +556,6 @@ void PaymentPage::InitializeUX()
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(uPtr(__g_nametable1)->Objects()), ::TYPES[6/*Uno.Collections.ICollection<object>*/]), temp_eb59);
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(Children()), ::TYPES[2/*Uno.Collections.ICollection<Fuse.Node>*/]), temp30);
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(Children()), ::TYPES[2/*Uno.Collections.ICollection<Fuse.Node>*/]), temp31);
-}
-
-// public PaymentPage New(Fuse.Navigation.Router router) [static] :34
-PaymentPage* PaymentPage::New5(::g::Fuse::Navigation::Router* router1)
-{
-    PaymentPage* obj1 = (PaymentPage*)uNew(PaymentPage_typeof());
-    obj1->ctor_8(router1);
-    return obj1;
 }
 // }
 

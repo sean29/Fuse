@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Controls.Primitives/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Controls.Primitives/1.3.0-rc2/Button.ux.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -15,18 +15,18 @@
 #include <Fuse.Triggers.Actions.IHide.h>
 #include <Fuse.Triggers.Actions.IShow.h>
 #include <Fuse.Triggers.Actions-ea70af1f.h>
+#include <Fuse.Visual.h>
 #include <Uno.Collections.ICollection-1.h>
 #include <Uno.Collections.IEnumerable-1.h>
 #include <Uno.Collections.IList-1.h>
 #include <Uno.UX.IPropertyListener.h>
 namespace g{namespace Fuse{namespace Controls{struct Button;}}}
-namespace g{namespace Uno{namespace UX{struct NameTable;}}}
 
 namespace g{
 namespace Fuse{
 namespace Controls{
 
-// public partial sealed class Button :94
+// public partial sealed class Button :67
 // {
 ::g::Fuse::Controls::Panel_type* Button_typeof();
 void Button__ctor_8_fn(Button* __this);
@@ -35,10 +35,6 @@ void Button__New5_fn(Button** __retval);
 
 struct Button : ::g::Fuse::Controls::ButtonBase
 {
-    uStrong< ::g::Uno::UX::NameTable*> __g_nametable1;
-    static uSStrong<uArray*> __g_static_nametable1_;
-    static uSStrong<uArray*>& __g_static_nametable1() { return Button_typeof()->Init(), __g_static_nametable1_; }
-
     void ctor_8();
     void InitializeUX();
     static Button* New5();

@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Storage/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Storage/1.3.0-rc2/ApplicationDir.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -9,7 +9,7 @@ namespace g{
 namespace Fuse{
 namespace Storage{
 
-// private sealed class ApplicationDir.WriteClosure :93
+// private sealed class ApplicationDir.WriteClosure :91
 // {
 uType* ApplicationDir__WriteClosure_typeof();
 void ApplicationDir__WriteClosure__ctor__fn(ApplicationDir__WriteClosure* __this, uString* filename, uString* value);

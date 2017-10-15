@@ -1,8 +1,12 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Controls.Panels/1.2.1/.uno/ux11/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Controls.Panels/1.3.0-rc2/.uno/ux13/Fuse.Controls.GraphicsView.g.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
-#include <Uno.UX.Template.h>
+#include <Fuse.Controls.Native.-20f6897.h>
+#include <Fuse.Controls.Native.-dd7dd49d.h>
+#include <Fuse.Controls.Native.IView.h>
+#include <Fuse.Controls.Native.IViewHost.h>
+#include <Uno.IDisposable.h>
 namespace g{namespace Fuse{namespace Controls{struct GraphicsView;}}}
 namespace g{namespace Fuse{namespace Controls{struct GraphicsView__Template1;}}}
 
@@ -10,20 +14,20 @@ namespace g{
 namespace Fuse{
 namespace Controls{
 
-// public partial sealed class GraphicsView.Template1 :56
+// private sealed class GraphicsView.Template1 :7
 // {
-::g::Uno::UX::Template_type* GraphicsView__Template1_typeof();
-void GraphicsView__Template1__ctor_1_fn(GraphicsView__Template1* __this, ::g::Fuse::Controls::GraphicsView* parent, ::g::Fuse::Controls::GraphicsView* parentInstance);
-void GraphicsView__Template1__New1_fn(GraphicsView__Template1* __this, uObject** __retval);
-void GraphicsView__Template1__New2_fn(::g::Fuse::Controls::GraphicsView* parent, ::g::Fuse::Controls::GraphicsView* parentInstance, GraphicsView__Template1** __retval);
+::g::Fuse::Controls::Native::Android::GraphicsViewBase_type* GraphicsView__Template1_typeof();
+void GraphicsView__Template1__ctor_9_fn(GraphicsView__Template1* __this, ::g::Fuse::Controls::GraphicsView* parent);
+void GraphicsView__Template1__InitializeUX_fn(GraphicsView__Template1* __this);
+void GraphicsView__Template1__New6_fn(::g::Fuse::Controls::GraphicsView* parent, GraphicsView__Template1** __retval);
 
-struct GraphicsView__Template1 : ::g::Uno::UX::Template
+struct GraphicsView__Template1 : ::g::Fuse::Controls::Native::Android::TextureView
 {
     uWeak< ::g::Fuse::Controls::GraphicsView*> __parent1;
-    uWeak< ::g::Fuse::Controls::GraphicsView*> __parentInstance1;
 
-    void ctor_1(::g::Fuse::Controls::GraphicsView* parent, ::g::Fuse::Controls::GraphicsView* parentInstance);
-    static GraphicsView__Template1* New2(::g::Fuse::Controls::GraphicsView* parent, ::g::Fuse::Controls::GraphicsView* parentInstance);
+    void ctor_9(::g::Fuse::Controls::GraphicsView* parent);
+    void InitializeUX();
+    static GraphicsView__Template1* New6(::g::Fuse::Controls::GraphicsView* parent);
 };
 // }
 

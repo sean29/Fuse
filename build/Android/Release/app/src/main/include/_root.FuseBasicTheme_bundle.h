@@ -1,4 +1,4 @@
-// This file was generated based on '/Users/a/Library/Application Support/Fusetools/Packages/Fuse.BasicTheme/1.2.1/.uno/package'.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.BasicTheme/1.3.0-rc2/.uno/package.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -14,12 +14,12 @@ uClassType* FuseBasicTheme_bundle_typeof();
 
 struct FuseBasicTheme_bundle : uObject
 {
-    static uSStrong< ::g::Uno::IO::BundleFile*> RobotoLighta1424b6a_;
-    static uSStrong< ::g::Uno::IO::BundleFile*>& RobotoLighta1424b6a() { return FuseBasicTheme_bundle_typeof()->Init(), RobotoLighta1424b6a_; }
-    static uSStrong< ::g::Uno::IO::BundleFile*> RobotoMedium3d90c99b_;
-    static uSStrong< ::g::Uno::IO::BundleFile*>& RobotoMedium3d90c99b() { return FuseBasicTheme_bundle_typeof()->Init(), RobotoMedium3d90c99b_; }
-    static uSStrong< ::g::Uno::IO::BundleFile*> RobotoRegularef5ed1be_;
-    static uSStrong< ::g::Uno::IO::BundleFile*>& RobotoRegularef5ed1be() { return FuseBasicTheme_bundle_typeof()->Init(), RobotoRegularef5ed1be_; }
+    static uSStrong< ::g::Uno::IO::BundleFile*> RobotoLight94e9481d_;
+    static uSStrong< ::g::Uno::IO::BundleFile*>& RobotoLight94e9481d() { return FuseBasicTheme_bundle_typeof()->Init(), RobotoLight94e9481d_; }
+    static uSStrong< ::g::Uno::IO::BundleFile*> RobotoMedium02e91c82_;
+    static uSStrong< ::g::Uno::IO::BundleFile*>& RobotoMedium02e91c82() { return FuseBasicTheme_bundle_typeof()->Init(), RobotoMedium02e91c82_; }
+    static uSStrong< ::g::Uno::IO::BundleFile*> RobotoRegularbce30049_;
+    static uSStrong< ::g::Uno::IO::BundleFile*>& RobotoRegularbce30049() { return FuseBasicTheme_bundle_typeof()->Init(), RobotoRegularbce30049_; }
 };
 // }
 

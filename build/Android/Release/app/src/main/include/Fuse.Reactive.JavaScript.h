@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Reactive.JavaScript/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Reactive.JavaScript/1.3.0-rc2/JavaScript.Dependencies.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -30,7 +30,7 @@ namespace g{
 namespace Fuse{
 namespace Reactive{
 
-// public partial sealed class JavaScript :261
+// public partial sealed class JavaScript :11
 // {
 struct JavaScript_type : ::g::Fuse::Node_type
 {
@@ -55,7 +55,6 @@ void JavaScript__set_File_fn(JavaScript* __this, ::g::Uno::UX::FileSource* value
 void JavaScript__get_FileName_fn(JavaScript* __this, uString** __retval);
 void JavaScript__set_FileName_fn(JavaScript* __this, uString* value);
 void JavaScript__FuseNodeISiblingDataProviderget_Data_fn(JavaScript* __this, uObject** __retval);
-void JavaScript__FuseReactiveIContextget_NameTable_fn(JavaScript* __this, ::g::Uno::UX::NameTable** __retval);
 void JavaScript__FuseReactiveIContextget_Node_fn(JavaScript* __this, ::g::Fuse::Node** __retval);
 void JavaScript__FuseReactiveIContextSubscribe_fn(JavaScript* __this, uObject* source, uString* key, uObject* listener, uObject** __retval);
 void JavaScript__FuseReactiveIContextSubscribeResource_fn(JavaScript* __this, uObject* source, uString* key, uObject* listener, uObject** __retval);

@@ -1,4 +1,4 @@
-// This file was generated based on '.uno/ux11/SignupPage.g.uno'.
+// This file was generated based on '.uno/ux13/SignupPage.g.uno'.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #include <_root.emrals_bundle.h>
@@ -39,7 +39,6 @@
 #include <Fuse.Translation.h>
 #include <Fuse.Triggers.Trigger.h>
 #include <Fuse.Triggers.WhileKe-99bafeca.h>
-#include <Fuse.Visual.h>
 #include <Uno.Bool.h>
 #include <Uno.Double.h>
 #include <Uno.Float.h>
@@ -61,11 +60,12 @@ static uType* TYPES[6];
 
 namespace g{
 
-// public partial sealed class SignupPage :2
+// public partial class SignupPage :2
 // {
 // static SignupPage() :27
 static void SignupPage__cctor_4_fn(uType* __type)
 {
+    ::g::Uno::UX::Selector_typeof()->Init();
     SignupPage::__g_static_nametable1_ = uArray::Init<uString*>(::TYPES[0/*string[]*/], 7, ::STRINGS[0/*"router"*/], ::STRINGS[1/*"temp_eb63"*/], ::STRINGS[2/*"LogoFile2"*/], ::STRINGS[3/*"temp_eb64"*/], ::STRINGS[4/*"loginArea2"*/], ::STRINGS[5/*"signupbutton"*/], ::STRINGS[6/*"temp_eb65"*/]);
     SignupPage::__selector0_ = ::g::Uno::UX::Selector__op_Implicit(::STRINGS[7/*"Value"*/]);
     SignupPage::__selector1_ = ::g::Uno::UX::Selector__op_Implicit(::STRINGS[2/*"LogoFile2"*/]);
@@ -105,6 +105,11 @@ static void SignupPage_build(uType* type)
     ::TYPES[3] = ::g::Uno::Collections::ICollection_typeof()->MakeType(::g::Fuse::Binding_typeof(), NULL);
     ::TYPES[4] = ::g::Uno::Collections::ICollection_typeof()->MakeType(::g::Fuse::Animations::Animator_typeof(), NULL);
     ::TYPES[5] = ::g::Uno::Collections::ICollection_typeof()->MakeType(uObject_typeof(), NULL);
+    type->SetDependencies(
+        ::g::Fuse::Controls::DockPanel_typeof(),
+        ::g::Fuse::Animations::Easing_typeof(),
+        ::g::Fuse::Font_typeof(),
+        ::g::Fuse::Controls::Grid_typeof());
     type->SetInterfaces(
         ::g::Uno::Collections::IList_typeof()->MakeType(::g::Fuse::Binding_typeof(), NULL), offsetof(::g::Fuse::Controls::Panel_type, interface0),
         ::g::Fuse::Scripting::IScriptObject_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface1),
@@ -115,34 +120,35 @@ static void SignupPage_build(uType* type)
         ::g::Uno::Collections::IList_typeof()->MakeType(::g::Fuse::Node_typeof(), NULL), offsetof(::g::Fuse::Controls::Panel_type, interface6),
         ::g::Uno::UX::IPropertyListener_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface7),
         ::g::Fuse::ITemplateSource_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface8),
-        ::TYPES[1/*Uno.Collections.ICollection<Fuse.Node>*/], offsetof(::g::Fuse::Controls::Panel_type, interface9),
-        ::g::Uno::Collections::IEnumerable_typeof()->MakeType(::g::Fuse::Node_typeof(), NULL), offsetof(::g::Fuse::Controls::Panel_type, interface10),
-        ::g::Fuse::Triggers::Actions::IShow_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface11),
-        ::g::Fuse::Triggers::Actions::IHide_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface12),
-        ::g::Fuse::Triggers::Actions::ICollapse_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface13),
-        ::g::Fuse::IActualPlacement_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface14),
-        ::g::Fuse::Animations::IResize_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface15),
-        ::g::Fuse::Drawing::ISurfaceDrawable_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface16));
-    type->SetFields(111,
-        ::g::Uno::UX::NameTable_typeof(), offsetof(::g::SignupPage, __g_nametable1), 0,
-        ::g::Fuse::Controls::Grid_typeof(), offsetof(::g::SignupPage, loginArea2), 0,
-        ::g::Fuse::Controls::Image_typeof(), offsetof(::g::SignupPage, LogoFile2), 0,
-        ::g::Fuse::Navigation::Router_typeof(), offsetof(::g::SignupPage, router), 0,
-        ::g::Fuse::Controls::DockPanel_typeof(), offsetof(::g::SignupPage, signupbutton), 0,
-        ::g::Fuse::Reactive::EventBinding_typeof(), offsetof(::g::SignupPage, temp_eb63), 0,
-        ::g::Fuse::Reactive::EventBinding_typeof(), offsetof(::g::SignupPage, temp_eb64), 0,
-        ::g::Fuse::Reactive::EventBinding_typeof(), offsetof(::g::SignupPage, temp_eb65), 0,
-        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(::g::SignupPage, temp_Value_inst), 0,
-        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(::g::SignupPage, temp1_Value_inst), 0,
-        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(::g::SignupPage, temp2_Value_inst), 0,
-        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(::g::SignupPage, temp3_Value_inst), 0,
-        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(::g::SignupPage, temp4_Value_inst), 0,
-        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(::g::SignupPage, temp5_Value_inst), 0,
-        ::TYPES[0/*string[]*/], (uintptr_t)&::g::SignupPage::__g_static_nametable1_, uFieldFlagsStatic,
-        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&::g::SignupPage::__selector0_, uFieldFlagsStatic,
-        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&::g::SignupPage::__selector1_, uFieldFlagsStatic,
-        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&::g::SignupPage::__selector2_, uFieldFlagsStatic,
-        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&::g::SignupPage::__selector3_, uFieldFlagsStatic);
+        ::g::Uno::Collections::IEnumerable_typeof()->MakeType(::g::Fuse::Visual_typeof(), NULL), offsetof(::g::Fuse::Controls::Panel_type, interface9),
+        ::TYPES[1/*Uno.Collections.ICollection<Fuse.Node>*/], offsetof(::g::Fuse::Controls::Panel_type, interface10),
+        ::g::Uno::Collections::IEnumerable_typeof()->MakeType(::g::Fuse::Node_typeof(), NULL), offsetof(::g::Fuse::Controls::Panel_type, interface11),
+        ::g::Fuse::Triggers::Actions::IShow_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface12),
+        ::g::Fuse::Triggers::Actions::IHide_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface13),
+        ::g::Fuse::Triggers::Actions::ICollapse_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface14),
+        ::g::Fuse::IActualPlacement_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface15),
+        ::g::Fuse::Animations::IResize_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface16),
+        ::g::Fuse::Drawing::ISurfaceDrawable_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface17));
+    type->SetFields(117,
+        ::g::Uno::UX::NameTable_typeof(), offsetof(SignupPage, __g_nametable1), 0,
+        ::g::Fuse::Controls::Grid_typeof(), offsetof(SignupPage, loginArea2), 0,
+        ::g::Fuse::Controls::Image_typeof(), offsetof(SignupPage, LogoFile2), 0,
+        ::g::Fuse::Navigation::Router_typeof(), offsetof(SignupPage, router), 0,
+        ::g::Fuse::Controls::DockPanel_typeof(), offsetof(SignupPage, signupbutton), 0,
+        ::g::Fuse::Reactive::EventBinding_typeof(), offsetof(SignupPage, temp_eb63), 0,
+        ::g::Fuse::Reactive::EventBinding_typeof(), offsetof(SignupPage, temp_eb64), 0,
+        ::g::Fuse::Reactive::EventBinding_typeof(), offsetof(SignupPage, temp_eb65), 0,
+        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(SignupPage, temp_Value_inst), 0,
+        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(SignupPage, temp1_Value_inst), 0,
+        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(SignupPage, temp2_Value_inst), 0,
+        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(SignupPage, temp3_Value_inst), 0,
+        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(SignupPage, temp4_Value_inst), 0,
+        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(SignupPage, temp5_Value_inst), 0,
+        ::TYPES[0/*string[]*/], (uintptr_t)&SignupPage::__g_static_nametable1_, uFieldFlagsStatic,
+        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&SignupPage::__selector0_, uFieldFlagsStatic,
+        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&SignupPage::__selector1_, uFieldFlagsStatic,
+        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&SignupPage::__selector2_, uFieldFlagsStatic,
+        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&SignupPage::__selector3_, uFieldFlagsStatic);
 }
 
 ::g::Fuse::Controls::Panel_type* SignupPage_typeof()
@@ -152,34 +158,36 @@ static void SignupPage_build(uType* type)
 
     uTypeOptions options;
     options.BaseDefinition = ::g::Fuse::Controls::Page_typeof();
-    options.FieldCount = 130;
-    options.InterfaceCount = 17;
+    options.FieldCount = 136;
+    options.InterfaceCount = 18;
+    options.DependencyCount = 4;
     options.ObjectSize = sizeof(SignupPage);
     options.TypeSize = sizeof(::g::Fuse::Controls::Panel_type);
     type = (::g::Fuse::Controls::Panel_type*)uClassType::New("SignupPage", options);
     type->fp_build_ = SignupPage_build;
     type->fp_cctor_ = SignupPage__cctor_4_fn;
-    type->interface16.fp_Draw = (void(*)(uObject*, ::g::Fuse::Drawing::Surface*))::g::Fuse::Controls::Panel__FuseDrawingISurfaceDrawableDraw_fn;
-    type->interface16.fp_get_IsPrimary = (void(*)(uObject*, bool*))::g::Fuse::Controls::Panel__FuseDrawingISurfaceDrawableget_IsPrimary_fn;
-    type->interface16.fp_get_ElementSize = (void(*)(uObject*, ::g::Uno::Float2*))::g::Fuse::Controls::Panel__FuseDrawingISurfaceDrawableget_ElementSize_fn;
-    type->interface11.fp_Show = (void(*)(uObject*))::g::Fuse::Elements::Element__FuseTriggersActionsIShowShow_fn;
-    type->interface13.fp_Collapse = (void(*)(uObject*))::g::Fuse::Elements::Element__FuseTriggersActionsICollapseCollapse_fn;
-    type->interface12.fp_Hide = (void(*)(uObject*))::g::Fuse::Elements::Element__FuseTriggersActionsIHideHide_fn;
-    type->interface15.fp_SetSize = (void(*)(uObject*, ::g::Uno::Float2*))::g::Fuse::Elements::Element__FuseAnimationsIResizeSetSize_fn;
-    type->interface14.fp_get_ActualSize = (void(*)(uObject*, ::g::Uno::Float3*))::g::Fuse::Elements::Element__FuseIActualPlacementget_ActualSize_fn;
-    type->interface14.fp_add_Placed = (void(*)(uObject*, uDelegate*))::g::Fuse::Elements::Element__add_Placed_fn;
-    type->interface14.fp_remove_Placed = (void(*)(uObject*, uDelegate*))::g::Fuse::Elements::Element__remove_Placed_fn;
-    type->interface9.fp_Clear = (void(*)(uObject*))::g::Fuse::Visual__UnoCollectionsICollectionFuseNodeClear_fn;
-    type->interface9.fp_Contains = (void(*)(uObject*, void*, bool*))::g::Fuse::Visual__UnoCollectionsICollectionFuseNodeContains_fn;
+    type->interface17.fp_Draw = (void(*)(uObject*, ::g::Fuse::Drawing::Surface*))::g::Fuse::Controls::Panel__FuseDrawingISurfaceDrawableDraw_fn;
+    type->interface17.fp_get_IsPrimary = (void(*)(uObject*, bool*))::g::Fuse::Controls::Panel__FuseDrawingISurfaceDrawableget_IsPrimary_fn;
+    type->interface17.fp_get_ElementSize = (void(*)(uObject*, ::g::Uno::Float2*))::g::Fuse::Controls::Panel__FuseDrawingISurfaceDrawableget_ElementSize_fn;
+    type->interface12.fp_Show = (void(*)(uObject*))::g::Fuse::Elements::Element__FuseTriggersActionsIShowShow_fn;
+    type->interface14.fp_Collapse = (void(*)(uObject*))::g::Fuse::Elements::Element__FuseTriggersActionsICollapseCollapse_fn;
+    type->interface13.fp_Hide = (void(*)(uObject*))::g::Fuse::Elements::Element__FuseTriggersActionsIHideHide_fn;
+    type->interface16.fp_SetSize = (void(*)(uObject*, ::g::Uno::Float2*))::g::Fuse::Elements::Element__FuseAnimationsIResizeSetSize_fn;
+    type->interface15.fp_get_ActualSize = (void(*)(uObject*, ::g::Uno::Float3*))::g::Fuse::Elements::Element__FuseIActualPlacementget_ActualSize_fn;
+    type->interface15.fp_add_Placed = (void(*)(uObject*, uDelegate*))::g::Fuse::Elements::Element__add_Placed_fn;
+    type->interface15.fp_remove_Placed = (void(*)(uObject*, uDelegate*))::g::Fuse::Elements::Element__remove_Placed_fn;
+    type->interface9.fp_GetEnumerator = (void(*)(uObject*, uObject**))::g::Fuse::Visual__UnoCollectionsIEnumerableFuseVisualGetEnumerator_fn;
+    type->interface10.fp_Clear = (void(*)(uObject*))::g::Fuse::Visual__UnoCollectionsICollectionFuseNodeClear_fn;
+    type->interface10.fp_Contains = (void(*)(uObject*, void*, bool*))::g::Fuse::Visual__UnoCollectionsICollectionFuseNodeContains_fn;
     type->interface6.fp_RemoveAt = (void(*)(uObject*, int*))::g::Fuse::Visual__UnoCollectionsIListFuseNodeRemoveAt_fn;
-    type->interface10.fp_GetEnumerator = (void(*)(uObject*, uObject**))::g::Fuse::Visual__UnoCollectionsIEnumerableFuseNodeGetEnumerator_fn;
-    type->interface9.fp_get_Count = (void(*)(uObject*, int*))::g::Fuse::Visual__UnoCollectionsICollectionFuseNodeget_Count_fn;
+    type->interface11.fp_GetEnumerator = (void(*)(uObject*, uObject**))::g::Fuse::Visual__UnoCollectionsIEnumerableFuseNodeGetEnumerator_fn;
+    type->interface10.fp_get_Count = (void(*)(uObject*, int*))::g::Fuse::Visual__UnoCollectionsICollectionFuseNodeget_Count_fn;
     type->interface6.fp_get_Item = (void(*)(uObject*, int*, uTRef))::g::Fuse::Visual__UnoCollectionsIListFuseNodeget_Item_fn;
     type->interface6.fp_Insert = (void(*)(uObject*, int*, void*))::g::Fuse::Visual__Insert1_fn;
     type->interface7.fp_OnPropertyChanged = (void(*)(uObject*, ::g::Uno::UX::PropertyObject*, ::g::Uno::UX::Selector*))::g::Fuse::Controls::Control__OnPropertyChanged2_fn;
     type->interface8.fp_FindTemplate = (void(*)(uObject*, uString*, ::g::Uno::UX::Template**))::g::Fuse::Visual__FindTemplate_fn;
-    type->interface9.fp_Add = (void(*)(uObject*, void*))::g::Fuse::Visual__Add1_fn;
-    type->interface9.fp_Remove = (void(*)(uObject*, void*, bool*))::g::Fuse::Visual__Remove1_fn;
+    type->interface10.fp_Add = (void(*)(uObject*, void*))::g::Fuse::Visual__Add1_fn;
+    type->interface10.fp_Remove = (void(*)(uObject*, void*, bool*))::g::Fuse::Visual__Remove1_fn;
     type->interface4.fp_Clear = (void(*)(uObject*))::g::Fuse::Node__UnoCollectionsICollectionFuseBindingClear_fn;
     type->interface4.fp_Contains = (void(*)(uObject*, void*, bool*))::g::Fuse::Node__UnoCollectionsICollectionFuseBindingContains_fn;
     type->interface0.fp_RemoveAt = (void(*)(uObject*, int*))::g::Fuse::Node__UnoCollectionsIListFuseBindingRemoveAt_fn;
@@ -210,12 +218,6 @@ void SignupPage__InitializeUX_fn(SignupPage* __this)
     __this->InitializeUX();
 }
 
-// public SignupPage New(Fuse.Navigation.Router router) :31
-void SignupPage__New5_fn(::g::Fuse::Navigation::Router* router1, SignupPage** __retval)
-{
-    *__retval = SignupPage::New5(router1);
-}
-
 uSStrong<uArray*> SignupPage::__g_static_nametable1_;
 ::g::Uno::UX::Selector SignupPage::__selector0_;
 ::g::Uno::UX::Selector SignupPage::__selector1_;
@@ -233,64 +235,64 @@ void SignupPage::ctor_8(::g::Fuse::Navigation::Router* router1)
 // private void InitializeUX() [instance] :37
 void SignupPage::InitializeUX()
 {
-    __g_nametable1 = ::g::Uno::UX::NameTable::New1(NULL, SignupPage::__g_static_nametable1());
+    __g_nametable1 = ::g::Uno::UX::NameTable::New1(NULL, SignupPage::__g_static_nametable1_);
     ::g::Fuse::Reactive::Data* temp6 = ::g::Fuse::Reactive::Data::New1(::STRINGS[8/*"back"*/]);
     ::g::Fuse::Reactive::Data* temp7 = ::g::Fuse::Reactive::Data::New1(::STRINGS[9/*"goHome"*/]);
     ::g::Fuse::Controls::TextInput* temp = ::g::Fuse::Controls::TextInput::New3();
-    temp_Value_inst = ::g::emrals_FuseControlsTextInputControl_Value_Property::New1(temp, SignupPage::__selector0());
+    temp_Value_inst = ::g::emrals_FuseControlsTextInputControl_Value_Property::New1(temp, SignupPage::__selector0_);
     ::g::Fuse::Reactive::Data* temp8 = ::g::Fuse::Reactive::Data::New1(::STRINGS[10/*"username"*/]);
     ::g::Fuse::Controls::TextInput* temp1 = ::g::Fuse::Controls::TextInput::New3();
-    temp1_Value_inst = ::g::emrals_FuseControlsTextInputControl_Value_Property::New1(temp1, SignupPage::__selector0());
+    temp1_Value_inst = ::g::emrals_FuseControlsTextInputControl_Value_Property::New1(temp1, SignupPage::__selector0_);
     ::g::Fuse::Reactive::Data* temp9 = ::g::Fuse::Reactive::Data::New1(::STRINGS[11/*"first_name"*/]);
     ::g::Fuse::Controls::TextInput* temp2 = ::g::Fuse::Controls::TextInput::New3();
-    temp2_Value_inst = ::g::emrals_FuseControlsTextInputControl_Value_Property::New1(temp2, SignupPage::__selector0());
+    temp2_Value_inst = ::g::emrals_FuseControlsTextInputControl_Value_Property::New1(temp2, SignupPage::__selector0_);
     ::g::Fuse::Reactive::Data* temp10 = ::g::Fuse::Reactive::Data::New1(::STRINGS[12/*"last_name"*/]);
     ::g::Fuse::Controls::TextInput* temp3 = ::g::Fuse::Controls::TextInput::New3();
-    temp3_Value_inst = ::g::emrals_FuseControlsTextInputControl_Value_Property::New1(temp3, SignupPage::__selector0());
+    temp3_Value_inst = ::g::emrals_FuseControlsTextInputControl_Value_Property::New1(temp3, SignupPage::__selector0_);
     ::g::Fuse::Reactive::Data* temp11 = ::g::Fuse::Reactive::Data::New1(::STRINGS[13/*"email"*/]);
     ::g::Fuse::Controls::TextInput* temp4 = ::g::Fuse::Controls::TextInput::New3();
-    temp4_Value_inst = ::g::emrals_FuseControlsTextInputControl_Value_Property::New1(temp4, SignupPage::__selector0());
+    temp4_Value_inst = ::g::emrals_FuseControlsTextInputControl_Value_Property::New1(temp4, SignupPage::__selector0_);
     ::g::Fuse::Reactive::Data* temp12 = ::g::Fuse::Reactive::Data::New1(::STRINGS[14/*"password"*/]);
     ::g::Fuse::Controls::Text* temp5 = ::g::Fuse::Controls::Text::New3();
-    temp5_Value_inst = ::g::emrals_FuseControlsTextControl_Value_Property::New1(temp5, SignupPage::__selector0());
+    temp5_Value_inst = ::g::emrals_FuseControlsTextControl_Value_Property::New1(temp5, SignupPage::__selector0_);
     ::g::Fuse::Reactive::Data* temp13 = ::g::Fuse::Reactive::Data::New1(::STRINGS[15/*"error"*/]);
     ::g::Fuse::Reactive::Data* temp14 = ::g::Fuse::Reactive::Data::New1(::STRINGS[16/*"doSignup"*/]);
     ::g::Fuse::Reactive::JavaScript* temp15 = ::g::Fuse::Reactive::JavaScript::New2(__g_nametable1);
     ::g::Fuse::Controls::DockPanel* temp16 = ::g::Fuse::Controls::DockPanel::New4();
     ::g::Fuse::Controls::Panel* temp17 = ::g::Fuse::Controls::Panel::New3();
     ::g::Fuse::Controls::Text* temp18 = ::g::Fuse::Controls::Text::New3();
-    temp_eb63 = ::g::Fuse::Reactive::EventBinding::New1((uObject*)temp6, __g_nametable1);
+    temp_eb63 = ::g::Fuse::Reactive::EventBinding::New1((uObject*)temp6);
     ::g::Fuse::Triggers::WhileKeyboardVisible* temp19 = ::g::Fuse::Triggers::WhileKeyboardVisible::New2();
     ::g::Fuse::Animations::Move* temp20 = ::g::Fuse::Animations::Move::New2();
     ::g::Fuse::Animations::Scale* temp21 = ::g::Fuse::Animations::Scale::New2();
     ::g::Fuse::Animations::Move* temp22 = ::g::Fuse::Animations::Move::New2();
     ::g::Fuse::Animations::Move* temp23 = ::g::Fuse::Animations::Move::New2();
     LogoFile2 = ::g::Fuse::Controls::Image::New3();
-    temp_eb64 = ::g::Fuse::Reactive::EventBinding::New1((uObject*)temp7, __g_nametable1);
+    temp_eb64 = ::g::Fuse::Reactive::EventBinding::New1((uObject*)temp7);
     loginArea2 = ::g::Fuse::Controls::Grid::New4();
     ::g::Fuse::Controls::Image* temp24 = ::g::Fuse::Controls::Image::New3();
-    ::g::Fuse::Reactive::DataBinding* temp25 = ::g::Fuse::Reactive::DataBinding::New1(temp_Value_inst, (uObject*)temp8, __g_nametable1, 3);
+    ::g::Fuse::Reactive::DataBinding* temp25 = ::g::Fuse::Reactive::DataBinding::New1(temp_Value_inst, (uObject*)temp8, 3);
     ::g::Fuse::Controls::Rectangle* temp26 = ::g::Fuse::Controls::Rectangle::New3();
     ::g::Fuse::Controls::Image* temp27 = ::g::Fuse::Controls::Image::New3();
-    ::g::Fuse::Reactive::DataBinding* temp28 = ::g::Fuse::Reactive::DataBinding::New1(temp1_Value_inst, (uObject*)temp9, __g_nametable1, 3);
+    ::g::Fuse::Reactive::DataBinding* temp28 = ::g::Fuse::Reactive::DataBinding::New1(temp1_Value_inst, (uObject*)temp9, 3);
     ::g::Fuse::Controls::Rectangle* temp29 = ::g::Fuse::Controls::Rectangle::New3();
     ::g::Fuse::Controls::Image* temp30 = ::g::Fuse::Controls::Image::New3();
-    ::g::Fuse::Reactive::DataBinding* temp31 = ::g::Fuse::Reactive::DataBinding::New1(temp2_Value_inst, (uObject*)temp10, __g_nametable1, 3);
+    ::g::Fuse::Reactive::DataBinding* temp31 = ::g::Fuse::Reactive::DataBinding::New1(temp2_Value_inst, (uObject*)temp10, 3);
     ::g::Fuse::Controls::Rectangle* temp32 = ::g::Fuse::Controls::Rectangle::New3();
     ::g::Fuse::Controls::Image* temp33 = ::g::Fuse::Controls::Image::New3();
-    ::g::Fuse::Reactive::DataBinding* temp34 = ::g::Fuse::Reactive::DataBinding::New1(temp3_Value_inst, (uObject*)temp11, __g_nametable1, 3);
+    ::g::Fuse::Reactive::DataBinding* temp34 = ::g::Fuse::Reactive::DataBinding::New1(temp3_Value_inst, (uObject*)temp11, 3);
     ::g::Fuse::Controls::Rectangle* temp35 = ::g::Fuse::Controls::Rectangle::New3();
     ::g::Fuse::Controls::Image* temp36 = ::g::Fuse::Controls::Image::New3();
-    ::g::Fuse::Reactive::DataBinding* temp37 = ::g::Fuse::Reactive::DataBinding::New1(temp4_Value_inst, (uObject*)temp12, __g_nametable1, 3);
+    ::g::Fuse::Reactive::DataBinding* temp37 = ::g::Fuse::Reactive::DataBinding::New1(temp4_Value_inst, (uObject*)temp12, 3);
     ::g::Fuse::Controls::Rectangle* temp38 = ::g::Fuse::Controls::Rectangle::New3();
     signupbutton = ::g::Fuse::Controls::DockPanel::New4();
-    ::g::Fuse::Reactive::DataBinding* temp39 = ::g::Fuse::Reactive::DataBinding::New1(temp5_Value_inst, (uObject*)temp13, __g_nametable1, 3);
+    ::g::Fuse::Reactive::DataBinding* temp39 = ::g::Fuse::Reactive::DataBinding::New1(temp5_Value_inst, (uObject*)temp13, 3);
     ::g::Fuse::Controls::Rectangle* temp40 = ::g::Fuse::Controls::Rectangle::New3();
     ::g::Fuse::Controls::Text* temp41 = ::g::Fuse::Controls::Text::New3();
-    temp_eb65 = ::g::Fuse::Reactive::EventBinding::New1((uObject*)temp14, __g_nametable1);
+    temp_eb65 = ::g::Fuse::Reactive::EventBinding::New1((uObject*)temp14);
     temp15->LineNumber(3);
     temp15->FileName(::STRINGS[17/*"Pages/Signu...*/]);
-    temp15->File(::g::Uno::UX::BundleFileSource::New1(::g::emrals_bundle::SignupPagebfc3362e()));
+    temp15->File(::g::Uno::UX::BundleFileSource::New1(::g::emrals_bundle::SignupPage764e1d87()));
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(temp16->Children()), ::TYPES[1/*Uno.Collections.ICollection<Fuse.Node>*/]), temp17);
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(temp16->Children()), ::TYPES[1/*Uno.Collections.ICollection<Fuse.Node>*/]), temp19);
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(temp16->Children()), ::TYPES[1/*Uno.Collections.ICollection<Fuse.Node>*/]), LogoFile2);
@@ -311,31 +313,31 @@ void SignupPage::InitializeUX()
     temp20->Y(-100.0f);
     temp20->Duration(0.6);
     temp20->Target(LogoFile2);
-    temp20->Easing(::g::Fuse::Animations::Easing::ExponentialInOut());
+    temp20->Easing(::g::Fuse::Animations::Easing::ExponentialInOut_);
     temp21->Factor(0.6f);
     temp21->Duration(0.6);
     temp21->Target(LogoFile2);
     temp22->Y(-10.0f);
     temp22->Duration(0.6);
     temp22->Target(loginArea2);
-    temp22->Easing(::g::Fuse::Animations::Easing::ExponentialInOut());
+    temp22->Easing(::g::Fuse::Animations::Easing::ExponentialInOut_);
     temp23->Y(50.0f);
     temp23->Duration(0.6);
     temp23->Target(signupbutton);
-    temp23->Easing(::g::Fuse::Animations::Easing::ExponentialInOut());
+    temp23->Easing(::g::Fuse::Animations::Easing::ExponentialInOut_);
     uPtr(LogoFile2)->MaxHeight(::g::Uno::UX::Size__New1(110.0f, 1));
     uPtr(LogoFile2)->Margin(::g::Uno::Float4__New2(0.0f, 50.0f, 0.0f, 0.0f));
-    uPtr(LogoFile2)->Name(SignupPage::__selector1());
+    uPtr(LogoFile2)->Name(SignupPage::__selector1_);
     ::g::Fuse::Controls::DockPanel::SetDock(LogoFile2, 2);
     ::g::Fuse::Gestures::Clicked::AddHandler(LogoFile2, uDelegate::New(::TYPES[2/*Fuse.Gestures.ClickedHandler*/], (void*)::g::Fuse::Reactive::EventBinding__OnEvent_fn, uPtr(temp_eb64)));
-    uPtr(LogoFile2)->File(::g::Uno::UX::BundleFileSource::New1(::g::emrals_bundle::emralsv2logoc8e35c00()));
+    uPtr(LogoFile2)->File(::g::Uno::UX::BundleFileSource::New1(::g::emrals_bundle::emralsv2logodcad63ae()));
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(uPtr(LogoFile2)->Bindings()), ::TYPES[3/*Uno.Collections.ICollection<Fuse.Binding>*/]), temp_eb64);
     uPtr(loginArea2)->Rows(::STRINGS[19/*"44,44,44,44...*/]);
     uPtr(loginArea2)->Columns(::STRINGS[20/*"auto, 1*"*/]);
     uPtr(loginArea2)->Height(::g::Uno::UX::Size__New1(230.0f, 1));
     uPtr(loginArea2)->MaxWidth(::g::Uno::UX::Size__New1(360.0f, 1));
     uPtr(loginArea2)->Padding(::g::Uno::Float4__New2(0.0f, 25.0f, 40.0f, 0.0f));
-    uPtr(loginArea2)->Name(SignupPage::__selector2());
+    uPtr(loginArea2)->Name(SignupPage::__selector2_);
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(uPtr(loginArea2)->Children()), ::TYPES[1/*Uno.Collections.ICollection<Fuse.Node>*/]), temp24);
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(uPtr(loginArea2)->Children()), ::TYPES[1/*Uno.Collections.ICollection<Fuse.Node>*/]), temp);
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(uPtr(loginArea2)->Children()), ::TYPES[1/*Uno.Collections.ICollection<Fuse.Node>*/]), temp26);
@@ -357,7 +359,7 @@ void SignupPage::InitializeUX()
     temp24->Margin(::g::Uno::Float4__New2(10.0f, 0.0f, 0.0f, 0.0f));
     ::g::Fuse::Controls::Grid::SetRow(temp24, 0);
     ::g::Fuse::Controls::Grid::SetColumn(temp24, 0);
-    temp24->File(::g::Uno::UX::BundleFileSource::New1(::g::emrals_bundle::personicon64b5e5dd()));
+    temp24->File(::g::Uno::UX::BundleFileSource::New1(::g::emrals_bundle::personicon038fbd6f()));
     temp->PlaceholderText(::STRINGS[10/*"username"*/]);
     temp->PlaceholderColor(::g::Uno::Float4__New2(0.7764706f, 0.7764706f, 0.7764706f, 1.0f));
     temp->FontSize(14.0f);
@@ -378,7 +380,7 @@ void SignupPage::InitializeUX()
     temp27->Margin(::g::Uno::Float4__New2(10.0f, 0.0f, 0.0f, 0.0f));
     ::g::Fuse::Controls::Grid::SetRow(temp27, 1);
     ::g::Fuse::Controls::Grid::SetColumn(temp27, 0);
-    temp27->File(::g::Uno::UX::BundleFileSource::New1(::g::emrals_bundle::personicon64b5e5dd()));
+    temp27->File(::g::Uno::UX::BundleFileSource::New1(::g::emrals_bundle::personicon038fbd6f()));
     temp1->PlaceholderText(::STRINGS[21/*"first name"*/]);
     temp1->PlaceholderColor(::g::Uno::Float4__New2(0.7764706f, 0.7764706f, 0.7764706f, 1.0f));
     temp1->FontSize(14.0f);
@@ -399,7 +401,7 @@ void SignupPage::InitializeUX()
     temp30->Margin(::g::Uno::Float4__New2(10.0f, 0.0f, 0.0f, 0.0f));
     ::g::Fuse::Controls::Grid::SetRow(temp30, 2);
     ::g::Fuse::Controls::Grid::SetColumn(temp30, 0);
-    temp30->File(::g::Uno::UX::BundleFileSource::New1(::g::emrals_bundle::personicon64b5e5dd()));
+    temp30->File(::g::Uno::UX::BundleFileSource::New1(::g::emrals_bundle::personicon038fbd6f()));
     temp2->PlaceholderText(::STRINGS[22/*"last name"*/]);
     temp2->PlaceholderColor(::g::Uno::Float4__New2(0.7764706f, 0.7764706f, 0.7764706f, 1.0f));
     temp2->FontSize(14.0f);
@@ -420,7 +422,7 @@ void SignupPage::InitializeUX()
     temp33->Margin(::g::Uno::Float4__New2(10.0f, 0.0f, 0.0f, 0.0f));
     ::g::Fuse::Controls::Grid::SetRow(temp33, 3);
     ::g::Fuse::Controls::Grid::SetColumn(temp33, 0);
-    temp33->File(::g::Uno::UX::BundleFileSource::New1(::g::emrals_bundle::mailiconcb50e7a5()));
+    temp33->File(::g::Uno::UX::BundleFileSource::New1(::g::emrals_bundle::mailicon913f9f8f()));
     temp3->PlaceholderText(::STRINGS[13/*"email"*/]);
     temp3->PlaceholderColor(::g::Uno::Float4__New2(0.7764706f, 0.7764706f, 0.7764706f, 1.0f));
     temp3->FontSize(14.0f);
@@ -441,7 +443,7 @@ void SignupPage::InitializeUX()
     temp36->Margin(::g::Uno::Float4__New2(12.0f, 0.0f, 25.0f, 0.0f));
     ::g::Fuse::Controls::Grid::SetRow(temp36, 4);
     ::g::Fuse::Controls::Grid::SetColumn(temp36, 0);
-    temp36->File(::g::Uno::UX::BundleFileSource::New1(::g::emrals_bundle::lockicon9c77e3bf()));
+    temp36->File(::g::Uno::UX::BundleFileSource::New1(::g::emrals_bundle::lockicon85ff26cd()));
     temp4->IsPassword(true);
     temp4->PlaceholderText(::STRINGS[14/*"password"*/]);
     temp4->PlaceholderColor(::g::Uno::Float4__New2(0.7764706f, 0.7764706f, 0.7764706f, 1.0f));
@@ -457,13 +459,13 @@ void SignupPage::InitializeUX()
     ::g::Fuse::Controls::Grid::SetRow(temp38, 4);
     ::g::Fuse::Controls::Grid::SetColumn(temp38, 1);
     ::g::Fuse::Controls::Grid::SetColumnSpan(temp38, 2);
-    uPtr(signupbutton)->Name(SignupPage::__selector3());
+    uPtr(signupbutton)->Name(SignupPage::__selector3_);
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(uPtr(signupbutton)->Children()), ::TYPES[1/*Uno.Collections.ICollection<Fuse.Node>*/]), temp5);
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(uPtr(signupbutton)->Children()), ::TYPES[1/*Uno.Collections.ICollection<Fuse.Node>*/]), temp40);
     temp5->FontSize(24.0f);
     temp5->TextAlignment(1);
     temp5->Color(::g::Uno::Float4__New2(1.0f, 0.0f, 0.0f, 1.0f));
-    temp5->Font(::g::Fuse::Font::Medium());
+    temp5->Font(::g::Fuse::Font::Medium_);
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(temp5->Bindings()), ::TYPES[3/*Uno.Collections.ICollection<Fuse.Binding>*/]), temp39);
     temp40->CornerRadius(::g::Uno::Float4__New2(10.0f, 10.0f, 10.0f, 10.0f));
     temp40->Color(::g::Uno::Float4__New2(0.5411765f, 0.7215686f, 0.2784314f, 1.0f));
@@ -491,14 +493,6 @@ void SignupPage::InitializeUX()
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(Children()), ::TYPES[1/*Uno.Collections.ICollection<Fuse.Node>*/]), temp16);
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(Children()), ::TYPES[1/*Uno.Collections.ICollection<Fuse.Node>*/]), loginArea2);
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(Children()), ::TYPES[1/*Uno.Collections.ICollection<Fuse.Node>*/]), signupbutton);
-}
-
-// public SignupPage New(Fuse.Navigation.Router router) [static] :31
-SignupPage* SignupPage::New5(::g::Fuse::Navigation::Router* router1)
-{
-    SignupPage* obj1 = (SignupPage*)uNew(SignupPage_typeof());
-    obj1->ctor_8(router1);
-    return obj1;
 }
 // }
 

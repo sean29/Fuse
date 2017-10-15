@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Uno.Net.Http/1.2.2/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Uno.Net.Http/1.3.1/UriFormatException.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -10,7 +10,7 @@ namespace Uno{
 namespace Net{
 namespace Http{
 
-// public sealed class UriFormatException :1097
+// public sealed class UriFormatException :6
 // {
 ::g::Uno::Exception_type* UriFormatException_typeof();
 void UriFormatException__ctor_3_fn(UriFormatException* __this, uString* message);

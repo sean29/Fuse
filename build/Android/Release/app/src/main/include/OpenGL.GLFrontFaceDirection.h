@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/UnoCore/1.2.2/source/opengl/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/UnoCore/1.3.1/Source/OpenGL/GLEnums.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -7,7 +7,7 @@
 namespace g{
 namespace OpenGL{
 
-// public extern enum GLFrontFaceDirection :2185
+// public extern enum GLFrontFaceDirection :135
 uEnumType* GLFrontFaceDirection_typeof();
 
 }} // ::g::OpenGL

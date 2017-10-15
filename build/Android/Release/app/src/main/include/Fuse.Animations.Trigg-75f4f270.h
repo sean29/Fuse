@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Animations/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Animations/1.3.0-rc2/TriggerAnimation.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -8,7 +8,7 @@ namespace g{
 namespace Fuse{
 namespace Animations{
 
-// public enum TriggerAnimationState.SeekFlags :4583
+// public enum TriggerAnimationState.SeekFlags :482
 uEnumType* TriggerAnimationState__SeekFlags_typeof();
 
 }}} // ::g::Fuse::Animations

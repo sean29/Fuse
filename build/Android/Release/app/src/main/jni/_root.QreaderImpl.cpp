@@ -21,7 +21,7 @@ namespace g{
 
 // public sealed class QreaderImpl :37
 // {
-// static QreaderImpl() :37
+// static generated QreaderImpl() :37
 static void QreaderImpl__cctor__fn(uType* __type)
 {
     QreaderImpl::RC_BARCODE_CAPTURE_ = 9001;
@@ -32,10 +32,10 @@ static void QreaderImpl_build(uType* type)
     ::STRINGS[0] = uString::Const("User cancelled the qr scanner");
     ::TYPES[0] = ::g::Uno::Threading::Promise_typeof()->MakeType(::g::Uno::String_typeof(), NULL);
     type->SetFields(0,
-        ::g::Java::Object_typeof(), (uintptr_t)&::g::QreaderImpl::_intentListener_, uFieldFlagsStatic,
-        ::g::Uno::Int_typeof(), (uintptr_t)&::g::QreaderImpl::RC_BARCODE_CAPTURE_, uFieldFlagsStatic,
-        ::TYPES[0/*Uno.Threading.Promise<string>*/], (uintptr_t)&::g::QreaderImpl::_FutureResult_, uFieldFlagsStatic,
-        ::g::Uno::Bool_typeof(), (uintptr_t)&::g::QreaderImpl::_InProgress_, uFieldFlagsStatic);
+        ::g::Java::Object_typeof(), (uintptr_t)&QreaderImpl::_intentListener_, uFieldFlagsStatic,
+        ::g::Uno::Int_typeof(), (uintptr_t)&QreaderImpl::RC_BARCODE_CAPTURE_, uFieldFlagsStatic,
+        ::TYPES[0/*Uno.Threading.Promise<string>*/], (uintptr_t)&QreaderImpl::_FutureResult_, uFieldFlagsStatic,
+        ::g::Uno::Bool_typeof(), (uintptr_t)&QreaderImpl::_InProgress_, uFieldFlagsStatic);
 }
 
 uType* QreaderImpl_typeof()
@@ -121,7 +121,6 @@ bool QreaderImpl::_InProgress_;
 // public static void Cancelled() [static] :145
 void QreaderImpl::Cancelled()
 {
-    QreaderImpl_typeof()->Init();
     QreaderImpl::InProgress(false);
     uPtr(QreaderImpl::FutureResult())->Reject(::g::Uno::Exception::New2(::STRINGS[0/*"User cancel...*/]));
 }
@@ -129,11 +128,10 @@ void QreaderImpl::Cancelled()
 // private static extern Java.Object Init() [static] :66
 ::g::Java::Object* QreaderImpl::Init()
 {
-    QreaderImpl_typeof()->Init();
     {
         INIT_JNI;
         jclass __cls = JniHelper::GetNativeExternClass();
-        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "Init449", "()Ljava/lang/Object;");
+        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "Init448", "()Ljava/lang/Object;");
         jobject __jresult = U_JNIVAR->CallStaticObjectMethod(__cls,__mtd);
         ::g::Java::Object* __result = (::g::Java::Object*)::g::Android::Base::Wrappers::JavaObjectHelper::JObjectToJWrapper(__jresult, false);
         ::g::Android::Base::JNI::CheckException();
@@ -145,11 +143,10 @@ void QreaderImpl::Cancelled()
 // private static extern bool OnRecieved(int requestCode, int resultCode, Java.Object data) [static] :78
 bool QreaderImpl::OnRecieved(int requestCode, int resultCode, ::g::Java::Object* data)
 {
-    QreaderImpl_typeof()->Init();
     {
         INIT_JNI;
         jclass __cls = JniHelper::GetNativeExternClass();
-        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "OnRecieved450", "(IILjava/lang/Object;)Z");
+        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "OnRecieved449", "(IILjava/lang/Object;)Z");
         int _urequestCode=requestCode;
         jint _requestCode = (jint)_urequestCode;
         int _uresultCode=resultCode;
@@ -170,7 +167,6 @@ bool QreaderImpl::OnRecieved(int requestCode, int resultCode, ::g::Java::Object*
 // public static void Picked(string result) [static] :150
 void QreaderImpl::Picked(uString* result)
 {
-    QreaderImpl_typeof()->Init();
     QreaderImpl::InProgress(false);
     ::g::Uno::Threading::Promise__Resolve_fn(uPtr(QreaderImpl::FutureResult()), result);
 }
@@ -178,15 +174,13 @@ void QreaderImpl::Picked(uString* result)
 // public static Uno.Threading.Future<string> Scan() [static] :51
 ::g::Uno::Threading::Future1* QreaderImpl::Scan()
 {
-    QreaderImpl_typeof()->Init();
-
     if (QreaderImpl::InProgress())
         return NULL;
 
     QreaderImpl::InProgress(true);
 
-    if (QreaderImpl::_intentListener() == NULL)
-        QreaderImpl::_intentListener() = QreaderImpl::Init();
+    if (QreaderImpl::_intentListener_ == NULL)
+        QreaderImpl::_intentListener_ = QreaderImpl::Init();
 
     QreaderImpl::ScannerImpl();
     QreaderImpl::FutureResult((::g::Uno::Threading::Promise*)::g::Uno::Threading::Promise::New1(::TYPES[0/*Uno.Threading.Promise<string>*/]));
@@ -196,11 +190,10 @@ void QreaderImpl::Picked(uString* result)
 // private static extern void ScannerImpl() [static] :109
 void QreaderImpl::ScannerImpl()
 {
-    QreaderImpl_typeof()->Init();
     {
         INIT_JNI;
         jclass __cls = JniHelper::GetNativeExternClass();
-        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "ScannerImpl454", "()V");
+        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "ScannerImpl453", "()V");
         U_JNIVAR->CallStaticVoidMethod(__cls,__mtd);
         
         ::g::Android::Base::JNI::CheckException();
@@ -212,29 +205,25 @@ void QreaderImpl::ScannerImpl()
 // private static generated Uno.Threading.Promise<string> get_FutureResult() [static] :46
 ::g::Uno::Threading::Promise* QreaderImpl::FutureResult()
 {
-    QreaderImpl_typeof()->Init();
-    return QreaderImpl::_FutureResult();
+    return QreaderImpl::_FutureResult_;
 }
 
 // private static generated void set_FutureResult(Uno.Threading.Promise<string> value) [static] :46
 void QreaderImpl::FutureResult(::g::Uno::Threading::Promise* value)
 {
-    QreaderImpl_typeof()->Init();
-    QreaderImpl::_FutureResult() = value;
+    QreaderImpl::_FutureResult_ = value;
 }
 
 // private static generated bool get_InProgress() [static] :42
 bool QreaderImpl::InProgress()
 {
-    QreaderImpl_typeof()->Init();
-    return QreaderImpl::_InProgress();
+    return QreaderImpl::_InProgress_;
 }
 
 // private static generated void set_InProgress(bool value) [static] :42
 void QreaderImpl::InProgress(bool value)
 {
-    QreaderImpl_typeof()->Init();
-    QreaderImpl::_InProgress() = value;
+    QreaderImpl::_InProgress_ = value;
 }
 // }
 

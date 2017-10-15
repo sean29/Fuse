@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Controls.Navigation/1.2.1/.uno/ux11/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Controls.Navigation/1.3.0-rc2/.uno/ux13/Fuse.Controls.Navigation.unoproj.g.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -11,7 +11,7 @@ namespace g{struct FuseControlsNavigation_FuseControlsPanel_IsFrozen_Property;}
 
 namespace g{
 
-// internal sealed class FuseControlsNavigation_FuseControlsPanel_IsFrozen_Property :297
+// internal sealed class FuseControlsNavigation_FuseControlsPanel_IsFrozen_Property :10
 // {
 ::g::Uno::UX::Property1_type* FuseControlsNavigation_FuseControlsPanel_IsFrozen_Property_typeof();
 void FuseControlsNavigation_FuseControlsPanel_IsFrozen_Property__ctor_3_fn(FuseControlsNavigation_FuseControlsPanel_IsFrozen_Property* __this, ::g::Fuse::Controls::Panel* obj, ::g::Uno::UX::Selector* name);

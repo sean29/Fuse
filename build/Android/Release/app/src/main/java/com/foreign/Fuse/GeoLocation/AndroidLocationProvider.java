@@ -33,54 +33,54 @@ public class AndroidLocationProvider
         android.util.Log.d("emrals", (message==null ? "null" : message.toString()));
     }
 
-    public static Object GetLastKnownLocationFromProvider415(final Object handle,final String provider)
+    public static Object GetLastKnownLocationFromProvider414(final Object handle,final String provider)
     {
         return ((LocationManager)handle).getLastKnownLocation(provider);
     }
     
-    public static Object GetLocationManager416()
+    public static Object GetLocationManager415()
     {
         return com.fuse.Activity.getRootActivity().getSystemService(Context.LOCATION_SERVICE);
     }
     
-    public static int GetNumProviders417(final Object handle)
+    public static int GetNumProviders416(final Object handle)
     {
         return ((LocationManager)handle).getAllProviders().size();
     }
     
-    public static Object GetUpdateListener418(final com.foreign.Uno.Action_Object onLocationChanged)
+    public static Object GetUpdateListener417(final com.foreign.Uno.Action_Object onLocationChanged)
     {
         return new UpdateListener(onLocationChanged);
     }
     
-    public static boolean IsGPSEnabled419(final Object locationManager)
+    public static boolean IsGPSEnabled418(final Object locationManager)
     {
         return ((LocationManager)locationManager).isProviderEnabled(LocationManager.GPS_PROVIDER);
     }
     
-    public static boolean IsNetworkEnabled420(final Object locationManager)
+    public static boolean IsNetworkEnabled419(final Object locationManager)
     {
         return ((LocationManager)locationManager).isProviderEnabled(LocationManager.NETWORK_PROVIDER);
     }
     
-    public static void ListProviders421(final Object handle,final com.uno.StringArray output)
+    public static void ListProviders420(final Object handle,final com.uno.StringArray output)
     {
         List<String> l = ((LocationManager)handle).getAllProviders();
         for(int i = 0; i<l.size(); i++)
         	output.set(i, l.get(i));
     }
     
-    public static void RemoveUpdates422(final Object manager,final Object listener)
+    public static void RemoveUpdates421(final Object manager,final Object listener)
     {
         ((LocationManager)manager).removeUpdates((UpdateListener)listener);
     }
     
-    public static void RequestGPSLocationUpdates423(final Object handle,final int minimumReportInterval,final double desiredAccuracyInMeters,final Object listener)
+    public static void RequestGPSLocationUpdates422(final Object handle,final int minimumReportInterval,final double desiredAccuracyInMeters,final Object listener)
     {
         ((LocationManager)handle).requestLocationUpdates(LocationManager.GPS_PROVIDER, (long)minimumReportInterval, (float)desiredAccuracyInMeters, (UpdateListener)listener, Looper.getMainLooper());
     }
     
-    public static void RequestNetworkLocationUpdates424(final Object handle,final int minimumReportInterval,final double desiredAccuracyInMeters,final Object listener)
+    public static void RequestNetworkLocationUpdates423(final Object handle,final int minimumReportInterval,final double desiredAccuracyInMeters,final Object listener)
     {
         ((LocationManager)handle).requestLocationUpdates(LocationManager.NETWORK_PROVIDER, (long)minimumReportInterval, (float)desiredAccuracyInMeters, (UpdateListener)listener, Looper.getMainLooper());
     }

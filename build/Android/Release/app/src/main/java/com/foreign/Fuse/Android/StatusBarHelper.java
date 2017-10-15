@@ -31,7 +31,7 @@ public class StatusBarHelper
         android.util.Log.d("emrals", (message==null ? "null" : message.toString()));
     }
 
-    public static int GetStatusBarColor358()
+    public static int GetStatusBarColor357()
     {
         Window window = com.fuse.Activity.getRootActivity().getWindow();
         if (Build.VERSION.SDK_INT >= 21)
@@ -40,7 +40,7 @@ public class StatusBarHelper
         	return Color.BLACK;
     }
     
-    public static void InstallGlobalListener359()
+    public static void InstallGlobalListener358()
     {
         Window window = com.fuse.Activity.getRootActivity().getWindow();
         window.getDecorView().getViewTreeObserver().addOnGlobalFocusChangeListener(
@@ -48,7 +48,7 @@ public class StatusBarHelper
         		boolean _focusWasEditText;
         		public void onGlobalFocusChanged(View oldFocus, View newFocus) {
         			if (_focusWasEditText)
-        				ExternedBlockHost.callUno_Fuse_Android_StatusBarConfig_UpdateStatusBar360();
+        				ExternedBlockHost.callUno_Fuse_Android_StatusBarConfig_UpdateStatusBar359();
         
         			_focusWasEditText = newFocus instanceof android.widget.EditText;
         		}
@@ -56,7 +56,7 @@ public class StatusBarHelper
         );
     }
     
-    public static boolean SetStatusBarColor361(final int color)
+    public static boolean SetStatusBarColor360(final int color)
     {
         Window window = com.fuse.Activity.getRootActivity().getWindow();
         if (Build.VERSION.SDK_INT >= 21)

@@ -22,10 +22,10 @@ static uType* TYPES[3];
 namespace g{
 namespace Android{
 
-// /Users/a/Library/Application Support/Fusetools/Packages/Android.ActivityUtils/1.2.1/$.uno
-// -----------------------------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Android.ActivityUtils\1.3.0-rc2\ActivityUtils.uno
+// ---------------------------------------------------------------------------------------------
 
-// public extern delegate void ActivityResultCallback(int resultCode, Java.Object intent, object info) :11
+// public extern delegate void ActivityResultCallback(int resultCode, Java.Object intent, object info) :9
 uDelegateType* ActivityResultCallback_typeof()
 {
     static uSStrong<uDelegateType*> type;
@@ -39,12 +39,12 @@ uDelegateType* ActivityResultCallback_typeof()
     return type;
 }
 
-// /Users/a/Library/Application Support/Fusetools/Packages/Android.ActivityUtils/1.2.1/$.uno
-// -----------------------------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Android.ActivityUtils\1.3.0-rc2\ActivityUtils.uno
+// ---------------------------------------------------------------------------------------------
 
-// public static extern class ActivityUtils :15
+// public static extern class ActivityUtils :13
 // {
-// static ActivityUtils() :23
+// static ActivityUtils() :21
 static void ActivityUtils__cctor__fn(uType* __type)
 {
     if (ActivityUtils::_intentListener_ == NULL)
@@ -61,11 +61,11 @@ static void ActivityUtils_build(uType* type)
     ::TYPES[1] = ::g::Uno::Collections::Dictionary_typeof()->MakeType(::g::Uno::Int_typeof(), uObject_typeof(), NULL);
     ::TYPES[2] = ::g::Uno::Action3_typeof()->MakeType(::g::Uno::Int_typeof(), ::g::Uno::Int_typeof(), ::g::Java::Object_typeof(), NULL);
     type->SetFields(0,
-        ::g::Java::Object_typeof(), (uintptr_t)&::g::Android::ActivityUtils::_intentListener_, uFieldFlagsStatic,
-        ::TYPES[1/*Uno.Collections.Dictionary<int, object>*/], (uintptr_t)&::g::Android::ActivityUtils::_pendingInfos_, uFieldFlagsStatic,
-        ::TYPES[0/*Uno.Collections.Dictionary<int, Android.ActivityResultCallback>*/], (uintptr_t)&::g::Android::ActivityUtils::_pendingResults_, uFieldFlagsStatic,
-        ::g::Uno::Int_typeof(), (uintptr_t)&::g::Android::ActivityUtils::_requestID_, uFieldFlagsStatic,
-        ::TYPES[2/*Uno.Action<int, int, Java.Object>*/], (uintptr_t)&::g::Android::ActivityUtils::Results1_, uFieldFlagsStatic);
+        ::g::Java::Object_typeof(), (uintptr_t)&ActivityUtils::_intentListener_, uFieldFlagsStatic,
+        ::TYPES[1/*Uno.Collections.Dictionary<int, object>*/], (uintptr_t)&ActivityUtils::_pendingInfos_, uFieldFlagsStatic,
+        ::TYPES[0/*Uno.Collections.Dictionary<int, Android.ActivityResultCallback>*/], (uintptr_t)&ActivityUtils::_pendingResults_, uFieldFlagsStatic,
+        ::g::Uno::Int_typeof(), (uintptr_t)&ActivityUtils::_requestID_, uFieldFlagsStatic,
+        ::TYPES[2/*Uno.Action<int, int, Java.Object>*/], (uintptr_t)&ActivityUtils::Results1_, uFieldFlagsStatic);
 }
 
 uClassType* ActivityUtils_typeof()
@@ -82,43 +82,43 @@ uClassType* ActivityUtils_typeof()
     return type;
 }
 
-// private static Java.Object Init() :34
+// private static Java.Object Init() :32
 void ActivityUtils__Init_fn(::g::Java::Object** __retval)
 {
     *__retval = ActivityUtils::Init();
 }
 
-// private static bool OnReceived(int requestCode, int resultCode, Java.Object data) :78
+// private static bool OnReceived(int requestCode, int resultCode, Java.Object data) :76
 void ActivityUtils__OnReceived_fn(int* requestCode, int* resultCode, ::g::Java::Object* data, bool* __retval)
 {
     *__retval = ActivityUtils::OnReceived(*requestCode, *resultCode, data);
 }
 
-// public static generated void add_Results(Uno.Action<int, int, Java.Object> value) :21
+// public static generated void add_Results(Uno.Action<int, int, Java.Object> value) :19
 void ActivityUtils__add_Results_fn(uDelegate* value)
 {
     ActivityUtils::add_Results(value);
 }
 
-// public static generated void remove_Results(Uno.Action<int, int, Java.Object> value) :21
+// public static generated void remove_Results(Uno.Action<int, int, Java.Object> value) :19
 void ActivityUtils__remove_Results_fn(uDelegate* value)
 {
     ActivityUtils::remove_Results(value);
 }
 
-// public static void StartActivity(Java.Object intent, Android.ActivityResultCallback callback) :58
+// public static void StartActivity(Java.Object intent, Android.ActivityResultCallback callback) :56
 void ActivityUtils__StartActivity1_fn(::g::Java::Object* intent, uDelegate* callback)
 {
     ActivityUtils::StartActivity1(intent, callback);
 }
 
-// public static void StartActivity(Java.Object intent, Android.ActivityResultCallback callback, object info) :63
+// public static void StartActivity(Java.Object intent, Android.ActivityResultCallback callback, object info) :61
 void ActivityUtils__StartActivity2_fn(::g::Java::Object* intent, uDelegate* callback, uObject* info)
 {
     ActivityUtils::StartActivity2(intent, callback, info);
 }
 
-// private static void StartForResultJava(int id, Java.Object _intent) :72
+// private static void StartForResultJava(int id, Java.Object _intent) :70
 void ActivityUtils__StartForResultJava_fn(int* id, ::g::Java::Object* _intent)
 {
     ActivityUtils::StartForResultJava(*id, _intent);
@@ -130,7 +130,7 @@ uSStrong< ::g::Uno::Collections::Dictionary*> ActivityUtils::_pendingResults_;
 int ActivityUtils::_requestID_;
 uSStrong<uDelegate*> ActivityUtils::Results1_;
 
-// private static Java.Object Init() [static] :34
+// private static Java.Object Init() [static] :32
 ::g::Java::Object* ActivityUtils::Init()
 {
     ActivityUtils_typeof()->Init();
@@ -146,7 +146,7 @@ uSStrong<uDelegate*> ActivityUtils::Results1_;
     
 }
 
-// private static bool OnReceived(int requestCode, int resultCode, Java.Object data) [static] :78
+// private static bool OnReceived(int requestCode, int resultCode, Java.Object data) [static] :76
 bool ActivityUtils::OnReceived(int requestCode, int resultCode, ::g::Java::Object* data)
 {
     ActivityUtils_typeof()->Init();
@@ -156,16 +156,16 @@ bool ActivityUtils::OnReceived(int requestCode, int resultCode, ::g::Java::Objec
     uObject* ret4;
     bool ret5;
 
-    if ((::g::Uno::Collections::Dictionary__ContainsKey_fn(uPtr(ActivityUtils::_pendingResults()), uCRef<int>(requestCode), &ret1), ret1))
+    if ((::g::Uno::Collections::Dictionary__ContainsKey_fn(uPtr(ActivityUtils::_pendingResults_), uCRef<int>(requestCode), &ret1), ret1))
     {
-        uDelegate* callback = (::g::Uno::Collections::Dictionary__get_Item_fn(uPtr(ActivityUtils::_pendingResults()), uCRef<int>(requestCode), &ret2), ret2);
-        ::g::Uno::Collections::Dictionary__Remove_fn(uPtr(ActivityUtils::_pendingResults()), uCRef<int>(requestCode), &ret3);
-        uObject* info = (::g::Uno::Collections::Dictionary__get_Item_fn(uPtr(ActivityUtils::_pendingInfos()), uCRef<int>(requestCode), &ret4), ret4);
-        ::g::Uno::Collections::Dictionary__Remove_fn(uPtr(ActivityUtils::_pendingInfos()), uCRef<int>(requestCode), &ret5);
+        uDelegate* callback = (::g::Uno::Collections::Dictionary__get_Item_fn(uPtr(ActivityUtils::_pendingResults_), uCRef<int>(requestCode), &ret2), ret2);
+        ::g::Uno::Collections::Dictionary__Remove_fn(uPtr(ActivityUtils::_pendingResults_), uCRef<int>(requestCode), &ret3);
+        uObject* info = (::g::Uno::Collections::Dictionary__get_Item_fn(uPtr(ActivityUtils::_pendingInfos_), uCRef<int>(requestCode), &ret4), ret4);
+        ::g::Uno::Collections::Dictionary__Remove_fn(uPtr(ActivityUtils::_pendingInfos_), uCRef<int>(requestCode), &ret5);
         uPtr(callback)->Invoke(3, uCRef<int>(resultCode), data, info);
     }
 
-    uDelegate* handler = ActivityUtils::Results1();
+    uDelegate* handler = ActivityUtils::Results1_;
 
     if (::g::Uno::Delegate::op_Inequality(handler, NULL))
         uPtr(handler)->Invoke(3, uCRef<int>(requestCode), uCRef<int>(resultCode), data);
@@ -173,24 +173,24 @@ bool ActivityUtils::OnReceived(int requestCode, int resultCode, ::g::Java::Objec
     return false;
 }
 
-// public static void StartActivity(Java.Object intent, Android.ActivityResultCallback callback) [static] :58
+// public static void StartActivity(Java.Object intent, Android.ActivityResultCallback callback) [static] :56
 void ActivityUtils::StartActivity1(::g::Java::Object* intent, uDelegate* callback)
 {
     ActivityUtils_typeof()->Init();
     ActivityUtils::StartActivity2(intent, callback, NULL);
 }
 
-// public static void StartActivity(Java.Object intent, Android.ActivityResultCallback callback, object info) [static] :63
+// public static void StartActivity(Java.Object intent, Android.ActivityResultCallback callback, object info) [static] :61
 void ActivityUtils::StartActivity2(::g::Java::Object* intent, uDelegate* callback, uObject* info)
 {
     ActivityUtils_typeof()->Init();
-    ActivityUtils::_requestID() = (ActivityUtils::_requestID() + 1);
-    ::g::Uno::Collections::Dictionary__set_Item_fn(uPtr(ActivityUtils::_pendingResults()), uCRef<int>(ActivityUtils::_requestID()), callback);
-    ::g::Uno::Collections::Dictionary__set_Item_fn(uPtr(ActivityUtils::_pendingInfos()), uCRef<int>(ActivityUtils::_requestID()), info);
-    ActivityUtils::StartForResultJava(ActivityUtils::_requestID(), intent);
+    ActivityUtils::_requestID_ = (ActivityUtils::_requestID_ + 1);
+    ::g::Uno::Collections::Dictionary__set_Item_fn(uPtr(ActivityUtils::_pendingResults_), uCRef<int>(ActivityUtils::_requestID_), callback);
+    ::g::Uno::Collections::Dictionary__set_Item_fn(uPtr(ActivityUtils::_pendingInfos_), uCRef<int>(ActivityUtils::_requestID_), info);
+    ActivityUtils::StartForResultJava(ActivityUtils::_requestID_, intent);
 }
 
-// private static void StartForResultJava(int id, Java.Object _intent) [static] :72
+// private static void StartForResultJava(int id, Java.Object _intent) [static] :70
 void ActivityUtils::StartForResultJava(int id, ::g::Java::Object* _intent)
 {
     ActivityUtils_typeof()->Init();
@@ -212,25 +212,25 @@ void ActivityUtils::StartForResultJava(int id, ::g::Java::Object* _intent)
     
 }
 
-// public static generated void add_Results(Uno.Action<int, int, Java.Object> value) [static] :21
+// public static generated void add_Results(Uno.Action<int, int, Java.Object> value) [static] :19
 void ActivityUtils::add_Results(uDelegate* value)
 {
     ActivityUtils_typeof()->Init();
-    ActivityUtils::Results1() = uCast<uDelegate*>(::g::Uno::Delegate::Combine(ActivityUtils::Results1(), value), ::TYPES[2/*Uno.Action<int, int, Java.Object>*/]);
+    ActivityUtils::Results1_ = uCast<uDelegate*>(::g::Uno::Delegate::Combine(ActivityUtils::Results1_, value), ::TYPES[2/*Uno.Action<int, int, Java.Object>*/]);
 }
 
-// public static generated void remove_Results(Uno.Action<int, int, Java.Object> value) [static] :21
+// public static generated void remove_Results(Uno.Action<int, int, Java.Object> value) [static] :19
 void ActivityUtils::remove_Results(uDelegate* value)
 {
     ActivityUtils_typeof()->Init();
-    ActivityUtils::Results1() = uCast<uDelegate*>(::g::Uno::Delegate::Remove(ActivityUtils::Results1(), value), ::TYPES[2/*Uno.Action<int, int, Java.Object>*/]);
+    ActivityUtils::Results1_ = uCast<uDelegate*>(::g::Uno::Delegate::Remove(ActivityUtils::Results1_, value), ::TYPES[2/*Uno.Action<int, int, Java.Object>*/]);
 }
 // }
 
-// /usr/local/share/uno/Packages/UnoCore/1.2.2/targets/android/uno/base/$.uno
-// --------------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\UnoCore\1.3.1\Targets\Android\Uno\Base\Bootstrapper.uno
+// ---------------------------------------------------------------------------------------------------
 
-// internal static extern class Bootstrapper :11
+// internal static extern class Bootstrapper :9
 // {
 static void Bootstrapper_build(uType* type)
 {
@@ -248,13 +248,13 @@ uClassType* Bootstrapper_typeof()
     return type;
 }
 
-// public static void _RegisterTypes() :13
+// public static void _RegisterTypes() :11
 void Bootstrapper___RegisterTypes_fn()
 {
     Bootstrapper::_RegisterTypes();
 }
 
-// public static void _RegisterTypes() [static] :13
+// public static void _RegisterTypes() [static] :11
 void Bootstrapper::_RegisterTypes()
 {
     ::BootstrapperImpl();

@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Controls.Native/1.2.1/android/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Controls.Native/1.3.0-rc2/Android/Ellipse.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -15,19 +15,19 @@ namespace Controls{
 namespace Native{
 namespace Android{
 
-// internal sealed extern class Ellipse :195
+// internal sealed extern class Ellipse :8
 // {
 ::g::Fuse::Controls::Native::Android::Shape_type* Ellipse_typeof();
-void Ellipse__ctor_7_fn(Ellipse* __this);
-void Ellipse__New4_fn(Ellipse** __retval);
+void Ellipse__ctor_8_fn(Ellipse* __this);
+void Ellipse__New5_fn(Ellipse** __retval);
 void Ellipse__UpdateShapeDrawable1_fn(Ellipse* __this, ::g::Java::Object* handle);
 void Ellipse__UpdateShapeDrawable_fn(Ellipse* __this, ::g::Java::Object* handle, float* pixelsPerPoint);
 
 struct Ellipse : ::g::Fuse::Controls::Native::Android::Shape
 {
-    void ctor_7();
+    void ctor_8();
     void UpdateShapeDrawable1(::g::Java::Object* handle);
-    static Ellipse* New4();
+    static Ellipse* New5();
 };
 // }
 

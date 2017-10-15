@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Drawing.Primitives/1.2.1/.uno/package.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Drawing.Primitives/1.3.0-rc2/.uno/package.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -14,54 +14,54 @@ uClassType* FuseDrawingPrimitives_bundle_typeof();
 
 struct FuseDrawingPrimitives_bundle : uObject
 {
-    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*> Circle01247f96_;
-    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*>& Circle01247f96() { return FuseDrawingPrimitives_bundle_typeof()->Init(), Circle01247f96_; }
-    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*> Circle038d0b56_;
-    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*>& Circle038d0b56() { return FuseDrawingPrimitives_bundle_typeof()->Init(), Circle038d0b56_; }
-    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*> Circle09647386_;
-    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*>& Circle09647386() { return FuseDrawingPrimitives_bundle_typeof()->Init(), Circle09647386_; }
-    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*> Circle09647387_;
-    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*>& Circle09647387() { return FuseDrawingPrimitives_bundle_typeof()->Init(), Circle09647387_; }
-    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*> Circle09647389_;
-    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*>& Circle09647389() { return FuseDrawingPrimitives_bundle_typeof()->Init(), Circle09647389_; }
-    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*> Circle27c6b7fe_;
-    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*>& Circle27c6b7fe() { return FuseDrawingPrimitives_bundle_typeof()->Init(), Circle27c6b7fe_; }
-    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*> Circle27c6b7ff_;
-    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*>& Circle27c6b7ff() { return FuseDrawingPrimitives_bundle_typeof()->Init(), Circle27c6b7ff_; }
-    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*> Circle4a971b16_;
-    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*>& Circle4a971b16() { return FuseDrawingPrimitives_bundle_typeof()->Init(), Circle4a971b16_; }
-    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*> Circle4c78c62c_;
-    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*>& Circle4c78c62c() { return FuseDrawingPrimitives_bundle_typeof()->Init(), Circle4c78c62c_; }
-    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*> Circle60e596bb_;
-    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*>& Circle60e596bb() { return FuseDrawingPrimitives_bundle_typeof()->Init(), Circle60e596bb_; }
-    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*> Circle7aaa5f74_;
-    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*>& Circle7aaa5f74() { return FuseDrawingPrimitives_bundle_typeof()->Init(), Circle7aaa5f74_; }
-    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*> Circle91c7af62_;
-    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*>& Circle91c7af62() { return FuseDrawingPrimitives_bundle_typeof()->Init(), Circle91c7af62_; }
-    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*> Circlebe3e2220_;
-    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*>& Circlebe3e2220() { return FuseDrawingPrimitives_bundle_typeof()->Init(), Circlebe3e2220_; }
-    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*> Circlecfb305c7_;
-    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*>& Circlecfb305c7() { return FuseDrawingPrimitives_bundle_typeof()->Init(), Circlecfb305c7_; }
-    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*> Circlecfb305c9_;
-    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*>& Circlecfb305c9() { return FuseDrawingPrimitives_bundle_typeof()->Init(), Circlecfb305c9_; }
-    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*> Circlecfb305ca_;
-    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*>& Circlecfb305ca() { return FuseDrawingPrimitives_bundle_typeof()->Init(), Circlecfb305ca_; }
-    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*> Circled0e74ba4_;
-    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*>& Circled0e74ba4() { return FuseDrawingPrimitives_bundle_typeof()->Init(), Circled0e74ba4_; }
-    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*> Circled802ead9_;
-    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*>& Circled802ead9() { return FuseDrawingPrimitives_bundle_typeof()->Init(), Circled802ead9_; }
-    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*> Circlee8f0edda_;
-    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*>& Circlee8f0edda() { return FuseDrawingPrimitives_bundle_typeof()->Init(), Circlee8f0edda_; }
-    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*> Circlee8f0eddb_;
-    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*>& Circlee8f0eddb() { return FuseDrawingPrimitives_bundle_typeof()->Init(), Circlee8f0eddb_; }
-    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*> Circleef203ac7_;
-    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*>& Circleef203ac7() { return FuseDrawingPrimitives_bundle_typeof()->Init(), Circleef203ac7_; }
-    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*> Circlef28f173b_;
-    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*>& Circlef28f173b() { return FuseDrawingPrimitives_bundle_typeof()->Init(), Circlef28f173b_; }
-    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*> Circlef28f173d_;
-    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*>& Circlef28f173d() { return FuseDrawingPrimitives_bundle_typeof()->Init(), Circlef28f173d_; }
-    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*> Circlef28f173e_;
-    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*>& Circlef28f173e() { return FuseDrawingPrimitives_bundle_typeof()->Init(), Circlef28f173e_; }
+    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*> Circle0f9e7404_;
+    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*>& Circle0f9e7404() { return FuseDrawingPrimitives_bundle_typeof()->Init(), Circle0f9e7404_; }
+    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*> Circle0f9e7409_;
+    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*>& Circle0f9e7409() { return FuseDrawingPrimitives_bundle_typeof()->Init(), Circle0f9e7409_; }
+    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*> Circle0f9e740a_;
+    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*>& Circle0f9e740a() { return FuseDrawingPrimitives_bundle_typeof()->Init(), Circle0f9e740a_; }
+    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*> Circle17d89cad_;
+    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*>& Circle17d89cad() { return FuseDrawingPrimitives_bundle_typeof()->Init(), Circle17d89cad_; }
+    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*> Circle1cada5ec_;
+    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*>& Circle1cada5ec() { return FuseDrawingPrimitives_bundle_typeof()->Init(), Circle1cada5ec_; }
+    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*> Circle34b7481b_;
+    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*>& Circle34b7481b() { return FuseDrawingPrimitives_bundle_typeof()->Init(), Circle34b7481b_; }
+    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*> Circle42b21980_;
+    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*>& Circle42b21980() { return FuseDrawingPrimitives_bundle_typeof()->Init(), Circle42b21980_; }
+    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*> Circle47ebe12c_;
+    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*>& Circle47ebe12c() { return FuseDrawingPrimitives_bundle_typeof()->Init(), Circle47ebe12c_; }
+    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*> Circle61fc8f03_;
+    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*>& Circle61fc8f03() { return FuseDrawingPrimitives_bundle_typeof()->Init(), Circle61fc8f03_; }
+    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*> Circle7a063151_;
+    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*>& Circle7a063151() { return FuseDrawingPrimitives_bundle_typeof()->Init(), Circle7a063151_; }
+    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*> Circlea74b7839_;
+    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*>& Circlea74b7839() { return FuseDrawingPrimitives_bundle_typeof()->Init(), Circlea74b7839_; }
+    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*> Circleba801148_;
+    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*>& Circleba801148() { return FuseDrawingPrimitives_bundle_typeof()->Init(), Circleba801148_; }
+    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*> Circlebf551a68_;
+    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*>& Circlebf551a68() { return FuseDrawingPrimitives_bundle_typeof()->Init(), Circlebf551a68_; }
+    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*> Circled289b377_;
+    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*>& Circled289b377() { return FuseDrawingPrimitives_bundle_typeof()->Init(), Circled289b377_; }
+    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*> Circlee5598e1b_;
+    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*>& Circlee5598e1b() { return FuseDrawingPrimitives_bundle_typeof()->Init(), Circlee5598e1b_; }
+    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*> Circleea9355c7_;
+    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*>& Circleea9355c7() { return FuseDrawingPrimitives_bundle_typeof()->Init(), Circleea9355c7_; }
+    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*> Circlef7ec1d38_;
+    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*>& Circlef7ec1d38() { return FuseDrawingPrimitives_bundle_typeof()->Init(), Circlef7ec1d38_; }
+    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*> Circlef7ec1df8_;
+    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*>& Circlef7ec1df8() { return FuseDrawingPrimitives_bundle_typeof()->Init(), Circlef7ec1df8_; }
+    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*> Circlef7ec1dfa_;
+    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*>& Circlef7ec1dfa() { return FuseDrawingPrimitives_bundle_typeof()->Init(), Circlef7ec1dfa_; }
+    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*> Circlef7ec1dfb_;
+    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*>& Circlef7ec1dfb() { return FuseDrawingPrimitives_bundle_typeof()->Init(), Circlef7ec1dfb_; }
+    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*> Circlef7ec1ed4_;
+    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*>& Circlef7ec1ed4() { return FuseDrawingPrimitives_bundle_typeof()->Init(), Circlef7ec1ed4_; }
+    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*> Circlef7ec1ed6_;
+    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*>& Circlef7ec1ed6() { return FuseDrawingPrimitives_bundle_typeof()->Init(), Circlef7ec1ed6_; }
+    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*> Circlef7ec1ed7_;
+    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*>& Circlef7ec1ed7() { return FuseDrawingPrimitives_bundle_typeof()->Init(), Circlef7ec1ed7_; }
+    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*> Circleffcefa9e_;
+    static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*>& Circleffcefa9e() { return FuseDrawingPrimitives_bundle_typeof()->Init(), Circleffcefa9e_; }
     static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*> Rectangle5aede5cb_;
     static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*>& Rectangle5aede5cb() { return FuseDrawingPrimitives_bundle_typeof()->Init(), Rectangle5aede5cb_; }
     static uSStrong< ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram*> Rectangle5aede5cc_;

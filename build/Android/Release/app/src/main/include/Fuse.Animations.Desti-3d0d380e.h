@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Motion/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Motion/1.3.0-rc2/DestinationBehavior.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -10,7 +10,7 @@ namespace g{
 namespace Fuse{
 namespace Animations{
 
-// internal sealed class DestinationBehavior<T> :244
+// internal sealed class DestinationBehavior<T> :13
 // {
 uType* DestinationBehavior_typeof();
 void DestinationBehavior__ctor__fn(DestinationBehavior* __this);

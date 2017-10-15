@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Nodes/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Nodes/1.3.0-rc2/AppBase.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -7,7 +7,7 @@
 namespace g{
 namespace Fuse{
 
-// public delegate void UnhandledExceptionHandler(object sender, Fuse.UnhandledExceptionArgs args) :176
+// public delegate void UnhandledExceptionHandler(object sender, Fuse.UnhandledExceptionArgs args) :27
 uDelegateType* UnhandledExceptionHandler_typeof();
 
 }} // ::g::Fuse

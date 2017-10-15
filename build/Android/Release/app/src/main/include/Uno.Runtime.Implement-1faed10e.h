@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/UnoCore/1.2.2/source/uno/runtime/implementation/internal/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/UnoCore/1.3.1/Source/Uno/Runtime/Implementation/Internal/FormatStringToken.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -11,7 +11,7 @@ namespace Runtime{
 namespace Implementation{
 namespace Internal{
 
-// public abstract class FormatStringToken :998
+// public abstract class FormatStringToken :3
 // {
 struct FormatStringToken_type : uType
 {

@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Uno.Net.Http/1.2.2/implementation/android/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Uno.Net.Http/1.3.1/Implementation/Android/AndroidHttpRequest.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -16,7 +16,7 @@ namespace Net{
 namespace Http{
 namespace Implementation{
 
-// internal sealed extern class AndroidHttpRequest :13
+// internal sealed extern class AndroidHttpRequest :11
 // {
 struct AndroidHttpRequest_type : ::g::Android::com::fuse::ExperimentalHttp::HttpRequest_type
 {

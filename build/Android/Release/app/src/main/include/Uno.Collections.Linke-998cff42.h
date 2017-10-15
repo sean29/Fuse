@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/UnoCore/1.2.2/source/uno/collections/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/UnoCore/1.3.1/Source/Uno/Collections/LinkedList.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -14,7 +14,7 @@ namespace g{
 namespace Uno{
 namespace Collections{
 
-// public struct LinkedList<T>.Enumerator :823
+// public struct LinkedList<T>.Enumerator :26
 // {
 struct LinkedList__Enumerator_type : uStructType
 {

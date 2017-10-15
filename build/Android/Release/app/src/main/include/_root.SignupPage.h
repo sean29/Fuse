@@ -1,4 +1,4 @@
-// This file was generated based on '.uno/ux11/SignupPage.g.uno'.
+// This file was generated based on '.uno/ux13/SignupPage.g.uno'.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -15,6 +15,7 @@
 #include <Fuse.Triggers.Actions.IHide.h>
 #include <Fuse.Triggers.Actions.IShow.h>
 #include <Fuse.Triggers.Actions-ea70af1f.h>
+#include <Fuse.Visual.h>
 #include <Uno.Collections.ICollection-1.h>
 #include <Uno.Collections.IEnumerable-1.h>
 #include <Uno.Collections.IList-1.h>
@@ -31,12 +32,11 @@ namespace g{struct SignupPage;}
 
 namespace g{
 
-// public partial sealed class SignupPage :2
+// public partial class SignupPage :2
 // {
 ::g::Fuse::Controls::Panel_type* SignupPage_typeof();
 void SignupPage__ctor_8_fn(SignupPage* __this, ::g::Fuse::Navigation::Router* router1);
 void SignupPage__InitializeUX_fn(SignupPage* __this);
-void SignupPage__New5_fn(::g::Fuse::Navigation::Router* router1, SignupPage** __retval);
 
 struct SignupPage : ::g::Fuse::Controls::Page
 {
@@ -67,7 +67,6 @@ struct SignupPage : ::g::Fuse::Controls::Page
 
     void ctor_8(::g::Fuse::Navigation::Router* router1);
     void InitializeUX();
-    static SignupPage* New5(::g::Fuse::Navigation::Router* router1);
 };
 // }
 

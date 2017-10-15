@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.UserEvents/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.UserEvents/1.3.0-rc2/UserEvent.ScriptClass.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -21,7 +21,7 @@ namespace g{namespace Uno{namespace UX{struct Selector;}}}
 namespace g{
 namespace Fuse{
 
-// public partial sealed class UserEvent :354
+// public partial sealed class UserEvent :9
 // {
 ::g::Fuse::Node_type* UserEvent_typeof();
 void UserEvent__OnRooted_fn(UserEvent* __this);

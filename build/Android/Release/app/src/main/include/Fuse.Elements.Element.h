@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Elements/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Elements/1.3.0-rc2/AspectBoxSizing.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -45,15 +45,15 @@ namespace g{
 namespace Fuse{
 namespace Elements{
 
-// public interfacemodifiers class Element :104
+// public interfacemodifiers class Element :102
 // {
 struct Element_type : ::g::Fuse::Visual_type
 {
-    ::g::Fuse::Triggers::Actions::IShow interface11;
-    ::g::Fuse::Triggers::Actions::IHide interface12;
-    ::g::Fuse::Triggers::Actions::ICollapse interface13;
-    ::g::Fuse::IActualPlacement interface14;
-    ::g::Fuse::Animations::IResize interface15;
+    ::g::Fuse::Triggers::Actions::IShow interface12;
+    ::g::Fuse::Triggers::Actions::IHide interface13;
+    ::g::Fuse::Triggers::Actions::ICollapse interface14;
+    ::g::Fuse::IActualPlacement interface15;
+    ::g::Fuse::Animations::IResize interface16;
     void(*fp_ArrangePaddingBox)(::g::Fuse::Elements::Element*, ::g::Fuse::LayoutParams*);
     void(*fp_CalcRenderBounds)(::g::Fuse::Elements::Element*, ::g::Fuse::VisualBounds**);
     void(*fp_DrawWithChildren)(::g::Fuse::Elements::Element*, ::g::Fuse::DrawContext*);
@@ -233,6 +233,7 @@ struct Element : ::g::Fuse::Visual
     static ::g::Uno::UX::Selector _clipToBoundsName_;
     static ::g::Uno::UX::Selector& _clipToBoundsName() { return Element_typeof()->Init(), _clipToBoundsName_; }
     int _compositionEffects;
+    bool _dispatchedZOrderChanged;
     uStrong< ::g::Uno::Collections::List*> _effects;
     uStrong< ::g::Fuse::Elements::ElementBatcher*> _elementBatcher;
     bool _elementBatchValid;

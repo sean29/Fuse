@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Drawing/1.2.1/brushes/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Drawing/1.3.0-rc2/Brushes/SolidColor.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -12,7 +12,7 @@ namespace g{
 namespace Fuse{
 namespace Drawing{
 
-// public sealed class SolidColor :436
+// public sealed class SolidColor :13
 // {
 struct SolidColor_type : ::g::Fuse::Drawing::Brush_type
 {
@@ -34,7 +34,7 @@ struct SolidColor : ::g::Fuse::Drawing::DynamicBrush
 {
     ::g::Uno::Float4 _color;
     static ::g::Uno::UX::Selector _colorName_;
-    static ::g::Uno::UX::Selector& _colorName() { return SolidColor_typeof()->Init(), _colorName_; }
+    static ::g::Uno::UX::Selector& _colorName() { return _colorName_; }
 
     void ctor_3();
     void ctor_4(::g::Uno::Float4 color);

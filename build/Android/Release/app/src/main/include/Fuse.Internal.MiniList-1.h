@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Common/1.2.1/internal/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Common/1.3.0-rc2/Internal/MiniList.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -7,14 +7,13 @@
 #include <Uno.Collections.IList-1.h>
 #include <Uno.Object.h>
 namespace g{namespace Fuse{namespace Internal{struct MiniList;}}}
-namespace g{namespace Fuse{namespace Internal{struct MiniList__Enumerator;}}}
 namespace g{namespace Fuse{namespace Internal{struct ObjectList;}}}
 
 namespace g{
 namespace Fuse{
 namespace Internal{
 
-// internal struct MiniList<T> :1532
+// internal struct MiniList<T> :25
 // {
 struct MiniList_type : uStructType
 {
@@ -30,7 +29,6 @@ void MiniList__Clear_fn(MiniList* __this, uType* __type);
 void MiniList__Contains_fn(MiniList* __this, uType* __type, uObject* value, bool* __retval);
 void MiniList__get_Count_fn(MiniList* __this, uType* __type, int* __retval);
 void MiniList__GetEnumerator_fn(MiniList* __this, uType* __type, uObject** __retval);
-void MiniList__GetEnumeratorVersionedStruct_fn(MiniList* __this, uType* __type, MiniList__Enumerator* __retval);
 void MiniList__Insert_fn(MiniList* __this, uType* __type, int* index, uObject* value);
 void MiniList__get_Item_fn(MiniList* __this, uType* __type, int* index, uObject** __retval);
 void MiniList__Remove_fn(MiniList* __this, uType* __type, uObject* value, bool* __retval);
@@ -47,7 +45,6 @@ struct MiniList
     bool Contains(uType* __type, uObject* value);
     int Count(uType* __type);
     uObject* GetEnumerator(uType* __type);
-    MiniList__Enumerator GetEnumeratorVersionedStruct(uType* __type);
     void Insert(uType* __type, int index, uObject* value);
     uObject* Item(uType* __type, int index);
     bool Remove(uType* __type, uObject* value);

@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.WebSockets/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.WebSockets/1.3.0-rc2/WebSocketClient.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -9,7 +9,7 @@ namespace g{
 namespace Fuse{
 namespace WebSocket{
 
-// public sealed class WebSocketClient :8
+// public sealed class WebSocketClient :6
 // {
 uType* WebSocketClient_typeof();
 void WebSocketClient__ctor__fn(WebSocketClient* __this, uString* uri, uArray* protocols);

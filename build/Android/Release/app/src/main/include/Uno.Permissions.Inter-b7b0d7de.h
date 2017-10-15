@@ -1,4 +1,4 @@
-// This file was generated based on '/Users/a/Library/Application Support/Fusetools/Packages/Uno.Permissions/1.2.2/$.uno'.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Uno.Permissions/1.3.1/AndroidPermissionsInternal.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -11,7 +11,7 @@ namespace Uno{
 namespace Permissions{
 namespace Internal{
 
-// internal sealed extern class Android :313
+// internal sealed extern class Android :10
 // {
 uType* Android_typeof();
 void Android___access_coarse_location_fn(::g::Uno::Permissions::PlatformPermission* __retval);

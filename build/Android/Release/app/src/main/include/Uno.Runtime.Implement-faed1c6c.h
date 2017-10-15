@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/UnoCore/1.2.2/source/uno/runtime/implementation/internal/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/UnoCore/1.3.1/Source/Uno/Runtime/Implementation/Internal/NumericFormatter.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -11,7 +11,7 @@ namespace Runtime{
 namespace Implementation{
 namespace Internal{
 
-// public static class NumericFormatter :1140
+// public static class NumericFormatter :18
 // {
 uClassType* NumericFormatter_typeof();
 void NumericFormatter__CalculateExponential_fn(double* d, double* significand, int* exponent);
@@ -55,11 +55,11 @@ void NumericFormatter__Padding_fn(int* length, uString** __retval);
 struct NumericFormatter : uObject
 {
     static uSStrong<uString*> _decimalPoint_;
-    static uSStrong<uString*>& _decimalPoint() { return NumericFormatter_typeof()->Init(), _decimalPoint_; }
+    static uSStrong<uString*>& _decimalPoint() { return _decimalPoint_; }
     static int ExponentialDigits_;
-    static int& ExponentialDigits() { return NumericFormatter_typeof()->Init(), ExponentialDigits_; }
+    static int& ExponentialDigits() { return ExponentialDigits_; }
     static int NumberDecimalDigits_;
-    static int& NumberDecimalDigits() { return NumericFormatter_typeof()->Init(), NumberDecimalDigits_; }
+    static int& NumberDecimalDigits() { return NumberDecimalDigits_; }
 
     static void CalculateExponential(double d, double* significand, int* exponent);
     static int Digits(uString* formatString);

@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Elements/1.2.1/resources/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Elements/1.3.0-rc2/Resources/TextureImageSource.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -12,7 +12,7 @@ namespace g{
 namespace Fuse{
 namespace Resources{
 
-// public sealed class TextureImageSource :1201
+// public sealed class TextureImageSource :16
 // {
 ::g::Fuse::Resources::ImageSource_type* TextureImageSource_typeof();
 void TextureImageSource__get_Density_fn(TextureImageSource* __this, float* __retval);

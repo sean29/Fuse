@@ -1,17 +1,18 @@
-// This file was generated based on /usr/local/share/uno/Packages/UnoCore/1.2.2/source/uno/io/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/UnoCore/1.3.1/Source/Uno/IO/FileSystemEnumerable.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
 #include <Uno.Collections.IEnumerable-1.h>
 #include <Uno.Object.h>
 #include <Uno.String.h>
+class CppXliFileSystemEnumerator;
 namespace g{namespace Uno{namespace IO{struct FileSystemEnumerable;}}}
 
 namespace g{
 namespace Uno{
 namespace IO{
 
-// internal sealed class FileSystemEnumerable :1784
+// internal sealed class FileSystemEnumerable :7
 // {
 struct FileSystemEnumerable_type : uType
 {
@@ -21,6 +22,7 @@ struct FileSystemEnumerable_type : uType
 FileSystemEnumerable_type* FileSystemEnumerable_typeof();
 void FileSystemEnumerable__ctor__fn(FileSystemEnumerable* __this, uString* dirName, int* mode);
 void FileSystemEnumerable__GetEnumerator_fn(FileSystemEnumerable* __this, uObject** __retval);
+void FileSystemEnumerable__GetEnumerator1_fn(uString* dirName, ::CppXliFileSystemEnumerator** __retval);
 void FileSystemEnumerable__New1_fn(uString* dirName, int* mode, FileSystemEnumerable** __retval);
 
 struct FileSystemEnumerable : uObject
@@ -30,6 +32,7 @@ struct FileSystemEnumerable : uObject
 
     void ctor_(uString* dirName, int mode);
     uObject* GetEnumerator();
+    static ::CppXliFileSystemEnumerator* GetEnumerator1(uString* dirName);
     static FileSystemEnumerable* New1(uString* dirName, int mode);
 };
 // }

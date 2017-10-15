@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/UnoCore/1.2.2/source/uno/runtime/implementation/shaderbackends/opengl/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/UnoCore/1.3.1/Source/Uno/Runtime/Implementation/ShaderBackends/OpenGL/GLDrawCall.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -25,7 +25,7 @@ namespace Implementation{
 namespace ShaderBackends{
 namespace OpenGL{
 
-// public extern struct GLDrawCall :71
+// public extern struct GLDrawCall :8
 // {
 uStructType* GLDrawCall_typeof();
 void GLDrawCall__ctor__fn(GLDrawCall* __this, ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLProgram* program);

@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Reactive.JavaScript/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Reactive.JavaScript/1.3.0-rc2/ObjectMirror.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -14,7 +14,7 @@ namespace g{
 namespace Fuse{
 namespace Reactive{
 
-// internal sealed class ObjectMirror :702
+// internal sealed class ObjectMirror :6
 // {
 struct ObjectMirror_type : ::g::Fuse::Reactive::ValueMirror_type
 {

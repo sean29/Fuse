@@ -1,4 +1,4 @@
-// This file was generated based on '/Users/a/Library/Application Support/Fusetools/Packages/Uno.Permissions/1.2.2/$.uno'.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Uno.Permissions/1.3.1/Permissions.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -9,7 +9,7 @@ namespace g{
 namespace Uno{
 namespace Permissions{
 
-// internal abstract interface IPermissionPromise :21
+// internal abstract interface IPermissionPromise :19
 // {
 uInterfaceType* IPermissionPromise_typeof();
 

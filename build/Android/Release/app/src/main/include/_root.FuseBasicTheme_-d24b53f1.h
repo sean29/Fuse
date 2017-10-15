@@ -1,4 +1,4 @@
-// This file was generated based on '/Users/a/Library/Application Support/Fusetools/Packages/Fuse.BasicTheme/1.2.1/.uno/ux11/$.uno'.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.BasicTheme/1.3.0-rc2/.uno/ux13/Fuse.BasicTheme.unoproj.g.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -11,7 +11,7 @@ namespace g{struct FuseBasicTheme_FuseDrawingSolidColor_Color_Property;}
 
 namespace g{
 
-// internal sealed class FuseBasicTheme_FuseDrawingSolidColor_Color_Property :792
+// internal sealed class FuseBasicTheme_FuseDrawingSolidColor_Color_Property :28
 // {
 ::g::Uno::UX::Property1_type* FuseBasicTheme_FuseDrawingSolidColor_Color_Property_typeof();
 void FuseBasicTheme_FuseDrawingSolidColor_Color_Property__ctor_3_fn(FuseBasicTheme_FuseDrawingSolidColor_Color_Property* __this, ::g::Fuse::Drawing::SolidColor* obj, ::g::Uno::UX::Selector* name);

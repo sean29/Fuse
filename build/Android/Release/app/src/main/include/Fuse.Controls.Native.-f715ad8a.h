@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Controls.Native/1.2.1/android/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Controls.Native/1.3.0-rc2/Android/TypefaceCache.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -13,7 +13,7 @@ namespace Controls{
 namespace Native{
 namespace Android{
 
-// internal sealed extern class Typeface :2476
+// internal sealed extern class Typeface :10
 // {
 uType* Typeface_typeof();
 void Typeface__ctor__fn(Typeface* __this, ::g::Java::Object* handle);

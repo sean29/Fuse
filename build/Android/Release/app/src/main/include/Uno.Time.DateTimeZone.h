@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/UnoCore/1.2.2/source/uno/time/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/UnoCore/1.3.1/Source/Uno/Time/DateTimeZone.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -11,7 +11,7 @@ namespace g{
 namespace Uno{
 namespace Time{
 
-// public abstract class DateTimeZone :308
+// public abstract class DateTimeZone :3
 // {
 struct DateTimeZone_type : uType
 {
@@ -35,7 +35,7 @@ struct DateTimeZone : uObject
     int64_t maxOffsetTicks;
     int64_t minOffsetTicks;
     static uSStrong<DateTimeZone*> UtcZone_;
-    static uSStrong<DateTimeZone*>& UtcZone() { return DateTimeZone_typeof()->Init(), UtcZone_; }
+    static uSStrong<DateTimeZone*>& UtcZone() { return UtcZone_; }
 
     void ctor_(uString* id1, bool isFixed1, ::g::Uno::Time::Offset minOffset, ::g::Uno::Time::Offset maxOffset);
     bool Equals2(DateTimeZone* obj);

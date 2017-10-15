@@ -1,16 +1,16 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Controls.Navigation/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Controls.Navigation/1.3.0-rc2/Navigator.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
 #include <Uno.Object.h>
 namespace g{namespace Fuse{namespace Controls{struct Navigator__DeferSwitch;}}}
-namespace g{namespace Fuse{struct Visual;}}
+namespace g{namespace Fuse{namespace Navigation{struct RouterPage;}}}
 
 namespace g{
 namespace Fuse{
 namespace Controls{
 
-// private sealed class Navigator.DeferSwitch :1578
+// private sealed class Navigator.DeferSwitch :614
 // {
 uType* Navigator__DeferSwitch_typeof();
 void Navigator__DeferSwitch__ctor__fn(Navigator__DeferSwitch* __this);
@@ -20,9 +20,7 @@ struct Navigator__DeferSwitch : uObject
 {
     int GotoMode;
     int Operation;
-    uStrong< ::g::Fuse::Visual*> Page;
-    uStrong<uString*> Parameter;
-    uStrong<uString*> Path;
+    uStrong< ::g::Fuse::Navigation::RouterPage*> Page;
 
     void ctor_();
     static Navigator__DeferSwitch* New1();

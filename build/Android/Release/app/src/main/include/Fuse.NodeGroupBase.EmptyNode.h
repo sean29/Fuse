@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Nodes/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Nodes/1.3.0-rc2/NodeGroup.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -15,7 +15,7 @@ namespace g{namespace Fuse{struct NodeGroupBase__EmptyNode;}}
 namespace g{
 namespace Fuse{
 
-// private sealed class NodeGroupBase.EmptyNode :3275
+// private sealed class NodeGroupBase.EmptyNode :151
 // {
 ::g::Fuse::Node_type* NodeGroupBase__EmptyNode_typeof();
 void NodeGroupBase__EmptyNode__ctor_2_fn(NodeGroupBase__EmptyNode* __this);

@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Triggers/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Triggers/1.3.0-rc2/WhileBool.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -20,7 +20,7 @@ namespace g{
 namespace Fuse{
 namespace Triggers{
 
-// public class WhileTrue :3431
+// public class WhileTrue :85
 // {
 ::g::Fuse::Triggers::WhileBool_type* WhileTrue_typeof();
 void WhileTrue__ctor_8_fn(WhileTrue* __this);

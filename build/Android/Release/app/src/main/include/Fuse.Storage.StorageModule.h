@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Storage/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Storage/1.3.0-rc2/StorageModule.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -13,7 +13,7 @@ namespace g{
 namespace Fuse{
 namespace Storage{
 
-// public sealed class StorageModule :148
+// public sealed class StorageModule :18
 // {
 ::g::Fuse::Scripting::NativeModule_type* StorageModule_typeof();
 void StorageModule__ctor_2_fn(StorageModule* __this);

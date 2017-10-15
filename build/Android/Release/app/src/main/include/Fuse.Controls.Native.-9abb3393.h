@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Controls.Native/1.2.1/android/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Controls.Native/1.3.0-rc2/Android/TextView.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -17,7 +17,7 @@ namespace Controls{
 namespace Native{
 namespace Android{
 
-// public extern class TextView :2329
+// public extern class TextView :8
 // {
 struct TextView_type : ::g::Fuse::Controls::Native::Android::View_type
 {
@@ -25,14 +25,13 @@ struct TextView_type : ::g::Fuse::Controls::Native::Android::View_type
 };
 
 TextView_type* TextView_typeof();
-void TextView__ctor_8_fn(TextView* __this);
-void TextView__ctor_9_fn(TextView* __this, ::g::Java::Object* handle);
+void TextView__ctor_9_fn(TextView* __this);
+void TextView__ctor_10_fn(TextView* __this, ::g::Java::Object* handle);
 void TextView__Create_fn(::g::Java::Object** __retval);
 void TextView__set_Font_fn(TextView* __this, ::g::Fuse::Font* value);
 void TextView__set_FontSize_fn(TextView* __this, float* value);
 void TextView__set_LineSpacing_fn(TextView* __this, float* value);
 void TextView__set_MaxLength_fn(TextView* __this, int* value);
-void TextView__New4_fn(TextView** __retval);
 void TextView__SetFont_fn(::g::Java::Object* handle, ::g::Java::Object* fontHandle);
 void TextView__SetFontSize_fn(::g::Java::Object* handle, float* size);
 void TextView__SetLineSpacing_fn(::g::Java::Object* handle, float* spacing);
@@ -49,8 +48,8 @@ void TextView__set_Value_fn(TextView* __this, uString* value);
 
 struct TextView : ::g::Fuse::Controls::Native::Android::LeafView
 {
-    void ctor_8();
-    void ctor_9(::g::Java::Object* handle);
+    void ctor_9();
+    void ctor_10(::g::Java::Object* handle);
     void Font(::g::Fuse::Font* value);
     void FontSize(float value);
     void LineSpacing(float value);
@@ -61,7 +60,6 @@ struct TextView : ::g::Fuse::Controls::Native::Android::LeafView
     void TextWrapping(int value);
     void Value(uString* value);
     static ::g::Java::Object* Create();
-    static TextView* New4();
     static void SetFont(::g::Java::Object* handle, ::g::Java::Object* fontHandle);
     static void SetFontSize(::g::Java::Object* handle, float size);
     static void SetLineSpacing(::g::Java::Object* handle, float spacing);

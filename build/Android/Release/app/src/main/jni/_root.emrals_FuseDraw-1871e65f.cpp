@@ -1,4 +1,4 @@
-// This file was generated based on '.uno/ux11/emrals.unoproj.g.uno'.
+// This file was generated based on '.uno/ux13/emrals.unoproj.g.uno'.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #include <_root.emrals_FuseDraw-1871e65f.h>
@@ -18,7 +18,7 @@ static void emrals_FuseDrawingStroke_Color_Property_build(uType* type)
     ::TYPES[0] = ::g::Fuse::Drawing::Stroke_typeof();
     type->SetBase(::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::Float4_typeof(), NULL));
     type->SetFields(1,
-        ::TYPES[0/*Fuse.Drawing.Stroke*/], offsetof(::g::emrals_FuseDrawingStroke_Color_Property, _obj), uFieldFlagsWeak);
+        ::TYPES[0/*Fuse.Drawing.Stroke*/], offsetof(emrals_FuseDrawingStroke_Color_Property, _obj), uFieldFlagsWeak);
 }
 
 ::g::Uno::UX::Property1_type* emrals_FuseDrawingStroke_Color_Property_typeof()

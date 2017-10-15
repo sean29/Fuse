@@ -32,41 +32,41 @@ public class QreaderImpl
         android.util.Log.d("emrals", (message==null ? "null" : message.toString()));
     }
 
-    public static Object Init449()
+    public static Object Init448()
     {
         com.fuse.Activity.ResultListener l = new com.fuse.Activity.ResultListener() {
             @Override public boolean onResult(int requestCode, int resultCode, android.content.Intent data) {
-                return com.foreign.QreaderImpl.OnRecieved450(requestCode, resultCode, data);
+                return com.foreign.QreaderImpl.OnRecieved449(requestCode, resultCode, data);
             }
         };
         com.fuse.Activity.subscribeToResults(l);
         return l;
     }
     
-    public static boolean OnRecieved450(final int requestCode,final int resultCode,final Object data)
+    public static boolean OnRecieved449(final int requestCode,final int resultCode,final Object data)
     {
-        if (requestCode == ExternedBlockHost.callUno_QreaderImpl_RC_BARCODE_CAPTUREGet451()&&resultCode == CommonStatusCodes.SUCCESS && data != null) {
+        if (requestCode == ExternedBlockHost.callUno_QreaderImpl_RC_BARCODE_CAPTUREGet450()&&resultCode == CommonStatusCodes.SUCCESS && data != null) {
         
         				Barcode barcode = ((Intent)data).getParcelableExtra(BarcodeCaptureActivity.BarcodeObject);
         				if(barcode.displayValue != ""){
-        							ExternedBlockHost.callUno_QreaderImpl_Picked452((String)barcode.displayValue);
+        							ExternedBlockHost.callUno_QreaderImpl_Picked451((String)barcode.displayValue);
         				}else{
-        								ExternedBlockHost.callUno_QreaderImpl_Cancelled453();
+        								ExternedBlockHost.callUno_QreaderImpl_Cancelled452();
         				}
         }
         else {
-        				ExternedBlockHost.callUno_QreaderImpl_Cancelled453();
+        				ExternedBlockHost.callUno_QreaderImpl_Cancelled452();
         }
         
-            return (requestCode == ExternedBlockHost.callUno_QreaderImpl_RC_BARCODE_CAPTUREGet451());
+            return (requestCode == ExternedBlockHost.callUno_QreaderImpl_RC_BARCODE_CAPTUREGet450());
     }
     
-    public static void ScannerImpl454()
+    public static void ScannerImpl453()
     {
         Activity a = com.fuse.Activity.getRootActivity();
         // Intent intent = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
         Intent intent = new Intent(a, BarcodeCaptureActivity.class);
-        a.startActivityForResult(intent, ExternedBlockHost.callUno_QreaderImpl_RC_BARCODE_CAPTUREGet451());
+        a.startActivityForResult(intent, ExternedBlockHost.callUno_QreaderImpl_RC_BARCODE_CAPTUREGet450());
     }
     
 }

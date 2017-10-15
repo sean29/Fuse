@@ -32,7 +32,6 @@
 #include <Fuse.Triggers.Trigger.h>
 #include <Fuse.Triggers.WhileDisabled.h>
 #include <Fuse.Triggers.WhileFocusWithin.h>
-#include <Fuse.Visual.h>
 #include <Uno.Double.h>
 #include <Uno.Float.h>
 #include <Uno.Float4.h>
@@ -41,26 +40,27 @@
 #include <Uno.String.h>
 #include <Uno.UX.BundleFileSource.h>
 #include <Uno.UX.FileSource.h>
-#include <Uno.UX.NameTable.h>
 #include <Uno.UX.Property.h>
 #include <Uno.UX.Property-1.h>
 #include <Uno.UX.Resource.h>
 #include <Uno.UX.Selector.h>
 #include <Uno.UX.Unit.h>
-static uString* STRINGS[213];
-static uType* TYPES[8];
+static uString* STRINGS[212];
+static uType* TYPES[7];
 
 namespace g{
 namespace Basic{
 
-// /Users/a/Library/Application Support/Fusetools/Packages/Fuse.BasicTheme/1.2.1/$.uno
-// -----------------------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.BasicTheme\1.3.0-rc2\Basic.Resources.ux.uno
+// --------------------------------------------------------------------------------------------
 
-// public partial sealed class Resources :36
+// public partial sealed class Resources :34
 // {
-// static Resources() :250
+// static Resources() :23
 static void Resources__cctor_4_fn(uType* __type)
 {
+    ::g::Fuse::Properties_typeof()->Init();
+    ::g::Uno::UX::Resource_typeof()->Init();
     Resources::_colorScheme_ = ::g::Fuse::Properties::CreateHandle();
     Resources::ColorCodes_ = uArray::Init<uString*>(::TYPES[0/*string[]*/], 10, ::STRINGS[0/*"Basic.C50"*/], ::STRINGS[1/*"Basic.C100"*/], ::STRINGS[2/*"Basic.C200"*/], ::STRINGS[3/*"Basic.C300"*/], ::STRINGS[4/*"Basic.C400"*/], ::STRINGS[5/*"Basic.C500"*/], ::STRINGS[6/*"Basic.C600"*/], ::STRINGS[7/*"Basic.C700"*/], ::STRINGS[8/*"Basic.C800"*/], ::STRINGS[9/*"Basic.C900"*/]);
     Resources::Red_ = uArray::Init<uString*>(::TYPES[0/*string[]*/], 10, ::STRINGS[10/*"#FFEBEE"*/], ::STRINGS[11/*"#FFCDD2"*/], ::STRINGS[12/*"#EF9A9A"*/], ::STRINGS[13/*"#E57373"*/], ::STRINGS[14/*"#EF5350"*/], ::STRINGS[15/*"#F44336"*/], ::STRINGS[16/*"#E53935"*/], ::STRINGS[17/*"#D32F2F"*/], ::STRINGS[18/*"#C62828"*/], ::STRINGS[19/*"#B71C1C"*/]);
@@ -82,9 +82,9 @@ static void Resources__cctor_4_fn(uType* __type)
     Resources::Brown_ = uArray::Init<uString*>(::TYPES[0/*string[]*/], 10, ::STRINGS[170/*"#EFEBE9"*/], ::STRINGS[171/*"#D7CCC8"*/], ::STRINGS[172/*"#BCAAA4"*/], ::STRINGS[173/*"#A1887F"*/], ::STRINGS[174/*"#8D6E63"*/], ::STRINGS[175/*"#795548"*/], ::STRINGS[176/*"#6D4C41"*/], ::STRINGS[177/*"#5D4037"*/], ::STRINGS[178/*"#4E342E"*/], ::STRINGS[179/*"#3E2723"*/]);
     Resources::Grey_ = uArray::Init<uString*>(::TYPES[0/*string[]*/], 10, ::STRINGS[180/*"#FAFAFA"*/], ::STRINGS[181/*"#F5F5F5"*/], ::STRINGS[182/*"#EEEEEE"*/], ::STRINGS[183/*"#E0E0E0"*/], ::STRINGS[184/*"#BDBDBD"*/], ::STRINGS[185/*"#9E9E9E"*/], ::STRINGS[186/*"#757575"*/], ::STRINGS[187/*"#616161"*/], ::STRINGS[188/*"#424242"*/], ::STRINGS[189/*"#212121"*/]);
     Resources::BlueGrey_ = uArray::Init<uString*>(::TYPES[0/*string[]*/], 10, ::STRINGS[190/*"#ECEFF1"*/], ::STRINGS[191/*"#CFD8DC"*/], ::STRINGS[192/*"#B0BEC5"*/], ::STRINGS[193/*"#90A4AE"*/], ::STRINGS[194/*"#78909C"*/], ::STRINGS[195/*"#607D8B"*/], ::STRINGS[196/*"#546E7A"*/], ::STRINGS[197/*"#455A64"*/], ::STRINGS[198/*"#37474F"*/], ::STRINGS[199/*"#263238"*/]);
-    Resources::RobotoRegular_ = ::g::Fuse::Font::New2(::g::Uno::UX::BundleFileSource::New1(::g::FuseBasicTheme_bundle::RobotoRegularef5ed1be()));
-    Resources::RobotoLight_ = ::g::Fuse::Font::New2(::g::Uno::UX::BundleFileSource::New1(::g::FuseBasicTheme_bundle::RobotoLighta1424b6a()));
-    Resources::RobotoMedium_ = ::g::Fuse::Font::New2(::g::Uno::UX::BundleFileSource::New1(::g::FuseBasicTheme_bundle::RobotoMedium3d90c99b()));
+    Resources::RobotoRegular_ = ::g::Fuse::Font::New2(::g::Uno::UX::BundleFileSource::New1(::g::FuseBasicTheme_bundle::RobotoRegularbce30049()));
+    Resources::RobotoLight_ = ::g::Fuse::Font::New2(::g::Uno::UX::BundleFileSource::New1(::g::FuseBasicTheme_bundle::RobotoLight94e9481d()));
+    Resources::RobotoMedium_ = ::g::Fuse::Font::New2(::g::Uno::UX::BundleFileSource::New1(::g::FuseBasicTheme_bundle::RobotoMedium02e91c82()));
     Resources::BasicCLine_ = ::g::Uno::Float4__New2(0.8f, 0.8f, 0.8f, 1.0f);
     Resources::BasicCFillFore_ = ::g::Uno::Float4__New2(1.0f, 1.0f, 1.0f, 1.0f);
     Resources::BasicCEmptyFore_ = ::g::Uno::Float4__New2(0.0f, 0.0f, 0.0f, 1.0f);
@@ -338,53 +338,54 @@ static void Resources_build(uType* type)
         ::g::Uno::Collections::IList_typeof()->MakeType(::g::Fuse::Node_typeof(), NULL), offsetof(::g::Fuse::Controls::Panel_type, interface6),
         ::g::Uno::UX::IPropertyListener_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface7),
         ::g::Fuse::ITemplateSource_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface8),
-        ::g::Uno::Collections::ICollection_typeof()->MakeType(::g::Fuse::Node_typeof(), NULL), offsetof(::g::Fuse::Controls::Panel_type, interface9),
-        ::g::Uno::Collections::IEnumerable_typeof()->MakeType(::g::Fuse::Node_typeof(), NULL), offsetof(::g::Fuse::Controls::Panel_type, interface10),
-        ::g::Fuse::Triggers::Actions::IShow_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface11),
-        ::g::Fuse::Triggers::Actions::IHide_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface12),
-        ::g::Fuse::Triggers::Actions::ICollapse_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface13),
-        ::g::Fuse::IActualPlacement_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface14),
-        ::g::Fuse::Animations::IResize_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface15),
-        ::g::Fuse::Drawing::ISurfaceDrawable_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface16));
-    type->SetFields(105,
-        ::g::Fuse::PropertyHandle_typeof(), (uintptr_t)&::g::Basic::Resources::_colorScheme_, uFieldFlagsStatic,
-        ::TYPES[0/*string[]*/], (uintptr_t)&::g::Basic::Resources::Amber_, uFieldFlagsStatic,
-        ::g::Uno::Float4_typeof(), (uintptr_t)&::g::Basic::Resources::BasicC100_, uFieldFlagsStatic,
-        ::g::Uno::Float4_typeof(), (uintptr_t)&::g::Basic::Resources::BasicC200_, uFieldFlagsStatic,
-        ::g::Uno::Float4_typeof(), (uintptr_t)&::g::Basic::Resources::BasicC300_, uFieldFlagsStatic,
-        ::g::Uno::Float4_typeof(), (uintptr_t)&::g::Basic::Resources::BasicC400_, uFieldFlagsStatic,
-        ::g::Uno::Float4_typeof(), (uintptr_t)&::g::Basic::Resources::BasicC50_, uFieldFlagsStatic,
-        ::g::Uno::Float4_typeof(), (uintptr_t)&::g::Basic::Resources::BasicC500_, uFieldFlagsStatic,
-        ::g::Uno::Float4_typeof(), (uintptr_t)&::g::Basic::Resources::BasicC600_, uFieldFlagsStatic,
-        ::g::Uno::Float4_typeof(), (uintptr_t)&::g::Basic::Resources::BasicC700_, uFieldFlagsStatic,
-        ::g::Uno::Float4_typeof(), (uintptr_t)&::g::Basic::Resources::BasicC800_, uFieldFlagsStatic,
-        ::g::Uno::Float4_typeof(), (uintptr_t)&::g::Basic::Resources::BasicC900_, uFieldFlagsStatic,
-        ::g::Uno::Float4_typeof(), (uintptr_t)&::g::Basic::Resources::BasicCEmptyFore_, uFieldFlagsStatic,
-        ::g::Uno::Float4_typeof(), (uintptr_t)&::g::Basic::Resources::BasicCFillFore_, uFieldFlagsStatic,
-        ::g::Uno::Float4_typeof(), (uintptr_t)&::g::Basic::Resources::BasicCLine_, uFieldFlagsStatic,
-        ::g::Uno::Float4_typeof(), (uintptr_t)&::g::Basic::Resources::BasicCShadow_, uFieldFlagsStatic,
-        ::TYPES[0/*string[]*/], (uintptr_t)&::g::Basic::Resources::Blue_, uFieldFlagsStatic,
-        ::TYPES[0/*string[]*/], (uintptr_t)&::g::Basic::Resources::BlueGrey_, uFieldFlagsStatic,
-        ::TYPES[0/*string[]*/], (uintptr_t)&::g::Basic::Resources::Brown_, uFieldFlagsStatic,
-        ::TYPES[0/*string[]*/], (uintptr_t)&::g::Basic::Resources::ColorCodes_, uFieldFlagsStatic,
-        ::TYPES[0/*string[]*/], (uintptr_t)&::g::Basic::Resources::Cyan_, uFieldFlagsStatic,
-        ::TYPES[0/*string[]*/], (uintptr_t)&::g::Basic::Resources::DeepOrange_, uFieldFlagsStatic,
-        ::TYPES[0/*string[]*/], (uintptr_t)&::g::Basic::Resources::DeepPurple_, uFieldFlagsStatic,
-        ::TYPES[0/*string[]*/], (uintptr_t)&::g::Basic::Resources::Green_, uFieldFlagsStatic,
-        ::TYPES[0/*string[]*/], (uintptr_t)&::g::Basic::Resources::Grey_, uFieldFlagsStatic,
-        ::TYPES[0/*string[]*/], (uintptr_t)&::g::Basic::Resources::Indigo_, uFieldFlagsStatic,
-        ::TYPES[0/*string[]*/], (uintptr_t)&::g::Basic::Resources::LightBlue_, uFieldFlagsStatic,
-        ::TYPES[0/*string[]*/], (uintptr_t)&::g::Basic::Resources::LightGreen_, uFieldFlagsStatic,
-        ::TYPES[0/*string[]*/], (uintptr_t)&::g::Basic::Resources::Lime_, uFieldFlagsStatic,
-        ::TYPES[0/*string[]*/], (uintptr_t)&::g::Basic::Resources::Orange_, uFieldFlagsStatic,
-        ::TYPES[0/*string[]*/], (uintptr_t)&::g::Basic::Resources::Pink_, uFieldFlagsStatic,
-        ::TYPES[0/*string[]*/], (uintptr_t)&::g::Basic::Resources::Purple_, uFieldFlagsStatic,
-        ::TYPES[0/*string[]*/], (uintptr_t)&::g::Basic::Resources::Red_, uFieldFlagsStatic,
-        ::g::Fuse::Font_typeof(), (uintptr_t)&::g::Basic::Resources::RobotoLight_, uFieldFlagsStatic,
-        ::g::Fuse::Font_typeof(), (uintptr_t)&::g::Basic::Resources::RobotoMedium_, uFieldFlagsStatic,
-        ::g::Fuse::Font_typeof(), (uintptr_t)&::g::Basic::Resources::RobotoRegular_, uFieldFlagsStatic,
-        ::TYPES[0/*string[]*/], (uintptr_t)&::g::Basic::Resources::Teal_, uFieldFlagsStatic,
-        ::TYPES[0/*string[]*/], (uintptr_t)&::g::Basic::Resources::Yellow_, uFieldFlagsStatic);
+        ::g::Uno::Collections::IEnumerable_typeof()->MakeType(::g::Fuse::Visual_typeof(), NULL), offsetof(::g::Fuse::Controls::Panel_type, interface9),
+        ::g::Uno::Collections::ICollection_typeof()->MakeType(::g::Fuse::Node_typeof(), NULL), offsetof(::g::Fuse::Controls::Panel_type, interface10),
+        ::g::Uno::Collections::IEnumerable_typeof()->MakeType(::g::Fuse::Node_typeof(), NULL), offsetof(::g::Fuse::Controls::Panel_type, interface11),
+        ::g::Fuse::Triggers::Actions::IShow_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface12),
+        ::g::Fuse::Triggers::Actions::IHide_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface13),
+        ::g::Fuse::Triggers::Actions::ICollapse_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface14),
+        ::g::Fuse::IActualPlacement_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface15),
+        ::g::Fuse::Animations::IResize_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface16),
+        ::g::Fuse::Drawing::ISurfaceDrawable_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface17));
+    type->SetFields(111,
+        ::g::Fuse::PropertyHandle_typeof(), (uintptr_t)&Resources::_colorScheme_, uFieldFlagsStatic,
+        ::TYPES[0/*string[]*/], (uintptr_t)&Resources::Amber_, uFieldFlagsStatic,
+        ::g::Uno::Float4_typeof(), (uintptr_t)&Resources::BasicC100_, uFieldFlagsStatic,
+        ::g::Uno::Float4_typeof(), (uintptr_t)&Resources::BasicC200_, uFieldFlagsStatic,
+        ::g::Uno::Float4_typeof(), (uintptr_t)&Resources::BasicC300_, uFieldFlagsStatic,
+        ::g::Uno::Float4_typeof(), (uintptr_t)&Resources::BasicC400_, uFieldFlagsStatic,
+        ::g::Uno::Float4_typeof(), (uintptr_t)&Resources::BasicC50_, uFieldFlagsStatic,
+        ::g::Uno::Float4_typeof(), (uintptr_t)&Resources::BasicC500_, uFieldFlagsStatic,
+        ::g::Uno::Float4_typeof(), (uintptr_t)&Resources::BasicC600_, uFieldFlagsStatic,
+        ::g::Uno::Float4_typeof(), (uintptr_t)&Resources::BasicC700_, uFieldFlagsStatic,
+        ::g::Uno::Float4_typeof(), (uintptr_t)&Resources::BasicC800_, uFieldFlagsStatic,
+        ::g::Uno::Float4_typeof(), (uintptr_t)&Resources::BasicC900_, uFieldFlagsStatic,
+        ::g::Uno::Float4_typeof(), (uintptr_t)&Resources::BasicCEmptyFore_, uFieldFlagsStatic,
+        ::g::Uno::Float4_typeof(), (uintptr_t)&Resources::BasicCFillFore_, uFieldFlagsStatic,
+        ::g::Uno::Float4_typeof(), (uintptr_t)&Resources::BasicCLine_, uFieldFlagsStatic,
+        ::g::Uno::Float4_typeof(), (uintptr_t)&Resources::BasicCShadow_, uFieldFlagsStatic,
+        ::TYPES[0/*string[]*/], (uintptr_t)&Resources::Blue_, uFieldFlagsStatic,
+        ::TYPES[0/*string[]*/], (uintptr_t)&Resources::BlueGrey_, uFieldFlagsStatic,
+        ::TYPES[0/*string[]*/], (uintptr_t)&Resources::Brown_, uFieldFlagsStatic,
+        ::TYPES[0/*string[]*/], (uintptr_t)&Resources::ColorCodes_, uFieldFlagsStatic,
+        ::TYPES[0/*string[]*/], (uintptr_t)&Resources::Cyan_, uFieldFlagsStatic,
+        ::TYPES[0/*string[]*/], (uintptr_t)&Resources::DeepOrange_, uFieldFlagsStatic,
+        ::TYPES[0/*string[]*/], (uintptr_t)&Resources::DeepPurple_, uFieldFlagsStatic,
+        ::TYPES[0/*string[]*/], (uintptr_t)&Resources::Green_, uFieldFlagsStatic,
+        ::TYPES[0/*string[]*/], (uintptr_t)&Resources::Grey_, uFieldFlagsStatic,
+        ::TYPES[0/*string[]*/], (uintptr_t)&Resources::Indigo_, uFieldFlagsStatic,
+        ::TYPES[0/*string[]*/], (uintptr_t)&Resources::LightBlue_, uFieldFlagsStatic,
+        ::TYPES[0/*string[]*/], (uintptr_t)&Resources::LightGreen_, uFieldFlagsStatic,
+        ::TYPES[0/*string[]*/], (uintptr_t)&Resources::Lime_, uFieldFlagsStatic,
+        ::TYPES[0/*string[]*/], (uintptr_t)&Resources::Orange_, uFieldFlagsStatic,
+        ::TYPES[0/*string[]*/], (uintptr_t)&Resources::Pink_, uFieldFlagsStatic,
+        ::TYPES[0/*string[]*/], (uintptr_t)&Resources::Purple_, uFieldFlagsStatic,
+        ::TYPES[0/*string[]*/], (uintptr_t)&Resources::Red_, uFieldFlagsStatic,
+        ::g::Fuse::Font_typeof(), (uintptr_t)&Resources::RobotoLight_, uFieldFlagsStatic,
+        ::g::Fuse::Font_typeof(), (uintptr_t)&Resources::RobotoMedium_, uFieldFlagsStatic,
+        ::g::Fuse::Font_typeof(), (uintptr_t)&Resources::RobotoRegular_, uFieldFlagsStatic,
+        ::TYPES[0/*string[]*/], (uintptr_t)&Resources::Teal_, uFieldFlagsStatic,
+        ::TYPES[0/*string[]*/], (uintptr_t)&Resources::Yellow_, uFieldFlagsStatic);
 }
 
 ::g::Fuse::Controls::Panel_type* Resources_typeof()
@@ -394,34 +395,35 @@ static void Resources_build(uType* type)
 
     uTypeOptions options;
     options.BaseDefinition = ::g::Fuse::Controls::Panel_typeof();
-    options.FieldCount = 143;
-    options.InterfaceCount = 17;
+    options.FieldCount = 149;
+    options.InterfaceCount = 18;
     options.ObjectSize = sizeof(Resources);
     options.TypeSize = sizeof(::g::Fuse::Controls::Panel_type);
     type = (::g::Fuse::Controls::Panel_type*)uClassType::New("Basic.Resources", options);
     type->fp_build_ = Resources_build;
     type->fp_cctor_ = Resources__cctor_4_fn;
-    type->interface16.fp_Draw = (void(*)(uObject*, ::g::Fuse::Drawing::Surface*))::g::Fuse::Controls::Panel__FuseDrawingISurfaceDrawableDraw_fn;
-    type->interface16.fp_get_IsPrimary = (void(*)(uObject*, bool*))::g::Fuse::Controls::Panel__FuseDrawingISurfaceDrawableget_IsPrimary_fn;
-    type->interface16.fp_get_ElementSize = (void(*)(uObject*, ::g::Uno::Float2*))::g::Fuse::Controls::Panel__FuseDrawingISurfaceDrawableget_ElementSize_fn;
-    type->interface11.fp_Show = (void(*)(uObject*))::g::Fuse::Elements::Element__FuseTriggersActionsIShowShow_fn;
-    type->interface13.fp_Collapse = (void(*)(uObject*))::g::Fuse::Elements::Element__FuseTriggersActionsICollapseCollapse_fn;
-    type->interface12.fp_Hide = (void(*)(uObject*))::g::Fuse::Elements::Element__FuseTriggersActionsIHideHide_fn;
-    type->interface15.fp_SetSize = (void(*)(uObject*, ::g::Uno::Float2*))::g::Fuse::Elements::Element__FuseAnimationsIResizeSetSize_fn;
-    type->interface14.fp_get_ActualSize = (void(*)(uObject*, ::g::Uno::Float3*))::g::Fuse::Elements::Element__FuseIActualPlacementget_ActualSize_fn;
-    type->interface14.fp_add_Placed = (void(*)(uObject*, uDelegate*))::g::Fuse::Elements::Element__add_Placed_fn;
-    type->interface14.fp_remove_Placed = (void(*)(uObject*, uDelegate*))::g::Fuse::Elements::Element__remove_Placed_fn;
-    type->interface9.fp_Clear = (void(*)(uObject*))::g::Fuse::Visual__UnoCollectionsICollectionFuseNodeClear_fn;
-    type->interface9.fp_Contains = (void(*)(uObject*, void*, bool*))::g::Fuse::Visual__UnoCollectionsICollectionFuseNodeContains_fn;
+    type->interface17.fp_Draw = (void(*)(uObject*, ::g::Fuse::Drawing::Surface*))::g::Fuse::Controls::Panel__FuseDrawingISurfaceDrawableDraw_fn;
+    type->interface17.fp_get_IsPrimary = (void(*)(uObject*, bool*))::g::Fuse::Controls::Panel__FuseDrawingISurfaceDrawableget_IsPrimary_fn;
+    type->interface17.fp_get_ElementSize = (void(*)(uObject*, ::g::Uno::Float2*))::g::Fuse::Controls::Panel__FuseDrawingISurfaceDrawableget_ElementSize_fn;
+    type->interface12.fp_Show = (void(*)(uObject*))::g::Fuse::Elements::Element__FuseTriggersActionsIShowShow_fn;
+    type->interface14.fp_Collapse = (void(*)(uObject*))::g::Fuse::Elements::Element__FuseTriggersActionsICollapseCollapse_fn;
+    type->interface13.fp_Hide = (void(*)(uObject*))::g::Fuse::Elements::Element__FuseTriggersActionsIHideHide_fn;
+    type->interface16.fp_SetSize = (void(*)(uObject*, ::g::Uno::Float2*))::g::Fuse::Elements::Element__FuseAnimationsIResizeSetSize_fn;
+    type->interface15.fp_get_ActualSize = (void(*)(uObject*, ::g::Uno::Float3*))::g::Fuse::Elements::Element__FuseIActualPlacementget_ActualSize_fn;
+    type->interface15.fp_add_Placed = (void(*)(uObject*, uDelegate*))::g::Fuse::Elements::Element__add_Placed_fn;
+    type->interface15.fp_remove_Placed = (void(*)(uObject*, uDelegate*))::g::Fuse::Elements::Element__remove_Placed_fn;
+    type->interface9.fp_GetEnumerator = (void(*)(uObject*, uObject**))::g::Fuse::Visual__UnoCollectionsIEnumerableFuseVisualGetEnumerator_fn;
+    type->interface10.fp_Clear = (void(*)(uObject*))::g::Fuse::Visual__UnoCollectionsICollectionFuseNodeClear_fn;
+    type->interface10.fp_Contains = (void(*)(uObject*, void*, bool*))::g::Fuse::Visual__UnoCollectionsICollectionFuseNodeContains_fn;
     type->interface6.fp_RemoveAt = (void(*)(uObject*, int*))::g::Fuse::Visual__UnoCollectionsIListFuseNodeRemoveAt_fn;
-    type->interface10.fp_GetEnumerator = (void(*)(uObject*, uObject**))::g::Fuse::Visual__UnoCollectionsIEnumerableFuseNodeGetEnumerator_fn;
-    type->interface9.fp_get_Count = (void(*)(uObject*, int*))::g::Fuse::Visual__UnoCollectionsICollectionFuseNodeget_Count_fn;
+    type->interface11.fp_GetEnumerator = (void(*)(uObject*, uObject**))::g::Fuse::Visual__UnoCollectionsIEnumerableFuseNodeGetEnumerator_fn;
+    type->interface10.fp_get_Count = (void(*)(uObject*, int*))::g::Fuse::Visual__UnoCollectionsICollectionFuseNodeget_Count_fn;
     type->interface6.fp_get_Item = (void(*)(uObject*, int*, uTRef))::g::Fuse::Visual__UnoCollectionsIListFuseNodeget_Item_fn;
     type->interface6.fp_Insert = (void(*)(uObject*, int*, void*))::g::Fuse::Visual__Insert1_fn;
     type->interface7.fp_OnPropertyChanged = (void(*)(uObject*, ::g::Uno::UX::PropertyObject*, ::g::Uno::UX::Selector*))::g::Fuse::Controls::Control__OnPropertyChanged2_fn;
     type->interface8.fp_FindTemplate = (void(*)(uObject*, uString*, ::g::Uno::UX::Template**))::g::Fuse::Visual__FindTemplate_fn;
-    type->interface9.fp_Add = (void(*)(uObject*, void*))::g::Fuse::Visual__Add1_fn;
-    type->interface9.fp_Remove = (void(*)(uObject*, void*, bool*))::g::Fuse::Visual__Remove1_fn;
+    type->interface10.fp_Add = (void(*)(uObject*, void*))::g::Fuse::Visual__Add1_fn;
+    type->interface10.fp_Remove = (void(*)(uObject*, void*, bool*))::g::Fuse::Visual__Remove1_fn;
     type->interface4.fp_Clear = (void(*)(uObject*))::g::Fuse::Node__UnoCollectionsICollectionFuseBindingClear_fn;
     type->interface4.fp_Contains = (void(*)(uObject*, void*, bool*))::g::Fuse::Node__UnoCollectionsICollectionFuseBindingContains_fn;
     type->interface0.fp_RemoveAt = (void(*)(uObject*, int*))::g::Fuse::Node__UnoCollectionsIListFuseBindingRemoveAt_fn;
@@ -480,40 +482,40 @@ uSStrong<uArray*> Resources::Teal_;
 uSStrong<uArray*> Resources::Yellow_;
 // }
 
-// /Users/a/Library/Application Support/Fusetools/Packages/Fuse.BasicTheme/1.2.1/.uno/ux11/$.uno
-// ---------------------------------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.BasicTheme\1.3.0-rc2\.uno\ux13\Basic.TextInput.g.uno
+// -----------------------------------------------------------------------------------------------------
 
-// public partial sealed class TextInput :664
+// public partial sealed class TextInput :4
 // {
-// static TextInput() :679
+// static TextInput() :14
 static void TextInput__cctor_3_fn(uType* __type)
 {
-    TextInput::__g_static_nametable1_ = uArray::Init<uString*>(::TYPES[0/*string[]*/], 2, ::STRINGS[207/*"_dividerRect"*/], ::STRINGS[208/*"thisDivider"*/]);
-    TextInput::__selector0_ = ::g::Uno::UX::Selector__op_Implicit(::STRINGS[209/*"Color"*/]);
-    TextInput::__selector1_ = ::g::Uno::UX::Selector__op_Implicit(::STRINGS[210/*"TextColor"*/]);
-    TextInput::__selector2_ = ::g::Uno::UX::Selector__op_Implicit(::STRINGS[211/*"Value"*/]);
-    TextInput::__selector3_ = ::g::Uno::UX::Selector__op_Implicit(::STRINGS[212/*"Height"*/]);
-    TextInput::__selector4_ = ::g::Uno::UX::Selector__op_Implicit(::STRINGS[207/*"_dividerRect"*/]);
+    ::g::Uno::UX::Selector_typeof()->Init();
+    TextInput::__selector0_ = ::g::Uno::UX::Selector__op_Implicit(::STRINGS[207/*"Color"*/]);
+    TextInput::__selector1_ = ::g::Uno::UX::Selector__op_Implicit(::STRINGS[208/*"TextColor"*/]);
+    TextInput::__selector2_ = ::g::Uno::UX::Selector__op_Implicit(::STRINGS[209/*"Value"*/]);
+    TextInput::__selector3_ = ::g::Uno::UX::Selector__op_Implicit(::STRINGS[210/*"Height"*/]);
+    TextInput::__selector4_ = ::g::Uno::UX::Selector__op_Implicit(::STRINGS[211/*"_dividerRect"*/]);
 }
 
 static void TextInput_build(uType* type)
 {
-    ::STRINGS[207] = uString::Const("_dividerRect");
-    ::STRINGS[208] = uString::Const("thisDivider");
-    ::STRINGS[209] = uString::Const("Color");
-    ::STRINGS[210] = uString::Const("TextColor");
-    ::STRINGS[211] = uString::Const("Value");
-    ::STRINGS[212] = uString::Const("Height");
+    ::STRINGS[207] = uString::Const("Color");
+    ::STRINGS[208] = uString::Const("TextColor");
+    ::STRINGS[209] = uString::Const("Value");
+    ::STRINGS[210] = uString::Const("Height");
+    ::STRINGS[211] = uString::Const("_dividerRect");
     ::STRINGS[203] = uString::Const("Basic.CLine");
     ::STRINGS[7] = uString::Const("Basic.C700");
-    ::TYPES[0] = ::g::Uno::String_typeof()->Array();
     ::TYPES[1] = ::g::Fuse::Animations::Change_typeof()->MakeType(::g::Uno::Float4_typeof(), NULL);
     ::TYPES[2] = ::g::Fuse::Animations::Change_typeof()->MakeType(::g::Uno::UX::Size_typeof(), NULL);
     ::TYPES[3] = ::g::Uno::Collections::ICollection_typeof()->MakeType(::g::Fuse::Node_typeof(), NULL);
     ::TYPES[4] = ::g::Uno::Collections::ICollection_typeof()->MakeType(::g::Fuse::Drawing::Brush_typeof(), NULL);
     ::TYPES[5] = ::g::Uno::Collections::ICollection_typeof()->MakeType(::g::Fuse::Binding_typeof(), NULL);
     ::TYPES[6] = ::g::Uno::Collections::ICollection_typeof()->MakeType(::g::Fuse::Animations::Animator_typeof(), NULL);
-    ::TYPES[7] = ::g::Uno::Collections::ICollection_typeof()->MakeType(uObject_typeof(), NULL);
+    type->SetDependencies(
+        ::g::Fuse::Controls::DockPanel_typeof(),
+        ::g::Fuse::Animations::Easing_typeof());
     type->SetInterfaces(
         ::g::Uno::Collections::IList_typeof()->MakeType(::g::Fuse::Binding_typeof(), NULL), offsetof(::g::Fuse::Controls::TextInputControl_type, interface0),
         ::g::Fuse::Scripting::IScriptObject_typeof(), offsetof(::g::Fuse::Controls::TextInputControl_type, interface1),
@@ -524,30 +526,29 @@ static void TextInput_build(uType* type)
         ::g::Uno::Collections::IList_typeof()->MakeType(::g::Fuse::Node_typeof(), NULL), offsetof(::g::Fuse::Controls::TextInputControl_type, interface6),
         ::g::Uno::UX::IPropertyListener_typeof(), offsetof(::g::Fuse::Controls::TextInputControl_type, interface7),
         ::g::Fuse::ITemplateSource_typeof(), offsetof(::g::Fuse::Controls::TextInputControl_type, interface8),
-        ::TYPES[3/*Uno.Collections.ICollection<Fuse.Node>*/], offsetof(::g::Fuse::Controls::TextInputControl_type, interface9),
-        ::g::Uno::Collections::IEnumerable_typeof()->MakeType(::g::Fuse::Node_typeof(), NULL), offsetof(::g::Fuse::Controls::TextInputControl_type, interface10),
-        ::g::Fuse::Triggers::Actions::IShow_typeof(), offsetof(::g::Fuse::Controls::TextInputControl_type, interface11),
-        ::g::Fuse::Triggers::Actions::IHide_typeof(), offsetof(::g::Fuse::Controls::TextInputControl_type, interface12),
-        ::g::Fuse::Triggers::Actions::ICollapse_typeof(), offsetof(::g::Fuse::Controls::TextInputControl_type, interface13),
-        ::g::Fuse::IActualPlacement_typeof(), offsetof(::g::Fuse::Controls::TextInputControl_type, interface14),
-        ::g::Fuse::Animations::IResize_typeof(), offsetof(::g::Fuse::Controls::TextInputControl_type, interface15),
-        ::g::Fuse::Triggers::IValue_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(::g::Fuse::Controls::TextInputControl_type, interface16));
-    type->SetFields(100,
-        ::g::Uno::UX::NameTable_typeof(), offsetof(::g::Basic::TextInput, __g_nametable1), 0,
-        ::g::Fuse::Controls::Rectangle_typeof(), offsetof(::g::Basic::TextInput, _dividerRect), 0,
-        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::UX::Size_typeof(), NULL), offsetof(::g::Basic::TextInput, _dividerRect_Height_inst), 0,
-        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::Float4_typeof(), NULL), offsetof(::g::Basic::TextInput, temp_Value_inst), 0,
-        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::Float4_typeof(), NULL), offsetof(::g::Basic::TextInput, temp1_Value_inst), 0,
-        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::Float4_typeof(), NULL), offsetof(::g::Basic::TextInput, temp2_Value_inst), 0,
-        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::Float4_typeof(), NULL), offsetof(::g::Basic::TextInput, this_TextColor_inst), 0,
-        ::g::Fuse::Drawing::SolidColor_typeof(), offsetof(::g::Basic::TextInput, thisDivider), 0,
-        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::Float4_typeof(), NULL), offsetof(::g::Basic::TextInput, thisDivider_Color_inst), 0,
-        ::TYPES[0/*string[]*/], (uintptr_t)&::g::Basic::TextInput::__g_static_nametable1_, uFieldFlagsStatic,
-        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&::g::Basic::TextInput::__selector0_, uFieldFlagsStatic,
-        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&::g::Basic::TextInput::__selector1_, uFieldFlagsStatic,
-        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&::g::Basic::TextInput::__selector2_, uFieldFlagsStatic,
-        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&::g::Basic::TextInput::__selector3_, uFieldFlagsStatic,
-        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&::g::Basic::TextInput::__selector4_, uFieldFlagsStatic);
+        ::g::Uno::Collections::IEnumerable_typeof()->MakeType(::g::Fuse::Visual_typeof(), NULL), offsetof(::g::Fuse::Controls::TextInputControl_type, interface9),
+        ::TYPES[3/*Uno.Collections.ICollection<Fuse.Node>*/], offsetof(::g::Fuse::Controls::TextInputControl_type, interface10),
+        ::g::Uno::Collections::IEnumerable_typeof()->MakeType(::g::Fuse::Node_typeof(), NULL), offsetof(::g::Fuse::Controls::TextInputControl_type, interface11),
+        ::g::Fuse::Triggers::Actions::IShow_typeof(), offsetof(::g::Fuse::Controls::TextInputControl_type, interface12),
+        ::g::Fuse::Triggers::Actions::IHide_typeof(), offsetof(::g::Fuse::Controls::TextInputControl_type, interface13),
+        ::g::Fuse::Triggers::Actions::ICollapse_typeof(), offsetof(::g::Fuse::Controls::TextInputControl_type, interface14),
+        ::g::Fuse::IActualPlacement_typeof(), offsetof(::g::Fuse::Controls::TextInputControl_type, interface15),
+        ::g::Fuse::Animations::IResize_typeof(), offsetof(::g::Fuse::Controls::TextInputControl_type, interface16),
+        ::g::Fuse::Triggers::IValue_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(::g::Fuse::Controls::TextInputControl_type, interface17));
+    type->SetFields(106,
+        ::g::Fuse::Controls::Rectangle_typeof(), offsetof(TextInput, _dividerRect), 0,
+        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::UX::Size_typeof(), NULL), offsetof(TextInput, _dividerRect_Height_inst), 0,
+        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::Float4_typeof(), NULL), offsetof(TextInput, temp_Value_inst), 0,
+        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::Float4_typeof(), NULL), offsetof(TextInput, temp1_Value_inst), 0,
+        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::Float4_typeof(), NULL), offsetof(TextInput, temp2_Value_inst), 0,
+        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::Float4_typeof(), NULL), offsetof(TextInput, this_TextColor_inst), 0,
+        ::g::Fuse::Drawing::SolidColor_typeof(), offsetof(TextInput, thisDivider), 0,
+        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::Float4_typeof(), NULL), offsetof(TextInput, thisDivider_Color_inst), 0,
+        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&TextInput::__selector0_, uFieldFlagsStatic,
+        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&TextInput::__selector1_, uFieldFlagsStatic,
+        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&TextInput::__selector2_, uFieldFlagsStatic,
+        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&TextInput::__selector3_, uFieldFlagsStatic,
+        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&TextInput::__selector4_, uFieldFlagsStatic);
 }
 
 ::g::Fuse::Controls::TextInputControl_type* TextInput_typeof()
@@ -557,36 +558,38 @@ static void TextInput_build(uType* type)
 
     uTypeOptions options;
     options.BaseDefinition = ::g::Fuse::Controls::TextInput_typeof();
-    options.FieldCount = 115;
-    options.InterfaceCount = 17;
+    options.FieldCount = 119;
+    options.InterfaceCount = 18;
+    options.DependencyCount = 2;
     options.ObjectSize = sizeof(TextInput);
     options.TypeSize = sizeof(::g::Fuse::Controls::TextInputControl_type);
     type = (::g::Fuse::Controls::TextInputControl_type*)uClassType::New("Basic.TextInput", options);
     type->fp_build_ = TextInput_build;
     type->fp_ctor_ = (void*)TextInput__New4_fn;
     type->fp_cctor_ = TextInput__cctor_3_fn;
-    type->interface16.fp_get_Value = (void(*)(uObject*, uTRef))::g::Fuse::Controls::TextInputControl__get_Value_fn;
-    type->interface16.fp_set_Value = (void(*)(uObject*, void*))::g::Fuse::Controls::TextInputControl__set_Value_fn;
-    type->interface16.fp_add_ValueChanged = (void(*)(uObject*, uDelegate*))::g::Fuse::Controls::TextInputControl__add_ValueChanged_fn;
-    type->interface16.fp_remove_ValueChanged = (void(*)(uObject*, uDelegate*))::g::Fuse::Controls::TextInputControl__remove_ValueChanged_fn;
-    type->interface11.fp_Show = (void(*)(uObject*))::g::Fuse::Elements::Element__FuseTriggersActionsIShowShow_fn;
-    type->interface13.fp_Collapse = (void(*)(uObject*))::g::Fuse::Elements::Element__FuseTriggersActionsICollapseCollapse_fn;
-    type->interface12.fp_Hide = (void(*)(uObject*))::g::Fuse::Elements::Element__FuseTriggersActionsIHideHide_fn;
-    type->interface15.fp_SetSize = (void(*)(uObject*, ::g::Uno::Float2*))::g::Fuse::Elements::Element__FuseAnimationsIResizeSetSize_fn;
-    type->interface14.fp_get_ActualSize = (void(*)(uObject*, ::g::Uno::Float3*))::g::Fuse::Elements::Element__FuseIActualPlacementget_ActualSize_fn;
-    type->interface14.fp_add_Placed = (void(*)(uObject*, uDelegate*))::g::Fuse::Elements::Element__add_Placed_fn;
-    type->interface14.fp_remove_Placed = (void(*)(uObject*, uDelegate*))::g::Fuse::Elements::Element__remove_Placed_fn;
-    type->interface9.fp_Clear = (void(*)(uObject*))::g::Fuse::Visual__UnoCollectionsICollectionFuseNodeClear_fn;
-    type->interface9.fp_Contains = (void(*)(uObject*, void*, bool*))::g::Fuse::Visual__UnoCollectionsICollectionFuseNodeContains_fn;
+    type->interface17.fp_get_Value = (void(*)(uObject*, uTRef))::g::Fuse::Controls::TextInputControl__get_Value_fn;
+    type->interface17.fp_set_Value = (void(*)(uObject*, void*))::g::Fuse::Controls::TextInputControl__set_Value_fn;
+    type->interface17.fp_add_ValueChanged = (void(*)(uObject*, uDelegate*))::g::Fuse::Controls::TextInputControl__add_ValueChanged_fn;
+    type->interface17.fp_remove_ValueChanged = (void(*)(uObject*, uDelegate*))::g::Fuse::Controls::TextInputControl__remove_ValueChanged_fn;
+    type->interface12.fp_Show = (void(*)(uObject*))::g::Fuse::Elements::Element__FuseTriggersActionsIShowShow_fn;
+    type->interface14.fp_Collapse = (void(*)(uObject*))::g::Fuse::Elements::Element__FuseTriggersActionsICollapseCollapse_fn;
+    type->interface13.fp_Hide = (void(*)(uObject*))::g::Fuse::Elements::Element__FuseTriggersActionsIHideHide_fn;
+    type->interface16.fp_SetSize = (void(*)(uObject*, ::g::Uno::Float2*))::g::Fuse::Elements::Element__FuseAnimationsIResizeSetSize_fn;
+    type->interface15.fp_get_ActualSize = (void(*)(uObject*, ::g::Uno::Float3*))::g::Fuse::Elements::Element__FuseIActualPlacementget_ActualSize_fn;
+    type->interface15.fp_add_Placed = (void(*)(uObject*, uDelegate*))::g::Fuse::Elements::Element__add_Placed_fn;
+    type->interface15.fp_remove_Placed = (void(*)(uObject*, uDelegate*))::g::Fuse::Elements::Element__remove_Placed_fn;
+    type->interface9.fp_GetEnumerator = (void(*)(uObject*, uObject**))::g::Fuse::Visual__UnoCollectionsIEnumerableFuseVisualGetEnumerator_fn;
+    type->interface10.fp_Clear = (void(*)(uObject*))::g::Fuse::Visual__UnoCollectionsICollectionFuseNodeClear_fn;
+    type->interface10.fp_Contains = (void(*)(uObject*, void*, bool*))::g::Fuse::Visual__UnoCollectionsICollectionFuseNodeContains_fn;
     type->interface6.fp_RemoveAt = (void(*)(uObject*, int*))::g::Fuse::Visual__UnoCollectionsIListFuseNodeRemoveAt_fn;
-    type->interface10.fp_GetEnumerator = (void(*)(uObject*, uObject**))::g::Fuse::Visual__UnoCollectionsIEnumerableFuseNodeGetEnumerator_fn;
-    type->interface9.fp_get_Count = (void(*)(uObject*, int*))::g::Fuse::Visual__UnoCollectionsICollectionFuseNodeget_Count_fn;
+    type->interface11.fp_GetEnumerator = (void(*)(uObject*, uObject**))::g::Fuse::Visual__UnoCollectionsIEnumerableFuseNodeGetEnumerator_fn;
+    type->interface10.fp_get_Count = (void(*)(uObject*, int*))::g::Fuse::Visual__UnoCollectionsICollectionFuseNodeget_Count_fn;
     type->interface6.fp_get_Item = (void(*)(uObject*, int*, uTRef))::g::Fuse::Visual__UnoCollectionsIListFuseNodeget_Item_fn;
     type->interface6.fp_Insert = (void(*)(uObject*, int*, void*))::g::Fuse::Visual__Insert1_fn;
     type->interface7.fp_OnPropertyChanged = (void(*)(uObject*, ::g::Uno::UX::PropertyObject*, ::g::Uno::UX::Selector*))::g::Fuse::Controls::TextInputControl__OnPropertyChanged2_fn;
     type->interface8.fp_FindTemplate = (void(*)(uObject*, uString*, ::g::Uno::UX::Template**))::g::Fuse::Visual__FindTemplate_fn;
-    type->interface9.fp_Add = (void(*)(uObject*, void*))::g::Fuse::Visual__Add1_fn;
-    type->interface9.fp_Remove = (void(*)(uObject*, void*, bool*))::g::Fuse::Visual__Remove1_fn;
+    type->interface10.fp_Add = (void(*)(uObject*, void*))::g::Fuse::Visual__Add1_fn;
+    type->interface10.fp_Remove = (void(*)(uObject*, void*, bool*))::g::Fuse::Visual__Remove1_fn;
     type->interface4.fp_Clear = (void(*)(uObject*))::g::Fuse::Node__UnoCollectionsICollectionFuseBindingClear_fn;
     type->interface4.fp_Contains = (void(*)(uObject*, void*, bool*))::g::Fuse::Node__UnoCollectionsICollectionFuseBindingContains_fn;
     type->interface0.fp_RemoveAt = (void(*)(uObject*, int*))::g::Fuse::Node__UnoCollectionsIListFuseBindingRemoveAt_fn;
@@ -605,65 +608,63 @@ static void TextInput_build(uType* type)
     return type;
 }
 
-// public TextInput() :683
+// public TextInput() :18
 void TextInput__ctor_8_fn(TextInput* __this)
 {
     __this->ctor_8();
 }
 
-// private void InitializeUX() :687
+// private void InitializeUX() :22
 void TextInput__InitializeUX_fn(TextInput* __this)
 {
     __this->InitializeUX();
 }
 
-// public TextInput New() :683
+// public TextInput New() :18
 void TextInput__New4_fn(TextInput** __retval)
 {
     *__retval = TextInput::New4();
 }
 
-uSStrong<uArray*> TextInput::__g_static_nametable1_;
 ::g::Uno::UX::Selector TextInput::__selector0_;
 ::g::Uno::UX::Selector TextInput::__selector1_;
 ::g::Uno::UX::Selector TextInput::__selector2_;
 ::g::Uno::UX::Selector TextInput::__selector3_;
 ::g::Uno::UX::Selector TextInput::__selector4_;
 
-// public TextInput() [instance] :683
+// public TextInput() [instance] :18
 void TextInput::ctor_8()
 {
     ctor_7();
     InitializeUX();
 }
 
-// private void InitializeUX() [instance] :687
+// private void InitializeUX() [instance] :22
 void TextInput::InitializeUX()
 {
     thisDivider = ::g::Fuse::Drawing::SolidColor::New2();
-    thisDivider_Color_inst = ::g::FuseBasicTheme_FuseDrawingSolidColor_Color_Property::New1(thisDivider, TextInput::__selector0());
+    thisDivider_Color_inst = ::g::FuseBasicTheme_FuseDrawingSolidColor_Color_Property::New1(thisDivider, TextInput::__selector0_);
     ::g::Fuse::Reactive::Resource* temp3 = ::g::Fuse::Reactive::Resource::New1(::STRINGS[203/*"Basic.CLine"*/]);
-    __g_nametable1 = ::g::Uno::UX::NameTable::New1(NULL, TextInput::__g_static_nametable1());
-    this_TextColor_inst = ::g::FuseBasicTheme_FuseControlsTextInputControl_TextColor_Property::New1(this, TextInput::__selector1());
+    this_TextColor_inst = ::g::FuseBasicTheme_FuseControlsTextInputControl_TextColor_Property::New1(this, TextInput::__selector1_);
     ::g::Fuse::Animations::Change* temp = (::g::Fuse::Animations::Change*)::g::Fuse::Animations::Change::New2(::TYPES[1/*Fuse.Animations.Change<float4>*/], this_TextColor_inst);
-    temp_Value_inst = ::g::FuseBasicTheme_FuseAnimationsChangefloat4_Value_Property::New1(temp, TextInput::__selector2());
+    temp_Value_inst = ::g::FuseBasicTheme_FuseAnimationsChangefloat4_Value_Property::New1(temp, TextInput::__selector2_);
     ::g::Fuse::Reactive::Resource* temp4 = ::g::Fuse::Reactive::Resource::New1(::STRINGS[203/*"Basic.CLine"*/]);
     ::g::Fuse::Animations::Change* temp1 = (::g::Fuse::Animations::Change*)::g::Fuse::Animations::Change::New2(::TYPES[1/*Fuse.Animations.Change<float4>*/], thisDivider_Color_inst);
-    temp1_Value_inst = ::g::FuseBasicTheme_FuseAnimationsChangefloat4_Value_Property::New1(temp1, TextInput::__selector2());
+    temp1_Value_inst = ::g::FuseBasicTheme_FuseAnimationsChangefloat4_Value_Property::New1(temp1, TextInput::__selector2_);
     ::g::Fuse::Reactive::Resource* temp5 = ::g::Fuse::Reactive::Resource::New1(::STRINGS[203/*"Basic.CLine"*/]);
     _dividerRect = ::g::Fuse::Controls::Rectangle::New3();
-    _dividerRect_Height_inst = ::g::FuseBasicTheme_FuseElementsElement_Height_Property::New1(_dividerRect, TextInput::__selector3());
+    _dividerRect_Height_inst = ::g::FuseBasicTheme_FuseElementsElement_Height_Property::New1(_dividerRect, TextInput::__selector3_);
     ::g::Fuse::Animations::Change* temp2 = (::g::Fuse::Animations::Change*)::g::Fuse::Animations::Change::New2(::TYPES[1/*Fuse.Animations.Change<float4>*/], thisDivider_Color_inst);
-    temp2_Value_inst = ::g::FuseBasicTheme_FuseAnimationsChangefloat4_Value_Property::New1(temp2, TextInput::__selector2());
+    temp2_Value_inst = ::g::FuseBasicTheme_FuseAnimationsChangefloat4_Value_Property::New1(temp2, TextInput::__selector2_);
     ::g::Fuse::Reactive::Resource* temp6 = ::g::Fuse::Reactive::Resource::New1(::STRINGS[7/*"Basic.C700"*/]);
     ::g::Fuse::Controls::Panel* temp7 = ::g::Fuse::Controls::Panel::New3();
-    ::g::Fuse::Reactive::DataBinding* temp8 = ::g::Fuse::Reactive::DataBinding::New1(thisDivider_Color_inst, (uObject*)temp3, __g_nametable1, 3);
+    ::g::Fuse::Reactive::DataBinding* temp8 = ::g::Fuse::Reactive::DataBinding::New1(thisDivider_Color_inst, (uObject*)temp3, 3);
     ::g::Fuse::Triggers::WhileDisabled* temp9 = ::g::Fuse::Triggers::WhileDisabled::New2();
-    ::g::Fuse::Reactive::DataBinding* temp10 = ::g::Fuse::Reactive::DataBinding::New1(temp_Value_inst, (uObject*)temp4, __g_nametable1, 3);
-    ::g::Fuse::Reactive::DataBinding* temp11 = ::g::Fuse::Reactive::DataBinding::New1(temp1_Value_inst, (uObject*)temp5, __g_nametable1, 3);
+    ::g::Fuse::Reactive::DataBinding* temp10 = ::g::Fuse::Reactive::DataBinding::New1(temp_Value_inst, (uObject*)temp4, 3);
+    ::g::Fuse::Reactive::DataBinding* temp11 = ::g::Fuse::Reactive::DataBinding::New1(temp1_Value_inst, (uObject*)temp5, 3);
     ::g::Fuse::Triggers::WhileFocusWithin* temp12 = ::g::Fuse::Triggers::WhileFocusWithin::New2();
     ::g::Fuse::Animations::Change* temp13 = (::g::Fuse::Animations::Change*)::g::Fuse::Animations::Change::New2(::TYPES[2/*Fuse.Animations.Change<Uno.UX.Size>*/], _dividerRect_Height_inst);
-    ::g::Fuse::Reactive::DataBinding* temp14 = ::g::Fuse::Reactive::DataBinding::New1(temp2_Value_inst, (uObject*)temp6, __g_nametable1, 3);
+    ::g::Fuse::Reactive::DataBinding* temp14 = ::g::Fuse::Reactive::DataBinding::New1(temp2_Value_inst, (uObject*)temp6, 3);
     FontSize(16.0f);
     TextColor(::g::Uno::Float4__New2(0.0f, 0.0f, 0.0f, 1.0f));
     Margin(::g::Uno::Float4__New2(8.0f, 8.0f, 8.0f, 8.0f));
@@ -674,7 +675,7 @@ void TextInput::InitializeUX()
     uPtr(_dividerRect)->Height(::g::Uno::UX::Size__New1(1.0f, 1));
     uPtr(_dividerRect)->Alignment(12);
     uPtr(_dividerRect)->Margin(::g::Uno::Float4__New2(0.0f, 8.0f, 0.0f, 8.0f));
-    uPtr(_dividerRect)->Name(TextInput::__selector4());
+    uPtr(_dividerRect)->Name(TextInput::__selector4_);
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(uPtr(_dividerRect)->Fills()), ::TYPES[4/*Uno.Collections.ICollection<Fuse.Drawing.Brush>*/]), thisDivider);
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(uPtr(_dividerRect)->Bindings()), ::TYPES[5/*Uno.Collections.ICollection<Fuse.Binding>*/]), temp8);
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(temp9->Animators()), ::TYPES[6/*Uno.Collections.ICollection<Fuse.Animations.Animator>*/]), temp);
@@ -682,31 +683,28 @@ void TextInput::InitializeUX()
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(temp9->Bindings()), ::TYPES[5/*Uno.Collections.ICollection<Fuse.Binding>*/]), temp10);
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(temp9->Bindings()), ::TYPES[5/*Uno.Collections.ICollection<Fuse.Binding>*/]), temp11);
     temp->Duration(0.25);
-    temp->Easing(::g::Fuse::Animations::Easing::ExponentialOut());
-    temp->EasingBack(::g::Fuse::Animations::Easing::ExponentialIn());
+    temp->Easing(::g::Fuse::Animations::Easing::ExponentialOut_);
+    temp->EasingBack(::g::Fuse::Animations::Easing::ExponentialIn_);
     temp1->Duration(0.25);
-    temp1->Easing(::g::Fuse::Animations::Easing::ExponentialOut());
-    temp1->EasingBack(::g::Fuse::Animations::Easing::ExponentialIn());
+    temp1->Easing(::g::Fuse::Animations::Easing::ExponentialOut_);
+    temp1->EasingBack(::g::Fuse::Animations::Easing::ExponentialIn_);
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(temp12->Animators()), ::TYPES[6/*Uno.Collections.ICollection<Fuse.Animations.Animator>*/]), temp2);
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(temp12->Animators()), ::TYPES[6/*Uno.Collections.ICollection<Fuse.Animations.Animator>*/]), temp13);
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(temp12->Bindings()), ::TYPES[5/*Uno.Collections.ICollection<Fuse.Binding>*/]), temp14);
     temp2->Duration(0.25);
-    temp2->Easing(::g::Fuse::Animations::Easing::ExponentialOut());
-    temp2->EasingBack(::g::Fuse::Animations::Easing::ExponentialIn());
+    temp2->Easing(::g::Fuse::Animations::Easing::ExponentialOut_);
+    temp2->EasingBack(::g::Fuse::Animations::Easing::ExponentialIn_);
     ::g::Fuse::Animations::Change__set_Value_fn(temp13, uCRef(::g::Uno::UX::Size__New1(2.0f, 1)));
     temp13->Duration(0.25);
-    temp13->Easing(::g::Fuse::Animations::Easing::ExponentialOut());
-    temp13->EasingBack(::g::Fuse::Animations::Easing::ExponentialIn());
-    uPtr(__g_nametable1)->This(this);
-    ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(uPtr(__g_nametable1)->Objects()), ::TYPES[7/*Uno.Collections.ICollection<object>*/]), _dividerRect);
-    ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(uPtr(__g_nametable1)->Objects()), ::TYPES[7/*Uno.Collections.ICollection<object>*/]), thisDivider);
+    temp13->Easing(::g::Fuse::Animations::Easing::ExponentialOut_);
+    temp13->EasingBack(::g::Fuse::Animations::Easing::ExponentialIn_);
     Font(::g::Basic::Resources::RobotoRegular());
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(Children()), ::TYPES[3/*Uno.Collections.ICollection<Fuse.Node>*/]), temp7);
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(Children()), ::TYPES[3/*Uno.Collections.ICollection<Fuse.Node>*/]), temp9);
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(Children()), ::TYPES[3/*Uno.Collections.ICollection<Fuse.Node>*/]), temp12);
 }
 
-// public TextInput New() [static] :683
+// public TextInput New() [static] :18
 TextInput* TextInput::New4()
 {
     TextInput* obj1 = (TextInput*)uNew(TextInput_typeof());

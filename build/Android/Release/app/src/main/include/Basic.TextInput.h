@@ -1,4 +1,4 @@
-// This file was generated based on '/Users/a/Library/Application Support/Fusetools/Packages/Fuse.BasicTheme/1.2.1/.uno/ux11/$.uno'.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.BasicTheme/1.3.0-rc2/.uno/ux13/Basic.TextInput.g.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -15,6 +15,7 @@
 #include <Fuse.Triggers.Actions.IShow.h>
 #include <Fuse.Triggers.Actions-ea70af1f.h>
 #include <Fuse.Triggers.IValue-1.h>
+#include <Fuse.Visual.h>
 #include <Uno.Collections.ICollection-1.h>
 #include <Uno.Collections.IEnumerable-1.h>
 #include <Uno.Collections.IList-1.h>
@@ -25,14 +26,13 @@
 namespace g{namespace Basic{struct TextInput;}}
 namespace g{namespace Fuse{namespace Controls{struct Rectangle;}}}
 namespace g{namespace Fuse{namespace Drawing{struct SolidColor;}}}
-namespace g{namespace Uno{namespace UX{struct NameTable;}}}
 namespace g{namespace Uno{namespace UX{struct Property1;}}}
 namespace g{namespace Uno{namespace UX{struct Selector;}}}
 
 namespace g{
 namespace Basic{
 
-// public partial sealed class TextInput :664
+// public partial sealed class TextInput :4
 // {
 ::g::Fuse::Controls::TextInputControl_type* TextInput_typeof();
 void TextInput__ctor_8_fn(TextInput* __this);
@@ -41,9 +41,6 @@ void TextInput__New4_fn(TextInput** __retval);
 
 struct TextInput : ::g::Fuse::Controls::TextInput
 {
-    uStrong< ::g::Uno::UX::NameTable*> __g_nametable1;
-    static uSStrong<uArray*> __g_static_nametable1_;
-    static uSStrong<uArray*>& __g_static_nametable1() { return TextInput_typeof()->Init(), __g_static_nametable1_; }
     static ::g::Uno::UX::Selector __selector0_;
     static ::g::Uno::UX::Selector& __selector0() { return TextInput_typeof()->Init(), __selector0_; }
     static ::g::Uno::UX::Selector __selector1_;

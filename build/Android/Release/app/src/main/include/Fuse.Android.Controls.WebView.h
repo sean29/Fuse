@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Controls.WebView/1.2.1/android/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Controls.WebView/1.3.0-rc2/Android/WebView.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -20,7 +20,7 @@ namespace Fuse{
 namespace Android{
 namespace Controls{
 
-// public sealed extern class WebView :93
+// public sealed extern class WebView :14
 // {
 struct WebView_type : ::g::Fuse::Controls::Native::Android::View_type
 {
@@ -31,7 +31,7 @@ struct WebView_type : ::g::Fuse::Controls::Native::Android::View_type
 };
 
 WebView_type* WebView_typeof();
-void WebView__ctor_8_fn(WebView* __this, ::g::Fuse::Controls::WebView* host, ::g::Java::Object* handle, uArray* schemes);
+void WebView__ctor_9_fn(WebView* __this, ::g::Fuse::Controls::WebView* host, ::g::Java::Object* handle, uArray* schemes);
 void WebView__get_BaseUrl_fn(WebView* __this, uString** __retval);
 void WebView__set_BaseUrl_fn(WebView* __this, uString* value);
 void WebView__add_BeginLoading_fn(WebView* __this, uDelegate* value);
@@ -51,8 +51,9 @@ void WebView__LoadFile_fn(WebView* __this, ::g::Uno::UX::FileSource* file);
 void WebView__LoadHtml_fn(WebView* __this, uString* html);
 void WebView__LoadHtml1_fn(WebView* __this, uString* html, uString* baseUrl);
 void WebView__LoadUrl_fn(WebView* __this, uString* url);
-void WebView__New4_fn(::g::Fuse::Controls::WebView* host, ::g::Java::Object* handle, uArray* schemes, WebView** __retval);
-void WebView__OnBeginloading_fn(WebView* __this);
+void WebView__MatchedURISchemeHandler_fn(WebView* __this, uString* url, bool* __retval);
+void WebView__New5_fn(::g::Fuse::Controls::WebView* host, ::g::Java::Object* handle, uArray* schemes, WebView** __retval);
+void WebView__OnBeginLoading_fn(WebView* __this);
 void WebView__OnCustomURI_fn(WebView* __this, uString* url);
 void WebView__OnHistoryChanged_fn(WebView* __this);
 void WebView__OnPageLoaded_fn(WebView* __this);
@@ -83,6 +84,7 @@ struct WebView : ::g::Fuse::Controls::Native::Android::LeafView
     uStrong< ::g::Fuse::Android::Controls::WebViewUtils::JSEvalRequestManager*> _evalRequestMgr;
     uStrong< ::g::Uno::UX::FileSource*> _file;
     uStrong<uString*> _source;
+    uStrong<uArray*> _uriSchemes;
     uStrong< ::g::Java::Object*> _webChromeClientHandle;
     uStrong< ::g::Java::Object*> _webViewClientHandle;
     uStrong< ::g::Java::Object*> _webViewHandle;
@@ -97,7 +99,7 @@ struct WebView : ::g::Fuse::Controls::Native::Android::LeafView
     uStrong<uDelegate*> URISchemeHandler1;
     uStrong<uDelegate*> UrlChanged1;
 
-    void ctor_8(::g::Fuse::Controls::WebView* host, ::g::Java::Object* handle, uArray* schemes);
+    void ctor_9(::g::Fuse::Controls::WebView* host, ::g::Java::Object* handle, uArray* schemes);
     uString* BaseUrl();
     void BaseUrl(uString* value);
     void add_BeginLoading(uDelegate* value);
@@ -116,7 +118,8 @@ struct WebView : ::g::Fuse::Controls::Native::Android::LeafView
     void LoadHtml(uString* html);
     void LoadHtml1(uString* html, uString* baseUrl);
     void LoadUrl(uString* url);
-    void OnBeginloading();
+    bool MatchedURISchemeHandler(uString* url);
+    void OnBeginLoading();
     void OnCustomURI(uString* url);
     void OnHistoryChanged();
     void OnPageLoaded();
@@ -142,7 +145,7 @@ struct WebView : ::g::Fuse::Controls::Native::Android::LeafView
     bool ZoomEnabled();
     void ZoomEnabled(bool value);
     static WebView* Create(::g::Fuse::Controls::WebView* webViewHost, uArray* schemes);
-    static WebView* New4(::g::Fuse::Controls::WebView* host, ::g::Java::Object* handle, uArray* schemes);
+    static WebView* New5(::g::Fuse::Controls::WebView* host, ::g::Java::Object* handle, uArray* schemes);
 };
 // }
 

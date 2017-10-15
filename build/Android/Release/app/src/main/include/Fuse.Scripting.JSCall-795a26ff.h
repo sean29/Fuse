@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Scripting/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Scripting/1.3.0-rc2/JSCallback.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -9,7 +9,7 @@ namespace g{
 namespace Fuse{
 namespace Scripting{
 
-// private sealed class JSCallback.FuncClosure<TResult> :454
+// private sealed class JSCallback.FuncClosure<TResult> :96
 // {
 uType* JSCallback__FuncClosure_typeof();
 void JSCallback__FuncClosure__ctor__fn(JSCallback__FuncClosure* __this, uDelegate* method);

@@ -1,4 +1,4 @@
-// This file was generated based on '.uno/ux11/emrals.unoproj.g.uno'.
+// This file was generated based on '.uno/ux13/emrals.unoproj.g.uno'.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #include <_root.emrals_FuseTrig-85933bee.h>
@@ -17,7 +17,7 @@ static void emrals_FuseTriggersBusy_IsActive_Property_build(uType* type)
     ::TYPES[0] = ::g::Fuse::Triggers::Busy_typeof();
     type->SetBase(::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::Bool_typeof(), NULL));
     type->SetFields(1,
-        ::TYPES[0/*Fuse.Triggers.Busy*/], offsetof(::g::emrals_FuseTriggersBusy_IsActive_Property, _obj), uFieldFlagsWeak);
+        ::TYPES[0/*Fuse.Triggers.Busy*/], offsetof(emrals_FuseTriggersBusy_IsActive_Property, _obj), uFieldFlagsWeak);
 }
 
 ::g::Uno::UX::Property1_type* emrals_FuseTriggersBusy_IsActive_Property_typeof()

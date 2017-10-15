@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Controls.ScrollView/1.2.1/triggers/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Controls.ScrollView/1.3.0-rc2/Triggers/ScrollRegion.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -12,7 +12,7 @@ namespace g{
 namespace Fuse{
 namespace Triggers{
 
-// private sealed class IScrolledLengths.PointsLength :654
+// private sealed class IScrolledLengths.PointsLength :15
 // {
 struct IScrolledLengths__PointsLength_type : uType
 {

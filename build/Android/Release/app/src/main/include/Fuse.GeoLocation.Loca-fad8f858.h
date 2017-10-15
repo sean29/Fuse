@@ -1,4 +1,4 @@
-// This file was generated based on '/Users/a/Library/Application Support/Fusetools/Packages/Fuse.GeoLocation/1.2.1/$.uno'.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.GeoLocation/1.3.0-rc2/LocationProvider.BufferedCalls.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -12,7 +12,7 @@ namespace g{
 namespace Fuse{
 namespace GeoLocation{
 
-// public partial sealed class LocationTracker :423
+// public partial sealed class LocationTracker :6
 // {
 uType* LocationTracker_typeof();
 void LocationTracker__ctor__fn(LocationTracker* __this);

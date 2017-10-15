@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Navigation/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Navigation/1.3.0-rc2/NavigationAnimations.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -18,7 +18,7 @@ namespace g{
 namespace Fuse{
 namespace Navigation{
 
-// public class EnteringAnimation :1325
+// public class EnteringAnimation :226
 // {
 ::g::Fuse::Navigation::NavigationAnimation_type* EnteringAnimation_typeof();
 void EnteringAnimation__ctor_7_fn(EnteringAnimation* __this);

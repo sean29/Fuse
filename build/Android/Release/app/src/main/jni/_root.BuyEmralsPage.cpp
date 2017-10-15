@@ -1,4 +1,4 @@
-// This file was generated based on '.uno/ux11/BuyEmralsPage.g.uno'.
+// This file was generated based on '.uno/ux13/BuyEmralsPage.g.uno'.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #include <_root.BuyEmralsPage.h>
@@ -51,7 +51,6 @@
 #include <Fuse.Reactive.IExpression.h>
 #include <Fuse.Reactive.JavaScript.h>
 #include <Fuse.Triggers.Trigger.h>
-#include <Fuse.Visual.h>
 #include <Uno.Double.h>
 #include <Uno.Float.h>
 #include <Uno.Int.h>
@@ -71,11 +70,12 @@ static uType* TYPES[7];
 
 namespace g{
 
-// public partial sealed class BuyEmralsPage :2
+// public partial class BuyEmralsPage :2
 // {
 // static BuyEmralsPage() :31
 static void BuyEmralsPage__cctor_4_fn(uType* __type)
 {
+    ::g::Uno::UX::Selector_typeof()->Init();
     BuyEmralsPage::__g_static_nametable1_ = uArray::Init<uString*>(::TYPES[0/*string[]*/], 6, ::STRINGS[0/*"router"*/], ::STRINGS[1/*"temp_eb22"*/], ::STRINGS[2/*"temp_eb24"*/], ::STRINGS[3/*"temp_eb23"*/], ::STRINGS[4/*"confirmrec"*/], ::STRINGS[5/*"temp_eb25"*/]);
     BuyEmralsPage::__selector0_ = ::g::Uno::UX::Selector__op_Implicit(::STRINGS[6/*"Value"*/]);
     BuyEmralsPage::__selector1_ = ::g::Uno::UX::Selector__op_Implicit(::STRINGS[7/*"Visibility"*/]);
@@ -131,6 +131,9 @@ static void BuyEmralsPage_build(uType* type)
     ::TYPES[4] = ::g::Uno::Collections::ICollection_typeof()->MakeType(::g::Fuse::Binding_typeof(), NULL);
     ::TYPES[5] = ::g::Uno::Collections::ICollection_typeof()->MakeType(::g::Fuse::Animations::Animator_typeof(), NULL);
     ::TYPES[6] = ::g::Uno::Collections::ICollection_typeof()->MakeType(uObject_typeof(), NULL);
+    type->SetDependencies(
+        ::g::Fuse::Controls::DockPanel_typeof(),
+        ::g::Fuse::Controls::Grid_typeof());
     type->SetInterfaces(
         ::g::Uno::Collections::IList_typeof()->MakeType(::g::Fuse::Binding_typeof(), NULL), offsetof(::g::Fuse::Controls::Panel_type, interface0),
         ::g::Fuse::Scripting::IScriptObject_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface1),
@@ -141,39 +144,40 @@ static void BuyEmralsPage_build(uType* type)
         ::g::Uno::Collections::IList_typeof()->MakeType(::g::Fuse::Node_typeof(), NULL), offsetof(::g::Fuse::Controls::Panel_type, interface6),
         ::g::Uno::UX::IPropertyListener_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface7),
         ::g::Fuse::ITemplateSource_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface8),
-        ::TYPES[2/*Uno.Collections.ICollection<Fuse.Node>*/], offsetof(::g::Fuse::Controls::Panel_type, interface9),
-        ::g::Uno::Collections::IEnumerable_typeof()->MakeType(::g::Fuse::Node_typeof(), NULL), offsetof(::g::Fuse::Controls::Panel_type, interface10),
-        ::g::Fuse::Triggers::Actions::IShow_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface11),
-        ::g::Fuse::Triggers::Actions::IHide_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface12),
-        ::g::Fuse::Triggers::Actions::ICollapse_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface13),
-        ::g::Fuse::IActualPlacement_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface14),
-        ::g::Fuse::Animations::IResize_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface15),
-        ::g::Fuse::Drawing::ISurfaceDrawable_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface16));
-    type->SetFields(111,
-        ::g::Uno::UX::NameTable_typeof(), offsetof(::g::BuyEmralsPage, __g_nametable1), 0,
-        ::g::Fuse::Controls::Rectangle_typeof(), offsetof(::g::BuyEmralsPage, confirmrec), 0,
-        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::Float4_typeof(), NULL), offsetof(::g::BuyEmralsPage, confirmrec_Color_inst), 0,
-        ::g::Fuse::Navigation::Router_typeof(), offsetof(::g::BuyEmralsPage, router), 0,
-        ::g::Fuse::Reactive::EventBinding_typeof(), offsetof(::g::BuyEmralsPage, temp_eb22), 0,
-        ::g::Fuse::Reactive::EventBinding_typeof(), offsetof(::g::BuyEmralsPage, temp_eb23), 0,
-        ::g::Fuse::Reactive::EventBinding_typeof(), offsetof(::g::BuyEmralsPage, temp_eb24), 0,
-        ::g::Fuse::Reactive::EventBinding_typeof(), offsetof(::g::BuyEmralsPage, temp_eb25), 0,
-        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(::g::BuyEmralsPage, temp_Value_inst), 0,
-        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(::g::BuyEmralsPage, temp1_Value_inst), 0,
-        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(::g::BuyEmralsPage, temp10_Value_inst), 0,
-        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(::g::BuyEmralsPage, temp2_Value_inst), 0,
-        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Fuse::Elements::Visibility_typeof(), NULL), offsetof(::g::BuyEmralsPage, temp3_Visibility_inst), 0,
-        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(::g::BuyEmralsPage, temp4_Value_inst), 0,
-        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(::g::BuyEmralsPage, temp5_Value_inst), 0,
-        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(::g::BuyEmralsPage, temp6_Value_inst), 0,
-        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(::g::BuyEmralsPage, temp7_Value_inst), 0,
-        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(::g::BuyEmralsPage, temp8_Value_inst), 0,
-        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(::g::BuyEmralsPage, temp9_Value_inst), 0,
-        ::TYPES[0/*string[]*/], (uintptr_t)&::g::BuyEmralsPage::__g_static_nametable1_, uFieldFlagsStatic,
-        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&::g::BuyEmralsPage::__selector0_, uFieldFlagsStatic,
-        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&::g::BuyEmralsPage::__selector1_, uFieldFlagsStatic,
-        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&::g::BuyEmralsPage::__selector2_, uFieldFlagsStatic,
-        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&::g::BuyEmralsPage::__selector3_, uFieldFlagsStatic);
+        ::g::Uno::Collections::IEnumerable_typeof()->MakeType(::g::Fuse::Visual_typeof(), NULL), offsetof(::g::Fuse::Controls::Panel_type, interface9),
+        ::TYPES[2/*Uno.Collections.ICollection<Fuse.Node>*/], offsetof(::g::Fuse::Controls::Panel_type, interface10),
+        ::g::Uno::Collections::IEnumerable_typeof()->MakeType(::g::Fuse::Node_typeof(), NULL), offsetof(::g::Fuse::Controls::Panel_type, interface11),
+        ::g::Fuse::Triggers::Actions::IShow_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface12),
+        ::g::Fuse::Triggers::Actions::IHide_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface13),
+        ::g::Fuse::Triggers::Actions::ICollapse_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface14),
+        ::g::Fuse::IActualPlacement_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface15),
+        ::g::Fuse::Animations::IResize_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface16),
+        ::g::Fuse::Drawing::ISurfaceDrawable_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface17));
+    type->SetFields(117,
+        ::g::Uno::UX::NameTable_typeof(), offsetof(BuyEmralsPage, __g_nametable1), 0,
+        ::g::Fuse::Controls::Rectangle_typeof(), offsetof(BuyEmralsPage, confirmrec), 0,
+        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::Float4_typeof(), NULL), offsetof(BuyEmralsPage, confirmrec_Color_inst), 0,
+        ::g::Fuse::Navigation::Router_typeof(), offsetof(BuyEmralsPage, router), 0,
+        ::g::Fuse::Reactive::EventBinding_typeof(), offsetof(BuyEmralsPage, temp_eb22), 0,
+        ::g::Fuse::Reactive::EventBinding_typeof(), offsetof(BuyEmralsPage, temp_eb23), 0,
+        ::g::Fuse::Reactive::EventBinding_typeof(), offsetof(BuyEmralsPage, temp_eb24), 0,
+        ::g::Fuse::Reactive::EventBinding_typeof(), offsetof(BuyEmralsPage, temp_eb25), 0,
+        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(BuyEmralsPage, temp_Value_inst), 0,
+        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(BuyEmralsPage, temp1_Value_inst), 0,
+        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(BuyEmralsPage, temp10_Value_inst), 0,
+        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(BuyEmralsPage, temp2_Value_inst), 0,
+        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Fuse::Elements::Visibility_typeof(), NULL), offsetof(BuyEmralsPage, temp3_Visibility_inst), 0,
+        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(BuyEmralsPage, temp4_Value_inst), 0,
+        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(BuyEmralsPage, temp5_Value_inst), 0,
+        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(BuyEmralsPage, temp6_Value_inst), 0,
+        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(BuyEmralsPage, temp7_Value_inst), 0,
+        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(BuyEmralsPage, temp8_Value_inst), 0,
+        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(BuyEmralsPage, temp9_Value_inst), 0,
+        ::TYPES[0/*string[]*/], (uintptr_t)&BuyEmralsPage::__g_static_nametable1_, uFieldFlagsStatic,
+        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&BuyEmralsPage::__selector0_, uFieldFlagsStatic,
+        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&BuyEmralsPage::__selector1_, uFieldFlagsStatic,
+        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&BuyEmralsPage::__selector2_, uFieldFlagsStatic,
+        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&BuyEmralsPage::__selector3_, uFieldFlagsStatic);
 }
 
 ::g::Fuse::Controls::Panel_type* BuyEmralsPage_typeof()
@@ -183,34 +187,36 @@ static void BuyEmralsPage_build(uType* type)
 
     uTypeOptions options;
     options.BaseDefinition = ::g::Fuse::Controls::Page_typeof();
-    options.FieldCount = 135;
-    options.InterfaceCount = 17;
+    options.FieldCount = 141;
+    options.InterfaceCount = 18;
+    options.DependencyCount = 2;
     options.ObjectSize = sizeof(BuyEmralsPage);
     options.TypeSize = sizeof(::g::Fuse::Controls::Panel_type);
     type = (::g::Fuse::Controls::Panel_type*)uClassType::New("BuyEmralsPage", options);
     type->fp_build_ = BuyEmralsPage_build;
     type->fp_cctor_ = BuyEmralsPage__cctor_4_fn;
-    type->interface16.fp_Draw = (void(*)(uObject*, ::g::Fuse::Drawing::Surface*))::g::Fuse::Controls::Panel__FuseDrawingISurfaceDrawableDraw_fn;
-    type->interface16.fp_get_IsPrimary = (void(*)(uObject*, bool*))::g::Fuse::Controls::Panel__FuseDrawingISurfaceDrawableget_IsPrimary_fn;
-    type->interface16.fp_get_ElementSize = (void(*)(uObject*, ::g::Uno::Float2*))::g::Fuse::Controls::Panel__FuseDrawingISurfaceDrawableget_ElementSize_fn;
-    type->interface11.fp_Show = (void(*)(uObject*))::g::Fuse::Elements::Element__FuseTriggersActionsIShowShow_fn;
-    type->interface13.fp_Collapse = (void(*)(uObject*))::g::Fuse::Elements::Element__FuseTriggersActionsICollapseCollapse_fn;
-    type->interface12.fp_Hide = (void(*)(uObject*))::g::Fuse::Elements::Element__FuseTriggersActionsIHideHide_fn;
-    type->interface15.fp_SetSize = (void(*)(uObject*, ::g::Uno::Float2*))::g::Fuse::Elements::Element__FuseAnimationsIResizeSetSize_fn;
-    type->interface14.fp_get_ActualSize = (void(*)(uObject*, ::g::Uno::Float3*))::g::Fuse::Elements::Element__FuseIActualPlacementget_ActualSize_fn;
-    type->interface14.fp_add_Placed = (void(*)(uObject*, uDelegate*))::g::Fuse::Elements::Element__add_Placed_fn;
-    type->interface14.fp_remove_Placed = (void(*)(uObject*, uDelegate*))::g::Fuse::Elements::Element__remove_Placed_fn;
-    type->interface9.fp_Clear = (void(*)(uObject*))::g::Fuse::Visual__UnoCollectionsICollectionFuseNodeClear_fn;
-    type->interface9.fp_Contains = (void(*)(uObject*, void*, bool*))::g::Fuse::Visual__UnoCollectionsICollectionFuseNodeContains_fn;
+    type->interface17.fp_Draw = (void(*)(uObject*, ::g::Fuse::Drawing::Surface*))::g::Fuse::Controls::Panel__FuseDrawingISurfaceDrawableDraw_fn;
+    type->interface17.fp_get_IsPrimary = (void(*)(uObject*, bool*))::g::Fuse::Controls::Panel__FuseDrawingISurfaceDrawableget_IsPrimary_fn;
+    type->interface17.fp_get_ElementSize = (void(*)(uObject*, ::g::Uno::Float2*))::g::Fuse::Controls::Panel__FuseDrawingISurfaceDrawableget_ElementSize_fn;
+    type->interface12.fp_Show = (void(*)(uObject*))::g::Fuse::Elements::Element__FuseTriggersActionsIShowShow_fn;
+    type->interface14.fp_Collapse = (void(*)(uObject*))::g::Fuse::Elements::Element__FuseTriggersActionsICollapseCollapse_fn;
+    type->interface13.fp_Hide = (void(*)(uObject*))::g::Fuse::Elements::Element__FuseTriggersActionsIHideHide_fn;
+    type->interface16.fp_SetSize = (void(*)(uObject*, ::g::Uno::Float2*))::g::Fuse::Elements::Element__FuseAnimationsIResizeSetSize_fn;
+    type->interface15.fp_get_ActualSize = (void(*)(uObject*, ::g::Uno::Float3*))::g::Fuse::Elements::Element__FuseIActualPlacementget_ActualSize_fn;
+    type->interface15.fp_add_Placed = (void(*)(uObject*, uDelegate*))::g::Fuse::Elements::Element__add_Placed_fn;
+    type->interface15.fp_remove_Placed = (void(*)(uObject*, uDelegate*))::g::Fuse::Elements::Element__remove_Placed_fn;
+    type->interface9.fp_GetEnumerator = (void(*)(uObject*, uObject**))::g::Fuse::Visual__UnoCollectionsIEnumerableFuseVisualGetEnumerator_fn;
+    type->interface10.fp_Clear = (void(*)(uObject*))::g::Fuse::Visual__UnoCollectionsICollectionFuseNodeClear_fn;
+    type->interface10.fp_Contains = (void(*)(uObject*, void*, bool*))::g::Fuse::Visual__UnoCollectionsICollectionFuseNodeContains_fn;
     type->interface6.fp_RemoveAt = (void(*)(uObject*, int*))::g::Fuse::Visual__UnoCollectionsIListFuseNodeRemoveAt_fn;
-    type->interface10.fp_GetEnumerator = (void(*)(uObject*, uObject**))::g::Fuse::Visual__UnoCollectionsIEnumerableFuseNodeGetEnumerator_fn;
-    type->interface9.fp_get_Count = (void(*)(uObject*, int*))::g::Fuse::Visual__UnoCollectionsICollectionFuseNodeget_Count_fn;
+    type->interface11.fp_GetEnumerator = (void(*)(uObject*, uObject**))::g::Fuse::Visual__UnoCollectionsIEnumerableFuseNodeGetEnumerator_fn;
+    type->interface10.fp_get_Count = (void(*)(uObject*, int*))::g::Fuse::Visual__UnoCollectionsICollectionFuseNodeget_Count_fn;
     type->interface6.fp_get_Item = (void(*)(uObject*, int*, uTRef))::g::Fuse::Visual__UnoCollectionsIListFuseNodeget_Item_fn;
     type->interface6.fp_Insert = (void(*)(uObject*, int*, void*))::g::Fuse::Visual__Insert1_fn;
     type->interface7.fp_OnPropertyChanged = (void(*)(uObject*, ::g::Uno::UX::PropertyObject*, ::g::Uno::UX::Selector*))::g::Fuse::Controls::Control__OnPropertyChanged2_fn;
     type->interface8.fp_FindTemplate = (void(*)(uObject*, uString*, ::g::Uno::UX::Template**))::g::Fuse::Visual__FindTemplate_fn;
-    type->interface9.fp_Add = (void(*)(uObject*, void*))::g::Fuse::Visual__Add1_fn;
-    type->interface9.fp_Remove = (void(*)(uObject*, void*, bool*))::g::Fuse::Visual__Remove1_fn;
+    type->interface10.fp_Add = (void(*)(uObject*, void*))::g::Fuse::Visual__Add1_fn;
+    type->interface10.fp_Remove = (void(*)(uObject*, void*, bool*))::g::Fuse::Visual__Remove1_fn;
     type->interface4.fp_Clear = (void(*)(uObject*))::g::Fuse::Node__UnoCollectionsICollectionFuseBindingClear_fn;
     type->interface4.fp_Contains = (void(*)(uObject*, void*, bool*))::g::Fuse::Node__UnoCollectionsICollectionFuseBindingContains_fn;
     type->interface0.fp_RemoveAt = (void(*)(uObject*, int*))::g::Fuse::Node__UnoCollectionsIListFuseBindingRemoveAt_fn;
@@ -241,12 +247,6 @@ void BuyEmralsPage__InitializeUX_fn(BuyEmralsPage* __this)
     __this->InitializeUX();
 }
 
-// public BuyEmralsPage New(Fuse.Navigation.Router router) :35
-void BuyEmralsPage__New5_fn(::g::Fuse::Navigation::Router* router1, BuyEmralsPage** __retval)
-{
-    *__retval = BuyEmralsPage::New5(router1);
-}
-
 uSStrong<uArray*> BuyEmralsPage::__g_static_nametable1_;
 ::g::Uno::UX::Selector BuyEmralsPage::__selector0_;
 ::g::Uno::UX::Selector BuyEmralsPage::__selector1_;
@@ -264,10 +264,10 @@ void BuyEmralsPage::ctor_8(::g::Fuse::Navigation::Router* router1)
 // private void InitializeUX() [instance] :41
 void BuyEmralsPage::InitializeUX()
 {
-    __g_nametable1 = ::g::Uno::UX::NameTable::New1(NULL, BuyEmralsPage::__g_static_nametable1());
+    __g_nametable1 = ::g::Uno::UX::NameTable::New1(NULL, BuyEmralsPage::__g_static_nametable1_);
     ::g::Fuse::Reactive::Data* temp11 = ::g::Fuse::Reactive::Data::New1(::STRINGS[9/*"back"*/]);
     ::g::Mouse* temp = ::g::Mouse::New4();
-    temp_Value_inst = ::g::emrals_FuseControlsTextControl_Value_Property::New1(temp, BuyEmralsPage::__selector0());
+    temp_Value_inst = ::g::emrals_FuseControlsTextControl_Value_Property::New1(temp, BuyEmralsPage::__selector0_);
     ::g::Fuse::Reactive::Data* temp12 = ::g::Fuse::Reactive::Data::New1(::STRINGS[10/*"id"*/]);
     ::g::Fuse::Reactive::Data* temp13 = ::g::Fuse::Reactive::Data::New1(::STRINGS[11/*"emrals"*/]);
     uString* temp14 = ::STRINGS[12/*"  ($"*/];
@@ -278,48 +278,48 @@ void BuyEmralsPage::InitializeUX()
     ::g::Fuse::Reactive::Add* temp19 = ::g::Fuse::Reactive::Add::New1(temp16, temp18);
     ::g::Fuse::Reactive::Add* temp20 = ::g::Fuse::Reactive::Add::New1(temp15, temp19);
     ::g::Mouse* temp1 = ::g::Mouse::New4();
-    temp1_Value_inst = ::g::emrals_FuseControlsTextControl_Value_Property::New1(temp1, BuyEmralsPage::__selector0());
+    temp1_Value_inst = ::g::emrals_FuseControlsTextControl_Value_Property::New1(temp1, BuyEmralsPage::__selector0_);
     ::g::Fuse::Reactive::Add* temp21 = ::g::Fuse::Reactive::Add::New1(temp13, temp20);
     ::g::PTMono* temp2 = ::g::PTMono::New4();
-    temp2_Value_inst = ::g::emrals_FuseControlsTextControl_Value_Property::New1(temp2, BuyEmralsPage::__selector0());
+    temp2_Value_inst = ::g::emrals_FuseControlsTextControl_Value_Property::New1(temp2, BuyEmralsPage::__selector0_);
     ::g::Fuse::Reactive::Data* temp22 = ::g::Fuse::Reactive::Data::New1(::STRINGS[15/*"error"*/]);
     ::g::Fuse::Reactive::Data* temp23 = ::g::Fuse::Reactive::Data::New1(::STRINGS[16/*"hideError"*/]);
     ::g::Fuse::Controls::Rectangle* temp3 = ::g::Fuse::Controls::Rectangle::New3();
-    temp3_Visibility_inst = ::g::emrals_FuseElementsElement_Visibility_Property::New1(temp3, BuyEmralsPage::__selector1());
+    temp3_Visibility_inst = ::g::emrals_FuseElementsElement_Visibility_Property::New1(temp3, BuyEmralsPage::__selector1_);
     ::g::Fuse::Reactive::Data* temp24 = ::g::Fuse::Reactive::Data::New1(::STRINGS[17/*"error_visib...*/]);
     ::g::Fuse::Reactive::Data* temp25 = ::g::Fuse::Reactive::Data::New1(::STRINGS[16/*"hideError"*/]);
     ::g::Basic::TextInput* temp4 = ::g::Basic::TextInput::New4();
-    temp4_Value_inst = ::g::emrals_FuseControlsTextInputControl_Value_Property::New1(temp4, BuyEmralsPage::__selector0());
+    temp4_Value_inst = ::g::emrals_FuseControlsTextInputControl_Value_Property::New1(temp4, BuyEmralsPage::__selector0_);
     ::g::Fuse::Reactive::Data* temp26 = ::g::Fuse::Reactive::Data::New1(::STRINGS[18/*"username"*/]);
     ::g::Basic::TextInput* temp5 = ::g::Basic::TextInput::New4();
-    temp5_Value_inst = ::g::emrals_FuseControlsTextInputControl_Value_Property::New1(temp5, BuyEmralsPage::__selector0());
+    temp5_Value_inst = ::g::emrals_FuseControlsTextInputControl_Value_Property::New1(temp5, BuyEmralsPage::__selector0_);
     ::g::Fuse::Reactive::Data* temp27 = ::g::Fuse::Reactive::Data::New1(::STRINGS[19/*"email"*/]);
     ::g::Basic::TextInput* temp6 = ::g::Basic::TextInput::New4();
-    temp6_Value_inst = ::g::emrals_FuseControlsTextInputControl_Value_Property::New1(temp6, BuyEmralsPage::__selector0());
+    temp6_Value_inst = ::g::emrals_FuseControlsTextInputControl_Value_Property::New1(temp6, BuyEmralsPage::__selector0_);
     ::g::Fuse::Reactive::Data* temp28 = ::g::Fuse::Reactive::Data::New1(::STRINGS[20/*"cardNumber"*/]);
     ::g::Basic::TextInput* temp7 = ::g::Basic::TextInput::New4();
-    temp7_Value_inst = ::g::emrals_FuseControlsTextInputControl_Value_Property::New1(temp7, BuyEmralsPage::__selector0());
+    temp7_Value_inst = ::g::emrals_FuseControlsTextInputControl_Value_Property::New1(temp7, BuyEmralsPage::__selector0_);
     ::g::Fuse::Reactive::Data* temp29 = ::g::Fuse::Reactive::Data::New1(::STRINGS[21/*"expiryMonth"*/]);
     ::g::Basic::TextInput* temp8 = ::g::Basic::TextInput::New4();
-    temp8_Value_inst = ::g::emrals_FuseControlsTextInputControl_Value_Property::New1(temp8, BuyEmralsPage::__selector0());
+    temp8_Value_inst = ::g::emrals_FuseControlsTextInputControl_Value_Property::New1(temp8, BuyEmralsPage::__selector0_);
     ::g::Fuse::Reactive::Data* temp30 = ::g::Fuse::Reactive::Data::New1(::STRINGS[22/*"expiryYear"*/]);
     ::g::Basic::TextInput* temp9 = ::g::Basic::TextInput::New4();
-    temp9_Value_inst = ::g::emrals_FuseControlsTextInputControl_Value_Property::New1(temp9, BuyEmralsPage::__selector0());
+    temp9_Value_inst = ::g::emrals_FuseControlsTextInputControl_Value_Property::New1(temp9, BuyEmralsPage::__selector0_);
     ::g::Fuse::Reactive::Data* temp31 = ::g::Fuse::Reactive::Data::New1(::STRINGS[23/*"cvc"*/]);
     uString* temp32 = ::STRINGS[24/*"PAY $"*/];
     ::g::Fuse::Reactive::Constant* temp33 = ::g::Fuse::Reactive::Constant::New1(temp32);
     ::g::Fuse::Reactive::Data* temp34 = ::g::Fuse::Reactive::Data::New1(::STRINGS[13/*"dollar_value"*/]);
     ::g::Horse* temp10 = ::g::Horse::New4();
-    temp10_Value_inst = ::g::emrals_FuseControlsTextControl_Value_Property::New1(temp10, BuyEmralsPage::__selector0());
+    temp10_Value_inst = ::g::emrals_FuseControlsTextControl_Value_Property::New1(temp10, BuyEmralsPage::__selector0_);
     ::g::Fuse::Reactive::Add* temp35 = ::g::Fuse::Reactive::Add::New1(temp33, temp34);
     confirmrec = ::g::Fuse::Controls::Rectangle::New3();
-    confirmrec_Color_inst = ::g::emrals_FuseControlsShape_Color_Property::New1(confirmrec, BuyEmralsPage::__selector2());
+    confirmrec_Color_inst = ::g::emrals_FuseControlsShape_Color_Property::New1(confirmrec, BuyEmralsPage::__selector2_);
     ::g::Fuse::Reactive::Data* temp36 = ::g::Fuse::Reactive::Data::New1(::STRINGS[25/*"testPay"*/]);
     ::g::Fuse::Reactive::JavaScript* temp37 = ::g::Fuse::Reactive::JavaScript::New2(__g_nametable1);
     ::g::Fuse::Controls::DockPanel* temp38 = ::g::Fuse::Controls::DockPanel::New4();
     ::g::Fuse::Controls::Panel* temp39 = ::g::Fuse::Controls::Panel::New3();
     ::g::Fuse::Controls::Text* temp40 = ::g::Fuse::Controls::Text::New3();
-    temp_eb22 = ::g::Fuse::Reactive::EventBinding::New1((uObject*)temp11, __g_nametable1);
+    temp_eb22 = ::g::Fuse::Reactive::EventBinding::New1((uObject*)temp11);
     ::g::PTreal* temp41 = ::g::PTreal::New4();
     ::g::Fuse::Drawing::StaticSolidColor* temp42 = ::g::Fuse::Drawing::StaticSolidColor::New2(::g::Uno::Float4__New2(1.0f, 1.0f, 1.0f, 1.0f));
     ::g::Fuse::Controls::ScrollView* temp43 = ::g::Fuse::Controls::ScrollView::New4();
@@ -330,37 +330,37 @@ void BuyEmralsPage::InitializeUX()
     ::g::Fuse::Controls::Rectangle* temp48 = ::g::Fuse::Controls::Rectangle::New3();
     ::g::Fuse::Controls::Grid* temp49 = ::g::Fuse::Controls::Grid::New4();
     ::g::Horse* temp50 = ::g::Horse::New4();
-    ::g::Fuse::Reactive::DataBinding* temp51 = ::g::Fuse::Reactive::DataBinding::New1(temp_Value_inst, (uObject*)temp12, __g_nametable1, 3);
+    ::g::Fuse::Reactive::DataBinding* temp51 = ::g::Fuse::Reactive::DataBinding::New1(temp_Value_inst, (uObject*)temp12, 3);
     ::g::Horse* temp52 = ::g::Horse::New4();
-    ::g::Fuse::Reactive::DataBinding* temp53 = ::g::Fuse::Reactive::DataBinding::New1(temp1_Value_inst, (uObject*)temp21, __g_nametable1, 3);
+    ::g::Fuse::Reactive::DataBinding* temp53 = ::g::Fuse::Reactive::DataBinding::New1(temp1_Value_inst, (uObject*)temp21, 3);
     ::g::Fuse::Controls::Rectangle* temp54 = ::g::Fuse::Controls::Rectangle::New3();
     ::g::Fuse::Controls::Panel* temp55 = ::g::Fuse::Controls::Panel::New3();
     ::g::PTMono* temp56 = ::g::PTMono::New4();
-    ::g::Fuse::Reactive::DataBinding* temp57 = ::g::Fuse::Reactive::DataBinding::New1(temp2_Value_inst, (uObject*)temp22, __g_nametable1, 3);
-    temp_eb24 = ::g::Fuse::Reactive::EventBinding::New1((uObject*)temp23, __g_nametable1);
-    ::g::Fuse::Reactive::DataBinding* temp58 = ::g::Fuse::Reactive::DataBinding::New1(temp3_Visibility_inst, (uObject*)temp24, __g_nametable1, 3);
-    temp_eb23 = ::g::Fuse::Reactive::EventBinding::New1((uObject*)temp25, __g_nametable1);
+    ::g::Fuse::Reactive::DataBinding* temp57 = ::g::Fuse::Reactive::DataBinding::New1(temp2_Value_inst, (uObject*)temp22, 3);
+    temp_eb24 = ::g::Fuse::Reactive::EventBinding::New1((uObject*)temp23);
+    ::g::Fuse::Reactive::DataBinding* temp58 = ::g::Fuse::Reactive::DataBinding::New1(temp3_Visibility_inst, (uObject*)temp24, 3);
+    temp_eb23 = ::g::Fuse::Reactive::EventBinding::New1((uObject*)temp25);
     ::g::Fuse::Controls::StackPanel* temp59 = ::g::Fuse::Controls::StackPanel::New4();
     ::g::Mouse* temp60 = ::g::Mouse::New4();
     ::g::Fuse::Controls::Rectangle* temp61 = ::g::Fuse::Controls::Rectangle::New3();
-    ::g::Fuse::Reactive::DataBinding* temp62 = ::g::Fuse::Reactive::DataBinding::New1(temp4_Value_inst, (uObject*)temp26, __g_nametable1, 3);
+    ::g::Fuse::Reactive::DataBinding* temp62 = ::g::Fuse::Reactive::DataBinding::New1(temp4_Value_inst, (uObject*)temp26, 3);
     ::g::Fuse::Controls::Rectangle* temp63 = ::g::Fuse::Controls::Rectangle::New3();
-    ::g::Fuse::Reactive::DataBinding* temp64 = ::g::Fuse::Reactive::DataBinding::New1(temp5_Value_inst, (uObject*)temp27, __g_nametable1, 3);
+    ::g::Fuse::Reactive::DataBinding* temp64 = ::g::Fuse::Reactive::DataBinding::New1(temp5_Value_inst, (uObject*)temp27, 3);
     ::g::Fuse::Controls::Rectangle* temp65 = ::g::Fuse::Controls::Rectangle::New3();
-    ::g::Fuse::Reactive::DataBinding* temp66 = ::g::Fuse::Reactive::DataBinding::New1(temp6_Value_inst, (uObject*)temp28, __g_nametable1, 3);
+    ::g::Fuse::Reactive::DataBinding* temp66 = ::g::Fuse::Reactive::DataBinding::New1(temp6_Value_inst, (uObject*)temp28, 3);
     ::g::Fuse::Controls::StackPanel* temp67 = ::g::Fuse::Controls::StackPanel::New4();
     ::g::Fuse::Controls::Rectangle* temp68 = ::g::Fuse::Controls::Rectangle::New3();
-    ::g::Fuse::Reactive::DataBinding* temp69 = ::g::Fuse::Reactive::DataBinding::New1(temp7_Value_inst, (uObject*)temp29, __g_nametable1, 3);
-    ::g::Fuse::Reactive::DataBinding* temp70 = ::g::Fuse::Reactive::DataBinding::New1(temp8_Value_inst, (uObject*)temp30, __g_nametable1, 3);
+    ::g::Fuse::Reactive::DataBinding* temp69 = ::g::Fuse::Reactive::DataBinding::New1(temp7_Value_inst, (uObject*)temp29, 3);
+    ::g::Fuse::Reactive::DataBinding* temp70 = ::g::Fuse::Reactive::DataBinding::New1(temp8_Value_inst, (uObject*)temp30, 3);
     ::g::Fuse::Controls::Rectangle* temp71 = ::g::Fuse::Controls::Rectangle::New3();
-    ::g::Fuse::Reactive::DataBinding* temp72 = ::g::Fuse::Reactive::DataBinding::New1(temp9_Value_inst, (uObject*)temp31, __g_nametable1, 3);
-    ::g::Fuse::Reactive::DataBinding* temp73 = ::g::Fuse::Reactive::DataBinding::New1(temp10_Value_inst, (uObject*)temp35, __g_nametable1, 3);
+    ::g::Fuse::Reactive::DataBinding* temp72 = ::g::Fuse::Reactive::DataBinding::New1(temp9_Value_inst, (uObject*)temp31, 3);
+    ::g::Fuse::Reactive::DataBinding* temp73 = ::g::Fuse::Reactive::DataBinding::New1(temp10_Value_inst, (uObject*)temp35, 3);
     ::g::Fuse::Gestures::WhilePressed* temp74 = ::g::Fuse::Gestures::WhilePressed::New2();
     ::g::Fuse::Animations::Change* temp75 = (::g::Fuse::Animations::Change*)::g::Fuse::Animations::Change::New2(::TYPES[1/*Fuse.Animations.Change<float4>*/], confirmrec_Color_inst);
-    temp_eb25 = ::g::Fuse::Reactive::EventBinding::New1((uObject*)temp36, __g_nametable1);
+    temp_eb25 = ::g::Fuse::Reactive::EventBinding::New1((uObject*)temp36);
     temp37->LineNumber(2);
     temp37->FileName(::STRINGS[26/*"Pages/BuyEm...*/]);
-    temp37->File(::g::Uno::UX::BundleFileSource::New1(::g::emrals_bundle::BuyEmralscf53b7c9()));
+    temp37->File(::g::Uno::UX::BundleFileSource::New1(::g::emrals_bundle::BuyEmrals3761b270()));
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(temp38->Children()), ::TYPES[2/*Uno.Collections.ICollection<Fuse.Node>*/]), temp39);
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(temp38->Children()), ::TYPES[2/*Uno.Collections.ICollection<Fuse.Node>*/]), temp43);
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(temp38->Children()), ::TYPES[2/*Uno.Collections.ICollection<Fuse.Node>*/]), confirmrec);
@@ -545,7 +545,7 @@ void BuyEmralsPage::InitializeUX()
     uPtr(confirmrec)->Height(::g::Uno::UX::Size__New1(44.0f, 1));
     uPtr(confirmrec)->Alignment(4);
     uPtr(confirmrec)->Margin(::g::Uno::Float4__New2(0.0f, 0.0f, 0.0f, 60.0f));
-    uPtr(confirmrec)->Name(BuyEmralsPage::__selector3());
+    uPtr(confirmrec)->Name(BuyEmralsPage::__selector3_);
     ::g::Fuse::Controls::DockPanel::SetDock(confirmrec, 3);
     ::g::Fuse::Gestures::Clicked::AddHandler(confirmrec, uDelegate::New(::TYPES[3/*Fuse.Gestures.ClickedHandler*/], (void*)::g::Fuse::Reactive::EventBinding__OnEvent_fn, uPtr(temp_eb25)));
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(uPtr(confirmrec)->Children()), ::TYPES[2/*Uno.Collections.ICollection<Fuse.Node>*/]), temp10);
@@ -566,14 +566,6 @@ void BuyEmralsPage::InitializeUX()
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(uPtr(__g_nametable1)->Objects()), ::TYPES[6/*Uno.Collections.ICollection<object>*/]), temp_eb25);
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(Children()), ::TYPES[2/*Uno.Collections.ICollection<Fuse.Node>*/]), temp37);
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(Children()), ::TYPES[2/*Uno.Collections.ICollection<Fuse.Node>*/]), temp38);
-}
-
-// public BuyEmralsPage New(Fuse.Navigation.Router router) [static] :35
-BuyEmralsPage* BuyEmralsPage::New5(::g::Fuse::Navigation::Router* router1)
-{
-    BuyEmralsPage* obj1 = (BuyEmralsPage*)uNew(BuyEmralsPage_typeof());
-    obj1->ctor_8(router1);
-    return obj1;
 }
 // }
 

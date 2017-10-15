@@ -10,6 +10,7 @@
 #include <Fuse.Controls.Native.-118b98c3.h>
 #include <Fuse.Controls.Native.-20f6897.h>
 #include <Fuse.Controls.Native.-3800373f.h>
+#include <Fuse.Controls.Native.-3d61e8e3.h>
 #include <Fuse.Controls.Native.-5999be91.h>
 #include <Fuse.Controls.Native.-5b6a09a7.h>
 #include <Fuse.Controls.Native.-6275f02c.h>
@@ -90,20 +91,20 @@
 #include <Uno.UX.BundleFileSource.h>
 #include <Uno.UX.FileSource.h>
 #include <Uno/JNIHelper.h>
-static uString* STRINGS[5];
-static uType* TYPES[12];
+static uString* STRINGS[2];
+static uType* TYPES[8];
 
 namespace g{
 namespace Fuse{
 namespace Controls{
 namespace Native{
 
-// /usr/local/share/uno/Packages/Fuse.Controls.Native/1.2.1/$.uno
-// --------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Controls.Native\1.3.0-rc2\NativeRenderer.uno
+// ---------------------------------------------------------------------------------------------
 
-// internal sealed extern class Blitter :775
+// internal sealed extern class Blitter :241
 // {
-// static Blitter() :775
+// static generated Blitter() :241
 static void Blitter__cctor__fn(uType* __type)
 {
     Blitter::Singleton_ = Blitter::New1();
@@ -113,11 +114,11 @@ static void Blitter_build(uType* type)
 {
     ::TYPES[0] = ::g::Uno::Float2_typeof()->Array();
     type->SetFields(0,
-        ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLDrawCall_typeof(), offsetof(::g::Fuse::Controls::Native::Blitter, _draw_f88335dd), 0,
-        ::g::Uno::Bool_typeof(), offsetof(::g::Fuse::Controls::Native::Blitter, _ios), 0,
-        ::g::Uno::Graphics::VertexBuffer_typeof(), offsetof(::g::Fuse::Controls::Native::Blitter, Blit_v_f88335dd_3_4_1), 0,
-        ::TYPES[0/*float2[]*/], offsetof(::g::Fuse::Controls::Native::Blitter, Blit_verts_f88335dd_3_3_5), 0,
-        type, (uintptr_t)&::g::Fuse::Controls::Native::Blitter::Singleton_, uFieldFlagsStatic);
+        ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLDrawCall_typeof(), offsetof(Blitter, _draw_f88335dd), 0,
+        ::g::Uno::Bool_typeof(), offsetof(Blitter, _ios), 0,
+        ::g::Uno::Graphics::VertexBuffer_typeof(), offsetof(Blitter, Blit_v_f88335dd_3_4_1), 0,
+        ::TYPES[0/*float2[]*/], offsetof(Blitter, Blit_verts_f88335dd_3_3_5), 0,
+        type, (uintptr_t)&Blitter::Singleton_, uFieldFlagsStatic);
 }
 
 uType* Blitter_typeof()
@@ -136,25 +137,25 @@ uType* Blitter_typeof()
     return type;
 }
 
-// public generated Blitter() :775
+// public generated Blitter() :241
 void Blitter__ctor__fn(Blitter* __this)
 {
     __this->ctor_();
 }
 
-// public void Blit(texture2D vt, float2 pos, float2 size, float4x4 localToClipTransform) :782
+// public void Blit(texture2D vt, float2 pos, float2 size, float4x4 localToClipTransform) :248
 void Blitter__Blit_fn(Blitter* __this, ::g::Uno::Graphics::Texture2D* vt, ::g::Uno::Float2* pos, ::g::Uno::Float2* size, ::g::Uno::Float4x4* localToClipTransform)
 {
     __this->Blit(vt, *pos, *size, *localToClipTransform);
 }
 
-// private generated void init_DrawCalls() :775
+// private generated void init_DrawCalls() :241
 void Blitter__init_DrawCalls_fn(Blitter* __this)
 {
     __this->init_DrawCalls();
 }
 
-// public generated Blitter New() :775
+// public generated Blitter New() :241
 void Blitter__New1_fn(Blitter** __retval)
 {
     *__retval = Blitter::New1();
@@ -162,13 +163,13 @@ void Blitter__New1_fn(Blitter** __retval)
 
 uSStrong<Blitter*> Blitter::Singleton_;
 
-// public generated Blitter() [instance] :775
+// public generated Blitter() [instance] :241
 void Blitter::ctor_()
 {
     init_DrawCalls();
 }
 
-// public void Blit(texture2D vt, float2 pos, float2 size, float4x4 localToClipTransform) [instance] :782
+// public void Blit(texture2D vt, float2 pos, float2 size, float4x4 localToClipTransform) [instance] :248
 void Blitter::Blit(::g::Uno::Graphics::Texture2D* vt, ::g::Uno::Float2 pos, ::g::Uno::Float2 size, ::g::Uno::Float4x4 localToClipTransform)
 {
     _draw_f88335dd.BlendEnabled(true);
@@ -186,7 +187,7 @@ void Blitter::Blit(::g::Uno::Graphics::Texture2D* vt, ::g::Uno::Float2 pos, ::g:
     _draw_f88335dd.DrawArrays(uPtr(Blit_verts_f88335dd_3_3_5)->Length());
 }
 
-// private generated void init_DrawCalls() [instance] :775
+// private generated void init_DrawCalls() [instance] :241
 void Blitter::init_DrawCalls()
 {
     uArray* verts_f88335dd_3_3_0 = uArray::Init< ::g::Uno::Float2>(::TYPES[0/*float2[]*/], 6, ::g::Uno::Float2__New2(0.0f, 0.0f), ::g::Uno::Float2__New2(1.0f, 0.0f), ::g::Uno::Float2__New2(1.0f, 1.0f), ::g::Uno::Float2__New2(0.0f, 0.0f), ::g::Uno::Float2__New2(1.0f, 1.0f), ::g::Uno::Float2__New2(0.0f, 1.0f));
@@ -195,7 +196,7 @@ void Blitter::init_DrawCalls()
     _draw_f88335dd = ::g::Uno::Runtime::Implementation::ShaderBackends::OpenGL::GLDrawCall__New1(::g::FuseControlsNative_bundle::Blitter65ac1d08());
 }
 
-// public generated Blitter New() [static] :775
+// public generated Blitter New() [static] :241
 Blitter* Blitter::New1()
 {
     Blitter* obj1 = (Blitter*)uNew(Blitter_typeof());
@@ -204,10 +205,10 @@ Blitter* Blitter::New1()
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Controls.Native/1.2.1/$.uno
-// --------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Controls.Native\1.3.0-rc2\Interfaces.uno
+// -----------------------------------------------------------------------------------------
 
-// public abstract interface ICircleView :460
+// public abstract interface ICircleView :108
 // {
 uInterfaceType* ICircleView_typeof()
 {
@@ -219,10 +220,10 @@ uInterfaceType* ICircleView_typeof()
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Controls.Native/1.2.1/$.uno
-// --------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Controls.Native\1.3.0-rc2\Interfaces.uno
+// -----------------------------------------------------------------------------------------
 
-// public abstract interface IGraphicsView :365
+// public abstract interface IGraphicsView :13
 // {
 uInterfaceType* IGraphicsView_typeof()
 {
@@ -234,10 +235,10 @@ uInterfaceType* IGraphicsView_typeof()
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Controls.Native/1.2.1/$.uno
-// --------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Controls.Native\1.3.0-rc2\Interfaces.uno
+// -----------------------------------------------------------------------------------------
 
-// public abstract interface IImageView :443
+// public abstract interface IImageView :91
 // {
 uInterfaceType* IImageView_typeof()
 {
@@ -249,10 +250,10 @@ uInterfaceType* IImageView_typeof()
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Controls.Native/1.2.1/$.uno
-// --------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Controls.Native\1.3.0-rc2\Interfaces.uno
+// -----------------------------------------------------------------------------------------
 
-// public abstract interface ILabelView :371
+// public abstract interface ILabelView :19
 // {
 uInterfaceType* ILabelView_typeof()
 {
@@ -264,21 +265,23 @@ uInterfaceType* ILabelView_typeof()
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Controls.Native/1.2.1/$.uno
-// --------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Controls.Native\1.3.0-rc2\ImageLoader.uno
+// ------------------------------------------------------------------------------------------
 
-// internal sealed extern class ImageHandle :41
+// internal sealed extern class ImageHandle :15
 // {
 static void ImageHandle_build(uType* type)
 {
     ::STRINGS[0] = uString::Const("ImageHandle is disposed");
+    type->SetDependencies(
+        ::g::Fuse::Controls::Native::ImageLoader_typeof());
     type->SetInterfaces(
         ::g::Uno::IDisposable_typeof(), offsetof(ImageHandle_type, interface0));
     type->SetFields(0,
-        uObject_typeof(), offsetof(::g::Fuse::Controls::Native::ImageHandle, _handle), 0,
-        ::g::Uno::Bool_typeof(), offsetof(::g::Fuse::Controls::Native::ImageHandle, _isDisposed), 0,
-        ::g::Uno::String_typeof(), offsetof(::g::Fuse::Controls::Native::ImageHandle, _name), 0,
-        ::g::Uno::Int_typeof(), offsetof(::g::Fuse::Controls::Native::ImageHandle, _pinCount), 0);
+        uObject_typeof(), offsetof(ImageHandle, _handle), 0,
+        ::g::Uno::Bool_typeof(), offsetof(ImageHandle, _isDisposed), 0,
+        ::g::Uno::String_typeof(), offsetof(ImageHandle, _name), 0,
+        ::g::Uno::Int_typeof(), offsetof(ImageHandle, _pinCount), 0);
 }
 
 ImageHandle_type* ImageHandle_typeof()
@@ -289,6 +292,7 @@ ImageHandle_type* ImageHandle_typeof()
     uTypeOptions options;
     options.FieldCount = 4;
     options.InterfaceCount = 1;
+    options.DependencyCount = 1;
     options.ObjectSize = sizeof(ImageHandle);
     options.TypeSize = sizeof(ImageHandle_type);
     type = (ImageHandle_type*)uClassType::New("Fuse.Controls.Native.ImageHandle", options);
@@ -297,43 +301,43 @@ ImageHandle_type* ImageHandle_typeof()
     return type;
 }
 
-// public ImageHandle(string name, object handle) :62
+// public ImageHandle(string name, object handle) :36
 void ImageHandle__ctor__fn(ImageHandle* __this, uString* name, uObject* handle)
 {
     __this->ctor_(name, handle);
 }
 
-// public void Dispose() :75
+// public void Dispose() :49
 void ImageHandle__Dispose_fn(ImageHandle* __this)
 {
     __this->Dispose();
 }
 
-// public object get_Handle() :45
+// public object get_Handle() :19
 void ImageHandle__get_Handle_fn(ImageHandle* __this, uObject** __retval)
 {
     *__retval = __this->Handle();
 }
 
-// public string get_Name() :55
+// public string get_Name() :29
 void ImageHandle__get_Name_fn(ImageHandle* __this, uString** __retval)
 {
     *__retval = __this->Name();
 }
 
-// public ImageHandle New(string name, object handle) :62
+// public ImageHandle New(string name, object handle) :36
 void ImageHandle__New1_fn(uString* name, uObject* handle, ImageHandle** __retval)
 {
     *__retval = ImageHandle::New1(name, handle);
 }
 
-// public void Pin() :69
+// public void Pin() :43
 void ImageHandle__Pin_fn(ImageHandle* __this)
 {
     __this->Pin();
 }
 
-// public ImageHandle(string name, object handle) [instance] :62
+// public ImageHandle(string name, object handle) [instance] :36
 void ImageHandle::ctor_(uString* name, uObject* handle)
 {
     _handle = handle;
@@ -341,7 +345,7 @@ void ImageHandle::ctor_(uString* name, uObject* handle)
     Pin();
 }
 
-// public void Dispose() [instance] :75
+// public void Dispose() [instance] :49
 void ImageHandle::Dispose()
 {
     if (!_isDisposed)
@@ -356,7 +360,7 @@ void ImageHandle::Dispose()
     }
 }
 
-// public object get_Handle() [instance] :45
+// public object get_Handle() [instance] :19
 uObject* ImageHandle::Handle()
 {
     if (_isDisposed)
@@ -365,19 +369,19 @@ uObject* ImageHandle::Handle()
     return _handle;
 }
 
-// public string get_Name() [instance] :55
+// public string get_Name() [instance] :29
 uString* ImageHandle::Name()
 {
     return _name;
 }
 
-// public void Pin() [instance] :69
+// public void Pin() [instance] :43
 void ImageHandle::Pin()
 {
     _pinCount++;
 }
 
-// public ImageHandle New(string name, object handle) [static] :62
+// public ImageHandle New(string name, object handle) [static] :36
 ImageHandle* ImageHandle::New1(uString* name, uObject* handle)
 {
     ImageHandle* obj1 = (ImageHandle*)uNew(ImageHandle_typeof());
@@ -386,10 +390,10 @@ ImageHandle* ImageHandle::New1(uString* name, uObject* handle)
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Controls.Native/1.2.1/$.uno
-// --------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Controls.Native\1.3.0-rc2\ImageLoader.uno
+// ------------------------------------------------------------------------------------------
 
-// private sealed extern class ImageLoader.ImageHandlePromise :212
+// private sealed extern class ImageLoader.ImageHandlePromise :186
 // {
 static void ImageLoader__ImageHandlePromise_build(uType* type)
 {
@@ -400,11 +404,13 @@ static void ImageLoader__ImageHandlePromise_build(uType* type)
     ::TYPES[4] = ::g::Uno::Action1_typeof()->MakeType(::g::Java::Object_typeof(), NULL);
     ::TYPES[5] = ::g::Uno::Collections::List__Enumerator_typeof()->MakeType(::g::Uno::Threading::Future1_typeof()->MakeType(::g::Java::Object_typeof(), NULL), NULL);
     type->SetBase(::g::Uno::Threading::Promise_typeof()->MakeType(::g::Fuse::Controls::Native::ImageHandle_typeof(), NULL));
+    type->SetDependencies(
+        ::g::Fuse::Controls::Native::ImageLoader_typeof());
     type->SetInterfaces(
         ::g::Uno::IDisposable_typeof(), offsetof(::g::Uno::Threading::Future_type, interface0));
     type->SetFields(9,
-        ::TYPES[1/*Uno.Collections.List<Uno.Threading.Future<Java.Object>>*/], offsetof(::g::Fuse::Controls::Native::ImageLoader__ImageHandlePromise, _dispose), 0,
-        ::g::Uno::String_typeof(), offsetof(::g::Fuse::Controls::Native::ImageLoader__ImageHandlePromise, _url), 0);
+        ::TYPES[1/*Uno.Collections.List<Uno.Threading.Future<Java.Object>>*/], offsetof(ImageLoader__ImageHandlePromise, _dispose), 0,
+        ::g::Uno::String_typeof(), offsetof(ImageLoader__ImageHandlePromise, _url), 0);
 }
 
 ::g::Uno::Threading::Future_type* ImageLoader__ImageHandlePromise_typeof()
@@ -416,6 +422,7 @@ static void ImageLoader__ImageHandlePromise_build(uType* type)
     options.BaseDefinition = ::g::Uno::Threading::Promise_typeof();
     options.FieldCount = 11;
     options.InterfaceCount = 1;
+    options.DependencyCount = 1;
     options.ObjectSize = sizeof(ImageLoader__ImageHandlePromise);
     options.TypeSize = sizeof(::g::Uno::Threading::Future_type);
     type = (::g::Uno::Threading::Future_type*)uClassType::New("Fuse.Controls.Native.ImageLoader.ImageHandlePromise", options);
@@ -425,55 +432,65 @@ static void ImageLoader__ImageHandlePromise_build(uType* type)
     return type;
 }
 
-// public ImageHandlePromise(string url) :218
+// public ImageHandlePromise(string url) :192
 void ImageLoader__ImageHandlePromise__ctor_7_fn(ImageLoader__ImageHandlePromise* __this, uString* url)
 {
     __this->ctor_7(url);
 }
 
-// public override sealed void Dispose() :267
+// public override sealed void Dispose() :241
 void ImageLoader__ImageHandlePromise__Dispose_fn(ImageLoader__ImageHandlePromise* __this)
 {
     ::g::Uno::Collections::List__Enumerator<uStrong< ::g::Uno::Threading::Future1*> > ret3;
     ::g::Uno::Threading::Future1__Dispose_fn(__this);
+    ::g::Uno::Collections::List__Enumerator<uStrong< ::g::Uno::Threading::Future1*> > enum1 = (::g::Uno::Collections::List__GetEnumerator_fn(uPtr(__this->_dispose), &ret3), ret3);
 
-    for (::g::Uno::Collections::List__Enumerator<uStrong< ::g::Uno::Threading::Future1*> > enum1 = (::g::Uno::Collections::List__GetEnumerator_fn(uPtr(__this->_dispose), &ret3), ret3); enum1.MoveNext(::TYPES[5/*Uno.Collections.List<Uno.Threading.Future<Java.Object>>.Enumerator*/]); )
     {
-        ::g::Uno::Threading::Future1* p = enum1.Current(::TYPES[5/*Uno.Collections.List<Uno.Threading.Future<Java.Object>>.Enumerator*/]);
-        uPtr(p)->Dispose();
+        const auto __finally_fun = [&]()
+        {
+            enum1.Dispose(::TYPES[5/*Uno.Collections.List<Uno.Threading.Future<Java.Object>>.Enumerator*/]);
+        };
+
+        const uFinally<decltype(__finally_fun)> __f(__finally_fun);
+
+        while (enum1.MoveNext(::TYPES[5/*Uno.Collections.List<Uno.Threading.Future<Java.Object>>.Enumerator*/]))
+        {
+            ::g::Uno::Threading::Future1* p = enum1.Current(::TYPES[5/*Uno.Collections.List<Uno.Threading.Future<Java.Object>>.Enumerator*/]);
+            uPtr(p)->Dispose();
+        }
     }
 }
 
-// private Java.Object Download() :243
+// private Java.Object Download() :217
 void ImageLoader__ImageHandlePromise__Download_fn(ImageLoader__ImageHandlePromise* __this, ::g::Java::Object** __retval)
 {
     *__retval = __this->Download();
 }
 
-// private static Java.Object Download(string url) :249
+// private static Java.Object Download(string url) :223
 void ImageLoader__ImageHandlePromise__Download1_fn(uString* url, ::g::Java::Object** __retval)
 {
     *__retval = ImageLoader__ImageHandlePromise::Download1(url);
 }
 
-// public ImageHandlePromise New(string url) :218
+// public ImageHandlePromise New(string url) :192
 void ImageLoader__ImageHandlePromise__New5_fn(uString* url, ImageLoader__ImageHandlePromise** __retval)
 {
     *__retval = ImageLoader__ImageHandlePromise::New5(url);
 }
 
-// private void OnDone(Java.Object obj) :228
+// private void OnDone(Java.Object obj) :202
 void ImageLoader__ImageHandlePromise__OnDone_fn(ImageLoader__ImageHandlePromise* __this, ::g::Java::Object* obj)
 {
     __this->OnDone(obj);
 }
 
-// public ImageHandlePromise(string url) [instance] :218
+// public ImageHandlePromise(string url) [instance] :192
 void ImageLoader__ImageHandlePromise::ctor_7(uString* url)
 {
     _dispose = ((::g::Uno::Collections::List*)::g::Uno::Collections::List::New1(::TYPES[1/*Uno.Collections.List<Uno.Threading.Future<Java.Object>>*/]));
     ctor_5(::g::Fuse::UpdateManager::Dispatcher());
-    ::g::Uno::Collections::Dictionary__Add_fn(uPtr(::g::Fuse::Controls::Native::ImageLoader::_pendingeImages()), url, this);
+    ::g::Uno::Collections::Dictionary__Add_fn(uPtr(::g::Fuse::Controls::Native::ImageLoader::_pendingeImages_), url, this);
     _url = url;
     ::g::Uno::Threading::Future1* download = (::g::Uno::Threading::Future1*)::g::Uno::Threading::Promise::Run1(::TYPES[2/*Uno.Threading.Promise<Java.Object>*/], ::g::Fuse::UpdateManager::Dispatcher(), uDelegate::New(::TYPES[3/*Uno.Func<Java.Object>*/], (void*)ImageLoader__ImageHandlePromise__Download_fn, this));
     ::g::Uno::Threading::Future1* then = (::g::Uno::Threading::Future1*)uPtr(download)->Then(uDelegate::New(::TYPES[4/*Uno.Action<Java.Object>*/], (void*)ImageLoader__ImageHandlePromise__OnDone_fn, this));
@@ -481,13 +498,13 @@ void ImageLoader__ImageHandlePromise::ctor_7(uString* url)
     ::g::Uno::Collections::List__Add_fn(uPtr(_dispose), then);
 }
 
-// private Java.Object Download() [instance] :243
+// private Java.Object Download() [instance] :217
 ::g::Java::Object* ImageLoader__ImageHandlePromise::Download()
 {
     return ImageLoader__ImageHandlePromise::Download1(_url);
 }
 
-// private void OnDone(Java.Object obj) [instance] :228
+// private void OnDone(Java.Object obj) [instance] :202
 void ImageLoader__ImageHandlePromise::OnDone(::g::Java::Object* obj)
 {
     bool ret4;
@@ -497,14 +514,14 @@ void ImageLoader__ImageHandlePromise::OnDone(::g::Java::Object* obj)
     else
     {
         ::g::Fuse::Controls::Native::ImageHandle* imageHandle = ::g::Fuse::Controls::Native::ImageHandle::New1(_url, obj);
-        ::g::Uno::Collections::Dictionary__Add_fn(uPtr(::g::Fuse::Controls::Native::ImageLoader::_imageHandleCache()), _url, imageHandle);
+        ::g::Uno::Collections::Dictionary__Add_fn(uPtr(::g::Fuse::Controls::Native::ImageLoader::_imageHandleCache_), _url, imageHandle);
         ::g::Uno::Threading::Promise__Resolve_fn(this, imageHandle);
     }
 
-    ::g::Uno::Collections::Dictionary__Remove_fn(uPtr(::g::Fuse::Controls::Native::ImageLoader::_pendingeImages()), _url, &ret4);
+    ::g::Uno::Collections::Dictionary__Remove_fn(uPtr(::g::Fuse::Controls::Native::ImageLoader::_pendingeImages_), _url, &ret4);
 }
 
-// private static Java.Object Download(string url) [static] :249
+// private static Java.Object Download(string url) [static] :223
 ::g::Java::Object* ImageLoader__ImageHandlePromise::Download1(uString* url)
 {
     {
@@ -522,7 +539,7 @@ void ImageLoader__ImageHandlePromise::OnDone(::g::Java::Object* obj)
     
 }
 
-// public ImageHandlePromise New(string url) [static] :218
+// public ImageHandlePromise New(string url) [static] :192
 ImageLoader__ImageHandlePromise* ImageLoader__ImageHandlePromise::New5(uString* url)
 {
     ImageLoader__ImageHandlePromise* obj2 = (ImageLoader__ImageHandlePromise*)uNew(ImageLoader__ImageHandlePromise_typeof());
@@ -531,29 +548,23 @@ ImageLoader__ImageHandlePromise* ImageLoader__ImageHandlePromise::New5(uString* 
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Controls.Native/1.2.1/$.uno
-// --------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Controls.Native\1.3.0-rc2\ImageLoader.uno
+// ------------------------------------------------------------------------------------------
 
-// internal static extern class ImageLoader :89
+// internal static extern class ImageLoader :63
 // {
-// static ImageLoader() :89
+// static generated ImageLoader() :63
 static void ImageLoader__cctor__fn(uType* __type)
 {
-    ImageLoader::_imageHandleCache_ = ((::g::Uno::Collections::Dictionary*)::g::Uno::Collections::Dictionary::New1(::TYPES[6/*Uno.Collections.Dictionary<string, Fuse.Controls.Native.ImageHandle>*/]));
-    ImageLoader::_pendingeImages_ = ((::g::Uno::Collections::Dictionary*)::g::Uno::Collections::Dictionary::New1(::TYPES[7/*Uno.Collections.Dictionary<string, Fuse.Controls.Native.ImageLoader.ImageHandlePromise>*/]));
+    ImageLoader::_imageHandleCache_ = ((::g::Uno::Collections::Dictionary*)::g::Uno::Collections::Dictionary::New1(::g::Uno::Collections::Dictionary_typeof()->MakeType(::g::Uno::String_typeof(), ::g::Fuse::Controls::Native::ImageHandle_typeof(), NULL)));
+    ImageLoader::_pendingeImages_ = ((::g::Uno::Collections::Dictionary*)::g::Uno::Collections::Dictionary::New1(::g::Uno::Collections::Dictionary_typeof()->MakeType(::g::Uno::String_typeof(), ImageLoader__ImageHandlePromise_typeof(), NULL)));
 }
 
 static void ImageLoader_build(uType* type)
 {
-    ::STRINGS[2] = uString::Const("/tempImage");
-    ::TYPES[6] = ::g::Uno::Collections::Dictionary_typeof()->MakeType(::g::Uno::String_typeof(), ::g::Fuse::Controls::Native::ImageHandle_typeof(), NULL);
-    ::TYPES[7] = ::g::Uno::Collections::Dictionary_typeof()->MakeType(::g::Uno::String_typeof(), ImageLoader__ImageHandlePromise_typeof(), NULL);
-    ::TYPES[8] = ::g::Uno::Threading::Promise_typeof()->MakeType(::g::Fuse::Controls::Native::ImageHandle_typeof(), NULL);
-    ::TYPES[9] = ::g::Uno::UX::BundleFileSource_typeof();
-    ::TYPES[10] = ::g::Java::Object_typeof();
     type->SetFields(0,
-        ::TYPES[6/*Uno.Collections.Dictionary<string, Fuse.Controls.Native.ImageHandle>*/], (uintptr_t)&::g::Fuse::Controls::Native::ImageLoader::_imageHandleCache_, uFieldFlagsStatic,
-        ::TYPES[7/*Uno.Collections.Dictionary<string, Fuse.Controls.Native.ImageLoader.ImageHandlePromise>*/], (uintptr_t)&::g::Fuse::Controls::Native::ImageLoader::_pendingeImages_, uFieldFlagsStatic);
+        ::g::Uno::Collections::Dictionary_typeof()->MakeType(::g::Uno::String_typeof(), ::g::Fuse::Controls::Native::ImageHandle_typeof(), NULL), (uintptr_t)&ImageLoader::_imageHandleCache_, uFieldFlagsStatic,
+        ::g::Uno::Collections::Dictionary_typeof()->MakeType(::g::Uno::String_typeof(), ImageLoader__ImageHandlePromise_typeof(), NULL), (uintptr_t)&ImageLoader::_pendingeImages_, uFieldFlagsStatic);
 }
 
 uClassType* ImageLoader_typeof()
@@ -570,49 +581,49 @@ uClassType* ImageLoader_typeof()
     return type;
 }
 
-// public static extern Uno.Threading.Future<Fuse.Controls.Native.ImageHandle> Load(Fuse.Resources.HttpImageSource http) :170
+// public static extern Uno.Threading.Future<Fuse.Controls.Native.ImageHandle> Load(Fuse.Resources.HttpImageSource http) :144
 void ImageLoader__Load_fn(::g::Fuse::Resources::HttpImageSource* http, ::g::Uno::Threading::Future1** __retval)
 {
     *__retval = ImageLoader::Load(http);
 }
 
-// public static Fuse.Controls.Native.ImageHandle Load(string uri) :138
+// public static Fuse.Controls.Native.ImageHandle Load(string uri) :112
 void ImageLoader__Load1_fn(uString* uri, ::g::Fuse::Controls::Native::ImageHandle** __retval)
 {
     *__retval = ImageLoader::Load1(uri);
 }
 
-// public static Fuse.Controls.Native.ImageHandle Load(Uno.IO.BundleFile bundleFile) :126
+// public static Fuse.Controls.Native.ImageHandle Load(Uno.IO.BundleFile bundleFile) :100
 void ImageLoader__Load2_fn(::g::Uno::IO::BundleFile* bundleFile, ::g::Fuse::Controls::Native::ImageHandle** __retval)
 {
     *__retval = ImageLoader::Load2(bundleFile);
 }
 
-// public static Fuse.Controls.Native.ImageHandle Load(Uno.UX.FileSource fileSource) :98
+// public static Fuse.Controls.Native.ImageHandle Load(Uno.UX.FileSource fileSource) :72
 void ImageLoader__Load3_fn(::g::Uno::UX::FileSource* fileSource, ::g::Fuse::Controls::Native::ImageHandle** __retval)
 {
     *__retval = ImageLoader::Load3(fileSource);
 }
 
-// private static extern Java.Object LoadFile(string filePath) :312
+// private static extern Java.Object LoadFile(string filePath) :286
 void ImageLoader__LoadFile_fn(uString* filePath, ::g::Java::Object** __retval)
 {
     *__retval = ImageLoader::LoadFile(filePath);
 }
 
-// private static extern Java.Object LoadUri(string uri) :292
+// private static extern Java.Object LoadUri(string uri) :266
 void ImageLoader__LoadUri_fn(uString* uri, ::g::Java::Object** __retval)
 {
     *__retval = ImageLoader::LoadUri(uri);
 }
 
-// private static extern void Release(Java.Object bitmap) :286
+// private static extern void Release(Java.Object bitmap) :260
 void ImageLoader__Release_fn(::g::Java::Object* bitmap)
 {
     ImageLoader::Release(bitmap);
 }
 
-// public static void ReleaseHandle(Fuse.Controls.Native.ImageHandle handle) :275
+// public static void ReleaseHandle(Fuse.Controls.Native.ImageHandle handle) :249
 void ImageLoader__ReleaseHandle_fn(::g::Fuse::Controls::Native::ImageHandle* handle)
 {
     ImageLoader::ReleaseHandle(handle);
@@ -621,81 +632,76 @@ void ImageLoader__ReleaseHandle_fn(::g::Fuse::Controls::Native::ImageHandle* han
 uSStrong< ::g::Uno::Collections::Dictionary*> ImageLoader::_imageHandleCache_;
 uSStrong< ::g::Uno::Collections::Dictionary*> ImageLoader::_pendingeImages_;
 
-// public static extern Uno.Threading.Future<Fuse.Controls.Native.ImageHandle> Load(Fuse.Resources.HttpImageSource http) [static] :170
+// public static extern Uno.Threading.Future<Fuse.Controls.Native.ImageHandle> Load(Fuse.Resources.HttpImageSource http) [static] :144
 ::g::Uno::Threading::Future1* ImageLoader::Load(::g::Fuse::Resources::HttpImageSource* http)
 {
-    ImageLoader_typeof()->Init();
     bool ret1;
     ::g::Fuse::Controls::Native::ImageHandle* ret2;
     ::g::Uno::Threading::Promise* ret3;
     bool ret4;
     ImageLoader__ImageHandlePromise* pending = NULL;
 
-    if ((::g::Uno::Collections::Dictionary__ContainsKey_fn(uPtr(ImageLoader::_imageHandleCache()), uPtr(http)->Url(), &ret1), ret1))
+    if ((::g::Uno::Collections::Dictionary__ContainsKey_fn(uPtr(ImageLoader::_imageHandleCache_), uPtr(http)->Url(), &ret1), ret1))
     {
-        ::g::Fuse::Controls::Native::ImageHandle* h = (::g::Uno::Collections::Dictionary__get_Item_fn(uPtr(ImageLoader::_imageHandleCache()), uPtr(http)->Url(), &ret2), ret2);
+        ::g::Fuse::Controls::Native::ImageHandle* h = (::g::Uno::Collections::Dictionary__get_Item_fn(uPtr(ImageLoader::_imageHandleCache_), uPtr(http)->Url(), &ret2), ret2);
         uPtr(h)->Pin();
-        return (::g::Uno::Threading::Promise__New2_fn(::TYPES[8/*Uno.Threading.Promise<Fuse.Controls.Native.ImageHandle>*/], h, &ret3), ret3);
+        return (::g::Uno::Threading::Promise__New2_fn(::g::Uno::Threading::Promise_typeof()->MakeType(::g::Fuse::Controls::Native::ImageHandle_typeof(), NULL), h, &ret3), ret3);
     }
-    else if ((::g::Uno::Collections::Dictionary__TryGetValue_fn(uPtr(ImageLoader::_pendingeImages()), uPtr(http)->Url(), (void**)(&pending), &ret4), ret4))
+    else if ((::g::Uno::Collections::Dictionary__TryGetValue_fn(uPtr(ImageLoader::_pendingeImages_), uPtr(http)->Url(), (void**)(&pending), &ret4), ret4))
         return ImageLoader__PendingPromise::New5(pending);
     else
         return ImageLoader__ImageHandlePromise::New5(uPtr(http)->Url());
 }
 
-// public static Fuse.Controls.Native.ImageHandle Load(string uri) [static] :138
+// public static Fuse.Controls.Native.ImageHandle Load(string uri) [static] :112
 ::g::Fuse::Controls::Native::ImageHandle* ImageLoader::Load1(uString* uri)
 {
-    ImageLoader_typeof()->Init();
     bool ret5;
     ::g::Fuse::Controls::Native::ImageHandle* handle = NULL;
 
-    if ((::g::Uno::Collections::Dictionary__TryGetValue_fn(uPtr(ImageLoader::_imageHandleCache()), uri, (void**)(&handle), &ret5), ret5))
+    if ((::g::Uno::Collections::Dictionary__TryGetValue_fn(uPtr(ImageLoader::_imageHandleCache_), uri, (void**)(&handle), &ret5), ret5))
         uPtr(handle)->Pin();
     else
     {
         handle = ::g::Fuse::Controls::Native::ImageHandle::New1(uri, ImageLoader::LoadUri(uri));
-        ::g::Uno::Collections::Dictionary__Add_fn(uPtr(ImageLoader::_imageHandleCache()), uri, handle);
+        ::g::Uno::Collections::Dictionary__Add_fn(uPtr(ImageLoader::_imageHandleCache_), uri, handle);
     }
 
     return handle;
 }
 
-// public static Fuse.Controls.Native.ImageHandle Load(Uno.IO.BundleFile bundleFile) [static] :126
+// public static Fuse.Controls.Native.ImageHandle Load(Uno.IO.BundleFile bundleFile) [static] :100
 ::g::Fuse::Controls::Native::ImageHandle* ImageLoader::Load2(::g::Uno::IO::BundleFile* bundleFile)
 {
-    ImageLoader_typeof()->Init();
     return ImageLoader::Load1(uPtr(bundleFile)->BundlePath());
 }
 
-// public static Fuse.Controls.Native.ImageHandle Load(Uno.UX.FileSource fileSource) [static] :98
+// public static Fuse.Controls.Native.ImageHandle Load(Uno.UX.FileSource fileSource) [static] :72
 ::g::Fuse::Controls::Native::ImageHandle* ImageLoader::Load3(::g::Uno::UX::FileSource* fileSource)
 {
-    ImageLoader_typeof()->Init();
     bool ret6;
     ::g::Fuse::Controls::Native::ImageHandle* handle = NULL;
 
-    if (uIs(fileSource, ::TYPES[9/*Uno.UX.BundleFileSource*/]))
-        handle = ImageLoader::Load2(uPtr(uCast< ::g::Uno::UX::BundleFileSource*>(fileSource, ::TYPES[9/*Uno.UX.BundleFileSource*/]))->BundleFile);
-    else if ((::g::Uno::Collections::Dictionary__TryGetValue_fn(uPtr(ImageLoader::_imageHandleCache()), uPtr(fileSource)->Name, (void**)(&handle), &ret6), ret6))
+    if (uIs(fileSource, ::g::Uno::UX::BundleFileSource_typeof()))
+        handle = ImageLoader::Load2(uPtr(uCast< ::g::Uno::UX::BundleFileSource*>(fileSource, ::g::Uno::UX::BundleFileSource_typeof()))->BundleFile);
+    else if ((::g::Uno::Collections::Dictionary__TryGetValue_fn(uPtr(ImageLoader::_imageHandleCache_), uPtr(fileSource)->Name, (void**)(&handle), &ret6), ret6))
         uPtr(handle)->Pin();
     else
     {
         uArray* data = uPtr(fileSource)->ReadAllBytes();
-        uString* path = ::g::Uno::String::op_Addition2(::g::Uno::IO::Directory::GetUserDirectory(1), ::STRINGS[2/*"/tempImage"*/]);
+        uString* path = ::g::Uno::String::op_Addition2(::g::Uno::IO::Directory::GetUserDirectory(1), uString::Const("/tempImage"));
         ::g::Uno::IO::File::WriteAllBytes(path, data);
         handle = ::g::Fuse::Controls::Native::ImageHandle::New1(fileSource->Name, ImageLoader::LoadFile(path));
         ::g::Uno::IO::File::Delete(path);
-        ::g::Uno::Collections::Dictionary__Add_fn(uPtr(ImageLoader::_imageHandleCache()), fileSource->Name, handle);
+        ::g::Uno::Collections::Dictionary__Add_fn(uPtr(ImageLoader::_imageHandleCache_), fileSource->Name, handle);
     }
 
     return handle;
 }
 
-// private static extern Java.Object LoadFile(string filePath) [static] :312
+// private static extern Java.Object LoadFile(string filePath) [static] :286
 ::g::Java::Object* ImageLoader::LoadFile(uString* filePath)
 {
-    ImageLoader_typeof()->Init();
     {
         INIT_JNI;
         jclass __cls = JniHelper::GetNativeExternClass();
@@ -711,10 +717,9 @@ uSStrong< ::g::Uno::Collections::Dictionary*> ImageLoader::_pendingeImages_;
     
 }
 
-// private static extern Java.Object LoadUri(string uri) [static] :292
+// private static extern Java.Object LoadUri(string uri) [static] :266
 ::g::Java::Object* ImageLoader::LoadUri(uString* uri)
 {
-    ImageLoader_typeof()->Init();
     {
         INIT_JNI;
         jclass __cls = JniHelper::GetNativeExternClass();
@@ -730,10 +735,9 @@ uSStrong< ::g::Uno::Collections::Dictionary*> ImageLoader::_pendingeImages_;
     
 }
 
-// private static extern void Release(Java.Object bitmap) [static] :286
+// private static extern void Release(Java.Object bitmap) [static] :260
 void ImageLoader::Release(::g::Java::Object* bitmap)
 {
-    ImageLoader_typeof()->Init();
     {
         INIT_JNI;
         jclass __cls = JniHelper::GetNativeExternClass();
@@ -749,25 +753,40 @@ void ImageLoader::Release(::g::Java::Object* bitmap)
     
 }
 
-// public static void ReleaseHandle(Fuse.Controls.Native.ImageHandle handle) [static] :275
+// public static void ReleaseHandle(Fuse.Controls.Native.ImageHandle handle) [static] :249
 void ImageLoader::ReleaseHandle(::g::Fuse::Controls::Native::ImageHandle* handle)
 {
-    ImageLoader_typeof()->Init();
     bool ret7;
     bool ret8;
 
-    if ((::g::Uno::Collections::Dictionary__ContainsKey_fn(uPtr(ImageLoader::_imageHandleCache()), uPtr(handle)->Name(), &ret7), ret7))
+    if ((::g::Uno::Collections::Dictionary__ContainsKey_fn(uPtr(ImageLoader::_imageHandleCache_), uPtr(handle)->Name(), &ret7), ret7))
     {
-        ::g::Uno::Collections::Dictionary__Remove_fn(uPtr(ImageLoader::_imageHandleCache()), uPtr(handle)->Name(), &ret8);
-        ImageLoader::Release(uCast< ::g::Java::Object*>(handle->Handle(), ::TYPES[10/*Java.Object*/]));
+        ::g::Uno::Collections::Dictionary__Remove_fn(uPtr(ImageLoader::_imageHandleCache_), uPtr(handle)->Name(), &ret8);
+        ImageLoader::Release(uCast< ::g::Java::Object*>(handle->Handle(), ::TYPES[6/*Java.Object*/]));
     }
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Controls.Native/1.2.1/$.uno
-// --------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Nodes\1.3.0-rc2\ViewHandle.Android.uno
+// ---------------------------------------------------------------------------------------
 
-// public abstract interface IRangeViewHost :412
+// public enum ViewHandle.Invalidation :14
+uEnumType* ViewHandle__Invalidation_typeof()
+{
+    static uSStrong<uEnumType*> type;
+    if (type != NULL) return type;
+
+    type = uEnumType::New("Fuse.Controls.Native.ViewHandle.Invalidation", ::g::Uno::Int_typeof(), 2);
+    type->SetLiterals(
+        "None", 0LL,
+        "OnInvalidateVisual", 1LL);
+    return type;
+}
+
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Controls.Native\1.3.0-rc2\Interfaces.uno
+// -----------------------------------------------------------------------------------------
+
+// public abstract interface IRangeViewHost :60
 // {
 uInterfaceType* IRangeViewHost_typeof()
 {
@@ -779,10 +798,10 @@ uInterfaceType* IRangeViewHost_typeof()
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Controls.Native/1.2.1/$.uno
-// --------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Controls.Native\1.3.0-rc2\Interfaces.uno
+// -----------------------------------------------------------------------------------------
 
-// public abstract interface IRectangleView :455
+// public abstract interface IRectangleView :103
 // {
 uInterfaceType* IRectangleView_typeof()
 {
@@ -794,10 +813,10 @@ uInterfaceType* IRectangleView_typeof()
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Controls.Native/1.2.1/$.uno
-// --------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Controls.Native\1.3.0-rc2\Interfaces.uno
+// -----------------------------------------------------------------------------------------
 
-// public abstract interface IScrollView :468
+// public abstract interface IScrollView :116
 // {
 uInterfaceType* IScrollView_typeof()
 {
@@ -809,10 +828,10 @@ uInterfaceType* IScrollView_typeof()
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Controls.Native/1.2.1/$.uno
-// --------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Controls.Native\1.3.0-rc2\Interfaces.uno
+// -----------------------------------------------------------------------------------------
 
-// public abstract interface IScrollViewHost :474
+// public abstract interface IScrollViewHost :122
 // {
 uInterfaceType* IScrollViewHost_typeof()
 {
@@ -824,10 +843,10 @@ uInterfaceType* IScrollViewHost_typeof()
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Controls.Native/1.2.1/$.uno
-// --------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Controls.Native\1.3.0-rc2\Interfaces.uno
+// -----------------------------------------------------------------------------------------
 
-// public abstract interface IShapeView :450
+// public abstract interface IShapeView :98
 // {
 uInterfaceType* IShapeView_typeof()
 {
@@ -839,10 +858,10 @@ uInterfaceType* IShapeView_typeof()
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Controls.Native/1.2.1/$.uno
-// --------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Controls.Native\1.3.0-rc2\Interfaces.uno
+// -----------------------------------------------------------------------------------------
 
-// public abstract interface ITextEdit :417
+// public abstract interface ITextEdit :65
 // {
 uInterfaceType* ITextEdit_typeof()
 {
@@ -854,10 +873,10 @@ uInterfaceType* ITextEdit_typeof()
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Controls.Native/1.2.1/$.uno
-// --------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Controls.Native\1.3.0-rc2\Interfaces.uno
+// -----------------------------------------------------------------------------------------
 
-// public abstract interface ITextEditHost :389
+// public abstract interface ITextEditHost :37
 // {
 uInterfaceType* ITextEditHost_typeof()
 {
@@ -869,10 +888,10 @@ uInterfaceType* ITextEditHost_typeof()
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Controls.Native/1.2.1/$.uno
-// --------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Controls.Native\1.3.0-rc2\Interfaces.uno
+// -----------------------------------------------------------------------------------------
 
-// public abstract interface ITextView :376
+// public abstract interface ITextView :24
 // {
 uInterfaceType* ITextView_typeof()
 {
@@ -884,10 +903,10 @@ uInterfaceType* ITextView_typeof()
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Controls.Native/1.2.1/$.uno
-// --------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Controls.Native\1.3.0-rc2\Interfaces.uno
+// -----------------------------------------------------------------------------------------
 
-// public abstract interface IToggleView :397
+// public abstract interface IToggleView :45
 // {
 uInterfaceType* IToggleView_typeof()
 {
@@ -899,10 +918,10 @@ uInterfaceType* IToggleView_typeof()
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Controls.Native/1.2.1/$.uno
-// --------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Controls.Native\1.3.0-rc2\Interfaces.uno
+// -----------------------------------------------------------------------------------------
 
-// public abstract interface IToggleViewHost :402
+// public abstract interface IToggleViewHost :50
 // {
 uInterfaceType* IToggleViewHost_typeof()
 {
@@ -914,10 +933,10 @@ uInterfaceType* IToggleViewHost_typeof()
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Controls.Native/1.2.1/$.uno
-// --------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Controls.Native\1.3.0-rc2\Interfaces.uno
+// -----------------------------------------------------------------------------------------
 
-// public abstract interface IView :361
+// public abstract interface IView :9
 // {
 uInterfaceType* IView_typeof()
 {
@@ -929,10 +948,10 @@ uInterfaceType* IView_typeof()
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Controls.Native/1.2.1/$.uno
-// --------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Controls.Native\1.3.0-rc2\NativeRenderer.uno
+// ---------------------------------------------------------------------------------------------
 
-// internal abstract extern interface IViewHandleRenderer :545
+// internal abstract extern interface IViewHandleRenderer :10
 // {
 uInterfaceType* IViewHandleRenderer_typeof()
 {
@@ -944,10 +963,10 @@ uInterfaceType* IViewHandleRenderer_typeof()
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Controls.Native/1.2.1/$.uno
-// --------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Controls.Native\1.3.0-rc2\Interfaces.uno
+// -----------------------------------------------------------------------------------------
 
-// public abstract interface IViewHost :486
+// public abstract interface IViewHost :134
 // {
 uInterfaceType* IViewHost_typeof()
 {
@@ -959,10 +978,10 @@ uInterfaceType* IViewHost_typeof()
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Controls.Native/1.2.1/$.uno
-// --------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Controls.Native\1.3.0-rc2\NativeRootViewport.uno
+// -------------------------------------------------------------------------------------------------
 
-// internal sealed extern class NativeRootViewport :818
+// internal sealed extern class NativeRootViewport :6
 // {
 static void NativeRootViewport_build(uType* type)
 {
@@ -976,13 +995,14 @@ static void NativeRootViewport_build(uType* type)
         ::g::Uno::Collections::IList_typeof()->MakeType(::g::Fuse::Node_typeof(), NULL), offsetof(::g::Fuse::RootViewport_type, interface6),
         ::g::Uno::UX::IPropertyListener_typeof(), offsetof(::g::Fuse::RootViewport_type, interface7),
         ::g::Fuse::ITemplateSource_typeof(), offsetof(::g::Fuse::RootViewport_type, interface8),
-        ::g::Uno::Collections::ICollection_typeof()->MakeType(::g::Fuse::Node_typeof(), NULL), offsetof(::g::Fuse::RootViewport_type, interface9),
-        ::g::Uno::Collections::IEnumerable_typeof()->MakeType(::g::Fuse::Node_typeof(), NULL), offsetof(::g::Fuse::RootViewport_type, interface10),
-        ::g::Fuse::IViewport_typeof(), offsetof(::g::Fuse::RootViewport_type, interface11),
-        ::g::Uno::IDisposable_typeof(), offsetof(::g::Fuse::RootViewport_type, interface12),
-        ::g::Fuse::ICommonViewport_typeof(), offsetof(::g::Fuse::RootViewport_type, interface13));
-    type->SetFields(69,
-        ::g::Fuse::Controls::Native::ViewHandle_typeof(), offsetof(::g::Fuse::Controls::Native::NativeRootViewport, _rootView), 0);
+        ::g::Uno::Collections::IEnumerable_typeof()->MakeType(::g::Fuse::Visual_typeof(), NULL), offsetof(::g::Fuse::RootViewport_type, interface9),
+        ::g::Uno::Collections::ICollection_typeof()->MakeType(::g::Fuse::Node_typeof(), NULL), offsetof(::g::Fuse::RootViewport_type, interface10),
+        ::g::Uno::Collections::IEnumerable_typeof()->MakeType(::g::Fuse::Node_typeof(), NULL), offsetof(::g::Fuse::RootViewport_type, interface11),
+        ::g::Fuse::IViewport_typeof(), offsetof(::g::Fuse::RootViewport_type, interface12),
+        ::g::Uno::IDisposable_typeof(), offsetof(::g::Fuse::RootViewport_type, interface13),
+        ::g::Fuse::ICommonViewport_typeof(), offsetof(::g::Fuse::RootViewport_type, interface14));
+    type->SetFields(74,
+        ::g::Fuse::Controls::Native::ViewHandle_typeof(), offsetof(NativeRootViewport, _rootView), 0);
 }
 
 ::g::Fuse::RootViewport_type* NativeRootViewport_typeof()
@@ -992,28 +1012,29 @@ static void NativeRootViewport_build(uType* type)
 
     uTypeOptions options;
     options.BaseDefinition = ::g::Fuse::RootViewport_typeof();
-    options.FieldCount = 70;
-    options.InterfaceCount = 14;
+    options.FieldCount = 75;
+    options.InterfaceCount = 15;
     options.ObjectSize = sizeof(NativeRootViewport);
     options.TypeSize = sizeof(::g::Fuse::RootViewport_type);
     type = (::g::Fuse::RootViewport_type*)uClassType::New("Fuse.Controls.Native.NativeRootViewport", options);
     type->fp_build_ = NativeRootViewport_build;
-    type->interface12.fp_Dispose = (void(*)(uObject*))::g::Fuse::RootViewport__UnoIDisposableDispose_fn;
-    type->interface11.fp_PointToWorldRay = (void(*)(uObject*, ::g::Uno::Float2*, ::g::Fuse::Ray*))::g::Fuse::RootViewport__PointToWorldRay_fn;
-    type->interface11.fp_WorldToLocalRay = (void(*)(uObject*, uObject*, ::g::Fuse::Ray*, ::g::Fuse::Visual*, ::g::Fuse::Ray*))::g::Fuse::RootViewport__WorldToLocalRay_fn;
-    type->interface13.fp_get_PixelsPerPoint = (void(*)(uObject*, float*))::g::Fuse::RootViewport__get_PixelsPerPoint_fn;
-    type->interface13.fp_get_Size = (void(*)(uObject*, ::g::Uno::Float2*))::g::Fuse::RootViewport__get_Size_fn;
-    type->interface9.fp_Clear = (void(*)(uObject*))::g::Fuse::Visual__UnoCollectionsICollectionFuseNodeClear_fn;
-    type->interface9.fp_Contains = (void(*)(uObject*, void*, bool*))::g::Fuse::Visual__UnoCollectionsICollectionFuseNodeContains_fn;
+    type->interface13.fp_Dispose = (void(*)(uObject*))::g::Fuse::RootViewport__UnoIDisposableDispose_fn;
+    type->interface12.fp_PointToWorldRay = (void(*)(uObject*, ::g::Uno::Float2*, ::g::Fuse::Ray*))::g::Fuse::RootViewport__PointToWorldRay_fn;
+    type->interface12.fp_WorldToLocalRay = (void(*)(uObject*, uObject*, ::g::Fuse::Ray*, ::g::Fuse::Visual*, ::g::Fuse::Ray*))::g::Fuse::RootViewport__WorldToLocalRay_fn;
+    type->interface14.fp_get_PixelsPerPoint = (void(*)(uObject*, float*))::g::Fuse::RootViewport__get_PixelsPerPoint_fn;
+    type->interface14.fp_get_Size = (void(*)(uObject*, ::g::Uno::Float2*))::g::Fuse::RootViewport__get_Size_fn;
+    type->interface9.fp_GetEnumerator = (void(*)(uObject*, uObject**))::g::Fuse::Visual__UnoCollectionsIEnumerableFuseVisualGetEnumerator_fn;
+    type->interface10.fp_Clear = (void(*)(uObject*))::g::Fuse::Visual__UnoCollectionsICollectionFuseNodeClear_fn;
+    type->interface10.fp_Contains = (void(*)(uObject*, void*, bool*))::g::Fuse::Visual__UnoCollectionsICollectionFuseNodeContains_fn;
     type->interface6.fp_RemoveAt = (void(*)(uObject*, int*))::g::Fuse::Visual__UnoCollectionsIListFuseNodeRemoveAt_fn;
-    type->interface10.fp_GetEnumerator = (void(*)(uObject*, uObject**))::g::Fuse::Visual__UnoCollectionsIEnumerableFuseNodeGetEnumerator_fn;
-    type->interface9.fp_get_Count = (void(*)(uObject*, int*))::g::Fuse::Visual__UnoCollectionsICollectionFuseNodeget_Count_fn;
+    type->interface11.fp_GetEnumerator = (void(*)(uObject*, uObject**))::g::Fuse::Visual__UnoCollectionsIEnumerableFuseNodeGetEnumerator_fn;
+    type->interface10.fp_get_Count = (void(*)(uObject*, int*))::g::Fuse::Visual__UnoCollectionsICollectionFuseNodeget_Count_fn;
     type->interface6.fp_get_Item = (void(*)(uObject*, int*, uTRef))::g::Fuse::Visual__UnoCollectionsIListFuseNodeget_Item_fn;
     type->interface6.fp_Insert = (void(*)(uObject*, int*, void*))::g::Fuse::Visual__Insert1_fn;
     type->interface7.fp_OnPropertyChanged = (void(*)(uObject*, ::g::Uno::UX::PropertyObject*, ::g::Uno::UX::Selector*))::g::Fuse::Visual__OnPropertyChanged2_fn;
     type->interface8.fp_FindTemplate = (void(*)(uObject*, uString*, ::g::Uno::UX::Template**))::g::Fuse::Visual__FindTemplate_fn;
-    type->interface9.fp_Add = (void(*)(uObject*, void*))::g::Fuse::Visual__Add1_fn;
-    type->interface9.fp_Remove = (void(*)(uObject*, void*, bool*))::g::Fuse::Visual__Remove1_fn;
+    type->interface10.fp_Add = (void(*)(uObject*, void*))::g::Fuse::Visual__Add1_fn;
+    type->interface10.fp_Remove = (void(*)(uObject*, void*, bool*))::g::Fuse::Visual__Remove1_fn;
     type->interface4.fp_Clear = (void(*)(uObject*))::g::Fuse::Node__UnoCollectionsICollectionFuseBindingClear_fn;
     type->interface4.fp_Contains = (void(*)(uObject*, void*, bool*))::g::Fuse::Node__UnoCollectionsICollectionFuseBindingContains_fn;
     type->interface0.fp_RemoveAt = (void(*)(uObject*, int*))::g::Fuse::Node__UnoCollectionsIListFuseBindingRemoveAt_fn;
@@ -1032,38 +1053,38 @@ static void NativeRootViewport_build(uType* type)
     return type;
 }
 
-// public NativeRootViewport(Fuse.Controls.Native.ViewHandle rootView) :832
+// public NativeRootViewport(Fuse.Controls.Native.ViewHandle rootView) :20
 void NativeRootViewport__ctor_5_fn(NativeRootViewport* __this, ::g::Fuse::Controls::Native::ViewHandle* rootView)
 {
     __this->ctor_5(rootView);
 }
 
-// public NativeRootViewport New(Fuse.Controls.Native.ViewHandle rootView) :832
+// public NativeRootViewport New(Fuse.Controls.Native.ViewHandle rootView) :20
 void NativeRootViewport__New4_fn(::g::Fuse::Controls::Native::ViewHandle* rootView, NativeRootViewport** __retval)
 {
     *__retval = NativeRootViewport::New4(rootView);
 }
 
-// public Fuse.Controls.Native.ViewHandle get_RootView() :822
+// public Fuse.Controls.Native.ViewHandle get_RootView() :10
 void NativeRootViewport__get_RootView_fn(NativeRootViewport* __this, ::g::Fuse::Controls::Native::ViewHandle** __retval)
 {
     *__retval = __this->RootView();
 }
 
-// public NativeRootViewport(Fuse.Controls.Native.ViewHandle rootView) [instance] :832
+// public NativeRootViewport(Fuse.Controls.Native.ViewHandle rootView) [instance] :20
 void NativeRootViewport::ctor_5(::g::Fuse::Controls::Native::ViewHandle* rootView)
 {
     ctor_3();
     _rootView = rootView;
 }
 
-// public Fuse.Controls.Native.ViewHandle get_RootView() [instance] :822
+// public Fuse.Controls.Native.ViewHandle get_RootView() [instance] :10
 ::g::Fuse::Controls::Native::ViewHandle* NativeRootViewport::RootView()
 {
     return _rootView;
 }
 
-// public NativeRootViewport New(Fuse.Controls.Native.ViewHandle rootView) [static] :832
+// public NativeRootViewport New(Fuse.Controls.Native.ViewHandle rootView) [static] :20
 NativeRootViewport* NativeRootViewport::New4(::g::Fuse::Controls::Native::ViewHandle* rootView)
 {
     NativeRootViewport* obj2 = (NativeRootViewport*)uNew(NativeRootViewport_typeof());
@@ -1072,22 +1093,24 @@ NativeRootViewport* NativeRootViewport::New4(::g::Fuse::Controls::Native::ViewHa
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Controls.Native/1.2.1/$.uno
-// --------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Controls.Native\1.3.0-rc2\NativeRenderer.uno
+// ---------------------------------------------------------------------------------------------
 
-// public sealed extern class NativeViewRenderer :552
+// public sealed extern class NativeViewRenderer :17
 // {
 static void NativeViewRenderer_build(uType* type)
 {
-    ::TYPES[10] = ::g::Java::Object_typeof();
+    ::TYPES[6] = ::g::Java::Object_typeof();
+    type->SetDependencies(
+        ::g::Fuse::Controls::Native::Blitter_typeof());
     type->SetInterfaces(
         ::g::Uno::IDisposable_typeof(), offsetof(NativeViewRenderer_type, interface0),
         ::g::Fuse::Controls::Native::IViewHandleRenderer_typeof(), offsetof(NativeViewRenderer_type, interface1));
     type->SetFields(0,
-        uObject_typeof(), offsetof(::g::Fuse::Controls::Native::NativeViewRenderer, _pixelBuffer), 0,
-        ::g::Uno::Int2_typeof(), offsetof(::g::Fuse::Controls::Native::NativeViewRenderer, _prevSize), 0,
-        ::g::OpenGL::GLTextureHandle_typeof(), offsetof(::g::Fuse::Controls::Native::NativeViewRenderer, _textureHandle), 0,
-        ::g::Uno::Bool_typeof(), offsetof(::g::Fuse::Controls::Native::NativeViewRenderer, _valid), 0);
+        uObject_typeof(), offsetof(NativeViewRenderer, _pixelBuffer), 0,
+        ::g::Uno::Int2_typeof(), offsetof(NativeViewRenderer, _prevSize), 0,
+        ::g::OpenGL::GLTextureHandle_typeof(), offsetof(NativeViewRenderer, _textureHandle), 0,
+        ::g::Uno::Bool_typeof(), offsetof(NativeViewRenderer, _valid), 0);
 }
 
 NativeViewRenderer_type* NativeViewRenderer_typeof()
@@ -1098,6 +1121,7 @@ NativeViewRenderer_type* NativeViewRenderer_typeof()
     uTypeOptions options;
     options.FieldCount = 4;
     options.InterfaceCount = 2;
+    options.DependencyCount = 1;
     options.ObjectSize = sizeof(NativeViewRenderer);
     options.TypeSize = sizeof(NativeViewRenderer_type);
     type = (NativeViewRenderer_type*)uClassType::New("Fuse.Controls.Native.NativeViewRenderer", options);
@@ -1109,73 +1133,73 @@ NativeViewRenderer_type* NativeViewRenderer_typeof()
     return type;
 }
 
-// public generated NativeViewRenderer() :552
+// public generated NativeViewRenderer() :17
 void NativeViewRenderer__ctor__fn(NativeViewRenderer* __this)
 {
     __this->ctor_();
 }
 
-// private static extern Java.Object AllocPixelBuffer(int w, int h) :761
+// private static extern Java.Object AllocPixelBuffer(int w, int h) :227
 void NativeViewRenderer__AllocPixelBuffer_fn(int* w, int* h, ::g::Java::Object** __retval)
 {
     *__retval = NativeViewRenderer::AllocPixelBuffer(*w, *h);
 }
 
-// public void Dispose() :618
+// public void Dispose() :83
 void NativeViewRenderer__Dispose_fn(NativeViewRenderer* __this)
 {
     __this->Dispose();
 }
 
-// public void Draw(Fuse.Controls.Native.ViewHandle viewHandle, float4x4 localToClipTransform, float2 position, float2 size, float density) :560
+// public void Draw(Fuse.Controls.Native.ViewHandle viewHandle, float4x4 localToClipTransform, float2 position, float2 size, float density) :25
 void NativeViewRenderer__Draw_fn(NativeViewRenderer* __this, ::g::Fuse::Controls::Native::ViewHandle* viewHandle, ::g::Uno::Float4x4* localToClipTransform, ::g::Uno::Float2* position, ::g::Uno::Float2* size, float* density)
 {
     __this->Draw(viewHandle, *localToClipTransform, *position, *size, *density);
 }
 
-// private static extern void FreePixelBuffer(Java.Object bitmap) :768
+// private static extern void FreePixelBuffer(Java.Object bitmap) :234
 void NativeViewRenderer__FreePixelBuffer_fn(::g::Java::Object* bitmap)
 {
     NativeViewRenderer::FreePixelBuffer(bitmap);
 }
 
-// public void Invalidate() :613
+// public void Invalidate() :78
 void NativeViewRenderer__Invalidate_fn(NativeViewRenderer* __this)
 {
     __this->Invalidate();
 }
 
-// public generated NativeViewRenderer New() :552
+// public generated NativeViewRenderer New() :17
 void NativeViewRenderer__New1_fn(NativeViewRenderer** __retval)
 {
     *__retval = NativeViewRenderer::New1();
 }
 
-// private void ReleaseResources() :623
+// private void ReleaseResources() :88
 void NativeViewRenderer__ReleaseResources_fn(NativeViewRenderer* __this)
 {
     __this->ReleaseResources();
 }
 
-// private static extern void Upload(Java.Object viewHandle, Java.Object pixelBuffer, bool reuse, int w, int h) :716
+// private static extern void Upload(Java.Object viewHandle, Java.Object pixelBuffer, bool reuse, int w, int h) :182
 void NativeViewRenderer__Upload_fn(::g::Java::Object* viewHandle, ::g::Java::Object* pixelBuffer, bool* reuse, int* w, int* h)
 {
     NativeViewRenderer::Upload(viewHandle, pixelBuffer, *reuse, *w, *h);
 }
 
-// public generated NativeViewRenderer() [instance] :552
+// public generated NativeViewRenderer() [instance] :17
 void NativeViewRenderer::ctor_()
 {
     _prevSize = ::g::Uno::Int2__New1(-1);
 }
 
-// public void Dispose() [instance] :618
+// public void Dispose() [instance] :83
 void NativeViewRenderer::Dispose()
 {
     ReleaseResources();
 }
 
-// public void Draw(Fuse.Controls.Native.ViewHandle viewHandle, float4x4 localToClipTransform, float2 position, float2 size, float density) [instance] :560
+// public void Draw(Fuse.Controls.Native.ViewHandle viewHandle, float4x4 localToClipTransform, float2 position, float2 size, float density) [instance] :25
 void NativeViewRenderer::Draw(::g::Fuse::Controls::Native::ViewHandle* viewHandle, ::g::Uno::Float4x4 localToClipTransform, ::g::Uno::Float2 position, ::g::Uno::Float2 size, float density)
 {
     ::g::Uno::Int2 pixelSize = ::g::Uno::Int2__op_Explicit1(::g::Uno::Float2__op_Multiply1(size, density));
@@ -1194,21 +1218,21 @@ void NativeViewRenderer::Draw(::g::Fuse::Controls::Native::ViewHandle* viewHandl
     if (!_valid)
     {
         ::g::OpenGL::GL::BindTexture(3553, _textureHandle);
-        NativeViewRenderer::Upload(uPtr(viewHandle)->NativeHandle, uCast< ::g::Java::Object*>(_pixelBuffer, ::TYPES[10/*Java.Object*/]), reuse, pixelSize.X, pixelSize.Y);
+        NativeViewRenderer::Upload(uPtr(viewHandle)->NativeHandle, uCast< ::g::Java::Object*>(_pixelBuffer, ::TYPES[6/*Java.Object*/]), reuse, pixelSize.X, pixelSize.Y);
         ::g::OpenGL::GL::BindTexture(3553, ::g::OpenGL::GLTextureHandle::Zero_);
         _valid = true;
     }
 
-    uPtr(::g::Fuse::Controls::Native::Blitter::Singleton())->Blit(::g::Uno::Graphics::Texture2D::New2(_textureHandle, pixelSize, 1, 3), position, size, localToClipTransform);
+    uPtr(::g::Fuse::Controls::Native::Blitter::Singleton_)->Blit(::g::Uno::Graphics::Texture2D::New2(_textureHandle, pixelSize, 1, 3), position, size, localToClipTransform);
 }
 
-// public void Invalidate() [instance] :613
+// public void Invalidate() [instance] :78
 void NativeViewRenderer::Invalidate()
 {
     _valid = false;
 }
 
-// private void ReleaseResources() [instance] :623
+// private void ReleaseResources() [instance] :88
 void NativeViewRenderer::ReleaseResources()
 {
     if (::g::OpenGL::GLTextureHandle::op_Inequality(_textureHandle, ::g::OpenGL::GLTextureHandle::Zero_))
@@ -1219,12 +1243,12 @@ void NativeViewRenderer::ReleaseResources()
 
     if (_pixelBuffer != NULL)
     {
-        NativeViewRenderer::FreePixelBuffer(uCast< ::g::Java::Object*>(_pixelBuffer, ::TYPES[10/*Java.Object*/]));
+        NativeViewRenderer::FreePixelBuffer(uCast< ::g::Java::Object*>(_pixelBuffer, ::TYPES[6/*Java.Object*/]));
         _pixelBuffer = NULL;
     }
 }
 
-// private static extern Java.Object AllocPixelBuffer(int w, int h) [static] :761
+// private static extern Java.Object AllocPixelBuffer(int w, int h) [static] :227
 ::g::Java::Object* NativeViewRenderer::AllocPixelBuffer(int w, int h)
 {
     {
@@ -1245,7 +1269,7 @@ void NativeViewRenderer::ReleaseResources()
     
 }
 
-// private static extern void FreePixelBuffer(Java.Object bitmap) [static] :768
+// private static extern void FreePixelBuffer(Java.Object bitmap) [static] :234
 void NativeViewRenderer::FreePixelBuffer(::g::Java::Object* bitmap)
 {
     {
@@ -1263,7 +1287,7 @@ void NativeViewRenderer::FreePixelBuffer(::g::Java::Object* bitmap)
     
 }
 
-// public generated NativeViewRenderer New() [static] :552
+// public generated NativeViewRenderer New() [static] :17
 NativeViewRenderer* NativeViewRenderer::New1()
 {
     NativeViewRenderer* obj1 = (NativeViewRenderer*)uNew(NativeViewRenderer_typeof());
@@ -1271,7 +1295,7 @@ NativeViewRenderer* NativeViewRenderer::New1()
     return obj1;
 }
 
-// private static extern void Upload(Java.Object viewHandle, Java.Object pixelBuffer, bool reuse, int w, int h) [static] :716
+// private static extern void Upload(Java.Object viewHandle, Java.Object pixelBuffer, bool reuse, int w, int h) [static] :182
 void NativeViewRenderer::Upload(::g::Java::Object* viewHandle, ::g::Java::Object* pixelBuffer, bool reuse, int w, int h)
 {
     {
@@ -1302,19 +1326,19 @@ void NativeViewRenderer::Upload(::g::Java::Object* viewHandle, ::g::Java::Object
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Controls.Native/1.2.1/$.uno
-// --------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Controls.Native\1.3.0-rc2\ImageLoader.uno
+// ------------------------------------------------------------------------------------------
 
-// private sealed extern class ImageLoader.PendingPromise :189
+// private sealed extern class ImageLoader.PendingPromise :163
 // {
 static void ImageLoader__PendingPromise_build(uType* type)
 {
-    ::TYPES[11] = ::g::Uno::Action1_typeof()->MakeType(::g::Fuse::Controls::Native::ImageHandle_typeof(), NULL);
+    ::TYPES[7] = ::g::Uno::Action1_typeof()->MakeType(::g::Fuse::Controls::Native::ImageHandle_typeof(), NULL);
     type->SetBase(::g::Uno::Threading::Promise_typeof()->MakeType(::g::Fuse::Controls::Native::ImageHandle_typeof(), NULL));
     type->SetInterfaces(
         ::g::Uno::IDisposable_typeof(), offsetof(::g::Uno::Threading::Future_type, interface0));
     type->SetFields(9,
-        ::g::Uno::Threading::Future1_typeof()->MakeType(::g::Fuse::Controls::Native::ImageHandle_typeof(), NULL), offsetof(::g::Fuse::Controls::Native::ImageLoader__PendingPromise, _future), 0);
+        ::g::Uno::Threading::Future1_typeof()->MakeType(::g::Fuse::Controls::Native::ImageHandle_typeof(), NULL), offsetof(ImageLoader__PendingPromise, _future), 0);
 }
 
 ::g::Uno::Threading::Future_type* ImageLoader__PendingPromise_typeof()
@@ -1335,47 +1359,47 @@ static void ImageLoader__PendingPromise_build(uType* type)
     return type;
 }
 
-// public PendingPromise(Uno.Threading.Future<Fuse.Controls.Native.ImageHandle> future) :193
+// public PendingPromise(Uno.Threading.Future<Fuse.Controls.Native.ImageHandle> future) :167
 void ImageLoader__PendingPromise__ctor_7_fn(ImageLoader__PendingPromise* __this, ::g::Uno::Threading::Future1* future)
 {
     __this->ctor_7(future);
 }
 
-// public override sealed void Dispose() :205
+// public override sealed void Dispose() :179
 void ImageLoader__PendingPromise__Dispose_fn(ImageLoader__PendingPromise* __this)
 {
     ::g::Uno::Threading::Future1__Dispose_fn(__this);
     uPtr(__this->_future)->Dispose();
 }
 
-// public PendingPromise New(Uno.Threading.Future<Fuse.Controls.Native.ImageHandle> future) :193
+// public PendingPromise New(Uno.Threading.Future<Fuse.Controls.Native.ImageHandle> future) :167
 void ImageLoader__PendingPromise__New5_fn(::g::Uno::Threading::Future1* future, ImageLoader__PendingPromise** __retval)
 {
     *__retval = ImageLoader__PendingPromise::New5(future);
 }
 
-// private void OnResolve(Fuse.Controls.Native.ImageHandle handle) :199
+// private void OnResolve(Fuse.Controls.Native.ImageHandle handle) :173
 void ImageLoader__PendingPromise__OnResolve_fn(ImageLoader__PendingPromise* __this, ::g::Fuse::Controls::Native::ImageHandle* handle)
 {
     __this->OnResolve(handle);
 }
 
-// public PendingPromise(Uno.Threading.Future<Fuse.Controls.Native.ImageHandle> future) [instance] :193
+// public PendingPromise(Uno.Threading.Future<Fuse.Controls.Native.ImageHandle> future) [instance] :167
 void ImageLoader__PendingPromise::ctor_7(::g::Uno::Threading::Future1* future)
 {
     ctor_3();
     _future = future;
-    uPtr(_future)->Then(uDelegate::New(::TYPES[11/*Uno.Action<Fuse.Controls.Native.ImageHandle>*/], (void*)ImageLoader__PendingPromise__OnResolve_fn, this));
+    uPtr(_future)->Then(uDelegate::New(::TYPES[7/*Uno.Action<Fuse.Controls.Native.ImageHandle>*/], (void*)ImageLoader__PendingPromise__OnResolve_fn, this));
 }
 
-// private void OnResolve(Fuse.Controls.Native.ImageHandle handle) [instance] :199
+// private void OnResolve(Fuse.Controls.Native.ImageHandle handle) [instance] :173
 void ImageLoader__PendingPromise::OnResolve(::g::Fuse::Controls::Native::ImageHandle* handle)
 {
     uPtr(handle)->Pin();
     ::g::Uno::Threading::Promise__Resolve_fn(this, handle);
 }
 
-// public PendingPromise New(Uno.Threading.Future<Fuse.Controls.Native.ImageHandle> future) [static] :193
+// public PendingPromise New(Uno.Threading.Future<Fuse.Controls.Native.ImageHandle> future) [static] :167
 ImageLoader__PendingPromise* ImageLoader__PendingPromise::New5(::g::Uno::Threading::Future1* future)
 {
     ImageLoader__PendingPromise* obj1 = (ImageLoader__PendingPromise*)uNew(ImageLoader__PendingPromise_typeof());
@@ -1384,10 +1408,10 @@ ImageLoader__PendingPromise* ImageLoader__PendingPromise::New5(::g::Uno::Threadi
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Nodes/1.2.1/$.uno
-// ----------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Nodes\1.3.0-rc2\ViewHandle.Android.uno
+// ---------------------------------------------------------------------------------------
 
-// internal static extern class ViewFactory :5147
+// internal static extern class ViewFactory :292
 // {
 static void ViewFactory_build(uType* type)
 {
@@ -1405,25 +1429,25 @@ uClassType* ViewFactory_typeof()
     return type;
 }
 
-// public static Fuse.Controls.Native.ViewHandle InstantiateViewGroup() :5149
+// public static Fuse.Controls.Native.ViewHandle InstantiateViewGroup() :294
 void ViewFactory__InstantiateViewGroup_fn(::g::Fuse::Controls::Native::ViewHandle** __retval)
 {
     *__retval = ViewFactory::InstantiateViewGroup();
 }
 
-// private static Java.Object InstantiateViewGroupImpl() :5155
+// private static Java.Object InstantiateViewGroupImpl() :300
 void ViewFactory__InstantiateViewGroupImpl_fn(::g::Java::Object** __retval)
 {
     *__retval = ViewFactory::InstantiateViewGroupImpl();
 }
 
-// public static Fuse.Controls.Native.ViewHandle InstantiateViewGroup() [static] :5149
+// public static Fuse.Controls.Native.ViewHandle InstantiateViewGroup() [static] :294
 ::g::Fuse::Controls::Native::ViewHandle* ViewFactory::InstantiateViewGroup()
 {
     return ::g::Fuse::Controls::Native::ViewHandle::New2(ViewFactory::InstantiateViewGroupImpl(), false);
 }
 
-// private static Java.Object InstantiateViewGroupImpl() [static] :5155
+// private static Java.Object InstantiateViewGroupImpl() [static] :300
 ::g::Java::Object* ViewFactory::InstantiateViewGroupImpl()
 {
     {
@@ -1439,22 +1463,21 @@ void ViewFactory__InstantiateViewGroupImpl_fn(::g::Java::Object** __retval)
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Nodes/1.2.1/$.uno
-// ----------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Nodes\1.3.0-rc2\ViewHandle.Android.uno
+// ---------------------------------------------------------------------------------------
 
-// public extern class ViewHandle :4877
+// public extern class ViewHandle :12
 // {
 static void ViewHandle_build(uType* type)
 {
-    ::STRINGS[3] = uString::Const("Fuse.Controls.Native.ViewHandle(");
-    ::STRINGS[4] = uString::Const(")");
     type->SetInterfaces(
         ::g::Uno::IDisposable_typeof(), offsetof(ViewHandle_type, interface0));
     type->SetFields(0,
-        ::g::Uno::Int2_typeof(), offsetof(::g::Fuse::Controls::Native::ViewHandle, _size), 0,
-        ::g::Uno::Bool_typeof(), offsetof(::g::Fuse::Controls::Native::ViewHandle, HandlesInput), 0,
-        ::g::Uno::Bool_typeof(), offsetof(::g::Fuse::Controls::Native::ViewHandle, IsLeafView), 0,
-        ::g::Java::Object_typeof(), offsetof(::g::Fuse::Controls::Native::ViewHandle, NativeHandle), 0);
+        ::g::Uno::Int2_typeof(), offsetof(ViewHandle, _size), 0,
+        ::g::Uno::Bool_typeof(), offsetof(ViewHandle, HandlesInput), 0,
+        ::g::Uno::Bool_typeof(), offsetof(ViewHandle, IsLeafView), 0,
+        ::g::Java::Object_typeof(), offsetof(ViewHandle, NativeHandle), 0,
+        ::g::Uno::Bool_typeof(), offsetof(ViewHandle, NeedsInvalidation), 0);
 }
 
 ViewHandle_type* ViewHandle_typeof()
@@ -1463,7 +1486,7 @@ ViewHandle_type* ViewHandle_typeof()
     if (type != NULL) return type;
 
     uTypeOptions options;
-    options.FieldCount = 4;
+    options.FieldCount = 5;
     options.InterfaceCount = 1;
     options.ObjectSize = sizeof(ViewHandle);
     options.TypeSize = sizeof(ViewHandle_type);
@@ -1477,96 +1500,102 @@ ViewHandle_type* ViewHandle_typeof()
     return type;
 }
 
-// public ViewHandle(Java.Object nativeHandle) :4898
+// public ViewHandle(Java.Object nativeHandle) :40
 void ViewHandle__ctor__fn(ViewHandle* __this, ::g::Java::Object* nativeHandle)
 {
     __this->ctor_(nativeHandle);
 }
 
-// public ViewHandle(Java.Object nativeHandle, bool isLeafView) :4900
+// public ViewHandle(Java.Object nativeHandle, bool isLeafView) :42
 void ViewHandle__ctor_1_fn(ViewHandle* __this, ::g::Java::Object* nativeHandle, bool* isLeafView)
 {
     __this->ctor_1(nativeHandle, *isLeafView);
 }
 
-// public ViewHandle(Java.Object nativeHandle, bool isLeafView, bool handlesInput) :4902
+// public ViewHandle(Java.Object nativeHandle, bool isLeafView, bool handlesInput) :44
 void ViewHandle__ctor_2_fn(ViewHandle* __this, ::g::Java::Object* nativeHandle, bool* isLeafView, bool* handlesInput)
 {
     __this->ctor_2(nativeHandle, *isLeafView, *handlesInput);
 }
 
-// public void BringToFront() :5080
+// public ViewHandle(Java.Object nativeHandle, bool isLeafView, bool handlesInput, Fuse.Controls.Native.ViewHandle.Invalidation invalidation) :46
+void ViewHandle__ctor_3_fn(ViewHandle* __this, ::g::Java::Object* nativeHandle, bool* isLeafView, bool* handlesInput, int* invalidation)
+{
+    __this->ctor_3(nativeHandle, *isLeafView, *handlesInput, *invalidation);
+}
+
+// public void BringToFront() :225
 void ViewHandle__BringToFront_fn(ViewHandle* __this)
 {
     __this->BringToFront();
 }
 
-// public static void CopyState(Fuse.Controls.Native.ViewHandle sourceHandle, Fuse.Controls.Native.ViewHandle destHandle) :4941
+// public static void CopyState(Fuse.Controls.Native.ViewHandle sourceHandle, Fuse.Controls.Native.ViewHandle destHandle) :86
 void ViewHandle__CopyState_fn(ViewHandle* sourceHandle, ViewHandle* destHandle)
 {
     ViewHandle::CopyState(sourceHandle, destHandle);
 }
 
-// public virtual void Dispose() :4909
+// public virtual void Dispose() :54
 void ViewHandle__Dispose_fn(ViewHandle* __this)
 {
 }
 
-// public string Format() :5005
+// public string Format() :150
 void ViewHandle__Format_fn(ViewHandle* __this, uString** __retval)
 {
     *__retval = __this->Format();
 }
 
-// private static int GetMeasuredHeight(Java.Object handle) :5141
+// private static int GetMeasuredHeight(Java.Object handle) :286
 void ViewHandle__GetMeasuredHeight_fn(::g::Java::Object* handle, int* __retval)
 {
     *__retval = ViewHandle::GetMeasuredHeight(handle);
 }
 
-// private static int GetMeasuredWidth(Java.Object handle) :5135
+// private static int GetMeasuredWidth(Java.Object handle) :280
 void ViewHandle__GetMeasuredWidth_fn(::g::Java::Object* handle, int* __retval)
 {
     *__retval = ViewHandle::GetMeasuredWidth(handle);
 }
 
-// public int IndexOfChild(Fuse.Controls.Native.ViewHandle childHandle) :5072
+// public int IndexOfChild(Fuse.Controls.Native.ViewHandle childHandle) :217
 void ViewHandle__IndexOfChild_fn(ViewHandle* __this, ViewHandle* childHandle, int* __retval)
 {
     *__retval = __this->IndexOfChild(childHandle);
 }
 
-// public void InsertChild(Fuse.Controls.Native.ViewHandle childHandle) :5048
+// public void InsertChild(Fuse.Controls.Native.ViewHandle childHandle) :193
 void ViewHandle__InsertChild_fn(ViewHandle* __this, ViewHandle* childHandle)
 {
     __this->InsertChild(childHandle);
 }
 
-// public void InsertChild(Fuse.Controls.Native.ViewHandle childHandle, int index) :5056
+// public void InsertChild(Fuse.Controls.Native.ViewHandle childHandle, int index) :201
 void ViewHandle__InsertChild1_fn(ViewHandle* __this, ViewHandle* childHandle, int* index)
 {
     __this->InsertChild1(childHandle, *index);
 }
 
-// public void Invalidate() :4998
+// public void Invalidate() :143
 void ViewHandle__Invalidate_fn(ViewHandle* __this)
 {
     __this->Invalidate();
 }
 
-// private void InvalidateImpl() :4992
+// private void InvalidateImpl() :137
 void ViewHandle__InvalidateImpl_fn(ViewHandle* __this)
 {
     __this->InvalidateImpl();
 }
 
-// public bool IsViewGroup() :5029
+// public bool IsViewGroup() :174
 void ViewHandle__IsViewGroup_fn(ViewHandle* __this, bool* __retval)
 {
     *__retval = __this->IsViewGroup();
 }
 
-// public virtual float2 Measure(Fuse.LayoutParams lp, float density) :5117
+// public virtual float2 Measure(Fuse.LayoutParams lp, float density) :262
 void ViewHandle__Measure_fn(ViewHandle* __this, ::g::Fuse::LayoutParams* lp, float* density, ::g::Uno::Float2* __retval)
 {
     ::g::Fuse::LayoutParams lp_ = *lp;
@@ -1577,149 +1606,157 @@ void ViewHandle__Measure_fn(ViewHandle* __this, ::g::Fuse::LayoutParams* lp, flo
     return *__retval = res, void();
 }
 
-// private static void Measure(Java.Object handle, int w, int h, bool hasX, bool hasY) :5126
+// private static void Measure(Java.Object handle, int w, int h, bool hasX, bool hasY) :271
 void ViewHandle__Measure1_fn(::g::Java::Object* handle, int* w, int* h, bool* hasX, bool* hasY)
 {
     ViewHandle::Measure1(handle, *w, *h, *hasX, *hasY);
 }
 
-// public ViewHandle New(Java.Object nativeHandle) :4898
+// public ViewHandle New(Java.Object nativeHandle) :40
 void ViewHandle__New1_fn(::g::Java::Object* nativeHandle, ViewHandle** __retval)
 {
     *__retval = ViewHandle::New1(nativeHandle);
 }
 
-// public ViewHandle New(Java.Object nativeHandle, bool isLeafView) :4900
+// public ViewHandle New(Java.Object nativeHandle, bool isLeafView) :42
 void ViewHandle__New2_fn(::g::Java::Object* nativeHandle, bool* isLeafView, ViewHandle** __retval)
 {
     *__retval = ViewHandle::New2(nativeHandle, *isLeafView);
 }
 
-// protected internal virtual void OnSizeChanged() :4916
+// protected internal virtual void OnSizeChanged() :61
 void ViewHandle__OnSizeChanged_fn(ViewHandle* __this)
 {
 }
 
-// public void RemoveChild(Fuse.Controls.Native.ViewHandle childHandle) :5064
+// public void RemoveChild(Fuse.Controls.Native.ViewHandle childHandle) :209
 void ViewHandle__RemoveChild_fn(ViewHandle* __this, ViewHandle* childHandle)
 {
     __this->RemoveChild(childHandle);
 }
 
-// public void ResetLayoutParams() :4960
+// public void ResetLayoutParams() :105
 void ViewHandle__ResetLayoutParams_fn(ViewHandle* __this)
 {
     __this->ResetLayoutParams();
 }
 
-// public void ResetState() :4930
+// public void ResetState() :75
 void ViewHandle__ResetState_fn(ViewHandle* __this)
 {
     __this->ResetState();
 }
 
-// public void SetBackgroundColor(int color) :4966
+// public void SetBackgroundColor(int color) :111
 void ViewHandle__SetBackgroundColor_fn(ViewHandle* __this, int* color)
 {
     __this->SetBackgroundColor(*color);
 }
 
-// public void SetClipToBounds(bool clipToBounds) :4919
+// public void SetClipToBounds(bool clipToBounds) :64
 void ViewHandle__SetClipToBounds_fn(ViewHandle* __this, bool* clipToBounds)
 {
     __this->SetClipToBounds(*clipToBounds);
 }
 
-// public void SetEnabled(bool value) :4979
+// public void SetEnabled(bool value) :124
 void ViewHandle__SetEnabled_fn(ViewHandle* __this, bool* value)
 {
     __this->SetEnabled(*value);
 }
 
-// public void SetHitTestEnabled(bool enabled) :5038
+// public void SetHitTestEnabled(bool enabled) :183
 void ViewHandle__SetHitTestEnabled_fn(ViewHandle* __this, bool* enabled)
 {
     __this->SetHitTestEnabled(*enabled);
 }
 
-// public void SetIsVisible(bool isVisible) :4985
+// public void SetIsVisible(bool isVisible) :130
 void ViewHandle__SetIsVisible_fn(ViewHandle* __this, bool* isVisible)
 {
     __this->SetIsVisible(*isVisible);
 }
 
-// public void SetOpacity(float value) :4973
+// public void SetOpacity(float value) :118
 void ViewHandle__SetOpacity_fn(ViewHandle* __this, float* value)
 {
     __this->SetOpacity(*value);
 }
 
-// internal int2 get_Size() :4884
+// internal int2 get_Size() :25
 void ViewHandle__get_Size_fn(ViewHandle* __this, ::g::Uno::Int2* __retval)
 {
     *__retval = __this->Size();
 }
 
-// internal void set_Size(int2 value) :4885
+// internal void set_Size(int2 value) :26
 void ViewHandle__set_Size_fn(ViewHandle* __this, ::g::Uno::Int2* value)
 {
     __this->Size(*value);
 }
 
-// public override sealed string ToString() :4911
+// public override sealed string ToString() :56
 void ViewHandle__ToString_fn(ViewHandle* __this, uString** __retval)
 {
-    return *__retval = ::g::Uno::String::op_Addition2(::g::Uno::String::op_Addition2(::STRINGS[3/*"Fuse.Contro...*/], __this->Format()), ::STRINGS[4/*")"*/]), void();
+    return *__retval = ::g::Uno::String::op_Addition2(::g::Uno::String::op_Addition2(uString::Const("Fuse.Controls.Native.ViewHandle("), __this->Format()), uString::Const(")")), void();
 }
 
-// public void UpdateTransform(float scaleX, float scaleY, float rotation, float rotationX, float rotationY) :5100
+// public void UpdateTransform(float scaleX, float scaleY, float rotation, float rotationX, float rotationY) :245
 void ViewHandle__UpdateTransform_fn(ViewHandle* __this, float* scaleX, float* scaleY, float* rotation, float* rotationX, float* rotationY)
 {
     __this->UpdateTransform(*scaleX, *scaleY, *rotation, *rotationX, *rotationY);
 }
 
-// public void UpdateViewRect(float4x4 transform, float2 size, float density) :5011
+// public void UpdateViewRect(float4x4 transform, float2 size, float density) :156
 void ViewHandle__UpdateViewRect_fn(ViewHandle* __this, ::g::Uno::Float4x4* transform, ::g::Uno::Float2* size, float* density)
 {
     __this->UpdateViewRect(*transform, *size, *density);
 }
 
-// public void UpdateViewRect(int x, int y, int w, int h) :5086
+// public void UpdateViewRect(int x, int y, int w, int h) :231
 void ViewHandle__UpdateViewRect1_fn(ViewHandle* __this, int* x, int* y, int* w, int* h)
 {
     __this->UpdateViewRect1(*x, *y, *w, *h);
 }
 
-// private void UpdateViewRectImpl(int x, int y, int w, int h) :5093
+// private void UpdateViewRectImpl(int x, int y, int w, int h) :238
 void ViewHandle__UpdateViewRectImpl_fn(ViewHandle* __this, int* x, int* y, int* w, int* h)
 {
     __this->UpdateViewRectImpl(*x, *y, *w, *h);
 }
 
-// public ViewHandle(Java.Object nativeHandle) [instance] :4898
+// public ViewHandle(Java.Object nativeHandle) [instance] :40
 void ViewHandle::ctor_(::g::Java::Object* nativeHandle)
 {
     _size = ::g::Uno::Int2__New1(0);
     ctor_2(nativeHandle, false, false);
 }
 
-// public ViewHandle(Java.Object nativeHandle, bool isLeafView) [instance] :4900
+// public ViewHandle(Java.Object nativeHandle, bool isLeafView) [instance] :42
 void ViewHandle::ctor_1(::g::Java::Object* nativeHandle, bool isLeafView)
 {
     _size = ::g::Uno::Int2__New1(0);
     ctor_2(nativeHandle, isLeafView, false);
 }
 
-// public ViewHandle(Java.Object nativeHandle, bool isLeafView, bool handlesInput) [instance] :4902
+// public ViewHandle(Java.Object nativeHandle, bool isLeafView, bool handlesInput) [instance] :44
 void ViewHandle::ctor_2(::g::Java::Object* nativeHandle, bool isLeafView, bool handlesInput)
+{
+    _size = ::g::Uno::Int2__New1(0);
+    ctor_3(nativeHandle, isLeafView, handlesInput, 0);
+}
+
+// public ViewHandle(Java.Object nativeHandle, bool isLeafView, bool handlesInput, Fuse.Controls.Native.ViewHandle.Invalidation invalidation) [instance] :46
+void ViewHandle::ctor_3(::g::Java::Object* nativeHandle, bool isLeafView, bool handlesInput, int invalidation)
 {
     _size = ::g::Uno::Int2__New1(0);
     NativeHandle = nativeHandle;
     IsLeafView = isLeafView;
     HandlesInput = handlesInput;
+    NeedsInvalidation = (invalidation == 1);
 }
 
-// public void BringToFront() [instance] :5080
+// public void BringToFront() [instance] :225
 void ViewHandle::BringToFront()
 {
     {
@@ -1737,7 +1774,7 @@ void ViewHandle::BringToFront()
     
 }
 
-// public string Format() [instance] :5005
+// public string Format() [instance] :150
 uString* ViewHandle::Format()
 {
     {
@@ -1756,7 +1793,7 @@ uString* ViewHandle::Format()
     
 }
 
-// public int IndexOfChild(Fuse.Controls.Native.ViewHandle childHandle) [instance] :5072
+// public int IndexOfChild(Fuse.Controls.Native.ViewHandle childHandle) [instance] :217
 int ViewHandle::IndexOfChild(ViewHandle* childHandle)
 {
     {
@@ -1777,7 +1814,7 @@ int ViewHandle::IndexOfChild(ViewHandle* childHandle)
     
 }
 
-// public void InsertChild(Fuse.Controls.Native.ViewHandle childHandle) [instance] :5048
+// public void InsertChild(Fuse.Controls.Native.ViewHandle childHandle) [instance] :193
 void ViewHandle::InsertChild(ViewHandle* childHandle)
 {
     {
@@ -1798,7 +1835,7 @@ void ViewHandle::InsertChild(ViewHandle* childHandle)
     
 }
 
-// public void InsertChild(Fuse.Controls.Native.ViewHandle childHandle, int index) [instance] :5056
+// public void InsertChild(Fuse.Controls.Native.ViewHandle childHandle, int index) [instance] :201
 void ViewHandle::InsertChild1(ViewHandle* childHandle, int index)
 {
     {
@@ -1822,14 +1859,14 @@ void ViewHandle::InsertChild1(ViewHandle* childHandle, int index)
     
 }
 
-// public void Invalidate() [instance] :4998
+// public void Invalidate() [instance] :143
 void ViewHandle::Invalidate()
 {
-    if (IsViewGroup())
+    if (NeedsInvalidation)
         InvalidateImpl();
 }
 
-// private void InvalidateImpl() [instance] :4992
+// private void InvalidateImpl() [instance] :137
 void ViewHandle::InvalidateImpl()
 {
     {
@@ -1847,7 +1884,7 @@ void ViewHandle::InvalidateImpl()
     
 }
 
-// public bool IsViewGroup() [instance] :5029
+// public bool IsViewGroup() [instance] :174
 bool ViewHandle::IsViewGroup()
 {
     {
@@ -1865,7 +1902,7 @@ bool ViewHandle::IsViewGroup()
     
 }
 
-// public void RemoveChild(Fuse.Controls.Native.ViewHandle childHandle) [instance] :5064
+// public void RemoveChild(Fuse.Controls.Native.ViewHandle childHandle) [instance] :209
 void ViewHandle::RemoveChild(ViewHandle* childHandle)
 {
     {
@@ -1886,7 +1923,7 @@ void ViewHandle::RemoveChild(ViewHandle* childHandle)
     
 }
 
-// public void ResetLayoutParams() [instance] :4960
+// public void ResetLayoutParams() [instance] :105
 void ViewHandle::ResetLayoutParams()
 {
     {
@@ -1904,7 +1941,7 @@ void ViewHandle::ResetLayoutParams()
     
 }
 
-// public void ResetState() [instance] :4930
+// public void ResetState() [instance] :75
 void ViewHandle::ResetState()
 {
     ResetLayoutParams();
@@ -1915,7 +1952,7 @@ void ViewHandle::ResetState()
     UpdateTransform(1.0f, 1.0f, 0.0f, 0.0f, 0.0f);
 }
 
-// public void SetBackgroundColor(int color) [instance] :4966
+// public void SetBackgroundColor(int color) [instance] :111
 void ViewHandle::SetBackgroundColor(int color)
 {
     {
@@ -1936,7 +1973,7 @@ void ViewHandle::SetBackgroundColor(int color)
     
 }
 
-// public void SetClipToBounds(bool clipToBounds) [instance] :4919
+// public void SetClipToBounds(bool clipToBounds) [instance] :64
 void ViewHandle::SetClipToBounds(bool clipToBounds)
 {
     {
@@ -1957,7 +1994,7 @@ void ViewHandle::SetClipToBounds(bool clipToBounds)
     
 }
 
-// public void SetEnabled(bool value) [instance] :4979
+// public void SetEnabled(bool value) [instance] :124
 void ViewHandle::SetEnabled(bool value)
 {
     {
@@ -1978,7 +2015,7 @@ void ViewHandle::SetEnabled(bool value)
     
 }
 
-// public void SetHitTestEnabled(bool enabled) [instance] :5038
+// public void SetHitTestEnabled(bool enabled) [instance] :183
 void ViewHandle::SetHitTestEnabled(bool enabled)
 {
     {
@@ -1999,7 +2036,7 @@ void ViewHandle::SetHitTestEnabled(bool enabled)
     
 }
 
-// public void SetIsVisible(bool isVisible) [instance] :4985
+// public void SetIsVisible(bool isVisible) [instance] :130
 void ViewHandle::SetIsVisible(bool isVisible)
 {
     {
@@ -2020,7 +2057,7 @@ void ViewHandle::SetIsVisible(bool isVisible)
     
 }
 
-// public void SetOpacity(float value) [instance] :4973
+// public void SetOpacity(float value) [instance] :118
 void ViewHandle::SetOpacity(float value)
 {
     {
@@ -2041,13 +2078,13 @@ void ViewHandle::SetOpacity(float value)
     
 }
 
-// internal int2 get_Size() [instance] :4884
+// internal int2 get_Size() [instance] :25
 ::g::Uno::Int2 ViewHandle::Size()
 {
     return _size;
 }
 
-// internal void set_Size(int2 value) [instance] :4885
+// internal void set_Size(int2 value) [instance] :26
 void ViewHandle::Size(::g::Uno::Int2 value)
 {
     if (::g::Uno::Int2__op_Inequality(_size, value))
@@ -2057,7 +2094,7 @@ void ViewHandle::Size(::g::Uno::Int2 value)
     }
 }
 
-// public void UpdateTransform(float scaleX, float scaleY, float rotation, float rotationX, float rotationY) [instance] :5100
+// public void UpdateTransform(float scaleX, float scaleY, float rotation, float rotationX, float rotationY) [instance] :245
 void ViewHandle::UpdateTransform(float scaleX, float scaleY, float rotation, float rotationX, float rotationY)
 {
     {
@@ -2090,31 +2127,33 @@ void ViewHandle::UpdateTransform(float scaleX, float scaleY, float rotation, flo
     
 }
 
-// public void UpdateViewRect(float4x4 transform, float2 size, float density) [instance] :5011
+// public void UpdateViewRect(float4x4 transform, float2 size, float density) [instance] :156
 void ViewHandle::UpdateViewRect(::g::Uno::Float4x4 transform, ::g::Uno::Float2 size, float density)
 {
+    ::g::Uno::Float3 ind1;
+    ::g::Uno::Int2 ind2;
     ::g::Uno::Float3 scale;
     ::g::Uno::Float4 rotation;
     ::g::Uno::Float3 translation;
     ::g::Uno::Matrix::Decompose(transform, &scale, &rotation, &translation);
-    ::g::Uno::Float3 ind1 = ::g::Uno::Quaternion::ToEulerAngleDegrees(rotation);
+    ind1 = ::g::Uno::Quaternion::ToEulerAngleDegrees(rotation);
     ::g::Uno::Float3 r = ::g::Uno::Float3__New2(ind1.X, ind1.Y, ind1.Z);
     ::g::Uno::Int2 actualPosition = ::g::Uno::Int2__op_Explicit1(::g::Uno::Float2__op_Multiply1(::g::Uno::Float2__New2(translation.X, translation.Y), density));
-    ::g::Uno::Int2 ind2 = ::g::Uno::Int2__op_Explicit1(::g::Uno::Float2__op_Multiply1(size, density));
+    ind2 = ::g::Uno::Int2__op_Explicit1(::g::Uno::Float2__op_Multiply1(size, density));
     Size(ind2);
     ::g::Uno::Int2 actualSize = ind2;
     UpdateTransform(scale.X, scale.Y, r.Z, r.X, r.Y);
     UpdateViewRect1(actualPosition.X, actualPosition.Y, actualSize.X, actualSize.Y);
 }
 
-// public void UpdateViewRect(int x, int y, int w, int h) [instance] :5086
+// public void UpdateViewRect(int x, int y, int w, int h) [instance] :231
 void ViewHandle::UpdateViewRect1(int x, int y, int w, int h)
 {
     Size(::g::Uno::Int2__New2(w, h));
     UpdateViewRectImpl(x, y, w, h);
 }
 
-// private void UpdateViewRectImpl(int x, int y, int w, int h) [instance] :5093
+// private void UpdateViewRectImpl(int x, int y, int w, int h) [instance] :238
 void ViewHandle::UpdateViewRectImpl(int x, int y, int w, int h)
 {
     {
@@ -2144,7 +2183,7 @@ void ViewHandle::UpdateViewRectImpl(int x, int y, int w, int h)
     
 }
 
-// public static void CopyState(Fuse.Controls.Native.ViewHandle sourceHandle, Fuse.Controls.Native.ViewHandle destHandle) [static] :4941
+// public static void CopyState(Fuse.Controls.Native.ViewHandle sourceHandle, Fuse.Controls.Native.ViewHandle destHandle) [static] :86
 void ViewHandle::CopyState(ViewHandle* sourceHandle, ViewHandle* destHandle)
 {
     {
@@ -2165,7 +2204,7 @@ void ViewHandle::CopyState(ViewHandle* sourceHandle, ViewHandle* destHandle)
     
 }
 
-// private static int GetMeasuredHeight(Java.Object handle) [static] :5141
+// private static int GetMeasuredHeight(Java.Object handle) [static] :286
 int ViewHandle::GetMeasuredHeight(::g::Java::Object* handle)
 {
     {
@@ -2183,7 +2222,7 @@ int ViewHandle::GetMeasuredHeight(::g::Java::Object* handle)
     
 }
 
-// private static int GetMeasuredWidth(Java.Object handle) [static] :5135
+// private static int GetMeasuredWidth(Java.Object handle) [static] :280
 int ViewHandle::GetMeasuredWidth(::g::Java::Object* handle)
 {
     {
@@ -2201,7 +2240,7 @@ int ViewHandle::GetMeasuredWidth(::g::Java::Object* handle)
     
 }
 
-// private static void Measure(Java.Object handle, int w, int h, bool hasX, bool hasY) [static] :5126
+// private static void Measure(Java.Object handle, int w, int h, bool hasX, bool hasY) [static] :271
 void ViewHandle::Measure1(::g::Java::Object* handle, int w, int h, bool hasX, bool hasY)
 {
     {
@@ -2231,7 +2270,7 @@ void ViewHandle::Measure1(::g::Java::Object* handle, int w, int h, bool hasX, bo
     
 }
 
-// public ViewHandle New(Java.Object nativeHandle) [static] :4898
+// public ViewHandle New(Java.Object nativeHandle) [static] :40
 ViewHandle* ViewHandle::New1(::g::Java::Object* nativeHandle)
 {
     ViewHandle* obj3 = (ViewHandle*)uNew(ViewHandle_typeof());
@@ -2239,7 +2278,7 @@ ViewHandle* ViewHandle::New1(::g::Java::Object* nativeHandle)
     return obj3;
 }
 
-// public ViewHandle New(Java.Object nativeHandle, bool isLeafView) [static] :4900
+// public ViewHandle New(Java.Object nativeHandle, bool isLeafView) [static] :42
 ViewHandle* ViewHandle::New2(::g::Java::Object* nativeHandle, bool isLeafView)
 {
     ViewHandle* obj4 = (ViewHandle*)uNew(ViewHandle_typeof());

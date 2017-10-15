@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Elements/1.2.1/internal/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Elements/1.3.0-rc2/Internal/SizingContainer.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -13,7 +13,7 @@ namespace g{
 namespace Fuse{
 namespace Internal{
 
-// internal sealed class SizingContainer :396
+// internal sealed class SizingContainer :7
 // {
 uType* SizingContainer_typeof();
 void SizingContainer__ctor__fn(SizingContainer* __this);

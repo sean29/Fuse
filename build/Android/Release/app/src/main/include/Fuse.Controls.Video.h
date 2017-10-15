@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Controls.Video/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Controls.Video/1.3.0-rc2/Video.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -18,6 +18,7 @@
 #include <Fuse.Triggers.IMediaPlayback.h>
 #include <Fuse.Triggers.IPlayback.h>
 #include <Fuse.Triggers.IProgress.h>
+#include <Fuse.Visual.h>
 #include <Uno.Collections.ICollection-1.h>
 #include <Uno.Collections.IEnumerable-1.h>
 #include <Uno.Collections.IList-1.h>
@@ -32,13 +33,13 @@ namespace g{
 namespace Fuse{
 namespace Controls{
 
-// public sealed class Video :197
+// public sealed class Video :125
 // {
 struct Video_type : ::g::Fuse::Controls::Panel_type
 {
-    ::g::Fuse::Triggers::IMediaPlayback interface17;
-    ::g::Fuse::Triggers::IPlayback interface18;
-    ::g::Fuse::Triggers::IProgress interface19;
+    ::g::Fuse::Triggers::IMediaPlayback interface18;
+    ::g::Fuse::Triggers::IPlayback interface19;
+    ::g::Fuse::Triggers::IProgress interface20;
 };
 
 Video_type* Video_typeof();
@@ -97,7 +98,7 @@ struct Video : ::g::Fuse::Controls::Panel
     bool _isLooping;
     uStrong<uObject*> _playback;
     static ::g::Uno::UX::Selector _progressName_;
-    static ::g::Uno::UX::Selector& _progressName() { return Video_typeof()->Init(), _progressName_; }
+    static ::g::Uno::UX::Selector& _progressName() { return _progressName_; }
     ::g::Uno::Float4 _scale9Margin;
     int _stretchDirection;
     int _stretchMode;

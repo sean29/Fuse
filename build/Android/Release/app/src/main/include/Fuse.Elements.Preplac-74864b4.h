@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Elements/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Elements/1.3.0-rc2/Element.Layout.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -8,7 +8,7 @@ namespace g{
 namespace Fuse{
 namespace Elements{
 
-// public delegate void PreplacementHandler(object sender, Fuse.Elements.PreplacementArgs args) :1881
+// public delegate void PreplacementHandler(object sender, Fuse.Elements.PreplacementArgs args) :30
 uDelegateType* PreplacementHandler_typeof();
 
 }}} // ::g::Fuse::Elements

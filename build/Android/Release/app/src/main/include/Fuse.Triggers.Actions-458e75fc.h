@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Controls.WebView/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Controls.WebView/1.3.0-rc2/EvaluateJS.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -9,7 +9,7 @@ namespace Fuse{
 namespace Triggers{
 namespace Actions{
 
-// public delegate void JSEventHandler(object sender, Fuse.Triggers.Actions.JSEventArgs args) :907
+// public delegate void JSEventHandler(object sender, Fuse.Triggers.Actions.JSEventArgs args) :23
 uDelegateType* JSEventHandler_typeof();
 
 }}}} // ::g::Fuse::Triggers::Actions

@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Controls.Navigation/1.2.1/.uno/ux11/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Controls.Navigation/1.3.0-rc2/.uno/ux13/Fuse.Controls.NavigationInternal.NavRemoveHorizontal.g.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -20,7 +20,7 @@ namespace Fuse{
 namespace Controls{
 namespace NavigationInternal{
 
-// public partial sealed class NavRemoveHorizontal :234
+// public partial sealed class NavRemoveHorizontal :4
 // {
 ::g::Fuse::Triggers::RemovingAnimation_type* NavRemoveHorizontal_typeof();
 void NavRemoveHorizontal__ctor_6_fn(NavRemoveHorizontal* __this);

@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/UnoCore/1.2.2/source/uno/exceptions/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/UnoCore/1.3.1/Source/Uno/Exceptions/AggregateException.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -8,7 +8,7 @@ namespace g{namespace Uno{struct AggregateException;}}
 namespace g{
 namespace Uno{
 
-// public sealed class AggregateException :10
+// public sealed class AggregateException :8
 // {
 ::g::Uno::Exception_type* AggregateException_typeof();
 void AggregateException__ctor_5_fn(AggregateException* __this, uString* message, uArray* innerExceptions);

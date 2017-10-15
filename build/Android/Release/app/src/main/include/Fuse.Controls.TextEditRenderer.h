@@ -1,9 +1,10 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Controls.Primitives/1.2.1/textcontrols/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Controls.Primitives/1.3.0-rc2/TextControls/MobileTextEdit.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
 #include <Uno.Object.h>
 namespace g{namespace Fuse{namespace Controls{namespace Native{struct ViewHandle;}}}}
+namespace g{namespace Fuse{namespace Controls{struct TextEdit;}}}
 namespace g{namespace Fuse{namespace Controls{struct TextEditRenderer;}}}
 namespace g{namespace Java{struct Object;}}
 namespace g{namespace Uno{struct Float2;}}
@@ -13,31 +14,28 @@ namespace g{
 namespace Fuse{
 namespace Controls{
 
-// internal sealed extern class TextEditRenderer :1507
+// internal sealed extern class TextEditRenderer :219
 // {
 uType* TextEditRenderer_typeof();
 void TextEditRenderer__ctor__fn(TextEditRenderer* __this);
-void TextEditRenderer__CopyState_fn(::g::Java::Object* container, ::g::Java::Object* sourceHandle, ::g::Java::Object* targetHandle);
-void TextEditRenderer__CreateContainer_fn(::g::Java::Object** __retval);
+void TextEditRenderer__CopyState_fn(::g::Java::Object* sourceHandle, ::g::Java::Object* targetHandle, bool* updateTextAlignment, bool* isMultiline, int* width, int* height);
 void TextEditRenderer__CreateTextEdit_fn(::g::Java::Object** __retval);
-void TextEditRenderer__Draw_fn(TextEditRenderer* __this, uObject* renderer, ::g::Fuse::Controls::Native::ViewHandle* viewHandle, ::g::Uno::Float4x4* localToClipTransform, ::g::Uno::Float2* position, ::g::Uno::Float2* size, float* density);
+void TextEditRenderer__Draw_fn(TextEditRenderer* __this, uObject* renderer, ::g::Fuse::Controls::Native::ViewHandle* viewHandle, ::g::Uno::Float4x4* localToClipTransform, ::g::Uno::Float2* position, ::g::Uno::Float2* size, float* density, bool* updateTextAlignment, bool* isMultiline);
 void TextEditRenderer__New1_fn(TextEditRenderer** __retval);
-void TextEditRenderer__NewRenderer_fn(uObject** __retval);
+void TextEditRenderer__NewRenderer_fn(::g::Fuse::Controls::TextEdit* textEdit, bool* isMultiline, uObject** __retval);
 
 struct TextEditRenderer : uObject
 {
-    uStrong< ::g::Fuse::Controls::Native::ViewHandle*> _container;
     uStrong< ::g::Fuse::Controls::Native::ViewHandle*> _renderView;
     static uSStrong<TextEditRenderer*> Instance_;
-    static uSStrong<TextEditRenderer*>& Instance() { return TextEditRenderer_typeof()->Init(), Instance_; }
+    static uSStrong<TextEditRenderer*>& Instance() { return Instance_; }
 
     void ctor_();
-    void Draw(uObject* renderer, ::g::Fuse::Controls::Native::ViewHandle* viewHandle, ::g::Uno::Float4x4 localToClipTransform, ::g::Uno::Float2 position, ::g::Uno::Float2 size, float density);
-    static void CopyState(::g::Java::Object* container, ::g::Java::Object* sourceHandle, ::g::Java::Object* targetHandle);
-    static ::g::Java::Object* CreateContainer();
+    void Draw(uObject* renderer, ::g::Fuse::Controls::Native::ViewHandle* viewHandle, ::g::Uno::Float4x4 localToClipTransform, ::g::Uno::Float2 position, ::g::Uno::Float2 size, float density, bool updateTextAlignment, bool isMultiline);
+    static void CopyState(::g::Java::Object* sourceHandle, ::g::Java::Object* targetHandle, bool updateTextAlignment, bool isMultiline, int width, int height);
     static ::g::Java::Object* CreateTextEdit();
     static TextEditRenderer* New1();
-    static uObject* NewRenderer();
+    static uObject* NewRenderer(::g::Fuse::Controls::TextEdit* textEdit, bool isMultiline);
 };
 // }
 

@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Testing/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Testing/1.3.0-rc2/JavaScriptTest.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -9,7 +9,7 @@ namespace g{
 namespace Fuse{
 namespace Testing{
 
-// private sealed class UnoTestingHelper.TestFailure :31
+// private sealed class UnoTestingHelper.TestFailure :29
 // {
 uType* UnoTestingHelper__TestFailure_typeof();
 void UnoTestingHelper__TestFailure__ctor__fn(UnoTestingHelper__TestFailure* __this, uString* message);

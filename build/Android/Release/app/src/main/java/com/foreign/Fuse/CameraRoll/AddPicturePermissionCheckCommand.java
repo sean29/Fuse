@@ -30,7 +30,7 @@ public class AddPicturePermissionCheckCommand
         android.util.Log.d("emrals", (message==null ? "null" : message.toString()));
     }
 
-    public static void AddToCameraRollInternal406(final String path,final com.foreign.Uno.Action success,final com.foreign.Uno.Action_String reject)
+    public static void AddToCameraRollInternal405(final String path,final com.foreign.Uno.Action success,final com.foreign.Uno.Action_String reject)
     {
         try{
         	Image p = Image.fromPath(path);

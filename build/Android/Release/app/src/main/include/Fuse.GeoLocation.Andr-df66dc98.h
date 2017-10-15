@@ -1,4 +1,4 @@
-// This file was generated based on '/Users/a/Library/Application Support/Fusetools/Packages/Fuse.GeoLocation/1.2.1/android/$.uno'.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.GeoLocation/1.3.0-rc2/Android/AndroidLocationProvider.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -16,7 +16,7 @@ namespace g{
 namespace Fuse{
 namespace GeoLocation{
 
-// internal sealed extern class AndroidLocationProvider :14
+// internal sealed extern class AndroidLocationProvider :12
 // {
 struct AndroidLocationProvider_type : uType
 {

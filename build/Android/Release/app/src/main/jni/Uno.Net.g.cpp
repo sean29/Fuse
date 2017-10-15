@@ -9,10 +9,10 @@ namespace g{
 namespace Uno{
 namespace Net{
 
-// /usr/local/share/uno/Packages/Uno.Net.Sockets/1.2.2/$.uno
-// ---------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Uno.Net.Sockets\1.3.1\NetworkHelpers.uno
+// ------------------------------------------------------------------------------------
 
-// internal sealed extern class NetworkHelpers :463
+// internal sealed extern class NetworkHelpers :8
 // {
 static void NetworkHelpers_build(uType* type)
 {
@@ -31,13 +31,13 @@ uType* NetworkHelpers_typeof()
     return type;
 }
 
-// public static extern string GetError() :482
+// public static extern string GetError() :27
 void NetworkHelpers__GetError_fn(uString** __retval)
 {
     *__retval = NetworkHelpers::GetError();
 }
 
-// public static extern string GetError() [static] :482
+// public static extern string GetError() [static] :27
 uString* NetworkHelpers::GetError()
 {
     return uString::Utf8(strerror(errno));

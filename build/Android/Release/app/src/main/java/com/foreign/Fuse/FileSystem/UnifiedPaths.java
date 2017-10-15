@@ -23,12 +23,12 @@ public class UnifiedPaths
         android.util.Log.d("emrals", (message==null ? "null" : message.toString()));
     }
 
-    public static String GetCacheDirectory372()
+    public static String GetCacheDirectory371()
     {
         return com.fuse.Activity.getRootActivity().getExternalCacheDir().getAbsolutePath();
     }
     
-    public static String GetDataDirectory373()
+    public static String GetDataDirectory372()
     {
         return com.fuse.Activity.getRootActivity().getFilesDir().getAbsolutePath();
     }

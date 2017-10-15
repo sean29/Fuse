@@ -1,4 +1,4 @@
-// This file was generated based on '.uno/ux11/FatButton.g.uno'.
+// This file was generated based on '.uno/ux13/FatButton.g.uno'.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -15,6 +15,7 @@
 #include <Fuse.Triggers.Actions.IHide.h>
 #include <Fuse.Triggers.Actions.IShow.h>
 #include <Fuse.Triggers.Actions-ea70af1f.h>
+#include <Fuse.Visual.h>
 #include <Uno.Collections.ICollection-1.h>
 #include <Uno.Collections.IEnumerable-1.h>
 #include <Uno.Collections.IList-1.h>
@@ -33,8 +34,6 @@ void FatButton__set_Text_fn(FatButton* __this, uString* value);
 
 struct FatButton : ::g::Fuse::Controls::Panel
 {
-    static uSStrong<uArray*> __g_static_nametable1_;
-    static uSStrong<uArray*>& __g_static_nametable1() { return FatButton_typeof()->Init(), __g_static_nametable1_; }
     static ::g::Uno::UX::Selector __selector0_;
     static ::g::Uno::UX::Selector& __selector0() { return FatButton_typeof()->Init(), __selector0_; }
     uStrong<uString*> _field_Text;

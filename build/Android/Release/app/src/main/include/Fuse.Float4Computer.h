@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Marshal/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Marshal/1.3.0-rc2/Computer.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -9,7 +9,7 @@ namespace g{namespace Fuse{struct Float4Computer;}}
 namespace g{
 namespace Fuse{
 
-// internal sealed class Float4Computer :127
+// internal sealed class Float4Computer :125
 // {
 ::g::Fuse::Computer1_type* Float4Computer_typeof();
 void Float4Computer__ctor_2_fn(Float4Computer* __this);

@@ -96,6 +96,7 @@
 #include <Uno.Float2.h>
 #include <Uno.Float3.h>
 #include <Uno.Float4x4.h>
+#include <Uno.IDisposable.h>
 #include <Uno.Int.h>
 #include <Uno.Matrix.h>
 #include <Uno.Net.Http.Uri.h>
@@ -104,22 +105,23 @@
 #include <Uno.UX.Expression-1.h>
 #include <Uno.UX.IPropertyListener.h>
 #include <Uno.UX.Property-1.h>
-static uString* STRINGS[10];
-static uType* TYPES[21];
+static uString* STRINGS[20];
+static uType* TYPES[29];
 
 namespace g{
 namespace Fuse{
 namespace Triggers{
 namespace Actions{
 
-// /usr/local/share/uno/Packages/Fuse.Elements/1.2.1/triggers/actions/$.uno
-// ------------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Elements\1.3.0-rc2\Triggers\Actions\BringIntoView.uno
+// ------------------------------------------------------------------------------------------------------
 
-// public sealed class BringIntoView :41
+// public sealed class BringIntoView :39
 // {
 static void BringIntoView_build(uType* type)
 {
     ::TYPES[0] = ::g::Fuse::Elements::Element_typeof();
+    ::TYPES[1] = ::g::Fuse::Node_typeof()->MakeMethod(1/*FindByType<Fuse.Visual>*/, ::g::Fuse::Visual_typeof(), NULL);
     type->SetFields(8);
 }
 
@@ -139,26 +141,27 @@ static void BringIntoView_build(uType* type)
     return type;
 }
 
-// protected override sealed void Perform(Fuse.Node target) :43
+// protected override sealed void Perform(Fuse.Node target) :41
 void BringIntoView__Perform_fn(BringIntoView* __this, ::g::Fuse::Node* target)
 {
-    ::g::Fuse::Elements::Element* elm = uAs< ::g::Fuse::Elements::Element*>(target, ::TYPES[0/*Fuse.Elements.Element*/]);
+    ::g::Fuse::Elements::Element* elm = uAs< ::g::Fuse::Elements::Element*>((::g::Fuse::Visual*)uPtr(target)->FindByType(::TYPES[1/*Fuse.Node.FindByType<Fuse.Visual>*/]), ::TYPES[0/*Fuse.Elements.Element*/]);
 
     if (elm != NULL)
         uPtr(elm)->BringIntoView();
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Controls/1.2.1/triggers/$.uno
-// ----------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Controls\1.3.0-rc2\Triggers\BringToFront.uno
+// ---------------------------------------------------------------------------------------------
 
-// public sealed class BringToFront :39
+// public sealed class BringToFront :37
 // {
 static void BringToFront_build(uType* type)
 {
-    ::TYPES[1] = ::g::Fuse::Visual_typeof();
+    ::TYPES[1] = ::g::Fuse::Node_typeof()->MakeMethod(1/*FindByType<Fuse.Visual>*/, ::g::Fuse::Visual_typeof(), NULL);
+    ::TYPES[2] = ::g::Fuse::Visual_typeof();
     type->SetFields(8,
-        ::TYPES[1/*Fuse.Visual*/], offsetof(::g::Fuse::Triggers::Actions::BringToFront, _Target), 0);
+        ::TYPES[2/*Fuse.Visual*/], offsetof(BringToFront, _Target), 0);
 }
 
 ::g::Fuse::Triggers::Actions::TriggerAction_type* BringToFront_typeof()
@@ -177,55 +180,58 @@ static void BringToFront_build(uType* type)
     return type;
 }
 
-// protected override sealed void Perform(Fuse.Node target) :43
+// protected override sealed void Perform(Fuse.Node target) :41
 void BringToFront__Perform_fn(BringToFront* __this, ::g::Fuse::Node* target)
 {
-    ::g::Fuse::Visual* ind1 = __this->Target();
-    ::g::Fuse::Visual* elm = (ind1 != NULL) ? ind1 : uAs< ::g::Fuse::Visual*>(target, ::TYPES[1/*Fuse.Visual*/]);
+    ::g::Fuse::Visual* ind1;
+    ind1 = __this->Target();
+    ::g::Fuse::Visual* elm = (ind1 != NULL) ? ind1 : (::g::Fuse::Visual*)uPtr(target)->FindByType(::TYPES[1/*Fuse.Node.FindByType<Fuse.Visual>*/]);
 
     if (elm != NULL)
     {
-        ::g::Fuse::Visual* panel = uAs< ::g::Fuse::Visual*>(uPtr(elm)->Parent(), ::TYPES[1/*Fuse.Visual*/]);
+        ::g::Fuse::Visual* panel = uAs< ::g::Fuse::Visual*>(uPtr(elm)->Parent(), ::TYPES[2/*Fuse.Visual*/]);
 
         if (panel != NULL)
             uPtr(panel)->BringToFront(elm);
     }
 }
 
-// public generated Fuse.Visual get_Target() :41
+// public generated Fuse.Visual get_Target() :39
 void BringToFront__get_Target_fn(BringToFront* __this, ::g::Fuse::Visual** __retval)
 {
     *__retval = __this->Target();
 }
 
-// public generated void set_Target(Fuse.Visual value) :41
+// public generated void set_Target(Fuse.Visual value) :39
 void BringToFront__set_Target_fn(BringToFront* __this, ::g::Fuse::Visual* value)
 {
     __this->Target(value);
 }
 
-// public generated Fuse.Visual get_Target() [instance] :41
+// public generated Fuse.Visual get_Target() [instance] :39
 ::g::Fuse::Visual* BringToFront::Target()
 {
     return _Target;
 }
 
-// public generated void set_Target(Fuse.Visual value) [instance] :41
+// public generated void set_Target(Fuse.Visual value) [instance] :39
 void BringToFront::Target(::g::Fuse::Visual* value)
 {
     _Target = value;
 }
 // }
 
-// /Users/a/Library/Application Support/Fusetools/Packages/Fuse.Launcher.Phone/1.2.1/phone/$.uno
-// ---------------------------------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Launcher.Phone\1.3.0-rc2\Phone\PhoneTrigger.uno
+// ------------------------------------------------------------------------------------------------
 
-// public sealed class Call :103
+// public sealed class Call :34
 // {
 static void Call_build(uType* type)
 {
+    type->SetDependencies(
+        ::g::Fuse::LauncherImpl::PhoneLauncher_typeof());
     type->SetFields(8,
-        ::g::Uno::String_typeof(), offsetof(::g::Fuse::Triggers::Actions::Call, _Number), 0);
+        ::g::Uno::String_typeof(), offsetof(Call, _Number), 0);
 }
 
 ::g::Fuse::Triggers::Actions::TriggerAction_type* Call_typeof()
@@ -236,6 +242,7 @@ static void Call_build(uType* type)
     uTypeOptions options;
     options.BaseDefinition = ::g::Fuse::Triggers::Actions::TriggerAction_typeof();
     options.FieldCount = 9;
+    options.DependencyCount = 1;
     options.ObjectSize = sizeof(Call);
     options.TypeSize = sizeof(::g::Fuse::Triggers::Actions::TriggerAction_type);
     type = (::g::Fuse::Triggers::Actions::TriggerAction_type*)uClassType::New("Fuse.Triggers.Actions.Call", options);
@@ -244,49 +251,49 @@ static void Call_build(uType* type)
     return type;
 }
 
-// public generated string get_Number() :105
+// public generated string get_Number() :36
 void Call__get_Number_fn(Call* __this, uString** __retval)
 {
     *__retval = __this->Number();
 }
 
-// public generated void set_Number(string value) :105
+// public generated void set_Number(string value) :36
 void Call__set_Number_fn(Call* __this, uString* value)
 {
     __this->Number(value);
 }
 
-// protected override sealed void Perform(Fuse.Node target) :107
+// protected override sealed void Perform(Fuse.Node target) :38
 void Call__Perform_fn(Call* __this, ::g::Fuse::Node* target)
 {
     ::g::Fuse::LauncherImpl::PhoneLauncher::LaunchCall(__this->Number());
 }
 
-// public generated string get_Number() [instance] :105
+// public generated string get_Number() [instance] :36
 uString* Call::Number()
 {
     return _Number;
 }
 
-// public generated void set_Number(string value) [instance] :105
+// public generated void set_Number(string value) [instance] :36
 void Call::Number(uString* value)
 {
     _Number = value;
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Triggers/1.2.1/actions/$.uno
-// ---------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Triggers\1.3.0-rc2\Actions\Callback.uno
+// ----------------------------------------------------------------------------------------
 
-// public sealed class Callback :27
+// public sealed class Callback :25
 // {
 static void Callback_build(uType* type)
 {
-    ::TYPES[1] = ::g::Fuse::Visual_typeof();
-    ::TYPES[2] = ::g::Fuse::VisualEventHandler_typeof();
+    ::TYPES[1] = ::g::Fuse::Node_typeof()->MakeMethod(1/*FindByType<Fuse.Visual>*/, ::g::Fuse::Visual_typeof(), NULL);
+    ::TYPES[3] = ::g::Fuse::VisualEventHandler_typeof();
     type->SetFields(8,
-        ::g::Uno::Action_typeof(), offsetof(::g::Fuse::Triggers::Actions::Callback, _Action), 0,
-        ::TYPES[2/*Fuse.VisualEventHandler*/], offsetof(::g::Fuse::Triggers::Actions::Callback, Handler1), 0);
+        ::g::Uno::Action_typeof(), offsetof(Callback, _Action), 0,
+        ::TYPES[3/*Fuse.VisualEventHandler*/], offsetof(Callback, Handler1), 0);
 }
 
 ::g::Fuse::Triggers::Actions::TriggerAction_type* Callback_typeof()
@@ -306,83 +313,83 @@ static void Callback_build(uType* type)
     return type;
 }
 
-// public generated Callback() :27
+// public generated Callback() :25
 void Callback__ctor_2_fn(Callback* __this)
 {
     __this->ctor_2();
 }
 
-// public generated Uno.Action get_Action() :30
+// public generated Uno.Action get_Action() :28
 void Callback__get_Action_fn(Callback* __this, uDelegate** __retval)
 {
     *__retval = __this->Action();
 }
 
-// public generated void set_Action(Uno.Action value) :30
+// public generated void set_Action(Uno.Action value) :28
 void Callback__set_Action_fn(Callback* __this, uDelegate* value)
 {
     __this->Action(value);
 }
 
-// public generated void add_Handler(Fuse.VisualEventHandler value) :33
+// public generated void add_Handler(Fuse.VisualEventHandler value) :31
 void Callback__add_Handler_fn(Callback* __this, uDelegate* value)
 {
     __this->add_Handler(value);
 }
 
-// public generated void remove_Handler(Fuse.VisualEventHandler value) :33
+// public generated void remove_Handler(Fuse.VisualEventHandler value) :31
 void Callback__remove_Handler_fn(Callback* __this, uDelegate* value)
 {
     __this->remove_Handler(value);
 }
 
-// public generated Callback New() :27
+// public generated Callback New() :25
 void Callback__New2_fn(Callback** __retval)
 {
     *__retval = Callback::New2();
 }
 
-// protected override sealed void Perform(Fuse.Node target) :35
+// protected override sealed void Perform(Fuse.Node target) :33
 void Callback__Perform_fn(Callback* __this, ::g::Fuse::Node* target)
 {
     if (::g::Uno::Delegate::op_Inequality(__this->Action(), NULL))
         uPtr(__this->Action())->InvokeVoid();
 
     if (::g::Uno::Delegate::op_Inequality(__this->Handler1, NULL))
-        uPtr(__this->Handler1)->Invoke(2, target, (::g::Fuse::VisualEventArgs*)::g::Fuse::VisualEventArgs::New2(uAs< ::g::Fuse::Visual*>(target, ::TYPES[1/*Fuse.Visual*/])));
+        uPtr(__this->Handler1)->Invoke(2, target, (::g::Fuse::VisualEventArgs*)::g::Fuse::VisualEventArgs::New2((::g::Fuse::Visual*)uPtr(target)->FindByType(::TYPES[1/*Fuse.Node.FindByType<Fuse.Visual>*/])));
 }
 
-// public generated Callback() [instance] :27
+// public generated Callback() [instance] :25
 void Callback::ctor_2()
 {
     ctor_1();
 }
 
-// public generated Uno.Action get_Action() [instance] :30
+// public generated Uno.Action get_Action() [instance] :28
 uDelegate* Callback::Action()
 {
     return _Action;
 }
 
-// public generated void set_Action(Uno.Action value) [instance] :30
+// public generated void set_Action(Uno.Action value) [instance] :28
 void Callback::Action(uDelegate* value)
 {
     _Action = value;
 }
 
-// public generated void add_Handler(Fuse.VisualEventHandler value) [instance] :33
+// public generated void add_Handler(Fuse.VisualEventHandler value) [instance] :31
 void Callback::add_Handler(uDelegate* value)
 {
-    Handler1 = uCast<uDelegate*>(::g::Uno::Delegate::Combine(Handler1, value), ::TYPES[2/*Fuse.VisualEventHandler*/]);
+    Handler1 = uCast<uDelegate*>(::g::Uno::Delegate::Combine(Handler1, value), ::TYPES[3/*Fuse.VisualEventHandler*/]);
 }
 
-// public generated void remove_Handler(Fuse.VisualEventHandler value) [instance] :33
+// public generated void remove_Handler(Fuse.VisualEventHandler value) [instance] :31
 void Callback::remove_Handler(uDelegate* value)
 {
-    Handler1 = uCast<uDelegate*>(::g::Uno::Delegate::Remove(Handler1, value), ::TYPES[2/*Fuse.VisualEventHandler*/]);
+    Handler1 = uCast<uDelegate*>(::g::Uno::Delegate::Remove(Handler1, value), ::TYPES[3/*Fuse.VisualEventHandler*/]);
 }
 
-// public generated Callback New() [static] :27
+// public generated Callback New() [static] :25
 Callback* Callback::New2()
 {
     Callback* obj1 = (Callback*)uNew(Callback_typeof());
@@ -391,16 +398,16 @@ Callback* Callback::New2()
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Triggers/1.2.1/actions/$.uno
-// ---------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Triggers\1.3.0-rc2\Actions\CancelInteractions.uno
+// --------------------------------------------------------------------------------------------------
 
-// public sealed class CancelInteractions :56
+// public sealed class CancelInteractions :8
 // {
 static void CancelInteractions_build(uType* type)
 {
-    ::TYPES[1] = ::g::Fuse::Visual_typeof();
+    ::TYPES[1] = ::g::Fuse::Node_typeof()->MakeMethod(1/*FindByType<Fuse.Visual>*/, ::g::Fuse::Visual_typeof(), NULL);
     type->SetFields(8,
-        ::TYPES[1/*Fuse.Visual*/], offsetof(::g::Fuse::Triggers::Actions::CancelInteractions, _Target), 0);
+        ::g::Fuse::Visual_typeof(), offsetof(CancelInteractions, _Target), 0);
 }
 
 ::g::Fuse::Triggers::Actions::TriggerAction_type* CancelInteractions_typeof()
@@ -419,49 +426,56 @@ static void CancelInteractions_build(uType* type)
     return type;
 }
 
-// protected override sealed void Perform(Fuse.Node target) :60
+// protected override sealed void Perform(Fuse.Node target) :12
 void CancelInteractions__Perform_fn(CancelInteractions* __this, ::g::Fuse::Node* target)
 {
-    ::g::Fuse::Visual* ind1 = __this->Target();
-    ::g::Fuse::Visual* t = (ind1 != NULL) ? ind1 : uAs< ::g::Fuse::Visual*>(target, ::TYPES[1/*Fuse.Visual*/]);
+    ::g::Fuse::Visual* ind1;
+    ind1 = __this->Target();
+    ::g::Fuse::Visual* t = (ind1 != NULL) ? ind1 : (::g::Fuse::Visual*)uPtr(target)->FindByType(::TYPES[1/*Fuse.Node.FindByType<Fuse.Visual>*/]);
 
     if (t != NULL)
         uPtr(t)->CancelInteractions(1);
 }
 
-// public generated Fuse.Visual get_Target() :58
+// public generated Fuse.Visual get_Target() :10
 void CancelInteractions__get_Target_fn(CancelInteractions* __this, ::g::Fuse::Visual** __retval)
 {
     *__retval = __this->Target();
 }
 
-// public generated void set_Target(Fuse.Visual value) :58
+// public generated void set_Target(Fuse.Visual value) :10
 void CancelInteractions__set_Target_fn(CancelInteractions* __this, ::g::Fuse::Visual* value)
 {
     __this->Target(value);
 }
 
-// public generated Fuse.Visual get_Target() [instance] :58
+// public generated Fuse.Visual get_Target() [instance] :10
 ::g::Fuse::Visual* CancelInteractions::Target()
 {
     return _Target;
 }
 
-// public generated void set_Target(Fuse.Visual value) [instance] :58
+// public generated void set_Target(Fuse.Visual value) [instance] :10
 void CancelInteractions::Target(::g::Fuse::Visual* value)
 {
     _Target = value;
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Triggers/1.2.1/actions/$.uno
-// ---------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Triggers\1.3.0-rc2\Actions\Visibility.uno
+// ------------------------------------------------------------------------------------------
 
-// public sealed class Collapse :1129
+// public sealed class Collapse :102
 // {
 static void Collapse_build(uType* type)
 {
-    ::TYPES[3] = ::g::Fuse::Triggers::Actions::ICollapse_typeof();
+    ::STRINGS[0] = uString::Const("Cannot find an Element/ICollapse");
+    ::STRINGS[1] = uString::Const("C:\\Users\\q\\AppData\\Local\\Fusetools\\Packages\\Fuse.Triggers\\1.3.0-rc2\\Actions\\Visibility.uno");
+    ::STRINGS[2] = uString::Const("Perform");
+    ::TYPES[4] = ::g::Fuse::Node_typeof()->MakeMethod(1/*FindByType<Fuse.Triggers.Actions.ICollapse>*/, ::g::Fuse::Triggers::Actions::ICollapse_typeof(), NULL);
+    ::TYPES[5] = ::g::Fuse::Triggers::Actions::ICollapse_typeof();
+    type->SetDependencies(
+        ::g::Fuse::Diagnostics_typeof());
     type->SetFields(8);
 }
 
@@ -473,6 +487,7 @@ static void Collapse_build(uType* type)
     uTypeOptions options;
     options.BaseDefinition = ::g::Fuse::Triggers::Actions::TriggerAction_typeof();
     options.FieldCount = 8;
+    options.DependencyCount = 1;
     options.ObjectSize = sizeof(Collapse);
     options.TypeSize = sizeof(::g::Fuse::Triggers::Actions::TriggerAction_type);
     type = (::g::Fuse::Triggers::Actions::TriggerAction_type*)uClassType::New("Fuse.Triggers.Actions.Collapse", options);
@@ -481,18 +496,22 @@ static void Collapse_build(uType* type)
     return type;
 }
 
-// protected override sealed void Perform(Fuse.Node target) :1131
+// protected override sealed void Perform(Fuse.Node target) :104
 void Collapse__Perform_fn(Collapse* __this, ::g::Fuse::Node* target)
 {
-    if (uIs(target, ::TYPES[3/*Fuse.Triggers.Actions.ICollapse*/]))
-        ::g::Fuse::Triggers::Actions::ICollapse::Collapse(uInterface(uPtr((uObject*)target), ::TYPES[3/*Fuse.Triggers.Actions.ICollapse*/]));
+    uObject* t = (uObject*)uPtr(target)->FindByType(::TYPES[4/*Fuse.Node.FindByType<Fuse.Triggers.Actions.ICollapse>*/]);
+
+    if (t != NULL)
+        ::g::Fuse::Triggers::Actions::ICollapse::Collapse(uInterface(uPtr(t), ::TYPES[5/*Fuse.Triggers.Actions.ICollapse*/]));
+    else
+        ::g::Fuse::Diagnostics::UserError(::STRINGS[0/*"Cannot find...*/], __this, ::STRINGS[1/*"C:\\Users\\...*/], 110, ::STRINGS[2/*"Perform"*/], NULL);
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Triggers/1.2.1/actions/$.uno
-// ---------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Triggers\1.3.0-rc2\Actions\DebugAction.uno
+// -------------------------------------------------------------------------------------------
 
-// public sealed class DebugAction :90
+// public sealed class DebugAction :20
 // {
 static void DebugAction_build(uType* type)
 {
@@ -515,16 +534,16 @@ static void DebugAction_build(uType* type)
     return type;
 }
 
-// protected override sealed void Perform(Fuse.Node target) :106
+// protected override sealed void Perform(Fuse.Node target) :36
 void DebugAction__Perform_fn(DebugAction* __this, ::g::Fuse::Node* target)
 {
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Triggers/1.2.1/actions/$.uno
-// ---------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Triggers\1.3.0-rc2\Actions\DebugProperty.uno
+// ---------------------------------------------------------------------------------------------
 
-// public sealed class DebugProperty<T> :139
+// public sealed class DebugProperty<T> :12
 // {
 static void DebugProperty_build(uType* type)
 {
@@ -545,22 +564,22 @@ uType* DebugProperty_typeof()
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Controls.WebView/1.2.1/$.uno
-// ---------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Controls.WebView\1.3.0-rc2\EvaluateJS.uno
+// ------------------------------------------------------------------------------------------
 
-// public sealed class EvaluateJS :988
+// public sealed class EvaluateJS :104
 // {
 static void EvaluateJS_build(uType* type)
 {
-    ::STRINGS[0] = uString::Const("");
-    ::TYPES[4] = ::g::Fuse::Controls::IWebView_typeof();
-    ::TYPES[5] = ::g::Uno::Action1_typeof()->MakeType(::g::Uno::String_typeof(), NULL);
-    ::TYPES[6] = ::g::Fuse::Triggers::Actions::JSEventHandler_typeof();
+    ::TYPES[6] = ::g::Fuse::Controls::IWebView_typeof();
+    ::TYPES[7] = ::g::Uno::Action1_typeof()->MakeType(::g::Uno::String_typeof(), NULL);
+    ::TYPES[8] = ::g::Fuse::Node_typeof()->MakeMethod(1/*FindByType<Fuse.Controls.IWebView>*/, ::TYPES[6/*Fuse.Controls.IWebView*/], NULL);
+    ::TYPES[9] = ::g::Fuse::Triggers::Actions::JSEventHandler_typeof();
     type->SetFields(8,
-        ::g::Uno::String_typeof(), offsetof(::g::Fuse::Triggers::Actions::EvaluateJS, _processedSource), 0,
-        ::g::Uno::String_typeof(), offsetof(::g::Fuse::Triggers::Actions::EvaluateJS, _rawSource), 0,
-        ::TYPES[4/*Fuse.Controls.IWebView*/], offsetof(::g::Fuse::Triggers::Actions::EvaluateJS, _target), 0,
-        ::TYPES[6/*Fuse.Triggers.Actions.JSEventHandler*/], offsetof(::g::Fuse::Triggers::Actions::EvaluateJS, Handler1), 0);
+        ::g::Uno::String_typeof(), offsetof(EvaluateJS, _processedSource), 0,
+        ::g::Uno::String_typeof(), offsetof(EvaluateJS, _rawSource), 0,
+        ::TYPES[6/*Fuse.Controls.IWebView*/], offsetof(EvaluateJS, _target), 0,
+        ::TYPES[9/*Fuse.Triggers.Actions.JSEventHandler*/], offsetof(EvaluateJS, Handler1), 0);
 }
 
 ::g::Fuse::Triggers::Actions::TriggerAction_type* EvaluateJS_typeof()
@@ -579,96 +598,73 @@ static void EvaluateJS_build(uType* type)
     return type;
 }
 
-// private void Execute() :1032
-void EvaluateJS__Execute_fn(EvaluateJS* __this)
+// private void Execute(Fuse.Controls.IWebView webView) :149
+void EvaluateJS__Execute_fn(EvaluateJS* __this, uObject* webView)
 {
-    __this->Execute();
+    __this->Execute(webView);
 }
 
-// public generated void add_Handler(Fuse.Triggers.Actions.JSEventHandler value) :994
+// public generated void add_Handler(Fuse.Triggers.Actions.JSEventHandler value) :109
 void EvaluateJS__add_Handler_fn(EvaluateJS* __this, uDelegate* value)
 {
     __this->add_Handler(value);
 }
 
-// public generated void remove_Handler(Fuse.Triggers.Actions.JSEventHandler value) :994
+// public generated void remove_Handler(Fuse.Triggers.Actions.JSEventHandler value) :109
 void EvaluateJS__remove_Handler_fn(EvaluateJS* __this, uDelegate* value)
 {
     __this->remove_Handler(value);
 }
 
-// protected override sealed void Perform(Fuse.Node target) :1019
+// protected override sealed void Perform(Fuse.Node target) :139
 void EvaluateJS__Perform_fn(EvaluateJS* __this, ::g::Fuse::Node* target)
 {
-    if ((__this->_target == NULL) && uIs(target, ::TYPES[4/*Fuse.Controls.IWebView*/]))
-        __this->_target = uAs<uObject*>(target, ::TYPES[4/*Fuse.Controls.IWebView*/]);
+    uObject* ind1;
+    ind1 = __this->_target;
+    uObject* webView = (ind1 != NULL) ? ind1 : (uObject*)uPtr(target)->FindByType(::TYPES[8/*Fuse.Node.FindByType<Fuse.Controls.IWebView>*/]);
 
-    if ((__this->_target != NULL) && ::g::Uno::String::op_Inequality(__this->_rawSource, ::STRINGS[0/*""*/]))
-        __this->Execute();
+    if ((webView != NULL) && !::g::Uno::String::IsNullOrEmpty(__this->_rawSource))
+        __this->Execute(webView);
 }
 
-// private void ResultHandler(string result) :1037
+// private void ResultHandler(string result) :154
 void EvaluateJS__ResultHandler_fn(EvaluateJS* __this, uString* result)
 {
     __this->ResultHandler(result);
 }
 
-// public Fuse.Controls.IWebView get_WebView() :997
-void EvaluateJS__get_WebView_fn(EvaluateJS* __this, uObject** __retval)
+// private void Execute(Fuse.Controls.IWebView webView) [instance] :149
+void EvaluateJS::Execute(uObject* webView)
 {
-    *__retval = __this->WebView();
+    ::g::Fuse::Controls::IWebView::Eval1(uInterface(uPtr(webView), ::TYPES[6/*Fuse.Controls.IWebView*/]), _processedSource, uDelegate::New(::TYPES[7/*Uno.Action<string>*/], (void*)EvaluateJS__ResultHandler_fn, this));
 }
 
-// public void set_WebView(Fuse.Controls.IWebView value) :998
-void EvaluateJS__set_WebView_fn(EvaluateJS* __this, uObject* value)
-{
-    __this->WebView(value);
-}
-
-// private void Execute() [instance] :1032
-void EvaluateJS::Execute()
-{
-    ::g::Fuse::Controls::IWebView::Eval1(uInterface(uPtr(WebView()), ::TYPES[4/*Fuse.Controls.IWebView*/]), _processedSource, uDelegate::New(::TYPES[5/*Uno.Action<string>*/], (void*)EvaluateJS__ResultHandler_fn, this));
-}
-
-// public generated void add_Handler(Fuse.Triggers.Actions.JSEventHandler value) [instance] :994
+// public generated void add_Handler(Fuse.Triggers.Actions.JSEventHandler value) [instance] :109
 void EvaluateJS::add_Handler(uDelegate* value)
 {
-    Handler1 = uCast<uDelegate*>(::g::Uno::Delegate::Combine(Handler1, value), ::TYPES[6/*Fuse.Triggers.Actions.JSEventHandler*/]);
+    Handler1 = uCast<uDelegate*>(::g::Uno::Delegate::Combine(Handler1, value), ::TYPES[9/*Fuse.Triggers.Actions.JSEventHandler*/]);
 }
 
-// public generated void remove_Handler(Fuse.Triggers.Actions.JSEventHandler value) [instance] :994
+// public generated void remove_Handler(Fuse.Triggers.Actions.JSEventHandler value) [instance] :109
 void EvaluateJS::remove_Handler(uDelegate* value)
 {
-    Handler1 = uCast<uDelegate*>(::g::Uno::Delegate::Remove(Handler1, value), ::TYPES[6/*Fuse.Triggers.Actions.JSEventHandler*/]);
+    Handler1 = uCast<uDelegate*>(::g::Uno::Delegate::Remove(Handler1, value), ::TYPES[9/*Fuse.Triggers.Actions.JSEventHandler*/]);
 }
 
-// private void ResultHandler(string result) [instance] :1037
+// private void ResultHandler(string result) [instance] :154
 void EvaluateJS::ResultHandler(uString* result)
 {
     if (::g::Uno::Delegate::op_Inequality(Handler1, NULL))
         uPtr(Handler1)->Invoke(2, this, (::g::Fuse::Triggers::Actions::JSEventArgs*)::g::Fuse::Triggers::Actions::JSEventArgs::New2(result));
 }
-
-// public Fuse.Controls.IWebView get_WebView() [instance] :997
-uObject* EvaluateJS::WebView()
-{
-    return _target;
-}
-
-// public void set_WebView(Fuse.Controls.IWebView value) [instance] :998
-void EvaluateJS::WebView(uObject* value)
-{
-    _target = value;
-}
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Triggers/1.2.1/actions/$.uno
-// ---------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Triggers\1.3.0-rc2\Actions\Focus.uno
+// -------------------------------------------------------------------------------------
 
-// public sealed class GiveFocus :224
+// public sealed class GiveFocus :25
 // {
-// static GiveFocus() :224
+// static generated GiveFocus() :25
 static void GiveFocus__cctor__fn(uType* __type)
 {
     GiveFocus::Singleton_ = GiveFocus::New2();
@@ -676,10 +672,12 @@ static void GiveFocus__cctor__fn(uType* __type)
 
 static void GiveFocus_build(uType* type)
 {
-    ::TYPES[1] = ::g::Fuse::Visual_typeof();
+    ::TYPES[2] = ::g::Fuse::Visual_typeof();
+    type->SetDependencies(
+        ::g::Fuse::Input::Focus_typeof());
     type->SetFields(8,
-        ::TYPES[1/*Fuse.Visual*/], offsetof(::g::Fuse::Triggers::Actions::GiveFocus, _Target), 0,
-        ::g::Fuse::Triggers::Actions::TriggerAction_typeof(), (uintptr_t)&::g::Fuse::Triggers::Actions::GiveFocus::Singleton_, uFieldFlagsStatic);
+        ::TYPES[2/*Fuse.Visual*/], offsetof(GiveFocus, _Target), 0,
+        ::g::Fuse::Triggers::Actions::TriggerAction_typeof(), (uintptr_t)&GiveFocus::Singleton_, uFieldFlagsStatic);
 }
 
 ::g::Fuse::Triggers::Actions::TriggerAction_type* GiveFocus_typeof()
@@ -690,6 +688,7 @@ static void GiveFocus_build(uType* type)
     uTypeOptions options;
     options.BaseDefinition = ::g::Fuse::Triggers::Actions::TriggerAction_typeof();
     options.FieldCount = 10;
+    options.DependencyCount = 1;
     options.ObjectSize = sizeof(GiveFocus);
     options.TypeSize = sizeof(::g::Fuse::Triggers::Actions::TriggerAction_type);
     type = (::g::Fuse::Triggers::Actions::TriggerAction_type*)uClassType::New("Fuse.Triggers.Actions.GiveFocus", options);
@@ -700,32 +699,32 @@ static void GiveFocus_build(uType* type)
     return type;
 }
 
-// public generated GiveFocus() :224
+// public generated GiveFocus() :25
 void GiveFocus__ctor_2_fn(GiveFocus* __this)
 {
     __this->ctor_2();
 }
 
-// public generated GiveFocus New() :224
+// public generated GiveFocus New() :25
 void GiveFocus__New2_fn(GiveFocus** __retval)
 {
     *__retval = GiveFocus::New2();
 }
 
-// protected override sealed void Perform(Fuse.Node target) :228
+// protected override sealed void Perform(Fuse.Node target) :29
 void GiveFocus__Perform_fn(GiveFocus* __this, ::g::Fuse::Node* target)
 {
     ::g::Fuse::Visual* ind1;
-    ::g::Fuse::Input::Focus::GiveTo((ind1 = __this->Target(), (ind1 != NULL) ? ind1 : uAs< ::g::Fuse::Visual*>(target, ::TYPES[1/*Fuse.Visual*/])));
+    ::g::Fuse::Input::Focus::GiveTo((ind1 = __this->Target(), (ind1 != NULL) ? ind1 : uAs< ::g::Fuse::Visual*>(target, ::TYPES[2/*Fuse.Visual*/])));
 }
 
-// public generated Fuse.Visual get_Target() :226
+// public generated Fuse.Visual get_Target() :27
 void GiveFocus__get_Target_fn(GiveFocus* __this, ::g::Fuse::Visual** __retval)
 {
     *__retval = __this->Target();
 }
 
-// public generated void set_Target(Fuse.Visual value) :226
+// public generated void set_Target(Fuse.Visual value) :27
 void GiveFocus__set_Target_fn(GiveFocus* __this, ::g::Fuse::Visual* value)
 {
     __this->Target(value);
@@ -733,25 +732,25 @@ void GiveFocus__set_Target_fn(GiveFocus* __this, ::g::Fuse::Visual* value)
 
 uSStrong< ::g::Fuse::Triggers::Actions::TriggerAction*> GiveFocus::Singleton_;
 
-// public generated GiveFocus() [instance] :224
+// public generated GiveFocus() [instance] :25
 void GiveFocus::ctor_2()
 {
     ctor_1();
 }
 
-// public generated Fuse.Visual get_Target() [instance] :226
+// public generated Fuse.Visual get_Target() [instance] :27
 ::g::Fuse::Visual* GiveFocus::Target()
 {
     return _Target;
 }
 
-// public generated void set_Target(Fuse.Visual value) [instance] :226
+// public generated void set_Target(Fuse.Visual value) [instance] :27
 void GiveFocus::Target(::g::Fuse::Visual* value)
 {
     _Target = value;
 }
 
-// public generated GiveFocus New() [static] :224
+// public generated GiveFocus New() [static] :25
 GiveFocus* GiveFocus::New2()
 {
     GiveFocus* obj2 = (GiveFocus*)uNew(GiveFocus_typeof());
@@ -760,14 +759,20 @@ GiveFocus* GiveFocus::New2()
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Triggers/1.2.1/actions/$.uno
-// ---------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Triggers\1.3.0-rc2\Actions\Visibility.uno
+// ------------------------------------------------------------------------------------------
 
-// public sealed class Hide :1097
+// public sealed class Hide :66
 // {
 static void Hide_build(uType* type)
 {
-    ::TYPES[7] = ::g::Fuse::Triggers::Actions::IHide_typeof();
+    ::STRINGS[3] = uString::Const("Cannot find an Element/IHide");
+    ::STRINGS[1] = uString::Const("C:\\Users\\q\\AppData\\Local\\Fusetools\\Packages\\Fuse.Triggers\\1.3.0-rc2\\Actions\\Visibility.uno");
+    ::STRINGS[2] = uString::Const("Perform");
+    ::TYPES[10] = ::g::Fuse::Node_typeof()->MakeMethod(1/*FindByType<Fuse.Triggers.Actions.IHide>*/, ::g::Fuse::Triggers::Actions::IHide_typeof(), NULL);
+    ::TYPES[11] = ::g::Fuse::Triggers::Actions::IHide_typeof();
+    type->SetDependencies(
+        ::g::Fuse::Diagnostics_typeof());
     type->SetFields(8);
 }
 
@@ -779,6 +784,7 @@ static void Hide_build(uType* type)
     uTypeOptions options;
     options.BaseDefinition = ::g::Fuse::Triggers::Actions::TriggerAction_typeof();
     options.FieldCount = 8;
+    options.DependencyCount = 1;
     options.ObjectSize = sizeof(Hide);
     options.TypeSize = sizeof(::g::Fuse::Triggers::Actions::TriggerAction_type);
     type = (::g::Fuse::Triggers::Actions::TriggerAction_type*)uClassType::New("Fuse.Triggers.Actions.Hide", options);
@@ -787,18 +793,22 @@ static void Hide_build(uType* type)
     return type;
 }
 
-// protected override sealed void Perform(Fuse.Node target) :1099
+// protected override sealed void Perform(Fuse.Node target) :68
 void Hide__Perform_fn(Hide* __this, ::g::Fuse::Node* target)
 {
-    if (uIs(target, ::TYPES[7/*Fuse.Triggers.Actions.IHide*/]))
-        ::g::Fuse::Triggers::Actions::IHide::Hide(uInterface(uPtr((uObject*)target), ::TYPES[7/*Fuse.Triggers.Actions.IHide*/]));
+    uObject* t = (uObject*)uPtr(target)->FindByType(::TYPES[10/*Fuse.Node.FindByType<Fuse.Triggers.Actions.IHide>*/]);
+
+    if (t != NULL)
+        ::g::Fuse::Triggers::Actions::IHide::Hide(uInterface(uPtr(t), ::TYPES[11/*Fuse.Triggers.Actions.IHide*/]));
+    else
+        ::g::Fuse::Diagnostics::UserError(::STRINGS[3/*"Cannot find...*/], __this, ::STRINGS[1/*"C:\\Users\\...*/], 74, ::STRINGS[2/*"Perform"*/], NULL);
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Triggers/1.2.1/actions/$.uno
-// ---------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Triggers\1.3.0-rc2\Actions\Visibility.uno
+// ------------------------------------------------------------------------------------------
 
-// public abstract interface ICollapse :1105
+// public abstract interface ICollapse :78
 // {
 uInterfaceType* ICollapse_typeof()
 {
@@ -810,10 +820,10 @@ uInterfaceType* ICollapse_typeof()
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Triggers/1.2.1/actions/$.uno
-// ---------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Triggers\1.3.0-rc2\Actions\Visibility.uno
+// ------------------------------------------------------------------------------------------
 
-// public abstract interface IHide :1073
+// public abstract interface IHide :42
 // {
 uInterfaceType* IHide_typeof()
 {
@@ -825,10 +835,10 @@ uInterfaceType* IHide_typeof()
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Triggers/1.2.1/actions/$.uno
-// ---------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Triggers\1.3.0-rc2\Actions\Visibility.uno
+// ------------------------------------------------------------------------------------------
 
-// public abstract interface IShow :1040
+// public abstract interface IShow :5
 // {
 uInterfaceType* IShow_typeof()
 {
@@ -840,10 +850,10 @@ uInterfaceType* IShow_typeof()
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Triggers/1.2.1/actions/$.uno
-// ---------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Triggers\1.3.0-rc2\Actions\Toggle.uno
+// --------------------------------------------------------------------------------------
 
-// public abstract interface IToggleable :870
+// public abstract interface IToggleable :5
 // {
 uInterfaceType* IToggleable_typeof()
 {
@@ -855,19 +865,19 @@ uInterfaceType* IToggleable_typeof()
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Controls.WebView/1.2.1/$.uno
-// ---------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Controls.WebView\1.3.0-rc2\EvaluateJS.uno
+// ------------------------------------------------------------------------------------------
 
-// public sealed class JSEventArgs :893
+// public sealed class JSEventArgs :9
 // {
 static void JSEventArgs_build(uType* type)
 {
-    ::STRINGS[1] = uString::Const("json");
-    ::TYPES[8] = ::g::Fuse::Scripting::IEventSerializer_typeof();
+    ::STRINGS[4] = uString::Const("json");
+    ::TYPES[12] = ::g::Fuse::Scripting::IEventSerializer_typeof();
     type->SetInterfaces(
         ::g::Fuse::Scripting::IScriptEvent_typeof(), offsetof(JSEventArgs_type, interface0));
     type->SetFields(0,
-        ::g::Uno::String_typeof(), offsetof(::g::Fuse::Triggers::Actions::JSEventArgs, ResultJson), 0);
+        ::g::Uno::String_typeof(), offsetof(JSEventArgs, ResultJson), 0);
 }
 
 JSEventArgs_type* JSEventArgs_typeof()
@@ -887,32 +897,32 @@ JSEventArgs_type* JSEventArgs_typeof()
     return type;
 }
 
-// public JSEventArgs(string resultJson) :896
+// public JSEventArgs(string resultJson) :12
 void JSEventArgs__ctor_1_fn(JSEventArgs* __this, uString* resultJson)
 {
     __this->ctor_1(resultJson);
 }
 
-// private void Fuse.Scripting.IScriptEvent.Serialize(Fuse.Scripting.IEventSerializer s) :901
+// private void Fuse.Scripting.IScriptEvent.Serialize(Fuse.Scripting.IEventSerializer s) :17
 void JSEventArgs__FuseScriptingIScriptEventSerialize_fn(JSEventArgs* __this, uObject* s)
 {
-    ::g::Fuse::Scripting::IEventSerializer::AddString(uInterface(uPtr(s), ::TYPES[8/*Fuse.Scripting.IEventSerializer*/]), ::STRINGS[1/*"json"*/], __this->ResultJson);
+    ::g::Fuse::Scripting::IEventSerializer::AddString(uInterface(uPtr(s), ::TYPES[12/*Fuse.Scripting.IEventSerializer*/]), ::STRINGS[4/*"json"*/], __this->ResultJson);
 }
 
-// public JSEventArgs New(string resultJson) :896
+// public JSEventArgs New(string resultJson) :12
 void JSEventArgs__New2_fn(uString* resultJson, JSEventArgs** __retval)
 {
     *__retval = JSEventArgs::New2(resultJson);
 }
 
-// public JSEventArgs(string resultJson) [instance] :896
+// public JSEventArgs(string resultJson) [instance] :12
 void JSEventArgs::ctor_1(uString* resultJson)
 {
     ctor_();
     ResultJson = resultJson;
 }
 
-// public JSEventArgs New(string resultJson) [static] :896
+// public JSEventArgs New(string resultJson) [static] :12
 JSEventArgs* JSEventArgs::New2(uString* resultJson)
 {
     JSEventArgs* obj1 = (JSEventArgs*)uNew(JSEventArgs_typeof());
@@ -921,10 +931,10 @@ JSEventArgs* JSEventArgs::New2(uString* resultJson)
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Controls.WebView/1.2.1/$.uno
-// ---------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Controls.WebView\1.3.0-rc2\EvaluateJS.uno
+// ------------------------------------------------------------------------------------------
 
-// public delegate void JSEventHandler(object sender, Fuse.Triggers.Actions.JSEventArgs args) :907
+// public delegate void JSEventHandler(object sender, Fuse.Triggers.Actions.JSEventArgs args) :23
 uDelegateType* JSEventHandler_typeof()
 {
     static uSStrong<uDelegateType*> type;
@@ -937,19 +947,21 @@ uDelegateType* JSEventHandler_typeof()
     return type;
 }
 
-// /Users/a/Library/Application Support/Fusetools/Packages/Fuse.Launcher.Email/1.2.1/email/$.uno
-// ---------------------------------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Launcher.Email\1.3.0-rc2\Email\EmailTrigger.uno
+// ------------------------------------------------------------------------------------------------
 
-// public sealed class LaunchEmail :114
+// public sealed class LaunchEmail :35
 // {
 static void LaunchEmail_build(uType* type)
 {
+    type->SetDependencies(
+        ::g::Fuse::LauncherImpl::EmailLauncher_typeof());
     type->SetFields(8,
-        ::g::Uno::String_typeof(), offsetof(::g::Fuse::Triggers::Actions::LaunchEmail, _BlindCarbonCopy), 0,
-        ::g::Uno::String_typeof(), offsetof(::g::Fuse::Triggers::Actions::LaunchEmail, _CarbonCopy), 0,
-        ::g::Uno::String_typeof(), offsetof(::g::Fuse::Triggers::Actions::LaunchEmail, _Message), 0,
-        ::g::Uno::String_typeof(), offsetof(::g::Fuse::Triggers::Actions::LaunchEmail, _Subject), 0,
-        ::g::Uno::String_typeof(), offsetof(::g::Fuse::Triggers::Actions::LaunchEmail, _To), 0);
+        ::g::Uno::String_typeof(), offsetof(LaunchEmail, _BlindCarbonCopy), 0,
+        ::g::Uno::String_typeof(), offsetof(LaunchEmail, _CarbonCopy), 0,
+        ::g::Uno::String_typeof(), offsetof(LaunchEmail, _Message), 0,
+        ::g::Uno::String_typeof(), offsetof(LaunchEmail, _Subject), 0,
+        ::g::Uno::String_typeof(), offsetof(LaunchEmail, _To), 0);
 }
 
 ::g::Fuse::Triggers::Actions::TriggerAction_type* LaunchEmail_typeof()
@@ -960,6 +972,7 @@ static void LaunchEmail_build(uType* type)
     uTypeOptions options;
     options.BaseDefinition = ::g::Fuse::Triggers::Actions::TriggerAction_typeof();
     options.FieldCount = 13;
+    options.DependencyCount = 1;
     options.ObjectSize = sizeof(LaunchEmail);
     options.TypeSize = sizeof(::g::Fuse::Triggers::Actions::TriggerAction_type);
     type = (::g::Fuse::Triggers::Actions::TriggerAction_type*)uClassType::New("Fuse.Triggers.Actions.LaunchEmail", options);
@@ -968,143 +981,145 @@ static void LaunchEmail_build(uType* type)
     return type;
 }
 
-// public generated string get_BlindCarbonCopy() :118
+// public generated string get_BlindCarbonCopy() :39
 void LaunchEmail__get_BlindCarbonCopy_fn(LaunchEmail* __this, uString** __retval)
 {
     *__retval = __this->BlindCarbonCopy();
 }
 
-// public generated void set_BlindCarbonCopy(string value) :118
+// public generated void set_BlindCarbonCopy(string value) :39
 void LaunchEmail__set_BlindCarbonCopy_fn(LaunchEmail* __this, uString* value)
 {
     __this->BlindCarbonCopy(value);
 }
 
-// public generated string get_CarbonCopy() :117
+// public generated string get_CarbonCopy() :38
 void LaunchEmail__get_CarbonCopy_fn(LaunchEmail* __this, uString** __retval)
 {
     *__retval = __this->CarbonCopy();
 }
 
-// public generated void set_CarbonCopy(string value) :117
+// public generated void set_CarbonCopy(string value) :38
 void LaunchEmail__set_CarbonCopy_fn(LaunchEmail* __this, uString* value)
 {
     __this->CarbonCopy(value);
 }
 
-// public generated string get_Message() :120
+// public generated string get_Message() :41
 void LaunchEmail__get_Message_fn(LaunchEmail* __this, uString** __retval)
 {
     *__retval = __this->Message();
 }
 
-// public generated void set_Message(string value) :120
+// public generated void set_Message(string value) :41
 void LaunchEmail__set_Message_fn(LaunchEmail* __this, uString* value)
 {
     __this->Message(value);
 }
 
-// protected override sealed void Perform(Fuse.Node target) :122
+// protected override sealed void Perform(Fuse.Node target) :43
 void LaunchEmail__Perform_fn(LaunchEmail* __this, ::g::Fuse::Node* target)
 {
     ::g::Fuse::LauncherImpl::EmailLauncher::LaunchEmail(__this->To(), __this->CarbonCopy(), __this->BlindCarbonCopy(), __this->Subject(), __this->Message());
 }
 
-// public generated string get_Subject() :119
+// public generated string get_Subject() :40
 void LaunchEmail__get_Subject_fn(LaunchEmail* __this, uString** __retval)
 {
     *__retval = __this->Subject();
 }
 
-// public generated void set_Subject(string value) :119
+// public generated void set_Subject(string value) :40
 void LaunchEmail__set_Subject_fn(LaunchEmail* __this, uString* value)
 {
     __this->Subject(value);
 }
 
-// public generated string get_To() :116
+// public generated string get_To() :37
 void LaunchEmail__get_To_fn(LaunchEmail* __this, uString** __retval)
 {
     *__retval = __this->To();
 }
 
-// public generated void set_To(string value) :116
+// public generated void set_To(string value) :37
 void LaunchEmail__set_To_fn(LaunchEmail* __this, uString* value)
 {
     __this->To(value);
 }
 
-// public generated string get_BlindCarbonCopy() [instance] :118
+// public generated string get_BlindCarbonCopy() [instance] :39
 uString* LaunchEmail::BlindCarbonCopy()
 {
     return _BlindCarbonCopy;
 }
 
-// public generated void set_BlindCarbonCopy(string value) [instance] :118
+// public generated void set_BlindCarbonCopy(string value) [instance] :39
 void LaunchEmail::BlindCarbonCopy(uString* value)
 {
     _BlindCarbonCopy = value;
 }
 
-// public generated string get_CarbonCopy() [instance] :117
+// public generated string get_CarbonCopy() [instance] :38
 uString* LaunchEmail::CarbonCopy()
 {
     return _CarbonCopy;
 }
 
-// public generated void set_CarbonCopy(string value) [instance] :117
+// public generated void set_CarbonCopy(string value) [instance] :38
 void LaunchEmail::CarbonCopy(uString* value)
 {
     _CarbonCopy = value;
 }
 
-// public generated string get_Message() [instance] :120
+// public generated string get_Message() [instance] :41
 uString* LaunchEmail::Message()
 {
     return _Message;
 }
 
-// public generated void set_Message(string value) [instance] :120
+// public generated void set_Message(string value) [instance] :41
 void LaunchEmail::Message(uString* value)
 {
     _Message = value;
 }
 
-// public generated string get_Subject() [instance] :119
+// public generated string get_Subject() [instance] :40
 uString* LaunchEmail::Subject()
 {
     return _Subject;
 }
 
-// public generated void set_Subject(string value) [instance] :119
+// public generated void set_Subject(string value) [instance] :40
 void LaunchEmail::Subject(uString* value)
 {
     _Subject = value;
 }
 
-// public generated string get_To() [instance] :116
+// public generated string get_To() [instance] :37
 uString* LaunchEmail::To()
 {
     return _To;
 }
 
-// public generated void set_To(string value) [instance] :116
+// public generated void set_To(string value) [instance] :37
 void LaunchEmail::To(uString* value)
 {
     _To = value;
 }
 // }
 
-// /Users/a/Library/Application Support/Fusetools/Packages/Fuse.Launcher.Maps/1.2.1/maps/$.uno
-// -------------------------------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Launcher.Maps\1.3.0-rc2\Maps\MapsTrigger.uno
+// ---------------------------------------------------------------------------------------------
 
-// public sealed class LaunchMaps :114
+// public sealed class LaunchMaps :34
 // {
 static void LaunchMaps_build(uType* type)
 {
+    type->SetDependencies(
+        ::g::Fuse::LauncherImpl::MapsLauncher_typeof());
     type->SetFields(8,
-        ::g::Uno::String_typeof(), offsetof(::g::Fuse::Triggers::Actions::LaunchMaps, _Latitude), 0,
-        ::g::Uno::String_typeof(), offsetof(::g::Fuse::Triggers::Actions::LaunchMaps, _Longitude), 0);
+        ::g::Uno::String_typeof(), offsetof(LaunchMaps, _Latitude), 0,
+        ::g::Uno::String_typeof(), offsetof(LaunchMaps, _Longitude), 0);
 }
 
 ::g::Fuse::Triggers::Actions::TriggerAction_type* LaunchMaps_typeof()
@@ -1115,6 +1130,7 @@ static void LaunchMaps_build(uType* type)
     uTypeOptions options;
     options.BaseDefinition = ::g::Fuse::Triggers::Actions::TriggerAction_typeof();
     options.FieldCount = 10;
+    options.DependencyCount = 1;
     options.ObjectSize = sizeof(LaunchMaps);
     options.TypeSize = sizeof(::g::Fuse::Triggers::Actions::TriggerAction_type);
     type = (::g::Fuse::Triggers::Actions::TriggerAction_type*)uClassType::New("Fuse.Triggers.Actions.LaunchMaps", options);
@@ -1123,31 +1139,31 @@ static void LaunchMaps_build(uType* type)
     return type;
 }
 
-// public generated string get_Latitude() :116
+// public generated string get_Latitude() :36
 void LaunchMaps__get_Latitude_fn(LaunchMaps* __this, uString** __retval)
 {
     *__retval = __this->Latitude();
 }
 
-// public generated void set_Latitude(string value) :116
+// public generated void set_Latitude(string value) :36
 void LaunchMaps__set_Latitude_fn(LaunchMaps* __this, uString* value)
 {
     __this->Latitude(value);
 }
 
-// public generated string get_Longitude() :117
+// public generated string get_Longitude() :37
 void LaunchMaps__get_Longitude_fn(LaunchMaps* __this, uString** __retval)
 {
     *__retval = __this->Longitude();
 }
 
-// public generated void set_Longitude(string value) :117
+// public generated void set_Longitude(string value) :37
 void LaunchMaps__set_Longitude_fn(LaunchMaps* __this, uString* value)
 {
     __this->Longitude(value);
 }
 
-// protected override sealed void Perform(Fuse.Node target) :119
+// protected override sealed void Perform(Fuse.Node target) :39
 void LaunchMaps__Perform_fn(LaunchMaps* __this, ::g::Fuse::Node* target)
 {
     double lat = 0.0;
@@ -1157,40 +1173,40 @@ void LaunchMaps__Perform_fn(LaunchMaps* __this, ::g::Fuse::Node* target)
         ::g::Fuse::LauncherImpl::MapsLauncher::LaunchMaps(lat, lon);
 }
 
-// public generated string get_Latitude() [instance] :116
+// public generated string get_Latitude() [instance] :36
 uString* LaunchMaps::Latitude()
 {
     return _Latitude;
 }
 
-// public generated void set_Latitude(string value) [instance] :116
+// public generated void set_Latitude(string value) [instance] :36
 void LaunchMaps::Latitude(uString* value)
 {
     _Latitude = value;
 }
 
-// public generated string get_Longitude() [instance] :117
+// public generated string get_Longitude() [instance] :37
 uString* LaunchMaps::Longitude()
 {
     return _Longitude;
 }
 
-// public generated void set_Longitude(string value) [instance] :117
+// public generated void set_Longitude(string value) [instance] :37
 void LaunchMaps::Longitude(uString* value)
 {
     _Longitude = value;
 }
 // }
 
-// /Users/a/Library/Application Support/Fusetools/Packages/Fuse.Launcher.InterApp/1.2.1/interapp/$.uno
-// ---------------------------------------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Launcher.InterApp\1.3.0-rc2\InterApp\InterAppTrigger.uno
+// ---------------------------------------------------------------------------------------------------------
 
-// public sealed class LaunchUri :94
+// public sealed class LaunchUri :45
 // {
 static void LaunchUri_build(uType* type)
 {
     type->SetFields(8,
-        ::g::Uno::String_typeof(), offsetof(::g::Fuse::Triggers::Actions::LaunchUri, _Uri), 0);
+        ::g::Uno::String_typeof(), offsetof(LaunchUri, _Uri), 0);
 }
 
 ::g::Fuse::Triggers::Actions::TriggerAction_type* LaunchUri_typeof()
@@ -1209,50 +1225,50 @@ static void LaunchUri_build(uType* type)
     return type;
 }
 
-// protected override sealed void Perform(Fuse.Node target) :98
+// protected override sealed void Perform(Fuse.Node target) :49
 void LaunchUri__Perform_fn(LaunchUri* __this, ::g::Fuse::Node* target)
 {
     ::g::Fuse::LauncherImpl::InterAppLauncher::LaunchUri(::g::Uno::Net::Http::Uri::New1(__this->Uri()));
 }
 
-// public generated string get_Uri() :96
+// public generated string get_Uri() :47
 void LaunchUri__get_Uri_fn(LaunchUri* __this, uString** __retval)
 {
     *__retval = __this->Uri();
 }
 
-// public generated void set_Uri(string value) :96
+// public generated void set_Uri(string value) :47
 void LaunchUri__set_Uri_fn(LaunchUri* __this, uString* value)
 {
     __this->Uri(value);
 }
 
-// public generated string get_Uri() [instance] :96
+// public generated string get_Uri() [instance] :47
 uString* LaunchUri::Uri()
 {
     return _Uri;
 }
 
-// public generated void set_Uri(string value) [instance] :96
+// public generated void set_Uri(string value) [instance] :47
 void LaunchUri::Uri(uString* value)
 {
     _Uri = value;
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Controls.WebView/1.2.1/$.uno
-// ---------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Controls.WebView\1.3.0-rc2\WebViewNavActions.uno
+// -------------------------------------------------------------------------------------------------
 
-// public sealed class LoadHtml :764
+// public sealed class LoadHtml :94
 // {
 static void LoadHtml_build(uType* type)
 {
-    ::STRINGS[0] = uString::Const("");
+    ::STRINGS[5] = uString::Const("");
     type->SetInterfaces(
         ::g::Fuse::Controls::ISourceReceiver_typeof(), offsetof(LoadHtml_type, interface0));
     type->SetFields(8,
-        ::g::Uno::String_typeof(), offsetof(::g::Fuse::Triggers::Actions::LoadHtml, _BaseUrl), 0,
-        ::g::Uno::String_typeof(), offsetof(::g::Fuse::Triggers::Actions::LoadHtml, _Source), 0);
+        ::g::Uno::String_typeof(), offsetof(LoadHtml, _BaseUrl), 0,
+        ::g::Uno::String_typeof(), offsetof(LoadHtml, _Source), 0);
 }
 
 LoadHtml_type* LoadHtml_typeof()
@@ -1274,72 +1290,72 @@ LoadHtml_type* LoadHtml_typeof()
     return type;
 }
 
-// public generated string get_BaseUrl() :787
+// public generated string get_BaseUrl() :117
 void LoadHtml__get_BaseUrl_fn(LoadHtml* __this, uString** __retval)
 {
     *__retval = __this->BaseUrl();
 }
 
-// public generated void set_BaseUrl(string value) :787
+// public generated void set_BaseUrl(string value) :117
 void LoadHtml__set_BaseUrl_fn(LoadHtml* __this, uString* value)
 {
     __this->BaseUrl(value);
 }
 
-// private override sealed void Execute(Fuse.Controls.WebView webview) :789
+// private override sealed void Execute(Fuse.Controls.WebView webview) :119
 void LoadHtml__Execute_fn(LoadHtml* __this, ::g::Fuse::Controls::WebView* webview)
 {
-    if (::g::Uno::String::op_Inequality(__this->Source(), ::STRINGS[0/*""*/]))
+    if (::g::Uno::String::op_Inequality(__this->Source(), ::STRINGS[5/*""*/]))
         uPtr(webview)->LoadHtml1(__this->Source(), __this->BaseUrl());
 }
 
-// public generated string get_Source() :768
+// public generated string get_Source() :98
 void LoadHtml__get_Source_fn(LoadHtml* __this, uString** __retval)
 {
     *__retval = __this->Source();
 }
 
-// public generated void set_Source(string value) :768
+// public generated void set_Source(string value) :98
 void LoadHtml__set_Source_fn(LoadHtml* __this, uString* value)
 {
     __this->Source(value);
 }
 
-// public generated string get_BaseUrl() [instance] :787
+// public generated string get_BaseUrl() [instance] :117
 uString* LoadHtml::BaseUrl()
 {
     return _BaseUrl;
 }
 
-// public generated void set_BaseUrl(string value) [instance] :787
+// public generated void set_BaseUrl(string value) [instance] :117
 void LoadHtml::BaseUrl(uString* value)
 {
     _BaseUrl = value;
 }
 
-// public generated string get_Source() [instance] :768
+// public generated string get_Source() [instance] :98
 uString* LoadHtml::Source()
 {
     return _Source;
 }
 
-// public generated void set_Source(string value) [instance] :768
+// public generated void set_Source(string value) [instance] :98
 void LoadHtml::Source(uString* value)
 {
     _Source = value;
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Controls.WebView/1.2.1/$.uno
-// ---------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Controls.WebView\1.3.0-rc2\WebViewNavActions.uno
+// -------------------------------------------------------------------------------------------------
 
-// public sealed class LoadUrl :722
+// public sealed class LoadUrl :52
 // {
 static void LoadUrl_build(uType* type)
 {
-    ::STRINGS[0] = uString::Const("");
+    ::STRINGS[5] = uString::Const("");
     type->SetFields(8,
-        ::g::Uno::String_typeof(), offsetof(::g::Fuse::Triggers::Actions::LoadUrl, _Url), 0);
+        ::g::Uno::String_typeof(), offsetof(LoadUrl, _Url), 0);
 }
 
 ::g::Fuse::Triggers::Actions::WebViewNavAction_type* LoadUrl_typeof()
@@ -1358,46 +1374,47 @@ static void LoadUrl_build(uType* type)
     return type;
 }
 
-// private override sealed void Execute(Fuse.Controls.WebView webview) :727
+// private override sealed void Execute(Fuse.Controls.WebView webview) :57
 void LoadUrl__Execute_fn(LoadUrl* __this, ::g::Fuse::Controls::WebView* webview)
 {
-    if (::g::Uno::String::op_Inequality(__this->Url(), ::STRINGS[0/*""*/]))
+    if (::g::Uno::String::op_Inequality(__this->Url(), ::STRINGS[5/*""*/]))
         uPtr(webview)->LoadUrl(__this->Url());
 }
 
-// public generated string get_Url() :725
+// public generated string get_Url() :55
 void LoadUrl__get_Url_fn(LoadUrl* __this, uString** __retval)
 {
     *__retval = __this->Url();
 }
 
-// public generated void set_Url(string value) :725
+// public generated void set_Url(string value) :55
 void LoadUrl__set_Url_fn(LoadUrl* __this, uString* value)
 {
     __this->Url(value);
 }
 
-// public generated string get_Url() [instance] :725
+// public generated string get_Url() [instance] :55
 uString* LoadUrl::Url()
 {
     return _Url;
 }
 
-// public generated void set_Url(string value) [instance] :725
+// public generated void set_Url(string value) [instance] :55
 void LoadUrl::Url(uString* value)
 {
     _Url = value;
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Triggers/1.2.1/actions/$.uno
-// ---------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Triggers\1.3.0-rc2\Actions\Playback.uno
+// ----------------------------------------------------------------------------------------
 
-// public sealed class Pause :403
+// public sealed class Pause :144
 // {
 static void Pause_build(uType* type)
 {
-    ::TYPES[9] = ::g::Fuse::Triggers::IPlayback_typeof();
+    ::TYPES[13] = ::g::Fuse::Node_typeof()->MakeMethod(1/*FindByType<Fuse.Triggers.IPlayback>*/, ::g::Fuse::Triggers::IPlayback_typeof(), NULL);
+    ::TYPES[14] = ::g::Fuse::Triggers::IPlayback_typeof();
     type->SetFields(9);
 }
 
@@ -1417,25 +1434,27 @@ static void Pause_build(uType* type)
     return type;
 }
 
-// protected override sealed void Perform(Fuse.Node target) :405
+// protected override sealed void Perform(Fuse.Node target) :146
 void Pause__Perform_fn(Pause* __this, ::g::Fuse::Node* target)
 {
-    uObject* ind1 = __this->Target();
-    uObject* t = (ind1 != NULL) ? ind1 : uAs<uObject*>(target, ::TYPES[9/*Fuse.Triggers.IPlayback*/]);
+    uObject* ind1;
+    ind1 = __this->Target();
+    uObject* t = (ind1 != NULL) ? ind1 : (uObject*)uPtr(target)->FindByType(::TYPES[13/*Fuse.Node.FindByType<Fuse.Triggers.IPlayback>*/]);
 
     if (t != NULL)
-        ::g::Fuse::Triggers::IPlayback::Pause(uInterface(uPtr(t), ::TYPES[9/*Fuse.Triggers.IPlayback*/]));
+        ::g::Fuse::Triggers::IPlayback::Pause(uInterface(uPtr(t), ::TYPES[14/*Fuse.Triggers.IPlayback*/]));
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Triggers/1.2.1/actions/$.uno
-// ---------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Triggers\1.3.0-rc2\Actions\Playback.uno
+// ----------------------------------------------------------------------------------------
 
-// public sealed class Play :472
+// public sealed class Play :213
 // {
 static void Play_build(uType* type)
 {
-    ::TYPES[9] = ::g::Fuse::Triggers::IPlayback_typeof();
+    ::TYPES[13] = ::g::Fuse::Node_typeof()->MakeMethod(1/*FindByType<Fuse.Triggers.IPlayback>*/, ::g::Fuse::Triggers::IPlayback_typeof(), NULL);
+    ::TYPES[14] = ::g::Fuse::Triggers::IPlayback_typeof();
     type->SetFields(9);
 }
 
@@ -1455,26 +1474,27 @@ static void Play_build(uType* type)
     return type;
 }
 
-// protected override sealed void Perform(Fuse.Node target) :474
+// protected override sealed void Perform(Fuse.Node target) :215
 void Play__Perform_fn(Play* __this, ::g::Fuse::Node* target)
 {
-    uObject* ind1 = __this->Target();
-    uObject* t = (ind1 != NULL) ? ind1 : uAs<uObject*>(target, ::TYPES[9/*Fuse.Triggers.IPlayback*/]);
+    uObject* ind1;
+    ind1 = __this->Target();
+    uObject* t = (ind1 != NULL) ? ind1 : (uObject*)uPtr(target)->FindByType(::TYPES[13/*Fuse.Node.FindByType<Fuse.Triggers.IPlayback>*/]);
 
     if (t != NULL)
-        ::g::Fuse::Triggers::IPlayback::Resume(uInterface(uPtr(t), ::TYPES[9/*Fuse.Triggers.IPlayback*/]));
+        ::g::Fuse::Triggers::IPlayback::Resume(uInterface(uPtr(t), ::TYPES[14/*Fuse.Triggers.IPlayback*/]));
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Triggers/1.2.1/actions/$.uno
-// ---------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Triggers\1.3.0-rc2\Actions\Playback.uno
+// ----------------------------------------------------------------------------------------
 
-// public abstract class PlaybackAction :300
+// public abstract class PlaybackAction :41
 // {
 static void PlaybackAction_build(uType* type)
 {
     type->SetFields(8,
-        ::g::Fuse::Triggers::IPlayback_typeof(), offsetof(::g::Fuse::Triggers::Actions::PlaybackAction, _Target), 0);
+        ::g::Fuse::Triggers::IPlayback_typeof(), offsetof(PlaybackAction, _Target), 0);
 }
 
 ::g::Fuse::Triggers::Actions::TriggerAction_type* PlaybackAction_typeof()
@@ -1492,41 +1512,42 @@ static void PlaybackAction_build(uType* type)
     return type;
 }
 
-// public generated Fuse.Triggers.IPlayback get_Target() :302
+// public generated Fuse.Triggers.IPlayback get_Target() :43
 void PlaybackAction__get_Target_fn(PlaybackAction* __this, uObject** __retval)
 {
     *__retval = __this->Target();
 }
 
-// public generated void set_Target(Fuse.Triggers.IPlayback value) :302
+// public generated void set_Target(Fuse.Triggers.IPlayback value) :43
 void PlaybackAction__set_Target_fn(PlaybackAction* __this, uObject* value)
 {
     __this->Target(value);
 }
 
-// public generated Fuse.Triggers.IPlayback get_Target() [instance] :302
+// public generated Fuse.Triggers.IPlayback get_Target() [instance] :43
 uObject* PlaybackAction::Target()
 {
     return _Target;
 }
 
-// public generated void set_Target(Fuse.Triggers.IPlayback value) [instance] :302
+// public generated void set_Target(Fuse.Triggers.IPlayback value) [instance] :43
 void PlaybackAction::Target(uObject* value)
 {
     _Target = value;
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Triggers/1.2.1/actions/$.uno
-// ---------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Triggers\1.3.0-rc2\Actions\Playback.uno
+// ----------------------------------------------------------------------------------------
 
-// public sealed class PlayTo :540
+// public sealed class PlayTo :281
 // {
 static void PlayTo_build(uType* type)
 {
-    ::TYPES[9] = ::g::Fuse::Triggers::IPlayback_typeof();
+    ::TYPES[13] = ::g::Fuse::Node_typeof()->MakeMethod(1/*FindByType<Fuse.Triggers.IPlayback>*/, ::g::Fuse::Triggers::IPlayback_typeof(), NULL);
+    ::TYPES[14] = ::g::Fuse::Triggers::IPlayback_typeof();
     type->SetFields(9,
-        ::g::Uno::Double_typeof(), offsetof(::g::Fuse::Triggers::Actions::PlayTo, _Progress), 0);
+        ::g::Uno::Double_typeof(), offsetof(PlayTo, _Progress), 0);
 }
 
 ::g::Fuse::Triggers::Actions::TriggerAction_type* PlayTo_typeof()
@@ -1545,51 +1566,52 @@ static void PlayTo_build(uType* type)
     return type;
 }
 
-// protected override sealed void Perform(Fuse.Node target) :550
+// protected override sealed void Perform(Fuse.Node target) :291
 void PlayTo__Perform_fn(PlayTo* __this, ::g::Fuse::Node* target)
 {
-    uObject* ind1 = __this->Target();
-    uObject* t = (ind1 != NULL) ? ind1 : uAs<uObject*>(target, ::TYPES[9/*Fuse.Triggers.IPlayback*/]);
+    uObject* ind1;
+    ind1 = __this->Target();
+    uObject* t = (ind1 != NULL) ? ind1 : (uObject*)uPtr(target)->FindByType(::TYPES[13/*Fuse.Node.FindByType<Fuse.Triggers.IPlayback>*/]);
 
     if (t != NULL)
-        ::g::Fuse::Triggers::IPlayback::PlayTo(uInterface(uPtr(t), ::TYPES[9/*Fuse.Triggers.IPlayback*/]), __this->Progress());
+        ::g::Fuse::Triggers::IPlayback::PlayTo(uInterface(uPtr(t), ::TYPES[14/*Fuse.Triggers.IPlayback*/]), __this->Progress());
 }
 
-// public generated double get_Progress() :542
+// public generated double get_Progress() :283
 void PlayTo__get_Progress_fn(PlayTo* __this, double* __retval)
 {
     *__retval = __this->Progress();
 }
 
-// public generated void set_Progress(double value) :542
+// public generated void set_Progress(double value) :283
 void PlayTo__set_Progress_fn(PlayTo* __this, double* value)
 {
     __this->Progress(*value);
 }
 
-// public generated double get_Progress() [instance] :542
+// public generated double get_Progress() [instance] :283
 double PlayTo::Progress()
 {
     return _Progress;
 }
 
-// public generated void set_Progress(double value) [instance] :542
+// public generated void set_Progress(double value) [instance] :283
 void PlayTo::Progress(double value)
 {
     _Progress = value;
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Triggers/1.2.1/actions/$.uno
-// ---------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Triggers\1.3.0-rc2\Actions\Pulse.uno
+// -------------------------------------------------------------------------------------
 
-// public sealed class Pulse :583
+// public sealed class Pulse :21
 // {
 static void Pulse_build(uType* type)
 {
-    ::TYPES[10] = ::g::Fuse::Triggers::IPulseTrigger_typeof();
+    ::TYPES[15] = ::g::Fuse::Triggers::IPulseTrigger_typeof();
     type->SetFields(8,
-        ::TYPES[10/*Fuse.Triggers.IPulseTrigger*/], offsetof(::g::Fuse::Triggers::Actions::Pulse, _Target), 0);
+        ::TYPES[15/*Fuse.Triggers.IPulseTrigger*/], offsetof(Pulse, _Target), 0);
 }
 
 ::g::Fuse::Triggers::Actions::TriggerAction_type* Pulse_typeof()
@@ -1608,49 +1630,49 @@ static void Pulse_build(uType* type)
     return type;
 }
 
-// protected override sealed void Perform(Fuse.Node target) :587
+// protected override sealed void Perform(Fuse.Node target) :25
 void Pulse__Perform_fn(Pulse* __this, ::g::Fuse::Node* target)
 {
     uObject* t = __this->Target();
 
     if (t != NULL)
-        ::g::Fuse::Triggers::IPulseTrigger::Pulse(uInterface(uPtr(t), ::TYPES[10/*Fuse.Triggers.IPulseTrigger*/]));
+        ::g::Fuse::Triggers::IPulseTrigger::Pulse(uInterface(uPtr(t), ::TYPES[15/*Fuse.Triggers.IPulseTrigger*/]));
 }
 
-// public generated Fuse.Triggers.IPulseTrigger get_Target() :585
+// public generated Fuse.Triggers.IPulseTrigger get_Target() :23
 void Pulse__get_Target_fn(Pulse* __this, uObject** __retval)
 {
     *__retval = __this->Target();
 }
 
-// public generated void set_Target(Fuse.Triggers.IPulseTrigger value) :585
+// public generated void set_Target(Fuse.Triggers.IPulseTrigger value) :23
 void Pulse__set_Target_fn(Pulse* __this, uObject* value)
 {
     __this->Target(value);
 }
 
-// public generated Fuse.Triggers.IPulseTrigger get_Target() [instance] :585
+// public generated Fuse.Triggers.IPulseTrigger get_Target() [instance] :23
 uObject* Pulse::Target()
 {
     return _Target;
 }
 
-// public generated void set_Target(Fuse.Triggers.IPulseTrigger value) [instance] :585
+// public generated void set_Target(Fuse.Triggers.IPulseTrigger value) [instance] :23
 void Pulse::Target(uObject* value)
 {
     _Target = value;
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Triggers/1.2.1/actions/$.uno
-// ---------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Triggers\1.3.0-rc2\Actions\Pulse.uno
+// -------------------------------------------------------------------------------------
 
-// public sealed class PulseBackward :598
+// public sealed class PulseBackward :36
 // {
 static void PulseBackward_build(uType* type)
 {
     type->SetFields(8,
-        ::g::Fuse::Triggers::Timeline_typeof(), offsetof(::g::Fuse::Triggers::Actions::PulseBackward, _Target), 0);
+        ::g::Fuse::Triggers::Timeline_typeof(), offsetof(PulseBackward, _Target), 0);
 }
 
 ::g::Fuse::Triggers::Actions::TriggerAction_type* PulseBackward_typeof()
@@ -1669,7 +1691,7 @@ static void PulseBackward_build(uType* type)
     return type;
 }
 
-// protected override sealed void Perform(Fuse.Node target) :602
+// protected override sealed void Perform(Fuse.Node target) :40
 void PulseBackward__Perform_fn(PulseBackward* __this, ::g::Fuse::Node* target)
 {
     ::g::Fuse::Triggers::Timeline* t = __this->Target();
@@ -1678,40 +1700,40 @@ void PulseBackward__Perform_fn(PulseBackward* __this, ::g::Fuse::Node* target)
         uPtr(t)->PulseBackward1();
 }
 
-// public generated Fuse.Triggers.Timeline get_Target() :600
+// public generated Fuse.Triggers.Timeline get_Target() :38
 void PulseBackward__get_Target_fn(PulseBackward* __this, ::g::Fuse::Triggers::Timeline** __retval)
 {
     *__retval = __this->Target();
 }
 
-// public generated void set_Target(Fuse.Triggers.Timeline value) :600
+// public generated void set_Target(Fuse.Triggers.Timeline value) :38
 void PulseBackward__set_Target_fn(PulseBackward* __this, ::g::Fuse::Triggers::Timeline* value)
 {
     __this->Target(value);
 }
 
-// public generated Fuse.Triggers.Timeline get_Target() [instance] :600
+// public generated Fuse.Triggers.Timeline get_Target() [instance] :38
 ::g::Fuse::Triggers::Timeline* PulseBackward::Target()
 {
     return _Target;
 }
 
-// public generated void set_Target(Fuse.Triggers.Timeline value) [instance] :600
+// public generated void set_Target(Fuse.Triggers.Timeline value) [instance] :38
 void PulseBackward::Target(::g::Fuse::Triggers::Timeline* value)
 {
     _Target = value;
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Triggers/1.2.1/actions/$.uno
-// ---------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Triggers\1.3.0-rc2\Actions\Pulse.uno
+// -------------------------------------------------------------------------------------
 
-// public sealed class PulseForward :613
+// public sealed class PulseForward :51
 // {
 static void PulseForward_build(uType* type)
 {
     type->SetFields(8,
-        ::g::Fuse::Triggers::Timeline_typeof(), offsetof(::g::Fuse::Triggers::Actions::PulseForward, _Target), 0);
+        ::g::Fuse::Triggers::Timeline_typeof(), offsetof(PulseForward, _Target), 0);
 }
 
 ::g::Fuse::Triggers::Actions::TriggerAction_type* PulseForward_typeof()
@@ -1730,7 +1752,7 @@ static void PulseForward_build(uType* type)
     return type;
 }
 
-// protected override sealed void Perform(Fuse.Node target) :617
+// protected override sealed void Perform(Fuse.Node target) :55
 void PulseForward__Perform_fn(PulseForward* __this, ::g::Fuse::Node* target)
 {
     ::g::Fuse::Triggers::Timeline* t = __this->Target();
@@ -1739,52 +1761,55 @@ void PulseForward__Perform_fn(PulseForward* __this, ::g::Fuse::Node* target)
         uPtr(t)->PulseForward();
 }
 
-// public generated Fuse.Triggers.Timeline get_Target() :615
+// public generated Fuse.Triggers.Timeline get_Target() :53
 void PulseForward__get_Target_fn(PulseForward* __this, ::g::Fuse::Triggers::Timeline** __retval)
 {
     *__retval = __this->Target();
 }
 
-// public generated void set_Target(Fuse.Triggers.Timeline value) :615
+// public generated void set_Target(Fuse.Triggers.Timeline value) :53
 void PulseForward__set_Target_fn(PulseForward* __this, ::g::Fuse::Triggers::Timeline* value)
 {
     __this->Target(value);
 }
 
-// public generated Fuse.Triggers.Timeline get_Target() [instance] :615
+// public generated Fuse.Triggers.Timeline get_Target() [instance] :53
 ::g::Fuse::Triggers::Timeline* PulseForward::Target()
 {
     return _Target;
 }
 
-// public generated void set_Target(Fuse.Triggers.Timeline value) [instance] :615
+// public generated void set_Target(Fuse.Triggers.Timeline value) [instance] :53
 void PulseForward::Target(::g::Fuse::Triggers::Timeline* value)
 {
     _Target = value;
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.UserEvents/1.2.1/$.uno
-// ---------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.UserEvents\1.3.0-rc2\RaiseUserEvent.uno
+// ----------------------------------------------------------------------------------------
 
-// public sealed class RaiseUserEvent :192
+// public sealed class RaiseUserEvent :40
 // {
 static void RaiseUserEvent_build(uType* type)
 {
-    ::STRINGS[2] = uString::Const("no UserEvent found: ");
-    ::STRINGS[3] = uString::Const("/usr/local/share/uno/Packages/Fuse.UserEvents/1.2.1/$.uno");
-    ::STRINGS[4] = uString::Const("Perform");
-    ::TYPES[11] = ::g::Uno::Collections::ICollection_typeof()->MakeType(::g::Fuse::Triggers::Actions::UserEventArg_typeof(), NULL);
-    ::TYPES[12] = ::g::Uno::Collections::Dictionary_typeof()->MakeType(::g::Uno::String_typeof(), uObject_typeof(), NULL);
-    ::TYPES[13] = ::g::Uno::Collections::IEnumerable_typeof()->MakeType(::g::Fuse::Triggers::Actions::UserEventArg_typeof(), NULL);
-    ::TYPES[14] = ::g::Uno::Collections::IEnumerator_typeof();
-    ::TYPES[15] = ::g::Uno::Collections::IEnumerator1_typeof()->MakeType(::g::Fuse::Triggers::Actions::UserEventArg_typeof(), NULL);
-    ::TYPES[1] = ::g::Fuse::Visual_typeof();
+    ::STRINGS[6] = uString::Const("no UserEvent found: ");
+    ::STRINGS[7] = uString::Const("C:\\Users\\q\\AppData\\Local\\Fusetools\\Packages\\Fuse.UserEvents\\1.3.0-rc2\\RaiseUserEvent.uno");
+    ::STRINGS[2] = uString::Const("Perform");
+    ::TYPES[16] = ::g::Uno::Collections::ICollection_typeof()->MakeType(::g::Fuse::Triggers::Actions::UserEventArg_typeof(), NULL);
+    ::TYPES[17] = ::g::Uno::Collections::Dictionary_typeof()->MakeType(::g::Uno::String_typeof(), uObject_typeof(), NULL);
+    ::TYPES[18] = ::g::Uno::Collections::IEnumerable_typeof()->MakeType(::g::Fuse::Triggers::Actions::UserEventArg_typeof(), NULL);
+    ::TYPES[19] = ::g::Uno::Collections::IEnumerator_typeof();
+    ::TYPES[20] = ::g::Uno::Collections::IEnumerator1_typeof()->MakeType(::g::Fuse::Triggers::Actions::UserEventArg_typeof(), NULL);
+    ::TYPES[21] = ::g::Uno::IDisposable_typeof();
+    type->SetDependencies(
+        ::g::Fuse::Diagnostics_typeof(),
+        ::g::Uno::UX::Selector_typeof());
     type->SetFields(8,
-        ::g::Uno::Collections::IList_typeof()->MakeType(::g::Fuse::Triggers::Actions::UserEventArg_typeof(), NULL), offsetof(::g::Fuse::Triggers::Actions::RaiseUserEvent, _args), 0,
-        ::g::Fuse::UserEvent_typeof(), offsetof(::g::Fuse::Triggers::Actions::RaiseUserEvent, _event), 0,
-        ::g::Uno::UX::Selector_typeof(), offsetof(::g::Fuse::Triggers::Actions::RaiseUserEvent, _eventName), 0,
-        ::TYPES[1/*Fuse.Visual*/], offsetof(::g::Fuse::Triggers::Actions::RaiseUserEvent, _eventTarget), 0);
+        ::g::Uno::Collections::IList_typeof()->MakeType(::g::Fuse::Triggers::Actions::UserEventArg_typeof(), NULL), offsetof(RaiseUserEvent, _args), 0,
+        ::g::Fuse::UserEvent_typeof(), offsetof(RaiseUserEvent, _event), 0,
+        ::g::Uno::UX::Selector_typeof(), offsetof(RaiseUserEvent, _eventName), 0,
+        ::g::Fuse::Node_typeof(), offsetof(RaiseUserEvent, _eventTarget), 0);
 }
 
 ::g::Fuse::Triggers::Actions::TriggerAction_type* RaiseUserEvent_typeof()
@@ -1795,6 +1820,7 @@ static void RaiseUserEvent_build(uType* type)
     uTypeOptions options;
     options.BaseDefinition = ::g::Fuse::Triggers::Actions::TriggerAction_typeof();
     options.FieldCount = 12;
+    options.DependencyCount = 2;
     options.ObjectSize = sizeof(RaiseUserEvent);
     options.TypeSize = sizeof(::g::Fuse::Triggers::Actions::TriggerAction_type);
     type = (::g::Fuse::Triggers::Actions::TriggerAction_type*)uClassType::New("Fuse.Triggers.Actions.RaiseUserEvent", options);
@@ -1803,71 +1829,76 @@ static void RaiseUserEvent_build(uType* type)
     return type;
 }
 
-// private Uno.Collections.Dictionary<string, object> ConvertArgs() :245
+// private Uno.Collections.Dictionary<string, object> ConvertArgs() :91
 void RaiseUserEvent__ConvertArgs_fn(RaiseUserEvent* __this, ::g::Uno::Collections::Dictionary** __retval)
 {
     *__retval = __this->ConvertArgs();
 }
 
-// public Uno.UX.Selector get_EventName() :200
+// public Uno.UX.Selector get_EventName() :48
 void RaiseUserEvent__get_EventName_fn(RaiseUserEvent* __this, ::g::Uno::UX::Selector* __retval)
 {
     *__retval = __this->EventName();
 }
 
-// public void set_EventName(Uno.UX.Selector value) :201
+// public void set_EventName(Uno.UX.Selector value) :49
 void RaiseUserEvent__set_EventName_fn(RaiseUserEvent* __this, ::g::Uno::UX::Selector* value)
 {
     __this->EventName(*value);
 }
 
-// protected override sealed void Perform(Fuse.Node target) :227
+// protected override sealed void Perform(Fuse.Node target) :76
 void RaiseUserEvent__Perform_fn(RaiseUserEvent* __this, ::g::Fuse::Node* target)
 {
-    ::g::Fuse::Visual* v = uAs< ::g::Fuse::Visual*>(target, ::TYPES[1/*Fuse.Visual*/]);
-
-    if (v == NULL)
-        return;
-
-    if ((__this->_event == NULL) || (__this->_eventTarget != v))
+    if ((__this->_event == NULL) || (__this->_eventTarget != target))
     {
         ::g::Fuse::Visual* n;
-        __this->_event = ::g::Fuse::UserEvent::ScanTree(v, __this->EventName(), &n);
-        __this->_eventTarget = v;
+        __this->_event = ::g::Fuse::UserEvent::ScanTree(target, __this->EventName(), &n);
+        __this->_eventTarget = target;
     }
 
     if (__this->_event == NULL)
-        ::g::Fuse::Diagnostics::UserError(::g::Uno::String::op_Addition2(::STRINGS[2/*"no UserEven...*/], ::g::Uno::UX::Selector__op_Implicit1(__this->EventName())), __this, ::STRINGS[3/*"/usr/local/...*/], 240, ::STRINGS[4/*"Perform"*/], NULL);
+        ::g::Fuse::Diagnostics::UserError(::g::Uno::String::op_Addition2(::STRINGS[6/*"no UserEven...*/], ::g::Uno::UX::Selector__op_Implicit1(__this->EventName())), __this, ::STRINGS[7/*"C:\\Users\\...*/], 86, ::STRINGS[2/*"Perform"*/], NULL);
     else
         uPtr(__this->_event)->Raise(__this->ConvertArgs());
 }
 
-// private Uno.Collections.Dictionary<string, object> ConvertArgs() [instance] :245
+// private Uno.Collections.Dictionary<string, object> ConvertArgs() [instance] :91
 ::g::Uno::Collections::Dictionary* RaiseUserEvent::ConvertArgs()
 {
     ::g::Fuse::Triggers::Actions::UserEventArg* ret3;
 
-    if ((_args == NULL) || (::g::Uno::Collections::ICollection::Count(uInterface(uPtr(_args), ::TYPES[11/*Uno.Collections.ICollection<Fuse.Triggers.Actions.UserEventArg>*/])) == 0))
+    if ((_args == NULL) || (::g::Uno::Collections::ICollection::Count(uInterface(uPtr(_args), ::TYPES[16/*Uno.Collections.ICollection<Fuse.Triggers.Actions.UserEventArg>*/])) == 0))
         return NULL;
 
-    ::g::Uno::Collections::Dictionary* d = (::g::Uno::Collections::Dictionary*)::g::Uno::Collections::Dictionary::New1(::TYPES[12/*Uno.Collections.Dictionary<string, object>*/]);
+    ::g::Uno::Collections::Dictionary* d = (::g::Uno::Collections::Dictionary*)::g::Uno::Collections::Dictionary::New1(::TYPES[17/*Uno.Collections.Dictionary<string, object>*/]);
+    uObject* enum1 = (uObject*)::g::Uno::Collections::IEnumerable::GetEnumerator(uInterface(uPtr(_args), ::TYPES[18/*Uno.Collections.IEnumerable<Fuse.Triggers.Actions.UserEventArg>*/]));
 
-    for (uObject* enum1 = (uObject*)::g::Uno::Collections::IEnumerable::GetEnumerator(uInterface(uPtr(_args), ::TYPES[13/*Uno.Collections.IEnumerable<Fuse.Triggers.Actions.UserEventArg>*/])); ::g::Uno::Collections::IEnumerator::MoveNext(uInterface(uPtr(enum1), ::TYPES[14/*Uno.Collections.IEnumerator*/])); )
     {
-        ::g::Fuse::Triggers::Actions::UserEventArg* arg = (::g::Uno::Collections::IEnumerator1::get_Current_ex(uInterface(uPtr(enum1), ::TYPES[15/*Uno.Collections.IEnumerator<Fuse.Triggers.Actions.UserEventArg>*/]), &ret3), ret3);
-        ::g::Uno::Collections::Dictionary__set_Item_fn(uPtr(d), uPtr(arg)->Name(), uPtr(arg)->Value());
+        const auto __finally_fun = [&]()
+        {
+            ::g::Uno::IDisposable::Dispose(uInterface(uPtr(enum1), ::TYPES[21/*Uno.IDisposable*/]));
+        };
+
+        const uFinally<decltype(__finally_fun)> __f(__finally_fun);
+
+        while (::g::Uno::Collections::IEnumerator::MoveNext(uInterface(uPtr(enum1), ::TYPES[19/*Uno.Collections.IEnumerator*/])))
+        {
+            ::g::Fuse::Triggers::Actions::UserEventArg* arg = (::g::Uno::Collections::IEnumerator1::get_Current_ex(uInterface(uPtr(enum1), ::TYPES[20/*Uno.Collections.IEnumerator<Fuse.Triggers.Actions.UserEventArg>*/]), &ret3), ret3);
+            ::g::Uno::Collections::Dictionary__set_Item_fn(uPtr(d), uPtr(arg)->Name(), uPtr(arg)->Value());
+        }
     }
 
     return d;
 }
 
-// public Uno.UX.Selector get_EventName() [instance] :200
+// public Uno.UX.Selector get_EventName() [instance] :48
 ::g::Uno::UX::Selector RaiseUserEvent::EventName()
 {
     return _eventName;
 }
 
-// public void set_EventName(Uno.UX.Selector value) [instance] :201
+// public void set_EventName(Uno.UX.Selector value) [instance] :49
 void RaiseUserEvent::EventName(::g::Uno::UX::Selector value)
 {
     _eventName = value;
@@ -1875,13 +1906,15 @@ void RaiseUserEvent::EventName(::g::Uno::UX::Selector value)
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Triggers/1.2.1/actions/$.uno
-// ---------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Triggers\1.3.0-rc2\Actions\Focus.uno
+// -------------------------------------------------------------------------------------
 
-// public sealed class ReleaseFocus :248
+// public sealed class ReleaseFocus :49
 // {
 static void ReleaseFocus_build(uType* type)
 {
+    type->SetDependencies(
+        ::g::Fuse::Input::Focus_typeof());
     type->SetFields(8);
 }
 
@@ -1893,6 +1926,7 @@ static void ReleaseFocus_build(uType* type)
     uTypeOptions options;
     options.BaseDefinition = ::g::Fuse::Triggers::Actions::TriggerAction_typeof();
     options.FieldCount = 8;
+    options.DependencyCount = 1;
     options.ObjectSize = sizeof(ReleaseFocus);
     options.TypeSize = sizeof(::g::Fuse::Triggers::Actions::TriggerAction_type);
     type = (::g::Fuse::Triggers::Actions::TriggerAction_type*)uClassType::New("Fuse.Triggers.Actions.ReleaseFocus", options);
@@ -1901,29 +1935,31 @@ static void ReleaseFocus_build(uType* type)
     return type;
 }
 
-// protected override sealed void Perform(Fuse.Node target) :250
+// protected override sealed void Perform(Fuse.Node target) :51
 void ReleaseFocus__Perform_fn(ReleaseFocus* __this, ::g::Fuse::Node* target)
 {
     ::g::Fuse::Input::Focus::GiveTo(NULL);
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Controls.Navigation/1.2.1/$.uno
-// ------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Controls.Navigation\1.3.0-rc2\NavigationActions.uno
+// ----------------------------------------------------------------------------------------------------
 
-// public sealed class ReleasePage :273
+// public sealed class ReleasePage :16
 // {
 static void ReleasePage_build(uType* type)
 {
-    ::STRINGS[5] = uString::Const("Requires a Visual and Navigator parent");
-    ::STRINGS[6] = uString::Const("/usr/local/share/uno/Packages/Fuse.Controls.Navigation/1.2.1/$.uno");
-    ::STRINGS[4] = uString::Const("Perform");
-    ::TYPES[1] = ::g::Fuse::Visual_typeof();
-    ::TYPES[16] = ::g::Fuse::Controls::Navigator_typeof();
-    ::TYPES[17] = ::g::Uno::Action_typeof();
+    ::STRINGS[8] = uString::Const("Requires a Visual and Navigator parent");
+    ::STRINGS[9] = uString::Const("C:\\Users\\q\\AppData\\Local\\Fusetools\\Packages\\Fuse.Controls.Navigation\\1.3.0-rc2\\NavigationActions.uno");
+    ::STRINGS[2] = uString::Const("Perform");
+    ::TYPES[1] = ::g::Fuse::Node_typeof()->MakeMethod(1/*FindByType<Fuse.Visual>*/, ::g::Fuse::Visual_typeof(), NULL);
+    ::TYPES[22] = ::g::Fuse::Controls::Navigator_typeof();
+    ::TYPES[23] = ::g::Uno::Action_typeof();
+    type->SetDependencies(
+        ::g::Fuse::Diagnostics_typeof());
     type->SetFields(8,
-        ::TYPES[16/*Fuse.Controls.Navigator*/], offsetof(::g::Fuse::Triggers::Actions::ReleasePage, _pendNavigator), 0,
-        ::TYPES[1/*Fuse.Visual*/], offsetof(::g::Fuse::Triggers::Actions::ReleasePage, _pendVisual), 0);
+        ::TYPES[22/*Fuse.Controls.Navigator*/], offsetof(ReleasePage, _pendNavigator), 0,
+        ::g::Fuse::Visual_typeof(), offsetof(ReleasePage, _pendVisual), 0);
 }
 
 ::g::Fuse::Triggers::Actions::TriggerAction_type* ReleasePage_typeof()
@@ -1934,6 +1970,7 @@ static void ReleasePage_build(uType* type)
     uTypeOptions options;
     options.BaseDefinition = ::g::Fuse::Triggers::Actions::TriggerAction_typeof();
     options.FieldCount = 10;
+    options.DependencyCount = 1;
     options.ObjectSize = sizeof(ReleasePage);
     options.TypeSize = sizeof(::g::Fuse::Triggers::Actions::TriggerAction_type);
     type = (::g::Fuse::Triggers::Actions::TriggerAction_type*)uClassType::New("Fuse.Triggers.Actions.ReleasePage", options);
@@ -1943,46 +1980,46 @@ static void ReleasePage_build(uType* type)
     return type;
 }
 
-// public generated ReleasePage() :273
+// public generated ReleasePage() :16
 void ReleasePage__ctor_2_fn(ReleasePage* __this)
 {
     __this->ctor_2();
 }
 
-// private void DeferredRelease() :292
+// private void DeferredRelease() :35
 void ReleasePage__DeferredRelease_fn(ReleasePage* __this)
 {
     __this->DeferredRelease();
 }
 
-// public generated ReleasePage New() :273
+// public generated ReleasePage New() :16
 void ReleasePage__New2_fn(ReleasePage** __retval)
 {
     *__retval = ReleasePage::New2();
 }
 
-// protected override sealed void Perform(Fuse.Node n) :277
+// protected override sealed void Perform(Fuse.Node n) :20
 void ReleasePage__Perform_fn(ReleasePage* __this, ::g::Fuse::Node* n)
 {
-    __this->_pendVisual = uAs< ::g::Fuse::Visual*>(n, ::TYPES[1/*Fuse.Visual*/]);
-    __this->_pendNavigator = ((n == NULL) ? uCast< ::g::Fuse::Controls::Navigator*>(NULL, ::TYPES[16/*Fuse.Controls.Navigator*/]) : uAs< ::g::Fuse::Controls::Navigator*>(uPtr(n)->Parent(), ::TYPES[16/*Fuse.Controls.Navigator*/]));
+    __this->_pendVisual = ((::g::Fuse::Visual*)uPtr(n)->FindByType(::TYPES[1/*Fuse.Node.FindByType<Fuse.Visual>*/]));
+    __this->_pendNavigator = ((__this->_pendVisual == NULL) ? uCast< ::g::Fuse::Controls::Navigator*>(NULL, ::TYPES[22/*Fuse.Controls.Navigator*/]) : uAs< ::g::Fuse::Controls::Navigator*>(uPtr(__this->_pendVisual)->Parent(), ::TYPES[22/*Fuse.Controls.Navigator*/]));
 
     if ((__this->_pendVisual == NULL) || (__this->_pendNavigator == NULL))
     {
-        ::g::Fuse::Diagnostics::UserError(::STRINGS[5/*"Requires a ...*/], __this, ::STRINGS[6/*"/usr/local/...*/], 283, ::STRINGS[4/*"Perform"*/], NULL);
+        ::g::Fuse::Diagnostics::UserError(::STRINGS[8/*"Requires a ...*/], __this, ::STRINGS[9/*"C:\\Users\\...*/], 26, ::STRINGS[2/*"Perform"*/], NULL);
         return;
     }
 
-    ::g::Fuse::UpdateManager::AddDeferredAction(uDelegate::New(::TYPES[17/*Uno.Action*/], (void*)ReleasePage__DeferredRelease_fn, __this), -1, 0);
+    ::g::Fuse::UpdateManager::AddDeferredAction2(uDelegate::New(::TYPES[23/*Uno.Action*/], (void*)ReleasePage__DeferredRelease_fn, __this), -1, 2);
 }
 
-// public generated ReleasePage() [instance] :273
+// public generated ReleasePage() [instance] :16
 void ReleasePage::ctor_2()
 {
     ctor_1();
 }
 
-// private void DeferredRelease() [instance] :292
+// private void DeferredRelease() [instance] :35
 void ReleasePage::DeferredRelease()
 {
     if ((_pendNavigator == NULL) || (_pendVisual == NULL))
@@ -1993,7 +2030,7 @@ void ReleasePage::DeferredRelease()
     _pendVisual = NULL;
 }
 
-// public generated ReleasePage New() [static] :273
+// public generated ReleasePage New() [static] :16
 ReleasePage* ReleasePage::New2()
 {
     ReleasePage* obj1 = (ReleasePage*)uNew(ReleasePage_typeof());
@@ -2002,10 +2039,10 @@ ReleasePage* ReleasePage::New2()
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Controls.WebView/1.2.1/$.uno
-// ---------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Controls.WebView\1.3.0-rc2\WebViewNavActions.uno
+// -------------------------------------------------------------------------------------------------
 
-// public sealed class Reload :698
+// public sealed class Reload :28
 // {
 static void Reload_build(uType* type)
 {
@@ -2028,23 +2065,24 @@ static void Reload_build(uType* type)
     return type;
 }
 
-// private override sealed void Execute(Fuse.Controls.WebView webview) :700
+// private override sealed void Execute(Fuse.Controls.WebView webview) :30
 void Reload__Execute_fn(Reload* __this, ::g::Fuse::Controls::WebView* webview)
 {
     uPtr(webview)->Reload();
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Controls/1.2.1/triggers/$.uno
-// ----------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Controls\1.3.0-rc2\Triggers\BringToFront.uno
+// ---------------------------------------------------------------------------------------------
 
-// public sealed class SendToBack :84
+// public sealed class SendToBack :82
 // {
 static void SendToBack_build(uType* type)
 {
-    ::TYPES[1] = ::g::Fuse::Visual_typeof();
+    ::TYPES[1] = ::g::Fuse::Node_typeof()->MakeMethod(1/*FindByType<Fuse.Visual>*/, ::g::Fuse::Visual_typeof(), NULL);
+    ::TYPES[2] = ::g::Fuse::Visual_typeof();
     type->SetFields(8,
-        ::TYPES[1/*Fuse.Visual*/], offsetof(::g::Fuse::Triggers::Actions::SendToBack, _Target), 0);
+        ::TYPES[2/*Fuse.Visual*/], offsetof(SendToBack, _Target), 0);
 }
 
 ::g::Fuse::Triggers::Actions::TriggerAction_type* SendToBack_typeof()
@@ -2063,62 +2101,61 @@ static void SendToBack_build(uType* type)
     return type;
 }
 
-// protected override sealed void Perform(Fuse.Node target) :88
+// protected override sealed void Perform(Fuse.Node target) :86
 void SendToBack__Perform_fn(SendToBack* __this, ::g::Fuse::Node* target)
 {
-    ::g::Fuse::Visual* ind1 = __this->Target();
-    ::g::Fuse::Visual* elm = (ind1 != NULL) ? ind1 : uAs< ::g::Fuse::Visual*>(target, ::TYPES[1/*Fuse.Visual*/]);
+    ::g::Fuse::Visual* ind1;
+    ind1 = __this->Target();
+    ::g::Fuse::Visual* elm = (ind1 != NULL) ? ind1 : (::g::Fuse::Visual*)uPtr(target)->FindByType(::TYPES[1/*Fuse.Node.FindByType<Fuse.Visual>*/]);
 
     if (elm != NULL)
     {
-        ::g::Fuse::Visual* panel = uAs< ::g::Fuse::Visual*>(uPtr(elm)->Parent(), ::TYPES[1/*Fuse.Visual*/]);
+        ::g::Fuse::Visual* panel = uAs< ::g::Fuse::Visual*>(uPtr(elm)->Parent(), ::TYPES[2/*Fuse.Visual*/]);
 
         if (panel != NULL)
             uPtr(panel)->SendToBack(elm);
     }
 }
 
-// public generated Fuse.Visual get_Target() :86
+// public generated Fuse.Visual get_Target() :84
 void SendToBack__get_Target_fn(SendToBack* __this, ::g::Fuse::Visual** __retval)
 {
     *__retval = __this->Target();
 }
 
-// public generated void set_Target(Fuse.Visual value) :86
+// public generated void set_Target(Fuse.Visual value) :84
 void SendToBack__set_Target_fn(SendToBack* __this, ::g::Fuse::Visual* value)
 {
     __this->Target(value);
 }
 
-// public generated Fuse.Visual get_Target() [instance] :86
+// public generated Fuse.Visual get_Target() [instance] :84
 ::g::Fuse::Visual* SendToBack::Target()
 {
     return _Target;
 }
 
-// public generated void set_Target(Fuse.Visual value) [instance] :86
+// public generated void set_Target(Fuse.Visual value) [instance] :84
 void SendToBack::Target(::g::Fuse::Visual* value)
 {
     _Target = value;
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Triggers/1.2.1/actions/$.uno
-// ---------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Triggers\1.3.0-rc2\Actions\Set.uno
+// -----------------------------------------------------------------------------------
 
-// public sealed class Set<T> :664
+// public sealed class Set<T> :35
 // {
 static void Set_build(uType* type)
 {
-    ::STRINGS[7] = uString::Const("target");
-    type->SetPrecalc(
-        type->T(0));
+    ::STRINGS[10] = uString::Const("target");
     type->SetFields(8,
-        ::g::Fuse::Internal::Blender_typeof()->MakeType(type->T(0), NULL), offsetof(::g::Fuse::Triggers::Actions::Set, _blender), 0,
-        ::g::Uno::Bool_typeof(), offsetof(::g::Fuse::Triggers::Actions::Set, _hasIncrement), 0,
+        ::g::Fuse::Internal::Blender_typeof()->MakeType(type->T(0), NULL), offsetof(Set, _blender), 0,
+        ::g::Uno::Bool_typeof(), offsetof(Set, _hasIncrement), 0,
         type->T(0), (uintptr_t)0, uFieldFlagsConstrained,
-        ::g::Uno::UX::Expression_typeof()->MakeType(type->T(0), NULL), offsetof(::g::Fuse::Triggers::Actions::Set, _Expression), 0,
-        ::g::Uno::UX::Property1_typeof()->MakeType(type->T(0), NULL), offsetof(::g::Fuse::Triggers::Actions::Set, _Target), 0,
+        ::g::Uno::UX::Expression_typeof()->MakeType(type->T(0), NULL), offsetof(Set, _Expression), 0,
+        ::g::Uno::UX::Property1_typeof()->MakeType(type->T(0), NULL), offsetof(Set, _Target), 0,
         type->T(0), (uintptr_t)0, uFieldFlagsConstrained);
 }
 
@@ -2131,7 +2168,6 @@ static void Set_build(uType* type)
     options.BaseDefinition = ::g::Fuse::Triggers::Actions::TriggerAction_typeof();
     options.FieldCount = 14;
     options.GenericCount = 1;
-    options.PrecalcCount = 1;
     options.ObjectSize = sizeof(Set);
     options.TypeSize = sizeof(::g::Fuse::Triggers::Actions::TriggerAction_type);
     type = (::g::Fuse::Triggers::Actions::TriggerAction_type*)uClassType::New("Fuse.Triggers.Actions.Set`1", options);
@@ -2140,40 +2176,37 @@ static void Set_build(uType* type)
     return type;
 }
 
-// public Set(Uno.UX.Property<T> target) :689
+// public Set(Uno.UX.Property<T> target) :60
 void Set__ctor_2_fn(Set* __this, ::g::Uno::UX::Property1* target)
 {
     __this->ctor_2(target);
 }
 
-// public generated Uno.UX.Expression<T> get_Expression() :686
+// public generated Uno.UX.Expression<T> get_Expression() :57
 void Set__get_Expression_fn(Set* __this, uDelegate** __retval)
 {
     *__retval = __this->Expression();
 }
 
-// public generated void set_Expression(Uno.UX.Expression<T> value) :686
+// public generated void set_Expression(Uno.UX.Expression<T> value) :57
 void Set__set_Expression_fn(Set* __this, uDelegate* value)
 {
     __this->Expression(value);
 }
 
-// public Set New(Uno.UX.Property<T> target) :689
+// public Set New(Uno.UX.Property<T> target) :60
 void Set__New2_fn(uType* __type, ::g::Uno::UX::Property1* target, Set** __retval)
 {
     *__retval = Set::New2(__type, target);
 }
 
-// protected override sealed void Perform(Fuse.Node target) :701
+// protected override sealed void Perform(Fuse.Node target) :72
 void Set__Perform_fn(Set* __this, ::g::Fuse::Node* target)
 {
-    uType* __types[] = {
-        __this->__type->Precalced(0/*T*/),
-    };
-    uT ret2(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    uT ret3(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    uT ret4(__types[0], U_ALLOCA(__types[0]->ValueSize));
-    uT ret5(__types[0], U_ALLOCA(__types[0]->ValueSize));
+    uT ret2(__this->__type->T(0), U_ALLOCA(__this->__type->T(0)->ValueSize));
+    uT ret3(__this->__type->T(0), U_ALLOCA(__this->__type->T(0)->ValueSize));
+    uT ret4(__this->__type->T(0), U_ALLOCA(__this->__type->T(0)->ValueSize));
+    uT ret5(__this->__type->T(0), U_ALLOCA(__this->__type->T(0)->ValueSize));
 
     if (__this->_hasIncrement)
         Set__Update_fn(__this, (uPtr(__this->_blender)->Add_ex((::g::Uno::UX::Property1__Get_fn(uPtr(__this->Target()), &ret3), ret3), __this->_increment(), &ret2), ret2));
@@ -2183,72 +2216,72 @@ void Set__Perform_fn(Set* __this, ::g::Fuse::Node* target)
         Set__Update_fn(__this, (Set__get_Value_fn(__this, &ret5), ret5));
 }
 
-// public generated Uno.UX.Property<T> get_Target() :677
+// public generated Uno.UX.Property<T> get_Target() :48
 void Set__get_Target_fn(Set* __this, ::g::Uno::UX::Property1** __retval)
 {
     *__retval = __this->Target();
 }
 
-// private generated void set_Target(Uno.UX.Property<T> value) :677
+// private generated void set_Target(Uno.UX.Property<T> value) :48
 void Set__set_Target_fn(Set* __this, ::g::Uno::UX::Property1* value)
 {
     __this->Target(value);
 }
 
-// private void Update(T value) :696
+// private void Update(T value) :67
 void Set__Update_fn(Set* __this, void* value)
 {
     ::g::Uno::UX::Property1__Set_fn(uPtr(__this->Target()), value, NULL);
 }
 
-// public generated T get_Value() :683
+// public generated T get_Value() :54
 void Set__get_Value_fn(Set* __this, uTRef __retval)
 {
     return __retval.Store(__this->_Value()), void();
 }
 
-// public generated void set_Value(T value) :683
+// public generated void set_Value(T value) :54
 void Set__set_Value_fn(Set* __this, void* value)
 {
     __this->_Value() = value;
 }
 
-// public Set(Uno.UX.Property<T> target) [instance] :689
+// public Set(Uno.UX.Property<T> target) [instance] :60
 void Set::ctor_2(::g::Uno::UX::Property1* target)
 {
     ctor_1();
 
     if (target == NULL)
-        U_THROW(::g::Uno::ArgumentNullException::New6(::STRINGS[7/*"target"*/]));
+        U_THROW(::g::Uno::ArgumentNullException::New6(::STRINGS[10/*"target"*/]));
 
     Target(target);
 }
 
-// public generated Uno.UX.Expression<T> get_Expression() [instance] :686
+// public generated Uno.UX.Expression<T> get_Expression() [instance] :57
 uDelegate* Set::Expression()
 {
     return _Expression;
 }
 
-// public generated void set_Expression(Uno.UX.Expression<T> value) [instance] :686
+// public generated void set_Expression(Uno.UX.Expression<T> value) [instance] :57
 void Set::Expression(uDelegate* value)
 {
     _Expression = value;
 }
 
-// public generated Uno.UX.Property<T> get_Target() [instance] :677
+// public generated Uno.UX.Property<T> get_Target() [instance] :48
 ::g::Uno::UX::Property1* Set::Target()
 {
     return _Target;
 }
 
-// private generated void set_Target(Uno.UX.Property<T> value) [instance] :677
+// private generated void set_Target(Uno.UX.Property<T> value) [instance] :48
 void Set::Target(::g::Uno::UX::Property1* value)
 {
     _Target = value;
 }
 
-// public Set New(Uno.UX.Property<T> target) [static] :689
+// public Set New(Uno.UX.Property<T> target) [static] :60
 Set* Set::New2(uType* __type, ::g::Uno::UX::Property1* target)
 {
     Set* obj1 = (Set*)uNew(__type);
@@ -2257,14 +2290,20 @@ Set* Set::New2(uType* __type, ::g::Uno::UX::Property1* target)
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Triggers/1.2.1/actions/$.uno
-// ---------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Triggers\1.3.0-rc2\Actions\Visibility.uno
+// ------------------------------------------------------------------------------------------
 
-// public sealed class Show :1065
+// public sealed class Show :30
 // {
 static void Show_build(uType* type)
 {
-    ::TYPES[18] = ::g::Fuse::Triggers::Actions::IShow_typeof();
+    ::STRINGS[11] = uString::Const("Cannot find an Element/IShow");
+    ::STRINGS[1] = uString::Const("C:\\Users\\q\\AppData\\Local\\Fusetools\\Packages\\Fuse.Triggers\\1.3.0-rc2\\Actions\\Visibility.uno");
+    ::STRINGS[2] = uString::Const("Perform");
+    ::TYPES[24] = ::g::Fuse::Node_typeof()->MakeMethod(1/*FindByType<Fuse.Triggers.Actions.IShow>*/, ::g::Fuse::Triggers::Actions::IShow_typeof(), NULL);
+    ::TYPES[25] = ::g::Fuse::Triggers::Actions::IShow_typeof();
+    type->SetDependencies(
+        ::g::Fuse::Diagnostics_typeof());
     type->SetFields(8);
 }
 
@@ -2276,6 +2315,7 @@ static void Show_build(uType* type)
     uTypeOptions options;
     options.BaseDefinition = ::g::Fuse::Triggers::Actions::TriggerAction_typeof();
     options.FieldCount = 8;
+    options.DependencyCount = 1;
     options.ObjectSize = sizeof(Show);
     options.TypeSize = sizeof(::g::Fuse::Triggers::Actions::TriggerAction_type);
     type = (::g::Fuse::Triggers::Actions::TriggerAction_type*)uClassType::New("Fuse.Triggers.Actions.Show", options);
@@ -2284,22 +2324,27 @@ static void Show_build(uType* type)
     return type;
 }
 
-// protected override sealed void Perform(Fuse.Node target) :1067
+// protected override sealed void Perform(Fuse.Node target) :32
 void Show__Perform_fn(Show* __this, ::g::Fuse::Node* target)
 {
-    if (uIs(target, ::TYPES[18/*Fuse.Triggers.Actions.IShow*/]))
-        ::g::Fuse::Triggers::Actions::IShow::Show(uInterface(uPtr((uObject*)target), ::TYPES[18/*Fuse.Triggers.Actions.IShow*/]));
+    uObject* t = (uObject*)uPtr(target)->FindByType(::TYPES[24/*Fuse.Node.FindByType<Fuse.Triggers.Actions.IShow>*/]);
+
+    if (t != NULL)
+        ::g::Fuse::Triggers::Actions::IShow::Show(uInterface(uPtr(t), ::TYPES[25/*Fuse.Triggers.Actions.IShow*/]));
+    else
+        ::g::Fuse::Diagnostics::UserError(::STRINGS[11/*"Cannot find...*/], __this, ::STRINGS[1/*"C:\\Users\\...*/], 38, ::STRINGS[2/*"Perform"*/], NULL);
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Triggers/1.2.1/actions/$.uno
-// ---------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Triggers\1.3.0-rc2\Actions\Playback.uno
+// ----------------------------------------------------------------------------------------
 
-// public sealed class Stop :371
+// public sealed class Stop :112
 // {
 static void Stop_build(uType* type)
 {
-    ::TYPES[9] = ::g::Fuse::Triggers::IPlayback_typeof();
+    ::TYPES[13] = ::g::Fuse::Node_typeof()->MakeMethod(1/*FindByType<Fuse.Triggers.IPlayback>*/, ::g::Fuse::Triggers::IPlayback_typeof(), NULL);
+    ::TYPES[14] = ::g::Fuse::Triggers::IPlayback_typeof();
     type->SetFields(9);
 }
 
@@ -2319,21 +2364,22 @@ static void Stop_build(uType* type)
     return type;
 }
 
-// protected override sealed void Perform(Fuse.Node target) :373
+// protected override sealed void Perform(Fuse.Node target) :114
 void Stop__Perform_fn(Stop* __this, ::g::Fuse::Node* target)
 {
-    uObject* ind1 = __this->Target();
-    uObject* t = (ind1 != NULL) ? ind1 : uAs<uObject*>(target, ::TYPES[9/*Fuse.Triggers.IPlayback*/]);
+    uObject* ind1;
+    ind1 = __this->Target();
+    uObject* t = (ind1 != NULL) ? ind1 : (uObject*)uPtr(target)->FindByType(::TYPES[13/*Fuse.Node.FindByType<Fuse.Triggers.IPlayback>*/]);
 
     if (t != NULL)
-        ::g::Fuse::Triggers::IPlayback::Stop(uInterface(uPtr(t), ::TYPES[9/*Fuse.Triggers.IPlayback*/]));
+        ::g::Fuse::Triggers::IPlayback::Stop(uInterface(uPtr(t), ::TYPES[14/*Fuse.Triggers.IPlayback*/]));
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Controls.WebView/1.2.1/$.uno
-// ---------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Controls.WebView\1.3.0-rc2\WebViewNavActions.uno
+// -------------------------------------------------------------------------------------------------
 
-// public sealed class StopLoading :710
+// public sealed class StopLoading :40
 // {
 static void StopLoading_build(uType* type)
 {
@@ -2356,27 +2402,29 @@ static void StopLoading_build(uType* type)
     return type;
 }
 
-// private override sealed void Execute(Fuse.Controls.WebView webview) :712
+// private override sealed void Execute(Fuse.Controls.WebView webview) :42
 void StopLoading__Execute_fn(StopLoading* __this, ::g::Fuse::Controls::WebView* webview)
 {
     uPtr(webview)->Stop();
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Triggers/1.2.1/actions/$.uno
-// ---------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Triggers\1.3.0-rc2\Actions\TimelineAction.uno
+// ----------------------------------------------------------------------------------------------
 
-// public sealed class TimelineAction :811
+// public sealed class TimelineAction :32
 // {
 static void TimelineAction_build(uType* type)
 {
-    ::STRINGS[8] = uString::Const("`TimelineAction` called without a `Timeline` `Target`");
-    ::STRINGS[9] = uString::Const("/usr/local/share/uno/Packages/Fuse.Triggers/1.2.1/actions/$.uno");
-    ::STRINGS[4] = uString::Const("Perform");
+    ::STRINGS[12] = uString::Const("`TimelineAction` called without a `Timeline` `Target`");
+    ::STRINGS[13] = uString::Const("C:\\Users\\q\\AppData\\Local\\Fusetools\\Packages\\Fuse.Triggers\\1.3.0-rc2\\Actions\\TimelineAction.uno");
+    ::STRINGS[2] = uString::Const("Perform");
+    type->SetDependencies(
+        ::g::Fuse::Diagnostics_typeof());
     type->SetFields(8,
-        ::g::Fuse::Triggers::Actions::TimelineActionHow_typeof(), offsetof(::g::Fuse::Triggers::Actions::TimelineAction, _How), 0,
-        ::g::Uno::Double_typeof(), offsetof(::g::Fuse::Triggers::Actions::TimelineAction, _Progress), 0,
-        ::g::Fuse::Triggers::Timeline_typeof(), offsetof(::g::Fuse::Triggers::Actions::TimelineAction, _Target), 0);
+        ::g::Fuse::Triggers::Actions::TimelineActionHow_typeof(), offsetof(TimelineAction, _How), 0,
+        ::g::Uno::Double_typeof(), offsetof(TimelineAction, _Progress), 0,
+        ::g::Fuse::Triggers::Timeline_typeof(), offsetof(TimelineAction, _Target), 0);
 }
 
 ::g::Fuse::Triggers::Actions::TriggerAction_type* TimelineAction_typeof()
@@ -2387,6 +2435,7 @@ static void TimelineAction_build(uType* type)
     uTypeOptions options;
     options.BaseDefinition = ::g::Fuse::Triggers::Actions::TriggerAction_typeof();
     options.FieldCount = 11;
+    options.DependencyCount = 1;
     options.ObjectSize = sizeof(TimelineAction);
     options.TypeSize = sizeof(::g::Fuse::Triggers::Actions::TriggerAction_type);
     type = (::g::Fuse::Triggers::Actions::TriggerAction_type*)uClassType::New("Fuse.Triggers.Actions.TimelineAction", options);
@@ -2396,38 +2445,38 @@ static void TimelineAction_build(uType* type)
     return type;
 }
 
-// public generated TimelineAction() :811
+// public generated TimelineAction() :32
 void TimelineAction__ctor_2_fn(TimelineAction* __this)
 {
     __this->ctor_2();
 }
 
-// public generated Fuse.Triggers.Actions.TimelineActionHow get_How() :815
+// public generated Fuse.Triggers.Actions.TimelineActionHow get_How() :36
 void TimelineAction__get_How_fn(TimelineAction* __this, int* __retval)
 {
     *__retval = __this->How();
 }
 
-// public generated void set_How(Fuse.Triggers.Actions.TimelineActionHow value) :815
+// public generated void set_How(Fuse.Triggers.Actions.TimelineActionHow value) :36
 void TimelineAction__set_How_fn(TimelineAction* __this, int* value)
 {
     __this->How(*value);
 }
 
-// public generated TimelineAction New() :811
+// public generated TimelineAction New() :32
 void TimelineAction__New2_fn(TimelineAction** __retval)
 {
     *__retval = TimelineAction::New2();
 }
 
-// protected override sealed void Perform(Fuse.Node target) :822
+// protected override sealed void Perform(Fuse.Node target) :43
 void TimelineAction__Perform_fn(TimelineAction* __this, ::g::Fuse::Node* target)
 {
     ::g::Fuse::Triggers::Timeline* t = __this->Target();
 
     if (t == NULL)
     {
-        ::g::Fuse::Diagnostics::UserError(::STRINGS[8/*"`TimelineAc...*/], __this, ::STRINGS[9/*"/usr/local/...*/], 827, ::STRINGS[4/*"Perform"*/], NULL);
+        ::g::Fuse::Diagnostics::UserError(::STRINGS[12/*"`TimelineAc...*/], __this, ::STRINGS[13/*"C:\\Users\\...*/], 48, ::STRINGS[2/*"Perform"*/], NULL);
         return;
     }
 
@@ -2477,73 +2526,73 @@ void TimelineAction__Perform_fn(TimelineAction* __this, ::g::Fuse::Node* target)
     }
 }
 
-// public generated double get_Progress() :820
+// public generated double get_Progress() :41
 void TimelineAction__get_Progress_fn(TimelineAction* __this, double* __retval)
 {
     *__retval = __this->Progress();
 }
 
-// public generated void set_Progress(double value) :820
+// public generated void set_Progress(double value) :41
 void TimelineAction__set_Progress_fn(TimelineAction* __this, double* value)
 {
     __this->Progress(*value);
 }
 
-// public generated Fuse.Triggers.Timeline get_Target() :813
+// public generated Fuse.Triggers.Timeline get_Target() :34
 void TimelineAction__get_Target_fn(TimelineAction* __this, ::g::Fuse::Triggers::Timeline** __retval)
 {
     *__retval = __this->Target();
 }
 
-// public generated void set_Target(Fuse.Triggers.Timeline value) :813
+// public generated void set_Target(Fuse.Triggers.Timeline value) :34
 void TimelineAction__set_Target_fn(TimelineAction* __this, ::g::Fuse::Triggers::Timeline* value)
 {
     __this->Target(value);
 }
 
-// public generated TimelineAction() [instance] :811
+// public generated TimelineAction() [instance] :32
 void TimelineAction::ctor_2()
 {
     ctor_1();
 }
 
-// public generated Fuse.Triggers.Actions.TimelineActionHow get_How() [instance] :815
+// public generated Fuse.Triggers.Actions.TimelineActionHow get_How() [instance] :36
 int TimelineAction::How()
 {
     return _How;
 }
 
-// public generated void set_How(Fuse.Triggers.Actions.TimelineActionHow value) [instance] :815
+// public generated void set_How(Fuse.Triggers.Actions.TimelineActionHow value) [instance] :36
 void TimelineAction::How(int value)
 {
     _How = value;
 }
 
-// public generated double get_Progress() [instance] :820
+// public generated double get_Progress() [instance] :41
 double TimelineAction::Progress()
 {
     return _Progress;
 }
 
-// public generated void set_Progress(double value) [instance] :820
+// public generated void set_Progress(double value) [instance] :41
 void TimelineAction::Progress(double value)
 {
     _Progress = value;
 }
 
-// public generated Fuse.Triggers.Timeline get_Target() [instance] :813
+// public generated Fuse.Triggers.Timeline get_Target() [instance] :34
 ::g::Fuse::Triggers::Timeline* TimelineAction::Target()
 {
     return _Target;
 }
 
-// public generated void set_Target(Fuse.Triggers.Timeline value) [instance] :813
+// public generated void set_Target(Fuse.Triggers.Timeline value) [instance] :34
 void TimelineAction::Target(::g::Fuse::Triggers::Timeline* value)
 {
     _Target = value;
 }
 
-// public generated TimelineAction New() [static] :811
+// public generated TimelineAction New() [static] :32
 TimelineAction* TimelineAction::New2()
 {
     TimelineAction* obj1 = (TimelineAction*)uNew(TimelineAction_typeof());
@@ -2552,10 +2601,10 @@ TimelineAction* TimelineAction::New2()
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Triggers/1.2.1/actions/$.uno
-// ---------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Triggers\1.3.0-rc2\Actions\TimelineAction.uno
+// ----------------------------------------------------------------------------------------------
 
-// public enum TimelineActionHow :784
+// public enum TimelineActionHow :5
 uEnumType* TimelineActionHow_typeof()
 {
     static uSStrong<uEnumType*> type;
@@ -2575,16 +2624,22 @@ uEnumType* TimelineActionHow_typeof()
     return type;
 }
 
-// /usr/local/share/uno/Packages/Fuse.Triggers/1.2.1/actions/$.uno
-// ---------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Triggers\1.3.0-rc2\Actions\Toggle.uno
+// --------------------------------------------------------------------------------------
 
-// public sealed class Toggle :894
+// public sealed class Toggle :29
 // {
 static void Toggle_build(uType* type)
 {
-    ::TYPES[19] = ::g::Fuse::Triggers::Actions::IToggleable_typeof();
+    ::STRINGS[14] = uString::Const("Could not find `IToggleable` target");
+    ::STRINGS[15] = uString::Const("C:\\Users\\q\\AppData\\Local\\Fusetools\\Packages\\Fuse.Triggers\\1.3.0-rc2\\Actions\\Toggle.uno");
+    ::STRINGS[2] = uString::Const("Perform");
+    ::TYPES[26] = ::g::Fuse::Node_typeof()->MakeMethod(1/*FindByType<Fuse.Triggers.Actions.IToggleable>*/, ::g::Fuse::Triggers::Actions::IToggleable_typeof(), NULL);
+    ::TYPES[27] = ::g::Fuse::Triggers::Actions::IToggleable_typeof();
+    type->SetDependencies(
+        ::g::Fuse::Diagnostics_typeof());
     type->SetFields(8,
-        ::TYPES[19/*Fuse.Triggers.Actions.IToggleable*/], offsetof(::g::Fuse::Triggers::Actions::Toggle, _Target), 0);
+        ::TYPES[27/*Fuse.Triggers.Actions.IToggleable*/], offsetof(Toggle, _Target), 0);
 }
 
 ::g::Fuse::Triggers::Actions::TriggerAction_type* Toggle_typeof()
@@ -2595,6 +2650,7 @@ static void Toggle_build(uType* type)
     uTypeOptions options;
     options.BaseDefinition = ::g::Fuse::Triggers::Actions::TriggerAction_typeof();
     options.FieldCount = 9;
+    options.DependencyCount = 1;
     options.ObjectSize = sizeof(Toggle);
     options.TypeSize = sizeof(::g::Fuse::Triggers::Actions::TriggerAction_type);
     type = (::g::Fuse::Triggers::Actions::TriggerAction_type*)uClassType::New("Fuse.Triggers.Actions.Toggle", options);
@@ -2604,81 +2660,65 @@ static void Toggle_build(uType* type)
     return type;
 }
 
-// public generated Toggle() :894
+// public generated Toggle() :29
 void Toggle__ctor_2_fn(Toggle* __this)
 {
     __this->ctor_2();
 }
 
-// private Fuse.Triggers.Actions.IToggleable FindTarget(Fuse.Node n) :904
-void Toggle__FindTarget_fn(Toggle* __this, ::g::Fuse::Node* n, uObject** __retval)
-{
-    *__retval = __this->FindTarget(n);
-}
-
-// public generated Toggle New() :894
+// public generated Toggle New() :29
 void Toggle__New2_fn(Toggle** __retval)
 {
     *__retval = Toggle::New2();
 }
 
-// protected override sealed void Perform(Fuse.Node target) :898
+// protected override sealed void Perform(Fuse.Node target) :36
 void Toggle__Perform_fn(Toggle* __this, ::g::Fuse::Node* target)
 {
-    uObject* ind1 = __this->Target();
-    uObject* t = (ind1 != NULL) ? ind1 : (uObject*)__this->FindTarget(target);
+    uObject* ind1;
+    ind1 = __this->Target();
+    uObject* t = (ind1 != NULL) ? ind1 : (uObject*)uPtr(target)->FindByType(::TYPES[26/*Fuse.Node.FindByType<Fuse.Triggers.Actions.IToggleable>*/]);
 
-    if (t != NULL)
-        ::g::Fuse::Triggers::Actions::IToggleable::Toggle(uInterface(uPtr(t), ::TYPES[19/*Fuse.Triggers.Actions.IToggleable*/]));
+    if (t == NULL)
+    {
+        ::g::Fuse::Diagnostics::UserError(::STRINGS[14/*"Could not f...*/], __this, ::STRINGS[15/*"C:\\Users\\...*/], 41, ::STRINGS[2/*"Perform"*/], NULL);
+        return;
+    }
+
+    ::g::Fuse::Triggers::Actions::IToggleable::Toggle(uInterface(uPtr(t), ::TYPES[27/*Fuse.Triggers.Actions.IToggleable*/]));
 }
 
-// public generated Fuse.Triggers.Actions.IToggleable get_Target() :896
+// public generated Fuse.Triggers.Actions.IToggleable get_Target() :34
 void Toggle__get_Target_fn(Toggle* __this, uObject** __retval)
 {
     *__retval = __this->Target();
 }
 
-// public generated void set_Target(Fuse.Triggers.Actions.IToggleable value) :896
+// public generated void set_Target(Fuse.Triggers.Actions.IToggleable value) :34
 void Toggle__set_Target_fn(Toggle* __this, uObject* value)
 {
     __this->Target(value);
 }
 
-// public generated Toggle() [instance] :894
+// public generated Toggle() [instance] :29
 void Toggle::ctor_2()
 {
     ctor_1();
 }
 
-// private Fuse.Triggers.Actions.IToggleable FindTarget(Fuse.Node n) [instance] :904
-uObject* Toggle::FindTarget(::g::Fuse::Node* n)
-{
-    while (n != NULL)
-    {
-        uObject* iv = uAs<uObject*>(n, ::TYPES[19/*Fuse.Triggers.Actions.IToggleable*/]);
-
-        if (iv != NULL)
-            return iv;
-
-        n = uPtr(n)->Parent();
-    }
-
-    return NULL;
-}
-
-// public generated Fuse.Triggers.Actions.IToggleable get_Target() [instance] :896
+// public generated Fuse.Triggers.Actions.IToggleable get_Target() [instance] :34
 uObject* Toggle::Target()
 {
     return _Target;
 }
 
-// public generated void set_Target(Fuse.Triggers.Actions.IToggleable value) [instance] :896
+// public generated void set_Target(Fuse.Triggers.Actions.IToggleable value) [instance] :34
 void Toggle::Target(uObject* value)
 {
     _Target = value;
 }
 
-// public generated Toggle New() [static] :894
+// public generated Toggle New() [static] :29
 Toggle* Toggle::New2()
 {
     Toggle* obj2 = (Toggle*)uNew(Toggle_typeof());
@@ -2687,18 +2727,26 @@ Toggle* Toggle::New2()
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Elements/1.2.1/triggers/$.uno
-// ----------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Elements\1.3.0-rc2\Triggers\LayoutAnimation.uno
+// ------------------------------------------------------------------------------------------------
 
-// public sealed class TransitionLayout :344
+// public sealed class TransitionLayout :342
 // {
 static void TransitionLayout_build(uType* type)
 {
+    ::STRINGS[16] = uString::Const("Missing `From` or cannot find `Element` target");
+    ::STRINGS[17] = uString::Const("C:\\Users\\q\\AppData\\Local\\Fusetools\\Packages\\Fuse.Elements\\1.3.0-rc2\\Triggers\\LayoutAnimation.uno");
+    ::STRINGS[2] = uString::Const("Perform");
     ::TYPES[0] = ::g::Fuse::Elements::Element_typeof();
-    ::TYPES[17] = ::g::Uno::Action_typeof();
+    ::TYPES[1] = ::g::Fuse::Node_typeof()->MakeMethod(1/*FindByType<Fuse.Visual>*/, ::g::Fuse::Visual_typeof(), NULL);
+    ::TYPES[23] = ::g::Uno::Action_typeof();
+    type->SetDependencies(
+        ::g::Fuse::Diagnostics_typeof(),
+        ::g::Fuse::Triggers::LayoutTransition_typeof());
     type->SetFields(8,
-        ::TYPES[0/*Fuse.Elements.Element*/], offsetof(::g::Fuse::Triggers::Actions::TransitionLayout, _perform), 0,
-        ::TYPES[0/*Fuse.Elements.Element*/], offsetof(::g::Fuse::Triggers::Actions::TransitionLayout, _From), 0);
+        ::TYPES[0/*Fuse.Elements.Element*/], offsetof(TransitionLayout, _perform), 0,
+        ::TYPES[0/*Fuse.Elements.Element*/], offsetof(TransitionLayout, _From), 0,
+        ::TYPES[0/*Fuse.Elements.Element*/], offsetof(TransitionLayout, _Target), 0);
 }
 
 ::g::Fuse::Triggers::Actions::TriggerAction_type* TransitionLayout_typeof()
@@ -2708,7 +2756,8 @@ static void TransitionLayout_build(uType* type)
 
     uTypeOptions options;
     options.BaseDefinition = ::g::Fuse::Triggers::Actions::TriggerAction_typeof();
-    options.FieldCount = 10;
+    options.FieldCount = 11;
+    options.DependencyCount = 2;
     options.ObjectSize = sizeof(TransitionLayout);
     options.TypeSize = sizeof(::g::Fuse::Triggers::Actions::TriggerAction_type);
     type = (::g::Fuse::Triggers::Actions::TriggerAction_type*)uClassType::New("Fuse.Triggers.Actions.TransitionLayout", options);
@@ -2717,52 +2766,81 @@ static void TransitionLayout_build(uType* type)
     return type;
 }
 
-// public generated Fuse.Elements.Element get_From() :346
+// public generated Fuse.Elements.Element get_From() :347
 void TransitionLayout__get_From_fn(TransitionLayout* __this, ::g::Fuse::Elements::Element** __retval)
 {
     *__retval = __this->From();
 }
 
-// public generated void set_From(Fuse.Elements.Element value) :346
+// public generated void set_From(Fuse.Elements.Element value) :347
 void TransitionLayout__set_From_fn(TransitionLayout* __this, ::g::Fuse::Elements::Element* value)
 {
     __this->From(value);
 }
 
-// protected override sealed void Perform(Fuse.Node target) :347
+// protected override sealed void Perform(Fuse.Node target) :349
 void TransitionLayout__Perform_fn(TransitionLayout* __this, ::g::Fuse::Node* target)
 {
-    __this->_perform = uAs< ::g::Fuse::Elements::Element*>(target, ::TYPES[0/*Fuse.Elements.Element*/]);
+    ::g::Fuse::Elements::Element* ind1;
+    __this->_perform = (ind1 = __this->Target(), ((ind1 != NULL) ? ind1 : uAs< ::g::Fuse::Elements::Element*>((::g::Fuse::Visual*)uPtr(target)->FindByType(::TYPES[1/*Fuse.Node.FindByType<Fuse.Visual>*/]), ::TYPES[0/*Fuse.Elements.Element*/])));
 
     if ((__this->_perform == NULL) || (__this->From() == NULL))
+    {
+        ::g::Fuse::Diagnostics::UserError(::STRINGS[16/*"Missing `Fr...*/], __this, ::STRINGS[17/*"C:\\Users\\...*/], 355, ::STRINGS[2/*"Perform"*/], NULL);
         return;
+    }
 
-    ::g::Fuse::UpdateManager::AddDeferredAction(uDelegate::New(::TYPES[17/*Uno.Action*/], (void*)TransitionLayout__Transition_fn, __this), 1, ::g::Fuse::LayoutPriority::Placement());
+    ::g::Fuse::UpdateManager::AddDeferredAction2(uDelegate::New(::TYPES[23/*Uno.Action*/], (void*)TransitionLayout__Transition_fn, __this), 1, 3);
 }
 
-// private void Transition() :358
+// public generated Fuse.Elements.Element get_Target() :345
+void TransitionLayout__get_Target_fn(TransitionLayout* __this, ::g::Fuse::Elements::Element** __retval)
+{
+    *__retval = __this->Target();
+}
+
+// public generated void set_Target(Fuse.Elements.Element value) :345
+void TransitionLayout__set_Target_fn(TransitionLayout* __this, ::g::Fuse::Elements::Element* value)
+{
+    __this->Target(value);
+}
+
+// private void Transition() :364
 void TransitionLayout__Transition_fn(TransitionLayout* __this)
 {
     __this->Transition();
 }
 
-// public generated Fuse.Elements.Element get_From() [instance] :346
+// public generated Fuse.Elements.Element get_From() [instance] :347
 ::g::Fuse::Elements::Element* TransitionLayout::From()
 {
     return _From;
 }
 
-// public generated void set_From(Fuse.Elements.Element value) [instance] :346
+// public generated void set_From(Fuse.Elements.Element value) [instance] :347
 void TransitionLayout::From(::g::Fuse::Elements::Element* value)
 {
     _From = value;
 }
 
-// private void Transition() [instance] :358
+// public generated Fuse.Elements.Element get_Target() [instance] :345
+::g::Fuse::Elements::Element* TransitionLayout::Target()
+{
+    return _Target;
+}
+
+// public generated void set_Target(Fuse.Elements.Element value) [instance] :345
+void TransitionLayout::Target(::g::Fuse::Elements::Element* value)
+{
+    _Target = value;
+}
+
+// private void Transition() [instance] :364
 void TransitionLayout::Transition()
 {
-    ::g::Uno::Float4x4 ind1 = uPtr(From())->LocalTransform();
-    ::g::Uno::Float2 oldPosition = ::g::Uno::Float2__New2(ind1.M41, ind1.M42);
+    ::g::Uno::Float4x4 ind2;
+    ind2 = uPtr(From())->LocalTransform();
+    ::g::Uno::Float2 oldPosition = ::g::Uno::Float2__New2(ind2.M41, ind2.M42);
     ::g::Uno::Float2 oldSize = uPtr(From())->ActualSize();
     ::g::Uno::Float4x4 m = ::g::Uno::Matrix::Mul8(uPtr(From())->WorldTransform(), uPtr(uPtr(_perform)->Parent())->WorldTransformInverse());
     ::g::Uno::Float3 worldChange = ::g::Uno::Float3__op_Subtraction2(::g::Uno::Float3__New2(m.M41, m.M42, m.M43), ::g::Uno::Float3__New4(uPtr(_perform)->IntendedPosition(), 0.0f));
@@ -2773,16 +2851,21 @@ void TransitionLayout::Transition()
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Triggers/1.2.1/actions/$.uno
-// ---------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Triggers\1.3.0-rc2\Actions\StateTransition.uno
+// -----------------------------------------------------------------------------------------------
 
-// public sealed class TransitionState :759
+// public sealed class TransitionState :13
 // {
 static void TransitionState_build(uType* type)
 {
+    ::STRINGS[18] = uString::Const("Missing `Target`");
+    ::STRINGS[19] = uString::Const("C:\\Users\\q\\AppData\\Local\\Fusetools\\Packages\\Fuse.Triggers\\1.3.0-rc2\\Actions\\StateTransition.uno");
+    ::STRINGS[2] = uString::Const("Perform");
+    type->SetDependencies(
+        ::g::Fuse::Diagnostics_typeof());
     type->SetFields(8,
-        ::g::Fuse::Triggers::StateGroup_typeof(), offsetof(::g::Fuse::Triggers::Actions::TransitionState, _Target), 0,
-        ::g::Fuse::Triggers::Actions::TransitionStateType_typeof(), offsetof(::g::Fuse::Triggers::Actions::TransitionState, _Type), 0);
+        ::g::Fuse::Triggers::StateGroup_typeof(), offsetof(TransitionState, _Target), 0,
+        ::g::Fuse::Triggers::Actions::TransitionStateType_typeof(), offsetof(TransitionState, _Type), 0);
 }
 
 ::g::Fuse::Triggers::Actions::TriggerAction_type* TransitionState_typeof()
@@ -2793,6 +2876,7 @@ static void TransitionState_build(uType* type)
     uTypeOptions options;
     options.BaseDefinition = ::g::Fuse::Triggers::Actions::TriggerAction_typeof();
     options.FieldCount = 10;
+    options.DependencyCount = 1;
     options.ObjectSize = sizeof(TransitionState);
     options.TypeSize = sizeof(::g::Fuse::Triggers::Actions::TriggerAction_type);
     type = (::g::Fuse::Triggers::Actions::TriggerAction_type*)uClassType::New("Fuse.Triggers.Actions.TransitionState", options);
@@ -2801,10 +2885,16 @@ static void TransitionState_build(uType* type)
     return type;
 }
 
-// protected override sealed void Perform(Fuse.Node target) :765
+// protected override sealed void Perform(Fuse.Node target) :19
 void TransitionState__Perform_fn(TransitionState* __this, ::g::Fuse::Node* target)
 {
     ::g::Fuse::Triggers::StateGroup* t = __this->Target();
+
+    if (t == NULL)
+    {
+        ::g::Fuse::Diagnostics::UserError(::STRINGS[18/*"Missing `Ta...*/], __this, ::STRINGS[19/*"C:\\Users\\...*/], 24, ::STRINGS[2/*"Perform"*/], NULL);
+        return;
+    }
 
     switch (__this->Type())
     {
@@ -2816,59 +2906,59 @@ void TransitionState__Perform_fn(TransitionState* __this, ::g::Fuse::Node* targe
     }
 }
 
-// public generated Fuse.Triggers.StateGroup get_Target() :761
+// public generated Fuse.Triggers.StateGroup get_Target() :15
 void TransitionState__get_Target_fn(TransitionState* __this, ::g::Fuse::Triggers::StateGroup** __retval)
 {
     *__retval = __this->Target();
 }
 
-// public generated void set_Target(Fuse.Triggers.StateGroup value) :761
+// public generated void set_Target(Fuse.Triggers.StateGroup value) :15
 void TransitionState__set_Target_fn(TransitionState* __this, ::g::Fuse::Triggers::StateGroup* value)
 {
     __this->Target(value);
 }
 
-// public generated Fuse.Triggers.Actions.TransitionStateType get_Type() :763
+// public generated Fuse.Triggers.Actions.TransitionStateType get_Type() :17
 void TransitionState__get_Type_fn(TransitionState* __this, int* __retval)
 {
     *__retval = __this->Type();
 }
 
-// public generated void set_Type(Fuse.Triggers.Actions.TransitionStateType value) :763
+// public generated void set_Type(Fuse.Triggers.Actions.TransitionStateType value) :17
 void TransitionState__set_Type_fn(TransitionState* __this, int* value)
 {
     __this->Type(*value);
 }
 
-// public generated Fuse.Triggers.StateGroup get_Target() [instance] :761
+// public generated Fuse.Triggers.StateGroup get_Target() [instance] :15
 ::g::Fuse::Triggers::StateGroup* TransitionState::Target()
 {
     return _Target;
 }
 
-// public generated void set_Target(Fuse.Triggers.StateGroup value) [instance] :761
+// public generated void set_Target(Fuse.Triggers.StateGroup value) [instance] :15
 void TransitionState::Target(::g::Fuse::Triggers::StateGroup* value)
 {
     _Target = value;
 }
 
-// public generated Fuse.Triggers.Actions.TransitionStateType get_Type() [instance] :763
+// public generated Fuse.Triggers.Actions.TransitionStateType get_Type() [instance] :17
 int TransitionState::Type()
 {
     return _Type;
 }
 
-// public generated void set_Type(Fuse.Triggers.Actions.TransitionStateType value) [instance] :763
+// public generated void set_Type(Fuse.Triggers.Actions.TransitionStateType value) [instance] :17
 void TransitionState::Type(int value)
 {
     _Type = value;
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Triggers/1.2.1/actions/$.uno
-// ---------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Triggers\1.3.0-rc2\Actions\StateTransition.uno
+// -----------------------------------------------------------------------------------------------
 
-// public enum TransitionStateType :751
+// public enum TransitionStateType :5
 uEnumType* TransitionStateType_typeof()
 {
     static uSStrong<uEnumType*> type;
@@ -2880,21 +2970,21 @@ uEnumType* TransitionStateType_typeof()
     return type;
 }
 
-// /usr/local/share/uno/Packages/Fuse.Triggers/1.2.1/actions/$.uno
-// ---------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Triggers\1.3.0-rc2\Actions\TriggerAction.uno
+// ---------------------------------------------------------------------------------------------
 
-// public abstract class TriggerAction :948
+// public abstract class TriggerAction :30
 // {
 static void TriggerAction_build(uType* type)
 {
     type->SetFields(1,
-        ::g::Uno::Float_typeof(), offsetof(::g::Fuse::Triggers::Actions::TriggerAction, _delay), 0,
-        ::g::Uno::Bool_typeof(), offsetof(::g::Fuse::Triggers::Actions::TriggerAction, _hasDelay), 0,
-        ::g::Uno::Bool_typeof(), offsetof(::g::Fuse::Triggers::Actions::TriggerAction, _hasProgress), 0,
-        ::g::Uno::Bool_typeof(), offsetof(::g::Fuse::Triggers::Actions::TriggerAction, _isActive), 0,
-        ::g::Uno::Float_typeof(), offsetof(::g::Fuse::Triggers::Actions::TriggerAction, _progress), 0,
-        ::g::Fuse::Triggers::Actions::TriggerWhen_typeof(), offsetof(::g::Fuse::Triggers::Actions::TriggerAction, _when), 0,
-        ::g::Fuse::Node_typeof(), offsetof(::g::Fuse::Triggers::Actions::TriggerAction, _TargetNode), 0);
+        ::g::Uno::Float_typeof(), offsetof(TriggerAction, _delay), 0,
+        ::g::Uno::Bool_typeof(), offsetof(TriggerAction, _hasDelay), 0,
+        ::g::Uno::Bool_typeof(), offsetof(TriggerAction, _hasProgress), 0,
+        ::g::Uno::Bool_typeof(), offsetof(TriggerAction, _isActive), 0,
+        ::g::Uno::Float_typeof(), offsetof(TriggerAction, _progress), 0,
+        ::g::Fuse::Triggers::Actions::TriggerWhen_typeof(), offsetof(TriggerAction, _when), 0,
+        ::g::Fuse::Node_typeof(), offsetof(TriggerAction, _TargetNode), 0);
 }
 
 TriggerAction_type* TriggerAction_typeof()
@@ -2909,145 +2999,157 @@ TriggerAction_type* TriggerAction_typeof()
     options.TypeSize = sizeof(TriggerAction_type);
     type = (TriggerAction_type*)uClassType::New("Fuse.Triggers.Actions.TriggerAction", options);
     type->fp_build_ = TriggerAction_build;
+    type->fp_OnUnrooted = TriggerAction__OnUnrooted_fn;
     return type;
 }
 
-// protected generated TriggerAction() :948
+// protected generated TriggerAction() :30
 void TriggerAction__ctor_1_fn(TriggerAction* __this)
 {
     __this->ctor_1();
 }
 
-// public float get_AtProgress() :983
+// public float get_AtProgress() :70
 void TriggerAction__get_AtProgress_fn(TriggerAction* __this, float* __retval)
 {
     *__retval = __this->AtProgress();
 }
 
-// public void set_AtProgress(float value) :984
+// public void set_AtProgress(float value) :71
 void TriggerAction__set_AtProgress_fn(TriggerAction* __this, float* value)
 {
     __this->AtProgress(*value);
 }
 
-// public float get_Delay() :993
+// public float get_Delay() :80
 void TriggerAction__get_Delay_fn(TriggerAction* __this, float* __retval)
 {
     *__retval = __this->Delay();
 }
 
-// public void set_Delay(float value) :994
+// public void set_Delay(float value) :81
 void TriggerAction__set_Delay_fn(TriggerAction* __this, float* value)
 {
     __this->Delay(*value);
 }
 
-// public bool get_IsActive() :1009
+// public bool get_IsActive() :96
 void TriggerAction__get_IsActive_fn(TriggerAction* __this, bool* __retval)
 {
     *__retval = __this->IsActive();
 }
 
-// public void set_IsActive(bool value) :1010
+// public void set_IsActive(bool value) :97
 void TriggerAction__set_IsActive_fn(TriggerAction* __this, bool* value)
 {
     __this->IsActive(*value);
 }
 
-// public bool get_IsProgressTriggered() :1003
+// public bool get_IsProgressTriggered() :90
 void TriggerAction__get_IsProgressTriggered_fn(TriggerAction* __this, bool* __retval)
 {
     *__retval = __this->IsProgressTriggered();
 }
 
-// public void PerformFromNode(Fuse.Node target) :1022
+// protected virtual void OnUnrooted() :130
+void TriggerAction__OnUnrooted_fn(TriggerAction* __this)
+{
+}
+
+// public void PerformFromNode(Fuse.Node target) :109
 void TriggerAction__PerformFromNode_fn(TriggerAction* __this, ::g::Fuse::Node* target)
 {
     __this->PerformFromNode(target);
 }
 
-// public float ProgressWhen(float totalDuration) :1013
+// public float ProgressWhen(float totalDuration) :100
 void TriggerAction__ProgressWhen_fn(TriggerAction* __this, float* totalDuration, float* __retval)
 {
     *__retval = __this->ProgressWhen(*totalDuration);
 }
 
-// public generated Fuse.Node get_TargetNode() :969
+// public generated Fuse.Node get_TargetNode() :56
 void TriggerAction__get_TargetNode_fn(TriggerAction* __this, ::g::Fuse::Node** __retval)
 {
     *__retval = __this->TargetNode();
 }
 
-// public generated void set_TargetNode(Fuse.Node value) :969
+// public generated void set_TargetNode(Fuse.Node value) :56
 void TriggerAction__set_TargetNode_fn(TriggerAction* __this, ::g::Fuse::Node* value)
 {
     __this->TargetNode(value);
 }
 
-// public Fuse.Triggers.Actions.TriggerWhen get_When() :953
+// public void Unroot() :125
+void TriggerAction__Unroot_fn(TriggerAction* __this)
+{
+    __this->Unroot();
+}
+
+// public Fuse.Triggers.Actions.TriggerWhen get_When() :35
 void TriggerAction__get_When_fn(TriggerAction* __this, int* __retval)
 {
     *__retval = __this->When();
 }
 
-// public void set_When(Fuse.Triggers.Actions.TriggerWhen value) :954
+// public void set_When(Fuse.Triggers.Actions.TriggerWhen value) :36
 void TriggerAction__set_When_fn(TriggerAction* __this, int* value)
 {
     __this->When(*value);
 }
 
-// protected generated TriggerAction() [instance] :948
+// protected generated TriggerAction() [instance] :30
 void TriggerAction::ctor_1()
 {
     _isActive = true;
     ctor_();
 }
 
-// public float get_AtProgress() [instance] :983
+// public float get_AtProgress() [instance] :70
 float TriggerAction::AtProgress()
 {
     return _progress;
 }
 
-// public void set_AtProgress(float value) [instance] :984
+// public void set_AtProgress(float value) [instance] :71
 void TriggerAction::AtProgress(float value)
 {
     _hasProgress = true;
     _progress = value;
 }
 
-// public float get_Delay() [instance] :993
+// public float get_Delay() [instance] :80
 float TriggerAction::Delay()
 {
     return _delay;
 }
 
-// public void set_Delay(float value) [instance] :994
+// public void set_Delay(float value) [instance] :81
 void TriggerAction::Delay(float value)
 {
     _hasDelay = true;
     _delay = value;
 }
 
-// public bool get_IsActive() [instance] :1009
+// public bool get_IsActive() [instance] :96
 bool TriggerAction::IsActive()
 {
     return _isActive;
 }
 
-// public void set_IsActive(bool value) [instance] :1010
+// public void set_IsActive(bool value) [instance] :97
 void TriggerAction::IsActive(bool value)
 {
     _isActive = value;
 }
 
-// public bool get_IsProgressTriggered() [instance] :1003
+// public bool get_IsProgressTriggered() [instance] :90
 bool TriggerAction::IsProgressTriggered()
 {
     return _hasProgress || _hasDelay;
 }
 
-// public void PerformFromNode(Fuse.Node target) [instance] :1022
+// public void PerformFromNode(Fuse.Node target) [instance] :109
 void TriggerAction::PerformFromNode(::g::Fuse::Node* target)
 {
     ::g::Fuse::Node* ind1;
@@ -3056,7 +3158,7 @@ void TriggerAction::PerformFromNode(::g::Fuse::Node* target)
         Perform((ind1 = TargetNode(), (ind1 != NULL) ? ind1 : target));
 }
 
-// public float ProgressWhen(float totalDuration) [instance] :1013
+// public float ProgressWhen(float totalDuration) [instance] :100
 float TriggerAction::ProgressWhen(float totalDuration)
 {
     if (_hasProgress)
@@ -3068,35 +3170,41 @@ float TriggerAction::ProgressWhen(float totalDuration)
     return 0.0f;
 }
 
-// public generated Fuse.Node get_TargetNode() [instance] :969
+// public generated Fuse.Node get_TargetNode() [instance] :56
 ::g::Fuse::Node* TriggerAction::TargetNode()
 {
     return _TargetNode;
 }
 
-// public generated void set_TargetNode(Fuse.Node value) [instance] :969
+// public generated void set_TargetNode(Fuse.Node value) [instance] :56
 void TriggerAction::TargetNode(::g::Fuse::Node* value)
 {
     _TargetNode = value;
 }
 
-// public Fuse.Triggers.Actions.TriggerWhen get_When() [instance] :953
+// public void Unroot() [instance] :125
+void TriggerAction::Unroot()
+{
+    OnUnrooted();
+}
+
+// public Fuse.Triggers.Actions.TriggerWhen get_When() [instance] :35
 int TriggerAction::When()
 {
     return _when;
 }
 
-// public void set_When(Fuse.Triggers.Actions.TriggerWhen value) [instance] :954
+// public void set_When(Fuse.Triggers.Actions.TriggerWhen value) [instance] :36
 void TriggerAction::When(int value)
 {
     _when = value;
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Triggers/1.2.1/actions/$.uno
-// ---------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Triggers\1.3.0-rc2\Actions\TriggerAction.uno
+// ---------------------------------------------------------------------------------------------
 
-// public enum TriggerWhen :924
+// public enum TriggerWhen :6
 uEnumType* TriggerWhen_typeof()
 {
     static uSStrong<uEnumType*> type;
@@ -3113,16 +3221,16 @@ uEnumType* TriggerWhen_typeof()
     return type;
 }
 
-// /usr/local/share/uno/Packages/Fuse.UserEvents/1.2.1/$.uno
-// ---------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.UserEvents\1.3.0-rc2\RaiseUserEvent.uno
+// ----------------------------------------------------------------------------------------
 
-// public sealed class UserEventArg :286
+// public sealed class UserEventArg :132
 // {
 static void UserEventArg_build(uType* type)
 {
     type->SetFields(1,
-        ::g::Uno::String_typeof(), offsetof(::g::Fuse::Triggers::Actions::UserEventArg, _Name), 0,
-        uObject_typeof(), offsetof(::g::Fuse::Triggers::Actions::UserEventArg, _Value), 0);
+        ::g::Uno::String_typeof(), offsetof(UserEventArg, _Name), 0,
+        uObject_typeof(), offsetof(UserEventArg, _Value), 0);
 }
 
 uType* UserEventArg_typeof()
@@ -3140,64 +3248,63 @@ uType* UserEventArg_typeof()
     return type;
 }
 
-// public generated string get_Name() :291
+// public generated string get_Name() :137
 void UserEventArg__get_Name_fn(UserEventArg* __this, uString** __retval)
 {
     *__retval = __this->Name();
 }
 
-// private generated void set_Name(string value) :291
+// private generated void set_Name(string value) :137
 void UserEventArg__set_Name_fn(UserEventArg* __this, uString* value)
 {
     __this->Name(value);
 }
 
-// public generated object get_Value() :302
+// public generated object get_Value() :148
 void UserEventArg__get_Value_fn(UserEventArg* __this, uObject** __retval)
 {
     *__retval = __this->Value();
 }
 
-// public generated void set_Value(object value) :302
+// public generated void set_Value(object value) :148
 void UserEventArg__set_Value_fn(UserEventArg* __this, uObject* value)
 {
     __this->Value(value);
 }
 
-// public generated string get_Name() [instance] :291
+// public generated string get_Name() [instance] :137
 uString* UserEventArg::Name()
 {
     return _Name;
 }
 
-// private generated void set_Name(string value) [instance] :291
+// private generated void set_Name(string value) [instance] :137
 void UserEventArg::Name(uString* value)
 {
     _Name = value;
 }
 
-// public generated object get_Value() [instance] :302
+// public generated object get_Value() [instance] :148
 uObject* UserEventArg::Value()
 {
     return _Value;
 }
 
-// public generated void set_Value(object value) [instance] :302
+// public generated void set_Value(object value) [instance] :148
 void UserEventArg::Value(uObject* value)
 {
     _Value = value;
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Controls.WebView/1.2.1/$.uno
-// ---------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Controls.WebView\1.3.0-rc2\WebViewNavActions.uno
+// -------------------------------------------------------------------------------------------------
 
-// public abstract class WebViewNavAction :676
+// public abstract class WebViewNavAction :9
 // {
 static void WebViewNavAction_build(uType* type)
 {
-    ::TYPES[1] = ::g::Fuse::Visual_typeof();
-    ::TYPES[20] = ::TYPES[1/*Fuse.Visual*/]->MakeMethod(2/*FindByType<Fuse.Controls.WebView>*/, ::g::Fuse::Controls::WebView_typeof(), NULL);
+    ::TYPES[28] = ::g::Fuse::Node_typeof()->MakeMethod(1/*FindByType<Fuse.Controls.WebView>*/, ::g::Fuse::Controls::WebView_typeof(), NULL);
     type->SetFields(8);
 }
 
@@ -3217,15 +3324,10 @@ WebViewNavAction_type* WebViewNavAction_typeof()
     return type;
 }
 
-// protected override sealed void Perform(Fuse.Node target) :680
+// protected override sealed void Perform(Fuse.Node target) :13
 void WebViewNavAction__Perform_fn(WebViewNavAction* __this, ::g::Fuse::Node* target)
 {
-    ::g::Fuse::Visual* v = uAs< ::g::Fuse::Visual*>(target, ::TYPES[1/*Fuse.Visual*/]);
-
-    if (v == NULL)
-        return;
-
-    ::g::Fuse::Controls::WebView* webView = (::g::Fuse::Controls::WebView*)uPtr(v)->FindByType(::TYPES[20/*Fuse.Visual.FindByType<Fuse.Controls.WebView>*/]);
+    ::g::Fuse::Controls::WebView* webView = (::g::Fuse::Controls::WebView*)uPtr(target)->FindByType(::TYPES[28/*Fuse.Node.FindByType<Fuse.Controls.WebView>*/]);
 
     if (webView != NULL)
         __this->Execute(webView);

@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Controls.WebView/1.2.1/android/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Controls.WebView/1.3.0-rc2/Android/WebView.Eval.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -14,7 +14,7 @@ namespace Android{
 namespace Controls{
 namespace WebViewUtils{
 
-// public sealed extern class JSEvalRequestManager :36
+// public sealed extern class JSEvalRequestManager :34
 // {
 uType* JSEvalRequestManager_typeof();
 void JSEvalRequestManager__ctor__fn(JSEvalRequestManager* __this, ::g::Java::Object* webViewHandle);

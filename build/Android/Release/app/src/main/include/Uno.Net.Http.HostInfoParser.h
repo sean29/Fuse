@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Uno.Net.Http/1.2.2/uriparsers/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Uno.Net.Http/1.3.1/UriParsers/HostInfoParser.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -12,7 +12,7 @@ namespace Uno{
 namespace Net{
 namespace Http{
 
-// public sealed class HostInfoParser :69
+// public sealed class HostInfoParser :15
 // {
 uType* HostInfoParser_typeof();
 void HostInfoParser__ExtractPort_fn(uString* portString, int* defaultPort, int* __retval);
@@ -23,7 +23,7 @@ void HostInfoParser__Parse_fn(uString* uriString, uString* scheme, int* endIdx, 
 struct HostInfoParser : uObject
 {
     static uSStrong< ::g::Uno::Collections::List*> _invalidChars_;
-    static uSStrong< ::g::Uno::Collections::List*>& _invalidChars() { return HostInfoParser_typeof()->Init(), _invalidChars_; }
+    static uSStrong< ::g::Uno::Collections::List*>& _invalidChars() { return _invalidChars_; }
 
     static int ExtractPort(uString* portString, int defaultPort);
     static int GetDafaultPort(uString* scheme);

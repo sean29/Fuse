@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Controls.Video/1.2.1/android/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Controls.Video/1.3.0-rc2/Android/VideoPlayer.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -16,7 +16,7 @@ namespace Controls{
 namespace VideoImpl{
 namespace Android{
 
-// private sealed class VideoLoader.VideoPromise :18
+// private sealed class VideoLoader.VideoPromise :16
 // {
 ::g::Uno::Threading::Future_type* VideoLoader__VideoPromise_typeof();
 void VideoLoader__VideoPromise__ctor_7_fn(VideoLoader__VideoPromise* __this);

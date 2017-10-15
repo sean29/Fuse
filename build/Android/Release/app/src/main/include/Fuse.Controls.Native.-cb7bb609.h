@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Controls.Native/1.2.1/android/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Controls.Native/1.3.0-rc2/Android/Button.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -15,7 +15,7 @@ namespace Controls{
 namespace Native{
 namespace Android{
 
-// public sealed extern class Button :9
+// public extern class Button :7
 // {
 struct Button_type : ::g::Fuse::Controls::Native::Android::View_type
 {
@@ -23,18 +23,16 @@ struct Button_type : ::g::Fuse::Controls::Native::Android::View_type
 };
 
 Button_type* Button_typeof();
-void Button__ctor_8_fn(Button* __this);
+void Button__ctor_9_fn(Button* __this);
 void Button__Create_fn(::g::Java::Object** __retval);
-void Button__New4_fn(Button** __retval);
 void Button__SetText_fn(::g::Java::Object* handle, uString* text);
 void Button__set_Text_fn(Button* __this, uString* value);
 
 struct Button : ::g::Fuse::Controls::Native::Android::LeafView
 {
-    void ctor_8();
+    void ctor_9();
     void Text(uString* value);
     static ::g::Java::Object* Create();
-    static Button* New4();
     static void SetText(::g::Java::Object* handle, uString* text);
 };
 // }

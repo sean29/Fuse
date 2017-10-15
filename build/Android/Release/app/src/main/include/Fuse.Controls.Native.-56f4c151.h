@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Controls.Native/1.2.1/android/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Controls.Native/1.3.0-rc2/Android/ImageView.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -23,7 +23,7 @@ namespace Controls{
 namespace Native{
 namespace Android{
 
-// internal sealed extern class ImageView :396
+// internal sealed extern class ImageView :72
 // {
 struct ImageView_type : ::g::Fuse::Controls::Native::Android::View_type
 {
@@ -31,14 +31,14 @@ struct ImageView_type : ::g::Fuse::Controls::Native::Android::View_type
 };
 
 ImageView_type* ImageView_typeof();
-void ImageView__ctor_6_fn(ImageView* __this);
+void ImageView__ctor_7_fn(ImageView* __this);
 void ImageView__ClearBitmap_fn(::g::Java::Object* handle);
 void ImageView__Create_fn(::g::Java::Object* container, ::g::Java::Object** __retval);
 void ImageView__CreateContainer_fn(::g::Java::Object** __retval);
 void ImageView__Dispose_fn(ImageView* __this);
 void ImageView__set_ImageHandle_fn(ImageView* __this, ::g::Fuse::Controls::Native::ImageHandle* value);
 void ImageView__set_ImageSource_fn(ImageView* __this, ::g::Fuse::Resources::ImageSource* value);
-void ImageView__New4_fn(ImageView** __retval);
+void ImageView__New5_fn(ImageView** __retval);
 void ImageView__OnImageLoaded_fn(ImageView* __this, ::g::Fuse::Controls::Native::ImageHandle* handle);
 void ImageView__OnImageLoadFailed_fn(ImageView* __this, ::g::Uno::Exception* e);
 void ImageView__SetBitmap_fn(::g::Java::Object* handle, ::g::Java::Object* bitmapHandle);
@@ -58,7 +58,7 @@ struct ImageView : ::g::Fuse::Controls::Native::Android::View
     uStrong< ::g::Java::Object*> _imageView;
     ::g::Uno::Float4 _tintColor;
 
-    void ctor_6();
+    void ctor_7();
     void ImageHandle(::g::Fuse::Controls::Native::ImageHandle* value);
     void ImageSource(::g::Fuse::Resources::ImageSource* value);
     void OnImageLoaded(::g::Fuse::Controls::Native::ImageHandle* handle);
@@ -72,7 +72,7 @@ struct ImageView : ::g::Fuse::Controls::Native::Android::View
     static void ClearBitmap(::g::Java::Object* handle);
     static ::g::Java::Object* Create(::g::Java::Object* container);
     static ::g::Java::Object* CreateContainer();
-    static ImageView* New4();
+    static ImageView* New5();
     static void SetBitmap(::g::Java::Object* handle, ::g::Java::Object* bitmapHandle);
     static void SetImageMatrix(::g::Java::Object* handle, float x, float y, float scaleX, float scaleY);
     static void SetImageSize1(::g::Java::Object* handle, uArray* wh);

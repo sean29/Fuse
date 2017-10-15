@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/UnoCore/1.2.2/backends/cplusplus/Uno/ObjectModel.cpp.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/UnoCore/1.3.1/Backends/CPlusPlus/Uno/ObjectModel.cpp.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #include <Uno/_internal.h>
@@ -16,6 +16,7 @@
 #include <Uno.Short.h>
 #include <Uno.String.h>
 #include <Uno.UShort.h>
+#include <Uno.Array.h>
 #include <Uno.Delegate.h>
 #include <Uno.IndexOutOfRangeException.h>
 #include <Uno.InvalidCastException.h>
@@ -73,8 +74,6 @@ void uInitObjectModel()
     _ObjectTypePtr->Type = uTypeTypeClass;
     _ObjectTypePtr->FullName = "Uno.Object";
     _ObjectTypePtr->TypeSize = sizeof(uType);
-    _ObjectTypePtr->ObjectSize = sizeof(uObject);
-    _ObjectTypePtr->ValueSize = sizeof(uObject*);
     _ObjectTypePtr->fp_Equals = ::g::Uno::Object__Equals_fn;
     _ObjectTypePtr->fp_GetHashCode = ::g::Uno::Object__GetHashCode_fn;
     _ObjectTypePtr->fp_ToString = ::g::Uno::Object__ToString_fn;
@@ -84,10 +83,10 @@ void uInitObjectModel()
     _VoidTypePtr->Definition = _VoidTypePtr;
     _VoidTypePtr->FullName = "Uno.Void";
     _VoidTypePtr->Type = uTypeTypeVoid;
-    _VoidTypePtr->TypeSize = sizeof(uType);
-    _VoidTypePtr->ObjectSize = 0;
-    _VoidTypePtr->ValueSize = 0;
 
+    _ObjectTypePtr->ObjectSize = sizeof(uObject);
+    _ObjectTypePtr->ValueSize = sizeof(uObject*);
+    _ObjectTypePtr->Alignment = alignof(uObject*);
     _ObjectTypePtr->__type = ::g::Uno::Type_typeof();
     _VoidTypePtr->__type = ::g::Uno::Type_typeof();
     _ByteTypePtr = ::g::Uno::Byte_typeof();
@@ -146,6 +145,7 @@ static uType* uNewType(uint32_t type, const char* name, const uTypeOptions& opti
     result->ObjectSize = options.ObjectSize;
     result->ValueSize = options.ValueSize;
     result->TypeSize = options.TypeSize;
+    result->Alignment = options.Alignment;
 
     result->InterfaceCount = options.InterfaceCount;
     result->Interfaces = (uInterfaceInfo*)ptr;
@@ -332,13 +332,14 @@ uArrayType* uType::Array()
     options.TypeSize = sizeof(uArrayType);
     options.ObjectSize = sizeof(uArray);
     options.ValueSize = sizeof(uArray*);
-    options.BaseDefinition = _ObjectTypePtr;
+    options.Alignment = alignof(uArray*);
+    options.BaseDefinition = ::g::Uno::Array_typeof();
     uArrayType* type =
         (uArrayType*)uNewType(
             uTypeTypeArray,
             (uBase::String(FullName) + "[]").CopyPtr(), // Leak
             options);
-    type->Definition = _ObjectTypePtr;
+    type->Definition = type;
     type->ElementType = this;
 
     uRetain(type);
@@ -355,6 +356,7 @@ uByRefType* uType::ByRef()
     options.TypeSize = sizeof(uByRefType);
     options.ObjectSize = sizeof(uObject);
     options.ValueSize = sizeof(void*);
+    options.Alignment = alignof(void*);
     uByRefType* type =
         (uByRefType*)uNewType(
             uTypeTypeByRef,
@@ -434,6 +436,7 @@ static uType* uGetParameterization(const uTypeKey& key)
         options.ObjectSize = def->ObjectSize;
         options.TypeSize = def->TypeSize;
         options.ValueSize = def->ValueSize;
+        options.Alignment = def->Alignment;
         result = uNewType(def->Type, def->FullName, options, false);
         result->Definition = def;
 
@@ -719,10 +722,9 @@ uType* uType::MakeType(uType* first, ...)
 
 uObject* uType::New()
 {
-    if (!U_IS_OBJECT(this))
-        U_THROW_ICE();
-    if (!fp_ctor_)
-        U_THROW_NRE();
+    if (!U_IS_OBJECT(this) ||
+            !fp_ctor_)
+        return uNew(this);
 
     uObject* result;
     GenericCount > 0
@@ -737,8 +739,6 @@ void uType::Build()
     {
     default:
         return;
-    case uTypeStateBuilding:
-        U_FATAL();
     case uTypeStateUninitialized:
         State = uTypeStateBuilding;
 
@@ -785,14 +785,19 @@ void uType::Init()
         State = uTypeStateInitializing;
         uType* last = uSwapThreadType(this);
 
+        for (size_t i = 0; i < DependencyCount; i++)
+            if (DependencyTypes[i]->State < uTypeStateInitializing)
+                DependencyTypes[i]->Init();
+        
+        for (size_t i = 0; i < PrecalcCount; i++)
+            if (PrecalcTypes[i]->State < uTypeStateInitializing)
+                PrecalcTypes[i]->Init();
+
         if (fp_cctor_)
             (*fp_cctor_)(this);
 
         State = uTypeStateInitialized;
         uSwapThreadType(last);
-
-        for (size_t i = 0; i < DependencyCount; i++)
-            DependencyTypes[i]->Init();
         break;
     }
     }
@@ -806,6 +811,10 @@ void uInitRtti(uType*(*factories[])())
 
     // 2. ARC/RTTI calculations
     uBuildTypes();
+
+    // Init char & string
+    ::g::Uno::Char_typeof()->Init();
+    ::g::Uno::String_typeof()->Init();
 }
 
 bool uType::IsClosed()
@@ -902,6 +911,7 @@ uClassType* uClassType::New(const char* name, uTypeOptions& options)
         if (!options.BaseDefinition)
             options.BaseDefinition = _ObjectTypePtr;
         options.ValueSize = sizeof(uObject*);
+        options.Alignment = alignof(uObject*);
     }
     else
     {
@@ -1031,6 +1041,7 @@ uEnumType* uEnumType::New(const char* name, uType* base, size_t literalCount)
     options.ObjectSize = base->ObjectSize;
     options.TypeSize = sizeof(uEnumType) + literalCount * sizeof(uEnumLiteral);
     options.ValueSize = base->ValueSize;
+    options.Alignment = base->Alignment;
     options.BaseDefinition = _ObjectTypePtr; // We want to copy vtable from object
 
     uEnumType* type = (uEnumType*)uNewType(uTypeTypeEnum, name, options);
@@ -1274,7 +1285,7 @@ uObject* uBoxPtr(uType* type, const void* src, void* stack, bool ref)
         }
         else
         {
-            object = uNew(type, sizeof(uObject) + type->ValueSize);
+            object = uNew(type);
             ptr = (uint8_t*)object + sizeof(uObject);
 
             if (type->Flags & uTypeFlagsRetainStruct)
@@ -1299,9 +1310,9 @@ void uUnboxPtr(uType* type, uObject* object, void* dst)
     {
     case uTypeTypeEnum:
     case uTypeTypeStruct:
-        if (!object || object->__type != type)
+        if (uPtr(object)->__type != type)
             U_THROW_ICE();
-        INLINE_MEMCPY(dst, (const uint8_t*)uPtr(object) + sizeof(uObject), type->ValueSize);
+        INLINE_MEMCPY(dst, (const uint8_t*)object + sizeof(uObject), type->ValueSize);
         if (type->Flags & uTypeFlagsRetainStruct)
             uRetainStruct(type, dst);
         break;
@@ -1322,6 +1333,7 @@ uInterfaceType* uInterfaceType::New(const char* name, size_t genericCount, size_
     options.TypeSize = sizeof(uInterfaceType);
     options.ObjectSize = sizeof(uObject);
     options.ValueSize = sizeof(uObject*);
+    options.Alignment = alignof(uObject*);
     options.BaseDefinition = _ObjectTypePtr;
     uInterfaceType* type = (uInterfaceType*)uNewType(uTypeTypeInterface, name, options);
 //#if #(REFLECTION:Defined)
@@ -1362,6 +1374,7 @@ uDelegateType* uDelegateType::New(const char* name, size_t paramCount, size_t ge
     options.TypeSize = sizeof(uDelegateType) + paramCount * sizeof(uType*);
     options.ObjectSize = sizeof(uDelegate);
     options.ValueSize = sizeof(uDelegate*);
+    options.Alignment = alignof(uDelegate*);
     options.BaseDefinition = ::g::Uno::Delegate_typeof();
 
     uDelegateType* type = (uDelegateType*)uNewType(uTypeTypeDelegate, name, options);
@@ -1555,7 +1568,7 @@ uObject* uDelegate::Invoke(size_t count, ...)
 
 uDelegate* uDelegate::Copy()
 {
-    uDelegate* delegate = (uDelegate*)uNew(__type, sizeof(uDelegate));
+    uDelegate* delegate = (uDelegate*)uNew(__type);
     delegate->_this = _this;
     delegate->_func = _func;
     delegate->_object = _object;
@@ -1566,7 +1579,7 @@ uDelegate* uDelegate::Copy()
 uDelegate* uDelegate::New(uType* type, const void* func, uObject* object, uType* generic)
 {
     U_ASSERT(func);
-    uDelegate* delegate = (uDelegate*)uNew(type, sizeof(uDelegate));
+    uDelegate* delegate = (uDelegate*)uNew(type);
     delegate->_func = func;
     delegate->_generic = generic;
     delegate->_object = object;
@@ -1669,7 +1682,6 @@ uArray* uArray::New(uType* type, int length, const void* optionalData)
     uArrayType* arrayType = (uArrayType*)type;
     uType* elementType = arrayType->ElementType;
     size_t elementSize = elementType->ValueSize;
-
     uArray* array = (uArray*)uNew(type, sizeof(uArray) + elementSize * length);
     array->_ptr = (uint8_t*)array + sizeof(uArray);
     array->_length = length;

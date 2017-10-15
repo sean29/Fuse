@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Controls.WebView/1.2.1/android/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Controls.WebView/1.3.0-rc2/Android/WebViewForeign.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -12,14 +12,14 @@ namespace Android{
 namespace Controls{
 namespace WebViewUtils{
 
-// public static class WebViewForeign :300
+// public static class WebViewForeign :12
 // {
 uClassType* WebViewForeign_typeof();
 void WebViewForeign__AddJavascriptInterface_fn(::g::Java::Object* handle, uString* name, uDelegate* resultHandler);
 void WebViewForeign__CanGoBack_fn(::g::Java::Object* handle, bool* __retval);
 void WebViewForeign__CanGoForward_fn(::g::Java::Object* handle, bool* __retval);
 void WebViewForeign__CreateAndSetWebChromeClient_fn(::g::Java::Object* webViewHandle, uDelegate* onProgress, ::g::Java::Object** __retval);
-void WebViewForeign__CreateAndSetWebViewClient_fn(::g::Java::Object* webViewHandle, uDelegate* loaded, uDelegate* started, uDelegate* changed, uDelegate* onCustomURI, uArray* customURIs, ::g::Java::Object** __retval);
+void WebViewForeign__CreateAndSetWebViewClient_fn(::g::Java::Object* webViewHandle, uDelegate* loaded, uDelegate* started, uDelegate* changed, uDelegate* matchedUriSchemeHandler, ::g::Java::Object** __retval);
 void WebViewForeign__CreateWebView_fn(bool* zoomEnabled, bool* scrollEnabled, ::g::Java::Object** __retval);
 void WebViewForeign__GetProgress_fn(::g::Java::Object* handle, double* __retval);
 void WebViewForeign__GetUrl_fn(::g::Java::Object* handle, uString** __retval);
@@ -36,7 +36,7 @@ struct WebViewForeign : uObject
     static bool CanGoBack(::g::Java::Object* handle);
     static bool CanGoForward(::g::Java::Object* handle);
     static ::g::Java::Object* CreateAndSetWebChromeClient(::g::Java::Object* webViewHandle, uDelegate* onProgress);
-    static ::g::Java::Object* CreateAndSetWebViewClient(::g::Java::Object* webViewHandle, uDelegate* loaded, uDelegate* started, uDelegate* changed, uDelegate* onCustomURI, uArray* customURIs);
+    static ::g::Java::Object* CreateAndSetWebViewClient(::g::Java::Object* webViewHandle, uDelegate* loaded, uDelegate* started, uDelegate* changed, uDelegate* matchedUriSchemeHandler);
     static ::g::Java::Object* CreateWebView(bool zoomEnabled, bool scrollEnabled);
     static double GetProgress(::g::Java::Object* handle);
     static uString* GetUrl(::g::Java::Object* handle);

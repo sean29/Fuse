@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Common/1.2.1/internal/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Common/1.3.0-rc2/Internal/AndroidSystemFont.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -16,7 +16,7 @@ namespace g{
 namespace Fuse{
 namespace Internal{
 
-// internal static extern class AndroidSystemFont :13
+// internal static extern class AndroidSystemFont :11
 // {
 uClassType* AndroidSystemFont_typeof();
 void AndroidSystemFont__AddAlias_fn(uString* name, uString* to, int* weight);

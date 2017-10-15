@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Gestures/1.2.1/internal/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Gestures/1.3.0-rc2/Internal/Swiper.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -9,7 +9,7 @@ namespace Fuse{
 namespace Gestures{
 namespace Internal{
 
-// internal enum SwipeRegionArea :732
+// internal enum SwipeRegionArea :13
 uEnumType* SwipeRegionArea_typeof();
 
 }}}} // ::g::Fuse::Gestures::Internal

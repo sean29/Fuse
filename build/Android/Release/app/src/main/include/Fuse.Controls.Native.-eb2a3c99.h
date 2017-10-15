@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Controls.Native/1.2.1/android/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Controls.Native/1.3.0-rc2/Android/CanvasViewGroup.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -16,7 +16,7 @@ namespace Controls{
 namespace Native{
 namespace Android{
 
-// public sealed extern class CanvasViewGroup :43
+// public sealed extern class CanvasViewGroup :9
 // {
 struct CanvasViewGroup_type : ::g::Fuse::Controls::Native::ViewHandle_type
 {
@@ -24,12 +24,12 @@ struct CanvasViewGroup_type : ::g::Fuse::Controls::Native::ViewHandle_type
 };
 
 CanvasViewGroup_type* CanvasViewGroup_typeof();
-void CanvasViewGroup__ctor_3_fn(CanvasViewGroup* __this, uObject* surfaceDrawable, float* pixelsPerPoint);
+void CanvasViewGroup__ctor_4_fn(CanvasViewGroup* __this, uObject* surfaceDrawable, float* pixelsPerPoint);
 void CanvasViewGroup__Dispose_fn(CanvasViewGroup* __this);
 void CanvasViewGroup__FuseDrawingINativeSurfaceOwnerGetSurface_fn(CanvasViewGroup* __this, ::g::Fuse::Drawing::Surface** __retval);
 void CanvasViewGroup__InstallDrawlistener_fn(CanvasViewGroup* __this, ::g::Java::Object* handle, uDelegate* callback);
 void CanvasViewGroup__Instantiate_fn(::g::Java::Object** __retval);
-void CanvasViewGroup__New4_fn(uObject* surfaceDrawable, float* pixelsPerPoint, CanvasViewGroup** __retval);
+void CanvasViewGroup__New5_fn(uObject* surfaceDrawable, float* pixelsPerPoint, CanvasViewGroup** __retval);
 void CanvasViewGroup__OnDraw_fn(CanvasViewGroup* __this, ::g::Java::Object* canvas);
 
 struct CanvasViewGroup : ::g::Fuse::Controls::Native::ViewHandle
@@ -38,11 +38,11 @@ struct CanvasViewGroup : ::g::Fuse::Controls::Native::ViewHandle
     float _pixelsPerPoint;
     uStrong<uObject*> _surfaceDrawable;
 
-    void ctor_3(uObject* surfaceDrawable, float pixelsPerPoint);
+    void ctor_4(uObject* surfaceDrawable, float pixelsPerPoint);
     void InstallDrawlistener(::g::Java::Object* handle, uDelegate* callback);
     void OnDraw(::g::Java::Object* canvas);
     static ::g::Java::Object* Instantiate();
-    static CanvasViewGroup* New4(uObject* surfaceDrawable, float pixelsPerPoint);
+    static CanvasViewGroup* New5(uObject* surfaceDrawable, float pixelsPerPoint);
 };
 // }
 

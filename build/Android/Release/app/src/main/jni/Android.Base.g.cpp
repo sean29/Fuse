@@ -31,17 +31,15 @@
 #include <Uno.String.h>
 #include <Uno.Type.h>
 #include <Uno/JNIHelper.h>
-static uString* STRINGS[5];
-static uType* TYPES[2];
 
 namespace g{
 namespace Android{
 namespace Base{
 
-// /usr/local/share/uno/Packages/UnoCore/1.2.2/targets/android/uno/base/$.uno
-// --------------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\UnoCore\1.3.1\Targets\Android\Uno\Base\JNI.uno
+// ------------------------------------------------------------------------------------------
 
-// public static extern class AndroidBindingMacros :33
+// public static extern class AndroidBindingMacros :11
 // {
 static void AndroidBindingMacros_build(uType* type)
 {
@@ -60,28 +58,24 @@ uClassType* AndroidBindingMacros_typeof()
 }
 // }
 
-// /usr/local/share/uno/Packages/UnoCore/1.2.2/targets/android/uno/base/$.uno
-// --------------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\UnoCore\1.3.1\Targets\Android\Uno\Base\JNI.uno
+// ------------------------------------------------------------------------------------------
 
-// public static extern class JNI :36
+// public static extern class JNI :14
 // {
 static void JNI_build(uType* type)
 {
-    ::STRINGS[0] = uString::Const("Java method id for ");
-    ::STRINGS[1] = uString::Const(" is null");
-    ::STRINGS[2] = uString::Const("Could not cache class for UnoHelper");
-    ::STRINGS[3] = uString::Const("Could not cache getUnoRefMid");
-    ::STRINGS[4] = uString::Const("\n"
-        "");
-    ::TYPES[0] = ::g::Android::Base::Wrappers::IJWrapper_typeof();
-    ::TYPES[1] = ::g::Android::Base::Wrappers::JWrapper_typeof();
+    type->SetDependencies(
+        ::g::Android::Base::Types::String_typeof(),
+        ::g::Android::Base::Primitives::ujclass_typeof(),
+        ::g::Android::Base::Primitives::ujobject_typeof());
     type->SetFields(0,
-        ::g::Android::Base::Primitives::jmethodID_typeof(), (uintptr_t)&::g::Android::Base::JNI::_getUnoRefMid_, uFieldFlagsStatic,
-        ::g::Android::Base::Primitives::ujclass_typeof(), (uintptr_t)&::g::Android::Base::JNI::_helperCls_, uFieldFlagsStatic,
-        ::g::Uno::Bool_typeof(), (uintptr_t)&::g::Android::Base::JNI::_inited_, uFieldFlagsStatic,
-        ::g::Android::Base::Primitives::jmethodID_typeof(), (uintptr_t)&::g::Android::Base::JNI::Activity_getClassLoader_, uFieldFlagsStatic,
-        ::g::Android::Base::Primitives::jmethodID_typeof(), (uintptr_t)&::g::Android::Base::JNI::ClassLoader_loadClass_, uFieldFlagsStatic,
-        ::g::Android::Base::Primitives::ujclass_typeof(), (uintptr_t)&::g::Android::Base::JNI::exceptionClass_, uFieldFlagsStatic);
+        ::g::Android::Base::Primitives::jmethodID_typeof(), (uintptr_t)&JNI::_getUnoRefMid_, uFieldFlagsStatic,
+        ::g::Android::Base::Primitives::ujclass_typeof(), (uintptr_t)&JNI::_helperCls_, uFieldFlagsStatic,
+        ::g::Uno::Bool_typeof(), (uintptr_t)&JNI::_inited_, uFieldFlagsStatic,
+        ::g::Android::Base::Primitives::jmethodID_typeof(), (uintptr_t)&JNI::Activity_getClassLoader_, uFieldFlagsStatic,
+        ::g::Android::Base::Primitives::jmethodID_typeof(), (uintptr_t)&JNI::ClassLoader_loadClass_, uFieldFlagsStatic,
+        ::g::Android::Base::Primitives::ujclass_typeof(), (uintptr_t)&JNI::exceptionClass_, uFieldFlagsStatic);
 }
 
 uClassType* JNI_typeof()
@@ -91,313 +85,260 @@ uClassType* JNI_typeof()
 
     uTypeOptions options;
     options.FieldCount = 6;
+    options.DependencyCount = 3;
     options.TypeSize = sizeof(uClassType);
     type = uClassType::New("Android.Base.JNI", options);
     type->fp_build_ = JNI_build;
     return type;
 }
 
-// public static extern void CheckException() :237
+// public static extern void CheckException() :215
 void JNI__CheckException_fn()
 {
     JNI::CheckException();
 }
 
-// public static extern void CheckException(Android.Base.Primitives.JNIEnvPtr jni) :225
+// public static extern void CheckException(Android.Base.Primitives.JNIEnvPtr jni) :203
 void JNI__CheckException1_fn(JNIEnv** jni)
 {
     JNI::CheckException1(*jni);
 }
 
-// public static extern void CheckException(Android.Base.Primitives.JNIEnvPtr jni, [string appendMessage]) :230
+// public static extern void CheckException(Android.Base.Primitives.JNIEnvPtr jni, [string appendMessage]) :208
 void JNI__CheckException2_fn(JNIEnv** jni, uString* appendMessage)
 {
     JNI::CheckException2(*jni, appendMessage);
 }
 
-// public static extern void DeleteGlobalRef(Android.Base.Primitives.ujobject obj) :200
+// public static extern void DeleteGlobalRef(Android.Base.Primitives.ujobject obj) :178
 void JNI__DeleteGlobalRef_fn(jobject* obj_)
 {
     JNI::DeleteGlobalRef(*obj_);
 }
 
-// public static void DeleteLocalRef(Android.Base.Primitives.ujclass obj) :296
+// public static void DeleteLocalRef(Android.Base.Primitives.ujclass obj) :274
 void JNI__DeleteLocalRef_fn(jclass* obj)
 {
     JNI::DeleteLocalRef(*obj);
 }
 
-// public static void DeleteLocalRef(Android.Base.Primitives.ujobject obj) :290
+// public static void DeleteLocalRef(Android.Base.Primitives.ujobject obj) :268
 void JNI__DeleteLocalRef1_fn(jobject* obj)
 {
     JNI::DeleteLocalRef1(*obj);
 }
 
-// public static extern void DeleteWeakGlobalRef(Android.Base.Primitives.ujobject obj) :203
+// public static extern void DeleteWeakGlobalRef(Android.Base.Primitives.ujobject obj) :181
 void JNI__DeleteWeakGlobalRef_fn(jobject* obj_)
 {
     JNI::DeleteWeakGlobalRef(*obj_);
 }
 
-// public static extern Android.Base.Primitives.ujclass GetActivityClass() :96
+// public static extern Android.Base.Primitives.ujclass GetActivityClass() :74
 void JNI__GetActivityClass_fn(jclass* __retval)
 {
     *__retval = JNI::GetActivityClass();
 }
 
-// private static Java.Object GetActivityClassInner() :91
+// private static Java.Object GetActivityClassInner() :69
 void JNI__GetActivityClassInner_fn(::g::Java::Object** __retval)
 {
     *__retval = JNI::GetActivityClassInner();
 }
 
-// public static extern Android.Base.Primitives.ujobject GetActivityObject() :101
+// public static extern Android.Base.Primitives.ujobject GetActivityObject() :79
 void JNI__GetActivityObject_fn(jobject* __retval)
 {
     *__retval = JNI::GetActivityObject();
 }
 
-// private static Java.Object GetActivityObjectInner() :85
+// private static Java.Object GetActivityObjectInner() :63
 void JNI__GetActivityObjectInner_fn(::g::Java::Object** __retval)
 {
     *__retval = JNI::GetActivityObjectInner();
 }
 
-// public static extern int GetArrayLength(Android.Base.Primitives.ujobject array) :327
+// public static extern int GetArrayLength(Android.Base.Primitives.ujobject array) :305
 void JNI__GetArrayLength_fn(jobject* array_, int* __retval)
 {
     *__retval = JNI::GetArrayLength(*array_);
 }
 
-// public static extern Android.Base.Primitives.ujobject GetDefaultObject() :310
+// public static extern Android.Base.Primitives.ujobject GetDefaultObject() :288
 void JNI__GetDefaultObject_fn(jobject* __retval)
 {
     *__retval = JNI::GetDefaultObject();
 }
 
-// public static extern Uno.Type GetDefaultType() :313
+// public static extern Uno.Type GetDefaultType() :291
 void JNI__GetDefaultType_fn(uType** __retval)
 {
     *__retval = JNI::GetDefaultType();
 }
 
-// public static extern Android.Base.Primitives.JNIEnvPtr GetEnvPtr() :79
+// public static extern Android.Base.Primitives.JNIEnvPtr GetEnvPtr() :57
 void JNI__GetEnvPtr_fn(JNIEnv** __retval)
 {
     *__retval = JNI::GetEnvPtr();
 }
 
-// public static Android.Base.Primitives.jmethodID GetMethodID(Android.Base.Primitives.ujclass cls, string methodName, string methodSig) :245
+// public static Android.Base.Primitives.jmethodID GetMethodID(Android.Base.Primitives.ujclass cls, string methodName, string methodSig) :223
 void JNI__GetMethodID_fn(jclass* cls, uString* methodName, uString* methodSig, jmethodID* __retval)
 {
     *__retval = JNI::GetMethodID(*cls, methodName, methodSig);
 }
 
-// public static Android.Base.JNI.RefType GetRefType(Android.Base.Primitives.JNIEnvPtr jni, Android.Base.Primitives.ujobject obj) :119
+// public static Android.Base.JNI.RefType GetRefType(Android.Base.Primitives.JNIEnvPtr jni, Android.Base.Primitives.ujobject obj) :97
 void JNI__GetRefType_fn(JNIEnv** jni, jobject* obj, int* __retval)
 {
     *__retval = JNI::GetRefType(*jni, *obj);
 }
 
-// public static Android.Base.JNI.RefType GetRefType(Android.Base.Primitives.ujobject obj) :124
+// public static Android.Base.JNI.RefType GetRefType(Android.Base.Primitives.ujobject obj) :102
 void JNI__GetRefType1_fn(jobject* obj, int* __retval)
 {
     *__retval = JNI::GetRefType1(*obj);
 }
 
-// public static Android.Base.Primitives.jmethodID GetStaticMethodID(Android.Base.Primitives.ujclass cls, string methodName, string methodSig) :269
+// public static Android.Base.Primitives.jmethodID GetStaticMethodID(Android.Base.Primitives.ujclass cls, string methodName, string methodSig) :247
 void JNI__GetStaticMethodID_fn(jclass* cls, uString* methodName, uString* methodSig, jmethodID* __retval)
 {
     *__retval = JNI::GetStaticMethodID(*cls, methodName, methodSig);
 }
 
-// public static extern long GetUnoRef(Android.Base.Primitives.ujobject obj) :316
+// public static extern long GetUnoRef(Android.Base.Primitives.ujobject obj) :294
 void JNI__GetUnoRef_fn(jobject* obj, int64_t* __retval)
 {
     *__retval = JNI::GetUnoRef(*obj);
 }
 
-// public static extern Android.Base.Primitives.JavaVMPtr GetVM() :82
+// public static extern Android.Base.Primitives.JavaVMPtr GetVM() :60
 void JNI__GetVM_fn(JavaVM** __retval)
 {
     *__retval = JNI::GetVM();
 }
 
-// public static Android.Base.Wrappers.JWrapper GetWrappedActivityObject() :106
+// public static Android.Base.Wrappers.JWrapper GetWrappedActivityObject() :84
 void JNI__GetWrappedActivityObject_fn(::g::Android::Base::Wrappers::JWrapper** __retval)
 {
     *__retval = JNI::GetWrappedActivityObject();
 }
 
-// public static void Init(Android.Base.Primitives.ujobject activityObject) :46
+// public static void Init(Android.Base.Primitives.ujobject activityObject) :24
 void JNI__Init_fn(jobject* activityObject)
 {
     JNI::Init(*activityObject);
 }
 
-// public static extern bool IsSameObject(Android.Base.Primitives.ujobject objA, Android.Base.Primitives.ujobject objB) :206
+// public static extern bool IsSameObject(Android.Base.Primitives.ujobject objA, Android.Base.Primitives.ujobject objB) :184
 void JNI__IsSameObject_fn(jobject* objA_, jobject* objB_, bool* __retval)
 {
     *__retval = JNI::IsSameObject(*objA_, *objB_);
 }
 
-// public static Android.Base.Primitives.ujclass LoadClass(Android.Base.Primitives.JNIEnvPtr jni, Android.Base.Primitives.ConstCharPtr name) :112
+// public static Android.Base.Primitives.ujclass LoadClass(Android.Base.Primitives.JNIEnvPtr jni, Android.Base.Primitives.ConstCharPtr name) :90
 void JNI__LoadClass_fn(JNIEnv** jni, const char** name, jclass* __retval)
 {
     *__retval = JNI::LoadClass(*jni, *name);
 }
 
-// public static Android.Base.Primitives.ujclass LoadClass(Android.Base.Primitives.JNIEnvPtr jni, Android.Base.Primitives.ConstCharPtr name, bool systemClass) :129
+// public static Android.Base.Primitives.ujclass LoadClass(Android.Base.Primitives.JNIEnvPtr jni, Android.Base.Primitives.ConstCharPtr name, bool systemClass) :107
 void JNI__LoadClass1_fn(JNIEnv** jni, const char** name, bool* systemClass, jclass* __retval)
 {
     *__retval = JNI::LoadClass1(*jni, *name, *systemClass);
 }
 
-// public static extern Android.Base.Primitives.ujclass LoadClass(Android.Base.Primitives.JNIEnvPtr jni, string name, [bool systemClass]) :148
+// public static extern Android.Base.Primitives.ujclass LoadClass(Android.Base.Primitives.JNIEnvPtr jni, string name, [bool systemClass]) :126
 void JNI__LoadClass2_fn(JNIEnv** jni, uString* name, bool* systemClass, jclass* __retval)
 {
     *__retval = JNI::LoadClass2(*jni, name, *systemClass);
 }
 
-// public static extern Android.Base.Primitives.ujclass LoadClass(string name, [bool systemClass]) :156
+// public static extern Android.Base.Primitives.ujclass LoadClass(string name, [bool systemClass]) :134
 void JNI__LoadClass3_fn(uString* name, bool* systemClass, jclass* __retval)
 {
     *__retval = JNI::LoadClass3(name, *systemClass);
 }
 
-// public static extern Android.Base.Primitives.ujobject NewBooleanArray(int len) :329
-void JNI__NewBooleanArray_fn(int* len_, jobject* __retval)
-{
-    *__retval = JNI::NewBooleanArray(*len_);
-}
-
-// public static extern Android.Base.Primitives.ujobject NewByteArray(int len) :331
-void JNI__NewByteArray_fn(int* len_, jobject* __retval)
-{
-    *__retval = JNI::NewByteArray(*len_);
-}
-
-// public static extern Android.Base.Primitives.ujobject NewCharArray(int len) :333
-void JNI__NewCharArray_fn(int* len_, jobject* __retval)
-{
-    *__retval = JNI::NewCharArray(*len_);
-}
-
-// public static extern Android.Base.Primitives.ujobject NewDoubleArray(int len) :343
-void JNI__NewDoubleArray_fn(int* len_, jobject* __retval)
-{
-    *__retval = JNI::NewDoubleArray(*len_);
-}
-
-// public static extern Android.Base.Primitives.ujobject NewFloatArray(int len) :341
-void JNI__NewFloatArray_fn(int* len_, jobject* __retval)
-{
-    *__retval = JNI::NewFloatArray(*len_);
-}
-
-// public static extern Android.Base.Primitives.ujclass NewGlobalRef(Android.Base.Primitives.ujclass obj) :167
+// public static extern Android.Base.Primitives.ujclass NewGlobalRef(Android.Base.Primitives.ujclass obj) :145
 void JNI__NewGlobalRef_fn(jclass* obj, jclass* __retval)
 {
     *__retval = JNI::NewGlobalRef(*obj);
 }
 
-// public static extern Android.Base.Primitives.ujobject NewGlobalRef(Android.Base.Primitives.ujobject obj) :161
+// public static extern Android.Base.Primitives.ujobject NewGlobalRef(Android.Base.Primitives.ujobject obj) :139
 void JNI__NewGlobalRef1_fn(jobject* obj, jobject* __retval)
 {
     *__retval = JNI::NewGlobalRef1(*obj);
 }
 
-// public static extern Android.Base.Primitives.ujobject NewIntArray(int len) :337
-void JNI__NewIntArray_fn(int* len_, jobject* __retval)
-{
-    *__retval = JNI::NewIntArray(*len_);
-}
-
-// public static extern Android.Base.Primitives.ujobject NewLongArray(int len) :339
-void JNI__NewLongArray_fn(int* len_, jobject* __retval)
-{
-    *__retval = JNI::NewLongArray(*len_);
-}
-
-// public static extern Android.Base.Primitives.ujobject NewObjectArray(Android.Base.Primitives.ujclass cls, int len) :345
-void JNI__NewObjectArray_fn(jclass* cls_, int* len_, jobject* __retval)
-{
-    *__retval = JNI::NewObjectArray(*cls_, *len_);
-}
-
-// public static extern Android.Base.Primitives.ujobject NewShortArray(int len) :335
-void JNI__NewShortArray_fn(int* len_, jobject* __retval)
-{
-    *__retval = JNI::NewShortArray(*len_);
-}
-
-// public static extern Android.Base.Primitives.ujobject NewWeakGlobalRef(Android.Base.Primitives.ujobject obj) :197
+// public static extern Android.Base.Primitives.ujobject NewWeakGlobalRef(Android.Base.Primitives.ujobject obj) :175
 void JNI__NewWeakGlobalRef_fn(jobject* obj_, jobject* __retval)
 {
     *__retval = JNI::NewWeakGlobalRef(*obj_);
 }
 
-// public static void SetBooleanArrayRegion(Android.Base.Primitives.ujobject javaArr, bool[] unoArr, [int start], [int len]) :385
+// public static void SetBooleanArrayRegion(Android.Base.Primitives.ujobject javaArr, bool[] unoArr, [int start], [int len]) :363
 void JNI__SetBooleanArrayRegion_fn(jobject* javaArr, uArray* unoArr, int* start, int* len)
 {
     JNI::SetBooleanArrayRegion(*javaArr, unoArr, *start, *len);
 }
 
-// public static void SetByteArrayRegion(Android.Base.Primitives.ujobject javaArr, byte[] unoArr, [int start], [int len]) :401
+// public static void SetByteArrayRegion(Android.Base.Primitives.ujobject javaArr, byte[] unoArr, [int start], [int len]) :379
 void JNI__SetByteArrayRegion_fn(jobject* javaArr, uArray* unoArr, int* start, int* len)
 {
     JNI::SetByteArrayRegion(*javaArr, unoArr, *start, *len);
 }
 
-// public static void SetByteArrayRegion(Android.Base.Primitives.ujobject javaArr, sbyte[] unoArr, [int start], [int len]) :393
+// public static void SetByteArrayRegion(Android.Base.Primitives.ujobject javaArr, sbyte[] unoArr, [int start], [int len]) :371
 void JNI__SetByteArrayRegion1_fn(jobject* javaArr, uArray* unoArr, int* start, int* len)
 {
     JNI::SetByteArrayRegion1(*javaArr, unoArr, *start, *len);
 }
 
-// public static void SetCharArrayRegion(Android.Base.Primitives.ujobject javaArr, char[] unoArr, [int start], [int len]) :409
+// public static void SetCharArrayRegion(Android.Base.Primitives.ujobject javaArr, char[] unoArr, [int start], [int len]) :387
 void JNI__SetCharArrayRegion_fn(jobject* javaArr, uArray* unoArr, int* start, int* len)
 {
     JNI::SetCharArrayRegion(*javaArr, unoArr, *start, *len);
 }
 
-// public static void SetDoubleArrayRegion(Android.Base.Primitives.ujobject javaArr, double[] unoArr, [int start], [int len]) :449
+// public static void SetDoubleArrayRegion(Android.Base.Primitives.ujobject javaArr, double[] unoArr, [int start], [int len]) :427
 void JNI__SetDoubleArrayRegion_fn(jobject* javaArr, uArray* unoArr, int* start, int* len)
 {
     JNI::SetDoubleArrayRegion(*javaArr, unoArr, *start, *len);
 }
 
-// public static void SetFloatArrayRegion(Android.Base.Primitives.ujobject javaArr, float[] unoArr, [int start], [int len]) :441
+// public static void SetFloatArrayRegion(Android.Base.Primitives.ujobject javaArr, float[] unoArr, [int start], [int len]) :419
 void JNI__SetFloatArrayRegion_fn(jobject* javaArr, uArray* unoArr, int* start, int* len)
 {
     JNI::SetFloatArrayRegion(*javaArr, unoArr, *start, *len);
 }
 
-// public static void SetIntArrayRegion(Android.Base.Primitives.ujobject javaArr, int[] unoArr, [int start], [int len]) :425
+// public static void SetIntArrayRegion(Android.Base.Primitives.ujobject javaArr, int[] unoArr, [int start], [int len]) :403
 void JNI__SetIntArrayRegion_fn(jobject* javaArr, uArray* unoArr, int* start, int* len)
 {
     JNI::SetIntArrayRegion(*javaArr, unoArr, *start, *len);
 }
 
-// public static void SetLongArrayRegion(Android.Base.Primitives.ujobject javaArr, long[] unoArr, [int start], [int len]) :433
+// public static void SetLongArrayRegion(Android.Base.Primitives.ujobject javaArr, long[] unoArr, [int start], [int len]) :411
 void JNI__SetLongArrayRegion_fn(jobject* javaArr, uArray* unoArr, int* start, int* len)
 {
     JNI::SetLongArrayRegion(*javaArr, unoArr, *start, *len);
 }
 
-// public static void SetShortArrayRegion(Android.Base.Primitives.ujobject javaArr, short[] unoArr, [int start], [int len]) :417
+// public static void SetShortArrayRegion(Android.Base.Primitives.ujobject javaArr, short[] unoArr, [int start], [int len]) :395
 void JNI__SetShortArrayRegion_fn(jobject* javaArr, uArray* unoArr, int* start, int* len)
 {
     JNI::SetShortArrayRegion(*javaArr, unoArr, *start, *len);
 }
 
-// public static extern void ThrowNewException(string message) :243
+// public static extern void ThrowNewException(string message) :221
 void JNI__ThrowNewException_fn(uString* message_)
 {
     JNI::ThrowNewException(message_);
 }
 
-// public static Uno.Exception TryGetException(Android.Base.Primitives.JNIEnvPtr jni, [string appendMessage]) :208
+// public static Uno.Exception TryGetException(Android.Base.Primitives.JNIEnvPtr jni, [string appendMessage]) :186
 void JNI__TryGetException_fn(JNIEnv** jni, uString* appendMessage, ::g::Uno::Exception** __retval)
 {
     *__retval = JNI::TryGetException(*jni, appendMessage);
@@ -410,19 +351,19 @@ jmethodID JNI::Activity_getClassLoader_;
 jmethodID JNI::ClassLoader_loadClass_;
 jclass JNI::exceptionClass_;
 
-// public static extern void CheckException() [static] :237
+// public static extern void CheckException() [static] :215
 void JNI::CheckException()
 {
     JNI::CheckException1(JNI::GetEnvPtr());
 }
 
-// public static extern void CheckException(Android.Base.Primitives.JNIEnvPtr jni) [static] :225
+// public static extern void CheckException(Android.Base.Primitives.JNIEnvPtr jni) [static] :203
 void JNI::CheckException1(JNIEnv* jni)
 {
     JNI::CheckException2(jni, NULL);
 }
 
-// public static extern void CheckException(Android.Base.Primitives.JNIEnvPtr jni, [string appendMessage]) [static] :230
+// public static extern void CheckException(Android.Base.Primitives.JNIEnvPtr jni, [string appendMessage]) [static] :208
 void JNI::CheckException2(JNIEnv* jni, uString* appendMessage)
 {
     ::g::Uno::Exception* excep = JNI::TryGetException(jni, appendMessage);
@@ -431,39 +372,39 @@ void JNI::CheckException2(JNIEnv* jni, uString* appendMessage)
         U_THROW(excep);
 }
 
-// public static extern void DeleteGlobalRef(Android.Base.Primitives.ujobject obj) [static] :200
+// public static extern void DeleteGlobalRef(Android.Base.Primitives.ujobject obj) [static] :178
 void JNI::DeleteGlobalRef(jobject obj_)
 {
     JNI::GetEnvPtr()->DeleteGlobalRef(obj_);
 }
 
-// public static void DeleteLocalRef(Android.Base.Primitives.ujclass obj) [static] :296
+// public static void DeleteLocalRef(Android.Base.Primitives.ujclass obj) [static] :274
 void JNI::DeleteLocalRef(jclass obj)
 {
     JNIEnv* jni = JNI::GetEnvPtr();
     jni->DeleteLocalRef(obj);
 }
 
-// public static void DeleteLocalRef(Android.Base.Primitives.ujobject obj) [static] :290
+// public static void DeleteLocalRef(Android.Base.Primitives.ujobject obj) [static] :268
 void JNI::DeleteLocalRef1(jobject obj)
 {
     JNIEnv* jni = JNI::GetEnvPtr();
     jni->DeleteLocalRef(obj);
 }
 
-// public static extern void DeleteWeakGlobalRef(Android.Base.Primitives.ujobject obj) [static] :203
+// public static extern void DeleteWeakGlobalRef(Android.Base.Primitives.ujobject obj) [static] :181
 void JNI::DeleteWeakGlobalRef(jobject obj_)
 {
     JNI::GetEnvPtr()->DeleteWeakGlobalRef(obj_);
 }
 
-// public static extern Android.Base.Primitives.ujclass GetActivityClass() [static] :96
+// public static extern Android.Base.Primitives.ujclass GetActivityClass() [static] :74
 jclass JNI::GetActivityClass()
 {
-    return ::g::Android::Base::Primitives::ujobject::op_Implicit1(::g::Android::Base::Wrappers::IJWrapper::_GetJavaObject(uInterface(uPtr((uObject*)JNI::GetActivityClassInner()), ::TYPES[0/*Android.Base.Wrappers.IJWrapper*/])));
+    return ::g::Android::Base::Primitives::ujobject::op_Implicit1(::g::Android::Base::Wrappers::IJWrapper::_GetJavaObject(uInterface(uPtr((uObject*)JNI::GetActivityClassInner()), ::g::Android::Base::Wrappers::IJWrapper_typeof())));
 }
 
-// private static Java.Object GetActivityClassInner() [static] :91
+// private static Java.Object GetActivityClassInner() [static] :69
 ::g::Java::Object* JNI::GetActivityClassInner()
 {
     {
@@ -478,13 +419,13 @@ jclass JNI::GetActivityClass()
     
 }
 
-// public static extern Android.Base.Primitives.ujobject GetActivityObject() [static] :101
+// public static extern Android.Base.Primitives.ujobject GetActivityObject() [static] :79
 jobject JNI::GetActivityObject()
 {
-    return ::g::Android::Base::Wrappers::IJWrapper::_GetJavaObject(uInterface(uPtr((uObject*)JNI::GetActivityObjectInner()), ::TYPES[0/*Android.Base.Wrappers.IJWrapper*/]));
+    return ::g::Android::Base::Wrappers::IJWrapper::_GetJavaObject(uInterface(uPtr((uObject*)JNI::GetActivityObjectInner()), ::g::Android::Base::Wrappers::IJWrapper_typeof()));
 }
 
-// private static Java.Object GetActivityObjectInner() [static] :85
+// private static Java.Object GetActivityObjectInner() [static] :63
 ::g::Java::Object* JNI::GetActivityObjectInner()
 {
     {
@@ -499,26 +440,26 @@ jobject JNI::GetActivityObject()
     
 }
 
-// public static extern int GetArrayLength(Android.Base.Primitives.ujobject array) [static] :327
+// public static extern int GetArrayLength(Android.Base.Primitives.ujobject array) [static] :305
 int JNI::GetArrayLength(jobject array_)
 {
     JNIEnv* jni = JNI::GetEnvPtr();
     return (int)jni->GetArrayLength((jarray)array_);
 }
 
-// public static extern Android.Base.Primitives.ujobject GetDefaultObject() [static] :310
+// public static extern Android.Base.Primitives.ujobject GetDefaultObject() [static] :288
 jobject JNI::GetDefaultObject()
 {
     return (jobject)0;
 }
 
-// public static extern Uno.Type GetDefaultType() [static] :313
+// public static extern Uno.Type GetDefaultType() [static] :291
 uType* JNI::GetDefaultType()
 {
     return (uType*)0;
 }
 
-// public static extern Android.Base.Primitives.JNIEnvPtr GetEnvPtr() [static] :79
+// public static extern Android.Base.Primitives.JNIEnvPtr GetEnvPtr() [static] :57
 JNIEnv* JNI::GetEnvPtr()
 {
     JNIEnv* jni;
@@ -526,7 +467,7 @@ JNIEnv* JNI::GetEnvPtr()
     return jni;
 }
 
-// public static Android.Base.Primitives.jmethodID GetMethodID(Android.Base.Primitives.ujclass cls, string methodName, string methodSig) [static] :245
+// public static Android.Base.Primitives.jmethodID GetMethodID(Android.Base.Primitives.ujclass cls, string methodName, string methodSig) [static] :223
 jmethodID JNI::GetMethodID(jclass cls, uString* methodName, uString* methodSig)
 {
     const char* cMethodName = uAllocCStr(methodName);
@@ -537,24 +478,24 @@ jmethodID JNI::GetMethodID(jclass cls, uString* methodName, uString* methodSig)
     JNI::CheckException();
 
     if ((mid==0))
-        U_THROW(::g::Uno::Exception::New2(::g::Uno::String::op_Addition2(::g::Uno::String::op_Addition2(::STRINGS[0/*"Java method...*/], methodName), ::STRINGS[1/*" is null"*/])));
+        U_THROW(::g::Uno::Exception::New2(::g::Uno::String::op_Addition2(::g::Uno::String::op_Addition2(uString::Const("Java method id for "), methodName), uString::Const(" is null"))));
 
     return mid;
 }
 
-// public static Android.Base.JNI.RefType GetRefType(Android.Base.Primitives.JNIEnvPtr jni, Android.Base.Primitives.ujobject obj) [static] :119
+// public static Android.Base.JNI.RefType GetRefType(Android.Base.Primitives.JNIEnvPtr jni, Android.Base.Primitives.ujobject obj) [static] :97
 int JNI::GetRefType(JNIEnv* jni, jobject obj)
 {
     return (int)jni->GetObjectRefType(obj);
 }
 
-// public static Android.Base.JNI.RefType GetRefType(Android.Base.Primitives.ujobject obj) [static] :124
+// public static Android.Base.JNI.RefType GetRefType(Android.Base.Primitives.ujobject obj) [static] :102
 int JNI::GetRefType1(jobject obj)
 {
     return JNI::GetRefType(JNI::GetEnvPtr(), obj);
 }
 
-// public static Android.Base.Primitives.jmethodID GetStaticMethodID(Android.Base.Primitives.ujclass cls, string methodName, string methodSig) [static] :269
+// public static Android.Base.Primitives.jmethodID GetStaticMethodID(Android.Base.Primitives.ujclass cls, string methodName, string methodSig) [static] :247
 jmethodID JNI::GetStaticMethodID(jclass cls, uString* methodName, uString* methodSig)
 {
     const char* cMethodName = uAllocCStr(methodName);
@@ -565,7 +506,7 @@ jmethodID JNI::GetStaticMethodID(jclass cls, uString* methodName, uString* metho
     return mid;
 }
 
-// public static extern long GetUnoRef(Android.Base.Primitives.ujobject obj) [static] :316
+// public static extern long GetUnoRef(Android.Base.Primitives.ujobject obj) [static] :294
 int64_t JNI::GetUnoRef(jobject obj)
 {
     if (::g::Android::Base::Primitives::ujobject::op_Inequality(obj, ::g::Android::Base::Primitives::ujobject::Null()))
@@ -574,19 +515,19 @@ int64_t JNI::GetUnoRef(jobject obj)
         return 0LL;
 }
 
-// public static extern Android.Base.Primitives.JavaVMPtr GetVM() [static] :82
+// public static extern Android.Base.Primitives.JavaVMPtr GetVM() [static] :60
 JavaVM* JNI::GetVM()
 {
     return JniHelper::GetVM();
 }
 
-// public static Android.Base.Wrappers.JWrapper GetWrappedActivityObject() [static] :106
+// public static Android.Base.Wrappers.JWrapper GetWrappedActivityObject() [static] :84
 ::g::Android::Base::Wrappers::JWrapper* JNI::GetWrappedActivityObject()
 {
-    return uCast< ::g::Android::Base::Wrappers::JWrapper*>(JNI::GetActivityObjectInner(), ::TYPES[1/*Android.Base.Wrappers.JWrapper*/]);
+    return uCast< ::g::Android::Base::Wrappers::JWrapper*>(JNI::GetActivityObjectInner(), ::g::Android::Base::Wrappers::JWrapper_typeof());
 }
 
-// public static void Init(Android.Base.Primitives.ujobject activityObject) [static] :46
+// public static void Init(Android.Base.Primitives.ujobject activityObject) [static] :24
 void JNI::Init(jobject activityObject)
 {
     if (!JNI::_inited_)
@@ -604,30 +545,30 @@ void JNI::Init(jobject activityObject)
         JNI::CheckException1(jni);
 
         if (::g::Android::Base::Primitives::ujclass::op_Equality(hcls, ::g::Android::Base::Primitives::ujclass::Null()))
-            U_THROW(::g::Uno::Exception::New2(::STRINGS[2/*"Could not c...*/]));
+            U_THROW(::g::Uno::Exception::New2(uString::Const("Could not cache class for UnoHelper")));
 
         JNI::_helperCls_ = JNI::NewGlobalRef(hcls);
         JNI::exceptionClass_ = NewGlobalRef(jni->FindClass("java/lang/RuntimeException"));
         JNI::_getUnoRefMid_ = JNI::GetEnvPtr()->GetStaticMethodID(JNI::_helperCls_,"GetUnoObjectRef","(Ljava/lang/Object;)J");
 
         if (!JNI::_getUnoRefMid_)
-            U_THROW(::g::Uno::Exception::New2(::STRINGS[3/*"Could not c...*/]));
+            U_THROW(::g::Uno::Exception::New2(uString::Const("Could not cache getUnoRefMid")));
     }
 }
 
-// public static extern bool IsSameObject(Android.Base.Primitives.ujobject objA, Android.Base.Primitives.ujobject objB) [static] :206
+// public static extern bool IsSameObject(Android.Base.Primitives.ujobject objA, Android.Base.Primitives.ujobject objB) [static] :184
 bool JNI::IsSameObject(jobject objA_, jobject objB_)
 {
     return (bool)JNI::GetEnvPtr()->IsSameObject(objA_,objB_);
 }
 
-// public static Android.Base.Primitives.ujclass LoadClass(Android.Base.Primitives.JNIEnvPtr jni, Android.Base.Primitives.ConstCharPtr name) [static] :112
+// public static Android.Base.Primitives.ujclass LoadClass(Android.Base.Primitives.JNIEnvPtr jni, Android.Base.Primitives.ConstCharPtr name) [static] :90
 jclass JNI::LoadClass(JNIEnv* jni, const char* name)
 {
     return JNI::LoadClass1(jni, name, false);
 }
 
-// public static Android.Base.Primitives.ujclass LoadClass(Android.Base.Primitives.JNIEnvPtr jni, Android.Base.Primitives.ConstCharPtr name, bool systemClass) [static] :129
+// public static Android.Base.Primitives.ujclass LoadClass(Android.Base.Primitives.JNIEnvPtr jni, Android.Base.Primitives.ConstCharPtr name, bool systemClass) [static] :107
 jclass JNI::LoadClass1(JNIEnv* jni, const char* name, bool systemClass)
 {
     jclass result;
@@ -647,7 +588,7 @@ jclass JNI::LoadClass1(JNIEnv* jni, const char* name, bool systemClass)
     return result;
 }
 
-// public static extern Android.Base.Primitives.ujclass LoadClass(Android.Base.Primitives.JNIEnvPtr jni, string name, [bool systemClass]) [static] :148
+// public static extern Android.Base.Primitives.ujclass LoadClass(Android.Base.Primitives.JNIEnvPtr jni, string name, [bool systemClass]) [static] :126
 jclass JNI::LoadClass2(JNIEnv* jni, uString* name, bool systemClass)
 {
     const char* cname = (const char*)uAllocCStr(name);
@@ -656,121 +597,31 @@ jclass JNI::LoadClass2(JNIEnv* jni, uString* name, bool systemClass)
     return result;
 }
 
-// public static extern Android.Base.Primitives.ujclass LoadClass(string name, [bool systemClass]) [static] :156
+// public static extern Android.Base.Primitives.ujclass LoadClass(string name, [bool systemClass]) [static] :134
 jclass JNI::LoadClass3(uString* name, bool systemClass)
 {
     return JNI::LoadClass2(JNI::GetEnvPtr(), name, systemClass);
 }
 
-// public static extern Android.Base.Primitives.ujobject NewBooleanArray(int len) [static] :329
-jobject JNI::NewBooleanArray(int len_)
-{
-    JNIEnv* jni = JNI::GetEnvPtr();
-    jobject rtn = jni->NewBooleanArray((jsize)len_);
-    jobject newArray = reinterpret_cast<jobject>(jni->NewGlobalRef(rtn));
-    jni->DeleteLocalRef(rtn);
-    return newArray;
-}
-
-// public static extern Android.Base.Primitives.ujobject NewByteArray(int len) [static] :331
-jobject JNI::NewByteArray(int len_)
-{
-    JNIEnv* jni = JNI::GetEnvPtr();
-    jobject rtn = jni->NewByteArray((jsize)len_);
-    jobject newArray = reinterpret_cast<jobject>(jni->NewGlobalRef(rtn));
-    jni->DeleteLocalRef(rtn);
-    return newArray;
-}
-
-// public static extern Android.Base.Primitives.ujobject NewCharArray(int len) [static] :333
-jobject JNI::NewCharArray(int len_)
-{
-    JNIEnv* jni = JNI::GetEnvPtr();
-    jobject rtn = jni->NewCharArray((jsize)len_);
-    jobject newArray = reinterpret_cast<jobject>(jni->NewGlobalRef(rtn));
-    jni->DeleteLocalRef(rtn);
-    return newArray;
-}
-
-// public static extern Android.Base.Primitives.ujobject NewDoubleArray(int len) [static] :343
-jobject JNI::NewDoubleArray(int len_)
-{
-    JNIEnv* jni = JNI::GetEnvPtr();
-    jobject rtn = jni->NewDoubleArray((jsize)len_);
-    jobject newArray = reinterpret_cast<jobject>(jni->NewGlobalRef(rtn));
-    jni->DeleteLocalRef(rtn);
-    return newArray;
-}
-
-// public static extern Android.Base.Primitives.ujobject NewFloatArray(int len) [static] :341
-jobject JNI::NewFloatArray(int len_)
-{
-    JNIEnv* jni = JNI::GetEnvPtr();
-    jobject rtn = jni->NewFloatArray((jsize)len_);
-    jobject newArray = reinterpret_cast<jobject>(jni->NewGlobalRef(rtn));
-    jni->DeleteLocalRef(rtn);
-    return newArray;
-}
-
-// public static extern Android.Base.Primitives.ujclass NewGlobalRef(Android.Base.Primitives.ujclass obj) [static] :167
+// public static extern Android.Base.Primitives.ujclass NewGlobalRef(Android.Base.Primitives.ujclass obj) [static] :145
 jclass JNI::NewGlobalRef(jclass obj)
 {
     return reinterpret_cast<jclass>(JNI::GetEnvPtr()->NewGlobalRef(obj));
 }
 
-// public static extern Android.Base.Primitives.ujobject NewGlobalRef(Android.Base.Primitives.ujobject obj) [static] :161
+// public static extern Android.Base.Primitives.ujobject NewGlobalRef(Android.Base.Primitives.ujobject obj) [static] :139
 jobject JNI::NewGlobalRef1(jobject obj)
 {
     return reinterpret_cast<jobject>(JNI::GetEnvPtr()->NewGlobalRef(obj));
 }
 
-// public static extern Android.Base.Primitives.ujobject NewIntArray(int len) [static] :337
-jobject JNI::NewIntArray(int len_)
-{
-    JNIEnv* jni = JNI::GetEnvPtr();
-    jobject rtn = jni->NewIntArray((jsize)len_);
-    jobject newArray = reinterpret_cast<jobject>(jni->NewGlobalRef(rtn));
-    jni->DeleteLocalRef(rtn);
-    return newArray;
-}
-
-// public static extern Android.Base.Primitives.ujobject NewLongArray(int len) [static] :339
-jobject JNI::NewLongArray(int len_)
-{
-    JNIEnv* jni = JNI::GetEnvPtr();
-    jobject rtn = jni->NewLongArray((jsize)len_);
-    jobject newArray = reinterpret_cast<jobject>(jni->NewGlobalRef(rtn));
-    jni->DeleteLocalRef(rtn);
-    return newArray;
-}
-
-// public static extern Android.Base.Primitives.ujobject NewObjectArray(Android.Base.Primitives.ujclass cls, int len) [static] :345
-jobject JNI::NewObjectArray(jclass cls_, int len_)
-{
-    JNIEnv* jni = JNI::GetEnvPtr();
-    jobject rtn = jni->NewObjectArray((jsize)len_, cls_, NULL);
-    jobject newArray = reinterpret_cast<jobject>(jni->NewGlobalRef(rtn));
-    jni->DeleteLocalRef(rtn);
-    return newArray;
-}
-
-// public static extern Android.Base.Primitives.ujobject NewShortArray(int len) [static] :335
-jobject JNI::NewShortArray(int len_)
-{
-    JNIEnv* jni = JNI::GetEnvPtr();
-    jobject rtn = jni->NewShortArray((jsize)len_);
-    jobject newArray = reinterpret_cast<jobject>(jni->NewGlobalRef(rtn));
-    jni->DeleteLocalRef(rtn);
-    return newArray;
-}
-
-// public static extern Android.Base.Primitives.ujobject NewWeakGlobalRef(Android.Base.Primitives.ujobject obj) [static] :197
+// public static extern Android.Base.Primitives.ujobject NewWeakGlobalRef(Android.Base.Primitives.ujobject obj) [static] :175
 jobject JNI::NewWeakGlobalRef(jobject obj_)
 {
     return (jobject)reinterpret_cast<jweak>(JNI::GetEnvPtr()->NewWeakGlobalRef(obj_));
 }
 
-// public static void SetBooleanArrayRegion(Android.Base.Primitives.ujobject javaArr, bool[] unoArr, [int start], [int len]) [static] :385
+// public static void SetBooleanArrayRegion(Android.Base.Primitives.ujobject javaArr, bool[] unoArr, [int start], [int len]) [static] :363
 void JNI::SetBooleanArrayRegion(jobject javaArr, uArray* unoArr, int start, int len)
 {
     if (len == -1)
@@ -780,7 +631,7 @@ void JNI::SetBooleanArrayRegion(jobject javaArr, uArray* unoArr, int start, int 
     jni->SetBooleanArrayRegion((jbooleanArray)javaArr,start,len,(jboolean*)unoArr->_ptr);
 }
 
-// public static void SetByteArrayRegion(Android.Base.Primitives.ujobject javaArr, byte[] unoArr, [int start], [int len]) [static] :401
+// public static void SetByteArrayRegion(Android.Base.Primitives.ujobject javaArr, byte[] unoArr, [int start], [int len]) [static] :379
 void JNI::SetByteArrayRegion(jobject javaArr, uArray* unoArr, int start, int len)
 {
     if (len == -1)
@@ -790,7 +641,7 @@ void JNI::SetByteArrayRegion(jobject javaArr, uArray* unoArr, int start, int len
     jni->SetByteArrayRegion((jbyteArray)javaArr,start,len,(jbyte*)unoArr->_ptr);
 }
 
-// public static void SetByteArrayRegion(Android.Base.Primitives.ujobject javaArr, sbyte[] unoArr, [int start], [int len]) [static] :393
+// public static void SetByteArrayRegion(Android.Base.Primitives.ujobject javaArr, sbyte[] unoArr, [int start], [int len]) [static] :371
 void JNI::SetByteArrayRegion1(jobject javaArr, uArray* unoArr, int start, int len)
 {
     if (len == -1)
@@ -800,7 +651,7 @@ void JNI::SetByteArrayRegion1(jobject javaArr, uArray* unoArr, int start, int le
     jni->SetByteArrayRegion((jbyteArray)javaArr,start,len,(jbyte*)unoArr->_ptr);
 }
 
-// public static void SetCharArrayRegion(Android.Base.Primitives.ujobject javaArr, char[] unoArr, [int start], [int len]) [static] :409
+// public static void SetCharArrayRegion(Android.Base.Primitives.ujobject javaArr, char[] unoArr, [int start], [int len]) [static] :387
 void JNI::SetCharArrayRegion(jobject javaArr, uArray* unoArr, int start, int len)
 {
     if (len == -1)
@@ -810,7 +661,7 @@ void JNI::SetCharArrayRegion(jobject javaArr, uArray* unoArr, int start, int len
     jni->SetCharArrayRegion((jcharArray)javaArr,start,len,(jchar*)unoArr->_ptr);
 }
 
-// public static void SetDoubleArrayRegion(Android.Base.Primitives.ujobject javaArr, double[] unoArr, [int start], [int len]) [static] :449
+// public static void SetDoubleArrayRegion(Android.Base.Primitives.ujobject javaArr, double[] unoArr, [int start], [int len]) [static] :427
 void JNI::SetDoubleArrayRegion(jobject javaArr, uArray* unoArr, int start, int len)
 {
     if (len == -1)
@@ -820,7 +671,7 @@ void JNI::SetDoubleArrayRegion(jobject javaArr, uArray* unoArr, int start, int l
     jni->SetDoubleArrayRegion((jdoubleArray)javaArr,start,len,(jdouble*)unoArr->_ptr);
 }
 
-// public static void SetFloatArrayRegion(Android.Base.Primitives.ujobject javaArr, float[] unoArr, [int start], [int len]) [static] :441
+// public static void SetFloatArrayRegion(Android.Base.Primitives.ujobject javaArr, float[] unoArr, [int start], [int len]) [static] :419
 void JNI::SetFloatArrayRegion(jobject javaArr, uArray* unoArr, int start, int len)
 {
     if (len == -1)
@@ -830,7 +681,7 @@ void JNI::SetFloatArrayRegion(jobject javaArr, uArray* unoArr, int start, int le
     jni->SetFloatArrayRegion((jfloatArray)javaArr,start,len,(jfloat*)unoArr->_ptr);
 }
 
-// public static void SetIntArrayRegion(Android.Base.Primitives.ujobject javaArr, int[] unoArr, [int start], [int len]) [static] :425
+// public static void SetIntArrayRegion(Android.Base.Primitives.ujobject javaArr, int[] unoArr, [int start], [int len]) [static] :403
 void JNI::SetIntArrayRegion(jobject javaArr, uArray* unoArr, int start, int len)
 {
     if (len == -1)
@@ -840,7 +691,7 @@ void JNI::SetIntArrayRegion(jobject javaArr, uArray* unoArr, int start, int len)
     jni->SetIntArrayRegion((jintArray)javaArr,start,len,(jint*)unoArr->_ptr);
 }
 
-// public static void SetLongArrayRegion(Android.Base.Primitives.ujobject javaArr, long[] unoArr, [int start], [int len]) [static] :433
+// public static void SetLongArrayRegion(Android.Base.Primitives.ujobject javaArr, long[] unoArr, [int start], [int len]) [static] :411
 void JNI::SetLongArrayRegion(jobject javaArr, uArray* unoArr, int start, int len)
 {
     if (len == -1)
@@ -850,7 +701,7 @@ void JNI::SetLongArrayRegion(jobject javaArr, uArray* unoArr, int start, int len
     jni->SetLongArrayRegion((jlongArray)javaArr,start,len,(jlong*)unoArr->_ptr);
 }
 
-// public static void SetShortArrayRegion(Android.Base.Primitives.ujobject javaArr, short[] unoArr, [int start], [int len]) [static] :417
+// public static void SetShortArrayRegion(Android.Base.Primitives.ujobject javaArr, short[] unoArr, [int start], [int len]) [static] :395
 void JNI::SetShortArrayRegion(jobject javaArr, uArray* unoArr, int start, int len)
 {
     if (len == -1)
@@ -860,7 +711,7 @@ void JNI::SetShortArrayRegion(jobject javaArr, uArray* unoArr, int start, int le
     jni->SetShortArrayRegion((jshortArray)javaArr,start,len,(jshort*)unoArr->_ptr);
 }
 
-// public static extern void ThrowNewException(string message) [static] :243
+// public static extern void ThrowNewException(string message) [static] :221
 void JNI::ThrowNewException(uString* message_)
 {
     const char* message = uAllocCStr(message_);
@@ -869,7 +720,7 @@ void JNI::ThrowNewException(uString* message_)
     uFreeCStr(message);
 }
 
-// public static Uno.Exception TryGetException(Android.Base.Primitives.JNIEnvPtr jni, [string appendMessage]) [static] :208
+// public static Uno.Exception TryGetException(Android.Base.Primitives.JNIEnvPtr jni, [string appendMessage]) [static] :186
 ::g::Uno::Exception* JNI::TryGetException(JNIEnv* jni, uString* appendMessage)
 {
     jthrowable err = jni->ExceptionOccurred();
@@ -883,7 +734,8 @@ void JNI::ThrowNewException(uString* message_)
         uString* x = ::g::Android::Base::Types::String::JavaToUno1(estring);
 
         if (::g::Uno::String::op_Inequality(appendMessage, NULL))
-            x = ::g::Uno::String::op_Addition2(x, ::g::Uno::String::op_Addition2(::g::Uno::String::op_Addition2(x, ::STRINGS[4/*"\n"*/]), appendMessage));
+            x = ::g::Uno::String::op_Addition2(x, ::g::Uno::String::op_Addition2(::g::Uno::String::op_Addition2(x, uString::Const("\n"
+                "")), appendMessage));
 
         return ::g::Uno::Exception::New2(x);
     }
@@ -892,10 +744,10 @@ void JNI::ThrowNewException(uString* message_)
 }
 // }
 
-// /usr/local/share/uno/Packages/UnoCore/1.2.2/targets/android/uno/base/$.uno
-// --------------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\UnoCore\1.3.1\Targets\Android\Uno\Base\JNI.uno
+// ------------------------------------------------------------------------------------------
 
-// public enum JNI.RefType :117
+// public enum JNI.RefType :95
 uEnumType* JNI__RefType_typeof()
 {
     static uSStrong<uEnumType*> type;

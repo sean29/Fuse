@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Uno.Net.Sockets/1.2.2/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Uno.Net.Sockets/1.3.1/NetworkStream.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -12,7 +12,7 @@ namespace Uno{
 namespace Net{
 namespace Sockets{
 
-// public sealed class NetworkStream :515
+// public sealed class NetworkStream :10
 // {
 ::g::Uno::IO::Stream_type* NetworkStream_typeof();
 void NetworkStream__Flush_fn(NetworkStream* __this);

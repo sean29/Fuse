@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/UnoCore/1.2.2/source/uno/time/timezones/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/UnoCore/1.3.1/Source/Uno/Time/Timezones/DeviceTimeZone.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -11,7 +11,7 @@ namespace g{
 namespace Uno{
 namespace Time{
 
-// public sealed class DeviceTimeZone :7
+// public sealed class DeviceTimeZone :5
 // {
 ::g::Uno::Time::DateTimeZone_type* DeviceTimeZone_typeof();
 void DeviceTimeZone__ctor_1_fn(DeviceTimeZone* __this);

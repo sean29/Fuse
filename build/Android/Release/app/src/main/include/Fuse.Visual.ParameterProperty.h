@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Nodes/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Nodes/1.3.0-rc2/Visual.ScriptClass.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -12,7 +12,7 @@ namespace g{namespace Uno{namespace UX{struct Selector;}}}
 namespace g{
 namespace Fuse{
 
-// private sealed class Visual.ParameterProperty :7671
+// private sealed class Visual.ParameterProperty :19
 // {
 ::g::Uno::UX::Property1_type* Visual__ParameterProperty_typeof();
 void Visual__ParameterProperty__ctor_3_fn(Visual__ParameterProperty* __this, ::g::Fuse::Visual* visual);
@@ -25,7 +25,7 @@ void Visual__ParameterProperty__get_SupportsOriginSetter_fn(Visual__ParameterPro
 struct Visual__ParameterProperty : ::g::Uno::UX::Property1
 {
     static ::g::Uno::UX::Selector _name1_;
-    static ::g::Uno::UX::Selector& _name1() { return Visual__ParameterProperty_typeof()->Init(), _name1_; }
+    static ::g::Uno::UX::Selector& _name1() { return _name1_; }
     uStrong< ::g::Fuse::Visual*> _visual;
 
     void ctor_3(::g::Fuse::Visual* visual);

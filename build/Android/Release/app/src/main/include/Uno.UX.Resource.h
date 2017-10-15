@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/UnoCore/1.2.2/source/uno/ux/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/UnoCore/1.3.1/Source/Uno/UX/Resource.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -11,7 +11,7 @@ namespace g{
 namespace Uno{
 namespace UX{
 
-// public sealed class Resource :484
+// public sealed class Resource :68
 // {
 uType* Resource_typeof();
 void Resource__AddGlobalKeyListener_fn(uDelegate* listener);
@@ -28,9 +28,9 @@ void Resource__set_Value_fn(Resource* __this, uObject* value);
 struct Resource : uObject
 {
     static uSStrong< ::g::Uno::Collections::Dictionary*> _globals_;
-    static uSStrong< ::g::Uno::Collections::Dictionary*>& _globals() { return Resource_typeof()->Init(), _globals_; }
+    static uSStrong< ::g::Uno::Collections::Dictionary*>& _globals() { return _globals_; }
     static uSStrong< ::g::Uno::Collections::List*> _listeners_;
-    static uSStrong< ::g::Uno::Collections::List*>& _listeners() { return Resource_typeof()->Init(), _listeners_; }
+    static uSStrong< ::g::Uno::Collections::List*>& _listeners() { return _listeners_; }
     uStrong<uString*> _Key;
     uStrong<uObject*> _Value;
 

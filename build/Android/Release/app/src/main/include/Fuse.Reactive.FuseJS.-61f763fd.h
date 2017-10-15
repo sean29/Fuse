@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Reactive.JavaScript/1.2.1/fusejs/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Reactive.JavaScript/1.3.0-rc2/FuseJS/Timer.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -15,7 +15,7 @@ namespace Fuse{
 namespace Reactive{
 namespace FuseJS{
 
-// public sealed class TimerModule :722
+// public sealed class TimerModule :26
 // {
 ::g::Fuse::Scripting::NativeModule_type* TimerModule_typeof();
 void TimerModule__ctor_2_fn(TimerModule* __this);

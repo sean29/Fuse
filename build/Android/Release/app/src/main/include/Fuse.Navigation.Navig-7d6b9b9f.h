@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Navigation/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Navigation/1.3.0-rc2/TriggerActions.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -10,7 +10,7 @@ namespace g{
 namespace Fuse{
 namespace Navigation{
 
-// public abstract class NavigationTriggerAction :4765
+// public abstract class NavigationTriggerAction :9
 // {
 struct NavigationTriggerAction_type : ::g::Fuse::Triggers::Actions::TriggerAction_type
 {

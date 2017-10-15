@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Controls.Video/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Controls.Video/1.3.0-rc2/VideoContainer.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -10,7 +10,7 @@ namespace Fuse{
 namespace Controls{
 namespace VideoImpl{
 
-// internal abstract interface IVideoCallbacks :626
+// internal abstract interface IVideoCallbacks :42
 // {
 uInterfaceType* IVideoCallbacks_typeof();
 

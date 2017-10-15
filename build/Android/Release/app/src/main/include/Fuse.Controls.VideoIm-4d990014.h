@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Controls.Video/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Controls.Video/1.3.0-rc2/VideoLoader.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -12,7 +12,7 @@ namespace Fuse{
 namespace Controls{
 namespace VideoImpl{
 
-// internal static class VideoLoader :953
+// internal static class VideoLoader :12
 // {
 uClassType* VideoLoader_typeof();
 void VideoLoader__Load_fn(uString* url, ::g::Uno::Threading::Future1** __retval);

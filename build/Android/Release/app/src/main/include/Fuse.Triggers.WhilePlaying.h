@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Triggers/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Triggers/1.3.0-rc2/WhilePlaying.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -20,7 +20,7 @@ namespace g{
 namespace Fuse{
 namespace Triggers{
 
-// public sealed class WhilePlaying :3868
+// public sealed class WhilePlaying :15
 // {
 ::g::Fuse::Triggers::Trigger_type* WhilePlaying_typeof();
 void WhilePlaying__IsPlaying_fn(::g::Fuse::Visual* n, bool* __retval);
@@ -30,7 +30,7 @@ void WhilePlaying__SetState_fn(::g::Fuse::Visual* n, bool* playing);
 struct WhilePlaying : ::g::Fuse::Triggers::WhileTrigger
 {
     static uSStrong< ::g::Fuse::PropertyHandle*> _whilePlayingProp_;
-    static uSStrong< ::g::Fuse::PropertyHandle*>& _whilePlayingProp() { return WhilePlaying_typeof()->Init(), _whilePlayingProp_; }
+    static uSStrong< ::g::Fuse::PropertyHandle*>& _whilePlayingProp() { return _whilePlayingProp_; }
 
     static bool IsPlaying(::g::Fuse::Visual* n);
     static void SetState(::g::Fuse::Visual* n, bool playing);

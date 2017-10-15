@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Reactive.Expressions/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Reactive.Expressions/1.3.0-rc2/LookUp.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -10,7 +10,7 @@ namespace g{
 namespace Fuse{
 namespace Reactive{
 
-// public sealed class LookUp :335
+// public sealed class LookUp :17
 // {
 ::g::Fuse::Reactive::Expression_type* LookUp_typeof();
 void LookUp__get_Collection_fn(LookUp* __this, ::g::Fuse::Reactive::Expression** __retval);

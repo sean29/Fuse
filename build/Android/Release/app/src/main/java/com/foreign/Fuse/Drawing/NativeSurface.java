@@ -48,12 +48,12 @@ public class NativeSurface
         android.util.Log.d("emrals", (message==null ? "null" : message.toString()));
     }
 
-    public static Object DummyBitmap307()
+    public static Object DummyBitmap306()
     {
         return Bitmap.createBitmap(10,10,Bitmap.Config.ARGB_8888);
     }
     
-    public static void SetCanvas308(final Object context,final Object canvas)
+    public static void SetCanvas307(final Object context,final Object canvas)
     {
         GraphicsSurfaceContext impl = (GraphicsSurfaceContext) context;
         impl.canvas = (Canvas)canvas;

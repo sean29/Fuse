@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Elements/1.2.1/resources/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Elements/1.3.0-rc2/Resources/FileImageSource.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -13,7 +13,7 @@ namespace g{
 namespace Fuse{
 namespace Resources{
 
-// internal static class FileImageSourceCache :13
+// internal static class FileImageSourceCache :11
 // {
 uClassType* FileImageSourceCache_typeof();
 void FileImageSourceCache__GetFileSource_fn(::g::Uno::UX::FileSource* file, ::g::Fuse::Resources::FileImageSourceImpl** __retval);
@@ -21,7 +21,7 @@ void FileImageSourceCache__GetFileSource_fn(::g::Uno::UX::FileSource* file, ::g:
 struct FileImageSourceCache : uObject
 {
     static uSStrong< ::g::Uno::Collections::Dictionary*> _cache_;
-    static uSStrong< ::g::Uno::Collections::Dictionary*>& _cache() { return FileImageSourceCache_typeof()->Init(), _cache_; }
+    static uSStrong< ::g::Uno::Collections::Dictionary*>& _cache() { return _cache_; }
 
     static ::g::Fuse::Resources::FileImageSourceImpl* GetFileSource(::g::Uno::UX::FileSource* file);
 };

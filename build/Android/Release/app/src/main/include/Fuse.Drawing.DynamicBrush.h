@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Drawing/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Drawing/1.3.0-rc2/Brush.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -10,7 +10,7 @@ namespace g{
 namespace Fuse{
 namespace Drawing{
 
-// public abstract class DynamicBrush :83
+// public abstract class DynamicBrush :81
 // {
 ::g::Fuse::Drawing::Brush_type* DynamicBrush_typeof();
 void DynamicBrush__ctor_2_fn(DynamicBrush* __this);
@@ -22,7 +22,7 @@ struct DynamicBrush : ::g::Fuse::Drawing::Brush
 {
     float _opacity;
     static ::g::Uno::UX::Selector _opacityName_;
-    static ::g::Uno::UX::Selector& _opacityName() { return DynamicBrush_typeof()->Init(), _opacityName_; }
+    static ::g::Uno::UX::Selector& _opacityName() { return _opacityName_; }
 
     void ctor_2();
     float Opacity();

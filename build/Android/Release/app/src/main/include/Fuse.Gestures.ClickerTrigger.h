@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Gestures/1.2.1/internal/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Gestures/1.3.0-rc2/Internal/Clicker.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -20,7 +20,7 @@ namespace g{
 namespace Fuse{
 namespace Gestures{
 
-// public abstract class ClickerTrigger :21
+// public abstract class ClickerTrigger :19
 // {
 ::g::Fuse::Triggers::Trigger_type* ClickerTrigger_typeof();
 void ClickerTrigger__ctor_5_fn(ClickerTrigger* __this);

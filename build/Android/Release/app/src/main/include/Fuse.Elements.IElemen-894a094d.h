@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Elements/1.2.1/caching/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Elements/1.3.0-rc2/Caching/ElementBatcher.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -11,7 +11,7 @@ namespace g{
 namespace Fuse{
 namespace Elements{
 
-// internal abstract interface IElementBatchDrawable :862
+// internal abstract interface IElementBatchDrawable :8
 // {
 uInterfaceType* IElementBatchDrawable_typeof();
 

@@ -1,4 +1,4 @@
-// This file was generated based on '.uno/ux11/BuyEcanPage.g.uno'.
+// This file was generated based on '.uno/ux13/BuyEcanPage.g.uno'.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #include <_root.BuyEcanPage.h>
@@ -51,7 +51,6 @@
 #include <Fuse.Reactive.IExpression.h>
 #include <Fuse.Reactive.JavaScript.h>
 #include <Fuse.Triggers.Trigger.h>
-#include <Fuse.Visual.h>
 #include <Uno.Double.h>
 #include <Uno.Float.h>
 #include <Uno.Int.h>
@@ -72,11 +71,13 @@ static uType* TYPES[7];
 
 namespace g{
 
-// public partial sealed class BuyEcanPage :2
+// public partial class BuyEcanPage :2
 // {
 // static BuyEcanPage() :39
 static void BuyEcanPage__cctor_4_fn(uType* __type)
 {
+    ::g::Uno::UX::Selector_typeof()->Init();
+    ::g::Uno::UX::Resource_typeof()->Init();
     BuyEcanPage::__g_static_nametable1_ = uArray::Init<uString*>(::TYPES[0/*string[]*/], 8, ::STRINGS[0/*"router"*/], ::STRINGS[1/*"temp_eb18"*/], ::STRINGS[2/*"CCPage"*/], ::STRINGS[3/*"temp_eb20"*/], ::STRINGS[4/*"temp_eb19"*/], ::STRINGS[5/*"CCArea"*/], ::STRINGS[6/*"buyecanrec"*/], ::STRINGS[7/*"temp_eb21"*/]);
     BuyEcanPage::__selector0_ = ::g::Uno::UX::Selector__op_Implicit(::STRINGS[8/*"Value"*/]);
     BuyEcanPage::__selector1_ = ::g::Uno::UX::Selector__op_Implicit(::STRINGS[9/*"Visibility"*/]);
@@ -84,7 +85,7 @@ static void BuyEcanPage__cctor_4_fn(uType* __type)
     BuyEcanPage::__selector3_ = ::g::Uno::UX::Selector__op_Implicit(::STRINGS[2/*"CCPage"*/]);
     BuyEcanPage::__selector4_ = ::g::Uno::UX::Selector__op_Implicit(::STRINGS[5/*"CCArea"*/]);
     BuyEcanPage::__selector5_ = ::g::Uno::UX::Selector__op_Implicit(::STRINGS[6/*"buyecanrec"*/]);
-    BuyEcanPage::PTMono_ = ::g::Fuse::Font::New2(::g::Uno::UX::BundleFileSource::New1(::g::emrals_bundle::PTM55FT66544efb()));
+    BuyEcanPage::PTMono_ = ::g::Fuse::Font::New2(::g::Uno::UX::BundleFileSource::New1(::g::emrals_bundle::PTM55FT76ac4b0e()));
     ::g::Uno::UX::Resource::SetGlobalKey(BuyEcanPage::PTMono_, ::STRINGS[11/*"PTMono"*/]);
 }
 
@@ -145,6 +146,9 @@ static void BuyEcanPage_build(uType* type)
     ::TYPES[4] = ::g::Uno::Collections::ICollection_typeof()->MakeType(::g::Fuse::Binding_typeof(), NULL);
     ::TYPES[5] = ::g::Uno::Collections::ICollection_typeof()->MakeType(::g::Fuse::Animations::Animator_typeof(), NULL);
     ::TYPES[6] = ::g::Uno::Collections::ICollection_typeof()->MakeType(uObject_typeof(), NULL);
+    type->SetDependencies(
+        ::g::Fuse::Controls::DockPanel_typeof(),
+        ::g::Fuse::Controls::Grid_typeof());
     type->SetInterfaces(
         ::g::Uno::Collections::IList_typeof()->MakeType(::g::Fuse::Binding_typeof(), NULL), offsetof(::g::Fuse::Controls::Panel_type, interface0),
         ::g::Fuse::Scripting::IScriptObject_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface1),
@@ -155,47 +159,48 @@ static void BuyEcanPage_build(uType* type)
         ::g::Uno::Collections::IList_typeof()->MakeType(::g::Fuse::Node_typeof(), NULL), offsetof(::g::Fuse::Controls::Panel_type, interface6),
         ::g::Uno::UX::IPropertyListener_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface7),
         ::g::Fuse::ITemplateSource_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface8),
-        ::TYPES[2/*Uno.Collections.ICollection<Fuse.Node>*/], offsetof(::g::Fuse::Controls::Panel_type, interface9),
-        ::g::Uno::Collections::IEnumerable_typeof()->MakeType(::g::Fuse::Node_typeof(), NULL), offsetof(::g::Fuse::Controls::Panel_type, interface10),
-        ::g::Fuse::Triggers::Actions::IShow_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface11),
-        ::g::Fuse::Triggers::Actions::IHide_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface12),
-        ::g::Fuse::Triggers::Actions::ICollapse_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface13),
-        ::g::Fuse::IActualPlacement_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface14),
-        ::g::Fuse::Animations::IResize_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface15),
-        ::g::Fuse::Drawing::ISurfaceDrawable_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface16));
-    type->SetFields(111,
-        ::g::Uno::UX::NameTable_typeof(), offsetof(::g::BuyEcanPage, __g_nametable1), 0,
-        ::g::Fuse::Controls::Rectangle_typeof(), offsetof(::g::BuyEcanPage, buyecanrec), 0,
-        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::Float4_typeof(), NULL), offsetof(::g::BuyEcanPage, buyecanrec_Color_inst), 0,
-        ::g::Fuse::Controls::StackPanel_typeof(), offsetof(::g::BuyEcanPage, CCArea), 0,
-        ::g::Fuse::Controls::StackPanel_typeof(), offsetof(::g::BuyEcanPage, CCPage), 0,
-        ::g::Fuse::Navigation::Router_typeof(), offsetof(::g::BuyEcanPage, router), 0,
-        ::g::Fuse::Reactive::EventBinding_typeof(), offsetof(::g::BuyEcanPage, temp_eb18), 0,
-        ::g::Fuse::Reactive::EventBinding_typeof(), offsetof(::g::BuyEcanPage, temp_eb19), 0,
-        ::g::Fuse::Reactive::EventBinding_typeof(), offsetof(::g::BuyEcanPage, temp_eb20), 0,
-        ::g::Fuse::Reactive::EventBinding_typeof(), offsetof(::g::BuyEcanPage, temp_eb21), 0,
-        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(::g::BuyEcanPage, temp_Value_inst), 0,
-        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Fuse::Elements::Visibility_typeof(), NULL), offsetof(::g::BuyEcanPage, temp1_Visibility_inst), 0,
-        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(::g::BuyEcanPage, temp10_Value_inst), 0,
-        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(::g::BuyEcanPage, temp11_Value_inst), 0,
-        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(::g::BuyEcanPage, temp12_Value_inst), 0,
-        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(::g::BuyEcanPage, temp13_Value_inst), 0,
-        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(::g::BuyEcanPage, temp2_Value_inst), 0,
-        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(::g::BuyEcanPage, temp3_Value_inst), 0,
-        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(::g::BuyEcanPage, temp4_Value_inst), 0,
-        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(::g::BuyEcanPage, temp5_Value_inst), 0,
-        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(::g::BuyEcanPage, temp6_Value_inst), 0,
-        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(::g::BuyEcanPage, temp7_Value_inst), 0,
-        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(::g::BuyEcanPage, temp8_Value_inst), 0,
-        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(::g::BuyEcanPage, temp9_Value_inst), 0,
-        ::TYPES[0/*string[]*/], (uintptr_t)&::g::BuyEcanPage::__g_static_nametable1_, uFieldFlagsStatic,
-        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&::g::BuyEcanPage::__selector0_, uFieldFlagsStatic,
-        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&::g::BuyEcanPage::__selector1_, uFieldFlagsStatic,
-        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&::g::BuyEcanPage::__selector2_, uFieldFlagsStatic,
-        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&::g::BuyEcanPage::__selector3_, uFieldFlagsStatic,
-        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&::g::BuyEcanPage::__selector4_, uFieldFlagsStatic,
-        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&::g::BuyEcanPage::__selector5_, uFieldFlagsStatic,
-        ::g::Fuse::Font_typeof(), (uintptr_t)&::g::BuyEcanPage::PTMono_, uFieldFlagsStatic);
+        ::g::Uno::Collections::IEnumerable_typeof()->MakeType(::g::Fuse::Visual_typeof(), NULL), offsetof(::g::Fuse::Controls::Panel_type, interface9),
+        ::TYPES[2/*Uno.Collections.ICollection<Fuse.Node>*/], offsetof(::g::Fuse::Controls::Panel_type, interface10),
+        ::g::Uno::Collections::IEnumerable_typeof()->MakeType(::g::Fuse::Node_typeof(), NULL), offsetof(::g::Fuse::Controls::Panel_type, interface11),
+        ::g::Fuse::Triggers::Actions::IShow_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface12),
+        ::g::Fuse::Triggers::Actions::IHide_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface13),
+        ::g::Fuse::Triggers::Actions::ICollapse_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface14),
+        ::g::Fuse::IActualPlacement_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface15),
+        ::g::Fuse::Animations::IResize_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface16),
+        ::g::Fuse::Drawing::ISurfaceDrawable_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface17));
+    type->SetFields(117,
+        ::g::Uno::UX::NameTable_typeof(), offsetof(BuyEcanPage, __g_nametable1), 0,
+        ::g::Fuse::Controls::Rectangle_typeof(), offsetof(BuyEcanPage, buyecanrec), 0,
+        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::Float4_typeof(), NULL), offsetof(BuyEcanPage, buyecanrec_Color_inst), 0,
+        ::g::Fuse::Controls::StackPanel_typeof(), offsetof(BuyEcanPage, CCArea), 0,
+        ::g::Fuse::Controls::StackPanel_typeof(), offsetof(BuyEcanPage, CCPage), 0,
+        ::g::Fuse::Navigation::Router_typeof(), offsetof(BuyEcanPage, router), 0,
+        ::g::Fuse::Reactive::EventBinding_typeof(), offsetof(BuyEcanPage, temp_eb18), 0,
+        ::g::Fuse::Reactive::EventBinding_typeof(), offsetof(BuyEcanPage, temp_eb19), 0,
+        ::g::Fuse::Reactive::EventBinding_typeof(), offsetof(BuyEcanPage, temp_eb20), 0,
+        ::g::Fuse::Reactive::EventBinding_typeof(), offsetof(BuyEcanPage, temp_eb21), 0,
+        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(BuyEcanPage, temp_Value_inst), 0,
+        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Fuse::Elements::Visibility_typeof(), NULL), offsetof(BuyEcanPage, temp1_Visibility_inst), 0,
+        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(BuyEcanPage, temp10_Value_inst), 0,
+        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(BuyEcanPage, temp11_Value_inst), 0,
+        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(BuyEcanPage, temp12_Value_inst), 0,
+        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(BuyEcanPage, temp13_Value_inst), 0,
+        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(BuyEcanPage, temp2_Value_inst), 0,
+        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(BuyEcanPage, temp3_Value_inst), 0,
+        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(BuyEcanPage, temp4_Value_inst), 0,
+        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(BuyEcanPage, temp5_Value_inst), 0,
+        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(BuyEcanPage, temp6_Value_inst), 0,
+        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(BuyEcanPage, temp7_Value_inst), 0,
+        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(BuyEcanPage, temp8_Value_inst), 0,
+        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::String_typeof(), NULL), offsetof(BuyEcanPage, temp9_Value_inst), 0,
+        ::TYPES[0/*string[]*/], (uintptr_t)&BuyEcanPage::__g_static_nametable1_, uFieldFlagsStatic,
+        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&BuyEcanPage::__selector0_, uFieldFlagsStatic,
+        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&BuyEcanPage::__selector1_, uFieldFlagsStatic,
+        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&BuyEcanPage::__selector2_, uFieldFlagsStatic,
+        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&BuyEcanPage::__selector3_, uFieldFlagsStatic,
+        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&BuyEcanPage::__selector4_, uFieldFlagsStatic,
+        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&BuyEcanPage::__selector5_, uFieldFlagsStatic,
+        ::g::Fuse::Font_typeof(), (uintptr_t)&BuyEcanPage::PTMono_, uFieldFlagsStatic);
 }
 
 ::g::Fuse::Controls::Panel_type* BuyEcanPage_typeof()
@@ -205,34 +210,36 @@ static void BuyEcanPage_build(uType* type)
 
     uTypeOptions options;
     options.BaseDefinition = ::g::Fuse::Controls::Page_typeof();
-    options.FieldCount = 143;
-    options.InterfaceCount = 17;
+    options.FieldCount = 149;
+    options.InterfaceCount = 18;
+    options.DependencyCount = 2;
     options.ObjectSize = sizeof(BuyEcanPage);
     options.TypeSize = sizeof(::g::Fuse::Controls::Panel_type);
     type = (::g::Fuse::Controls::Panel_type*)uClassType::New("BuyEcanPage", options);
     type->fp_build_ = BuyEcanPage_build;
     type->fp_cctor_ = BuyEcanPage__cctor_4_fn;
-    type->interface16.fp_Draw = (void(*)(uObject*, ::g::Fuse::Drawing::Surface*))::g::Fuse::Controls::Panel__FuseDrawingISurfaceDrawableDraw_fn;
-    type->interface16.fp_get_IsPrimary = (void(*)(uObject*, bool*))::g::Fuse::Controls::Panel__FuseDrawingISurfaceDrawableget_IsPrimary_fn;
-    type->interface16.fp_get_ElementSize = (void(*)(uObject*, ::g::Uno::Float2*))::g::Fuse::Controls::Panel__FuseDrawingISurfaceDrawableget_ElementSize_fn;
-    type->interface11.fp_Show = (void(*)(uObject*))::g::Fuse::Elements::Element__FuseTriggersActionsIShowShow_fn;
-    type->interface13.fp_Collapse = (void(*)(uObject*))::g::Fuse::Elements::Element__FuseTriggersActionsICollapseCollapse_fn;
-    type->interface12.fp_Hide = (void(*)(uObject*))::g::Fuse::Elements::Element__FuseTriggersActionsIHideHide_fn;
-    type->interface15.fp_SetSize = (void(*)(uObject*, ::g::Uno::Float2*))::g::Fuse::Elements::Element__FuseAnimationsIResizeSetSize_fn;
-    type->interface14.fp_get_ActualSize = (void(*)(uObject*, ::g::Uno::Float3*))::g::Fuse::Elements::Element__FuseIActualPlacementget_ActualSize_fn;
-    type->interface14.fp_add_Placed = (void(*)(uObject*, uDelegate*))::g::Fuse::Elements::Element__add_Placed_fn;
-    type->interface14.fp_remove_Placed = (void(*)(uObject*, uDelegate*))::g::Fuse::Elements::Element__remove_Placed_fn;
-    type->interface9.fp_Clear = (void(*)(uObject*))::g::Fuse::Visual__UnoCollectionsICollectionFuseNodeClear_fn;
-    type->interface9.fp_Contains = (void(*)(uObject*, void*, bool*))::g::Fuse::Visual__UnoCollectionsICollectionFuseNodeContains_fn;
+    type->interface17.fp_Draw = (void(*)(uObject*, ::g::Fuse::Drawing::Surface*))::g::Fuse::Controls::Panel__FuseDrawingISurfaceDrawableDraw_fn;
+    type->interface17.fp_get_IsPrimary = (void(*)(uObject*, bool*))::g::Fuse::Controls::Panel__FuseDrawingISurfaceDrawableget_IsPrimary_fn;
+    type->interface17.fp_get_ElementSize = (void(*)(uObject*, ::g::Uno::Float2*))::g::Fuse::Controls::Panel__FuseDrawingISurfaceDrawableget_ElementSize_fn;
+    type->interface12.fp_Show = (void(*)(uObject*))::g::Fuse::Elements::Element__FuseTriggersActionsIShowShow_fn;
+    type->interface14.fp_Collapse = (void(*)(uObject*))::g::Fuse::Elements::Element__FuseTriggersActionsICollapseCollapse_fn;
+    type->interface13.fp_Hide = (void(*)(uObject*))::g::Fuse::Elements::Element__FuseTriggersActionsIHideHide_fn;
+    type->interface16.fp_SetSize = (void(*)(uObject*, ::g::Uno::Float2*))::g::Fuse::Elements::Element__FuseAnimationsIResizeSetSize_fn;
+    type->interface15.fp_get_ActualSize = (void(*)(uObject*, ::g::Uno::Float3*))::g::Fuse::Elements::Element__FuseIActualPlacementget_ActualSize_fn;
+    type->interface15.fp_add_Placed = (void(*)(uObject*, uDelegate*))::g::Fuse::Elements::Element__add_Placed_fn;
+    type->interface15.fp_remove_Placed = (void(*)(uObject*, uDelegate*))::g::Fuse::Elements::Element__remove_Placed_fn;
+    type->interface9.fp_GetEnumerator = (void(*)(uObject*, uObject**))::g::Fuse::Visual__UnoCollectionsIEnumerableFuseVisualGetEnumerator_fn;
+    type->interface10.fp_Clear = (void(*)(uObject*))::g::Fuse::Visual__UnoCollectionsICollectionFuseNodeClear_fn;
+    type->interface10.fp_Contains = (void(*)(uObject*, void*, bool*))::g::Fuse::Visual__UnoCollectionsICollectionFuseNodeContains_fn;
     type->interface6.fp_RemoveAt = (void(*)(uObject*, int*))::g::Fuse::Visual__UnoCollectionsIListFuseNodeRemoveAt_fn;
-    type->interface10.fp_GetEnumerator = (void(*)(uObject*, uObject**))::g::Fuse::Visual__UnoCollectionsIEnumerableFuseNodeGetEnumerator_fn;
-    type->interface9.fp_get_Count = (void(*)(uObject*, int*))::g::Fuse::Visual__UnoCollectionsICollectionFuseNodeget_Count_fn;
+    type->interface11.fp_GetEnumerator = (void(*)(uObject*, uObject**))::g::Fuse::Visual__UnoCollectionsIEnumerableFuseNodeGetEnumerator_fn;
+    type->interface10.fp_get_Count = (void(*)(uObject*, int*))::g::Fuse::Visual__UnoCollectionsICollectionFuseNodeget_Count_fn;
     type->interface6.fp_get_Item = (void(*)(uObject*, int*, uTRef))::g::Fuse::Visual__UnoCollectionsIListFuseNodeget_Item_fn;
     type->interface6.fp_Insert = (void(*)(uObject*, int*, void*))::g::Fuse::Visual__Insert1_fn;
     type->interface7.fp_OnPropertyChanged = (void(*)(uObject*, ::g::Uno::UX::PropertyObject*, ::g::Uno::UX::Selector*))::g::Fuse::Controls::Control__OnPropertyChanged2_fn;
     type->interface8.fp_FindTemplate = (void(*)(uObject*, uString*, ::g::Uno::UX::Template**))::g::Fuse::Visual__FindTemplate_fn;
-    type->interface9.fp_Add = (void(*)(uObject*, void*))::g::Fuse::Visual__Add1_fn;
-    type->interface9.fp_Remove = (void(*)(uObject*, void*, bool*))::g::Fuse::Visual__Remove1_fn;
+    type->interface10.fp_Add = (void(*)(uObject*, void*))::g::Fuse::Visual__Add1_fn;
+    type->interface10.fp_Remove = (void(*)(uObject*, void*, bool*))::g::Fuse::Visual__Remove1_fn;
     type->interface4.fp_Clear = (void(*)(uObject*))::g::Fuse::Node__UnoCollectionsICollectionFuseBindingClear_fn;
     type->interface4.fp_Contains = (void(*)(uObject*, void*, bool*))::g::Fuse::Node__UnoCollectionsICollectionFuseBindingContains_fn;
     type->interface0.fp_RemoveAt = (void(*)(uObject*, int*))::g::Fuse::Node__UnoCollectionsIListFuseBindingRemoveAt_fn;
@@ -263,12 +270,6 @@ void BuyEcanPage__InitializeUX_fn(BuyEcanPage* __this)
     __this->InitializeUX();
 }
 
-// public BuyEcanPage New(Fuse.Navigation.Router router) :45
-void BuyEcanPage__New5_fn(::g::Fuse::Navigation::Router* router1, BuyEcanPage** __retval)
-{
-    *__retval = BuyEcanPage::New5(router1);
-}
-
 uSStrong<uArray*> BuyEcanPage::__g_static_nametable1_;
 ::g::Uno::UX::Selector BuyEcanPage::__selector0_;
 ::g::Uno::UX::Selector BuyEcanPage::__selector1_;
@@ -289,62 +290,62 @@ void BuyEcanPage::ctor_8(::g::Fuse::Navigation::Router* router1)
 // private void InitializeUX() [instance] :51
 void BuyEcanPage::InitializeUX()
 {
-    __g_nametable1 = ::g::Uno::UX::NameTable::New1(NULL, BuyEcanPage::__g_static_nametable1());
+    __g_nametable1 = ::g::Uno::UX::NameTable::New1(NULL, BuyEcanPage::__g_static_nametable1_);
     ::g::Fuse::Reactive::Data* temp14 = ::g::Fuse::Reactive::Data::New1(::STRINGS[12/*"back"*/]);
     ::g::PTMono* temp = ::g::PTMono::New4();
-    temp_Value_inst = ::g::emrals_FuseControlsTextControl_Value_Property::New1(temp, BuyEcanPage::__selector0());
+    temp_Value_inst = ::g::emrals_FuseControlsTextControl_Value_Property::New1(temp, BuyEcanPage::__selector0_);
     ::g::Fuse::Reactive::Data* temp15 = ::g::Fuse::Reactive::Data::New1(::STRINGS[13/*"error"*/]);
     ::g::Fuse::Reactive::Data* temp16 = ::g::Fuse::Reactive::Data::New1(::STRINGS[14/*"hideError"*/]);
     ::g::Fuse::Controls::Rectangle* temp1 = ::g::Fuse::Controls::Rectangle::New3();
-    temp1_Visibility_inst = ::g::emrals_FuseElementsElement_Visibility_Property::New1(temp1, BuyEcanPage::__selector1());
+    temp1_Visibility_inst = ::g::emrals_FuseElementsElement_Visibility_Property::New1(temp1, BuyEcanPage::__selector1_);
     ::g::Fuse::Reactive::Data* temp17 = ::g::Fuse::Reactive::Data::New1(::STRINGS[15/*"error_visib...*/]);
     ::g::Fuse::Reactive::Data* temp18 = ::g::Fuse::Reactive::Data::New1(::STRINGS[14/*"hideError"*/]);
     ::g::Basic::TextInput* temp2 = ::g::Basic::TextInput::New4();
-    temp2_Value_inst = ::g::emrals_FuseControlsTextInputControl_Value_Property::New1(temp2, BuyEcanPage::__selector0());
+    temp2_Value_inst = ::g::emrals_FuseControlsTextInputControl_Value_Property::New1(temp2, BuyEcanPage::__selector0_);
     ::g::Fuse::Reactive::Data* temp19 = ::g::Fuse::Reactive::Data::New1(::STRINGS[16/*"qty"*/]);
     uString* temp20 = ::STRINGS[17/*"$"*/];
     ::g::Fuse::Reactive::Constant* temp21 = ::g::Fuse::Reactive::Constant::New1(temp20);
     ::g::Fuse::Reactive::Data* temp22 = ::g::Fuse::Reactive::Data::New1(::STRINGS[18/*"price"*/]);
     ::g::Mouse* temp3 = ::g::Mouse::New4();
-    temp3_Value_inst = ::g::emrals_FuseControlsTextControl_Value_Property::New1(temp3, BuyEcanPage::__selector0());
+    temp3_Value_inst = ::g::emrals_FuseControlsTextControl_Value_Property::New1(temp3, BuyEcanPage::__selector0_);
     ::g::Fuse::Reactive::Add* temp23 = ::g::Fuse::Reactive::Add::New1(temp21, temp22);
     ::g::Basic::TextInput* temp4 = ::g::Basic::TextInput::New4();
-    temp4_Value_inst = ::g::emrals_FuseControlsTextInputControl_Value_Property::New1(temp4, BuyEcanPage::__selector0());
+    temp4_Value_inst = ::g::emrals_FuseControlsTextInputControl_Value_Property::New1(temp4, BuyEcanPage::__selector0_);
     ::g::Fuse::Reactive::Data* temp24 = ::g::Fuse::Reactive::Data::New1(::STRINGS[19/*"name"*/]);
     ::g::Basic::TextInput* temp5 = ::g::Basic::TextInput::New4();
-    temp5_Value_inst = ::g::emrals_FuseControlsTextInputControl_Value_Property::New1(temp5, BuyEcanPage::__selector0());
+    temp5_Value_inst = ::g::emrals_FuseControlsTextInputControl_Value_Property::New1(temp5, BuyEcanPage::__selector0_);
     ::g::Fuse::Reactive::Data* temp25 = ::g::Fuse::Reactive::Data::New1(::STRINGS[20/*"address"*/]);
     ::g::Basic::TextInput* temp6 = ::g::Basic::TextInput::New4();
-    temp6_Value_inst = ::g::emrals_FuseControlsTextInputControl_Value_Property::New1(temp6, BuyEcanPage::__selector0());
+    temp6_Value_inst = ::g::emrals_FuseControlsTextInputControl_Value_Property::New1(temp6, BuyEcanPage::__selector0_);
     ::g::Fuse::Reactive::Data* temp26 = ::g::Fuse::Reactive::Data::New1(::STRINGS[21/*"city"*/]);
     ::g::Basic::TextInput* temp7 = ::g::Basic::TextInput::New4();
-    temp7_Value_inst = ::g::emrals_FuseControlsTextInputControl_Value_Property::New1(temp7, BuyEcanPage::__selector0());
+    temp7_Value_inst = ::g::emrals_FuseControlsTextInputControl_Value_Property::New1(temp7, BuyEcanPage::__selector0_);
     ::g::Fuse::Reactive::Data* temp27 = ::g::Fuse::Reactive::Data::New1(::STRINGS[22/*"state"*/]);
     ::g::Basic::TextInput* temp8 = ::g::Basic::TextInput::New4();
-    temp8_Value_inst = ::g::emrals_FuseControlsTextInputControl_Value_Property::New1(temp8, BuyEcanPage::__selector0());
+    temp8_Value_inst = ::g::emrals_FuseControlsTextInputControl_Value_Property::New1(temp8, BuyEcanPage::__selector0_);
     ::g::Fuse::Reactive::Data* temp28 = ::g::Fuse::Reactive::Data::New1(::STRINGS[23/*"zipcode"*/]);
     ::g::Basic::TextInput* temp9 = ::g::Basic::TextInput::New4();
-    temp9_Value_inst = ::g::emrals_FuseControlsTextInputControl_Value_Property::New1(temp9, BuyEcanPage::__selector0());
+    temp9_Value_inst = ::g::emrals_FuseControlsTextInputControl_Value_Property::New1(temp9, BuyEcanPage::__selector0_);
     ::g::Fuse::Reactive::Data* temp29 = ::g::Fuse::Reactive::Data::New1(::STRINGS[24/*"email"*/]);
     ::g::Basic::TextInput* temp10 = ::g::Basic::TextInput::New4();
-    temp10_Value_inst = ::g::emrals_FuseControlsTextInputControl_Value_Property::New1(temp10, BuyEcanPage::__selector0());
+    temp10_Value_inst = ::g::emrals_FuseControlsTextInputControl_Value_Property::New1(temp10, BuyEcanPage::__selector0_);
     ::g::Fuse::Reactive::Data* temp30 = ::g::Fuse::Reactive::Data::New1(::STRINGS[25/*"cardNumber"*/]);
     ::g::Basic::TextInput* temp11 = ::g::Basic::TextInput::New4();
-    temp11_Value_inst = ::g::emrals_FuseControlsTextInputControl_Value_Property::New1(temp11, BuyEcanPage::__selector0());
+    temp11_Value_inst = ::g::emrals_FuseControlsTextInputControl_Value_Property::New1(temp11, BuyEcanPage::__selector0_);
     ::g::Fuse::Reactive::Data* temp31 = ::g::Fuse::Reactive::Data::New1(::STRINGS[26/*"expiryMonth"*/]);
     ::g::Basic::TextInput* temp12 = ::g::Basic::TextInput::New4();
-    temp12_Value_inst = ::g::emrals_FuseControlsTextInputControl_Value_Property::New1(temp12, BuyEcanPage::__selector0());
+    temp12_Value_inst = ::g::emrals_FuseControlsTextInputControl_Value_Property::New1(temp12, BuyEcanPage::__selector0_);
     ::g::Fuse::Reactive::Data* temp32 = ::g::Fuse::Reactive::Data::New1(::STRINGS[27/*"expiryYear"*/]);
     ::g::Basic::TextInput* temp13 = ::g::Basic::TextInput::New4();
-    temp13_Value_inst = ::g::emrals_FuseControlsTextInputControl_Value_Property::New1(temp13, BuyEcanPage::__selector0());
+    temp13_Value_inst = ::g::emrals_FuseControlsTextInputControl_Value_Property::New1(temp13, BuyEcanPage::__selector0_);
     ::g::Fuse::Reactive::Data* temp33 = ::g::Fuse::Reactive::Data::New1(::STRINGS[28/*"cvc"*/]);
     buyecanrec = ::g::Fuse::Controls::Rectangle::New3();
-    buyecanrec_Color_inst = ::g::emrals_FuseControlsShape_Color_Property::New1(buyecanrec, BuyEcanPage::__selector2());
+    buyecanrec_Color_inst = ::g::emrals_FuseControlsShape_Color_Property::New1(buyecanrec, BuyEcanPage::__selector2_);
     ::g::Fuse::Reactive::Data* temp34 = ::g::Fuse::Reactive::Data::New1(::STRINGS[29/*"testPay"*/]);
     ::g::Fuse::Reactive::JavaScript* temp35 = ::g::Fuse::Reactive::JavaScript::New2(__g_nametable1);
     ::g::Fuse::Controls::Panel* temp36 = ::g::Fuse::Controls::Panel::New3();
     ::g::Fuse::Controls::Text* temp37 = ::g::Fuse::Controls::Text::New3();
-    temp_eb18 = ::g::Fuse::Reactive::EventBinding::New1((uObject*)temp14, __g_nametable1);
+    temp_eb18 = ::g::Fuse::Reactive::EventBinding::New1((uObject*)temp14);
     ::g::PTreal* temp38 = ::g::PTreal::New4();
     ::g::Fuse::Drawing::StaticSolidColor* temp39 = ::g::Fuse::Drawing::StaticSolidColor::New2(::g::Uno::Float4__New2(1.0f, 1.0f, 1.0f, 1.0f));
     CCPage = ::g::Fuse::Controls::StackPanel::New4();
@@ -352,10 +353,10 @@ void BuyEcanPage::InitializeUX()
     ::g::Fuse::Controls::ClientPanel* temp41 = ::g::Fuse::Controls::ClientPanel::New5();
     ::g::Fuse::Controls::Panel* temp42 = ::g::Fuse::Controls::Panel::New3();
     ::g::PTMono* temp43 = ::g::PTMono::New4();
-    ::g::Fuse::Reactive::DataBinding* temp44 = ::g::Fuse::Reactive::DataBinding::New1(temp_Value_inst, (uObject*)temp15, __g_nametable1, 3);
-    temp_eb20 = ::g::Fuse::Reactive::EventBinding::New1((uObject*)temp16, __g_nametable1);
-    ::g::Fuse::Reactive::DataBinding* temp45 = ::g::Fuse::Reactive::DataBinding::New1(temp1_Visibility_inst, (uObject*)temp17, __g_nametable1, 3);
-    temp_eb19 = ::g::Fuse::Reactive::EventBinding::New1((uObject*)temp18, __g_nametable1);
+    ::g::Fuse::Reactive::DataBinding* temp44 = ::g::Fuse::Reactive::DataBinding::New1(temp_Value_inst, (uObject*)temp15, 3);
+    temp_eb20 = ::g::Fuse::Reactive::EventBinding::New1((uObject*)temp16);
+    ::g::Fuse::Reactive::DataBinding* temp45 = ::g::Fuse::Reactive::DataBinding::New1(temp1_Visibility_inst, (uObject*)temp17, 3);
+    temp_eb19 = ::g::Fuse::Reactive::EventBinding::New1((uObject*)temp18);
     ::g::Fuse::Controls::StackPanel* temp46 = ::g::Fuse::Controls::StackPanel::New4();
     ::g::Fuse::Controls::StackPanel* temp47 = ::g::Fuse::Controls::StackPanel::New4();
     ::g::Fuse::Controls::Panel* temp48 = ::g::Fuse::Controls::Panel::New3();
@@ -364,44 +365,44 @@ void BuyEcanPage::InitializeUX()
     ::g::Horse* temp51 = ::g::Horse::New4();
     ::g::Horse* temp52 = ::g::Horse::New4();
     ::g::Fuse::Controls::Rectangle* temp53 = ::g::Fuse::Controls::Rectangle::New3();
-    ::g::Fuse::Reactive::DataBinding* temp54 = ::g::Fuse::Reactive::DataBinding::New1(temp2_Value_inst, (uObject*)temp19, __g_nametable1, 3);
+    ::g::Fuse::Reactive::DataBinding* temp54 = ::g::Fuse::Reactive::DataBinding::New1(temp2_Value_inst, (uObject*)temp19, 3);
     ::g::Mouse* temp55 = ::g::Mouse::New4();
-    ::g::Fuse::Reactive::DataBinding* temp56 = ::g::Fuse::Reactive::DataBinding::New1(temp3_Value_inst, (uObject*)temp23, __g_nametable1, 3);
+    ::g::Fuse::Reactive::DataBinding* temp56 = ::g::Fuse::Reactive::DataBinding::New1(temp3_Value_inst, (uObject*)temp23, 3);
     ::g::Fuse::Controls::Rectangle* temp57 = ::g::Fuse::Controls::Rectangle::New3();
     ::g::Fuse::Controls::StackPanel* temp58 = ::g::Fuse::Controls::StackPanel::New4();
     ::g::Horse* temp59 = ::g::Horse::New4();
     ::g::Fuse::Controls::Rectangle* temp60 = ::g::Fuse::Controls::Rectangle::New3();
-    ::g::Fuse::Reactive::DataBinding* temp61 = ::g::Fuse::Reactive::DataBinding::New1(temp4_Value_inst, (uObject*)temp24, __g_nametable1, 3);
+    ::g::Fuse::Reactive::DataBinding* temp61 = ::g::Fuse::Reactive::DataBinding::New1(temp4_Value_inst, (uObject*)temp24, 3);
     ::g::Fuse::Controls::Rectangle* temp62 = ::g::Fuse::Controls::Rectangle::New3();
-    ::g::Fuse::Reactive::DataBinding* temp63 = ::g::Fuse::Reactive::DataBinding::New1(temp5_Value_inst, (uObject*)temp25, __g_nametable1, 3);
+    ::g::Fuse::Reactive::DataBinding* temp63 = ::g::Fuse::Reactive::DataBinding::New1(temp5_Value_inst, (uObject*)temp25, 3);
     ::g::Fuse::Controls::StackPanel* temp64 = ::g::Fuse::Controls::StackPanel::New4();
     ::g::Fuse::Controls::Rectangle* temp65 = ::g::Fuse::Controls::Rectangle::New3();
-    ::g::Fuse::Reactive::DataBinding* temp66 = ::g::Fuse::Reactive::DataBinding::New1(temp6_Value_inst, (uObject*)temp26, __g_nametable1, 3);
+    ::g::Fuse::Reactive::DataBinding* temp66 = ::g::Fuse::Reactive::DataBinding::New1(temp6_Value_inst, (uObject*)temp26, 3);
     ::g::Fuse::Controls::Rectangle* temp67 = ::g::Fuse::Controls::Rectangle::New3();
-    ::g::Fuse::Reactive::DataBinding* temp68 = ::g::Fuse::Reactive::DataBinding::New1(temp7_Value_inst, (uObject*)temp27, __g_nametable1, 3);
+    ::g::Fuse::Reactive::DataBinding* temp68 = ::g::Fuse::Reactive::DataBinding::New1(temp7_Value_inst, (uObject*)temp27, 3);
     ::g::Fuse::Controls::Rectangle* temp69 = ::g::Fuse::Controls::Rectangle::New3();
-    ::g::Fuse::Reactive::DataBinding* temp70 = ::g::Fuse::Reactive::DataBinding::New1(temp8_Value_inst, (uObject*)temp28, __g_nametable1, 3);
+    ::g::Fuse::Reactive::DataBinding* temp70 = ::g::Fuse::Reactive::DataBinding::New1(temp8_Value_inst, (uObject*)temp28, 3);
     ::g::Fuse::Controls::Rectangle* temp71 = ::g::Fuse::Controls::Rectangle::New3();
-    ::g::Fuse::Reactive::DataBinding* temp72 = ::g::Fuse::Reactive::DataBinding::New1(temp9_Value_inst, (uObject*)temp29, __g_nametable1, 3);
+    ::g::Fuse::Reactive::DataBinding* temp72 = ::g::Fuse::Reactive::DataBinding::New1(temp9_Value_inst, (uObject*)temp29, 3);
     ::g::Horse* temp73 = ::g::Horse::New4();
     CCArea = ::g::Fuse::Controls::StackPanel::New4();
     ::g::Fuse::Controls::Rectangle* temp74 = ::g::Fuse::Controls::Rectangle::New3();
-    ::g::Fuse::Reactive::DataBinding* temp75 = ::g::Fuse::Reactive::DataBinding::New1(temp10_Value_inst, (uObject*)temp30, __g_nametable1, 3);
+    ::g::Fuse::Reactive::DataBinding* temp75 = ::g::Fuse::Reactive::DataBinding::New1(temp10_Value_inst, (uObject*)temp30, 3);
     ::g::Fuse::Controls::StackPanel* temp76 = ::g::Fuse::Controls::StackPanel::New4();
     ::g::Fuse::Controls::Rectangle* temp77 = ::g::Fuse::Controls::Rectangle::New3();
-    ::g::Fuse::Reactive::DataBinding* temp78 = ::g::Fuse::Reactive::DataBinding::New1(temp11_Value_inst, (uObject*)temp31, __g_nametable1, 3);
-    ::g::Fuse::Reactive::DataBinding* temp79 = ::g::Fuse::Reactive::DataBinding::New1(temp12_Value_inst, (uObject*)temp32, __g_nametable1, 3);
+    ::g::Fuse::Reactive::DataBinding* temp78 = ::g::Fuse::Reactive::DataBinding::New1(temp11_Value_inst, (uObject*)temp31, 3);
+    ::g::Fuse::Reactive::DataBinding* temp79 = ::g::Fuse::Reactive::DataBinding::New1(temp12_Value_inst, (uObject*)temp32, 3);
     ::g::Fuse::Controls::Rectangle* temp80 = ::g::Fuse::Controls::Rectangle::New3();
-    ::g::Fuse::Reactive::DataBinding* temp81 = ::g::Fuse::Reactive::DataBinding::New1(temp13_Value_inst, (uObject*)temp33, __g_nametable1, 3);
+    ::g::Fuse::Reactive::DataBinding* temp81 = ::g::Fuse::Reactive::DataBinding::New1(temp13_Value_inst, (uObject*)temp33, 3);
     ::g::Fuse::Drawing::StaticSolidColor* temp82 = ::g::Fuse::Drawing::StaticSolidColor::New2(::g::Uno::Float4__New2(0.5411765f, 0.7215686f, 0.2784314f, 1.0f));
     ::g::Fuse::Controls::DockPanel* temp83 = ::g::Fuse::Controls::DockPanel::New4();
     ::g::Horse* temp84 = ::g::Horse::New4();
     ::g::Fuse::Gestures::WhilePressed* temp85 = ::g::Fuse::Gestures::WhilePressed::New2();
     ::g::Fuse::Animations::Change* temp86 = (::g::Fuse::Animations::Change*)::g::Fuse::Animations::Change::New2(::TYPES[1/*Fuse.Animations.Change<float4>*/], buyecanrec_Color_inst);
-    temp_eb21 = ::g::Fuse::Reactive::EventBinding::New1((uObject*)temp34, __g_nametable1);
+    temp_eb21 = ::g::Fuse::Reactive::EventBinding::New1((uObject*)temp34);
     temp35->LineNumber(3);
     temp35->FileName(::STRINGS[30/*"Pages/BuyEc...*/]);
-    temp35->File(::g::Uno::UX::BundleFileSource::New1(::g::emrals_bundle::BuyEcanPage33e0483b()));
+    temp35->File(::g::Uno::UX::BundleFileSource::New1(::g::emrals_bundle::BuyEcanPage5786274e()));
     temp36->Height(::g::Uno::UX::Size__New1(45.0f, 1));
     temp36->Y(::g::Uno::UX::Size__New1(0.0f, 1));
     temp36->Background(temp39);
@@ -417,7 +418,7 @@ void BuyEcanPage::InitializeUX()
     temp38->Value(::STRINGS[32/*"ECAN CHECKOUT"*/]);
     temp38->Alignment(10);
     uPtr(CCPage)->Y(::g::Uno::UX::Size__New1(45.0f, 1));
-    uPtr(CCPage)->Name(BuyEcanPage::__selector3());
+    uPtr(CCPage)->Name(BuyEcanPage::__selector3_);
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(uPtr(CCPage)->Children()), ::TYPES[2/*Uno.Collections.ICollection<Fuse.Node>*/]), temp40);
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(uPtr(CCPage)->Children()), ::TYPES[2/*Uno.Collections.ICollection<Fuse.Node>*/]), temp83);
     temp40->Height(::g::Uno::UX::Size__New1(475.0f, 1));
@@ -593,7 +594,7 @@ void BuyEcanPage::InitializeUX()
     temp73->FontSize(14.0f);
     temp73->Color(::g::Uno::Float4__New2(1.0f, 1.0f, 1.0f, 1.0f));
     temp73->Margin(::g::Uno::Float4__New2(40.0f, 30.0f, 0.0f, 0.0f));
-    uPtr(CCArea)->Name(BuyEcanPage::__selector4());
+    uPtr(CCArea)->Name(BuyEcanPage::__selector4_);
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(uPtr(CCArea)->Children()), ::TYPES[2/*Uno.Collections.ICollection<Fuse.Node>*/]), temp74);
     temp74->CornerRadius(::g::Uno::Float4__New2(2.0f, 2.0f, 2.0f, 2.0f));
     temp74->Color(::g::Uno::Float4__New2(1.0f, 1.0f, 1.0f, 1.0f));
@@ -649,7 +650,7 @@ void BuyEcanPage::InitializeUX()
     uPtr(buyecanrec)->Width(::g::Uno::UX::Size__New1(300.0f, 1));
     uPtr(buyecanrec)->Height(::g::Uno::UX::Size__New1(44.0f, 1));
     uPtr(buyecanrec)->Margin(::g::Uno::Float4__New2(0.0f, 10.0f, 0.0f, 0.0f));
-    uPtr(buyecanrec)->Name(BuyEcanPage::__selector5());
+    uPtr(buyecanrec)->Name(BuyEcanPage::__selector5_);
     ::g::Fuse::Controls::DockPanel::SetDock(buyecanrec, 3);
     ::g::Fuse::Gestures::Clicked::AddHandler(buyecanrec, uDelegate::New(::TYPES[3/*Fuse.Gestures.ClickedHandler*/], (void*)::g::Fuse::Reactive::EventBinding__OnEvent_fn, uPtr(temp_eb21)));
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(uPtr(buyecanrec)->Children()), ::TYPES[2/*Uno.Collections.ICollection<Fuse.Node>*/]), temp84);
@@ -673,14 +674,6 @@ void BuyEcanPage::InitializeUX()
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(Children()), ::TYPES[2/*Uno.Collections.ICollection<Fuse.Node>*/]), temp35);
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(Children()), ::TYPES[2/*Uno.Collections.ICollection<Fuse.Node>*/]), temp36);
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(Children()), ::TYPES[2/*Uno.Collections.ICollection<Fuse.Node>*/]), CCPage);
-}
-
-// public BuyEcanPage New(Fuse.Navigation.Router router) [static] :45
-BuyEcanPage* BuyEcanPage::New5(::g::Fuse::Navigation::Router* router1)
-{
-    BuyEcanPage* obj1 = (BuyEcanPage*)uNew(BuyEcanPage_typeof());
-    obj1->ctor_8(router1);
-    return obj1;
 }
 // }
 

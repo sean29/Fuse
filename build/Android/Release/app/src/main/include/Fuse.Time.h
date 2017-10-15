@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Common/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Common/1.3.0-rc2/Time.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -8,7 +8,7 @@ namespace g{namespace Fuse{struct Time;}}
 namespace g{
 namespace Fuse{
 
-// public static class Time :3329
+// public static class Time :6
 // {
 uClassType* Time_typeof();
 void Time__get_FrameInterval_fn(double* __retval);

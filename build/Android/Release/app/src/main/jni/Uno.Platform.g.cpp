@@ -23,7 +23,6 @@
 #include <Uno.Platform.Display.h>
 #include <Uno.Platform.Displays.h>
 #include <Uno.Platform.EventModifiers.h>
-#include <Uno.Platform.FrameCha-70b333cb.h>
 #include <Uno.Platform.Key.h>
 #include <Uno.Platform.KeyEventArgs.h>
 #include <Uno.Platform.OSFrame.h>
@@ -43,15 +42,15 @@ namespace g{
 namespace Uno{
 namespace Platform{
 
-// /usr/local/share/uno/Packages/UnoCore/1.2.2/source/uno/platform/android/$.uno
-// -----------------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\UnoCore\1.3.1\Source\Uno\Platform\Android\AndroidDisplay.uno
+// --------------------------------------------------------------------------------------------------------
 
-// public sealed extern class AndroidDisplay :12
+// public sealed extern class AndroidDisplay :10
 // {
 static void AndroidDisplay_build(uType* type)
 {
     type->SetFields(2,
-        ::g::Uno::Bool_typeof(), (uintptr_t)&::g::Uno::Platform::AndroidDisplay::_initialized_, uFieldFlagsStatic);
+        ::g::Uno::Bool_typeof(), (uintptr_t)&AndroidDisplay::_initialized_, uFieldFlagsStatic);
 }
 
 ::g::Uno::Platform::Display_type* AndroidDisplay_typeof()
@@ -73,49 +72,49 @@ static void AndroidDisplay_build(uType* type)
     return type;
 }
 
-// public generated AndroidDisplay() :12
+// public generated AndroidDisplay() :10
 void AndroidDisplay__ctor_1_fn(AndroidDisplay* __this)
 {
     __this->ctor_1();
 }
 
-// private static float _getDensity() :17
+// private static float _getDensity() :15
 void AndroidDisplay___getDensity_fn(float* __retval)
 {
     *__retval = AndroidDisplay::_getDensity();
 }
 
-// protected override sealed void DisableTicks() :30
+// protected override sealed void DisableTicks() :28
 void AndroidDisplay__DisableTicks_fn(AndroidDisplay* __this)
 {
     AndroidDisplay::_initialized_ = false;
 }
 
-// protected override sealed void EnableTicks() :35
+// protected override sealed void EnableTicks() :33
 void AndroidDisplay__EnableTicks_fn(AndroidDisplay* __this)
 {
     __this->JavaEnableTicks();
 }
 
-// protected override sealed float GetDensity() :14
+// protected override sealed float GetDensity() :12
 void AndroidDisplay__GetDensity_fn(AndroidDisplay* __this, float* __retval)
 {
     return *__retval = AndroidDisplay::_getDensity(), void();
 }
 
-// private void JavaEnableTicks() :41
+// private void JavaEnableTicks() :39
 void AndroidDisplay__JavaEnableTicks_fn(AndroidDisplay* __this)
 {
     __this->JavaEnableTicks();
 }
 
-// public generated AndroidDisplay New() :12
+// public generated AndroidDisplay New() :10
 void AndroidDisplay__New1_fn(AndroidDisplay** __retval)
 {
     *__retval = AndroidDisplay::New1();
 }
 
-// private void OnFrameCallback(double currentTime, double deltaTime) :79
+// private void OnFrameCallback(double currentTime, double deltaTime) :77
 void AndroidDisplay__OnFrameCallback_fn(AndroidDisplay* __this, double* currentTime, double* deltaTime)
 {
     __this->OnFrameCallback(*currentTime, *deltaTime);
@@ -123,13 +122,13 @@ void AndroidDisplay__OnFrameCallback_fn(AndroidDisplay* __this, double* currentT
 
 bool AndroidDisplay::_initialized_;
 
-// public generated AndroidDisplay() [instance] :12
+// public generated AndroidDisplay() [instance] :10
 void AndroidDisplay::ctor_1()
 {
     ctor_();
 }
 
-// private void JavaEnableTicks() [instance] :41
+// private void JavaEnableTicks() [instance] :39
 void AndroidDisplay::JavaEnableTicks()
 {
     {
@@ -147,13 +146,13 @@ void AndroidDisplay::JavaEnableTicks()
     
 }
 
-// private void OnFrameCallback(double currentTime, double deltaTime) [instance] :79
+// private void OnFrameCallback(double currentTime, double deltaTime) [instance] :77
 void AndroidDisplay::OnFrameCallback(double currentTime, double deltaTime)
 {
     OnTick(::g::Uno::Platform::TimerEventArgs::New2(0.0, deltaTime, currentTime));
 }
 
-// private static float _getDensity() [static] :17
+// private static float _getDensity() [static] :15
 float AndroidDisplay::_getDensity()
 {
     {
@@ -168,7 +167,7 @@ float AndroidDisplay::_getDensity()
     
 }
 
-// public generated AndroidDisplay New() [static] :12
+// public generated AndroidDisplay New() [static] :10
 AndroidDisplay* AndroidDisplay::New1()
 {
     AndroidDisplay* obj1 = (AndroidDisplay*)uNew(AndroidDisplay_typeof());
@@ -177,10 +176,10 @@ AndroidDisplay* AndroidDisplay::New1()
 }
 // }
 
-// /usr/local/share/uno/Packages/UnoCore/1.2.2/source/uno/platform/$.uno
-// ---------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\UnoCore\1.3.1\Source\Uno\Platform\CoreApp.uno
+// -----------------------------------------------------------------------------------------
 
-// public enum ApplicationState :13
+// public enum ApplicationState :11
 uEnumType* ApplicationState_typeof()
 {
     static uSStrong<uEnumType*> type;
@@ -196,10 +195,10 @@ uEnumType* ApplicationState_typeof()
     return type;
 }
 
-// /usr/local/share/uno/Packages/UnoCore/1.2.2/source/uno/platform/$.uno
-// ---------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\UnoCore\1.3.1\Source\Uno\Platform\CoreApp.uno
+// -----------------------------------------------------------------------------------------
 
-// public delegate void ApplicationStateTransitionHandler(Uno.Platform.ApplicationState newState) :23
+// public delegate void ApplicationStateTransitionHandler(Uno.Platform.ApplicationState newState) :21
 uDelegateType* ApplicationStateTransitionHandler_typeof()
 {
     static uSStrong<uDelegateType*> type;
@@ -211,12 +210,12 @@ uDelegateType* ApplicationStateTransitionHandler_typeof()
     return type;
 }
 
-// /usr/local/share/uno/Packages/UnoCore/1.2.2/source/uno/platform/$.uno
-// ---------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\UnoCore\1.3.1\Source\Uno\Platform\CoreApp.uno
+// -----------------------------------------------------------------------------------------
 
-// public abstract class CoreApp :28
+// public abstract class CoreApp :26
 // {
-// static CoreApp() :28
+// static generated CoreApp() :26
 static void CoreApp__cctor__fn(uType* __type)
 {
     CoreApp::_delayedURIS_ = ((::g::Uno::Collections::List*)::g::Uno::Collections::List::New1(::TYPES[0/*Uno.Collections.List<string>*/]));
@@ -227,17 +226,19 @@ static void CoreApp_build(uType* type)
     ::TYPES[0] = ::g::Uno::Collections::List_typeof()->MakeType(::g::Uno::String_typeof(), NULL);
     ::TYPES[1] = ::g::Uno::Platform::ApplicationStateTransitionHandler_typeof();
     ::TYPES[2] = ::g::Uno::EventHandler_typeof();
+    type->SetDependencies(
+        ::g::Uno::EventArgs_typeof());
     type->SetFields(0,
-        ::TYPES[0/*Uno.Collections.List<string>*/], (uintptr_t)&::g::Uno::Platform::CoreApp::_delayedURIS_, uFieldFlagsStatic,
-        type, (uintptr_t)&::g::Uno::Platform::CoreApp::_Current_, uFieldFlagsStatic,
-        ::g::Uno::Platform::ApplicationState_typeof(), (uintptr_t)&::g::Uno::Platform::CoreApp::_State_, uFieldFlagsStatic,
-        ::TYPES[1/*Uno.Platform.ApplicationStateTransitionHandler*/], (uintptr_t)&::g::Uno::Platform::CoreApp::EnteringBackground1_, uFieldFlagsStatic,
-        ::TYPES[1/*Uno.Platform.ApplicationStateTransitionHandler*/], (uintptr_t)&::g::Uno::Platform::CoreApp::EnteringForeground1_, uFieldFlagsStatic,
-        ::TYPES[1/*Uno.Platform.ApplicationStateTransitionHandler*/], (uintptr_t)&::g::Uno::Platform::CoreApp::EnteringInteractive1_, uFieldFlagsStatic,
-        ::TYPES[1/*Uno.Platform.ApplicationStateTransitionHandler*/], (uintptr_t)&::g::Uno::Platform::CoreApp::ExitedInteractive1_, uFieldFlagsStatic,
-        ::TYPES[2/*Uno.EventHandler*/], (uintptr_t)&::g::Uno::Platform::CoreApp::ReceivedLowMemoryWarning1_, uFieldFlagsStatic,
-        ::TYPES[1/*Uno.Platform.ApplicationStateTransitionHandler*/], (uintptr_t)&::g::Uno::Platform::CoreApp::Started1_, uFieldFlagsStatic,
-        ::TYPES[1/*Uno.Platform.ApplicationStateTransitionHandler*/], (uintptr_t)&::g::Uno::Platform::CoreApp::Terminating1_, uFieldFlagsStatic);
+        ::TYPES[0/*Uno.Collections.List<string>*/], (uintptr_t)&CoreApp::_delayedURIS_, uFieldFlagsStatic,
+        type, (uintptr_t)&CoreApp::_Current_, uFieldFlagsStatic,
+        ::g::Uno::Platform::ApplicationState_typeof(), (uintptr_t)&CoreApp::_State_, uFieldFlagsStatic,
+        ::TYPES[1/*Uno.Platform.ApplicationStateTransitionHandler*/], (uintptr_t)&CoreApp::EnteringBackground1_, uFieldFlagsStatic,
+        ::TYPES[1/*Uno.Platform.ApplicationStateTransitionHandler*/], (uintptr_t)&CoreApp::EnteringForeground1_, uFieldFlagsStatic,
+        ::TYPES[1/*Uno.Platform.ApplicationStateTransitionHandler*/], (uintptr_t)&CoreApp::EnteringInteractive1_, uFieldFlagsStatic,
+        ::TYPES[1/*Uno.Platform.ApplicationStateTransitionHandler*/], (uintptr_t)&CoreApp::ExitedInteractive1_, uFieldFlagsStatic,
+        ::TYPES[2/*Uno.EventHandler*/], (uintptr_t)&CoreApp::ReceivedLowMemoryWarning1_, uFieldFlagsStatic,
+        ::TYPES[1/*Uno.Platform.ApplicationStateTransitionHandler*/], (uintptr_t)&CoreApp::Started1_, uFieldFlagsStatic,
+        ::TYPES[1/*Uno.Platform.ApplicationStateTransitionHandler*/], (uintptr_t)&CoreApp::Terminating1_, uFieldFlagsStatic);
 }
 
 uType* CoreApp_typeof()
@@ -247,6 +248,7 @@ uType* CoreApp_typeof()
 
     uTypeOptions options;
     options.FieldCount = 10;
+    options.DependencyCount = 1;
     options.ObjectSize = sizeof(CoreApp);
     options.TypeSize = sizeof(uType);
     type = uClassType::New("Uno.Platform.CoreApp", options);
@@ -255,163 +257,163 @@ uType* CoreApp_typeof()
     return type;
 }
 
-// protected CoreApp() :36
+// protected CoreApp() :34
 void CoreApp__ctor__fn(CoreApp* __this)
 {
     __this->ctor_();
 }
 
-// public static generated Uno.Platform.CoreApp get_Current() :32
+// public static generated Uno.Platform.CoreApp get_Current() :30
 void CoreApp__get_Current_fn(CoreApp** __retval)
 {
     *__retval = CoreApp::Current();
 }
 
-// internal static generated void set_Current(Uno.Platform.CoreApp value) :33
+// internal static generated void set_Current(Uno.Platform.CoreApp value) :31
 void CoreApp__set_Current_fn(CoreApp* value)
 {
     CoreApp::Current(value);
 }
 
-// internal static void EnterBackground() :193
+// internal static void EnterBackground() :191
 void CoreApp__EnterBackground_fn()
 {
     CoreApp::EnterBackground();
 }
 
-// internal static void EnterForeground() :89
+// internal static void EnterForeground() :87
 void CoreApp__EnterForeground_fn()
 {
     CoreApp::EnterForeground();
 }
 
-// public static generated void add_EnteringBackground(Uno.Platform.ApplicationStateTransitionHandler value) :58
+// public static generated void add_EnteringBackground(Uno.Platform.ApplicationStateTransitionHandler value) :56
 void CoreApp__add_EnteringBackground_fn(uDelegate* value)
 {
     CoreApp::add_EnteringBackground(value);
 }
 
-// public static generated void remove_EnteringBackground(Uno.Platform.ApplicationStateTransitionHandler value) :58
+// public static generated void remove_EnteringBackground(Uno.Platform.ApplicationStateTransitionHandler value) :56
 void CoreApp__remove_EnteringBackground_fn(uDelegate* value)
 {
     CoreApp::remove_EnteringBackground(value);
 }
 
-// public static generated void add_EnteringForeground(Uno.Platform.ApplicationStateTransitionHandler value) :55
+// public static generated void add_EnteringForeground(Uno.Platform.ApplicationStateTransitionHandler value) :53
 void CoreApp__add_EnteringForeground_fn(uDelegate* value)
 {
     CoreApp::add_EnteringForeground(value);
 }
 
-// public static generated void remove_EnteringForeground(Uno.Platform.ApplicationStateTransitionHandler value) :55
+// public static generated void remove_EnteringForeground(Uno.Platform.ApplicationStateTransitionHandler value) :53
 void CoreApp__remove_EnteringForeground_fn(uDelegate* value)
 {
     CoreApp::remove_EnteringForeground(value);
 }
 
-// public static generated void add_EnteringInteractive(Uno.Platform.ApplicationStateTransitionHandler value) :56
+// public static generated void add_EnteringInteractive(Uno.Platform.ApplicationStateTransitionHandler value) :54
 void CoreApp__add_EnteringInteractive_fn(uDelegate* value)
 {
     CoreApp::add_EnteringInteractive(value);
 }
 
-// public static generated void remove_EnteringInteractive(Uno.Platform.ApplicationStateTransitionHandler value) :56
+// public static generated void remove_EnteringInteractive(Uno.Platform.ApplicationStateTransitionHandler value) :54
 void CoreApp__remove_EnteringInteractive_fn(uDelegate* value)
 {
     CoreApp::remove_EnteringInteractive(value);
 }
 
-// internal static void EnterInteractive() :122
+// internal static void EnterInteractive() :120
 void CoreApp__EnterInteractive_fn()
 {
     CoreApp::EnterInteractive();
 }
 
-// public static generated void add_ExitedInteractive(Uno.Platform.ApplicationStateTransitionHandler value) :57
+// public static generated void add_ExitedInteractive(Uno.Platform.ApplicationStateTransitionHandler value) :55
 void CoreApp__add_ExitedInteractive_fn(uDelegate* value)
 {
     CoreApp::add_ExitedInteractive(value);
 }
 
-// public static generated void remove_ExitedInteractive(Uno.Platform.ApplicationStateTransitionHandler value) :57
+// public static generated void remove_ExitedInteractive(Uno.Platform.ApplicationStateTransitionHandler value) :55
 void CoreApp__remove_ExitedInteractive_fn(uDelegate* value)
 {
     CoreApp::remove_ExitedInteractive(value);
 }
 
-// internal static void ExitInteractive() :159
+// internal static void ExitInteractive() :157
 void CoreApp__ExitInteractive_fn()
 {
     CoreApp::ExitInteractive();
 }
 
-// public void Load() :45
+// public void Load() :43
 void CoreApp__Load_fn(CoreApp* __this)
 {
     __this->Load();
 }
 
-// internal static void OnReceivedLowMemoryWarning() :262
+// internal static void OnReceivedLowMemoryWarning() :260
 void CoreApp__OnReceivedLowMemoryWarning_fn()
 {
     CoreApp::OnReceivedLowMemoryWarning();
 }
 
-// public static generated void add_ReceivedLowMemoryWarning(Uno.EventHandler value) :260
+// public static generated void add_ReceivedLowMemoryWarning(Uno.EventHandler value) :258
 void CoreApp__add_ReceivedLowMemoryWarning_fn(uDelegate* value)
 {
     CoreApp::add_ReceivedLowMemoryWarning(value);
 }
 
-// public static generated void remove_ReceivedLowMemoryWarning(Uno.EventHandler value) :260
+// public static generated void remove_ReceivedLowMemoryWarning(Uno.EventHandler value) :258
 void CoreApp__remove_ReceivedLowMemoryWarning_fn(uDelegate* value)
 {
     CoreApp::remove_ReceivedLowMemoryWarning(value);
 }
 
-// internal static void Start() :61
+// internal static void Start() :59
 void CoreApp__Start_fn()
 {
     CoreApp::Start();
 }
 
-// public static generated void add_Started(Uno.Platform.ApplicationStateTransitionHandler value) :54
+// public static generated void add_Started(Uno.Platform.ApplicationStateTransitionHandler value) :52
 void CoreApp__add_Started_fn(uDelegate* value)
 {
     CoreApp::add_Started(value);
 }
 
-// public static generated void remove_Started(Uno.Platform.ApplicationStateTransitionHandler value) :54
+// public static generated void remove_Started(Uno.Platform.ApplicationStateTransitionHandler value) :52
 void CoreApp__remove_Started_fn(uDelegate* value)
 {
     CoreApp::remove_Started(value);
 }
 
-// public static generated Uno.Platform.ApplicationState get_State() :52
+// public static generated Uno.Platform.ApplicationState get_State() :50
 void CoreApp__get_State_fn(int* __retval)
 {
     *__retval = CoreApp::State();
 }
 
-// private static generated void set_State(Uno.Platform.ApplicationState value) :52
+// private static generated void set_State(Uno.Platform.ApplicationState value) :50
 void CoreApp__set_State_fn(int* value)
 {
     CoreApp::State(*value);
 }
 
-// internal static void Terminate() :227
+// internal static void Terminate() :225
 void CoreApp__Terminate_fn()
 {
     CoreApp::Terminate();
 }
 
-// public static generated void add_Terminating(Uno.Platform.ApplicationStateTransitionHandler value) :59
+// public static generated void add_Terminating(Uno.Platform.ApplicationStateTransitionHandler value) :57
 void CoreApp__add_Terminating_fn(uDelegate* value)
 {
     CoreApp::add_Terminating(value);
 }
 
-// public static generated void remove_Terminating(Uno.Platform.ApplicationStateTransitionHandler value) :59
+// public static generated void remove_Terminating(Uno.Platform.ApplicationStateTransitionHandler value) :57
 void CoreApp__remove_Terminating_fn(uDelegate* value)
 {
     CoreApp::remove_Terminating(value);
@@ -428,7 +430,7 @@ uSStrong<uDelegate*> CoreApp::ReceivedLowMemoryWarning1_;
 uSStrong<uDelegate*> CoreApp::Started1_;
 uSStrong<uDelegate*> CoreApp::Terminating1_;
 
-// protected CoreApp() [instance] :36
+// protected CoreApp() [instance] :34
 void CoreApp::ctor_()
 {
     ::g::Android::Bootstrapper::_RegisterTypes();
@@ -437,16 +439,14 @@ void CoreApp::ctor_()
         CoreApp::Current(this);
 }
 
-// public void Load() [instance] :45
+// public void Load() [instance] :43
 void CoreApp::Load()
 {
 }
 
-// internal static void EnterBackground() [static] :193
+// internal static void EnterBackground() [static] :191
 void CoreApp::EnterBackground()
 {
-    CoreApp_typeof()->Init();
-
     switch (CoreApp::State())
     {
         case -1:
@@ -465,17 +465,15 @@ void CoreApp::EnterBackground()
     }
 
     CoreApp::State(1);
-    uDelegate* handler = CoreApp::EnteringBackground1();
+    uDelegate* handler = CoreApp::EnteringBackground1_;
 
     if (::g::Uno::Delegate::op_Inequality(handler, NULL))
         uPtr(handler)->InvokeVoid(uCRef<int>(CoreApp::State()));
 }
 
-// internal static void EnterForeground() [static] :89
+// internal static void EnterForeground() [static] :87
 void CoreApp::EnterForeground()
 {
-    CoreApp_typeof()->Init();
-
     switch (CoreApp::State())
     {
         case -1:
@@ -490,16 +488,15 @@ void CoreApp::EnterForeground()
     }
 
     CoreApp::State(2);
-    uDelegate* handler = CoreApp::EnteringForeground1();
+    uDelegate* handler = CoreApp::EnteringForeground1_;
 
     if (::g::Uno::Delegate::op_Inequality(handler, NULL))
         uPtr(handler)->InvokeVoid(uCRef<int>(CoreApp::State()));
 }
 
-// internal static void EnterInteractive() [static] :122
+// internal static void EnterInteractive() [static] :120
 void CoreApp::EnterInteractive()
 {
-    CoreApp_typeof()->Init();
     GLHelper::SwapBackToBackgroundSurface();
 
     switch (CoreApp::State())
@@ -520,16 +517,15 @@ void CoreApp::EnterInteractive()
     }
 
     CoreApp::State(3);
-    uDelegate* handler = CoreApp::EnteringInteractive1();
+    uDelegate* handler = CoreApp::EnteringInteractive1_;
 
     if (::g::Uno::Delegate::op_Inequality(handler, NULL))
         uPtr(handler)->InvokeVoid(uCRef<int>(CoreApp::State()));
 }
 
-// internal static void ExitInteractive() [static] :159
+// internal static void ExitInteractive() [static] :157
 void CoreApp::ExitInteractive()
 {
-    CoreApp_typeof()->Init();
     GLHelper::SwapBackToBackgroundSurface();
 
     switch (CoreApp::State())
@@ -546,27 +542,24 @@ void CoreApp::ExitInteractive()
     }
 
     CoreApp::State(2);
-    uDelegate* handler = CoreApp::ExitedInteractive1();
+    uDelegate* handler = CoreApp::ExitedInteractive1_;
 
     if (::g::Uno::Delegate::op_Inequality(handler, NULL))
         uPtr(handler)->InvokeVoid(uCRef<int>(CoreApp::State()));
 }
 
-// internal static void OnReceivedLowMemoryWarning() [static] :262
+// internal static void OnReceivedLowMemoryWarning() [static] :260
 void CoreApp::OnReceivedLowMemoryWarning()
 {
-    CoreApp_typeof()->Init();
-    uDelegate* handler = CoreApp::ReceivedLowMemoryWarning1();
+    uDelegate* handler = CoreApp::ReceivedLowMemoryWarning1_;
 
     if (::g::Uno::Delegate::op_Inequality(handler, NULL))
-        uPtr(handler)->Invoke(2, NULL, (::g::Uno::EventArgs*)::g::Uno::EventArgs::Empty());
+        uPtr(handler)->Invoke(2, NULL, (::g::Uno::EventArgs*)::g::Uno::EventArgs::Empty_);
 }
 
-// internal static void Start() [static] :61
+// internal static void Start() [static] :59
 void CoreApp::Start()
 {
-    CoreApp_typeof()->Init();
-
     switch (CoreApp::State())
     {
         case 1:
@@ -582,17 +575,15 @@ void CoreApp::Start()
     uInitRtti();
     uStartApp();
     CoreApp::State(1);
-    uDelegate* handler = CoreApp::Started1();
+    uDelegate* handler = CoreApp::Started1_;
 
     if (::g::Uno::Delegate::op_Inequality(handler, NULL))
         uPtr(handler)->InvokeVoid(uCRef<int>(CoreApp::State()));
 }
 
-// internal static void Terminate() [static] :227
+// internal static void Terminate() [static] :225
 void CoreApp::Terminate()
 {
-    CoreApp_typeof()->Init();
-
     switch (CoreApp::State())
     {
         case -1:
@@ -609,7 +600,7 @@ void CoreApp::Terminate()
     }
 
     CoreApp::State(-1);
-    uDelegate* handler = CoreApp::Terminating1();
+    uDelegate* handler = CoreApp::Terminating1_;
 
     if (::g::Uno::Delegate::op_Inequality(handler, NULL))
         uPtr(handler)->InvokeVoid(uCRef<int>(CoreApp::State()));
@@ -617,144 +608,126 @@ void CoreApp::Terminate()
     CoreApp::State(0);
 }
 
-// public static generated Uno.Platform.CoreApp get_Current() [static] :32
+// public static generated Uno.Platform.CoreApp get_Current() [static] :30
 CoreApp* CoreApp::Current()
 {
-    CoreApp_typeof()->Init();
-    return CoreApp::_Current();
+    return CoreApp::_Current_;
 }
 
-// internal static generated void set_Current(Uno.Platform.CoreApp value) [static] :33
+// internal static generated void set_Current(Uno.Platform.CoreApp value) [static] :31
 void CoreApp::Current(CoreApp* value)
 {
-    CoreApp_typeof()->Init();
-    CoreApp::_Current() = value;
+    CoreApp::_Current_ = value;
 }
 
-// public static generated Uno.Platform.ApplicationState get_State() [static] :52
+// public static generated Uno.Platform.ApplicationState get_State() [static] :50
 int CoreApp::State()
 {
-    CoreApp_typeof()->Init();
-    return CoreApp::_State();
+    return CoreApp::_State_;
 }
 
-// private static generated void set_State(Uno.Platform.ApplicationState value) [static] :52
+// private static generated void set_State(Uno.Platform.ApplicationState value) [static] :50
 void CoreApp::State(int value)
 {
-    CoreApp_typeof()->Init();
-    CoreApp::_State() = value;
+    CoreApp::_State_ = value;
 }
 
-// public static generated void add_EnteringBackground(Uno.Platform.ApplicationStateTransitionHandler value) [static] :58
+// public static generated void add_EnteringBackground(Uno.Platform.ApplicationStateTransitionHandler value) [static] :56
 void CoreApp::add_EnteringBackground(uDelegate* value)
 {
-    CoreApp_typeof()->Init();
-    CoreApp::EnteringBackground1() = uCast<uDelegate*>(::g::Uno::Delegate::Combine(CoreApp::EnteringBackground1(), value), ::TYPES[1/*Uno.Platform.ApplicationStateTransitionHandler*/]);
+    CoreApp::EnteringBackground1_ = uCast<uDelegate*>(::g::Uno::Delegate::Combine(CoreApp::EnteringBackground1_, value), ::TYPES[1/*Uno.Platform.ApplicationStateTransitionHandler*/]);
 }
 
-// public static generated void remove_EnteringBackground(Uno.Platform.ApplicationStateTransitionHandler value) [static] :58
+// public static generated void remove_EnteringBackground(Uno.Platform.ApplicationStateTransitionHandler value) [static] :56
 void CoreApp::remove_EnteringBackground(uDelegate* value)
 {
-    CoreApp_typeof()->Init();
-    CoreApp::EnteringBackground1() = uCast<uDelegate*>(::g::Uno::Delegate::Remove(CoreApp::EnteringBackground1(), value), ::TYPES[1/*Uno.Platform.ApplicationStateTransitionHandler*/]);
+    CoreApp::EnteringBackground1_ = uCast<uDelegate*>(::g::Uno::Delegate::Remove(CoreApp::EnteringBackground1_, value), ::TYPES[1/*Uno.Platform.ApplicationStateTransitionHandler*/]);
 }
 
-// public static generated void add_EnteringForeground(Uno.Platform.ApplicationStateTransitionHandler value) [static] :55
+// public static generated void add_EnteringForeground(Uno.Platform.ApplicationStateTransitionHandler value) [static] :53
 void CoreApp::add_EnteringForeground(uDelegate* value)
 {
-    CoreApp_typeof()->Init();
-    CoreApp::EnteringForeground1() = uCast<uDelegate*>(::g::Uno::Delegate::Combine(CoreApp::EnteringForeground1(), value), ::TYPES[1/*Uno.Platform.ApplicationStateTransitionHandler*/]);
+    CoreApp::EnteringForeground1_ = uCast<uDelegate*>(::g::Uno::Delegate::Combine(CoreApp::EnteringForeground1_, value), ::TYPES[1/*Uno.Platform.ApplicationStateTransitionHandler*/]);
 }
 
-// public static generated void remove_EnteringForeground(Uno.Platform.ApplicationStateTransitionHandler value) [static] :55
+// public static generated void remove_EnteringForeground(Uno.Platform.ApplicationStateTransitionHandler value) [static] :53
 void CoreApp::remove_EnteringForeground(uDelegate* value)
 {
-    CoreApp_typeof()->Init();
-    CoreApp::EnteringForeground1() = uCast<uDelegate*>(::g::Uno::Delegate::Remove(CoreApp::EnteringForeground1(), value), ::TYPES[1/*Uno.Platform.ApplicationStateTransitionHandler*/]);
+    CoreApp::EnteringForeground1_ = uCast<uDelegate*>(::g::Uno::Delegate::Remove(CoreApp::EnteringForeground1_, value), ::TYPES[1/*Uno.Platform.ApplicationStateTransitionHandler*/]);
 }
 
-// public static generated void add_EnteringInteractive(Uno.Platform.ApplicationStateTransitionHandler value) [static] :56
+// public static generated void add_EnteringInteractive(Uno.Platform.ApplicationStateTransitionHandler value) [static] :54
 void CoreApp::add_EnteringInteractive(uDelegate* value)
 {
-    CoreApp_typeof()->Init();
-    CoreApp::EnteringInteractive1() = uCast<uDelegate*>(::g::Uno::Delegate::Combine(CoreApp::EnteringInteractive1(), value), ::TYPES[1/*Uno.Platform.ApplicationStateTransitionHandler*/]);
+    CoreApp::EnteringInteractive1_ = uCast<uDelegate*>(::g::Uno::Delegate::Combine(CoreApp::EnteringInteractive1_, value), ::TYPES[1/*Uno.Platform.ApplicationStateTransitionHandler*/]);
 }
 
-// public static generated void remove_EnteringInteractive(Uno.Platform.ApplicationStateTransitionHandler value) [static] :56
+// public static generated void remove_EnteringInteractive(Uno.Platform.ApplicationStateTransitionHandler value) [static] :54
 void CoreApp::remove_EnteringInteractive(uDelegate* value)
 {
-    CoreApp_typeof()->Init();
-    CoreApp::EnteringInteractive1() = uCast<uDelegate*>(::g::Uno::Delegate::Remove(CoreApp::EnteringInteractive1(), value), ::TYPES[1/*Uno.Platform.ApplicationStateTransitionHandler*/]);
+    CoreApp::EnteringInteractive1_ = uCast<uDelegate*>(::g::Uno::Delegate::Remove(CoreApp::EnteringInteractive1_, value), ::TYPES[1/*Uno.Platform.ApplicationStateTransitionHandler*/]);
 }
 
-// public static generated void add_ExitedInteractive(Uno.Platform.ApplicationStateTransitionHandler value) [static] :57
+// public static generated void add_ExitedInteractive(Uno.Platform.ApplicationStateTransitionHandler value) [static] :55
 void CoreApp::add_ExitedInteractive(uDelegate* value)
 {
-    CoreApp_typeof()->Init();
-    CoreApp::ExitedInteractive1() = uCast<uDelegate*>(::g::Uno::Delegate::Combine(CoreApp::ExitedInteractive1(), value), ::TYPES[1/*Uno.Platform.ApplicationStateTransitionHandler*/]);
+    CoreApp::ExitedInteractive1_ = uCast<uDelegate*>(::g::Uno::Delegate::Combine(CoreApp::ExitedInteractive1_, value), ::TYPES[1/*Uno.Platform.ApplicationStateTransitionHandler*/]);
 }
 
-// public static generated void remove_ExitedInteractive(Uno.Platform.ApplicationStateTransitionHandler value) [static] :57
+// public static generated void remove_ExitedInteractive(Uno.Platform.ApplicationStateTransitionHandler value) [static] :55
 void CoreApp::remove_ExitedInteractive(uDelegate* value)
 {
-    CoreApp_typeof()->Init();
-    CoreApp::ExitedInteractive1() = uCast<uDelegate*>(::g::Uno::Delegate::Remove(CoreApp::ExitedInteractive1(), value), ::TYPES[1/*Uno.Platform.ApplicationStateTransitionHandler*/]);
+    CoreApp::ExitedInteractive1_ = uCast<uDelegate*>(::g::Uno::Delegate::Remove(CoreApp::ExitedInteractive1_, value), ::TYPES[1/*Uno.Platform.ApplicationStateTransitionHandler*/]);
 }
 
-// public static generated void add_ReceivedLowMemoryWarning(Uno.EventHandler value) [static] :260
+// public static generated void add_ReceivedLowMemoryWarning(Uno.EventHandler value) [static] :258
 void CoreApp::add_ReceivedLowMemoryWarning(uDelegate* value)
 {
-    CoreApp_typeof()->Init();
-    CoreApp::ReceivedLowMemoryWarning1() = uCast<uDelegate*>(::g::Uno::Delegate::Combine(CoreApp::ReceivedLowMemoryWarning1(), value), ::TYPES[2/*Uno.EventHandler*/]);
+    CoreApp::ReceivedLowMemoryWarning1_ = uCast<uDelegate*>(::g::Uno::Delegate::Combine(CoreApp::ReceivedLowMemoryWarning1_, value), ::TYPES[2/*Uno.EventHandler*/]);
 }
 
-// public static generated void remove_ReceivedLowMemoryWarning(Uno.EventHandler value) [static] :260
+// public static generated void remove_ReceivedLowMemoryWarning(Uno.EventHandler value) [static] :258
 void CoreApp::remove_ReceivedLowMemoryWarning(uDelegate* value)
 {
-    CoreApp_typeof()->Init();
-    CoreApp::ReceivedLowMemoryWarning1() = uCast<uDelegate*>(::g::Uno::Delegate::Remove(CoreApp::ReceivedLowMemoryWarning1(), value), ::TYPES[2/*Uno.EventHandler*/]);
+    CoreApp::ReceivedLowMemoryWarning1_ = uCast<uDelegate*>(::g::Uno::Delegate::Remove(CoreApp::ReceivedLowMemoryWarning1_, value), ::TYPES[2/*Uno.EventHandler*/]);
 }
 
-// public static generated void add_Started(Uno.Platform.ApplicationStateTransitionHandler value) [static] :54
+// public static generated void add_Started(Uno.Platform.ApplicationStateTransitionHandler value) [static] :52
 void CoreApp::add_Started(uDelegate* value)
 {
-    CoreApp_typeof()->Init();
-    CoreApp::Started1() = uCast<uDelegate*>(::g::Uno::Delegate::Combine(CoreApp::Started1(), value), ::TYPES[1/*Uno.Platform.ApplicationStateTransitionHandler*/]);
+    CoreApp::Started1_ = uCast<uDelegate*>(::g::Uno::Delegate::Combine(CoreApp::Started1_, value), ::TYPES[1/*Uno.Platform.ApplicationStateTransitionHandler*/]);
 }
 
-// public static generated void remove_Started(Uno.Platform.ApplicationStateTransitionHandler value) [static] :54
+// public static generated void remove_Started(Uno.Platform.ApplicationStateTransitionHandler value) [static] :52
 void CoreApp::remove_Started(uDelegate* value)
 {
-    CoreApp_typeof()->Init();
-    CoreApp::Started1() = uCast<uDelegate*>(::g::Uno::Delegate::Remove(CoreApp::Started1(), value), ::TYPES[1/*Uno.Platform.ApplicationStateTransitionHandler*/]);
+    CoreApp::Started1_ = uCast<uDelegate*>(::g::Uno::Delegate::Remove(CoreApp::Started1_, value), ::TYPES[1/*Uno.Platform.ApplicationStateTransitionHandler*/]);
 }
 
-// public static generated void add_Terminating(Uno.Platform.ApplicationStateTransitionHandler value) [static] :59
+// public static generated void add_Terminating(Uno.Platform.ApplicationStateTransitionHandler value) [static] :57
 void CoreApp::add_Terminating(uDelegate* value)
 {
-    CoreApp_typeof()->Init();
-    CoreApp::Terminating1() = uCast<uDelegate*>(::g::Uno::Delegate::Combine(CoreApp::Terminating1(), value), ::TYPES[1/*Uno.Platform.ApplicationStateTransitionHandler*/]);
+    CoreApp::Terminating1_ = uCast<uDelegate*>(::g::Uno::Delegate::Combine(CoreApp::Terminating1_, value), ::TYPES[1/*Uno.Platform.ApplicationStateTransitionHandler*/]);
 }
 
-// public static generated void remove_Terminating(Uno.Platform.ApplicationStateTransitionHandler value) [static] :59
+// public static generated void remove_Terminating(Uno.Platform.ApplicationStateTransitionHandler value) [static] :57
 void CoreApp::remove_Terminating(uDelegate* value)
 {
-    CoreApp_typeof()->Init();
-    CoreApp::Terminating1() = uCast<uDelegate*>(::g::Uno::Delegate::Remove(CoreApp::Terminating1(), value), ::TYPES[1/*Uno.Platform.ApplicationStateTransitionHandler*/]);
+    CoreApp::Terminating1_ = uCast<uDelegate*>(::g::Uno::Delegate::Remove(CoreApp::Terminating1_, value), ::TYPES[1/*Uno.Platform.ApplicationStateTransitionHandler*/]);
 }
 // }
 
-// /usr/local/share/uno/Packages/UnoCore/1.2.2/source/uno/platform/$.uno
-// ---------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\UnoCore\1.3.1\Source\Uno\Platform\Displays.uno
+// ------------------------------------------------------------------------------------------
 
-// public abstract class Display :1066
+// public abstract class Display :54
 // {
 static void Display_build(uType* type)
 {
     ::TYPES[3] = ::g::Uno::EventHandler1_typeof()->MakeType(::g::Uno::Platform::TimerEventArgs_typeof(), NULL);
     type->SetFields(0,
-        ::g::Uno::UInt_typeof(), offsetof(::g::Uno::Platform::Display, _ticksPerSecond), 0,
-        ::TYPES[3/*Uno.EventHandler<Uno.Platform.TimerEventArgs>*/], offsetof(::g::Uno::Platform::Display, _tick1), 0);
+        ::g::Uno::UInt_typeof(), offsetof(Display, _ticksPerSecond), 0,
+        ::TYPES[3/*Uno.EventHandler<Uno.Platform.TimerEventArgs>*/], offsetof(Display, _tick1), 0);
 }
 
 Display_type* Display_typeof()
@@ -773,101 +746,101 @@ Display_type* Display_typeof()
     return type;
 }
 
-// protected generated Display() :1066
+// protected generated Display() :54
 void Display__ctor__fn(Display* __this)
 {
     __this->ctor_();
 }
 
-// private generated void add__tick(Uno.EventHandler<Uno.Platform.TimerEventArgs> value) :1095
+// private generated void add__tick(Uno.EventHandler<Uno.Platform.TimerEventArgs> value) :83
 void Display__add__tick_fn(Display* __this, uDelegate* value)
 {
     __this->add__tick(value);
 }
 
-// private generated void remove__tick(Uno.EventHandler<Uno.Platform.TimerEventArgs> value) :1095
+// private generated void remove__tick(Uno.EventHandler<Uno.Platform.TimerEventArgs> value) :83
 void Display__remove__tick_fn(Display* __this, uDelegate* value)
 {
     __this->remove__tick(value);
 }
 
-// public float get_Density() :1070
+// public float get_Density() :58
 void Display__get_Density_fn(Display* __this, float* __retval)
 {
     *__retval = __this->Density();
 }
 
-// protected virtual void DisableTicks() :1125
+// protected virtual void DisableTicks() :113
 void Display__DisableTicks_fn(Display* __this)
 {
 }
 
-// protected virtual void EnableTicks() :1124
+// protected virtual void EnableTicks() :112
 void Display__EnableTicks_fn(Display* __this)
 {
 }
 
-// internal void OnTick(Uno.Platform.TimerEventArgs args) :1117
+// internal void OnTick(Uno.Platform.TimerEventArgs args) :105
 void Display__OnTick_fn(Display* __this, ::g::Uno::Platform::TimerEventArgs* args)
 {
     __this->OnTick(args);
 }
 
-// protected void SetTicksPerSecond(uint value) :1091
+// protected void SetTicksPerSecond(uint value) :79
 void Display__SetTicksPerSecond_fn(Display* __this, uint32_t* value)
 {
     __this->SetTicksPerSecond(*value);
 }
 
-// public void add_Tick(Uno.EventHandler<Uno.Platform.TimerEventArgs> value) :1098
+// public void add_Tick(Uno.EventHandler<Uno.Platform.TimerEventArgs> value) :86
 void Display__add_Tick_fn(Display* __this, uDelegate* value)
 {
     __this->add_Tick(value);
 }
 
-// public void remove_Tick(Uno.EventHandler<Uno.Platform.TimerEventArgs> value) :1105
+// public void remove_Tick(Uno.EventHandler<Uno.Platform.TimerEventArgs> value) :93
 void Display__remove_Tick_fn(Display* __this, uDelegate* value)
 {
     __this->remove_Tick(value);
 }
 
-// public uint get_TicksPerSecond() :1079
+// public uint get_TicksPerSecond() :67
 void Display__get_TicksPerSecond_fn(Display* __this, uint32_t* __retval)
 {
     *__retval = __this->TicksPerSecond();
 }
 
-// public void set_TicksPerSecond(uint value) :1080
+// public void set_TicksPerSecond(uint value) :68
 void Display__set_TicksPerSecond_fn(Display* __this, uint32_t* value)
 {
     __this->TicksPerSecond(*value);
 }
 
-// protected generated Display() [instance] :1066
+// protected generated Display() [instance] :54
 void Display::ctor_()
 {
     _ticksPerSecond = 0U;
 }
 
-// private generated void add__tick(Uno.EventHandler<Uno.Platform.TimerEventArgs> value) [instance] :1095
+// private generated void add__tick(Uno.EventHandler<Uno.Platform.TimerEventArgs> value) [instance] :83
 void Display::add__tick(uDelegate* value)
 {
     _tick1 = uCast<uDelegate*>(::g::Uno::Delegate::Combine(_tick1, value), ::TYPES[3/*Uno.EventHandler<Uno.Platform.TimerEventArgs>*/]);
 }
 
-// private generated void remove__tick(Uno.EventHandler<Uno.Platform.TimerEventArgs> value) [instance] :1095
+// private generated void remove__tick(Uno.EventHandler<Uno.Platform.TimerEventArgs> value) [instance] :83
 void Display::remove__tick(uDelegate* value)
 {
     _tick1 = uCast<uDelegate*>(::g::Uno::Delegate::Remove(_tick1, value), ::TYPES[3/*Uno.EventHandler<Uno.Platform.TimerEventArgs>*/]);
 }
 
-// public float get_Density() [instance] :1070
+// public float get_Density() [instance] :58
 float Display::Density()
 {
     return GetDensity();
 }
 
-// internal void OnTick(Uno.Platform.TimerEventArgs args) [instance] :1117
+// internal void OnTick(Uno.Platform.TimerEventArgs args) [instance] :105
 void Display::OnTick(::g::Uno::Platform::TimerEventArgs* args)
 {
     uDelegate* handler = _tick1;
@@ -876,12 +849,12 @@ void Display::OnTick(::g::Uno::Platform::TimerEventArgs* args)
         uPtr(handler)->Invoke(2, NULL, args);
 }
 
-// protected void SetTicksPerSecond(uint value) [instance] :1091
+// protected void SetTicksPerSecond(uint value) [instance] :79
 void Display::SetTicksPerSecond(uint32_t value)
 {
 }
 
-// public void add_Tick(Uno.EventHandler<Uno.Platform.TimerEventArgs> value) [instance] :1098
+// public void add_Tick(Uno.EventHandler<Uno.Platform.TimerEventArgs> value) [instance] :86
 void Display::add_Tick(uDelegate* value)
 {
     if (::g::Uno::Delegate::op_Equality(_tick1, NULL))
@@ -890,7 +863,7 @@ void Display::add_Tick(uDelegate* value)
     add__tick(value);
 }
 
-// public void remove_Tick(Uno.EventHandler<Uno.Platform.TimerEventArgs> value) [instance] :1105
+// public void remove_Tick(Uno.EventHandler<Uno.Platform.TimerEventArgs> value) [instance] :93
 void Display::remove_Tick(uDelegate* value)
 {
     if (::g::Uno::Delegate::op_Equality(_tick1, NULL))
@@ -902,13 +875,13 @@ void Display::remove_Tick(uDelegate* value)
         DisableTicks();
 }
 
-// public uint get_TicksPerSecond() [instance] :1079
+// public uint get_TicksPerSecond() [instance] :67
 uint32_t Display::TicksPerSecond()
 {
     return _ticksPerSecond;
 }
 
-// public void set_TicksPerSecond(uint value) [instance] :1080
+// public void set_TicksPerSecond(uint value) [instance] :68
 void Display::TicksPerSecond(uint32_t value)
 {
     if (_ticksPerSecond == value)
@@ -921,12 +894,12 @@ void Display::TicksPerSecond(uint32_t value)
 }
 // }
 
-// /usr/local/share/uno/Packages/UnoCore/1.2.2/source/uno/platform/$.uno
-// ---------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\UnoCore\1.3.1\Source\Uno\Platform\Displays.uno
+// ------------------------------------------------------------------------------------------
 
-// public static class Displays :1022
+// public static class Displays :10
 // {
-// static Displays() :1027
+// static Displays() :15
 static void Displays__cctor__fn(uType* __type)
 {
     Displays::All((::g::Uno::Collections::List*)::g::Uno::Collections::List::New1(::TYPES[4/*Uno.Collections.List<Uno.Platform.Display>*/]));
@@ -937,7 +910,7 @@ static void Displays_build(uType* type)
 {
     ::TYPES[4] = ::g::Uno::Collections::List_typeof()->MakeType(::g::Uno::Platform::Display_typeof(), NULL);
     type->SetFields(0,
-        ::TYPES[4/*Uno.Collections.List<Uno.Platform.Display>*/], (uintptr_t)&::g::Uno::Platform::Displays::_All_, uFieldFlagsStatic);
+        ::TYPES[4/*Uno.Collections.List<Uno.Platform.Display>*/], (uintptr_t)&Displays::_All_, uFieldFlagsStatic);
 }
 
 uClassType* Displays_typeof()
@@ -954,31 +927,31 @@ uClassType* Displays_typeof()
     return type;
 }
 
-// public static generated Uno.Collections.List<Uno.Platform.Display> get_All() :1024
+// public static generated Uno.Collections.List<Uno.Platform.Display> get_All() :12
 void Displays__get_All_fn(::g::Uno::Collections::List** __retval)
 {
     *__retval = Displays::All();
 }
 
-// private static generated void set_All(Uno.Collections.List<Uno.Platform.Display> value) :1024
+// private static generated void set_All(Uno.Collections.List<Uno.Platform.Display> value) :12
 void Displays__set_All_fn(::g::Uno::Collections::List* value)
 {
     Displays::All(value);
 }
 
-// private static Uno.Platform.Display GetMainDisplay() :1052
+// private static Uno.Platform.Display GetMainDisplay() :40
 void Displays__GetMainDisplay_fn(::g::Uno::Platform::Display** __retval)
 {
     *__retval = Displays::GetMainDisplay();
 }
 
-// public static Uno.Platform.Display get_MainDisplay() :1025
+// public static Uno.Platform.Display get_MainDisplay() :13
 void Displays__get_MainDisplay_fn(::g::Uno::Platform::Display** __retval)
 {
     *__retval = Displays::MainDisplay();
 }
 
-// private static extern void PopulateDisplaysList() :1034
+// private static extern void PopulateDisplaysList() :22
 void Displays__PopulateDisplaysList_fn()
 {
     Displays::PopulateDisplaysList();
@@ -986,7 +959,7 @@ void Displays__PopulateDisplaysList_fn()
 
 uSStrong< ::g::Uno::Collections::List*> Displays::_All_;
 
-// private static Uno.Platform.Display GetMainDisplay() [static] :1052
+// private static Uno.Platform.Display GetMainDisplay() [static] :40
 ::g::Uno::Platform::Display* Displays::GetMainDisplay()
 {
     Displays_typeof()->Init();
@@ -994,28 +967,28 @@ uSStrong< ::g::Uno::Collections::List*> Displays::_All_;
     return (::g::Uno::Collections::List__get_Item_fn(uPtr(Displays::All()), uCRef<int>(0), &ret2), ret2);
 }
 
-// private static extern void PopulateDisplaysList() [static] :1034
+// private static extern void PopulateDisplaysList() [static] :22
 void Displays::PopulateDisplaysList()
 {
     Displays_typeof()->Init();
     ::g::Uno::Collections::List__Add_fn(uPtr(Displays::All()), ::g::Uno::Platform::AndroidDisplay::New1());
 }
 
-// public static generated Uno.Collections.List<Uno.Platform.Display> get_All() [static] :1024
+// public static generated Uno.Collections.List<Uno.Platform.Display> get_All() [static] :12
 ::g::Uno::Collections::List* Displays::All()
 {
     Displays_typeof()->Init();
-    return Displays::_All();
+    return Displays::_All_;
 }
 
-// private static generated void set_All(Uno.Collections.List<Uno.Platform.Display> value) [static] :1024
+// private static generated void set_All(Uno.Collections.List<Uno.Platform.Display> value) [static] :12
 void Displays::All(::g::Uno::Collections::List* value)
 {
     Displays_typeof()->Init();
-    Displays::_All() = value;
+    Displays::_All_ = value;
 }
 
-// public static Uno.Platform.Display get_MainDisplay() [static] :1025
+// public static Uno.Platform.Display get_MainDisplay() [static] :13
 ::g::Uno::Platform::Display* Displays::MainDisplay()
 {
     Displays_typeof()->Init();
@@ -1023,10 +996,10 @@ void Displays::All(::g::Uno::Collections::List* value)
 }
 // }
 
-// /usr/local/share/uno/Packages/UnoCore/1.2.2/source/uno/platform/$.uno
-// ---------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\UnoCore\1.3.1\Source\Uno\Platform\Enums.uno
+// ---------------------------------------------------------------------------------------
 
-// public enum EventModifiers :482
+// public enum EventModifiers :148
 uEnumType* EventModifiers_typeof()
 {
     static uSStrong<uEnumType*> type;
@@ -1046,88 +1019,10 @@ uEnumType* EventModifiers_typeof()
     return type;
 }
 
-// /usr/local/share/uno/Packages/UnoCore/1.2.2/source/uno/platform/$.uno
-// ---------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\UnoCore\1.3.1\Source\Uno\Platform\Enums.uno
+// ---------------------------------------------------------------------------------------
 
-// public sealed class FrameChangedEventArgs :501
-// {
-static void FrameChangedEventArgs_build(uType* type)
-{
-    type->SetFields(0,
-        ::g::Uno::Rect_typeof(), offsetof(::g::Uno::Platform::FrameChangedEventArgs, _NewFrame), 0);
-}
-
-uType* FrameChangedEventArgs_typeof()
-{
-    static uSStrong<uType*> type;
-    if (type != NULL) return type;
-
-    uTypeOptions options;
-    options.BaseDefinition = ::g::Uno::EventArgs_typeof();
-    options.FieldCount = 1;
-    options.ObjectSize = sizeof(FrameChangedEventArgs);
-    options.TypeSize = sizeof(uType);
-    type = uClassType::New("Uno.Platform.FrameChangedEventArgs", options);
-    type->fp_build_ = FrameChangedEventArgs_build;
-    return type;
-}
-
-// public FrameChangedEventArgs(Uno.Rect newFrame) :503
-void FrameChangedEventArgs__ctor_1_fn(FrameChangedEventArgs* __this, ::g::Uno::Rect* newFrame)
-{
-    __this->ctor_1(*newFrame);
-}
-
-// public FrameChangedEventArgs New(Uno.Rect newFrame) :503
-void FrameChangedEventArgs__New2_fn(::g::Uno::Rect* newFrame, FrameChangedEventArgs** __retval)
-{
-    *__retval = FrameChangedEventArgs::New2(*newFrame);
-}
-
-// public generated Uno.Rect get_NewFrame() :508
-void FrameChangedEventArgs__get_NewFrame_fn(FrameChangedEventArgs* __this, ::g::Uno::Rect* __retval)
-{
-    *__retval = __this->NewFrame();
-}
-
-// private generated void set_NewFrame(Uno.Rect value) :508
-void FrameChangedEventArgs__set_NewFrame_fn(FrameChangedEventArgs* __this, ::g::Uno::Rect* value)
-{
-    __this->NewFrame(*value);
-}
-
-// public FrameChangedEventArgs(Uno.Rect newFrame) [instance] :503
-void FrameChangedEventArgs::ctor_1(::g::Uno::Rect newFrame)
-{
-    ctor_();
-    NewFrame(newFrame);
-}
-
-// public generated Uno.Rect get_NewFrame() [instance] :508
-::g::Uno::Rect FrameChangedEventArgs::NewFrame()
-{
-    return _NewFrame;
-}
-
-// private generated void set_NewFrame(Uno.Rect value) [instance] :508
-void FrameChangedEventArgs::NewFrame(::g::Uno::Rect value)
-{
-    _NewFrame = value;
-}
-
-// public FrameChangedEventArgs New(Uno.Rect newFrame) [static] :503
-FrameChangedEventArgs* FrameChangedEventArgs::New2(::g::Uno::Rect newFrame)
-{
-    FrameChangedEventArgs* obj1 = (FrameChangedEventArgs*)uNew(FrameChangedEventArgs_typeof());
-    obj1->ctor_1(newFrame);
-    return obj1;
-}
-// }
-
-// /usr/local/share/uno/Packages/UnoCore/1.2.2/source/uno/platform/$.uno
-// ---------------------------------------------------------------------
-
-// public enum Key :340
+// public enum Key :6
 uEnumType* Key_typeof()
 {
     static uSStrong<uEnumType*> type;
@@ -1220,18 +1115,18 @@ uEnumType* Key_typeof()
     return type;
 }
 
-// /usr/local/share/uno/Packages/UnoCore/1.2.2/source/uno/platform/$.uno
-// ---------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\UnoCore\1.3.1\Source\Uno\Platform\KeyEventArgs.uno
+// ----------------------------------------------------------------------------------------------
 
-// public sealed class KeyEventArgs :519
+// public sealed class KeyEventArgs :6
 // {
 static void KeyEventArgs_build(uType* type)
 {
     type->SetFields(0,
-        ::g::Uno::Bool_typeof(), offsetof(::g::Uno::Platform::KeyEventArgs, _Handled), 0,
-        ::g::Uno::Platform::Key_typeof(), offsetof(::g::Uno::Platform::KeyEventArgs, _Key), 0,
-        ::g::Uno::Platform::EventModifiers_typeof(), offsetof(::g::Uno::Platform::KeyEventArgs, _Modifiers), 0,
-        ::g::Uno::Platform::OSFrame_typeof(), offsetof(::g::Uno::Platform::KeyEventArgs, _Origin), 0);
+        ::g::Uno::Bool_typeof(), offsetof(KeyEventArgs, _Handled), 0,
+        ::g::Uno::Platform::Key_typeof(), offsetof(KeyEventArgs, _Key), 0,
+        ::g::Uno::Platform::EventModifiers_typeof(), offsetof(KeyEventArgs, _Modifiers), 0,
+        ::g::Uno::Platform::OSFrame_typeof(), offsetof(KeyEventArgs, _Origin), 0);
 }
 
 uType* KeyEventArgs_typeof()
@@ -1249,91 +1144,91 @@ uType* KeyEventArgs_typeof()
     return type;
 }
 
-// public KeyEventArgs(Uno.Platform.Key key, Uno.Platform.EventModifiers modifiers, [Uno.Platform.OSFrame origin]) :521
+// public KeyEventArgs(Uno.Platform.Key key, Uno.Platform.EventModifiers modifiers, [Uno.Platform.OSFrame origin]) :8
 void KeyEventArgs__ctor_1_fn(KeyEventArgs* __this, int* key, int* modifiers, ::g::Uno::Platform::OSFrame* origin)
 {
     __this->ctor_1(*key, *modifiers, origin);
 }
 
-// public generated bool get_Handled() :535
+// public generated bool get_Handled() :22
 void KeyEventArgs__get_Handled_fn(KeyEventArgs* __this, bool* __retval)
 {
     *__retval = __this->Handled();
 }
 
-// public generated void set_Handled(bool value) :535
+// public generated void set_Handled(bool value) :22
 void KeyEventArgs__set_Handled_fn(KeyEventArgs* __this, bool* value)
 {
     __this->Handled(*value);
 }
 
-// public bool get_IsAltKeyPressed() :565
+// public bool get_IsAltKeyPressed() :52
 void KeyEventArgs__get_IsAltKeyPressed_fn(KeyEventArgs* __this, bool* __retval)
 {
     *__retval = __this->IsAltKeyPressed();
 }
 
-// public bool get_IsControlKeyPressed() :555
+// public bool get_IsControlKeyPressed() :42
 void KeyEventArgs__get_IsControlKeyPressed_fn(KeyEventArgs* __this, bool* __retval)
 {
     *__retval = __this->IsControlKeyPressed();
 }
 
-// public bool get_IsMetaKeyPressed() :550
+// public bool get_IsMetaKeyPressed() :37
 void KeyEventArgs__get_IsMetaKeyPressed_fn(KeyEventArgs* __this, bool* __retval)
 {
     *__retval = __this->IsMetaKeyPressed();
 }
 
-// public bool get_IsShiftKeyPressed() :560
+// public bool get_IsShiftKeyPressed() :47
 void KeyEventArgs__get_IsShiftKeyPressed_fn(KeyEventArgs* __this, bool* __retval)
 {
     *__retval = __this->IsShiftKeyPressed();
 }
 
-// public generated Uno.Platform.Key get_Key() :540
+// public generated Uno.Platform.Key get_Key() :27
 void KeyEventArgs__get_Key_fn(KeyEventArgs* __this, int* __retval)
 {
     *__retval = __this->Key();
 }
 
-// private generated void set_Key(Uno.Platform.Key value) :540
+// private generated void set_Key(Uno.Platform.Key value) :27
 void KeyEventArgs__set_Key_fn(KeyEventArgs* __this, int* value)
 {
     __this->Key(*value);
 }
 
-// internal generated Uno.Platform.EventModifiers get_Modifiers() :545
+// internal generated Uno.Platform.EventModifiers get_Modifiers() :32
 void KeyEventArgs__get_Modifiers_fn(KeyEventArgs* __this, int* __retval)
 {
     *__retval = __this->Modifiers();
 }
 
-// private generated void set_Modifiers(Uno.Platform.EventModifiers value) :545
+// private generated void set_Modifiers(Uno.Platform.EventModifiers value) :32
 void KeyEventArgs__set_Modifiers_fn(KeyEventArgs* __this, int* value)
 {
     __this->Modifiers(*value);
 }
 
-// public KeyEventArgs New(Uno.Platform.Key key, Uno.Platform.EventModifiers modifiers, [Uno.Platform.OSFrame origin]) :521
+// public KeyEventArgs New(Uno.Platform.Key key, Uno.Platform.EventModifiers modifiers, [Uno.Platform.OSFrame origin]) :8
 void KeyEventArgs__New2_fn(int* key, int* modifiers, ::g::Uno::Platform::OSFrame* origin, KeyEventArgs** __retval)
 {
     *__retval = KeyEventArgs::New2(*key, *modifiers, origin);
 }
 
-// public generated Uno.Platform.OSFrame get_Origin() :530
+// public generated Uno.Platform.OSFrame get_Origin() :17
 void KeyEventArgs__get_Origin_fn(KeyEventArgs* __this, ::g::Uno::Platform::OSFrame** __retval)
 {
     *__retval = __this->Origin();
 }
 
-// private generated void set_Origin(Uno.Platform.OSFrame value) :530
+// private generated void set_Origin(Uno.Platform.OSFrame value) :17
 void KeyEventArgs__set_Origin_fn(KeyEventArgs* __this, ::g::Uno::Platform::OSFrame* value)
 {
     __this->Origin(value);
 }
 
-// public KeyEventArgs(Uno.Platform.Key key, Uno.Platform.EventModifiers modifiers, [Uno.Platform.OSFrame origin]) [instance] :521
+// public KeyEventArgs(Uno.Platform.Key key, Uno.Platform.EventModifiers modifiers, [Uno.Platform.OSFrame origin]) [instance] :8
 void KeyEventArgs::ctor_1(int key, int modifiers, ::g::Uno::Platform::OSFrame* origin)
 {
     ctor_();
@@ -1342,79 +1237,79 @@ void KeyEventArgs::ctor_1(int key, int modifiers, ::g::Uno::Platform::OSFrame* o
     Modifiers(modifiers);
 }
 
-// public generated bool get_Handled() [instance] :535
+// public generated bool get_Handled() [instance] :22
 bool KeyEventArgs::Handled()
 {
     return _Handled;
 }
 
-// public generated void set_Handled(bool value) [instance] :535
+// public generated void set_Handled(bool value) [instance] :22
 void KeyEventArgs::Handled(bool value)
 {
     _Handled = value;
 }
 
-// public bool get_IsAltKeyPressed() [instance] :565
+// public bool get_IsAltKeyPressed() [instance] :52
 bool KeyEventArgs::IsAltKeyPressed()
 {
     return (Modifiers() & 8) == 8;
 }
 
-// public bool get_IsControlKeyPressed() [instance] :555
+// public bool get_IsControlKeyPressed() [instance] :42
 bool KeyEventArgs::IsControlKeyPressed()
 {
     return (Modifiers() & 2) == 2;
 }
 
-// public bool get_IsMetaKeyPressed() [instance] :550
+// public bool get_IsMetaKeyPressed() [instance] :37
 bool KeyEventArgs::IsMetaKeyPressed()
 {
     return (Modifiers() & 1) == 1;
 }
 
-// public bool get_IsShiftKeyPressed() [instance] :560
+// public bool get_IsShiftKeyPressed() [instance] :47
 bool KeyEventArgs::IsShiftKeyPressed()
 {
     return (Modifiers() & 4) == 4;
 }
 
-// public generated Uno.Platform.Key get_Key() [instance] :540
+// public generated Uno.Platform.Key get_Key() [instance] :27
 int KeyEventArgs::Key()
 {
     return _Key;
 }
 
-// private generated void set_Key(Uno.Platform.Key value) [instance] :540
+// private generated void set_Key(Uno.Platform.Key value) [instance] :27
 void KeyEventArgs::Key(int value)
 {
     _Key = value;
 }
 
-// internal generated Uno.Platform.EventModifiers get_Modifiers() [instance] :545
+// internal generated Uno.Platform.EventModifiers get_Modifiers() [instance] :32
 int KeyEventArgs::Modifiers()
 {
     return _Modifiers;
 }
 
-// private generated void set_Modifiers(Uno.Platform.EventModifiers value) [instance] :545
+// private generated void set_Modifiers(Uno.Platform.EventModifiers value) [instance] :32
 void KeyEventArgs::Modifiers(int value)
 {
     _Modifiers = value;
 }
 
-// public generated Uno.Platform.OSFrame get_Origin() [instance] :530
+// public generated Uno.Platform.OSFrame get_Origin() [instance] :17
 ::g::Uno::Platform::OSFrame* KeyEventArgs::Origin()
 {
     return _Origin;
 }
 
-// private generated void set_Origin(Uno.Platform.OSFrame value) [instance] :530
+// private generated void set_Origin(Uno.Platform.OSFrame value) [instance] :17
 void KeyEventArgs::Origin(::g::Uno::Platform::OSFrame* value)
 {
     _Origin = value;
 }
 
-// public KeyEventArgs New(Uno.Platform.Key key, Uno.Platform.EventModifiers modifiers, [Uno.Platform.OSFrame origin]) [static] :521
+// public KeyEventArgs New(Uno.Platform.Key key, Uno.Platform.EventModifiers modifiers, [Uno.Platform.OSFrame origin]) [static] :8
 KeyEventArgs* KeyEventArgs::New2(int key, int modifiers, ::g::Uno::Platform::OSFrame* origin)
 {
     KeyEventArgs* obj1 = (KeyEventArgs*)uNew(KeyEventArgs_typeof());
@@ -1423,15 +1318,15 @@ KeyEventArgs* KeyEventArgs::New2(int key, int modifiers, ::g::Uno::Platform::OSF
 }
 // }
 
-// /usr/local/share/uno/Packages/UnoCore/1.2.2/source/uno/platform/$.uno
-// ---------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\UnoCore\1.3.1\Source\Uno\Platform\OSFrame.uno
+// -----------------------------------------------------------------------------------------
 
-// public class OSFrame :781
+// public class OSFrame :7
 // {
 static void OSFrame_build(uType* type)
 {
     type->SetFields(0,
-        ::g::Uno::Runtime::Implementation::PlatformWindowHandle_typeof(), offsetof(::g::Uno::Platform::OSFrame, _handle), 0);
+        ::g::Uno::Runtime::Implementation::PlatformWindowHandle_typeof(), offsetof(OSFrame, _handle), 0);
 }
 
 uType* OSFrame_typeof()
@@ -1448,23 +1343,23 @@ uType* OSFrame_typeof()
     return type;
 }
 
-// internal OSFrame() :785
+// internal OSFrame() :11
 void OSFrame__ctor__fn(OSFrame* __this)
 {
     __this->ctor_();
 }
 
-// internal OSFrame() [instance] :785
+// internal OSFrame() [instance] :11
 void OSFrame::ctor_()
 {
     _handle = (void*)NULL;
 }
 // }
 
-// /usr/local/share/uno/Packages/UnoCore/1.2.2/source/uno/platform/$.uno
-// ---------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\UnoCore\1.3.1\Source\Uno\Platform\Enums.uno
+// ---------------------------------------------------------------------------------------
 
-// public enum PointerType :464
+// public enum PointerType :130
 uEnumType* PointerType_typeof()
 {
     static uSStrong<uEnumType*> type;
@@ -1477,17 +1372,17 @@ uEnumType* PointerType_typeof()
     return type;
 }
 
-// /usr/local/share/uno/Packages/UnoCore/1.2.2/source/uno/platform/$.uno
-// ---------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\UnoCore\1.3.1\Source\Uno\Platform\TimerEventArgs.uno
+// ------------------------------------------------------------------------------------------------
 
-// public sealed class TimerEventArgs :757
+// public sealed class TimerEventArgs :6
 // {
 static void TimerEventArgs_build(uType* type)
 {
     type->SetFields(0,
-        ::g::Uno::Double_typeof(), offsetof(::g::Uno::Platform::TimerEventArgs, _CurrentTime), 0,
-        ::g::Uno::Double_typeof(), offsetof(::g::Uno::Platform::TimerEventArgs, _LastTickTimestamp), 0,
-        ::g::Uno::Double_typeof(), offsetof(::g::Uno::Platform::TimerEventArgs, _TickDuration), 0);
+        ::g::Uno::Double_typeof(), offsetof(TimerEventArgs, _CurrentTime), 0,
+        ::g::Uno::Double_typeof(), offsetof(TimerEventArgs, _LastTickTimestamp), 0,
+        ::g::Uno::Double_typeof(), offsetof(TimerEventArgs, _TickDuration), 0);
 }
 
 uType* TimerEventArgs_typeof()
@@ -1505,55 +1400,55 @@ uType* TimerEventArgs_typeof()
     return type;
 }
 
-// public TimerEventArgs(double lastTickTimestamp, double tickDuration, double currentTime) :759
+// public TimerEventArgs(double lastTickTimestamp, double tickDuration, double currentTime) :8
 void TimerEventArgs__ctor_1_fn(TimerEventArgs* __this, double* lastTickTimestamp, double* tickDuration, double* currentTime)
 {
     __this->ctor_1(*lastTickTimestamp, *tickDuration, *currentTime);
 }
 
-// public generated double get_CurrentTime() :768
+// public generated double get_CurrentTime() :17
 void TimerEventArgs__get_CurrentTime_fn(TimerEventArgs* __this, double* __retval)
 {
     *__retval = __this->CurrentTime();
 }
 
-// private generated void set_CurrentTime(double value) :768
+// private generated void set_CurrentTime(double value) :17
 void TimerEventArgs__set_CurrentTime_fn(TimerEventArgs* __this, double* value)
 {
     __this->CurrentTime(*value);
 }
 
-// public generated double get_LastTickTimestamp() :766
+// public generated double get_LastTickTimestamp() :15
 void TimerEventArgs__get_LastTickTimestamp_fn(TimerEventArgs* __this, double* __retval)
 {
     *__retval = __this->LastTickTimestamp();
 }
 
-// private generated void set_LastTickTimestamp(double value) :766
+// private generated void set_LastTickTimestamp(double value) :15
 void TimerEventArgs__set_LastTickTimestamp_fn(TimerEventArgs* __this, double* value)
 {
     __this->LastTickTimestamp(*value);
 }
 
-// public TimerEventArgs New(double lastTickTimestamp, double tickDuration, double currentTime) :759
+// public TimerEventArgs New(double lastTickTimestamp, double tickDuration, double currentTime) :8
 void TimerEventArgs__New2_fn(double* lastTickTimestamp, double* tickDuration, double* currentTime, TimerEventArgs** __retval)
 {
     *__retval = TimerEventArgs::New2(*lastTickTimestamp, *tickDuration, *currentTime);
 }
 
-// public generated double get_TickDuration() :767
+// public generated double get_TickDuration() :16
 void TimerEventArgs__get_TickDuration_fn(TimerEventArgs* __this, double* __retval)
 {
     *__retval = __this->TickDuration();
 }
 
-// private generated void set_TickDuration(double value) :767
+// private generated void set_TickDuration(double value) :16
 void TimerEventArgs__set_TickDuration_fn(TimerEventArgs* __this, double* value)
 {
     __this->TickDuration(*value);
 }
 
-// public TimerEventArgs(double lastTickTimestamp, double tickDuration, double currentTime) [instance] :759
+// public TimerEventArgs(double lastTickTimestamp, double tickDuration, double currentTime) [instance] :8
 void TimerEventArgs::ctor_1(double lastTickTimestamp, double tickDuration, double currentTime)
 {
     ctor_();
@@ -1562,43 +1457,43 @@ void TimerEventArgs::ctor_1(double lastTickTimestamp, double tickDuration, doubl
     CurrentTime(currentTime);
 }
 
-// public generated double get_CurrentTime() [instance] :768
+// public generated double get_CurrentTime() [instance] :17
 double TimerEventArgs::CurrentTime()
 {
     return _CurrentTime;
 }
 
-// private generated void set_CurrentTime(double value) [instance] :768
+// private generated void set_CurrentTime(double value) [instance] :17
 void TimerEventArgs::CurrentTime(double value)
 {
     _CurrentTime = value;
 }
 
-// public generated double get_LastTickTimestamp() [instance] :766
+// public generated double get_LastTickTimestamp() [instance] :15
 double TimerEventArgs::LastTickTimestamp()
 {
     return _LastTickTimestamp;
 }
 
-// private generated void set_LastTickTimestamp(double value) [instance] :766
+// private generated void set_LastTickTimestamp(double value) [instance] :15
 void TimerEventArgs::LastTickTimestamp(double value)
 {
     _LastTickTimestamp = value;
 }
 
-// public generated double get_TickDuration() [instance] :767
+// public generated double get_TickDuration() [instance] :16
 double TimerEventArgs::TickDuration()
 {
     return _TickDuration;
 }
 
-// private generated void set_TickDuration(double value) [instance] :767
+// private generated void set_TickDuration(double value) [instance] :16
 void TimerEventArgs::TickDuration(double value)
 {
     _TickDuration = value;
 }
 
-// public TimerEventArgs New(double lastTickTimestamp, double tickDuration, double currentTime) [static] :759
+// public TimerEventArgs New(double lastTickTimestamp, double tickDuration, double currentTime) [static] :8
 TimerEventArgs* TimerEventArgs::New2(double lastTickTimestamp, double tickDuration, double currentTime)
 {
     TimerEventArgs* obj1 = (TimerEventArgs*)uNew(TimerEventArgs_typeof());
@@ -1607,20 +1502,23 @@ TimerEventArgs* TimerEventArgs::New2(double lastTickTimestamp, double tickDurati
 }
 // }
 
-// /usr/local/share/uno/Packages/UnoCore/1.2.2/source/uno/platform/$.uno
-// ---------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\UnoCore\1.3.1\Source\Uno\Platform\Window.uno
+// ----------------------------------------------------------------------------------------
 
-// public sealed extern class Window :812
+// public sealed extern class Window :7
 // {
 static void Window_build(uType* type)
 {
     ::TYPES[3] = ::g::Uno::EventHandler1_typeof()->MakeType(::g::Uno::Platform::TimerEventArgs_typeof(), NULL);
     ::TYPES[1] = ::g::Uno::Platform::ApplicationStateTransitionHandler_typeof();
     ::TYPES[2] = ::g::Uno::EventHandler_typeof();
+    type->SetDependencies(
+        ::g::Uno::Platform::CoreApp_typeof(),
+        ::g::Uno::EventArgs_typeof());
     type->SetFields(1,
-        ::TYPES[2/*Uno.EventHandler*/], offsetof(::g::Uno::Platform::Window, GotFocus1), 0,
-        ::TYPES[2/*Uno.EventHandler*/], offsetof(::g::Uno::Platform::Window, LostFocus1), 0,
-        ::TYPES[2/*Uno.EventHandler*/], offsetof(::g::Uno::Platform::Window, Updating1), 0);
+        ::TYPES[2/*Uno.EventHandler*/], offsetof(Window, GotFocus1), 0,
+        ::TYPES[2/*Uno.EventHandler*/], offsetof(Window, LostFocus1), 0,
+        ::TYPES[2/*Uno.EventHandler*/], offsetof(Window, Updating1), 0);
 }
 
 uType* Window_typeof()
@@ -1631,6 +1529,7 @@ uType* Window_typeof()
     uTypeOptions options;
     options.BaseDefinition = ::g::Uno::Platform::OSFrame_typeof();
     options.FieldCount = 4;
+    options.DependencyCount = 2;
     options.ObjectSize = sizeof(Window);
     options.TypeSize = sizeof(uType);
     type = uClassType::New("Uno.Platform.Window", options);
@@ -1639,73 +1538,73 @@ uType* Window_typeof()
     return type;
 }
 
-// internal Window() :814
+// internal Window() :9
 void Window__ctor_1_fn(Window* __this)
 {
     __this->ctor_1();
 }
 
-// public generated void add_GotFocus(Uno.EventHandler value) :900
+// public generated void add_GotFocus(Uno.EventHandler value) :95
 void Window__add_GotFocus_fn(Window* __this, uDelegate* value)
 {
     __this->add_GotFocus(value);
 }
 
-// public generated void remove_GotFocus(Uno.EventHandler value) :900
+// public generated void remove_GotFocus(Uno.EventHandler value) :95
 void Window__remove_GotFocus_fn(Window* __this, uDelegate* value)
 {
     __this->remove_GotFocus(value);
 }
 
-// public generated void add_LostFocus(Uno.EventHandler value) :908
+// public generated void add_LostFocus(Uno.EventHandler value) :103
 void Window__add_LostFocus_fn(Window* __this, uDelegate* value)
 {
     __this->add_LostFocus(value);
 }
 
-// public generated void remove_LostFocus(Uno.EventHandler value) :908
+// public generated void remove_LostFocus(Uno.EventHandler value) :103
 void Window__remove_LostFocus_fn(Window* __this, uDelegate* value)
 {
     __this->remove_LostFocus(value);
 }
 
-// internal Window New() :814
+// internal Window New() :9
 void Window__New2_fn(Window** __retval)
 {
     *__retval = Window::New2();
 }
 
-// private void OnGotFocus(Uno.Platform.ApplicationState newState) :901
+// private void OnGotFocus(Uno.Platform.ApplicationState newState) :96
 void Window__OnGotFocus_fn(Window* __this, int* newState)
 {
     __this->OnGotFocus(*newState);
 }
 
-// private void OnLostFocus(Uno.Platform.ApplicationState newState) :909
+// private void OnLostFocus(Uno.Platform.ApplicationState newState) :104
 void Window__OnLostFocus_fn(Window* __this, int* newState)
 {
     __this->OnLostFocus(*newState);
 }
 
-// private void OnTick(object sender, Uno.Platform.TimerEventArgs args) :892
+// private void OnTick(object sender, Uno.Platform.TimerEventArgs args) :87
 void Window__OnTick_fn(Window* __this, uObject* sender, ::g::Uno::Platform::TimerEventArgs* args)
 {
     __this->OnTick(sender, args);
 }
 
-// public generated void add_Updating(Uno.EventHandler value) :891
+// public generated void add_Updating(Uno.EventHandler value) :86
 void Window__add_Updating_fn(Window* __this, uDelegate* value)
 {
     __this->add_Updating(value);
 }
 
-// public generated void remove_Updating(Uno.EventHandler value) :891
+// public generated void remove_Updating(Uno.EventHandler value) :86
 void Window__remove_Updating_fn(Window* __this, uDelegate* value)
 {
     __this->remove_Updating(value);
 }
 
-// internal Window() [instance] :814
+// internal Window() [instance] :9
 void Window::ctor_1()
 {
     ctor_();
@@ -1714,70 +1613,70 @@ void Window::ctor_1()
     ::g::Uno::Platform::CoreApp::add_ExitedInteractive(uDelegate::New(::TYPES[1/*Uno.Platform.ApplicationStateTransitionHandler*/], (void*)Window__OnLostFocus_fn, this));
 }
 
-// public generated void add_GotFocus(Uno.EventHandler value) [instance] :900
+// public generated void add_GotFocus(Uno.EventHandler value) [instance] :95
 void Window::add_GotFocus(uDelegate* value)
 {
     GotFocus1 = uCast<uDelegate*>(::g::Uno::Delegate::Combine(GotFocus1, value), ::TYPES[2/*Uno.EventHandler*/]);
 }
 
-// public generated void remove_GotFocus(Uno.EventHandler value) [instance] :900
+// public generated void remove_GotFocus(Uno.EventHandler value) [instance] :95
 void Window::remove_GotFocus(uDelegate* value)
 {
     GotFocus1 = uCast<uDelegate*>(::g::Uno::Delegate::Remove(GotFocus1, value), ::TYPES[2/*Uno.EventHandler*/]);
 }
 
-// public generated void add_LostFocus(Uno.EventHandler value) [instance] :908
+// public generated void add_LostFocus(Uno.EventHandler value) [instance] :103
 void Window::add_LostFocus(uDelegate* value)
 {
     LostFocus1 = uCast<uDelegate*>(::g::Uno::Delegate::Combine(LostFocus1, value), ::TYPES[2/*Uno.EventHandler*/]);
 }
 
-// public generated void remove_LostFocus(Uno.EventHandler value) [instance] :908
+// public generated void remove_LostFocus(Uno.EventHandler value) [instance] :103
 void Window::remove_LostFocus(uDelegate* value)
 {
     LostFocus1 = uCast<uDelegate*>(::g::Uno::Delegate::Remove(LostFocus1, value), ::TYPES[2/*Uno.EventHandler*/]);
 }
 
-// private void OnGotFocus(Uno.Platform.ApplicationState newState) [instance] :901
+// private void OnGotFocus(Uno.Platform.ApplicationState newState) [instance] :96
 void Window::OnGotFocus(int newState)
 {
     uDelegate* handler = GotFocus1;
 
     if (::g::Uno::Delegate::op_Inequality(handler, NULL))
-        uPtr(handler)->Invoke(2, NULL, (::g::Uno::EventArgs*)::g::Uno::EventArgs::Empty());
+        uPtr(handler)->Invoke(2, NULL, (::g::Uno::EventArgs*)::g::Uno::EventArgs::Empty_);
 }
 
-// private void OnLostFocus(Uno.Platform.ApplicationState newState) [instance] :909
+// private void OnLostFocus(Uno.Platform.ApplicationState newState) [instance] :104
 void Window::OnLostFocus(int newState)
 {
     uDelegate* handler = LostFocus1;
 
     if (::g::Uno::Delegate::op_Inequality(handler, NULL))
-        uPtr(handler)->Invoke(2, NULL, (::g::Uno::EventArgs*)::g::Uno::EventArgs::Empty());
+        uPtr(handler)->Invoke(2, NULL, (::g::Uno::EventArgs*)::g::Uno::EventArgs::Empty_);
 }
 
-// private void OnTick(object sender, Uno.Platform.TimerEventArgs args) [instance] :892
+// private void OnTick(object sender, Uno.Platform.TimerEventArgs args) [instance] :87
 void Window::OnTick(uObject* sender, ::g::Uno::Platform::TimerEventArgs* args)
 {
     uDelegate* handler = Updating1;
 
     if (::g::Uno::Delegate::op_Inequality(handler, NULL))
-        uPtr(handler)->Invoke(2, sender, (::g::Uno::EventArgs*)::g::Uno::EventArgs::Empty());
+        uPtr(handler)->Invoke(2, sender, (::g::Uno::EventArgs*)::g::Uno::EventArgs::Empty_);
 }
 
-// public generated void add_Updating(Uno.EventHandler value) [instance] :891
+// public generated void add_Updating(Uno.EventHandler value) [instance] :86
 void Window::add_Updating(uDelegate* value)
 {
     Updating1 = uCast<uDelegate*>(::g::Uno::Delegate::Combine(Updating1, value), ::TYPES[2/*Uno.EventHandler*/]);
 }
 
-// public generated void remove_Updating(Uno.EventHandler value) [instance] :891
+// public generated void remove_Updating(Uno.EventHandler value) [instance] :86
 void Window::remove_Updating(uDelegate* value)
 {
     Updating1 = uCast<uDelegate*>(::g::Uno::Delegate::Remove(Updating1, value), ::TYPES[2/*Uno.EventHandler*/]);
 }
 
-// internal Window New() [static] :814
+// internal Window New() [static] :9
 Window* Window::New2()
 {
     Window* obj1 = (Window*)uNew(Window_typeof());

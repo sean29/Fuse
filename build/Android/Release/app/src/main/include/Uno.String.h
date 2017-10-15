@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/UnoCore/1.2.2/source/uno/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/UnoCore/1.3.1/Source/Uno/String.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -7,7 +7,7 @@
 namespace g{
 namespace Uno{
 
-// public intrinsic sealed class String :6703
+// public intrinsic sealed class String :13
 // {
 uType* String_typeof();
 void String__Compare_fn(uString* a, uString* b, int* __retval);
@@ -56,7 +56,7 @@ void String__Trim1_fn(uString* __this, uArray* trimChars, uString** __retval);
 struct String
 {
     static uSStrong<uString*> Empty_;
-    static uSStrong<uString*>& Empty() { return String_typeof()->Init(), Empty_; }
+    static uSStrong<uString*>& Empty() { return Empty_; }
 
     static bool Contains(uString* __this, uString* str);
     static bool EndsWith(uString* __this, uString* value);

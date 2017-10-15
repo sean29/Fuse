@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Controls/1.2.1/graphics/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Controls/1.3.0-rc2/Graphics/Visual.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -24,7 +24,7 @@ namespace Fuse{
 namespace Controls{
 namespace Graphics{
 
-// public abstract class Visual :60
+// public abstract class Visual :5
 // {
 ::g::Fuse::Visual_type* Visual_typeof();
 void Visual__ctor_3_fn(Visual* __this);

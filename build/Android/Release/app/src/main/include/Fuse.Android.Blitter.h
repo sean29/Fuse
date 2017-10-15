@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Android.TextRenderer/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Android.TextRenderer/1.3.0-rc2/TextRenderer.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -14,7 +14,7 @@ namespace g{
 namespace Fuse{
 namespace Android{
 
-// internal sealed class Blitter :353
+// internal sealed class Blitter :351
 // {
 uType* Blitter_typeof();
 void Blitter__ctor__fn(Blitter* __this);
@@ -28,7 +28,7 @@ struct Blitter : uObject
     uStrong< ::g::Uno::Graphics::VertexBuffer*> Blit_v_67760dd9_3_4_1;
     uStrong<uArray*> Blit_verts_67760dd9_3_3_5;
     static uSStrong<Blitter*> Singleton_;
-    static uSStrong<Blitter*>& Singleton() { return Blitter_typeof()->Init(), Singleton_; }
+    static uSStrong<Blitter*>& Singleton() { return Singleton_; }
 
     void ctor_();
     void Blit(::g::Uno::Graphics::Texture2D* vt, ::g::Uno::Float2 pos, ::g::Uno::Float2 size, ::g::Uno::Float4x4 localToClipTransform);

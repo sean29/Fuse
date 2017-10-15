@@ -11,6 +11,29 @@ import java.nio.IntBuffer;
 import java.nio.LongBuffer;
 import java.nio.ShortBuffer;
 
+// Original Goal: Use data from uno arrays in java without copying
+//
+// Original Solution: Use jni's NewDirectByteBuffer
+//
+// Solution's Problem: Must keep reference to uno array until done with the direct ByteBuffer.
+//                     Maintaining that relationship can become complex.
+//
+// This Solution: Hold onto the uno array from the java side
+//
+// Issues:
+//
+// 1. Even though ByteBuffer is abstract is is not possible to extend it:
+//    https://stackoverflow.com/questions/624458/extending-bytebuffer-class
+//    https://stackoverflow.com/questions/26577827/java-unable-to-extend-bytebuffer-class
+//
+// 2. Whilst you can implement Buffer in java it has no 'get' method so you have to add that
+//    yourself. At that point you have a non-standard class again. Due to this we chose to
+//    match ByteBuffer 'method for method' even though we could actually subclass it.
+//
+// 3. Due to 2, we have to implement our own InputStream that takes a UnoBackedByteBuffer. The
+//    good news is that we dont have to jump through so many hoops for InputStream and thus it
+//    can be used with the rest of the standard library without issue.
+
 public class UnoBackedByteBuffer implements Closeable, Comparable<ByteBuffer>
 {
     private Object _unoRef;

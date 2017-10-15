@@ -1,4 +1,4 @@
-// This file was generated based on '/Users/a/Library/Application Support/Fusetools/Packages/Fuse.CameraRoll/1.2.1/android/$.uno'.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.CameraRoll/1.3.0-rc2/Android/AndroidCameraRoll.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -12,7 +12,7 @@ namespace g{
 namespace Fuse{
 namespace CameraRoll{
 
-// internal static extern class AndroidCameraRoll :159
+// internal static extern class AndroidCameraRoll :157
 // {
 uClassType* AndroidCameraRoll_typeof();
 void AndroidCameraRoll__AddToCameraRoll_fn(::g::Fuse::ImageTools::Image* photo, ::g::Uno::Threading::Future1** __retval);

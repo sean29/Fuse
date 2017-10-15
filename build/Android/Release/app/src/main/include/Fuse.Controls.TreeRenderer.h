@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Controls.Panels/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Controls.Panels/1.3.0-rc2/TreeRenderer.Android.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -11,14 +11,13 @@ namespace g{namespace Fuse{namespace Elements{struct Element;}}}
 namespace g{namespace Fuse{struct LayoutParams;}}
 namespace g{namespace Fuse{struct Visual;}}
 namespace g{namespace Uno{namespace Collections{struct Dictionary;}}}
-namespace g{namespace Uno{namespace Collections{struct List;}}}
 namespace g{namespace Uno{struct Float2;}}
 
 namespace g{
 namespace Fuse{
 namespace Controls{
 
-// internal sealed extern class TreeRenderer :2634
+// internal sealed extern class TreeRenderer :13
 // {
 struct TreeRenderer_type : uType
 {
@@ -39,7 +38,7 @@ void TreeRenderer__FuseElementsITreeRendererRooted_fn(TreeRenderer* __this, ::g:
 void TreeRenderer__FuseElementsITreeRendererRootingStarted_fn(TreeRenderer* __this, ::g::Fuse::Elements::Element* e);
 void TreeRenderer__FuseElementsITreeRendererTransformChanged_fn(TreeRenderer* __this, ::g::Fuse::Elements::Element* e);
 void TreeRenderer__FuseElementsITreeRendererUnrooted_fn(TreeRenderer* __this, ::g::Fuse::Elements::Element* e);
-void TreeRenderer__FuseElementsITreeRendererZOrderChanged_fn(TreeRenderer* __this, ::g::Fuse::Elements::Element* e, ::g::Uno::Collections::List* zorder);
+void TreeRenderer__FuseElementsITreeRendererZOrderChanged_fn(TreeRenderer* __this, ::g::Fuse::Elements::Element* e, uArray* zorder);
 void TreeRenderer__GetParentViewGroup_fn(TreeRenderer* __this, ::g::Fuse::Elements::Element* e, ::g::Fuse::Controls::Native::ViewHandle** __retval);
 void TreeRenderer__InstantiateTemplate_fn(TreeRenderer* __this, ::g::Fuse::Elements::Element* e, uObject** __retval);
 void TreeRenderer__InstantiateView_fn(TreeRenderer* __this, ::g::Fuse::Elements::Element* e, ::g::Fuse::Controls::Native::ViewHandle** __retval);

@@ -27,91 +27,91 @@ public class ForeignHelpers
         android.util.Log.d("emrals", (message==null ? "null" : message.toString()));
     }
 
-    public static String AddMarker384(final Object handle,final double lat,final double lng,final String label,final String iconPath,final float iconAnchorX,final float iconAnchorY,final int uid)
+    public static String AddMarker383(final Object handle,final double lat,final double lng,final String label,final String iconPath,final float iconAnchorX,final float iconAnchorY,final int uid)
     {
         FuseMap map = (FuseMap)handle;
         return map.addMarker(lat, lng, label, iconPath, iconAnchorX, iconAnchorY, uid);
     }
     
-    public static void Clear385(final Object handle)
+    public static void Clear384(final Object handle)
     {
         FuseMap map = (FuseMap)handle;
         map.clear();
     }
     
-    public static void Configure386(final Object handle)
+    public static void Configure385(final Object handle)
     {
         FuseMap map = (FuseMap)handle;
         map.onCreate(null);
         map.onResume();
     }
     
-    public static void ConfigureGestures387(final Object handle,final boolean zoom,final boolean rotate,final boolean tilt,final boolean scroll)
+    public static void ConfigureGestures386(final Object handle,final boolean zoom,final boolean rotate,final boolean tilt,final boolean scroll)
     {
         FuseMap map = (FuseMap)handle;
         map.configureGestures(zoom,rotate,tilt, scroll);
     }
     
-    public static void ConfigureUI388(final Object handle,final boolean compass,final boolean myLocationButton)
+    public static void ConfigureUI387(final Object handle,final boolean compass,final boolean myLocationButton)
     {
         FuseMap map = (FuseMap)handle;
         map.configureUI(compass, myLocationButton);
     }
     
-    public static Object CreateMap389()
+    public static Object CreateMap388()
     {
         return new FuseMap();
     }
     
-    public static void Destroy390(final Object handle)
+    public static void Destroy389(final Object handle)
     {
         FuseMap map = (FuseMap)handle;
         map.dispose();
     }
     
-    public static float GetOrientation391(final Object handle)
+    public static float GetOrientation390(final Object handle)
     {
         FuseMap map = (FuseMap)handle;
         return map.getOrientation();
     }
     
-    public static double GetPositionLat392(final Object handle)
+    public static double GetPositionLat391(final Object handle)
     {
         FuseMap map = (FuseMap)handle;
         return map.getPositionLat();
     }
     
-    public static double GetPositionLong393(final Object handle)
+    public static double GetPositionLong392(final Object handle)
     {
         FuseMap map = (FuseMap)handle;
         return map.getPositionLong();
     }
     
-    public static float GetTilt394(final Object handle)
+    public static float GetTilt393(final Object handle)
     {
         FuseMap map = (FuseMap)handle;
         return map.getTilt();
     }
     
-    public static float GetZoom395(final Object handle)
+    public static float GetZoom394(final Object handle)
     {
         FuseMap map = (FuseMap)handle;
         return map.getZoom();
     }
     
-    public static void MoveCamera396(final Object handle,final double lat,final double lng,final float zoom,final float tilt,final float bearing,final double duration)
+    public static void MoveCamera395(final Object handle,final double lat,final double lng,final float zoom,final float tilt,final float bearing,final double duration)
     {
         FuseMap map = (FuseMap)handle;
         map.moveCamera(lat,lng,zoom,tilt,bearing,duration);
     }
     
-    public static void SetHybridStyle397(final Object handle)
+    public static void SetHybridStyle396(final Object handle)
     {
         FuseMap map = (FuseMap)handle;
         map.setHybridStyle();
     }
     
-    public static void SetMapEventHandlers398(final Object handle,final com.foreign.Uno.Action onMapReady,final com.foreign.Uno.Action_double_double handleLocationLongPress,final com.foreign.Uno.Action_double_double handleLocationTapped,final com.foreign.Uno.Action onAnimationBegin,final com.foreign.Uno.Action onAnimationEnd,final com.foreign.Uno.Action_double_double handleCameraChange,final com.foreign.Uno.Action_int_String handleMarkerPressed,final com.foreign.Uno.Action_int_float_float handleTouchEvent)
+    public static void SetMapEventHandlers397(final Object handle,final com.foreign.Uno.Action onMapReady,final com.foreign.Uno.Action_double_double handleLocationLongPress,final com.foreign.Uno.Action_double_double handleLocationTapped,final com.foreign.Uno.Action onAnimationBegin,final com.foreign.Uno.Action onAnimationEnd,final com.foreign.Uno.Action_double_double handleCameraChange,final com.foreign.Uno.Action_int_String handleMarkerPressed,final com.foreign.Uno.Action_int_float_float handleTouchEvent)
     {
         final FuseMap map = (FuseMap)handle;
         map.SetCallback(new FuseMap.FuseMapCallback() {
@@ -152,43 +152,43 @@ public class ForeignHelpers
         });
     }
     
-    public static void SetMyLocationEnabled399(final Object handle,final boolean b)
+    public static void SetMyLocationEnabled398(final Object handle,final boolean b)
     {
         FuseMap map = (FuseMap)handle;
         map.setMyLocationEnabled(b);
     }
     
-    public static void SetNormalStyle400(final Object handle)
+    public static void SetNormalStyle399(final Object handle)
     {
         FuseMap map = (FuseMap)handle;
         map.setNormalStyle();
     }
     
-    public static void SetOrientation401(final Object handle,final float degrees,final double duration)
+    public static void SetOrientation400(final Object handle,final float degrees,final double duration)
     {
         FuseMap map = (FuseMap)handle;
         map.setOrientation(degrees, duration);
     }
     
-    public static void SetPosition402(final Object handle,final double lat,final double lng,final double duration)
+    public static void SetPosition401(final Object handle,final double lat,final double lng,final double duration)
     {
         FuseMap map = (FuseMap)handle;
         map.setPosition(lat,lng,duration);
     }
     
-    public static void SetSatelliteStyle403(final Object handle)
+    public static void SetSatelliteStyle402(final Object handle)
     {
         FuseMap map = (FuseMap)handle;
         map.setSatelliteStyle();
     }
     
-    public static void SetTilt404(final Object handle,final float tilt,final double duration)
+    public static void SetTilt403(final Object handle,final float tilt,final double duration)
     {
         FuseMap map = (FuseMap)handle;
         map.setTilt(tilt, duration);
     }
     
-    public static void SetZoom405(final Object handle,final float zoom,final double duration)
+    public static void SetZoom404(final Object handle,final float zoom,final double duration)
     {
         FuseMap map = (FuseMap)handle;
         map.setZoom(zoom, duration);

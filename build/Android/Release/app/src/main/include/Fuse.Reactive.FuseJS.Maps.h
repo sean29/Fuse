@@ -1,4 +1,4 @@
-// This file was generated based on '/Users/a/Library/Application Support/Fusetools/Packages/Fuse.Launcher.Maps/1.2.1/maps/$.uno'.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Launcher.Maps/1.3.0-rc2/Maps/JS.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -13,7 +13,7 @@ namespace Fuse{
 namespace Reactive{
 namespace FuseJS{
 
-// public sealed class Maps :153
+// public sealed class Maps :22
 // {
 ::g::Fuse::Scripting::NativeModule_type* Maps_typeof();
 void Maps__ctor_2_fn(Maps* __this);

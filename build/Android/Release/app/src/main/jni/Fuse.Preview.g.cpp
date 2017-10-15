@@ -14,10 +14,10 @@ namespace g{
 namespace Fuse{
 namespace Preview{
 
-// /usr/local/share/uno/Packages/Fuse.Common/1.2.1/$.uno
-// -----------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Common\1.3.0-rc2\Selection.uno
+// -------------------------------------------------------------------------------
 
-// public abstract interface ISelection :3247
+// public abstract interface ISelection :26
 // {
 uInterfaceType* ISelection_typeof()
 {
@@ -29,18 +29,18 @@ uInterfaceType* ISelection_typeof()
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Common/1.2.1/$.uno
-// -----------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\Fuse.Common\1.3.0-rc2\Selection.uno
+// -------------------------------------------------------------------------------
 
-// public static class SelectionManager :3226
+// public static class SelectionManager :5
 // {
 static void SelectionManager_build(uType* type)
 {
     ::TYPES[0] = ::g::Fuse::Preview::ISelection_typeof();
     ::TYPES[1] = ::g::Uno::EventHandler1_typeof()->MakeType(::g::Uno::EventArgs_typeof(), NULL);
     type->SetFields(0,
-        ::TYPES[0/*Fuse.Preview.ISelection*/], (uintptr_t)&::g::Fuse::Preview::SelectionManager::_Selection_, uFieldFlagsStatic,
-        ::TYPES[1/*Uno.EventHandler<Uno.EventArgs>*/], (uintptr_t)&::g::Fuse::Preview::SelectionManager::SelectionChanged1_, uFieldFlagsStatic);
+        ::TYPES[0/*Fuse.Preview.ISelection*/], (uintptr_t)&SelectionManager::_Selection_, uFieldFlagsStatic,
+        ::TYPES[1/*Uno.EventHandler<Uno.EventArgs>*/], (uintptr_t)&SelectionManager::SelectionChanged1_, uFieldFlagsStatic);
 }
 
 uClassType* SelectionManager_typeof()
@@ -56,31 +56,31 @@ uClassType* SelectionManager_typeof()
     return type;
 }
 
-// public static bool IsSelected(object obj) :3239
+// public static bool IsSelected(object obj) :18
 void SelectionManager__IsSelected_fn(uObject* obj, bool* __retval)
 {
     *__retval = SelectionManager::IsSelected(obj);
 }
 
-// public static generated Fuse.Preview.ISelection get_Selection() :3228
+// public static generated Fuse.Preview.ISelection get_Selection() :7
 void SelectionManager__get_Selection_fn(uObject** __retval)
 {
     *__retval = SelectionManager::Selection();
 }
 
-// private static generated void set_Selection(Fuse.Preview.ISelection value) :3228
+// private static generated void set_Selection(Fuse.Preview.ISelection value) :7
 void SelectionManager__set_Selection_fn(uObject* value)
 {
     SelectionManager::Selection(value);
 }
 
-// public static generated void add_SelectionChanged(Uno.EventHandler<Uno.EventArgs> value) :3229
+// public static generated void add_SelectionChanged(Uno.EventHandler<Uno.EventArgs> value) :8
 void SelectionManager__add_SelectionChanged_fn(uDelegate* value)
 {
     SelectionManager::add_SelectionChanged(value);
 }
 
-// public static generated void remove_SelectionChanged(Uno.EventHandler<Uno.EventArgs> value) :3229
+// public static generated void remove_SelectionChanged(Uno.EventHandler<Uno.EventArgs> value) :8
 void SelectionManager__remove_SelectionChanged_fn(uDelegate* value)
 {
     SelectionManager::remove_SelectionChanged(value);
@@ -89,7 +89,7 @@ void SelectionManager__remove_SelectionChanged_fn(uDelegate* value)
 uSStrong<uObject*> SelectionManager::_Selection_;
 uSStrong<uDelegate*> SelectionManager::SelectionChanged1_;
 
-// public static bool IsSelected(object obj) [static] :3239
+// public static bool IsSelected(object obj) [static] :18
 bool SelectionManager::IsSelected(uObject* obj)
 {
     if (SelectionManager::Selection() != NULL)
@@ -98,25 +98,25 @@ bool SelectionManager::IsSelected(uObject* obj)
     return false;
 }
 
-// public static generated Fuse.Preview.ISelection get_Selection() [static] :3228
+// public static generated Fuse.Preview.ISelection get_Selection() [static] :7
 uObject* SelectionManager::Selection()
 {
     return SelectionManager::_Selection_;
 }
 
-// private static generated void set_Selection(Fuse.Preview.ISelection value) [static] :3228
+// private static generated void set_Selection(Fuse.Preview.ISelection value) [static] :7
 void SelectionManager::Selection(uObject* value)
 {
     SelectionManager::_Selection_ = value;
 }
 
-// public static generated void add_SelectionChanged(Uno.EventHandler<Uno.EventArgs> value) [static] :3229
+// public static generated void add_SelectionChanged(Uno.EventHandler<Uno.EventArgs> value) [static] :8
 void SelectionManager::add_SelectionChanged(uDelegate* value)
 {
     SelectionManager::SelectionChanged1_ = uCast<uDelegate*>(::g::Uno::Delegate::Combine(SelectionManager::SelectionChanged1_, value), ::TYPES[1/*Uno.EventHandler<Uno.EventArgs>*/]);
 }
 
-// public static generated void remove_SelectionChanged(Uno.EventHandler<Uno.EventArgs> value) [static] :3229
+// public static generated void remove_SelectionChanged(Uno.EventHandler<Uno.EventArgs> value) [static] :8
 void SelectionManager::remove_SelectionChanged(uDelegate* value)
 {
     SelectionManager::SelectionChanged1_ = uCast<uDelegate*>(::g::Uno::Delegate::Remove(SelectionManager::SelectionChanged1_, value), ::TYPES[1/*Uno.EventHandler<Uno.EventArgs>*/]);

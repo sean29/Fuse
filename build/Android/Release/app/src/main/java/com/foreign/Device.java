@@ -36,7 +36,7 @@ public class Device
         android.util.Log.d("emrals", (message==null ? "null" : message.toString()));
     }
 
-    public static String GetCurrentLocale441()
+    public static String GetCurrentLocale440()
     {
         Locale loc = java.util.Locale.getDefault();
         
@@ -85,12 +85,12 @@ public class Device
             return bcp47Tag.toString();
     }
     
-    public static String GetModel442()
+    public static String GetModel441()
     {
         return android.os.Build.MODEL;
     }
     
-    public static int GetNumProcessorCores443()
+    public static int GetNumProcessorCores442()
     {
         int cores = 1;
         if (android.os.Build.VERSION.SDK_INT >= 17) {
@@ -118,12 +118,12 @@ public class Device
         return cores;
     }
     
-    public static String GetSDKVersion444()
+    public static String GetSDKVersion443()
     {
         return android.os.Build.VERSION.SDK;
     }
     
-    public static String GetSystem445()
+    public static String GetSystem444()
     {
         if (android.os.Build.MANUFACTURER.equals("Amazon")) {
             return "AmazonFireOS";
@@ -131,12 +131,12 @@ public class Device
         return "Android";
     }
     
-    public static String GetSystemVersion446()
+    public static String GetSystemVersion445()
     {
         return android.os.Build.VERSION.RELEASE;
     }
     
-    public static String GetUUID447()
+    public static String GetUUID446()
     {
         final android.app.Activity context = com.fuse.Activity.getRootActivity();
         final TelephonyManager tm = (TelephonyManager)context.getSystemService(Context.TELEPHONY_SERVICE);
@@ -178,7 +178,7 @@ public class Device
         return UUID.nameUUIDFromBytes(bytes).toString().toUpperCase();
     }
     
-    public static String GetVendor448()
+    public static String GetVendor447()
     {
         return android.os.Build.MANUFACTURER;
     }

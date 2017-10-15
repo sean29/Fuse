@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Controls.Native/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Controls.Native/1.3.0-rc2/ImageLoader.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -13,7 +13,7 @@ namespace Fuse{
 namespace Controls{
 namespace Native{
 
-// private sealed extern class ImageLoader.PendingPromise :189
+// private sealed extern class ImageLoader.PendingPromise :163
 // {
 ::g::Uno::Threading::Future_type* ImageLoader__PendingPromise_typeof();
 void ImageLoader__PendingPromise__ctor_7_fn(ImageLoader__PendingPromise* __this, ::g::Uno::Threading::Future1* future);

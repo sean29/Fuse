@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Controls.Native/1.2.1/android/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Controls.Native/1.3.0-rc2/Android/TextEdit.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -19,7 +19,7 @@ namespace Controls{
 namespace Native{
 namespace Android{
 
-// public extern class TextInput :1662
+// public extern class TextInput :27
 // {
 struct TextInput_type : ::g::Fuse::Controls::Native::Android::TextView_type
 {
@@ -27,7 +27,7 @@ struct TextInput_type : ::g::Fuse::Controls::Native::Android::TextView_type
 };
 
 TextInput_type* TextInput_typeof();
-void TextInput__ctor_10_fn(TextInput* __this, uObject* host, bool* isMultiline);
+void TextInput__ctor_11_fn(TextInput* __this, uObject* host, bool* isMultiline);
 void TextInput__set_ActionStyle_fn(TextInput* __this, int* value);
 void TextInput__AddEditorActionListener_fn(TextInput* __this, ::g::Java::Object* handle);
 void TextInput__AddTextChangedListener_fn(TextInput* __this, ::g::Java::Object* handle);
@@ -74,7 +74,7 @@ struct TextInput : ::g::Fuse::Controls::Native::Android::TextView
     bool _isPassword;
     bool _isReadOnly;
 
-    void ctor_10(uObject* host, bool isMultiline);
+    void ctor_11(uObject* host, bool isMultiline);
     void ActionStyle(int value);
     void AddEditorActionListener(::g::Java::Object* handle);
     void AddTextChangedListener(::g::Java::Object* handle);

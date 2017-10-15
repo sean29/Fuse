@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Controls.Primitives/1.2.1/textcontrols/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Controls.Primitives/1.3.0-rc2/TextControls/MobileTextEdit.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -6,6 +6,7 @@
 #include <Uno.IDisposable.h>
 #include <Uno.Object.h>
 namespace g{namespace Fuse{namespace Controls{namespace Native{struct ViewHandle;}}}}
+namespace g{namespace Fuse{namespace Controls{struct TextEdit;}}}
 namespace g{namespace Fuse{namespace Controls{struct TextEditRenderer__Renderer;}}}
 namespace g{namespace Uno{struct Float2;}}
 namespace g{namespace Uno{struct Float4x4;}}
@@ -14,7 +15,7 @@ namespace g{
 namespace Fuse{
 namespace Controls{
 
-// private sealed class TextEditRenderer.Renderer :1514
+// private sealed class TextEditRenderer.Renderer :226
 // {
 struct TextEditRenderer__Renderer_type : uType
 {
@@ -23,18 +24,22 @@ struct TextEditRenderer__Renderer_type : uType
 };
 
 TextEditRenderer__Renderer_type* TextEditRenderer__Renderer_typeof();
-void TextEditRenderer__Renderer__ctor__fn(TextEditRenderer__Renderer* __this);
+void TextEditRenderer__Renderer__ctor__fn(TextEditRenderer__Renderer* __this, ::g::Fuse::Controls::TextEdit* textEdit, bool* isMultiline);
 void TextEditRenderer__Renderer__FuseControlsNativeIViewHandleRendererDraw_fn(TextEditRenderer__Renderer* __this, ::g::Fuse::Controls::Native::ViewHandle* viewHandle, ::g::Uno::Float4x4* localToClipTransform, ::g::Uno::Float2* position, ::g::Uno::Float2* size, float* density);
 void TextEditRenderer__Renderer__FuseControlsNativeIViewHandleRendererInvalidate_fn(TextEditRenderer__Renderer* __this);
-void TextEditRenderer__Renderer__New1_fn(TextEditRenderer__Renderer** __retval);
+void TextEditRenderer__Renderer__New1_fn(::g::Fuse::Controls::TextEdit* textEdit, bool* isMultiline, TextEditRenderer__Renderer** __retval);
 void TextEditRenderer__Renderer__UnoIDisposableDispose_fn(TextEditRenderer__Renderer* __this);
 
 struct TextEditRenderer__Renderer : uObject
 {
+    bool _firstFrame;
+    bool _isMultiline;
+    int _prevTextAlignment;
     uStrong<uObject*> _renderer;
+    uStrong< ::g::Fuse::Controls::TextEdit*> _textEdit;
 
-    void ctor_();
-    static TextEditRenderer__Renderer* New1();
+    void ctor_(::g::Fuse::Controls::TextEdit* textEdit, bool isMultiline);
+    static TextEditRenderer__Renderer* New1(::g::Fuse::Controls::TextEdit* textEdit, bool isMultiline);
 };
 // }
 

@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Triggers/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Triggers/1.3.0-rc2/WhileBusy.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -19,7 +19,7 @@ namespace g{
 namespace Fuse{
 namespace Triggers{
 
-// public sealed class WhileBusy :3493
+// public sealed class WhileBusy :41
 // {
 struct WhileBusy_type : ::g::Fuse::Triggers::Trigger_type
 {

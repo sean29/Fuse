@@ -37,25 +37,25 @@ namespace g{
 namespace Uno{
 namespace Time{
 
-// /usr/local/share/uno/Packages/UnoCore/1.2.2/source/uno/time/$.uno
-// -----------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\UnoCore\1.3.1\Source\Uno\Time\CalendarSystem.uno
+// --------------------------------------------------------------------------------------------
 
-// public sealed class CalendarSystem :8
+// public sealed class CalendarSystem :6
 // {
 static void CalendarSystem_build(uType* type)
 {
     ::STRINGS[0] = uString::Const("ISO");
     type->SetFields(0,
-        ::g::Uno::Time::Calendars::Era_typeof()->Array(), offsetof(::g::Uno::Time::CalendarSystem, _eras), 0,
-        ::g::Uno::String_typeof(), offsetof(::g::Uno::Time::CalendarSystem, _id), 0,
-        ::g::Uno::Long_typeof(), offsetof(::g::Uno::Time::CalendarSystem, _maxTicks), 0,
-        ::g::Uno::Int_typeof(), offsetof(::g::Uno::Time::CalendarSystem, _maxYear), 0,
-        ::g::Uno::Long_typeof(), offsetof(::g::Uno::Time::CalendarSystem, _minTicks), 0,
-        ::g::Uno::Int_typeof(), offsetof(::g::Uno::Time::CalendarSystem, _minYear), 0,
-        ::g::Uno::String_typeof(), offsetof(::g::Uno::Time::CalendarSystem, _name), 0,
-        ::g::Uno::Time::Calendars::WeekYearCalculator_typeof(), offsetof(::g::Uno::Time::CalendarSystem, _weekYearCalculator), 0,
-        ::g::Uno::Time::Calendars::YearMonthDayCalculator_typeof(), offsetof(::g::Uno::Time::CalendarSystem, _yearMonthDayCalculator), 0,
-        type, (uintptr_t)&::g::Uno::Time::CalendarSystem::_gregorianCalendarSystem_, uFieldFlagsStatic);
+        ::g::Uno::Time::Calendars::Era_typeof()->Array(), offsetof(CalendarSystem, _eras), 0,
+        ::g::Uno::String_typeof(), offsetof(CalendarSystem, _id), 0,
+        ::g::Uno::Long_typeof(), offsetof(CalendarSystem, _maxTicks), 0,
+        ::g::Uno::Int_typeof(), offsetof(CalendarSystem, _maxYear), 0,
+        ::g::Uno::Long_typeof(), offsetof(CalendarSystem, _minTicks), 0,
+        ::g::Uno::Int_typeof(), offsetof(CalendarSystem, _minYear), 0,
+        ::g::Uno::String_typeof(), offsetof(CalendarSystem, _name), 0,
+        ::g::Uno::Time::Calendars::WeekYearCalculator_typeof(), offsetof(CalendarSystem, _weekYearCalculator), 0,
+        ::g::Uno::Time::Calendars::YearMonthDayCalculator_typeof(), offsetof(CalendarSystem, _yearMonthDayCalculator), 0,
+        type, (uintptr_t)&CalendarSystem::_gregorianCalendarSystem_, uFieldFlagsStatic);
 }
 
 uType* CalendarSystem_typeof()
@@ -73,67 +73,67 @@ uType* CalendarSystem_typeof()
     return type;
 }
 
-// private CalendarSystem(string id, string name, Uno.Time.Calendars.YearMonthDayCalculator yearMonthDayCalculator, int minDaysInFirstWeek) :41
+// private CalendarSystem(string id, string name, Uno.Time.Calendars.YearMonthDayCalculator yearMonthDayCalculator, int minDaysInFirstWeek) :39
 void CalendarSystem__ctor__fn(CalendarSystem* __this, uString* id, uString* name, ::g::Uno::Time::Calendars::YearMonthDayCalculator* yearMonthDayCalculator, int* minDaysInFirstWeek)
 {
     __this->ctor_(id, name, yearMonthDayCalculator, *minDaysInFirstWeek);
 }
 
-// internal int GetDayOfMonth(Uno.Time.Instant instant) :210
+// internal int GetDayOfMonth(Uno.Time.Instant instant) :208
 void CalendarSystem__GetDayOfMonth_fn(CalendarSystem* __this, ::g::Uno::Time::Instant* instant, int* __retval)
 {
     *__retval = __this->GetDayOfMonth(*instant);
 }
 
-// internal int GetHourOfDay(Uno.Time.Instant instant) :190
+// internal int GetHourOfDay(Uno.Time.Instant instant) :188
 void CalendarSystem__GetHourOfDay_fn(CalendarSystem* __this, ::g::Uno::Time::Instant* instant, int* __retval)
 {
     *__retval = __this->GetHourOfDay(*instant);
 }
 
-// internal Uno.Time.Instant GetInstant(int year, int monthOfYear, int dayOfMonth, int hourOfDay, int minuteOfHour) :77
+// internal Uno.Time.Instant GetInstant(int year, int monthOfYear, int dayOfMonth, int hourOfDay, int minuteOfHour) :75
 void CalendarSystem__GetInstant_fn(CalendarSystem* __this, int* year, int* monthOfYear, int* dayOfMonth, int* hourOfDay, int* minuteOfHour, ::g::Uno::Time::Instant* __retval)
 {
     *__retval = __this->GetInstant(*year, *monthOfYear, *dayOfMonth, *hourOfDay, *minuteOfHour);
 }
 
-// internal int GetMinuteOfHour(Uno.Time.Instant instant) :180
+// internal int GetMinuteOfHour(Uno.Time.Instant instant) :178
 void CalendarSystem__GetMinuteOfHour_fn(CalendarSystem* __this, ::g::Uno::Time::Instant* instant, int* __retval)
 {
     *__retval = __this->GetMinuteOfHour(*instant);
 }
 
-// internal int GetMonthOfYear(Uno.Time.Instant instant) :230
+// internal int GetMonthOfYear(Uno.Time.Instant instant) :228
 void CalendarSystem__GetMonthOfYear_fn(CalendarSystem* __this, ::g::Uno::Time::Instant* instant, int* __retval)
 {
     *__retval = __this->GetMonthOfYear(*instant);
 }
 
-// internal int GetSecondOfMinute(Uno.Time.Instant instant) :170
+// internal int GetSecondOfMinute(Uno.Time.Instant instant) :168
 void CalendarSystem__GetSecondOfMinute_fn(CalendarSystem* __this, ::g::Uno::Time::Instant* instant, int* __retval)
 {
     *__retval = __this->GetSecondOfMinute(*instant);
 }
 
-// internal int GetYear(Uno.Time.Instant instant) :235
+// internal int GetYear(Uno.Time.Instant instant) :233
 void CalendarSystem__GetYear_fn(CalendarSystem* __this, ::g::Uno::Time::Instant* instant, int* __retval)
 {
     *__retval = __this->GetYear(*instant);
 }
 
-// public static Uno.Time.CalendarSystem get_Iso() :16
+// public static Uno.Time.CalendarSystem get_Iso() :14
 void CalendarSystem__get_Iso_fn(CalendarSystem** __retval)
 {
     *__retval = CalendarSystem::Iso();
 }
 
-// private CalendarSystem New(string id, string name, Uno.Time.Calendars.YearMonthDayCalculator yearMonthDayCalculator, int minDaysInFirstWeek) :41
+// private CalendarSystem New(string id, string name, Uno.Time.Calendars.YearMonthDayCalculator yearMonthDayCalculator, int minDaysInFirstWeek) :39
 void CalendarSystem__New1_fn(uString* id, uString* name, ::g::Uno::Time::Calendars::YearMonthDayCalculator* yearMonthDayCalculator, int* minDaysInFirstWeek, CalendarSystem** __retval)
 {
     *__retval = CalendarSystem::New1(id, name, yearMonthDayCalculator, *minDaysInFirstWeek);
 }
 
-// public override sealed string ToString() :101
+// public override sealed string ToString() :99
 void CalendarSystem__ToString_fn(CalendarSystem* __this, uString** __retval)
 {
     return *__retval = __this->_id, void();
@@ -141,7 +141,7 @@ void CalendarSystem__ToString_fn(CalendarSystem* __this, uString** __retval)
 
 uSStrong<CalendarSystem*> CalendarSystem::_gregorianCalendarSystem_;
 
-// private CalendarSystem(string id, string name, Uno.Time.Calendars.YearMonthDayCalculator yearMonthDayCalculator, int minDaysInFirstWeek) [instance] :41
+// private CalendarSystem(string id, string name, Uno.Time.Calendars.YearMonthDayCalculator yearMonthDayCalculator, int minDaysInFirstWeek) [instance] :39
 void CalendarSystem::ctor_(uString* id, uString* name, ::g::Uno::Time::Calendars::YearMonthDayCalculator* yearMonthDayCalculator, int minDaysInFirstWeek)
 {
     _id = id;
@@ -155,19 +155,19 @@ void CalendarSystem::ctor_(uString* id, uString* name, ::g::Uno::Time::Calendars
     _maxTicks = (yearMonthDayCalculator->GetStartOfYearInTicks(_maxYear + 1) - 1LL);
 }
 
-// internal int GetDayOfMonth(Uno.Time.Instant instant) [instance] :210
+// internal int GetDayOfMonth(Uno.Time.Instant instant) [instance] :208
 int CalendarSystem::GetDayOfMonth(::g::Uno::Time::Instant instant)
 {
     return uPtr(_yearMonthDayCalculator)->GetDayOfMonth(instant);
 }
 
-// internal int GetHourOfDay(Uno.Time.Instant instant) [instance] :190
+// internal int GetHourOfDay(Uno.Time.Instant instant) [instance] :188
 int CalendarSystem::GetHourOfDay(::g::Uno::Time::Instant instant)
 {
     return ::g::Uno::Time::Calendars::TimeOfDayCalculator::GetHourOfDay(instant);
 }
 
-// internal Uno.Time.Instant GetInstant(int year, int monthOfYear, int dayOfMonth, int hourOfDay, int minuteOfHour) [instance] :77
+// internal Uno.Time.Instant GetInstant(int year, int monthOfYear, int dayOfMonth, int hourOfDay, int minuteOfHour) [instance] :75
 ::g::Uno::Time::Instant CalendarSystem::GetInstant(int year, int monthOfYear, int dayOfMonth, int hourOfDay, int minuteOfHour)
 {
     ::g::Uno::Time::Instant date = uPtr(_yearMonthDayCalculator)->GetInstant(year, monthOfYear, dayOfMonth);
@@ -175,31 +175,31 @@ int CalendarSystem::GetHourOfDay(::g::Uno::Time::Instant instant)
     return date.PlusTicks(timeTicks);
 }
 
-// internal int GetMinuteOfHour(Uno.Time.Instant instant) [instance] :180
+// internal int GetMinuteOfHour(Uno.Time.Instant instant) [instance] :178
 int CalendarSystem::GetMinuteOfHour(::g::Uno::Time::Instant instant)
 {
     return ::g::Uno::Time::Calendars::TimeOfDayCalculator::GetMinuteOfHour(instant);
 }
 
-// internal int GetMonthOfYear(Uno.Time.Instant instant) [instance] :230
+// internal int GetMonthOfYear(Uno.Time.Instant instant) [instance] :228
 int CalendarSystem::GetMonthOfYear(::g::Uno::Time::Instant instant)
 {
     return uPtr(_yearMonthDayCalculator)->GetMonthOfYear(instant);
 }
 
-// internal int GetSecondOfMinute(Uno.Time.Instant instant) [instance] :170
+// internal int GetSecondOfMinute(Uno.Time.Instant instant) [instance] :168
 int CalendarSystem::GetSecondOfMinute(::g::Uno::Time::Instant instant)
 {
     return ::g::Uno::Time::Calendars::TimeOfDayCalculator::GetSecondOfMinute(instant);
 }
 
-// internal int GetYear(Uno.Time.Instant instant) [instance] :235
+// internal int GetYear(Uno.Time.Instant instant) [instance] :233
 int CalendarSystem::GetYear(::g::Uno::Time::Instant instant)
 {
     return uPtr(_yearMonthDayCalculator)->GetYear(instant);
 }
 
-// private CalendarSystem New(string id, string name, Uno.Time.Calendars.YearMonthDayCalculator yearMonthDayCalculator, int minDaysInFirstWeek) [static] :41
+// private CalendarSystem New(string id, string name, Uno.Time.Calendars.YearMonthDayCalculator yearMonthDayCalculator, int minDaysInFirstWeek) [static] :39
 CalendarSystem* CalendarSystem::New1(uString* id, uString* name, ::g::Uno::Time::Calendars::YearMonthDayCalculator* yearMonthDayCalculator, int minDaysInFirstWeek)
 {
     CalendarSystem* obj2 = (CalendarSystem*)uNew(CalendarSystem_typeof());
@@ -207,7 +207,7 @@ CalendarSystem* CalendarSystem::New1(uString* id, uString* name, ::g::Uno::Time:
     return obj2;
 }
 
-// public static Uno.Time.CalendarSystem get_Iso() [static] :16
+// public static Uno.Time.CalendarSystem get_Iso() [static] :14
 CalendarSystem* CalendarSystem::Iso()
 {
     if (CalendarSystem::_gregorianCalendarSystem_ == NULL)
@@ -217,14 +217,15 @@ CalendarSystem* CalendarSystem::Iso()
 }
 // }
 
-// /usr/local/share/uno/Packages/UnoCore/1.2.2/source/uno/time/utilities/$.uno
-// ---------------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\UnoCore\1.3.1\Source\Uno\Time\Utilities\Constants.uno
+// -------------------------------------------------------------------------------------------------
 
-// public static class Constants :5
+// public static class Constants :3
 // {
-// static Constants() :40
+// static Constants() :38
 static void Constants__cctor__fn(uType* __type)
 {
+    ::g::Uno::Time::Instant_typeof()->Init();
     Constants::UnixEpoch_ = uDefault< ::g::Uno::Time::Instant>();
     Constants::BclEpoch_ = ::g::Uno::Time::Instant__FromUtc(1, 1, 1, 0, 0);
 }
@@ -232,8 +233,8 @@ static void Constants__cctor__fn(uType* __type)
 static void Constants_build(uType* type)
 {
     type->SetFields(0,
-        ::g::Uno::Time::Instant_typeof(), (uintptr_t)&::g::Uno::Time::Constants::BclEpoch_, uFieldFlagsStatic,
-        ::g::Uno::Time::Instant_typeof(), (uintptr_t)&::g::Uno::Time::Constants::UnixEpoch_, uFieldFlagsStatic);
+        ::g::Uno::Time::Instant_typeof(), (uintptr_t)&Constants::BclEpoch_, uFieldFlagsStatic,
+        ::g::Uno::Time::Instant_typeof(), (uintptr_t)&Constants::UnixEpoch_, uFieldFlagsStatic);
 }
 
 uClassType* Constants_typeof()
@@ -254,10 +255,10 @@ uClassType* Constants_typeof()
 ::g::Uno::Time::Instant Constants::UnixEpoch_;
 // }
 
-// /usr/local/share/uno/Packages/UnoCore/1.2.2/source/uno/time/utilities/$.uno
-// ---------------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\UnoCore\1.3.1\Source\Uno\Time\Utilities\Converter.uno
+// -------------------------------------------------------------------------------------------------
 
-// internal static class Converter :53
+// internal static class Converter :3
 // {
 static void Converter_build(uType* type)
 {
@@ -275,13 +276,13 @@ uClassType* Converter_typeof()
     return type;
 }
 
-// internal static int TicksToDays(long ticks) :55
+// internal static int TicksToDays(long ticks) :5
 void Converter__TicksToDays_fn(int64_t* ticks, int* __retval)
 {
     *__retval = Converter::TicksToDays(*ticks);
 }
 
-// internal static int TicksToDays(long ticks) [static] :55
+// internal static int TicksToDays(long ticks) [static] :5
 int Converter::TicksToDays(int64_t ticks)
 {
     if (ticks >= 0LL)
@@ -291,12 +292,12 @@ int Converter::TicksToDays(int64_t ticks)
 }
 // }
 
-// /usr/local/share/uno/Packages/UnoCore/1.2.2/source/uno/time/$.uno
-// -----------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\UnoCore\1.3.1\Source\Uno\Time\DateTimeZone.uno
+// ------------------------------------------------------------------------------------------
 
-// public abstract class DateTimeZone :308
+// public abstract class DateTimeZone :3
 // {
-// static DateTimeZone() :308
+// static generated DateTimeZone() :3
 static void DateTimeZone__cctor__fn(uType* __type)
 {
     DateTimeZone::UtcZone_ = ::g::Uno::Time::FixedDateTimeZone::New2(::g::Uno::Time::Offset::Zero());
@@ -304,12 +305,14 @@ static void DateTimeZone__cctor__fn(uType* __type)
 
 static void DateTimeZone_build(uType* type)
 {
+    type->SetDependencies(
+        ::g::Uno::Type_typeof());
     type->SetFields(0,
-        ::g::Uno::String_typeof(), offsetof(::g::Uno::Time::DateTimeZone, id), 0,
-        ::g::Uno::Bool_typeof(), offsetof(::g::Uno::Time::DateTimeZone, isFixed), 0,
-        ::g::Uno::Long_typeof(), offsetof(::g::Uno::Time::DateTimeZone, maxOffsetTicks), 0,
-        ::g::Uno::Long_typeof(), offsetof(::g::Uno::Time::DateTimeZone, minOffsetTicks), 0,
-        type, (uintptr_t)&::g::Uno::Time::DateTimeZone::UtcZone_, uFieldFlagsStatic);
+        ::g::Uno::String_typeof(), offsetof(DateTimeZone, id), 0,
+        ::g::Uno::Bool_typeof(), offsetof(DateTimeZone, isFixed), 0,
+        ::g::Uno::Long_typeof(), offsetof(DateTimeZone, maxOffsetTicks), 0,
+        ::g::Uno::Long_typeof(), offsetof(DateTimeZone, minOffsetTicks), 0,
+        type, (uintptr_t)&DateTimeZone::UtcZone_, uFieldFlagsStatic);
 }
 
 DateTimeZone_type* DateTimeZone_typeof()
@@ -319,6 +322,7 @@ DateTimeZone_type* DateTimeZone_typeof()
 
     uTypeOptions options;
     options.FieldCount = 5;
+    options.DependencyCount = 1;
     options.ObjectSize = sizeof(DateTimeZone);
     options.TypeSize = sizeof(DateTimeZone_type);
     type = (DateTimeZone_type*)uClassType::New("Uno.Time.DateTimeZone", options);
@@ -330,44 +334,44 @@ DateTimeZone_type* DateTimeZone_typeof()
     return type;
 }
 
-// protected DateTimeZone(string id, bool isFixed, Uno.Time.Offset minOffset, Uno.Time.Offset maxOffset) :318
+// protected DateTimeZone(string id, bool isFixed, Uno.Time.Offset minOffset, Uno.Time.Offset maxOffset) :13
 void DateTimeZone__ctor__fn(DateTimeZone* __this, uString* id1, bool* isFixed1, ::g::Uno::Time::Offset* minOffset, ::g::Uno::Time::Offset* maxOffset)
 {
     __this->ctor_(id1, *isFixed1, *minOffset, *maxOffset);
 }
 
-// public override sealed bool Equals(object obj) :353
+// public override sealed bool Equals(object obj) :48
 void DateTimeZone__Equals_fn(DateTimeZone* __this, uObject* obj, bool* __retval)
 {
     return *__retval = __this->Equals2(uAs<DateTimeZone*>(obj, DateTimeZone_typeof())), void();
 }
 
-// public bool Equals(Uno.Time.DateTimeZone obj) :358
+// public bool Equals(Uno.Time.DateTimeZone obj) :53
 void DateTimeZone__Equals2_fn(DateTimeZone* __this, DateTimeZone* obj, bool* __retval)
 {
     *__retval = __this->Equals2(obj);
 }
 
-// public override int GetHashCode() :367
+// public override int GetHashCode() :62
 void DateTimeZone__GetHashCode_fn(DateTimeZone* __this, int* __retval)
 {
     int ret1;
     return *__retval = (::g::Uno::Object__GetHashCode_fn(__this, &ret1), ret1), void();
 }
 
-// public string get_Id() :330
+// public string get_Id() :25
 void DateTimeZone__get_Id_fn(DateTimeZone* __this, uString** __retval)
 {
     *__retval = __this->Id();
 }
 
-// public override string ToString() :348
+// public override string ToString() :43
 void DateTimeZone__ToString_fn(DateTimeZone* __this, uString** __retval)
 {
     return *__retval = __this->Id(), void();
 }
 
-// public static Uno.Time.DateTimeZone get_Utc() :328
+// public static Uno.Time.DateTimeZone get_Utc() :23
 void DateTimeZone__get_Utc_fn(DateTimeZone** __retval)
 {
     *__retval = DateTimeZone::Utc();
@@ -375,7 +379,7 @@ void DateTimeZone__get_Utc_fn(DateTimeZone** __retval)
 
 uSStrong<DateTimeZone*> DateTimeZone::UtcZone_;
 
-// protected DateTimeZone(string id, bool isFixed, Uno.Time.Offset minOffset, Uno.Time.Offset maxOffset) [instance] :318
+// protected DateTimeZone(string id, bool isFixed, Uno.Time.Offset minOffset, Uno.Time.Offset maxOffset) [instance] :13
 void DateTimeZone::ctor_(uString* id1, bool isFixed1, ::g::Uno::Time::Offset minOffset, ::g::Uno::Time::Offset maxOffset)
 {
     id = id1;
@@ -384,7 +388,7 @@ void DateTimeZone::ctor_(uString* id1, bool isFixed1, ::g::Uno::Time::Offset min
     maxOffsetTicks = maxOffset.Ticks();
 }
 
-// public bool Equals(Uno.Time.DateTimeZone obj) [instance] :358
+// public bool Equals(Uno.Time.DateTimeZone obj) [instance] :53
 bool DateTimeZone::Equals2(DateTimeZone* obj)
 {
     if (::g::Uno::Object::ReferenceEquals(this, obj))
@@ -393,24 +397,23 @@ bool DateTimeZone::Equals2(DateTimeZone* obj)
     return (!::g::Uno::Object::ReferenceEquals(obj, NULL) && ::g::Uno::Type::op_Equality(::g::Uno::Object::GetType(uPtr(obj)), ::g::Uno::Object::GetType(this))) && EqualsImpl(obj);
 }
 
-// public string get_Id() [instance] :330
+// public string get_Id() [instance] :25
 uString* DateTimeZone::Id()
 {
     return id;
 }
 
-// public static Uno.Time.DateTimeZone get_Utc() [static] :328
+// public static Uno.Time.DateTimeZone get_Utc() [static] :23
 DateTimeZone* DateTimeZone::Utc()
 {
-    DateTimeZone_typeof()->Init();
-    return DateTimeZone::UtcZone();
+    return DateTimeZone::UtcZone_;
 }
 // }
 
-// /usr/local/share/uno/Packages/UnoCore/1.2.2/source/uno/time/timezones/$.uno
-// ---------------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\UnoCore\1.3.1\Source\Uno\Time\Timezones\DeviceTimeZone.uno
+// ------------------------------------------------------------------------------------------------------
 
-// public sealed class DeviceTimeZone :7
+// public sealed class DeviceTimeZone :5
 // {
 static void DeviceTimeZone_build(uType* type)
 {
@@ -439,25 +442,25 @@ static void DeviceTimeZone_build(uType* type)
     return type;
 }
 
-// public DeviceTimeZone() :9
+// public DeviceTimeZone() :7
 void DeviceTimeZone__ctor_1_fn(DeviceTimeZone* __this)
 {
     __this->ctor_1();
 }
 
-// internal DeviceTimeZone(string id) :13
+// internal DeviceTimeZone(string id) :11
 void DeviceTimeZone__ctor_2_fn(DeviceTimeZone* __this, uString* id1)
 {
     __this->ctor_2(id1);
 }
 
-// protected override sealed bool EqualsImpl(Uno.Time.DateTimeZone other) :31
+// protected override sealed bool EqualsImpl(Uno.Time.DateTimeZone other) :29
 void DeviceTimeZone__EqualsImpl_fn(DeviceTimeZone* __this, ::g::Uno::Time::DateTimeZone* other, bool* __retval)
 {
     return *__retval = uIs(other, __this->__type), void();
 }
 
-// public override sealed int GetHashCode() :36
+// public override sealed int GetHashCode() :34
 void DeviceTimeZone__GetHashCode_fn(DeviceTimeZone* __this, int* __retval)
 {
     int ret3;
@@ -466,38 +469,38 @@ void DeviceTimeZone__GetHashCode_fn(DeviceTimeZone* __this, int* __retval)
     return *__retval = hash, void();
 }
 
-// public override sealed Uno.Time.Offset GetUtcOffset(Uno.Time.LocalDateTime dateTime) :18
+// public override sealed Uno.Time.Offset GetUtcOffset(Uno.Time.LocalDateTime dateTime) :16
 void DeviceTimeZone__GetUtcOffset_fn(DeviceTimeZone* __this, ::g::Uno::Time::LocalDateTime* dateTime, ::g::Uno::Time::Offset* __retval)
 {
     int offsetMinutes = ::g::Uno::Diagnostics::Clock::GetTimezoneOffset(uPtr(dateTime)->Year(), uPtr(dateTime)->Month(), uPtr(dateTime)->Day());
     return *__retval = ::g::Uno::Time::Offset__FromHoursAndMinutes(offsetMinutes / 60, offsetMinutes % 60), void();
 }
 
-// public DeviceTimeZone New() :9
+// public DeviceTimeZone New() :7
 void DeviceTimeZone__New1_fn(DeviceTimeZone** __retval)
 {
     *__retval = DeviceTimeZone::New1();
 }
 
-// public override sealed string ToString() :26
+// public override sealed string ToString() :24
 void DeviceTimeZone__ToString_fn(DeviceTimeZone* __this, uString** __retval)
 {
     return *__retval = __this->Id(), void();
 }
 
-// public DeviceTimeZone() [instance] :9
+// public DeviceTimeZone() [instance] :7
 void DeviceTimeZone::ctor_1()
 {
     ctor_2(::STRINGS[1/*"UTC"*/]);
 }
 
-// internal DeviceTimeZone(string id) [instance] :13
+// internal DeviceTimeZone(string id) [instance] :11
 void DeviceTimeZone::ctor_2(uString* id1)
 {
     ctor_(id1, false, ::g::Uno::Time::Offset__FromHours(-12), ::g::Uno::Time::Offset__FromHours(12));
 }
 
-// public DeviceTimeZone New() [static] :9
+// public DeviceTimeZone New() [static] :7
 DeviceTimeZone* DeviceTimeZone::New1()
 {
     DeviceTimeZone* obj1 = (DeviceTimeZone*)uNew(DeviceTimeZone_typeof());
@@ -506,12 +509,12 @@ DeviceTimeZone* DeviceTimeZone::New1()
 }
 // }
 
-// /usr/local/share/uno/Packages/UnoCore/1.2.2/source/uno/time/$.uno
-// -----------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\UnoCore\1.3.1\Source\Uno\Time\Duration.uno
+// --------------------------------------------------------------------------------------
 
-// public struct Duration :383
+// public struct Duration :3
 // {
-// static Duration() :401
+// static Duration() :21
 static void Duration__cctor__fn(uType* __type)
 {
     Duration::Zero_ = Duration__New1(0LL);
@@ -528,15 +531,15 @@ static void Duration_build(uType* type)
 {
     ::TYPES[1] = ::g::Uno::Long_typeof();
     type->SetFields(0,
-        ::TYPES[1/*long*/], offsetof(::g::Uno::Time::Duration, ticks), 0,
-        type, (uintptr_t)&::g::Uno::Time::Duration::Zero_, uFieldFlagsStatic,
-        type, (uintptr_t)&::g::Uno::Time::Duration::Epsilon_, uFieldFlagsStatic,
-        type, (uintptr_t)&::g::Uno::Time::Duration::OneStandardWeek_, uFieldFlagsStatic,
-        type, (uintptr_t)&::g::Uno::Time::Duration::OneStandardDay_, uFieldFlagsStatic,
-        type, (uintptr_t)&::g::Uno::Time::Duration::OneHour_, uFieldFlagsStatic,
-        type, (uintptr_t)&::g::Uno::Time::Duration::OneMinute_, uFieldFlagsStatic,
-        type, (uintptr_t)&::g::Uno::Time::Duration::OneSecond_, uFieldFlagsStatic,
-        type, (uintptr_t)&::g::Uno::Time::Duration::OneMillisecond_, uFieldFlagsStatic);
+        ::TYPES[1/*long*/], offsetof(Duration, ticks), 0,
+        type, (uintptr_t)&Duration::Zero_, uFieldFlagsStatic,
+        type, (uintptr_t)&Duration::Epsilon_, uFieldFlagsStatic,
+        type, (uintptr_t)&Duration::OneStandardWeek_, uFieldFlagsStatic,
+        type, (uintptr_t)&Duration::OneStandardDay_, uFieldFlagsStatic,
+        type, (uintptr_t)&Duration::OneHour_, uFieldFlagsStatic,
+        type, (uintptr_t)&Duration::OneMinute_, uFieldFlagsStatic,
+        type, (uintptr_t)&Duration::OneSecond_, uFieldFlagsStatic,
+        type, (uintptr_t)&Duration::OneMillisecond_, uFieldFlagsStatic);
 }
 
 uStructType* Duration_typeof()
@@ -546,6 +549,7 @@ uStructType* Duration_typeof()
 
     uTypeOptions options;
     options.FieldCount = 9;
+    options.Alignment = alignof(Duration);
     options.ValueSize = sizeof(Duration);
     options.TypeSize = sizeof(uStructType);
     type = uStructType::New("Uno.Time.Duration", options);
@@ -556,13 +560,13 @@ uStructType* Duration_typeof()
     return type;
 }
 
-// internal Duration(long ticks) :413
+// internal Duration(long ticks) :33
 void Duration__ctor__fn(Duration* __this, int64_t* ticks1)
 {
     __this->ctor_(*ticks1);
 }
 
-// public override sealed bool Equals(object obj) :527
+// public override sealed bool Equals(object obj) :147
 void Duration__Equals_fn(Duration* __this, uType* __type, uObject* obj, bool* __retval)
 {
     if (uIs(obj, __type))
@@ -571,43 +575,43 @@ void Duration__Equals_fn(Duration* __this, uType* __type, uObject* obj, bool* __
     return *__retval = false, void();
 }
 
-// public bool Equals(Uno.Time.Duration other) :536
+// public bool Equals(Uno.Time.Duration other) :156
 void Duration__Equals2_fn(Duration* __this, Duration* other, bool* __retval)
 {
     *__retval = __this->Equals2(*other);
 }
 
-// public static Uno.Time.Duration FromHours(long hours) :551
+// public static Uno.Time.Duration FromHours(long hours) :171
 void Duration__FromHours_fn(int64_t* hours, Duration* __retval)
 {
     *__retval = Duration__FromHours(*hours);
 }
 
-// public static Uno.Time.Duration FromMilliseconds(long milliseconds) :566
+// public static Uno.Time.Duration FromMilliseconds(long milliseconds) :186
 void Duration__FromMilliseconds_fn(int64_t* milliseconds, Duration* __retval)
 {
     *__retval = Duration__FromMilliseconds(*milliseconds);
 }
 
-// public override sealed int GetHashCode() :522
+// public override sealed int GetHashCode() :142
 void Duration__GetHashCode_fn(Duration* __this, uType* __type, int* __retval)
 {
     return *__retval = ::g::Uno::Long::GetHashCode(__this->Ticks(), ::TYPES[1/*long*/]), void();
 }
 
-// internal Duration New(long ticks) :413
+// internal Duration New(long ticks) :33
 void Duration__New1_fn(int64_t* ticks1, Duration* __retval)
 {
     *__retval = Duration__New1(*ticks1);
 }
 
-// public static operator *(Uno.Time.Duration left, long right) :462
+// public static operator *(Uno.Time.Duration left, long right) :82
 void Duration__op_Multiply1_fn(Duration* left, int64_t* right, Duration* __retval)
 {
     *__retval = Duration__op_Multiply1(*left, *right);
 }
 
-// public long get_Ticks() :420
+// public long get_Ticks() :40
 void Duration__get_Ticks_fn(Duration* __this, int64_t* __retval)
 {
     *__retval = __this->Ticks();
@@ -622,39 +626,39 @@ Duration Duration::OneMinute_;
 Duration Duration::OneSecond_;
 Duration Duration::OneMillisecond_;
 
-// internal Duration(long ticks) [instance] :413
+// internal Duration(long ticks) [instance] :33
 void Duration::ctor_(int64_t ticks1)
 {
     ticks = ticks1;
 }
 
-// public bool Equals(Uno.Time.Duration other) [instance] :536
+// public bool Equals(Uno.Time.Duration other) [instance] :156
 bool Duration::Equals2(Duration other)
 {
     return Ticks() == other.Ticks();
 }
 
-// public long get_Ticks() [instance] :420
+// public long get_Ticks() [instance] :40
 int64_t Duration::Ticks()
 {
     return ticks;
 }
 
-// public static Uno.Time.Duration FromHours(long hours) [static] :551
+// public static Uno.Time.Duration FromHours(long hours) [static] :171
 Duration Duration__FromHours(int64_t hours)
 {
     Duration_typeof()->Init();
-    return Duration__op_Multiply1(Duration::OneHour(), hours);
+    return Duration__op_Multiply1(Duration::OneHour_, hours);
 }
 
-// public static Uno.Time.Duration FromMilliseconds(long milliseconds) [static] :566
+// public static Uno.Time.Duration FromMilliseconds(long milliseconds) [static] :186
 Duration Duration__FromMilliseconds(int64_t milliseconds)
 {
     Duration_typeof()->Init();
-    return Duration__op_Multiply1(Duration::OneMillisecond(), milliseconds);
+    return Duration__op_Multiply1(Duration::OneMillisecond_, milliseconds);
 }
 
-// internal Duration New(long ticks) [static] :413
+// internal Duration New(long ticks) [static] :33
 Duration Duration__New1(int64_t ticks1)
 {
     Duration obj1;
@@ -662,7 +666,7 @@ Duration Duration__New1(int64_t ticks1)
     return obj1;
 }
 
-// public static operator *(Uno.Time.Duration left, long right) [static] :462
+// public static operator *(Uno.Time.Duration left, long right) [static] :82
 Duration Duration__op_Multiply1(Duration left, int64_t right)
 {
     Duration_typeof()->Init();
@@ -670,10 +674,10 @@ Duration Duration__op_Multiply1(Duration left, int64_t right)
 }
 // }
 
-// /usr/local/share/uno/Packages/UnoCore/1.2.2/source/uno/time/timezones/$.uno
-// ---------------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\UnoCore\1.3.1\Source\Uno\Time\Timezones\FixedDateTimeZone.uno
+// ---------------------------------------------------------------------------------------------------------
 
-// internal sealed class FixedDateTimeZone :50
+// internal sealed class FixedDateTimeZone :3
 // {
 static void FixedDateTimeZone_build(uType* type)
 {
@@ -681,7 +685,7 @@ static void FixedDateTimeZone_build(uType* type)
     ::TYPES[2] = ::g::Uno::Time::HashCodeHelper_typeof()->MakeMethod(0/*Hash<Uno.Time.Offset>*/, ::g::Uno::Time::Offset_typeof(), NULL);
     ::TYPES[0] = ::g::Uno::Time::HashCodeHelper_typeof()->MakeMethod(0/*Hash<string>*/, ::g::Uno::String_typeof(), NULL);
     type->SetFields(4,
-        ::g::Uno::Time::Offset_typeof(), offsetof(::g::Uno::Time::FixedDateTimeZone, offset), 0);
+        ::g::Uno::Time::Offset_typeof(), offsetof(FixedDateTimeZone, offset), 0);
 }
 
 ::g::Uno::Time::DateTimeZone_type* FixedDateTimeZone_typeof()
@@ -703,26 +707,26 @@ static void FixedDateTimeZone_build(uType* type)
     return type;
 }
 
-// public FixedDateTimeZone(string id, Uno.Time.Offset offset) :58
+// public FixedDateTimeZone(string id, Uno.Time.Offset offset) :11
 void FixedDateTimeZone__ctor_1_fn(FixedDateTimeZone* __this, uString* id1, ::g::Uno::Time::Offset* offset1)
 {
     __this->ctor_1(id1, *offset1);
 }
 
-// public FixedDateTimeZone(Uno.Time.Offset offset) :54
+// public FixedDateTimeZone(Uno.Time.Offset offset) :7
 void FixedDateTimeZone__ctor_2_fn(FixedDateTimeZone* __this, ::g::Uno::Time::Offset* offset1)
 {
     __this->ctor_2(*offset1);
 }
 
-// protected override sealed bool EqualsImpl(Uno.Time.DateTimeZone other) :75
+// protected override sealed bool EqualsImpl(Uno.Time.DateTimeZone other) :28
 void FixedDateTimeZone__EqualsImpl_fn(FixedDateTimeZone* __this, ::g::Uno::Time::DateTimeZone* other, bool* __retval)
 {
     FixedDateTimeZone* otherZone = uCast<FixedDateTimeZone*>(other, __this->__type);
     return *__retval = ::g::Uno::Time::Offset__op_Equality(__this->offset, uPtr(otherZone)->offset) && ::g::Uno::String::op_Equality(__this->Id(), uPtr(other)->Id()), void();
 }
 
-// public override sealed int GetHashCode() :81
+// public override sealed int GetHashCode() :34
 void FixedDateTimeZone__GetHashCode_fn(FixedDateTimeZone* __this, int* __retval)
 {
     int ret3;
@@ -733,38 +737,38 @@ void FixedDateTimeZone__GetHashCode_fn(FixedDateTimeZone* __this, int* __retval)
     return *__retval = hash, void();
 }
 
-// public override sealed Uno.Time.Offset GetUtcOffset(Uno.Time.LocalDateTime dateTime) :65
+// public override sealed Uno.Time.Offset GetUtcOffset(Uno.Time.LocalDateTime dateTime) :18
 void FixedDateTimeZone__GetUtcOffset_fn(FixedDateTimeZone* __this, ::g::Uno::Time::LocalDateTime* dateTime, ::g::Uno::Time::Offset* __retval)
 {
     return *__retval = __this->offset, void();
 }
 
-// public FixedDateTimeZone New(Uno.Time.Offset offset) :54
+// public FixedDateTimeZone New(Uno.Time.Offset offset) :7
 void FixedDateTimeZone__New2_fn(::g::Uno::Time::Offset* offset1, FixedDateTimeZone** __retval)
 {
     *__retval = FixedDateTimeZone::New2(*offset1);
 }
 
-// public override sealed string ToString() :70
+// public override sealed string ToString() :23
 void FixedDateTimeZone__ToString_fn(FixedDateTimeZone* __this, uString** __retval)
 {
     return *__retval = __this->Id(), void();
 }
 
-// public FixedDateTimeZone(string id, Uno.Time.Offset offset) [instance] :58
+// public FixedDateTimeZone(string id, Uno.Time.Offset offset) [instance] :11
 void FixedDateTimeZone::ctor_1(uString* id1, ::g::Uno::Time::Offset offset1)
 {
     ctor_(id1, true, offset1, offset1);
     offset = offset1;
 }
 
-// public FixedDateTimeZone(Uno.Time.Offset offset) [instance] :54
+// public FixedDateTimeZone(Uno.Time.Offset offset) [instance] :7
 void FixedDateTimeZone::ctor_2(::g::Uno::Time::Offset offset1)
 {
     ctor_1(::STRINGS[1/*"UTC"*/], offset1);
 }
 
-// public FixedDateTimeZone New(Uno.Time.Offset offset) [static] :54
+// public FixedDateTimeZone New(Uno.Time.Offset offset) [static] :7
 FixedDateTimeZone* FixedDateTimeZone::New2(::g::Uno::Time::Offset offset1)
 {
     FixedDateTimeZone* obj1 = (FixedDateTimeZone*)uNew(FixedDateTimeZone_typeof());
@@ -773,10 +777,10 @@ FixedDateTimeZone* FixedDateTimeZone::New2(::g::Uno::Time::Offset offset1)
 }
 // }
 
-// /usr/local/share/uno/Packages/UnoCore/1.2.2/source/uno/time/utilities/$.uno
-// ---------------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\UnoCore\1.3.1\Source\Uno\Time\Utilities\HashcodeHelper.uno
+// ------------------------------------------------------------------------------------------------------
 
-// internal static class HashCodeHelper :71
+// internal static class HashCodeHelper :3
 // {
 static void HashCodeHelper_build(uType* type)
 {
@@ -791,12 +795,12 @@ uClassType* HashCodeHelper_typeof()
     options.MethodTypeCount = 1;
     options.TypeSize = sizeof(uClassType);
     type = uClassType::New("Uno.Time.HashCodeHelper", options);
-    type->MethodTypes[0] = type->NewMethodType(1, 0);
+    type->MethodTypes[0] = type->NewMethodType(1, 0,0);
     type->fp_build_ = HashCodeHelper_build;
     return type;
 }
 
-// internal static int Hash<T>(int code, T value) :82
+// internal static int Hash<T>(int code, T value) :14
 void HashCodeHelper__Hash_fn(uType* __type, int* code, void* value, int* __retval)
 {
     int code_ = *code;
@@ -808,41 +812,41 @@ void HashCodeHelper__Hash_fn(uType* __type, int* code, void* value, int* __retva
     return *__retval = HashCodeHelper::MakeHash(code_, hash), void();
 }
 
-// internal static int Initialize() :77
+// internal static int Initialize() :9
 void HashCodeHelper__Initialize_fn(int* __retval)
 {
     *__retval = HashCodeHelper::Initialize();
 }
 
-// private static int MakeHash(int code, int value) :92
+// private static int MakeHash(int code, int value) :24
 void HashCodeHelper__MakeHash_fn(int* code, int* value, int* __retval)
 {
     *__retval = HashCodeHelper::MakeHash(*code, *value);
 }
 
-// internal static int Initialize() [static] :77
+// internal static int Initialize() [static] :9
 int HashCodeHelper::Initialize()
 {
     return 17;
 }
 
-// private static int MakeHash(int code, int value) [static] :92
+// private static int MakeHash(int code, int value) [static] :24
 int HashCodeHelper::MakeHash(int code, int value)
 {
     return (code * 37) + value;
 }
 // }
 
-// /usr/local/share/uno/Packages/UnoCore/1.2.2/source/uno/time/$.uno
-// -----------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\UnoCore\1.3.1\Source\Uno\Time\Instant.uno
+// -------------------------------------------------------------------------------------
 
-// public struct Instant :585
+// public struct Instant :5
 // {
 static void Instant_build(uType* type)
 {
     ::TYPES[1] = ::g::Uno::Long_typeof();
     type->SetFields(0,
-        ::TYPES[1/*long*/], offsetof(::g::Uno::Time::Instant, _ticks), 0);
+        ::TYPES[1/*long*/], offsetof(Instant, _ticks), 0);
 }
 
 uStructType* Instant_typeof()
@@ -852,6 +856,7 @@ uStructType* Instant_typeof()
 
     uTypeOptions options;
     options.FieldCount = 1;
+    options.Alignment = alignof(Instant);
     options.ValueSize = sizeof(Instant);
     options.TypeSize = sizeof(uStructType);
     type = uStructType::New("Uno.Time.Instant", options);
@@ -862,13 +867,13 @@ uStructType* Instant_typeof()
     return type;
 }
 
-// public Instant(long ticks) :591
+// public Instant(long ticks) :11
 void Instant__ctor__fn(Instant* __this, int64_t* ticks)
 {
     __this->ctor_(*ticks);
 }
 
-// public override sealed bool Equals(object obj) :725
+// public override sealed bool Equals(object obj) :145
 void Instant__Equals_fn(Instant* __this, uType* __type, uObject* obj, bool* __retval)
 {
     if (uIs(obj, __type))
@@ -877,175 +882,175 @@ void Instant__Equals_fn(Instant* __this, uType* __type, uObject* obj, bool* __re
     return *__retval = false, void();
 }
 
-// public bool Equals(Uno.Time.Instant other) :720
+// public bool Equals(Uno.Time.Instant other) :140
 void Instant__Equals2_fn(Instant* __this, Instant* other, bool* __retval)
 {
     *__retval = __this->Equals2(*other);
 }
 
-// internal static Uno.Time.Instant FromDuration(Uno.Time.Duration duration) :695
+// internal static Uno.Time.Instant FromDuration(Uno.Time.Duration duration) :115
 void Instant__FromDuration_fn(::g::Uno::Time::Duration* duration, Instant* __retval)
 {
     *__retval = Instant__FromDuration(*duration);
 }
 
-// public static Uno.Time.Instant FromMillisecondsSinceUnixEpoch(long milliseconds) :690
+// public static Uno.Time.Instant FromMillisecondsSinceUnixEpoch(long milliseconds) :110
 void Instant__FromMillisecondsSinceUnixEpoch_fn(int64_t* milliseconds, Instant* __retval)
 {
     *__retval = Instant__FromMillisecondsSinceUnixEpoch(*milliseconds);
 }
 
-// public static Uno.Time.Instant FromUtc(int year, int monthOfYear, int dayOfMonth, int hourOfDay, int minuteOfHour) :700
+// public static Uno.Time.Instant FromUtc(int year, int monthOfYear, int dayOfMonth, int hourOfDay, int minuteOfHour) :120
 void Instant__FromUtc_fn(int* year, int* monthOfYear, int* dayOfMonth, int* hourOfDay, int* minuteOfHour, Instant* __retval)
 {
     *__retval = Instant__FromUtc(*year, *monthOfYear, *dayOfMonth, *hourOfDay, *minuteOfHour);
 }
 
-// public override sealed int GetHashCode() :710
+// public override sealed int GetHashCode() :130
 void Instant__GetHashCode_fn(Instant* __this, uType* __type, int* __retval)
 {
     return *__retval = ::g::Uno::Long::GetHashCode(__this->Ticks(), ::TYPES[1/*long*/]), void();
 }
 
-// internal Uno.Time.Instant Minus(Uno.Time.Offset offset) :626
+// internal Uno.Time.Instant Minus(Uno.Time.Offset offset) :46
 void Instant__Minus2_fn(Instant* __this, ::g::Uno::Time::Offset* offset, Instant* __retval)
 {
     *__retval = __this->Minus2(*offset);
 }
 
-// public Instant New(long ticks) :591
+// public Instant New(long ticks) :11
 void Instant__New1_fn(int64_t* ticks, Instant* __retval)
 {
     *__retval = Instant__New1(*ticks);
 }
 
-// public static operator +(Uno.Time.Instant left, Uno.Time.Duration right) :643
+// public static operator +(Uno.Time.Instant left, Uno.Time.Duration right) :63
 void Instant__op_Addition_fn(Instant* left, ::g::Uno::Time::Duration* right, Instant* __retval)
 {
     *__retval = Instant__op_Addition(*left, *right);
 }
 
-// public static operator ==(Uno.Time.Instant left, Uno.Time.Instant right) :658
+// public static operator ==(Uno.Time.Instant left, Uno.Time.Instant right) :78
 void Instant__op_Equality_fn(Instant* left, Instant* right, bool* __retval)
 {
     *__retval = Instant__op_Equality(*left, *right);
 }
 
-// public static operator >(Uno.Time.Instant left, Uno.Time.Instant right) :678
+// public static operator >(Uno.Time.Instant left, Uno.Time.Instant right) :98
 void Instant__op_GreaterThan_fn(Instant* left, Instant* right, bool* __retval)
 {
     *__retval = Instant__op_GreaterThan(*left, *right);
 }
 
-// public static operator <(Uno.Time.Instant left, Uno.Time.Instant right) :668
+// public static operator <(Uno.Time.Instant left, Uno.Time.Instant right) :88
 void Instant__op_LessThan_fn(Instant* left, Instant* right, bool* __retval)
 {
     *__retval = Instant__op_LessThan(*left, *right);
 }
 
-// public static operator -(Uno.Time.Instant left, Uno.Time.Duration right) :653
+// public static operator -(Uno.Time.Instant left, Uno.Time.Duration right) :73
 void Instant__op_Subtraction_fn(Instant* left, ::g::Uno::Time::Duration* right, Instant* __retval)
 {
     *__retval = Instant__op_Subtraction(*left, *right);
 }
 
-// public static operator -(Uno.Time.Instant left, Uno.Time.Instant right) :648
+// public static operator -(Uno.Time.Instant left, Uno.Time.Instant right) :68
 void Instant__op_Subtraction1_fn(Instant* left, Instant* right, ::g::Uno::Time::Duration* __retval)
 {
     *__retval = Instant__op_Subtraction1(*left, *right);
 }
 
-// public Uno.Time.Instant Plus(Uno.Time.Duration duration) :606
+// public Uno.Time.Instant Plus(Uno.Time.Duration duration) :26
 void Instant__Plus_fn(Instant* __this, ::g::Uno::Time::Duration* duration, Instant* __retval)
 {
     *__retval = __this->Plus(*duration);
 }
 
-// internal Uno.Time.Instant Plus(Uno.Time.Offset offset) :611
+// internal Uno.Time.Instant Plus(Uno.Time.Offset offset) :31
 void Instant__Plus1_fn(Instant* __this, ::g::Uno::Time::Offset* offset, Instant* __retval)
 {
     *__retval = __this->Plus1(*offset);
 }
 
-// public Uno.Time.Instant PlusTicks(long ticksToAdd) :596
+// public Uno.Time.Instant PlusTicks(long ticksToAdd) :16
 void Instant__PlusTicks_fn(Instant* __this, int64_t* ticksToAdd, Instant* __retval)
 {
     *__retval = __this->PlusTicks(*ticksToAdd);
 }
 
-// public long get_Ticks() :589
+// public long get_Ticks() :9
 void Instant__get_Ticks_fn(Instant* __this, int64_t* __retval)
 {
     *__retval = __this->Ticks();
 }
 
-// public override sealed string ToString() :715
+// public override sealed string ToString() :135
 void Instant__ToString_fn(Instant* __this, uType* __type, uString** __retval)
 {
     return *__retval = uPtr(::g::Uno::Time::Text::LocalDateTimePattern::GeneralIsoPattern())->Format(::g::Uno::Time::LocalDateTime::New9(*__this)), void();
 }
 
-// public Instant(long ticks) [instance] :591
+// public Instant(long ticks) [instance] :11
 void Instant::ctor_(int64_t ticks)
 {
     _ticks = ticks;
 }
 
-// public bool Equals(Uno.Time.Instant other) [instance] :720
+// public bool Equals(Uno.Time.Instant other) [instance] :140
 bool Instant::Equals2(Instant other)
 {
     return Ticks() == other.Ticks();
 }
 
-// internal Uno.Time.Instant Minus(Uno.Time.Offset offset) [instance] :626
+// internal Uno.Time.Instant Minus(Uno.Time.Offset offset) [instance] :46
 Instant Instant::Minus2(::g::Uno::Time::Offset offset)
 {
     return Instant__New1(_ticks - offset.Ticks());
 }
 
-// public Uno.Time.Instant Plus(Uno.Time.Duration duration) [instance] :606
+// public Uno.Time.Instant Plus(Uno.Time.Duration duration) [instance] :26
 Instant Instant::Plus(::g::Uno::Time::Duration duration)
 {
     return Instant__op_Addition(*this, duration);
 }
 
-// internal Uno.Time.Instant Plus(Uno.Time.Offset offset) [instance] :611
+// internal Uno.Time.Instant Plus(Uno.Time.Offset offset) [instance] :31
 Instant Instant::Plus1(::g::Uno::Time::Offset offset)
 {
     return Instant__New1(Ticks() + offset.Ticks());
 }
 
-// public Uno.Time.Instant PlusTicks(long ticksToAdd) [instance] :596
+// public Uno.Time.Instant PlusTicks(long ticksToAdd) [instance] :16
 Instant Instant::PlusTicks(int64_t ticksToAdd)
 {
     return Instant__New1(_ticks + ticksToAdd);
 }
 
-// public long get_Ticks() [instance] :589
+// public long get_Ticks() [instance] :9
 int64_t Instant::Ticks()
 {
     return _ticks;
 }
 
-// internal static Uno.Time.Instant FromDuration(Uno.Time.Duration duration) [static] :695
+// internal static Uno.Time.Instant FromDuration(Uno.Time.Duration duration) [static] :115
 Instant Instant__FromDuration(::g::Uno::Time::Duration duration)
 {
     return uDefault<Instant>().Plus(duration);
 }
 
-// public static Uno.Time.Instant FromMillisecondsSinceUnixEpoch(long milliseconds) [static] :690
+// public static Uno.Time.Instant FromMillisecondsSinceUnixEpoch(long milliseconds) [static] :110
 Instant Instant__FromMillisecondsSinceUnixEpoch(int64_t milliseconds)
 {
     return Instant__FromDuration(::g::Uno::Time::Duration__FromMilliseconds(milliseconds));
 }
 
-// public static Uno.Time.Instant FromUtc(int year, int monthOfYear, int dayOfMonth, int hourOfDay, int minuteOfHour) [static] :700
+// public static Uno.Time.Instant FromUtc(int year, int monthOfYear, int dayOfMonth, int hourOfDay, int minuteOfHour) [static] :120
 Instant Instant__FromUtc(int year, int monthOfYear, int dayOfMonth, int hourOfDay, int minuteOfHour)
 {
     return uPtr(::g::Uno::Time::CalendarSystem::Iso())->GetInstant(year, monthOfYear, dayOfMonth, hourOfDay, minuteOfHour);
 }
 
-// public Instant New(long ticks) [static] :591
+// public Instant New(long ticks) [static] :11
 Instant Instant__New1(int64_t ticks)
 {
     Instant obj1;
@@ -1053,47 +1058,47 @@ Instant Instant__New1(int64_t ticks)
     return obj1;
 }
 
-// public static operator +(Uno.Time.Instant left, Uno.Time.Duration right) [static] :643
+// public static operator +(Uno.Time.Instant left, Uno.Time.Duration right) [static] :63
 Instant Instant__op_Addition(Instant left, ::g::Uno::Time::Duration right)
 {
     return Instant__New1(left.Ticks() + right.Ticks());
 }
 
-// public static operator ==(Uno.Time.Instant left, Uno.Time.Instant right) [static] :658
+// public static operator ==(Uno.Time.Instant left, Uno.Time.Instant right) [static] :78
 bool Instant__op_Equality(Instant left, Instant right)
 {
     return left.Equals2(right);
 }
 
-// public static operator >(Uno.Time.Instant left, Uno.Time.Instant right) [static] :678
+// public static operator >(Uno.Time.Instant left, Uno.Time.Instant right) [static] :98
 bool Instant__op_GreaterThan(Instant left, Instant right)
 {
     return left.Ticks() > right.Ticks();
 }
 
-// public static operator <(Uno.Time.Instant left, Uno.Time.Instant right) [static] :668
+// public static operator <(Uno.Time.Instant left, Uno.Time.Instant right) [static] :88
 bool Instant__op_LessThan(Instant left, Instant right)
 {
     return left.Ticks() < right.Ticks();
 }
 
-// public static operator -(Uno.Time.Instant left, Uno.Time.Duration right) [static] :653
+// public static operator -(Uno.Time.Instant left, Uno.Time.Duration right) [static] :73
 Instant Instant__op_Subtraction(Instant left, ::g::Uno::Time::Duration right)
 {
     return Instant__New1(left.Ticks() - right.Ticks());
 }
 
-// public static operator -(Uno.Time.Instant left, Uno.Time.Instant right) [static] :648
+// public static operator -(Uno.Time.Instant left, Uno.Time.Instant right) [static] :68
 ::g::Uno::Time::Duration Instant__op_Subtraction1(Instant left, Instant right)
 {
     return ::g::Uno::Time::Duration__New1(left.Ticks() - right.Ticks());
 }
 // }
 
-// /usr/local/share/uno/Packages/UnoCore/1.2.2/source/uno/time/$.uno
-// -----------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\UnoCore\1.3.1\Source\Uno\Time\LocalDateTime.uno
+// -------------------------------------------------------------------------------------------
 
-// public sealed class LocalDateTime :1003
+// public sealed class LocalDateTime :7
 // {
 static void LocalDateTime_build(uType* type)
 {
@@ -1101,9 +1106,11 @@ static void LocalDateTime_build(uType* type)
     ::TYPES[3] = ::g::Uno::Time::Preconditions_typeof()->MakeMethod(0/*CheckNotNull<Uno.Time.CalendarSystem>*/, ::g::Uno::Time::CalendarSystem_typeof(), NULL);
     ::TYPES[4] = ::g::Uno::Time::HashCodeHelper_typeof()->MakeMethod(0/*Hash<Uno.Time.Instant>*/, ::g::Uno::Time::Instant_typeof(), NULL);
     ::TYPES[5] = ::g::Uno::Time::HashCodeHelper_typeof()->MakeMethod(0/*Hash<Uno.Time.CalendarSystem>*/, ::g::Uno::Time::CalendarSystem_typeof(), NULL);
+    type->SetDependencies(
+        ::g::Uno::Time::DateTimeZone_typeof());
     type->SetFields(0,
-        ::g::Uno::Time::CalendarSystem_typeof(), offsetof(::g::Uno::Time::LocalDateTime, _calendar), 0,
-        ::g::Uno::Time::Instant_typeof(), offsetof(::g::Uno::Time::LocalDateTime, _instant), 0);
+        ::g::Uno::Time::CalendarSystem_typeof(), offsetof(LocalDateTime, _calendar), 0,
+        ::g::Uno::Time::Instant_typeof(), offsetof(LocalDateTime, _instant), 0);
 }
 
 uType* LocalDateTime_typeof()
@@ -1113,6 +1120,7 @@ uType* LocalDateTime_typeof()
 
     uTypeOptions options;
     options.FieldCount = 2;
+    options.DependencyCount = 1;
     options.ObjectSize = sizeof(LocalDateTime);
     options.TypeSize = sizeof(uType);
     type = uClassType::New("Uno.Time.LocalDateTime", options);
@@ -1123,31 +1131,31 @@ uType* LocalDateTime_typeof()
     return type;
 }
 
-// internal LocalDateTime(Uno.Time.Instant instant) :1008
+// internal LocalDateTime(Uno.Time.Instant instant) :12
 void LocalDateTime__ctor_8_fn(LocalDateTime* __this, ::g::Uno::Time::Instant* instant)
 {
     __this->ctor_8(*instant);
 }
 
-// public LocalDateTime(Uno.Time.Instant instant, Uno.Time.CalendarSystem calendar) :1013
+// public LocalDateTime(Uno.Time.Instant instant, Uno.Time.CalendarSystem calendar) :17
 void LocalDateTime__ctor_9_fn(LocalDateTime* __this, ::g::Uno::Time::Instant* instant, ::g::Uno::Time::CalendarSystem* calendar)
 {
     __this->ctor_9(*instant, calendar);
 }
 
-// public Uno.Time.CalendarSystem get_Calendar() :1070
+// public Uno.Time.CalendarSystem get_Calendar() :74
 void LocalDateTime__get_Calendar_fn(LocalDateTime* __this, ::g::Uno::Time::CalendarSystem** __retval)
 {
     *__retval = __this->Calendar();
 }
 
-// public int get_Day() :1091
+// public int get_Day() :95
 void LocalDateTime__get_Day_fn(LocalDateTime* __this, int* __retval)
 {
     *__retval = __this->Day();
 }
 
-// public override sealed bool Equals(object obj) :1201
+// public override sealed bool Equals(object obj) :205
 void LocalDateTime__Equals_fn(LocalDateTime* __this, uObject* obj, bool* __retval)
 {
     if (uIs(obj, __this->__type))
@@ -1156,13 +1164,13 @@ void LocalDateTime__Equals_fn(LocalDateTime* __this, uObject* obj, bool* __retva
     return *__retval = false, void();
 }
 
-// public bool Equals(Uno.Time.LocalDateTime other) :1196
+// public bool Equals(Uno.Time.LocalDateTime other) :200
 void LocalDateTime__Equals2_fn(LocalDateTime* __this, LocalDateTime* other, bool* __retval)
 {
     *__retval = __this->Equals2(other);
 }
 
-// public override sealed int GetHashCode() :1188
+// public override sealed int GetHashCode() :192
 void LocalDateTime__GetHashCode_fn(LocalDateTime* __this, int* __retval)
 {
     int ret21;
@@ -1173,79 +1181,79 @@ void LocalDateTime__GetHashCode_fn(LocalDateTime* __this, int* __retval)
     return *__retval = hash, void();
 }
 
-// public int get_Hour() :1097
+// public int get_Hour() :101
 void LocalDateTime__get_Hour_fn(LocalDateTime* __this, int* __retval)
 {
     *__retval = __this->Hour();
 }
 
-// internal Uno.Time.Instant get_Instant() :1066
+// internal Uno.Time.Instant get_Instant() :70
 void LocalDateTime__get_Instant_fn(LocalDateTime* __this, ::g::Uno::Time::Instant* __retval)
 {
     *__retval = __this->Instant();
 }
 
-// public Uno.Time.ZonedDateTime InUtc() :1296
+// public Uno.Time.ZonedDateTime InUtc() :300
 void LocalDateTime__InUtc_fn(LocalDateTime* __this, ::g::Uno::Time::ZonedDateTime** __retval)
 {
     *__retval = __this->InUtc();
 }
 
-// public int get_Minute() :1101
+// public int get_Minute() :105
 void LocalDateTime__get_Minute_fn(LocalDateTime* __this, int* __retval)
 {
     *__retval = __this->Minute();
 }
 
-// public int get_Month() :1085
+// public int get_Month() :89
 void LocalDateTime__get_Month_fn(LocalDateTime* __this, int* __retval)
 {
     *__retval = __this->Month();
 }
 
-// internal LocalDateTime New(Uno.Time.Instant instant) :1008
+// internal LocalDateTime New(Uno.Time.Instant instant) :12
 void LocalDateTime__New9_fn(::g::Uno::Time::Instant* instant, LocalDateTime** __retval)
 {
     *__retval = LocalDateTime::New9(*instant);
 }
 
-// public LocalDateTime New(Uno.Time.Instant instant, Uno.Time.CalendarSystem calendar) :1013
+// public LocalDateTime New(Uno.Time.Instant instant, Uno.Time.CalendarSystem calendar) :17
 void LocalDateTime__New10_fn(::g::Uno::Time::Instant* instant, ::g::Uno::Time::CalendarSystem* calendar, LocalDateTime** __retval)
 {
     *__retval = LocalDateTime::New10(*instant, calendar);
 }
 
-// public static operator ==(Uno.Time.LocalDateTime left, Uno.Time.LocalDateTime right) :1126
+// public static operator ==(Uno.Time.LocalDateTime left, Uno.Time.LocalDateTime right) :130
 void LocalDateTime__op_Equality_fn(LocalDateTime* left, LocalDateTime* right, bool* __retval)
 {
     *__retval = LocalDateTime::op_Equality(left, right);
 }
 
-// public int get_Second() :1103
+// public int get_Second() :107
 void LocalDateTime__get_Second_fn(LocalDateTime* __this, int* __retval)
 {
     *__retval = __this->Second();
 }
 
-// public override sealed string ToString() :1307
+// public override sealed string ToString() :311
 void LocalDateTime__ToString_fn(LocalDateTime* __this, uString** __retval)
 {
     return *__retval = uPtr(::g::Uno::Time::Text::LocalDateTimePattern::GeneralIsoPattern())->Format(__this), void();
 }
 
-// public int get_Year() :1075
+// public int get_Year() :79
 void LocalDateTime__get_Year_fn(LocalDateTime* __this, int* __retval)
 {
     *__retval = __this->Year();
 }
 
-// internal LocalDateTime(Uno.Time.Instant instant) [instance] :1008
+// internal LocalDateTime(Uno.Time.Instant instant) [instance] :12
 void LocalDateTime::ctor_8(::g::Uno::Time::Instant instant)
 {
     ctor_9(instant, ::g::Uno::Time::CalendarSystem::Iso());
 }
 
-// public LocalDateTime(Uno.Time.Instant instant, Uno.Time.CalendarSystem calendar) [instance] :1013
+// public LocalDateTime(Uno.Time.Instant instant, Uno.Time.CalendarSystem calendar) [instance] :17
 void LocalDateTime::ctor_9(::g::Uno::Time::Instant instant, ::g::Uno::Time::CalendarSystem* calendar)
 {
     ::g::Uno::Time::Preconditions::CheckNotNull(::TYPES[3/*Uno.Time.Preconditions.CheckNotNull<Uno.Time.CalendarSystem>*/], calendar, ::STRINGS[2/*"calendar"*/]);
@@ -1253,68 +1261,69 @@ void LocalDateTime::ctor_9(::g::Uno::Time::Instant instant, ::g::Uno::Time::Cale
     _calendar = calendar;
 }
 
-// public Uno.Time.CalendarSystem get_Calendar() [instance] :1070
+// public Uno.Time.CalendarSystem get_Calendar() [instance] :74
 ::g::Uno::Time::CalendarSystem* LocalDateTime::Calendar()
 {
-    ::g::Uno::Time::CalendarSystem* ind10 = _calendar;
+    ::g::Uno::Time::CalendarSystem* ind10;
+    ind10 = _calendar;
     return (ind10 != NULL) ? ind10 : (::g::Uno::Time::CalendarSystem*)::g::Uno::Time::CalendarSystem::Iso();
 }
 
-// public int get_Day() [instance] :1091
+// public int get_Day() [instance] :95
 int LocalDateTime::Day()
 {
     return uPtr(Calendar())->GetDayOfMonth(_instant);
 }
 
-// public bool Equals(Uno.Time.LocalDateTime other) [instance] :1196
+// public bool Equals(Uno.Time.LocalDateTime other) [instance] :200
 bool LocalDateTime::Equals2(LocalDateTime* other)
 {
     return ::g::Uno::Time::Instant__op_Equality(_instant, uPtr(other)->_instant) && ::g::Uno::Object::Equals(uPtr(Calendar()), uPtr(other)->Calendar());
 }
 
-// public int get_Hour() [instance] :1097
+// public int get_Hour() [instance] :101
 int LocalDateTime::Hour()
 {
     return uPtr(Calendar())->GetHourOfDay(_instant);
 }
 
-// internal Uno.Time.Instant get_Instant() [instance] :1066
+// internal Uno.Time.Instant get_Instant() [instance] :70
 ::g::Uno::Time::Instant LocalDateTime::Instant()
 {
     return _instant;
 }
 
-// public Uno.Time.ZonedDateTime InUtc() [instance] :1296
+// public Uno.Time.ZonedDateTime InUtc() [instance] :300
 ::g::Uno::Time::ZonedDateTime* LocalDateTime::InUtc()
 {
     return ::g::Uno::Time::ZonedDateTime::New4(this, ::g::Uno::Time::Offset::Zero(), ::g::Uno::Time::DateTimeZone::Utc());
 }
 
-// public int get_Minute() [instance] :1101
+// public int get_Minute() [instance] :105
 int LocalDateTime::Minute()
 {
     return uPtr(Calendar())->GetMinuteOfHour(_instant);
 }
 
-// public int get_Month() [instance] :1085
+// public int get_Month() [instance] :89
 int LocalDateTime::Month()
 {
     return uPtr(Calendar())->GetMonthOfYear(_instant);
 }
 
-// public int get_Second() [instance] :1103
+// public int get_Second() [instance] :107
 int LocalDateTime::Second()
 {
     return uPtr(Calendar())->GetSecondOfMinute(_instant);
 }
 
-// public int get_Year() [instance] :1075
+// public int get_Year() [instance] :79
 int LocalDateTime::Year()
 {
     return uPtr(Calendar())->GetYear(_instant);
 }
 
-// internal LocalDateTime New(Uno.Time.Instant instant) [static] :1008
+// internal LocalDateTime New(Uno.Time.Instant instant) [static] :12
 LocalDateTime* LocalDateTime::New9(::g::Uno::Time::Instant instant)
 {
     LocalDateTime* obj11 = (LocalDateTime*)uNew(LocalDateTime_typeof());
@@ -1322,7 +1331,7 @@ LocalDateTime* LocalDateTime::New9(::g::Uno::Time::Instant instant)
     return obj11;
 }
 
-// public LocalDateTime New(Uno.Time.Instant instant, Uno.Time.CalendarSystem calendar) [static] :1013
+// public LocalDateTime New(Uno.Time.Instant instant, Uno.Time.CalendarSystem calendar) [static] :17
 LocalDateTime* LocalDateTime::New10(::g::Uno::Time::Instant instant, ::g::Uno::Time::CalendarSystem* calendar)
 {
     LocalDateTime* obj12 = (LocalDateTime*)uNew(LocalDateTime_typeof());
@@ -1330,19 +1339,19 @@ LocalDateTime* LocalDateTime::New10(::g::Uno::Time::Instant instant, ::g::Uno::T
     return obj12;
 }
 
-// public static operator ==(Uno.Time.LocalDateTime left, Uno.Time.LocalDateTime right) [static] :1126
+// public static operator ==(Uno.Time.LocalDateTime left, Uno.Time.LocalDateTime right) [static] :130
 bool LocalDateTime::op_Equality(LocalDateTime* left, LocalDateTime* right)
 {
     return uPtr(left)->Equals2(right);
 }
 // }
 
-// /usr/local/share/uno/Packages/UnoCore/1.2.2/source/uno/time/$.uno
-// -----------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\UnoCore\1.3.1\Source\Uno\Time\Offset.uno
+// ------------------------------------------------------------------------------------
 
-// public struct Offset :1559
+// public struct Offset :5
 // {
-// static Offset() :1567
+// static Offset() :13
 static void Offset__cctor__fn(uType* __type)
 {
     Offset::Zero_ = Offset__FromMilliseconds(0);
@@ -1355,10 +1364,10 @@ static void Offset_build(uType* type)
     ::STRINGS[3] = uString::Const("milliseconds");
     ::TYPES[6] = ::g::Uno::Int_typeof();
     type->SetFields(0,
-        ::TYPES[6/*int*/], offsetof(::g::Uno::Time::Offset, _milliseconds), 0,
-        type, (uintptr_t)&::g::Uno::Time::Offset::Zero_, uFieldFlagsStatic,
-        type, (uintptr_t)&::g::Uno::Time::Offset::MinValue_, uFieldFlagsStatic,
-        type, (uintptr_t)&::g::Uno::Time::Offset::MaxValue_, uFieldFlagsStatic);
+        ::TYPES[6/*int*/], offsetof(Offset, _milliseconds), 0,
+        type, (uintptr_t)&Offset::Zero_, uFieldFlagsStatic,
+        type, (uintptr_t)&Offset::MinValue_, uFieldFlagsStatic,
+        type, (uintptr_t)&Offset::MaxValue_, uFieldFlagsStatic);
 }
 
 uStructType* Offset_typeof()
@@ -1368,6 +1377,7 @@ uStructType* Offset_typeof()
 
     uTypeOptions options;
     options.FieldCount = 4;
+    options.Alignment = alignof(Offset);
     options.ValueSize = sizeof(Offset);
     options.TypeSize = sizeof(uStructType);
     type = uStructType::New("Uno.Time.Offset", options);
@@ -1379,13 +1389,13 @@ uStructType* Offset_typeof()
     return type;
 }
 
-// private Offset(int milliseconds) :1574
+// private Offset(int milliseconds) :20
 void Offset__ctor__fn(Offset* __this, int* milliseconds)
 {
     __this->ctor_(*milliseconds);
 }
 
-// public override sealed bool Equals(object obj) :1676
+// public override sealed bool Equals(object obj) :122
 void Offset__Equals_fn(Offset* __this, uType* __type, uObject* obj, bool* __retval)
 {
     if (uIs(obj, __type))
@@ -1394,61 +1404,61 @@ void Offset__Equals_fn(Offset* __this, uType* __type, uObject* obj, bool* __retv
     return *__retval = false, void();
 }
 
-// public bool Equals(Uno.Time.Offset other) :1685
+// public bool Equals(Uno.Time.Offset other) :131
 void Offset__Equals2_fn(Offset* __this, Offset* other, bool* __retval)
 {
     *__retval = __this->Equals2(*other);
 }
 
-// public static Uno.Time.Offset FromHours(int hours) :1705
+// public static Uno.Time.Offset FromHours(int hours) :151
 void Offset__FromHours_fn(int* hours, Offset* __retval)
 {
     *__retval = Offset__FromHours(*hours);
 }
 
-// public static Uno.Time.Offset FromHoursAndMinutes(int hours, int minutes) :1710
+// public static Uno.Time.Offset FromHoursAndMinutes(int hours, int minutes) :156
 void Offset__FromHoursAndMinutes_fn(int* hours, int* minutes, Offset* __retval)
 {
     *__retval = Offset__FromHoursAndMinutes(*hours, *minutes);
 }
 
-// public static Uno.Time.Offset FromMilliseconds(int milliseconds) :1695
+// public static Uno.Time.Offset FromMilliseconds(int milliseconds) :141
 void Offset__FromMilliseconds_fn(int* milliseconds, Offset* __retval)
 {
     *__retval = Offset__FromMilliseconds(*milliseconds);
 }
 
-// public override sealed int GetHashCode() :1671
+// public override sealed int GetHashCode() :117
 void Offset__GetHashCode_fn(Offset* __this, uType* __type, int* __retval)
 {
     return *__retval = ::g::Uno::Int::GetHashCode(__this->Milliseconds(), ::TYPES[6/*int*/]), void();
 }
 
-// public int get_Milliseconds() :1582
+// public int get_Milliseconds() :28
 void Offset__get_Milliseconds_fn(Offset* __this, int* __retval)
 {
     *__retval = __this->Milliseconds();
 }
 
-// private Offset New(int milliseconds) :1574
+// private Offset New(int milliseconds) :20
 void Offset__New1_fn(int* milliseconds, Offset* __retval)
 {
     *__retval = Offset__New1(*milliseconds);
 }
 
-// public static operator ==(Uno.Time.Offset left, Uno.Time.Offset right) :1641
+// public static operator ==(Uno.Time.Offset left, Uno.Time.Offset right) :87
 void Offset__op_Equality_fn(Offset* left, Offset* right, bool* __retval)
 {
     *__retval = Offset__op_Equality(*left, *right);
 }
 
-// public long get_Ticks() :1584
+// public long get_Ticks() :30
 void Offset__get_Ticks_fn(Offset* __this, int64_t* __retval)
 {
     *__retval = __this->Ticks();
 }
 
-// public override sealed string ToString() :1690
+// public override sealed string ToString() :136
 void Offset__ToString_fn(Offset* __this, uType* __type, uString** __retval)
 {
     return *__retval = uPtr(::g::Uno::Time::Text::OffsetPattern::GeneralIsoPattern())->Format(*__this), void();
@@ -1458,53 +1468,53 @@ Offset Offset::Zero_;
 Offset Offset::MinValue_;
 Offset Offset::MaxValue_;
 
-// private Offset(int milliseconds) [instance] :1574
+// private Offset(int milliseconds) [instance] :20
 void Offset::ctor_(int milliseconds)
 {
     ::g::Uno::Time::Preconditions::CheckArgumentRange(::STRINGS[3/*"milliseconds"*/], milliseconds, -86399999, 86399999);
     _milliseconds = milliseconds;
 }
 
-// public bool Equals(Uno.Time.Offset other) [instance] :1685
+// public bool Equals(Uno.Time.Offset other) [instance] :131
 bool Offset::Equals2(Offset other)
 {
     return Milliseconds() == other.Milliseconds();
 }
 
-// public int get_Milliseconds() [instance] :1582
+// public int get_Milliseconds() [instance] :28
 int Offset::Milliseconds()
 {
     return _milliseconds;
 }
 
-// public long get_Ticks() [instance] :1584
+// public long get_Ticks() [instance] :30
 int64_t Offset::Ticks()
 {
     return (int64_t)Milliseconds() * 10000LL;
 }
 
-// public static Uno.Time.Offset FromHours(int hours) [static] :1705
+// public static Uno.Time.Offset FromHours(int hours) [static] :151
 Offset Offset__FromHours(int hours)
 {
     Offset_typeof()->Init();
     return Offset__New1(hours * 3600000);
 }
 
-// public static Uno.Time.Offset FromHoursAndMinutes(int hours, int minutes) [static] :1710
+// public static Uno.Time.Offset FromHoursAndMinutes(int hours, int minutes) [static] :156
 Offset Offset__FromHoursAndMinutes(int hours, int minutes)
 {
     Offset_typeof()->Init();
     return Offset__New1((hours * 3600000) + (minutes * 60000));
 }
 
-// public static Uno.Time.Offset FromMilliseconds(int milliseconds) [static] :1695
+// public static Uno.Time.Offset FromMilliseconds(int milliseconds) [static] :141
 Offset Offset__FromMilliseconds(int milliseconds)
 {
     Offset_typeof()->Init();
     return Offset__New1(milliseconds);
 }
 
-// private Offset New(int milliseconds) [static] :1574
+// private Offset New(int milliseconds) [static] :20
 Offset Offset__New1(int milliseconds)
 {
     Offset obj1;
@@ -1512,7 +1522,7 @@ Offset Offset__New1(int milliseconds)
     return obj1;
 }
 
-// public static operator ==(Uno.Time.Offset left, Uno.Time.Offset right) [static] :1641
+// public static operator ==(Uno.Time.Offset left, Uno.Time.Offset right) [static] :87
 bool Offset__op_Equality(Offset left, Offset right)
 {
     Offset_typeof()->Init();
@@ -1520,10 +1530,10 @@ bool Offset__op_Equality(Offset left, Offset right)
 }
 // }
 
-// /usr/local/share/uno/Packages/UnoCore/1.2.2/source/uno/time/utilities/$.uno
-// ---------------------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\UnoCore\1.3.1\Source\Uno\Time\Utilities\Preconditions.uno
+// -----------------------------------------------------------------------------------------------------
 
-// internal static class Preconditions :104
+// internal static class Preconditions :3
 // {
 static void Preconditions_build(uType* type)
 {
@@ -1541,31 +1551,31 @@ uClassType* Preconditions_typeof()
     options.MethodTypeCount = 1;
     options.TypeSize = sizeof(uClassType);
     type = uClassType::New("Uno.Time.Preconditions", options);
-    type->MethodTypes[0] = type->NewMethodType(1, 0);
+    type->MethodTypes[0] = type->NewMethodType(1, 0,0);
     type->fp_build_ = Preconditions_build;
     return type;
 }
 
-// internal static void CheckArgumentRange(string paramName, int value, int minInclusive, int maxInclusive) :124
+// internal static void CheckArgumentRange(string paramName, int value, int minInclusive, int maxInclusive) :23
 void Preconditions__CheckArgumentRange_fn(uString* paramName, int* value, int* minInclusive, int* maxInclusive)
 {
     Preconditions::CheckArgumentRange(paramName, *value, *minInclusive, *maxInclusive);
 }
 
-// internal static T CheckNotNull<T>(T argument, string paramName) :106
+// internal static T CheckNotNull<T>(T argument, string paramName) :5
 void Preconditions__CheckNotNull_fn(uType* __type, uObject* argument, uString* paramName, uObject** __retval)
 {
     *__retval = Preconditions::CheckNotNull(__type, argument, paramName);
 }
 
-// internal static void CheckArgumentRange(string paramName, int value, int minInclusive, int maxInclusive) [static] :124
+// internal static void CheckArgumentRange(string paramName, int value, int minInclusive, int maxInclusive) [static] :23
 void Preconditions::CheckArgumentRange(uString* paramName, int value, int minInclusive, int maxInclusive)
 {
     if ((value < minInclusive) || (value > maxInclusive))
         U_THROW(::g::Uno::ArgumentOutOfRangeException::New7(paramName, ::g::Uno::String::op_Addition2(::g::Uno::String::op_Addition1(::g::Uno::String::op_Addition2(::g::Uno::String::op_Addition1(::STRINGS[4/*"Value shoul...*/], uBox<int>(::TYPES[6/*int*/], minInclusive)), ::STRINGS[5/*"-"*/]), uBox<int>(::TYPES[6/*int*/], maxInclusive)), ::STRINGS[6/*"]"*/])));
 }
 
-// internal static T CheckNotNull<T>(T argument, string paramName) [static] :106
+// internal static T CheckNotNull<T>(T argument, string paramName) [static] :5
 uObject* Preconditions::CheckNotNull(uType* __type, uObject* argument, uString* paramName)
 {
     if (argument == NULL)
@@ -1575,10 +1585,10 @@ uObject* Preconditions::CheckNotNull(uType* __type, uObject* argument, uString* 
 }
 // }
 
-// /usr/local/share/uno/Packages/UnoCore/1.2.2/source/uno/time/$.uno
-// -----------------------------------------------------------------
+// C:\Users\q\AppData\Local\Fusetools\Packages\UnoCore\1.3.1\Source\Uno\Time\ZonedDateTime.uno
+// -------------------------------------------------------------------------------------------
 
-// public sealed class ZonedDateTime :2191
+// public sealed class ZonedDateTime :6
 // {
 static void ZonedDateTime_build(uType* type)
 {
@@ -1591,10 +1601,13 @@ static void ZonedDateTime_build(uType* type)
     ::TYPES[2] = ::g::Uno::Time::HashCodeHelper_typeof()->MakeMethod(0/*Hash<Uno.Time.Offset>*/, ::g::Uno::Time::Offset_typeof(), NULL);
     ::TYPES[9] = ::g::Uno::Time::HashCodeHelper_typeof()->MakeMethod(0/*Hash<Uno.Time.DateTimeZone>*/, ::g::Uno::Time::DateTimeZone_typeof(), NULL);
     ::TYPES[10] = ::g::Uno::Time::Offset_typeof();
+    type->SetDependencies(
+        ::g::Uno::Time::DateTimeZone_typeof(),
+        ::g::Uno::Time::LocalDateTime_typeof());
     type->SetFields(0,
-        ::g::Uno::Time::LocalDateTime_typeof(), offsetof(::g::Uno::Time::ZonedDateTime, _localDateTime), 0,
-        ::TYPES[10/*Uno.Time.Offset*/], offsetof(::g::Uno::Time::ZonedDateTime, _offset), 0,
-        ::g::Uno::Time::DateTimeZone_typeof(), offsetof(::g::Uno::Time::ZonedDateTime, _zone), 0);
+        ::g::Uno::Time::LocalDateTime_typeof(), offsetof(ZonedDateTime, _localDateTime), 0,
+        ::TYPES[10/*Uno.Time.Offset*/], offsetof(ZonedDateTime, _offset), 0,
+        ::g::Uno::Time::DateTimeZone_typeof(), offsetof(ZonedDateTime, _zone), 0);
 }
 
 uType* ZonedDateTime_typeof()
@@ -1604,6 +1617,7 @@ uType* ZonedDateTime_typeof()
 
     uTypeOptions options;
     options.FieldCount = 3;
+    options.DependencyCount = 2;
     options.ObjectSize = sizeof(ZonedDateTime);
     options.TypeSize = sizeof(uType);
     type = uClassType::New("Uno.Time.ZonedDateTime", options);
@@ -1614,31 +1628,31 @@ uType* ZonedDateTime_typeof()
     return type;
 }
 
-// public ZonedDateTime(Uno.Time.Instant instant, Uno.Time.DateTimeZone zone) :2204
+// public ZonedDateTime(Uno.Time.Instant instant, Uno.Time.DateTimeZone zone) :19
 void ZonedDateTime__ctor__fn(ZonedDateTime* __this, ::g::Uno::Time::Instant* instant, ::g::Uno::Time::DateTimeZone* zone)
 {
     __this->ctor_(*instant, zone);
 }
 
-// public ZonedDateTime(Uno.Time.Instant instant, Uno.Time.DateTimeZone zone, Uno.Time.CalendarSystem calendar) :2208
+// public ZonedDateTime(Uno.Time.Instant instant, Uno.Time.DateTimeZone zone, Uno.Time.CalendarSystem calendar) :23
 void ZonedDateTime__ctor_1_fn(ZonedDateTime* __this, ::g::Uno::Time::Instant* instant, ::g::Uno::Time::DateTimeZone* zone, ::g::Uno::Time::CalendarSystem* calendar)
 {
     __this->ctor_1(*instant, zone, calendar);
 }
 
-// internal ZonedDateTime(Uno.Time.LocalDateTime localDateTime, Uno.Time.Offset offset, Uno.Time.DateTimeZone zone) :2197
+// internal ZonedDateTime(Uno.Time.LocalDateTime localDateTime, Uno.Time.Offset offset, Uno.Time.DateTimeZone zone) :12
 void ZonedDateTime__ctor_3_fn(ZonedDateTime* __this, ::g::Uno::Time::LocalDateTime* localDateTime, ::g::Uno::Time::Offset* offset, ::g::Uno::Time::DateTimeZone* zone)
 {
     __this->ctor_3(localDateTime, *offset, zone);
 }
 
-// public int get_Day() :2267
+// public int get_Day() :82
 void ZonedDateTime__get_Day_fn(ZonedDateTime* __this, int* __retval)
 {
     *__retval = __this->Day();
 }
 
-// public override sealed bool Equals(object obj) :2302
+// public override sealed bool Equals(object obj) :117
 void ZonedDateTime__Equals_fn(ZonedDateTime* __this, uObject* obj, bool* __retval)
 {
     if (uIs(obj, __this->__type))
@@ -1647,13 +1661,13 @@ void ZonedDateTime__Equals_fn(ZonedDateTime* __this, uObject* obj, bool* __retva
     return *__retval = false, void();
 }
 
-// public bool Equals(Uno.Time.ZonedDateTime other) :2311
+// public bool Equals(Uno.Time.ZonedDateTime other) :126
 void ZonedDateTime__Equals2_fn(ZonedDateTime* __this, ZonedDateTime* other, bool* __retval)
 {
     *__retval = __this->Equals2(other);
 }
 
-// public override sealed int GetHashCode() :2293
+// public override sealed int GetHashCode() :108
 void ZonedDateTime__GetHashCode_fn(ZonedDateTime* __this, int* __retval)
 {
     int ret7;
@@ -1666,116 +1680,122 @@ void ZonedDateTime__GetHashCode_fn(ZonedDateTime* __this, int* __retval)
     return *__retval = hash, void();
 }
 
-// public int get_Hour() :2273
+// public int get_Hour() :88
 void ZonedDateTime__get_Hour_fn(ZonedDateTime* __this, int* __retval)
 {
     *__retval = __this->Hour();
 }
 
-// public Uno.Time.LocalDateTime get_LocalDateTime() :2239
+// internal Uno.Time.Instant get_Instant() :62
+void ZonedDateTime__get_Instant_fn(ZonedDateTime* __this, ::g::Uno::Time::Instant* __retval)
+{
+    *__retval = __this->Instant();
+}
+
+// public Uno.Time.LocalDateTime get_LocalDateTime() :54
 void ZonedDateTime__get_LocalDateTime_fn(ZonedDateTime* __this, ::g::Uno::Time::LocalDateTime** __retval)
 {
     *__retval = __this->LocalDateTime();
 }
 
-// public Uno.Time.ZonedDateTime Minus(Uno.Time.Duration duration) :2366
+// public Uno.Time.ZonedDateTime Minus(Uno.Time.Duration duration) :181
 void ZonedDateTime__Minus_fn(ZonedDateTime* __this, ::g::Uno::Time::Duration* duration, ZonedDateTime** __retval)
 {
     *__retval = __this->Minus(*duration);
 }
 
-// public int get_Minute() :2277
+// public int get_Minute() :92
 void ZonedDateTime__get_Minute_fn(ZonedDateTime* __this, int* __retval)
 {
     *__retval = __this->Minute();
 }
 
-// public int get_Month() :2261
+// public int get_Month() :76
 void ZonedDateTime__get_Month_fn(ZonedDateTime* __this, int* __retval)
 {
     *__retval = __this->Month();
 }
 
-// public ZonedDateTime New(Uno.Time.Instant instant, Uno.Time.DateTimeZone zone) :2204
+// public ZonedDateTime New(Uno.Time.Instant instant, Uno.Time.DateTimeZone zone) :19
 void ZonedDateTime__New1_fn(::g::Uno::Time::Instant* instant, ::g::Uno::Time::DateTimeZone* zone, ZonedDateTime** __retval)
 {
     *__retval = ZonedDateTime::New1(*instant, zone);
 }
 
-// public ZonedDateTime New(Uno.Time.Instant instant, Uno.Time.DateTimeZone zone, Uno.Time.CalendarSystem calendar) :2208
+// public ZonedDateTime New(Uno.Time.Instant instant, Uno.Time.DateTimeZone zone, Uno.Time.CalendarSystem calendar) :23
 void ZonedDateTime__New2_fn(::g::Uno::Time::Instant* instant, ::g::Uno::Time::DateTimeZone* zone, ::g::Uno::Time::CalendarSystem* calendar, ZonedDateTime** __retval)
 {
     *__retval = ZonedDateTime::New2(*instant, zone, calendar);
 }
 
-// internal ZonedDateTime New(Uno.Time.LocalDateTime localDateTime, Uno.Time.Offset offset, Uno.Time.DateTimeZone zone) :2197
+// internal ZonedDateTime New(Uno.Time.LocalDateTime localDateTime, Uno.Time.Offset offset, Uno.Time.DateTimeZone zone) :12
 void ZonedDateTime__New4_fn(::g::Uno::Time::LocalDateTime* localDateTime, ::g::Uno::Time::Offset* offset, ::g::Uno::Time::DateTimeZone* zone, ZonedDateTime** __retval)
 {
     *__retval = ZonedDateTime::New4(localDateTime, *offset, zone);
 }
 
-// public static Uno.Time.ZonedDateTime get_Now() :2227
+// public static Uno.Time.ZonedDateTime get_Now() :42
 void ZonedDateTime__get_Now_fn(ZonedDateTime** __retval)
 {
     *__retval = ZonedDateTime::Now();
 }
 
-// public Uno.Time.Offset get_Offset() :2235
+// public Uno.Time.Offset get_Offset() :50
 void ZonedDateTime__get_Offset_fn(ZonedDateTime* __this, ::g::Uno::Time::Offset* __retval)
 {
     *__retval = __this->Offset();
 }
 
-// public static operator -(Uno.Time.ZonedDateTime zonedDateTime, Uno.Time.Duration duration) :2371
+// public static operator -(Uno.Time.ZonedDateTime zonedDateTime, Uno.Time.Duration duration) :186
 void ZonedDateTime__op_Subtraction_fn(ZonedDateTime* zonedDateTime, ::g::Uno::Time::Duration* duration, ZonedDateTime** __retval)
 {
     *__retval = ZonedDateTime::op_Subtraction(zonedDateTime, *duration);
 }
 
-// public int get_Second() :2279
+// public int get_Second() :94
 void ZonedDateTime__get_Second_fn(ZonedDateTime* __this, int* __retval)
 {
     *__retval = __this->Second();
 }
 
-// public Uno.Time.Instant ToInstant() :2386
+// public Uno.Time.Instant ToInstant() :201
 void ZonedDateTime__ToInstant_fn(ZonedDateTime* __this, ::g::Uno::Time::Instant* __retval)
 {
     *__retval = __this->ToInstant();
 }
 
-// public override sealed string ToString() :2376
+// public override sealed string ToString() :191
 void ZonedDateTime__ToString_fn(ZonedDateTime* __this, uString** __retval)
 {
     ::g::Uno::Time::Offset ind1;
     return *__retval = ::g::Uno::String::op_Addition2(::g::Uno::String::op_Addition2(uPtr(__this->_localDateTime)->ToString(), uPtr(__this->_zone)->ToString()), (ind1 = __this->_offset, (&ind1))->ToString(::TYPES[10/*Uno.Time.Offset*/])), void();
 }
 
-// public Uno.Time.ZonedDateTime WithZone(Uno.Time.DateTimeZone targetZone) :2287
+// public Uno.Time.ZonedDateTime WithZone(Uno.Time.DateTimeZone targetZone) :102
 void ZonedDateTime__WithZone_fn(ZonedDateTime* __this, ::g::Uno::Time::DateTimeZone* targetZone, ZonedDateTime** __retval)
 {
     *__retval = __this->WithZone(targetZone);
 }
 
-// public int get_Year() :2253
+// public int get_Year() :68
 void ZonedDateTime__get_Year_fn(ZonedDateTime* __this, int* __retval)
 {
     *__retval = __this->Year();
 }
 
-// public Uno.Time.DateTimeZone get_Zone() :2237
+// public Uno.Time.DateTimeZone get_Zone() :52
 void ZonedDateTime__get_Zone_fn(ZonedDateTime* __this, ::g::Uno::Time::DateTimeZone** __retval)
 {
     *__retval = __this->Zone();
 }
 
-// public ZonedDateTime(Uno.Time.Instant instant, Uno.Time.DateTimeZone zone) [instance] :2204
+// public ZonedDateTime(Uno.Time.Instant instant, Uno.Time.DateTimeZone zone) [instance] :19
 void ZonedDateTime::ctor_(::g::Uno::Time::Instant instant, ::g::Uno::Time::DateTimeZone* zone)
 {
     ctor_1(instant, zone, ::g::Uno::Time::CalendarSystem::Iso());
 }
 
-// public ZonedDateTime(Uno.Time.Instant instant, Uno.Time.DateTimeZone zone, Uno.Time.CalendarSystem calendar) [instance] :2208
+// public ZonedDateTime(Uno.Time.Instant instant, Uno.Time.DateTimeZone zone, Uno.Time.CalendarSystem calendar) [instance] :23
 void ZonedDateTime::ctor_1(::g::Uno::Time::Instant instant, ::g::Uno::Time::DateTimeZone* zone, ::g::Uno::Time::CalendarSystem* calendar)
 {
     ::g::Uno::Time::Preconditions::CheckNotNull(::TYPES[7/*Uno.Time.Preconditions.CheckNotNull<Uno.Time.DateTimeZone>*/], zone, ::STRINGS[7/*"zone"*/]);
@@ -1785,7 +1805,7 @@ void ZonedDateTime::ctor_1(::g::Uno::Time::Instant instant, ::g::Uno::Time::Date
     _zone = zone;
 }
 
-// internal ZonedDateTime(Uno.Time.LocalDateTime localDateTime, Uno.Time.Offset offset, Uno.Time.DateTimeZone zone) [instance] :2197
+// internal ZonedDateTime(Uno.Time.LocalDateTime localDateTime, Uno.Time.Offset offset, Uno.Time.DateTimeZone zone) [instance] :12
 void ZonedDateTime::ctor_3(::g::Uno::Time::LocalDateTime* localDateTime, ::g::Uno::Time::Offset offset, ::g::Uno::Time::DateTimeZone* zone)
 {
     _localDateTime = localDateTime;
@@ -1793,87 +1813,94 @@ void ZonedDateTime::ctor_3(::g::Uno::Time::LocalDateTime* localDateTime, ::g::Un
     _zone = zone;
 }
 
-// public int get_Day() [instance] :2267
+// public int get_Day() [instance] :82
 int ZonedDateTime::Day()
 {
     return uPtr(_localDateTime)->Day();
 }
 
-// public bool Equals(Uno.Time.ZonedDateTime other) [instance] :2311
+// public bool Equals(Uno.Time.ZonedDateTime other) [instance] :126
 bool ZonedDateTime::Equals2(ZonedDateTime* other)
 {
     return (::g::Uno::Time::LocalDateTime::op_Equality(LocalDateTime(), uPtr(other)->LocalDateTime()) && ::g::Uno::Time::Offset__op_Equality(Offset(), uPtr(other)->Offset())) && uPtr(Zone())->Equals2(uPtr(other)->Zone());
 }
 
-// public int get_Hour() [instance] :2273
+// public int get_Hour() [instance] :88
 int ZonedDateTime::Hour()
 {
     return uPtr(_localDateTime)->Hour();
 }
 
-// public Uno.Time.LocalDateTime get_LocalDateTime() [instance] :2239
+// internal Uno.Time.Instant get_Instant() [instance] :62
+::g::Uno::Time::Instant ZonedDateTime::Instant()
+{
+    return uPtr(_localDateTime)->Instant();
+}
+
+// public Uno.Time.LocalDateTime get_LocalDateTime() [instance] :54
 ::g::Uno::Time::LocalDateTime* ZonedDateTime::LocalDateTime()
 {
     return _localDateTime;
 }
 
-// public Uno.Time.ZonedDateTime Minus(Uno.Time.Duration duration) [instance] :2366
+// public Uno.Time.ZonedDateTime Minus(Uno.Time.Duration duration) [instance] :181
 ZonedDateTime* ZonedDateTime::Minus(::g::Uno::Time::Duration duration)
 {
     return ZonedDateTime::op_Subtraction(this, duration);
 }
 
-// public int get_Minute() [instance] :2277
+// public int get_Minute() [instance] :92
 int ZonedDateTime::Minute()
 {
     return uPtr(_localDateTime)->Minute();
 }
 
-// public int get_Month() [instance] :2261
+// public int get_Month() [instance] :76
 int ZonedDateTime::Month()
 {
     return uPtr(_localDateTime)->Month();
 }
 
-// public Uno.Time.Offset get_Offset() [instance] :2235
+// public Uno.Time.Offset get_Offset() [instance] :50
 ::g::Uno::Time::Offset ZonedDateTime::Offset()
 {
     return _offset;
 }
 
-// public int get_Second() [instance] :2279
+// public int get_Second() [instance] :94
 int ZonedDateTime::Second()
 {
     return uPtr(_localDateTime)->Second();
 }
 
-// public Uno.Time.Instant ToInstant() [instance] :2386
+// public Uno.Time.Instant ToInstant() [instance] :201
 ::g::Uno::Time::Instant ZonedDateTime::ToInstant()
 {
     return uPtr(_localDateTime)->Instant().Minus2(_offset);
 }
 
-// public Uno.Time.ZonedDateTime WithZone(Uno.Time.DateTimeZone targetZone) [instance] :2287
+// public Uno.Time.ZonedDateTime WithZone(Uno.Time.DateTimeZone targetZone) [instance] :102
 ZonedDateTime* ZonedDateTime::WithZone(::g::Uno::Time::DateTimeZone* targetZone)
 {
     ::g::Uno::Time::Preconditions::CheckNotNull(::TYPES[7/*Uno.Time.Preconditions.CheckNotNull<Uno.Time.DateTimeZone>*/], targetZone, ::STRINGS[8/*"targetZone"*/]);
     return ZonedDateTime::New2(ToInstant(), targetZone, uPtr(_localDateTime)->Calendar());
 }
 
-// public int get_Year() [instance] :2253
+// public int get_Year() [instance] :68
 int ZonedDateTime::Year()
 {
     return uPtr(_localDateTime)->Year();
 }
 
-// public Uno.Time.DateTimeZone get_Zone() [instance] :2237
+// public Uno.Time.DateTimeZone get_Zone() [instance] :52
 ::g::Uno::Time::DateTimeZone* ZonedDateTime::Zone()
 {
-    ::g::Uno::Time::DateTimeZone* ind2 = _zone;
+    ::g::Uno::Time::DateTimeZone* ind2;
+    ind2 = _zone;
     return (ind2 != NULL) ? ind2 : (::g::Uno::Time::DateTimeZone*)::g::Uno::Time::DateTimeZone::Utc();
 }
 
-// public ZonedDateTime New(Uno.Time.Instant instant, Uno.Time.DateTimeZone zone) [static] :2204
+// public ZonedDateTime New(Uno.Time.Instant instant, Uno.Time.DateTimeZone zone) [static] :19
 ZonedDateTime* ZonedDateTime::New1(::g::Uno::Time::Instant instant, ::g::Uno::Time::DateTimeZone* zone)
 {
     ZonedDateTime* obj4 = (ZonedDateTime*)uNew(ZonedDateTime_typeof());
@@ -1881,7 +1908,7 @@ ZonedDateTime* ZonedDateTime::New1(::g::Uno::Time::Instant instant, ::g::Uno::Ti
     return obj4;
 }
 
-// public ZonedDateTime New(Uno.Time.Instant instant, Uno.Time.DateTimeZone zone, Uno.Time.CalendarSystem calendar) [static] :2208
+// public ZonedDateTime New(Uno.Time.Instant instant, Uno.Time.DateTimeZone zone, Uno.Time.CalendarSystem calendar) [static] :23
 ZonedDateTime* ZonedDateTime::New2(::g::Uno::Time::Instant instant, ::g::Uno::Time::DateTimeZone* zone, ::g::Uno::Time::CalendarSystem* calendar)
 {
     ZonedDateTime* obj5 = (ZonedDateTime*)uNew(ZonedDateTime_typeof());
@@ -1889,7 +1916,7 @@ ZonedDateTime* ZonedDateTime::New2(::g::Uno::Time::Instant instant, ::g::Uno::Ti
     return obj5;
 }
 
-// internal ZonedDateTime New(Uno.Time.LocalDateTime localDateTime, Uno.Time.Offset offset, Uno.Time.DateTimeZone zone) [static] :2197
+// internal ZonedDateTime New(Uno.Time.LocalDateTime localDateTime, Uno.Time.Offset offset, Uno.Time.DateTimeZone zone) [static] :12
 ZonedDateTime* ZonedDateTime::New4(::g::Uno::Time::LocalDateTime* localDateTime, ::g::Uno::Time::Offset offset, ::g::Uno::Time::DateTimeZone* zone)
 {
     ZonedDateTime* obj3 = (ZonedDateTime*)uNew(ZonedDateTime_typeof());
@@ -1897,13 +1924,13 @@ ZonedDateTime* ZonedDateTime::New4(::g::Uno::Time::LocalDateTime* localDateTime,
     return obj3;
 }
 
-// public static operator -(Uno.Time.ZonedDateTime zonedDateTime, Uno.Time.Duration duration) [static] :2371
+// public static operator -(Uno.Time.ZonedDateTime zonedDateTime, Uno.Time.Duration duration) [static] :186
 ZonedDateTime* ZonedDateTime::op_Subtraction(ZonedDateTime* zonedDateTime, ::g::Uno::Time::Duration duration)
 {
     return ZonedDateTime::New2(::g::Uno::Time::Instant__op_Subtraction(uPtr(zonedDateTime)->ToInstant(), duration), uPtr(zonedDateTime)->Zone(), uPtr(uPtr(zonedDateTime)->LocalDateTime())->Calendar());
 }
 
-// public static Uno.Time.ZonedDateTime get_Now() [static] :2227
+// public static Uno.Time.ZonedDateTime get_Now() [static] :42
 ZonedDateTime* ZonedDateTime::Now()
 {
     int64_t ticks = ::g::Uno::Diagnostics::Clock::GetTicks();

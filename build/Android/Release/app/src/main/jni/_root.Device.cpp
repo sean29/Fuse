@@ -37,7 +37,7 @@ namespace g{
 
 // public sealed class Device :28
 // {
-// static Device() :28
+// static generated Device() :28
 static void Device__cctor__fn(uType* __type)
 {
     Device::cachedNumProcessorCores_ = 0.0;
@@ -69,19 +69,22 @@ static void Device_build(uType* type)
     ::TYPES[8] = ::g::Uno::Threading::Promise_typeof()->MakeType(::g::Uno::String_typeof(), NULL);
     ::TYPES[9] = ::g::Uno::Action1_typeof()->MakeType(::g::Uno::Permissions::PlatformPermission_typeof(), NULL);
     ::TYPES[10] = ::g::Uno::Action1_typeof()->MakeType(::g::Uno::Exception_typeof(), NULL);
+    type->SetDependencies(
+        ::g::Fuse::AppBase_typeof(),
+        ::g::Uno::UX::Resource_typeof());
     type->SetInterfaces(
         ::g::Uno::IDisposable_typeof(), offsetof(::g::Fuse::Scripting::NativeModule_type, interface0),
         ::g::Fuse::Scripting::IModuleProvider_typeof(), offsetof(::g::Fuse::Scripting::NativeModule_type, interface1));
     type->SetFields(4,
-        ::TYPES[8/*Uno.Threading.Promise<string>*/], (uintptr_t)&::g::Device::_authorizePromise_, uFieldFlagsStatic,
-        type, (uintptr_t)&::g::Device::_instance_, uFieldFlagsStatic,
-        ::g::Uno::String_typeof(), (uintptr_t)&::g::Device::cachedModelName_, uFieldFlagsStatic,
-        ::g::Uno::Double_typeof(), (uintptr_t)&::g::Device::cachedNumProcessorCores_, uFieldFlagsStatic,
-        ::g::Uno::String_typeof(), (uintptr_t)&::g::Device::cachedSDKVersion_, uFieldFlagsStatic,
-        ::g::Uno::String_typeof(), (uintptr_t)&::g::Device::cachedSystemName_, uFieldFlagsStatic,
-        ::g::Uno::String_typeof(), (uintptr_t)&::g::Device::cachedSystemVersion_, uFieldFlagsStatic,
-        ::g::Uno::String_typeof(), (uintptr_t)&::g::Device::cachedUUID_, uFieldFlagsStatic,
-        ::g::Uno::String_typeof(), (uintptr_t)&::g::Device::cachedVendorName_, uFieldFlagsStatic);
+        ::TYPES[8/*Uno.Threading.Promise<string>*/], (uintptr_t)&Device::_authorizePromise_, uFieldFlagsStatic,
+        type, (uintptr_t)&Device::_instance_, uFieldFlagsStatic,
+        ::g::Uno::String_typeof(), (uintptr_t)&Device::cachedModelName_, uFieldFlagsStatic,
+        ::g::Uno::Double_typeof(), (uintptr_t)&Device::cachedNumProcessorCores_, uFieldFlagsStatic,
+        ::g::Uno::String_typeof(), (uintptr_t)&Device::cachedSDKVersion_, uFieldFlagsStatic,
+        ::g::Uno::String_typeof(), (uintptr_t)&Device::cachedSystemName_, uFieldFlagsStatic,
+        ::g::Uno::String_typeof(), (uintptr_t)&Device::cachedSystemVersion_, uFieldFlagsStatic,
+        ::g::Uno::String_typeof(), (uintptr_t)&Device::cachedUUID_, uFieldFlagsStatic,
+        ::g::Uno::String_typeof(), (uintptr_t)&Device::cachedVendorName_, uFieldFlagsStatic);
 }
 
 ::g::Fuse::Scripting::NativeModule_type* Device_typeof()
@@ -93,6 +96,7 @@ static void Device_build(uType* type)
     options.BaseDefinition = ::g::Fuse::Scripting::NativeModule_typeof();
     options.FieldCount = 13;
     options.InterfaceCount = 2;
+    options.DependencyCount = 2;
     options.ObjectSize = sizeof(Device);
     options.TypeSize = sizeof(::g::Fuse::Scripting::NativeModule_type);
     type = (::g::Fuse::Scripting::NativeModule_type*)uClassType::New("Device", options);
@@ -257,10 +261,10 @@ void Device::ctor_2()
 {
     ctor_1();
 
-    if (Device::_instance() != NULL)
+    if (Device::_instance_ != NULL)
         return;
 
-    ::g::Uno::UX::Resource::SetGlobalKey(Device::_instance() = this, ::STRINGS[0/*"Device"*/]);
+    ::g::Uno::UX::Resource::SetGlobalKey(Device::_instance_ = this, ::STRINGS[0/*"Device"*/]);
     AddMember((::g::Fuse::Scripting::NativeProperty*)::g::Fuse::Scripting::NativeProperty::New2(::TYPES[0/*Fuse.Scripting.NativeProperty<string, object>*/], ::STRINGS[1/*"vendor"*/], uDelegate::New(::TYPES[1/*Uno.Func<string>*/], (void*)Device__Vendor_fn), NULL, NULL));
     AddMember((::g::Fuse::Scripting::NativeProperty*)::g::Fuse::Scripting::NativeProperty::New2(::TYPES[0/*Fuse.Scripting.NativeProperty<string, object>*/], ::STRINGS[2/*"model"*/], uDelegate::New(::TYPES[1/*Uno.Func<string>*/], (void*)Device__Model_fn), NULL, NULL));
     AddMember((::g::Fuse::Scripting::NativeProperty*)::g::Fuse::Scripting::NativeProperty::New2(::TYPES[0/*Fuse.Scripting.NativeProperty<string, object>*/], ::STRINGS[3/*"system"*/], uDelegate::New(::TYPES[1/*Uno.Func<string>*/], (void*)Device__System_fn), NULL, NULL));
@@ -283,43 +287,37 @@ void Device::ctor_2()
 // public static extern Uno.Threading.Future<string> AsyncUUIDImpl() [static] :77
 ::g::Uno::Threading::Future1* Device::AsyncUUIDImpl()
 {
-    Device_typeof()->Init();
-
-    if (Device::_authorizePromise() == NULL)
+    if (Device::_authorizePromise_ == NULL)
     {
-        Device::_authorizePromise() = ((::g::Uno::Threading::Promise*)::g::Uno::Threading::Promise::New1(::TYPES[8/*Uno.Threading.Promise<string>*/]));
+        Device::_authorizePromise_ = ((::g::Uno::Threading::Promise*)::g::Uno::Threading::Promise::New1(::TYPES[8/*Uno.Threading.Promise<string>*/]));
         uPtr(::g::Uno::Permissions::Permissions::Request(::g::Uno::Permissions::Permissions__Android::READ_PHONE_STATE()))->Then1(uDelegate::New(::TYPES[9/*Uno.Action<Uno.Permissions.PlatformPermission>*/], (void*)Device__AuthorizeResolved_fn), uDelegate::New(::TYPES[10/*Uno.Action<Uno.Exception>*/], (void*)Device__AuthorizeRejected_fn));
     }
 
-    return Device::_authorizePromise();
+    return Device::_authorizePromise_;
 }
 
 // private static extern void AuthorizeRejected(Uno.Exception reason) [static] :95
 void Device::AuthorizeRejected(::g::Uno::Exception* reason)
 {
-    Device_typeof()->Init();
-    uPtr(Device::_authorizePromise())->Reject(reason);
+    uPtr(Device::_authorizePromise_)->Reject(reason);
 }
 
 // private static extern void AuthorizeResolved(Uno.Permissions.PlatformPermission permission) [static] :87
 void Device::AuthorizeResolved(::g::Uno::Permissions::PlatformPermission permission)
 {
-    Device_typeof()->Init();
+    if (::g::Uno::String::op_Equality(Device::cachedUUID_, NULL))
+        Device::cachedUUID_ = Device::GetUUID();
 
-    if (::g::Uno::String::op_Equality(Device::cachedUUID(), NULL))
-        Device::cachedUUID() = Device::GetUUID();
-
-    ::g::Uno::Threading::Promise__Resolve_fn(uPtr(Device::_authorizePromise()), Device::cachedUUID());
+    ::g::Uno::Threading::Promise__Resolve_fn(uPtr(Device::_authorizePromise_), Device::cachedUUID_);
 }
 
 // public static extern string GetCurrentLocale() [static] :227
 uString* Device::GetCurrentLocale()
 {
-    Device_typeof()->Init();
     {
         INIT_JNI;
         jclass __cls = JniHelper::GetNativeExternClass();
-        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "GetCurrentLocale441", "()Ljava/lang/String;");
+        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "GetCurrentLocale440", "()Ljava/lang/String;");
         jobject __jresult = U_JNIVAR->CallStaticObjectMethod(__cls,__mtd);
         uString* __result = JniHelper::JavaToUnoString((jstring)__jresult);
         if (__jresult!=NULL && U_JNIVAR->GetObjectRefType(__jresult) == JNILocalRefType) U_JNIVAR->DeleteLocalRef(__jresult);
@@ -332,11 +330,10 @@ uString* Device::GetCurrentLocale()
 // private static extern string GetModel() [static] :363
 uString* Device::GetModel()
 {
-    Device_typeof()->Init();
     {
         INIT_JNI;
         jclass __cls = JniHelper::GetNativeExternClass();
-        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "GetModel442", "()Ljava/lang/String;");
+        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "GetModel441", "()Ljava/lang/String;");
         jobject __jresult = U_JNIVAR->CallStaticObjectMethod(__cls,__mtd);
         uString* __result = JniHelper::JavaToUnoString((jstring)__jresult);
         if (__jresult!=NULL && U_JNIVAR->GetObjectRefType(__jresult) == JNILocalRefType) U_JNIVAR->DeleteLocalRef(__jresult);
@@ -349,11 +346,10 @@ uString* Device::GetModel()
 // private static extern int GetNumProcessorCores() [static] :391
 int Device::GetNumProcessorCores()
 {
-    Device_typeof()->Init();
     {
         INIT_JNI;
         jclass __cls = JniHelper::GetNativeExternClass();
-        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "GetNumProcessorCores443", "()I");
+        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "GetNumProcessorCores442", "()I");
         jint __jresult = U_JNIVAR->CallStaticIntMethod(__cls,__mtd);
         int __result = (int)__jresult;
         ::g::Android::Base::JNI::CheckException();
@@ -365,11 +361,10 @@ int Device::GetNumProcessorCores()
 // private static extern string GetSDKVersion() [static] :384
 uString* Device::GetSDKVersion()
 {
-    Device_typeof()->Init();
     {
         INIT_JNI;
         jclass __cls = JniHelper::GetNativeExternClass();
-        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "GetSDKVersion444", "()Ljava/lang/String;");
+        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "GetSDKVersion443", "()Ljava/lang/String;");
         jobject __jresult = U_JNIVAR->CallStaticObjectMethod(__cls,__mtd);
         uString* __result = JniHelper::JavaToUnoString((jstring)__jresult);
         if (__jresult!=NULL && U_JNIVAR->GetObjectRefType(__jresult) == JNILocalRefType) U_JNIVAR->DeleteLocalRef(__jresult);
@@ -382,11 +377,10 @@ uString* Device::GetSDKVersion()
 // private static extern string GetSystem() [static] :369
 uString* Device::GetSystem()
 {
-    Device_typeof()->Init();
     {
         INIT_JNI;
         jclass __cls = JniHelper::GetNativeExternClass();
-        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "GetSystem445", "()Ljava/lang/String;");
+        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "GetSystem444", "()Ljava/lang/String;");
         jobject __jresult = U_JNIVAR->CallStaticObjectMethod(__cls,__mtd);
         uString* __result = JniHelper::JavaToUnoString((jstring)__jresult);
         if (__jresult!=NULL && U_JNIVAR->GetObjectRefType(__jresult) == JNILocalRefType) U_JNIVAR->DeleteLocalRef(__jresult);
@@ -399,11 +393,10 @@ uString* Device::GetSystem()
 // private static extern string GetSystemVersion() [static] :378
 uString* Device::GetSystemVersion()
 {
-    Device_typeof()->Init();
     {
         INIT_JNI;
         jclass __cls = JniHelper::GetNativeExternClass();
-        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "GetSystemVersion446", "()Ljava/lang/String;");
+        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "GetSystemVersion445", "()Ljava/lang/String;");
         jobject __jresult = U_JNIVAR->CallStaticObjectMethod(__cls,__mtd);
         uString* __result = JniHelper::JavaToUnoString((jstring)__jresult);
         if (__jresult!=NULL && U_JNIVAR->GetObjectRefType(__jresult) == JNILocalRefType) U_JNIVAR->DeleteLocalRef(__jresult);
@@ -416,11 +409,10 @@ uString* Device::GetSystemVersion()
 // private static extern string GetUUID() [static] :177
 uString* Device::GetUUID()
 {
-    Device_typeof()->Init();
     {
         INIT_JNI;
         jclass __cls = JniHelper::GetNativeExternClass();
-        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "GetUUID447", "()Ljava/lang/String;");
+        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "GetUUID446", "()Ljava/lang/String;");
         jobject __jresult = U_JNIVAR->CallStaticObjectMethod(__cls,__mtd);
         uString* __result = JniHelper::JavaToUnoString((jstring)__jresult);
         if (__jresult!=NULL && U_JNIVAR->GetObjectRefType(__jresult) == JNILocalRefType) U_JNIVAR->DeleteLocalRef(__jresult);
@@ -433,11 +425,10 @@ uString* Device::GetUUID()
 // private static extern string GetVendor() [static] :357
 uString* Device::GetVendor()
 {
-    Device_typeof()->Init();
     {
         INIT_JNI;
         jclass __cls = JniHelper::GetNativeExternClass();
-        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "GetVendor448", "()Ljava/lang/String;");
+        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "GetVendor447", "()Ljava/lang/String;");
         jobject __jresult = U_JNIVAR->CallStaticObjectMethod(__cls,__mtd);
         uString* __result = JniHelper::JavaToUnoString((jstring)__jresult);
         if (__jresult!=NULL && U_JNIVAR->GetObjectRefType(__jresult) == JNILocalRefType) U_JNIVAR->DeleteLocalRef(__jresult);
@@ -450,19 +441,16 @@ uString* Device::GetVendor()
 // public static bool IsRetina() [static] :163
 bool Device::IsRetina()
 {
-    Device_typeof()->Init();
     return Device::PixelsPerPoint() > 1.0;
 }
 
 // public static string Model() [static] :128
 uString* Device::Model()
 {
-    Device_typeof()->Init();
+    if (::g::Uno::String::op_Equality(Device::cachedModelName_, NULL))
+        Device::cachedModelName_ = Device::GetModel();
 
-    if (::g::Uno::String::op_Equality(Device::cachedModelName(), NULL))
-        Device::cachedModelName() = Device::GetModel();
-
-    return Device::cachedModelName();
+    return Device::cachedModelName_;
 }
 
 // public Device New() [static] :39
@@ -476,74 +464,61 @@ Device* Device::New2()
 // public static double NumProcessorCores() [static] :156
 double Device::NumProcessorCores()
 {
-    Device_typeof()->Init();
+    if (Device::cachedNumProcessorCores_ == 0.0)
+        Device::cachedNumProcessorCores_ = (double)Device::GetNumProcessorCores();
 
-    if (Device::cachedNumProcessorCores() == 0.0)
-        Device::cachedNumProcessorCores() = (double)Device::GetNumProcessorCores();
-
-    return Device::cachedNumProcessorCores();
+    return Device::cachedNumProcessorCores_;
 }
 
 // public static double PixelsPerPoint() [static] :167
 double Device::PixelsPerPoint()
 {
-    Device_typeof()->Init();
     return (double)uPtr(uPtr(::g::Fuse::AppBase::Current2())->RootViewport())->PixelsPerPoint();
 }
 
 // public static string SDKVersion() [static] :149
 uString* Device::SDKVersion()
 {
-    Device_typeof()->Init();
+    if (::g::Uno::String::op_Equality(Device::cachedSDKVersion_, NULL))
+        Device::cachedSDKVersion_ = Device::GetSDKVersion();
 
-    if (::g::Uno::String::op_Equality(Device::cachedSDKVersion(), NULL))
-        Device::cachedSDKVersion() = Device::GetSDKVersion();
-
-    return Device::cachedSDKVersion();
+    return Device::cachedSDKVersion_;
 }
 
 // public static string System() [static] :135
 uString* Device::System()
 {
-    Device_typeof()->Init();
+    if (::g::Uno::String::op_Equality(Device::cachedSystemName_, NULL))
+        Device::cachedSystemName_ = Device::GetSystem();
 
-    if (::g::Uno::String::op_Equality(Device::cachedSystemName(), NULL))
-        Device::cachedSystemName() = Device::GetSystem();
-
-    return Device::cachedSystemName();
+    return Device::cachedSystemName_;
 }
 
 // public static string SystemVersion() [static] :142
 uString* Device::SystemVersion()
 {
-    Device_typeof()->Init();
+    if (::g::Uno::String::op_Equality(Device::cachedSystemVersion_, NULL))
+        Device::cachedSystemVersion_ = Device::GetSystemVersion();
 
-    if (::g::Uno::String::op_Equality(Device::cachedSystemVersion(), NULL))
-        Device::cachedSystemVersion() = Device::GetSystemVersion();
-
-    return Device::cachedSystemVersion();
+    return Device::cachedSystemVersion_;
 }
 
 // public static extern string UUID() [static] :110
 uString* Device::UUID()
 {
-    Device_typeof()->Init();
-
-    if (::g::Uno::String::op_Equality(Device::cachedUUID(), NULL))
+    if (::g::Uno::String::op_Equality(Device::cachedUUID_, NULL))
         return ::STRINGS[12/*""*/];
 
-    return Device::cachedUUID();
+    return Device::cachedUUID_;
 }
 
 // public static string Vendor() [static] :121
 uString* Device::Vendor()
 {
-    Device_typeof()->Init();
+    if (::g::Uno::String::op_Equality(Device::cachedVendorName_, NULL))
+        Device::cachedVendorName_ = Device::GetVendor();
 
-    if (::g::Uno::String::op_Equality(Device::cachedVendorName(), NULL))
-        Device::cachedVendorName() = Device::GetVendor();
-
-    return Device::cachedVendorName();
+    return Device::cachedVendorName_;
 }
 // }
 

@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/UnoCore/1.2.2/source/uno/time/calendars/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/UnoCore/1.3.1/Source/Uno/Time/Calendars/Era.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -10,7 +10,7 @@ namespace Uno{
 namespace Time{
 namespace Calendars{
 
-// public sealed class Era :5
+// public sealed class Era :3
 // {
 uType* Era_typeof();
 void Era__ctor__fn(Era* __this, uString* name);
@@ -21,17 +21,17 @@ struct Era : uObject
 {
     uStrong<uString*> _name;
     static uSStrong<Era*> AnnoHegirae_;
-    static uSStrong<Era*>& AnnoHegirae() { return Era_typeof()->Init(), AnnoHegirae_; }
+    static uSStrong<Era*>& AnnoHegirae() { return AnnoHegirae_; }
     static uSStrong<Era*> AnnoMartyrum_;
-    static uSStrong<Era*>& AnnoMartyrum() { return Era_typeof()->Init(), AnnoMartyrum_; }
+    static uSStrong<Era*>& AnnoMartyrum() { return AnnoMartyrum_; }
     static uSStrong<Era*> AnnoMundi_;
-    static uSStrong<Era*>& AnnoMundi() { return Era_typeof()->Init(), AnnoMundi_; }
+    static uSStrong<Era*>& AnnoMundi() { return AnnoMundi_; }
     static uSStrong<Era*> AnnoPersico_;
-    static uSStrong<Era*>& AnnoPersico() { return Era_typeof()->Init(), AnnoPersico_; }
+    static uSStrong<Era*>& AnnoPersico() { return AnnoPersico_; }
     static uSStrong<Era*> BeforeCommon_;
-    static uSStrong<Era*>& BeforeCommon() { return Era_typeof()->Init(), BeforeCommon_; }
+    static uSStrong<Era*>& BeforeCommon() { return BeforeCommon_; }
     static uSStrong<Era*> Common_;
-    static uSStrong<Era*>& Common() { return Era_typeof()->Init(), Common_; }
+    static uSStrong<Era*>& Common() { return Common_; }
 
     void ctor_(uString* name);
     static Era* New1(uString* name);

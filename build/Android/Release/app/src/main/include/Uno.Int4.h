@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/UnoCore/1.2.2/source/uno/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/UnoCore/1.3.1/Source/Uno/Int4.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -10,7 +10,7 @@ namespace g{namespace Uno{struct Int4;}}
 namespace g{
 namespace Uno{
 
-// public intrinsic struct Int4 :3716
+// public intrinsic struct Int4 :7
 // {
 uStructType* Int4_typeof();
 void Int4__ctor_1_fn(Int4* __this, int* x, int* y, int* z, int* w);

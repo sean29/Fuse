@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Effects/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Effects/1.3.0-rc2/EffectHelpers.Blur.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -17,7 +17,7 @@ namespace g{
 namespace Fuse{
 namespace Effects{
 
-// internal partial sealed class EffectHelpers :498
+// internal partial sealed class EffectHelpers :9
 // {
 uType* EffectHelpers_typeof();
 void EffectHelpers__ctor__fn(EffectHelpers* __this);

@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Elements/1.2.1/caching/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Elements/1.3.0-rc2/Caching/ElementAtlas.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -14,12 +14,13 @@ namespace g{namespace Uno{struct EventArgs;}}
 namespace g{namespace Uno{struct Float2;}}
 namespace g{namespace Uno{struct Int2;}}
 namespace g{namespace Uno{struct Rect;}}
+namespace g{namespace Uno{struct Recti;}}
 
 namespace g{
 namespace Fuse{
 namespace Elements{
 
-// internal sealed class ElementAtlas :636
+// internal sealed class ElementAtlas :8
 // {
 uType* ElementAtlas_typeof();
 void ElementAtlas__ctor__fn(ElementAtlas* __this);
@@ -31,7 +32,7 @@ void ElementAtlas__InvalidateElement_fn(ElementAtlas* __this, ::g::Fuse::Element
 void ElementAtlas__New1_fn(ElementAtlas** __retval);
 void ElementAtlas__OnFramebufferCollected_fn(ElementAtlas* __this, uObject* sender, ::g::Uno::EventArgs* eventArgs);
 void ElementAtlas__PinAndValidateFramebuffer_fn(ElementAtlas* __this, ::g::Fuse::DrawContext* dc, ::g::Uno::Graphics::Framebuffer** __retval);
-void ElementAtlas__ReinsertElement_fn(ElementAtlas* __this, ::g::Fuse::Elements::Element* elm, bool* __retval);
+void ElementAtlas__ReinsertElement_fn(ElementAtlas* __this, ::g::Fuse::Elements::Element* elm, ::g::Uno::Recti* cacheRect, bool* __retval);
 void ElementAtlas__RemoveElement_fn(ElementAtlas* __this, ::g::Fuse::Elements::Element* elm);
 void ElementAtlas__get_SpilledRatio_fn(ElementAtlas* __this, float* __retval);
 void ElementAtlas__Unpin_fn(ElementAtlas* __this);
@@ -53,7 +54,7 @@ struct ElementAtlas : uObject
     void InvalidateElement(::g::Fuse::Elements::Element* elm);
     void OnFramebufferCollected(uObject* sender, ::g::Uno::EventArgs* eventArgs);
     ::g::Uno::Graphics::Framebuffer* PinAndValidateFramebuffer(::g::Fuse::DrawContext* dc);
-    bool ReinsertElement(::g::Fuse::Elements::Element* elm);
+    bool ReinsertElement(::g::Fuse::Elements::Element* elm, ::g::Uno::Recti cacheRect);
     void RemoveElement(::g::Fuse::Elements::Element* elm);
     float SpilledRatio();
     void Unpin();

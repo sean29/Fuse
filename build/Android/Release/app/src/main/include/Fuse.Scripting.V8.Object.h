@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Scripting.V8/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Scripting.V8/1.3.0-rc2/Object.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -15,7 +15,7 @@ namespace Fuse{
 namespace Scripting{
 namespace V8{
 
-// internal sealed extern class Object :905
+// internal sealed extern class Object :8
 // {
 ::g::Fuse::Scripting::Object_type* Object_typeof();
 void Object__ctor_1_fn(Object* __this, ::g::Fuse::Scripting::V8::Context* context, ::JSObject** obj);

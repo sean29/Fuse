@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Reactive.Expressions/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Reactive.Expressions/1.3.0-rc2/VarArgFunction.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -9,7 +9,7 @@ namespace g{
 namespace Fuse{
 namespace Reactive{
 
-// protected sealed class VarArgFunction.Argument :2095
+// public sealed class VarArgFunction.Argument :15
 // {
 uType* VarArgFunction__Argument_typeof();
 void VarArgFunction__Argument__ctor__fn(VarArgFunction__Argument* __this);

@@ -1,4 +1,4 @@
-// This file was generated based on '/Users/a/Library/Application Support/Fusetools/Packages/Fuse.Launcher.Phone/1.2.1/phone/$.uno'.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Launcher.Phone/1.3.0-rc2/Phone/PhoneTrigger.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -11,7 +11,7 @@ namespace Fuse{
 namespace Triggers{
 namespace Actions{
 
-// public sealed class Call :103
+// public sealed class Call :34
 // {
 ::g::Fuse::Triggers::Actions::TriggerAction_type* Call_typeof();
 void Call__get_Number_fn(Call* __this, uString** __retval);

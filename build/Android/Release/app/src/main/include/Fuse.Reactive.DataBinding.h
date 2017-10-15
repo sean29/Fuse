@@ -1,4 +1,4 @@
-// This file was generated based on /usr/local/share/uno/Packages/Fuse.Reactive.Bindings/1.2.1/$.uno.
+// This file was generated based on C:/Users/q/AppData/Local/Fusetools/Packages/Fuse.Reactive.Bindings/1.3.0-rc2/DataBinding.uno.
 // WARNING: Changes might be lost if you edit this file directly.
 
 #pragma once
@@ -11,7 +11,6 @@
 namespace g{namespace Fuse{namespace Reactive{struct DataBinding;}}}
 namespace g{namespace Fuse{namespace Triggers{struct BusyTask;}}}
 namespace g{namespace Fuse{struct Node;}}
-namespace g{namespace Uno{namespace UX{struct NameTable;}}}
 namespace g{namespace Uno{namespace UX{struct Property;}}}
 namespace g{namespace Uno{namespace UX{struct PropertyObject;}}}
 namespace g{namespace Uno{namespace UX{struct Selector;}}}
@@ -20,7 +19,7 @@ namespace g{
 namespace Fuse{
 namespace Reactive{
 
-// public sealed class DataBinding :154
+// public sealed class DataBinding :45
 // {
 struct DataBinding_type : ::g::Fuse::Reactive::ExpressionBinding_type
 {
@@ -30,7 +29,7 @@ struct DataBinding_type : ::g::Fuse::Reactive::ExpressionBinding_type
 };
 
 DataBinding_type* DataBinding_typeof();
-void DataBinding__ctor_2_fn(DataBinding* __this, ::g::Uno::UX::Property* target, uObject* key, ::g::Uno::UX::NameTable* nameTable, int* mode);
+void DataBinding__ctor_2_fn(DataBinding* __this, ::g::Uno::UX::Property* target, uObject* key, int* mode);
 void DataBinding__Acceptor_fn(DataBinding* __this, uObject* obj, bool* __retval);
 void DataBinding__get_Clear_fn(DataBinding* __this, bool* __retval);
 void DataBinding__ClearFailed_fn(DataBinding* __this);
@@ -46,7 +45,7 @@ void DataBinding__FuseReactiveIObserverOnRemoveAt_fn(DataBinding* __this, int* i
 void DataBinding__FuseReactiveIObserverOnSet_fn(DataBinding* __this, uObject* newValue);
 void DataBinding__InvalidListOperation_fn(DataBinding* __this);
 void DataBinding__MarkFailed_fn(DataBinding* __this, uString* message);
-void DataBinding__New1_fn(::g::Uno::UX::Property* target, uObject* key, ::g::Uno::UX::NameTable* nameTable, int* mode, DataBinding** __retval);
+void DataBinding__New1_fn(::g::Uno::UX::Property* target, uObject* key, int* mode, DataBinding** __retval);
 void DataBinding__NewValue_fn(DataBinding* __this, uObject* value);
 void DataBinding__OnRooted_fn(DataBinding* __this);
 void DataBinding__OnUnrooted_fn(DataBinding* __this);
@@ -74,7 +73,7 @@ struct DataBinding : ::g::Fuse::Reactive::ExpressionBinding
     uStrong<uObject*> _subscription;
     uStrong< ::g::Uno::UX::Property*> _Target;
 
-    void ctor_2(::g::Uno::UX::Property* target, uObject* key, ::g::Uno::UX::NameTable* nameTable, int mode);
+    void ctor_2(::g::Uno::UX::Property* target, uObject* key, int mode);
     bool Acceptor(uObject* obj);
     bool Clear();
     void ClearFailed();
@@ -91,7 +90,7 @@ struct DataBinding : ::g::Fuse::Reactive::ExpressionBinding
     bool TryPushAsValue(uObject* newValue);
     void UnlistenNameRegistry();
     bool Write();
-    static DataBinding* New1(::g::Uno::UX::Property* target, uObject* key, ::g::Uno::UX::NameTable* nameTable, int mode);
+    static DataBinding* New1(::g::Uno::UX::Property* target, uObject* key, int mode);
     static ::g::Uno::UX::Selector ToSelector(uObject* newValue);
     static uString* TypeToJSName(uType* t);
 };
