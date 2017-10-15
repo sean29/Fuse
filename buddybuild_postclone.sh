@@ -20,7 +20,7 @@ OUTPUT="$(fuse --version)"
 curl -X POST --data-urlencode "payload={\"channel\": \"#buddybuild-android\", \"username\": \"webhookbot\", \"text\": \"fuse --version: ${OUTPUT} \", \"icon_emoji\": \":ghost:\"}" https://hooks.slack.com/services/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
 
 
-echo "android 5"
+echo "android 6"
 APP_VERSION=0.0.4
 
 
@@ -43,10 +43,14 @@ OUTPUT="$(fuse install android)"
 curl -X POST --data-urlencode "payload={\"channel\": \"#buddybuild-android\", \"username\": \"webhookbot\", \"text\": \"fuse install android: ${OUTPUT} \", \"icon_emoji\": \":ghost:\"}" https://hooks.slack.com/services/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
 
 
-uno build -tAndroid || true
+OUTPUT="$(uno build -tAndroid || true)"
+curl -X POST --data-urlencode "payload={\"channel\": \"#buddybuild-android\", \"username\": \"webhookbot\", \"text\": \"uno build -tAndroid || true  ${OUTPUT}  \", \"icon_emoji\": \":ghost:\"}" https://hooks.slack.com/services/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
 
-OUTPUT="$(ls -latr build)"
-curl -X POST --data-urlencode "payload={\"channel\": \"#buddybuild-android\", \"username\": \"webhookbot\", \"text\": \" ls -latr build  ${OUTPUT}  \", \"icon_emoji\": \":ghost:\"}" https://hooks.slack.com/services/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
+
+rm -rf emrals.xcodeproj
+
+OUTPUT="$(ls -latr build/Android)"
+curl -X POST --data-urlencode "payload={\"channel\": \"#buddybuild-android\", \"username\": \"webhookbot\", \"text\": \" ls -latr build/Android  ${OUTPUT}  \", \"icon_emoji\": \":ghost:\"}" https://hooks.slack.com/services/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
 
 
 
