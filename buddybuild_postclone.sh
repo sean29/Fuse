@@ -1,6 +1,6 @@
 APP_VERSION=0.0.4
 
-uanme -a | grep 'Buddybuilds' &> /dev/null
+unanme -a | grep 'Buddybuilds' &> /dev/null
 if [ $? == 0 ]; then
 
 	curl --remote-name https://fuse-dl.azureedge.net/releaseartifacts/fuse_osx_1_2_1_13974.pkg
